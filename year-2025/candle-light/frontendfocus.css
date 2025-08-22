@@ -1,0 +1,177 @@
+body {
+    background: #111;
+    display: flex;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.candle-wrap {
+    width: 34px;
+    margin: 30px auto 0 auto;
+    position: relative;
+    height: 80%;
+    align-self: flex-end;
+    animation: candle-blink 0.1s infinite;
+}
+
+.wick-stick {
+    position: absolute;
+    width: 6px;
+    height: 50px;
+    background: #23161a;
+    top: 110px;
+    left: 50%;
+    transform: translateX(-50%) skewX(2deg);
+    border-radius: 10%;
+    box-shadow: 0 0 2px 0px black;
+}
+
+.wick-stick:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    left: 50%;
+    height: 10px;
+    box-shadow: 0 -14px 10px 8px white,
+        0 -10px 10px 8px rgba(255, 215, 0, 0.7),
+        0 -3px 10px 8px rgba(255, 106, 0, 0.7),
+        0 6px 3px 4px black;
+}
+
+.wick-stick:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0px;
+    height: 0px;
+    box-shadow: 0 5px 2px 3px gold,
+        0 20px 2px 14px gold,
+        0 -6px 4px 5px rgba(98, 33, 27, 0.8),
+        0 0px 1px 4px rgba(255, 106, 0, 0.7),
+        0 0px 3px 4px #ff6a00,
+        0 5px 3px 4px gold;
+}
+
+.flame-wrap {
+    width: 20px;
+    height: 150px;
+    margin: 0px auto;
+    position: relative;
+    animation: flame-move 3s infinite, flame-tilt 3s infinite;
+    transform-origin: 50% 90%;
+}
+
+.flame-wrap .flame-top {
+    width: 20px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    border-top-left-radius: 500%;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 500%;
+    border-bottom-right-radius: 50px;
+    transform: skewY(-10deg);
+    box-shadow: 0 0px 0px 3px white,
+        0 -20px 1px 4px white,
+        0 -25px 2px 3px gold,
+        0 -30px 5px 4px #ff6a00,
+        0 0px 150px 10px #ff6a00,
+        0 -10px 2px 4px white,
+        0 -5px 3px 3px white;
+    animation: flame-up 4s infinite;
+}
+
+.flame-wrap .flame-glow {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 1px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 5px 20px 15px gold,
+        0 0px 100px 20px #ff6a00,
+        0 15px 50px 15px #ff6a00,
+        5px 30px 5px 13px #ff6a00,
+        5px 50px 5px 13px #ff6a00,
+        0 75px 50px 30px black;
+}
+
+.flame-wrap .flame-base {
+    transform: scale(0.9);
+    position: absolute;
+    bottom: 6px;
+    left: 9px;
+    width: 1px;
+    height: 8px;
+    border-radius: 1%;
+    background: #2c2b39;
+    box-shadow: 0 6px 10px 12px rgba(60, 76, 125, 0.3),
+        0 0px 4px 8px #2c2b39,
+        0 -12px 10px 8px rgba(255, 106, 0, 0.5),
+        0 5px 7px 12px #2c2b39,
+        0 -3px 10px 12px #2c2b39,
+        5px -10px 10px 5px red,
+        0 -15px 10px 10px gold,
+        5px -25px 10px 5px gold,
+        0 2px 5px 10px #30537d,
+        0 -2px 2px 14px #76daff,
+        0 2px 10px 12px #76daff;
+}
+
+.wax-body {
+    position: relative;
+    top: 15px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #ff9224 0px, #ff9224 20px, #58523a 50px);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: inset 0 7px 12px -2px #fbf348,
+        inset 0 9px 57px -3px rgba(255, 0, 0, 0.4),
+        inset 0 -5px 8px 2px black,
+        0 0 3px 0px #ff6a00;
+}
+
+@keyframes flame-move {
+    0% {
+        transform: skewX(2deg) skewY(5deg);
+    }
+
+    50% {
+        transform: skewX(-2deg) skewY(0deg);
+    }
+
+    100% {
+        transform: skewX(2deg) skewY(5deg);
+    }
+}
+
+@keyframes flame-tilt {
+    50% {
+        transform: skewX(3deg);
+    }
+}
+
+@keyframes flame-up {
+    50% {
+        box-shadow: 0 0px 0px 3px white,
+            0 -38px 1px 2px white,
+            0 -41px 2px 3px gold,
+            0 -50px 5px 4px #ff6a00,
+            0 0px 150px 10px #ff6a00,
+            0 -10px 2px 4px white,
+            0 -5px 3px 3px white;
+    }
+}
+
+@keyframes candle-blink {
+    50% {
+        opacity: 0.95;
+    }
+}
