@@ -1,0 +1,63 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+}
+
+h1 {
+  font-size: 27px;
+  color: #ff3b3b;
+  margin-bottom: 40px;
+  text-shadow: 0 0 8px rgba(255, 59, 59, 0.6);
+  letter-spacing: 2px;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.form-group {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.form-group input {
+  border: 2px solid #fff;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 275px;
+  font-size: 1rem;
+  padding: 1rem 0.75rem;
+  outline: none;
+  color: #fff;
+  background: transparent;
+  transition: 0.3s;
+}
+
+.form-group label {
+  position: absolute;
+  top: 50%;
+  left: 0.75rem;
+  padding: 0 6px;
+  color: #bbb;
+  font-size: 1em;
+  font-weight: 400;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+}
+
+.form-group input:is(:focus, :valid) {
+  border: 2px solid #ff3b3b;
+  box-shadow: 0 5px 10px #B00;
+}
+
+.form-group input:is(:focus, :valid)+label {
+  top: 0;
+  font-size: 0.9em;
+  color: #ff3b3b;
+}
