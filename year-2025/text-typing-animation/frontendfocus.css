@@ -1,0 +1,54 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page {
+  color: #fff;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  display: grid;
+  grid-template-areas: "main";
+  min-height: 100vh;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.page__main {
+  grid-area: main;
+}
+
+.main {
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+.main__title {
+  font-size: clamp(1.8rem, 6vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.main__word {
+  border-bottom: 2px solid;
+  padding: 0 6px;
+}
+
+.color-1 { color: #ff6b6b; border-color: #ff6b6b; }
+.color-2 { color: #4dabf7; border-color: #4dabf7; }
+.color-3 { color: #38d9a9; border-color: #38d9a9; }
+.color-4 { color: #f59f00; border-color: #f59f00; }
+
+.typed-cursor {
+  font-weight: bold;
+  font-size: inherit;
+  color: #fff;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
