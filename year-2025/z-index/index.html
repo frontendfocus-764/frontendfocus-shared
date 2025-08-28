@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Z-Index Animation Demo</title>
+  <link rel="stylesheet" type="text/css" href="frontendfocus.css">
+</head>
+<body>
+  <h1>
+  Z-Index Stacking <br>
+  Animation — Demo
+</h1>
+
+  <div class="info-box">
+    <p>💡 <b>Key learning points:</b></p>
+    <ul style="text-align:left;margin:auto;padding-left: 30px;font-size: smaller;">
+      <li><code>z-index</code> controls which element appears on top.</li>
+      <li>We can change the order with <code>@keyframes</code> (animation).</li>
+  <li>The cards flip and swap places halfway (50%).</li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <div class="card card1">
+      Card A
+      <p>Starts at the bottom (z-index:1). Moves to top at 50%.</p>
+    </div>
+    <div class="card card2">
+      Card B
+      <p>Starts in the middle (z-index:2). Rotates into front later.</p>
+    </div>
+    <div class="card card3">
+      Card C
+      <p>Begins on top (z-index:3). Goes behind at 50%.</p>
+    </div>
+  </div>
+</body>
+</html>
