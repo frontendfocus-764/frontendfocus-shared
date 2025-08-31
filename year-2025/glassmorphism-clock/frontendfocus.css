@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #8acbcf;
+}
+
+.neonClock {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  background: #c9d5e0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px;
+  box-shadow: 30px 30px 30px -10px rgba(0, 0, 0, 0.15),
+    inset 15px 15px 10px rgba(255, 255, 255, 0.75),
+    -15px -15px 35px rgba(255, 255, 255, 0.55),
+    inset -1px -1px 10px rgba(0, 0, 0, 0.2);
+}
+
+.neonClock::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #e91e63;
+  border-radius: 50%;
+  z-index: 1000;
+  box-shadow: 0 0 0 1px #e91e63, 0 0 0 3px #fff, 0 0 5px 5px rgba(0, 0, 0, 0.15);
+}
+
+.neonClock .numbers {
+  position: absolute;
+  inset: 30px;
+  background: #152b4a;
+  border-radius: 50%;
+  box-shadow: 4px 4px 15px #152b4a66,
+    inset 5px 5px 5px rgba(255, 255, 255, 0.55),
+    -6px -6px 10px rgba(255, 255, 255, 1);
+}
+
+.neonClock .numbers span {
+  position: absolute;
+  inset: 5px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.25em;
+  transform: rotate(calc(90deg * var(--i)));
+}
+
+.neonClock .numbers span b {
+  font-weight: 600;
+  display: inline-block;
+  transform: rotate(calc(-90deg * var(--i)));
+}
+
+.neonClock .numbers::before {
+  content: "";
+  position: absolute;
+  inset: 35px;
+  background: linear-gradient(#2196f3, #e91e63);
+  border-radius: 50%;
+  animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.neonClock .numbers::after {
+  content: "";
+  position: absolute;
+  inset: 38px;
+  background: #152b4a;
+  border-radius: 50%;
+}
+
+.neonClock .numbers .circle {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+.neonClock .numbers .circle i {
+  position: absolute;
+  width: 3px;
+  height: 50%;
+  background: #fff;
+  transform-origin: bottom;
+}
+
+.neonClock .numbers .circle#hr i {
+  transform: scale(0.3);
+  width: 5px;
+}
+
+.neonClock .numbers .circle#mn i {
+  transform: scale(0.45);
+
+}
+
+.neonClock .numbers .circle#sc i {
+  transform: scale(0.55);
+  width: 2px;
+  background: #e91e63;
+  box-shadow: 0 30px 0 #e91e63;
+}
