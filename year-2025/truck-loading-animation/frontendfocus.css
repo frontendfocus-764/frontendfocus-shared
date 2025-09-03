@@ -1,0 +1,205 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #0b132b;
+  font-family: 'Segoe UI';
+}
+
+.loader-bg {
+  position: fixed;
+  z-index: 1090;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(11, 19, 43, 0.8);
+}
+
+.vehicle-frame {
+  height: 200px;
+  width: 200px;
+  border: 4px solid #00e5ff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background: #1c2541;
+  animation: bg 0.5s linear infinite;
+  border-radius: 100%;
+  overflow: hidden;
+  box-shadow: inset 0 0 10px 4px rgba(0,0,0,0.5), inset 0 0 5px 0px #00e5ff;
+}
+
+.vehicle-frame:after {
+  content: 'Loading...';
+  font-size: 20px;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid #00e5ff;
+  background: linear-gradient(to right, #00ff87, #00e5ff);
+  color: #0b132b;
+  padding: 8px 0 18px;
+  animation: bg 3s linear infinite;
+}
+
+.vehicle {
+  height: 110px;
+  width: 150px;
+  position: absolute;
+  bottom: 48px;
+  left: calc(50% + 10px);
+  transform: translateX(-50%);
+}
+
+.vehicle > .cargo {
+  background: linear-gradient(135deg, #00e5ff 0%, #00b8d4 50%, #0097a7 100%);
+  height: 50px;
+  width: 80px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  animation: container 0.4s linear infinite;
+}
+
+.vehicle > .cab-window {
+  background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 50%, #80deea 100%);
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  border: 4px solid #00ff87;
+  border-bottom: none;
+  top: 35px;
+  left: 95px;
+  border-top-right-radius: 6px;
+  animation: updown-half 0.4s linear infinite;
+}
+
+.vehicle > .cab-window:after {
+  content: '';
+  display: block;
+  background-color: #00ff87;
+  height: 13px;
+  width: 10px;
+  position: absolute;
+  right: -10px;
+  bottom: 0;
+  border-radius: 10px / 15px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.vehicle > .cab-window:before {
+  content: '';
+  display: block;
+  background-color: #00e676;
+  height: 12px;
+  width: 16px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-top-right-radius: 4px;
+}
+
+.vehicle > .hood {
+  background-color: #00e676;
+  position: absolute;
+  width: 124px;
+  height: 15px;
+  top: 64px;
+  left: 10px;
+  z-index: -1;
+  animation: updown 0.4s linear infinite;
+}
+
+.vehicle > .chassis {
+  position: absolute;
+  background-color: #263238;
+  width: 106px;
+  height: 15px;
+  border-top-right-radius: 10px;
+  top: 70px;
+  left: 14px;
+  animation: updown 0.4s linear infinite;
+}
+
+.vehicle > .chassis-aux {
+  width: 82px;
+  height: 8px;
+  background-color: #00e676;
+  position: absolute;
+  top: 65px;
+  left: 14px;
+  border-bottom-right-radius: 4px;
+  animation: updown 0.4s linear infinite;
+}
+
+.vehicle > .wheel-rear {
+  left: 20px;
+}
+
+.vehicle > .wheel-front {
+  left: 95px;
+}
+
+.vehicle > .wheel-rear, .vehicle > .wheel-front {
+  border-radius: 100%;
+  position: absolute;
+  background: linear-gradient(135deg, #263238 0%, #212121 50%, #1b1b1b 100%);
+  top: 80px;
+  height: 22px;
+  width: 22px;
+  animation: spin 0.6s linear infinite;
+}
+
+.vehicle > .wheel-rear:before, .vehicle > .wheel-front:before {
+  content: '';
+  border-radius: 100%;
+  left: 5px;
+  top: 5px;
+  position: absolute;
+  background: linear-gradient(135deg, #cfd8dc 0%, #b0bec5 50%, #90a4ae 100%);
+  height: 12px;
+  width: 12px;
+}
+
+.vehicle > .smoke-puff {
+  position: absolute;
+  background-color: #90a4ae;
+  border-radius: 100%;
+  width: 8px;
+  height: 8px;
+  top: 90px;
+  left: 6px;
+  animation: fade 0.4s linear infinite;
+  opacity: 0;
+}
+
+.vehicle > .smoke-puff:after {
+  content: '';
+  position: absolute;
+  background-color: #78909c;
+  border-radius: 100%;
+  width: 6px;
+  height: 6px;
+  top: -4px;
+  left: 4px;
+}
+
+.vehicle > .smoke-puff:before {
+  content: '';
+  position: absolute;
+  background-color: #78909c;
+  border-radius: 100%;
+  width: 4px;
+  height: 4px;
+  top: -2px;
+  left: 0;
+}
+
+@keyframes spin { 50%{ top:81px; } 100%{ transform:rotate(360deg); } }
+@keyframes container { 30%{ transform:rotate(1deg); } 50%{ top:11px; } 70%{ top:10px; transform:rotate(-1deg); } }
+@keyframes fade { 30%{ opacity:0.3; left:7px; } 50%{ opacity:0.5; left:6px; } 70%{ opacity:0.1; left:4px; } 90%{ opacity:0.4; left:2px; } }
+@keyframes bg { from{ background-position-x:0px; } to{ background-position-x:-400px; } }
+@keyframes updown { 50%{ transform:translateY(-20%); } 70%{ transform:translateY(-10%); } }
+@keyframes updown-half { 50%{ transform:translateY(-10%); } 70%{ transform:translateY(-5%); } }
