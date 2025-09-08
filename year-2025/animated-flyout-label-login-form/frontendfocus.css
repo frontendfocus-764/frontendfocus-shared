@@ -1,0 +1,132 @@
+body {
+    align-items: center;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.form {
+    background-color: #1b1b3a;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 420px;
+    padding: 20px;
+    width: 320px;
+    box-shadow: 0 0 25px rgba(0, 200, 255, 0.5);
+}
+
+.title {
+    color: #00d4ff;
+    font-family: sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.subtitle {
+    color: #aaa;
+    font-family: sans-serif;
+    font-size: 15px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.input-container {
+    height: 50px;
+    position: relative;
+    width: 100%;
+}
+
+.ic1 {
+    margin-top: 40px;
+}
+
+.ic2 {
+    margin-top: 30px;
+}
+
+.input {
+    background-color: #252547;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+}
+
+.cut {
+    background-color: #1b1b3a;
+    border-radius: 10px;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: -20px;
+    transform: translateY(0);
+    transition: transform 200ms;
+}
+
+.cut-short {
+    width: 75px;
+}
+
+.input:focus~.cut,
+.input:not(:placeholder-shown)~.cut {
+    transform: translateY(8px);
+}
+
+.placeholder {
+    color: #808097;
+    font-family: sans-serif;
+    left: 20px;
+    line-height: 14px;
+    pointer-events: none;
+    position: absolute;
+    transform-origin: 0 50%;
+    transition: transform 200ms, color 200ms;
+    top: 20px;
+}
+
+.input:focus~.placeholder,
+.input:not(:placeholder-shown)~.placeholder {
+    transform: translateY(-30px) translateX(10px) scale(0.75);
+}
+
+.input:not(:placeholder-shown)~.placeholder {
+    color: #aaa;
+}
+
+.input:focus~.placeholder {
+    color: #00d4ff;
+}
+
+.submit {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    height: 50px;
+    margin-top: 40px;
+    text-align: center;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.submit:hover {
+    background: linear-gradient(135deg, #0072ff, #00c6ff);
+    box-shadow: 0 0 15px rgba(0, 200, 255, 0.6);
+}
+
+.submit:active {
+    background: #0059b3;
+}
