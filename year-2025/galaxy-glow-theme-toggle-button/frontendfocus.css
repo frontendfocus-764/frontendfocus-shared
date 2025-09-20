@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-clr: #f3f0ff;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--bg-clr);
+  transition: background 700ms ease;
+}
+
+.container {
+  position: relative;
+}
+
+.others {
+  position: absolute;
+  top: 30px;
+  cursor: pointer;
+}
+
+.dot {
+  height: 5px;
+  width: 40px;
+  border-radius: 50%;
+  background: #ddd;
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.dot:nth-child(1) {
+  transform: translate(100px, 0px);
+  width: 50px;
+  height: 3px;
+}
+
+.dot:nth-child(2) {
+  transform: translate(70px, 10px);
+  width: 60px;
+  opacity: 0.7;
+}
+
+.dot:nth-child(3) {
+  transform: translate(90px, 60px);
+  opacity: 0.7;
+}
+
+.dot:nth-child(4) {
+  transform: translate(0px, 20px);
+}
+
+.dot:nth-child(5) {
+  transform: translate(30px, 30px);
+}
+
+.dot:nth-child(6) {
+  transform: translate(120px, 10px);
+  width: 60px;
+}
+
+.dot:nth-child(7) {
+  opacity: 0;
+}
+
+.dot:nth-child(8) {
+  opacity: 0;
+}
+
+input {
+  display: flex;
+  appearance: none;
+  height: 110px;
+  width: 200px;
+  background: linear-gradient(135deg, #6a5acd, #00c3ff);
+  border-radius: 60px;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+input:after {
+  content: "";
+  background: orange;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  box-shadow: 6px 0px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.toggle:checked {
+  background: #070e30;
+  box-shadow: inset 0px 0px 6px rgba(255, 255, 255, 0.1);
+}
+
+.toggle:checked + .others .dot:nth-child(1) {
+  background: white;
+  height: 3px;
+  width: 3px;
+  box-shadow: 0px 0px 7px rgba(255, 255, 255, 1);
+}
+
+.toggle:checked + .others .dot:nth-child(2) {
+  background: white;
+  height: 3px;
+  box-shadow: 0px 0px 7px rgba(255, 255, 255, 1);
+  width: 3px;
+}
+
+.toggle:checked + .others .dot:nth-child(3) {
+  background: white;
+  height: 3px;
+  width: 3px;
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 1);
+}
+
+.toggle:checked + .others .dot:nth-child(4) {
+  background: white;
+  height: 5px;
+  width: 5px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+  transform: translate(30px, 30px);
+}
+
+.toggle:checked + .others .dot:nth-child(5) {
+  background: white;
+  height: 2px;
+  width: 2px;
+  transform: translate(110px, 50px);
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 1);
+}
+
+.toggle:checked + .others .dot:nth-child(6) {
+  background: white;
+  height: 5px;
+  width: 5px;
+  box-shadow: 0px 0px 2px rgba(255, 255, 255, 1);
+  transform: translate(40px, -20px);
+}
+
+.toggle:checked + .others .dot:nth-child(7) {
+  opacity: 1;
+  background: white;
+  height: 2px;
+  width: 2px;
+  box-shadow: 0px 0px 2px rgba(255, 255, 255, 1);
+  transform: translate(50px, 37px);
+}
+
+.toggle:checked + .others .dot:nth-child(8) {
+  opacity: 1;
+  background: white;
+  height: 2px;
+  width: 2px;
+  box-shadow: 0px 0px 2px rgba(255, 255, 255, 1);
+  transform: translate(77px, 17px);
+}
+
+.toggle:checked::after {
+  left: 105px;
+  background: #bba;
+  box-shadow: -5px 0px 5px rgba(255, 255, 255, 0.2);
+}
+
+:root:has(.toggle:checked) {
+  --bg-clr: #000;
+}
