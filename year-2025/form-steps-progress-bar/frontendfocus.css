@@ -1,0 +1,192 @@
+* {
+    padding: 0;
+    margin: 0
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    -webkit-perspective: 1500;
+    perspective: 1500;
+    font-family: 'Roboto', sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: #401414;
+}
+
+.step-bar-wrapper {
+    font-size: 0;
+    background: #fff;
+    text-align: center;
+    padding: 50px 0 0;
+    box-shadow: 5px 5px 24px 0px rgba(0, 0, 0, 0.2);
+    width: 600px;
+    margin: 30px auto 0;
+    position: relative;
+    z-index: 10;
+    border-radius: 10px
+}
+
+a {
+    color: #a01111;
+}
+
+.step-wrapper {
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    counter-reset: step;
+}
+
+.step-wrapper li {
+    width: 120px;
+}
+
+.step-wrapper li>a:before {
+    content: '';
+    width: 36px;
+    height: 36px;
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: transparent;
+    border-radius: 100%;
+    z-index: 1;
+    position: absolute;
+    text-align: center;
+}
+
+.step-wrapper li>a:after {
+    content: counter(step);
+    counter-increment: step;
+    width: 36px;
+    line-height: 36px;
+    display: block;
+    font-size: 16px;
+    color: #bbb;
+    font-weight: 700;
+    background-color: transparent;
+    border-radius: 100%;
+    z-index: 1;
+    position: absolute;
+    text-align: center;
+}
+
+.step-wrapper li.completed>a:after {
+    content: '\2713';
+    color: currentColor;
+}
+
+.step-wrapper li:first-of-type a:before,
+.step-wrapper li:first-of-type a:after {
+    margin-left: -41px;
+}
+
+.step-wrapper li:last-of-type>a:before,
+.step-wrapper li:last-of-type>a:after {
+    margin-left: 41px;
+}
+
+.step-wrapper li.completed>a:before {
+    background: #fff;
+    color: #c4c4c4;
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.step-wrapper li.active>a:before {
+    background-color: currentColor;
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.15), inset 0px 0px 0px 0px rgba(0, 0, 0, 0.15), 0px 0px 9px 0px currentColor;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(247, 247, 247, 0.5)), to(rgba(231, 231, 231, .01)));
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(247, 247, 247, 0.5)), to(rgba(231, 231, 231, .01)));
+    background-image: -webkit-linear-gradient(top, rgba(247, 247, 247, 0.5), rgba(231, 231, 231, .01));
+    background-image: -moz-linear-gradient(top, rgba(247, 247, 247, 0.5), rgba(231, 231, 231, .01));
+    background-image: -ms-linear-gradient(top, rgba(247, 247, 247, 0.5), rgba(231, 231, 231, .01));
+    background-image: -o-linear-gradient(top, rgba(247, 247, 247, 0.5), rgba(231, 231, 231, .01));
+}
+
+.step-wrapper li.active>a:after {
+    color: #fff;
+}
+
+.step-wrapper li span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.step-wrapper li span a {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.step-wrapper li:not(.active):not(.completed) span a {
+    color: #bbb;
+}
+
+.step-wrapper li>a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 48px
+}
+
+.step-wrapper li:first-of-type>a {
+    padding-left: 40px;
+}
+
+.step-wrapper li:last-of-type>a {
+    padding-right: 40px;
+}
+
+.step-wrapper li>a svg {
+    height: 48px;
+    min-height: 48px;
+    width: auto;
+    position: absolute;
+    display: inline-block;
+    stroke-width: 0;
+    transition: all 300ms ease-in-out;
+}
+
+.step-wrapper li>a svg {
+    filter: url(#inset-shadow);
+}
+
+a.button {
+    margin: 50px 15px;
+    display: inline-block;
+    border-radius: 4px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: currentColor;
+    text-decoration: none;
+}
+
+a.button span {
+    color: #fff;
+    font-size: 16px;
+}
