@@ -4,80 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Bulb ON/OFF Animation</title>
-	<style>
-    @import url("https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&display=swap");
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: "Baloo Bhai 2", cursive;
-      background: linear-gradient(135deg, #ffecd2, #fcb69f);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    section {
-      width: 100%;
-      max-width: 600px;
-      text-align: center;
-    }
-
-    #bulb {
-      width: 200px;
-      transition: 0.3s ease-in-out;
-      filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));
-    }
-
-    #bulb.on {
-      filter: drop-shadow(0 0 20px yellow) brightness(1.2);
-      animation: glow 1s infinite alternate;
-    }
-
-    @keyframes glow {
-      from { filter: drop-shadow(0 0 15px yellow) brightness(1.1); }
-      to { filter: drop-shadow(0 0 30px yellow) brightness(1.3); }
-    }
-
-    .btn_container {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .bulb_btn {
-      font-family: "Baloo Bhai 2", cursive;
-      width: 120px;
-      height: 50px;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      font-size: 20px;
-      border-radius: 10px;
-      transition: 0.3s;
-      color: #fff;
-      background: #34dab4;
-      box-shadow: 0 5px #2bb297;
-    }
-
-    .bulb_btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px #2bb297;
-      background: #28c9a1;
-    }
-
-    .bulb_btn:active {
-      transform: translateY(2px);
-      box-shadow: 0 3px #2bb297;
-    }
-
-	</style>
+  <link rel="stylesheet" type="text/css" href="frontendfocus.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&display=swap">
 </head>
 <body>
   <section>
@@ -88,18 +16,6 @@
     </div>
   </section>
 
-  <script>
-    const bulb = document.getElementById('bulb');
-
-    function bulb_on() {
-      bulb.src = 'https://i.postimg.cc/6QyTynzr/bulb-on.png';
-      bulb.classList.add('on'); 
-    }
-
-    function bulb_off() {
-      bulb.src = 'https://i.postimg.cc/KjK1wL3c/bulb-off.png';
-      bulb.classList.remove('on'); 
-    }
-  </script>
+  <script src="frontendfocus.js"></script>
 </body>
 </html>
