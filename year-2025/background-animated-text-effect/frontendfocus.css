@@ -1,0 +1,43 @@
+body {
+  font-family: -apple-system, system-ui, Segoe UI, Noto Sans, Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #218ba2;
+  margin: 0;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 80px;
+  text-align: center;
+  text-transform: uppercase;
+  color: transparent;
+  background-image: url(ff-background.png);
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 1px #7512d7;
+  text-stroke: 1px #7512d7;
+  animation: gradientMove 30s linear infinite alternate;
+  text-shadow: 0 0 20px #7512d7, 0 0 40px #ff00ff50;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0 0; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0 0; }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 32px; 
+  }
+}
