@@ -1,0 +1,291 @@
+body{
+	background-color: #1A191E;
+	padding: 0;
+	margin: 0;
+}
+.wrapper{
+	height: 500px;
+	width: 350px;
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+  transform: scale(1.15);
+}
+.container{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	perspective: 500px;
+	-webkit-perspective: 500px;
+	perspective-origin:50% ;
+	-webkit-perspective-origin:50%;
+}
+.myform{
+	height: 50px;
+	width: 200px;
+	position: relative;
+	-webkit-transition: 1s;
+	-o-transition: 1s;
+	transition: 1s;
+	-webkit-transform-style: preserve-3d;
+	        transform-style: preserve-3d;
+}
+.front,.back,.right,.left{
+	background-color: #222127;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	-webkit-box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+	        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+.front{
+	-webkit-transform: translateZ(100px);
+	        transform: translateZ(100px);
+}
+.right{
+	-webkit-transform: rotateY(-270deg) translateX(100px);
+	        transform: rotateY(-270deg) translateX(100px);
+	-webkit-transform-origin: top right;
+	    -ms-transform-origin: top right;
+	        transform-origin: top right;
+}
+.back{
+	-webkit-transform: translateZ(-100px) rotateY(180deg);
+	        transform: translateZ(-100px) rotateY(180deg);
+}
+.left{
+	-webkit-transform: rotateY(270deg) translateX(-100px);
+	        transform: rotateY(270deg) translateX(-100px);
+-webkit-transform-origin: center left;
+    -ms-transform-origin: center left;
+        transform-origin: center left;			
+}
+
+.material-icons{
+	font-size: 24px;
+	color: #EC1D45;
+}
+input{
+	width: 120px;
+	border: none;
+	border-bottom: 1.5px solid white;
+	font-size: 10px;
+	padding-top: 1px;
+	padding-bottom: 3px;
+	padding-left: 2px;
+	outline: none;
+	font-family: 'Poppins',sans-serif;
+	letter-spacing: 1px;
+	background-color: transparent;
+	color: white;
+}
+::-webkit-input-placeholder{
+	letter-spacing: 2.2px;
+	font-size: 9px;
+	font-family: 'Montserrat',sans-serif;
+	font-weight: 400;
+}
+::-moz-placeholder{
+	letter-spacing: 2.2px;
+	font-size: 9px;
+	font-family: 'Montserrat',sans-serif;
+	font-weight: 400;
+}
+:-ms-input-placeholder{
+	letter-spacing: 2.2px;
+	font-size: 9px;
+	font-family: 'Montserrat',sans-serif;
+	font-weight: 400;
+}
+::-ms-input-placeholder{
+	letter-spacing: 2.2px;
+	font-size: 9px;
+	font-family: 'Montserrat',sans-serif;
+	font-weight: 400;
+}
+::placeholder{
+	letter-spacing: 2.2px;
+	font-size: 9px;
+	font-family: 'Montserrat',sans-serif;
+	font-weight: 400;
+}
+button{
+	width: 25px;
+	height: 25px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	background-color: #EC1D45;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	border-radius: 1.5px;
+}
+.button_spin1{
+	-webkit-animation: btnspin1 0.5s forwards;
+	        animation: btnspin1 0.5s forwards;
+}
+@-webkit-keyframes btnspin1{
+	60%{
+		-webkit-transform: rotateY(-120deg);
+		        transform: rotateY(-120deg);
+	}
+	100%{
+		-webkit-transform: rotateY(-90deg);
+		        transform: rotateY(-90deg);
+	}
+}
+@keyframes btnspin1{
+	60%{
+		-webkit-transform: rotateY(-120deg);
+		        transform: rotateY(-120deg);
+	}
+	100%{
+		-webkit-transform: rotateY(-90deg);
+		        transform: rotateY(-90deg);
+	}
+}
+.button_spin2{
+	-webkit-animation: btnspin2 0.5s forwards;
+	        animation: btnspin2 0.5s forwards;
+}
+@-webkit-keyframes btnspin2{
+	0%{
+		-webkit-transform: rotateY(-90deg);
+		        transform: rotateY(-90deg);
+	}
+	60%{
+		-webkit-transform: rotateY(-210deg);
+		        transform: rotateY(-210deg);
+	}
+	100%{
+		-webkit-transform: rotateY(-180deg);
+		        transform: rotateY(-180deg);
+	}
+}
+@keyframes btnspin2{
+	0%{
+		-webkit-transform: rotateY(-90deg);
+		        transform: rotateY(-90deg);
+	}
+	60%{
+		-webkit-transform: rotateY(-210deg);
+		        transform: rotateY(-210deg);
+	}
+	100%{
+		-webkit-transform: rotateY(-180deg);
+		        transform: rotateY(-180deg);
+	}
+}
+.button_spin3{
+	-webkit-animation: btnspin3 0.5s forwards;
+	        animation: btnspin3 0.5s forwards;
+}
+@-webkit-keyframes btnspin3{
+	0%{
+		-webkit-transform: rotateY(-180deg);
+		        transform: rotateY(-180deg);
+	}
+	60%{
+		-webkit-transform: rotateY(-300deg);
+		        transform: rotateY(-300deg);
+	}
+	100%{
+		-webkit-transform: rotateY(-270deg);
+		        transform: rotateY(-270deg);
+	}
+}
+@keyframes btnspin3{
+	0%{
+		-webkit-transform: rotateY(-180deg);
+		        transform: rotateY(-180deg);
+	}
+	60%{
+		-webkit-transform: rotateY(-300deg);
+		        transform: rotateY(-300deg);
+	}
+	100%{
+		-webkit-transform: rotateY(-270deg);
+		        transform: rotateY(-270deg);
+	}
+}
+
+button>.material-icons{
+	font-size: 20px;
+	color: white;
+}
+.left>span{
+	font-size: 10px;
+	color: white;
+}
+.left>.material-icons{
+	font-size: 13px;
+}
+
+.left>span{
+	font-family: 'Montserrat',sans-serif;
+	font-weight: 500;
+	letter-spacing: 2px;
+}
+.error{
+	font-family: 'Poppins',sans-serif;
+	width: 200px;
+	position: absolute;
+	bottom: 190px;
+	color: white;
+	-webkit-transform: translateZ(100px);
+	        transform: translateZ(100px);
+	font-size: 11px;
+	letter-spacing: 2px;
+}
+
+a{
+    background-color: #EC1D45;
+    font-family: "Montserrat",sans-serif;
+    position:absolute;
+    right:20px ;
+    top:20px;
+    border:2px solid #EC1D45;
+    text-decoration:none;
+    color: white;
+    border-radius: 3px;
+}
+@media screen and (min-width: 451px) {
+  a{
+    font-size: 20px;
+     padding:8px 12px 8px 12px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  a{
+    font-size: 15px;
+     padding:5px 8px 5px 8px;
+  }
+}
