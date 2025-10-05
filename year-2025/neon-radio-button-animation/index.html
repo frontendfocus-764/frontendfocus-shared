@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Radio Button Animation</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap">
+    <link rel="stylesheet" href="frontendfocus.css">
+</head>
+<body>
+    <div class="container">
+  <div class="radio-btn-group">
+    <input type="radio" name="options" value="1" id="option-1" />
+    <label for="option-1">
+      <svg width="60" height="60">
+        <defs>
+          <filter id="pink-shadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="2" dy="2" stdDeviation="6" flood-color="#e707f7" flood-opacity="1" />
+          </filter>
+        </defs>
+        <circle class="unchecked" cx="30" cy="30" r="15" fill="none" stroke-width="4" transform="rotate(90 30 30)" stroke-linecap="round" />
+        <g class="checked">
+          <circle class="pink" cx="30" cy="30" r="16" fill="none" stroke-width="7" transform="rotate(90 30 30)" stroke-linecap="round" filter="url(#pink-shadow)" />
+          <circle class="blue" cx="30" cy="27" r="16" fill="none" stroke-width="7" transform="rotate(90 30 30)" stroke-linecap="round" />
+        </g>
+      </svg>
+      <span>Light Mode</span>
+    </label>
+  </div>
+
+  <div class="radio-btn-group">
+    <input type="radio" name="options" value="2" id="option-2" />
+    <label for="option-2">
+      <svg width="60" height="60">
+        <circle class="unchecked" cx="30" cy="30" r="15" fill="none" stroke-width="4" transform="rotate(90 30 30)" stroke-linecap="round" />
+        <g class="checked">
+          <circle class="pink" cx="30" cy="30" r="16" fill="none" stroke-width="7" transform="rotate(90 30 30)" stroke-linecap="round" filter="url(#pink-shadow)" />
+          <circle class="blue" cx="30" cy="27" r="16" fill="none" stroke-width="7" transform="rotate(90 30 30)" stroke-linecap="round" />
+        </g>
+      </svg>
+      <span>Dark Mode</span>
+    </label>
+  </div>
+
+  <div class="radio-btn-group">
+    <input type="radio" name="options" value="2" id="option-3" />
+    <label for="option-3">
+      <svg width="60" height="60">
+        <circle class="unchecked" cx="30" cy="30" r="15" fill="none" stroke-width="4" transform="rotate(90 30 30)" stroke-linecap="round" />
+        <g class="checked">
+          <circle class="pink" cx="30" cy="30" r="16" fill="none" stroke-width="7" transform="rotate(90 30 30)" stroke-linecap="round" filter="url(#pink-shadow)" />
+          <circle class="blue" cx="30" cy="27" r="16" fill="none" stroke-width="7" transform="rotate(90 30 30)" stroke-linecap="round" />
+        </g>
+      </svg>
+      <span>System Default</span>
+    </label>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="frontendfocus.js"></script>
+</body>
+</html>
