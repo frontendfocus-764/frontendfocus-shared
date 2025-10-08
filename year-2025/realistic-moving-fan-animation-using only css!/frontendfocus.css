@@ -1,0 +1,114 @@
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.0001) 400px, #2e335a) 50% 100%/100% calc(50% - 100px) no-repeat, 
+              linear-gradient(to bottom, rgba(255, 255, 255, 0.0001) calc(50% + 100px), #4e4376 calc(50% + 100px), #2b5876), 
+              linear-gradient(to top, rgba(255, 255, 255, 0.0001) calc(50% - 100px), rgba(0, 0, 0, 0.25) calc(50% - 100px), rgba(255, 255, 255, 0.0001) calc(50% + 100px)), 
+              radial-gradient(ellipse at 50% calc(50% + 100px), #8e9eab, #1f1c2c);
+}
+body div {
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.0001) calc(50% - 1px), #f0f0f0 calc(50% - 1px), #f0f0f0 calc(50% + 1px), rgba(255, 255, 255, 0.0001) calc(50% + 1px)) 50% 50%/215px 215px no-repeat, 
+              linear-gradient(to bottom, rgba(255, 255, 255, 0.0001) calc(50% - 1px), #f0f0f0 calc(50% - 1px), #f0f0f0 calc(50% + 1px), rgba(255, 255, 255, 0.0001) calc(50% + 1px)) 50% 50%/140px 140px no-repeat, 
+              radial-gradient(circle at center, rgba(255, 255, 255, 0.0001) 43px, #f0f0f0 43px, #bbb 45px, rgba(255, 255, 255, 0.0001) 45px, rgba(255, 255, 255, 0.0001) 70px, #f0f0f0 70px, #bbb 72px, rgba(255, 255, 255, 0.0001) 72px, rgba(255, 255, 255, 0.0001) 100px), 
+              radial-gradient(circle at center, #bbb, #fff 100px, #9be7ff 100px, #9be7ff 110px, #00c9ff 110px);
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: 50% 150% -100px;
+  -webkit-animation: turn 5s ease-in-out infinite alternate;
+          animation: turn 5s ease-in-out infinite alternate;
+}
+@-webkit-keyframes turn {
+  from {
+    transform: translateY(-100px) rotateY(-20deg);
+    box-shadow: 20px 0 0 #00c9ff, 30px 30px 40px -30px #8be9ff, 60px 30px 0 -30px #4dd0e1;
+  }
+  to {
+    transform: translateY(-100px) rotateY(20deg);
+    box-shadow: -20px 0 0 #00c9ff, -30px 30px 40px -30px #8be9ff, -60px 30px 0 -30px #4dd0e1;
+  }
+}
+@keyframes turn {
+  from {
+    transform: translateY(-100px) rotateY(-20deg);
+    box-shadow: 20px 0 0 #00c9ff, 30px 30px 40px -30px #8be9ff, 60px 30px 0 -30px #4dd0e1;
+  }
+  to {
+    transform: translateY(-100px) rotateY(20deg);
+    box-shadow: -20px 0 0 #00c9ff, -30px 30px 40px -30px #8be9ff, -60px 30px 0 -30px #4dd0e1;
+  }
+}
+body div:before, body div:after {
+  transform-style: preserve-3d;
+  content: "";
+  position: absolute;
+}
+body div:after {
+  transform-origin: 50% 100% 20px;
+  width: 100%;
+  height: 400px;
+  top: 0;
+  background: radial-gradient(circle at top, #e0f7ff, #b3e5fc 11.5px, #4dd0e1 11.5px, #00c9ff 12.5px, rgba(255, 255, 255, 0.0001) 15px) 50% 290px/40px 40px no-repeat, 
+              linear-gradient(to right, rgba(255, 255, 255, 0.0001) calc(50% - 12.5px), #b3e5fc calc(50% - 12.5px), #e0f7ff, #b3e5fc calc(50% + 12.5px), rgba(255, 255, 255, 0.0001) calc(50% + 15px)) 100% 50%/100% 200px no-repeat, 
+              radial-gradient(ellipse at bottom, #b2ebf2, #80deea 50%, rgba(255, 255, 255, 0.0001) 50%) 50% calc(100% - 60px)/120px 100px no-repeat, 
+              radial-gradient(ellipse at center, #b2ebf2, #80deea 50%, rgba(255, 255, 255, 0.0001) 50%) 50% calc(100% - 30px)/120px 60px no-repeat, 
+              radial-gradient(ellipse at center, #00c9ff 65%, rgba(255, 255, 255, 0.0001) 50%) 50% 340px/250px 30px no-repeat, 
+              linear-gradient(to top, #80deea 30px, rgba(255, 255, 255, 0.0001) 20px) 50% calc(50% - 15px)/calc(100% - 20px) 100% no-repeat, 
+              radial-gradient(ellipse at center, #4dd0e1 65%, rgba(255, 255, 255, 0.0001) 50%) 50% 370px/250px 30px no-repeat;
+  -webkit-animation: donotturn 5s ease-in-out infinite alternate;
+          animation: donotturn 5s ease-in-out infinite alternate;
+  -webkit-box-reflect: below -30px linear-gradient(rgba(255, 255, 255, 0.0001) 50%, rgba(255, 255, 255, 0.25));
+}
+@-webkit-keyframes donotturn {
+  from {
+    transform: translateZ(-120px) rotateY(25deg);
+  }
+  to {
+    transform: translateZ(-120px) rotateY(-25deg);
+  }
+}
+@keyframes donotturn {
+  from {
+    transform: translateZ(-120px) rotateY(25deg);
+  }
+  to {
+    transform: translateZ(-120px) rotateY(-25deg);
+  }
+}
+body div:before {
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.0001) 43px, #e0f7ff 43px, #b3e5fc 45px, rgba(255, 255, 255, 0.0001) 45px, rgba(255, 255, 255, 0.0001) 70px, #e0f7ff 70px, #b3e5fc 72px, rgba(255, 255, 255, 0.0001) 72px, rgba(255, 255, 255, 0.0001) 100px, #e0f7ff 100px, #b3e5fc 102px, rgba(255, 255, 255, 0.0001) 102px), 
+              radial-gradient(circle at center, #b3e5fc, #e0f7ff 25px, rgba(255, 255, 255, 0.0001) 20px), 
+              linear-gradient(95deg, rgba(255, 255, 255, 0.0001) calc(50% - 10px), #80deea calc(50% - 10px), #80deea calc(50% + 10px), rgba(255, 255, 255, 0.0001) calc(50% + 10px)) 50%/100% 75% no-repeat, 
+              linear-gradient(-95deg, rgba(255, 255, 255, 0.0001) calc(50% - 10px), #80deea calc(50% - 10px), #80deea calc(50% + 10px), rgba(255, 255, 255, 0.0001) calc(50% + 10px)) 50%/100% 75% no-repeat, 
+              linear-gradient(5deg, rgba(255, 255, 255, 0.0001) calc(50% - 10px), #4dd0e1 calc(50% - 10px), #4dd0e1 calc(50% + 10px), rgba(255, 255, 255, 0.0001) calc(50% + 10px)) 50%/75% 100% no-repeat, 
+              linear-gradient(-5deg, rgba(255, 255, 255, 0.0001) calc(50% - 10px), #4dd0e1 calc(50% - 10px), #4dd0e1 calc(50% + 10px), rgba(255, 255, 255, 0.0001) calc(50% + 10px)) 50%/75% 100% no-repeat, 
+              radial-gradient(circle at bottom, #4dd0e1 20px, rgba(255, 255, 255, 0.0001) 20px) 50% 0px/35px 35px no-repeat, 
+              radial-gradient(circle at top, #4dd0e1 20px, rgba(255, 255, 255, 0.0001) 20px) 50% 100%/35px 35px no-repeat, 
+              radial-gradient(circle at right, #4dd0e1 20px, rgba(255, 255, 255, 0.0001) 20px) 0% 50%/35px 35px no-repeat, 
+              radial-gradient(circle at left, #4dd0e1 20px, rgba(255, 255, 255, 0.0001) 20px) 100% 50%/35px 35px no-repeat;
+  -webkit-animation: spin 0.5s linear infinite;
+          animation: spin 0.5s linear infinite;
+}
+@-webkit-keyframes spin {
+  from {
+    transform: scale(0.9) translateZ(50px) rotate(0deg);
+  }
+  to {
+    transform: scale(0.9) translateZ(50px) rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: scale(0.9) translateZ(50px) rotate(0deg);
+  }
+  to {
+    transform: scale(0.9) translateZ(50px) rotate(360deg);
+  }
+}
