@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #050800;
+  font-family: "Exo 2", sans-serif;
+  font-weight: bold;
+}
+
+.frontendfocus-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Base link styling for both buttons*/
+a {
+  min-width: 350px;
+  font-size: 24px;
+  position: relative;
+  display: inline-block;
+  padding: 20px 30px;
+  margin: 50px 0;
+  color: #ff6a00;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  overflow: hidden;
+}
+
+/* Color btn-1*/
+.btn-1 a {
+  color: #ff6a00;
+}
+
+/* Hover glow effect btn-1*/
+.btn-1 a:hover {
+  background: #ff6a00;
+  color: #050801;
+  box-shadow:
+    0 0 5px #ff6a00,
+    0 0 25px #ff6a00,
+    0 0 50px #ff6a00,
+    0 0 200px #ff6a00;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Color btn-2*/
+.btn-2 a {
+  color: #00bfff;
+}
+
+/* Hover glow effect btn-2*/
+.btn-2 a:hover {
+  background: #00bfff;
+  color: #050801;
+  box-shadow:
+    0 0 5px #00bfff,
+    0 0 25px #00bfff,
+    0 0 50px #00bfff,
+    0 0 200px #00bfff;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Hue rotation for color variation */
+a:nth-child(1) {
+  filter: hue-rotate(270deg);
+}
+
+a:nth-child(2) {
+  filter: hue-rotate(110deg);
+}
+
+/* Span styles for animated borders */
+a span {
+  position: absolute;
+  display: block;
+}
+
+/* Top border animation btn-1*/
+.btn-1 a span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff6a00);
+  animation: glowLineRight 1.5s linear infinite;
+}
+
+/* Top border animation btn-2*/
+.btn-2 a span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00bfff);
+  animation: glowLineRight 1.5s linear infinite;
+}
+
+/* Right border animation btn-1*/
+.btn-1 a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #ff6a00);
+  animation: glowLineDown 1.5s linear infinite;
+  animation-delay: 0.25s;
+}
+
+/* Right border animation btn-2*/
+.btn-2 a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #00bfff);
+  animation: glowLineDown 1.5s linear infinite;
+  animation-delay: 0.25s;
+}
+
+/* Bottom border animation btn-1*/
+.btn-1 a span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #ff6a00);
+  animation: glowLineLeft 1.5s linear infinite;
+  animation-delay: 0.5s;
+}
+
+/* Bottom border animation btn-2*/
+.btn-2 a span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #00bfff);
+  animation: glowLineLeft 1.5s linear infinite;
+  animation-delay: 0.5s;
+}
+
+/* Left border animation btn-1*/
+.btn-1 a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #ff6a00);
+  animation: glowLineUp 1.5s linear infinite;
+  animation-delay: 0.75s;
+}
+
+/* Left border animation btn-2 */
+.btn-2 a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #00bfff);
+  animation: glowLineUp 1.5s linear infinite;
+  animation-delay: 0.75s;
+}
+
+/* Top border animation keyframes */
+@keyframes glowLineRight {
+  0% {
+    left: -100%;
+  }
+
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+/* Right border animation keyframes */
+@keyframes glowLineDown {
+  0% {
+    top: -100%;
+  }
+
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+/* Bottom border animation keyframes */
+@keyframes glowLineLeft {
+  0% {
+    right: -100%;
+  }
+
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+/* Left border animation keyframes */
+@keyframes glowLineUp {
+  0% {
+    bottom: -100%;
+  }
+
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .frontendfocus-container {
+    flex-direction: column;
+    gap: 50px;
+    height: 80vh;
+  }
+
+  a {
+  min-width: 350px;
+  font-size: 18px;
+  position: relative;
+  display: inline-block;
+  padding: 20px 25px 20px 25px;
+  margin: 50px 0;
+  margin: 30px 0;
+  }
+  
+}
