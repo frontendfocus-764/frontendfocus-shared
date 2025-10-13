@@ -1,0 +1,124 @@
+*,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at center, #0f2027, #203a43, #2c5364);
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    .book {
+      perspective: 200vw;
+      transition: opacity 0.4s 0.2s;
+    }
+
+    .pages {
+      width: 60vw;
+      height: 44vw;
+      position: relative;
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      border-radius: 8px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .page {
+      position: absolute;
+      top: 0;
+      width: 30vw;
+      height: 44vw;
+      transform-origin: left;
+      transition: transform 1.2s ease-in-out;
+      backface-visibility: hidden;
+      border-radius: 8px;
+      cursor: pointer;
+      user-select: none;
+      background: #faf8f6 url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .page:nth-child(odd) {
+      transform-origin: left;
+      right: 0;
+      background-image: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0));
+    }
+
+    .page:nth-child(odd):hover {
+      transform: rotateY(-12deg);
+    }
+
+    .page:nth-child(even) {
+      transform-origin: right;
+      left: 0;
+      transform: rotateY(180deg);
+      background-image: linear-gradient(to left, rgba(0,0,0,0.1), rgba(0,0,0,0));
+    }
+
+    .page.flipped:nth-child(odd) {
+      transform: rotateY(-180deg);
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .page.flipped:nth-child(even) {
+      transform: rotateY(0deg);
+      box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .page p {
+      font-family: 'Lovers Quarrel', cursive;
+      text-align: center;
+      font-size: 5vw;
+      margin: 0;
+      line-height: 1.3;
+      color: #333;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .page::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(255,255,255,0.15) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+
+    .page:hover::before {
+      opacity: 1;
+    }
+
+    .page::after {
+      content: "";
+      position: absolute;
+      top: 0; bottom: 0; left: 0; right: 0;
+      border-radius: 8px;
+      box-shadow: inset 0 0 8px rgba(255,255,255,0.1);
+    }
+
+    @media (max-width: 768px) {
+      .pages {
+        width: 90vw;
+        height: 65vw;
+      }
+      .page {
+        width: 45vw;
+        height: 65vw;
+      }
+      .page p {
+        font-size: 9vw;
+      }
+    }
