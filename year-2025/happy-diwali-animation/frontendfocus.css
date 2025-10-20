@@ -1,0 +1,185 @@
+.red-text {
+      font-family: Pacifico;
+      color: red;
+      font-size: 46px;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-image: url("https://img1.wallspic.com/previews/2/8/5/9/4/149582/149582-bokeh_photography_of_city_lights_during_night_time-x750.jpg");
+      background-color: black;
+    }
+
+    ul,
+    li {
+      text-indent: 0;
+      text-decoration: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    img {
+      border: 0;
+    }
+
+    body {
+      background-color: #000;
+      color: #999;
+      font: 100%/18px helvetica, arial, sans-serif;
+    }
+
+    canvas {
+      cursor: crosshair;
+      display: block;
+      left: 0;
+      position: absolute;
+      top: 0;
+      z-index: 20;
+    }
+
+    #header img {
+      width: 100%;
+      height: 20%;
+    }
+
+    #bg img {
+      width: 100%;
+      height: 80%;
+    }
+
+    #header,
+    #bg {
+      position: fixed;
+      left: 0;
+      right: 0;
+      z-index: 10;
+    }
+
+    #header {
+      top: 0;
+    }
+
+    #bg {
+      position: fixed;
+      z-index: 1;
+      bottom: 0;
+    }
+
+    audio {
+      position: fixed;
+      display: none;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 5;
+    }
+
+    .ak {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0%;
+      color: #FFE45E;
+      text-align: center;
+      font-size: 7rem;
+      font-style: italic;
+      text-shadow: #FFE45E 0 0 30px, #E5C654 1px 0 3px;
+    }
+  </style>
+
+  <style>
+    img {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+    }
+
+    #imgB {
+      position: fixed;
+      top: 4px;
+      right: 4px;
+      z-index: 10000;
+    }
+
+    #dialogBox {
+      position: fixed;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border: 2px dashed rgb(251, 251, 251);
+      background-color: rgba(13, 13, 13, 0.90);
+      text-align: center;
+      color: #FFC847;
+      padding: 20px;
+      padding-top: 40px;
+      height: 400px;
+      width: 600px;
+      transform: rotateX(90deg);
+      cursor: default;
+      transition: .8s;
+    }
+
+    #cover {
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      z-index: 1;
+      background: rgba(117, 133, 247, 0.3);
+      height: 100vh;
+      width: 100vw;
+      opacity: 0;
+      transition: 1s;
+    }
+
+    @media screen and (max-width: 720px) {
+      #circle:hover {
+        box-shadow: 0 1px 8px rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+      }
+
+      #dialogBox {
+        height: 100%;
+        width: 100%;
+        padding: 0%;
+        border: 0px;
+        padding-top: 80%;
+        background-color: rgba(13, 13, 13, 0.90);
+      }
+
+      #cover {
+        height: 100%;
+        width: 100%;
+      }
+
+      #circle {
+        bottom: 0px;
+        left: -30px;
+      }
+
+      img {
+        position: fixed;
+        top: 4px;
+        left: 4px;
+      }
+
+      #imgB {
+        position: relative;
+        top: 4px;
+        left: 4px;
+        z-index: 10000;
+      }
+    }
+
+     * {
+      -ms-user-select: none;
+      -moz-user-select: none;
+      -o-user-select: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
