@@ -1,0 +1,216 @@
+ *,
+ *::before,
+ *::after {
+     box-sizing: border-box;
+ }
+
+ html,
+ body {
+     height: 100%;
+     background: #fff;
+     font-weight: 300;
+     text-align: center;
+     font-family: "Open Sans", sans-serif;
+     font-size: 15px;
+     margin: 0;
+ }
+
+ .btn {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+ }
+
+ .btn button {
+     border: 2px solid #0a7fad;
+     border-radius: 20px;
+     color: #0a7fad;
+     text-transform: uppercase;
+     background: none;
+     padding: 11px 46px;
+     font-weight: 700;
+     outline: none;
+     cursor: pointer;
+     transition: all 0.3s ease-in-out;
+     display: inline-block;
+     height: 40px;
+     width: 177px;
+     user-select: none;
+ }
+
+ .btn button:hover {
+     background: #0a7fad;
+     color: #fff;
+ }
+
+ .btn.loading::before {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     content: "";
+     display: block;
+     width: 4px;
+     height: 4px;
+     border-radius: 50%;
+     background: #fff;
+     z-index: 2;
+     margin-top: 4px;
+     animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+     animation-delay: 0.15s;
+ }
+
+ .btn.loading button {
+     font-size: 0;
+     width: 40px;
+     background: #0a7fad;
+ }
+
+ .btn.loading button::before {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     content: "";
+     display: block;
+     width: 4px;
+     height: 4px;
+     border-radius: 50%;
+     background: #fff;
+     z-index: 2;
+     margin-top: 4px;
+     animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+     margin-left: -10px;
+ }
+
+ .btn.loading button::after {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     content: "";
+     display: block;
+     width: 4px;
+     height: 4px;
+     border-radius: 50%;
+     background: #fff;
+     z-index: 2;
+     margin-top: 4px;
+     animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+     margin-left: 10px;
+     animation-delay: 0.3s;
+ }
+
+ .message {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     z-index: 3;
+     width: 360px;
+     height: 145px;
+     color: #fff;
+     background: linear-gradient(135deg, #0a5e79, #2ba888);
+     border-radius: 120px;
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+     padding: 36px;
+     transition: all 0.3s ease-in-out 0.3s;
+     transform: scale(0) translate(-50%, -100%);
+     transform-origin: 0 0;
+     opacity: 0;
+     user-select: none;
+ }
+
+ .message .title {
+     font-size: 20px;
+     text-transform: uppercase;
+     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+     font-weight: 700;
+     margin-bottom: 12px;
+     position: relative;
+     transition: all 0.3s ease-in-out 0.2s;
+     transform: scale(0) translateY(-20%);
+     opacity: 0;
+     -webkit-backface-visibility: hidden;
+ }
+
+ .message .msg {
+     font-size: 14px;
+     line-height: 1.4;
+     font-style: italic;
+     position: relative;
+     transition: all 0.3s ease-in-out 0.1s;
+     transform: scale(0) translateY(-20%);
+     opacity: 0;
+     -webkit-backface-visibility: hidden;
+ }
+
+ .message .close {
+     position: absolute;
+     top: 5px;
+     right: 5px;
+     z-index: 2;
+     cursor: pointer;
+     width: 18px;
+     height: 18px;
+     transition: all 0.3s ease-in-out 0s;
+     transform: scale(0) translateY(-20%);
+     opacity: 0;
+ }
+
+ .message .close svg {
+     width: 18px;
+     height: 18px;
+ }
+
+ .message.message-error {
+     background: linear-gradient(135deg, #f0223e, #f34238);
+ }
+
+ .message.active {
+     opacity: 1;
+     transform: scale(1) translate(-50%, -50%);
+     transition: all 0.3s cubic-bezier(0, 1.07, 0.48, 1.11) 0.1s;
+     border-radius: 12px;
+ }
+
+ .message.active .title {
+     opacity: 1;
+     transition: all 0.3s cubic-bezier(0, 1.07, 0.48, 1.11) 0.3s;
+     transform: scale(1) translateY(0);
+ }
+
+ .message.active .msg {
+     opacity: 1;
+     transition: all 0.3s cubic-bezier(0, 1.07, 0.48, 1.11) 0.4s;
+     transform: scale(1) translateY(0);
+ }
+
+ .message.active .close {
+     opacity: 1;
+     transition: all 0.3s cubic-bezier(0, 1.07, 0.48, 1.11) 0.55s;
+     transform: scale(1) translateY(0);
+ }
+
+ .message.closing {
+     opacity: 0;
+     transform: scale(0) translate(-50%, -50%);
+ }
+
+ .message.closing .title,
+ .message.closing .msg,
+ .message.closing .close {
+     opacity: 0;
+     transform: scale(0) translateY(0);
+ }
+
+ @keyframes ball {
+     from {
+         transform: translateY(0) scaleY(0.8);
+     }
+
+     to {
+         transform: translateY(-10px);
+     }
+ }
