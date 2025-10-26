@@ -1,0 +1,204 @@
+/* ===== Base Setup ===== */
+    body {
+      background: radial-gradient(circle at top, #0b0c10, #000);
+      color: #fff;
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .toggles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 30px;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    /* ===== Toggle Base ===== */
+    .toggle-container {
+      position: relative;
+      width: 100%;
+      height: 70px;
+      border-radius: 40px;
+      background: #222;
+      box-shadow: inset 0 0 10px #000;
+      overflow: hidden;
+      transition: background 0.4s ease;
+      cursor: pointer;
+    }
+
+    .toggle-input {
+      display: none;
+    }
+
+    .toggle-handle {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      /* slightly brighter default so handle is visible on dark backgrounds */
+      background: linear-gradient(145deg, #444, #1a1a1a);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+      transition: all 0.4s ease;
+    }
+
+    .toggle-text {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      pointer-events: none;
+    }
+
+    .toggle-text span {
+      opacity: 0.4;
+      transition: opacity 0.4s ease;
+    }
+
+    .toggle-input:checked + .toggle-handle {
+      left: calc(100% - 65px);
+    }
+
+    .toggle-input:checked ~ .toggle-text span.off {
+      opacity: 0.3;
+    }
+
+    .toggle-input:checked ~ .toggle-text span.on {
+      opacity: 1;
+    }
+
+    /* ===== VARIANTS ===== */
+
+    /* Variant A – Sky Blue Glow */
+    .toggle-container.a {
+      background: #1e293b;
+    }
+    /* OFF handle for A (matches container, subtle) */
+    .toggle-container.a .toggle-handle {
+      background: linear-gradient(145deg, #163240, #0f2532);
+      box-shadow: 0 4px 10px rgba(3, 22, 34, 0.6);
+    }
+    /* ON handle for A */
+    .toggle-container.a .toggle-input:checked + .toggle-handle {
+      background: linear-gradient(145deg, #38bdf8, #0284c7);
+      box-shadow: 0 0 15px #38bdf8;
+    }
+    .toggle-container.a .toggle-input:checked ~ .toggle-text {
+      color: #38bdf8;
+    }
+
+    /* Variant B – Green Shine */
+    .toggle-container.b {
+      background: #1a2e25;
+    }
+    /* OFF handle for B (subtle green/teal) */
+    .toggle-container.b .toggle-handle {
+      background: linear-gradient(145deg, #143822, #0f261b);
+      box-shadow: 0 4px 10px rgba(6, 20, 14, 0.6);
+    }
+    /* ON handle for B */
+    .toggle-container.b .toggle-input:checked + .toggle-handle {
+      background: linear-gradient(145deg, #22c55e, #15803d);
+      box-shadow: 0 0 15px #22c55e;
+    }
+    .toggle-container.b .toggle-input:checked ~ .toggle-text {
+      color: #22c55e;
+    }
+
+    /* Variant C – Neon Purple */
+    .toggle-container.c {
+      background: #0c0120;
+      box-shadow: inset 0 0 15px #a855f7;
+    }
+    .toggle-container.c .toggle-handle {
+      background: linear-gradient(145deg, #9333ea, #4c1d95);
+    }
+    .toggle-container.c .toggle-input:checked + .toggle-handle {
+      background: linear-gradient(145deg, #d946ef, #9333ea);
+      box-shadow: 0 0 15px #d946ef;
+    }
+    .toggle-container.c .toggle-input:checked ~ .toggle-text {
+      color: #d946ef;
+    }
+
+    /* Variant D – Warm Orange */
+    .toggle-container.d {
+      background: #2a1b07;
+    }
+    .toggle-container.d .toggle-handle {
+      background: linear-gradient(145deg, #b45309, #78350f);
+    }
+    .toggle-container.d .toggle-input:checked + .toggle-handle {
+      background: linear-gradient(145deg, #f59e0b, #b45309);
+      box-shadow: 0 0 15px #f59e0b;
+    }
+    .toggle-container.d .toggle-input:checked ~ .toggle-text {
+      color: #f59e0b;
+    }
+
+    /* Variant E – Pink to Blue Gradient */
+.toggle-container.e {
+  background: linear-gradient(90deg, #ec4899, #6366f1);
+}
+
+/* OFF handle – subtle gradient matching background */
+.toggle-container.e .toggle-handle {
+  background: linear-gradient(145deg, #c93f8c, #5450d1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ON handle */
+.toggle-container.e .toggle-input:checked + .toggle-handle {
+  background: linear-gradient(145deg, #6366f1, #ec4899);
+  box-shadow: 0 0 20px #ec4899;
+}
+
+.toggle-container.e .toggle-input:checked ~ .toggle-text {
+  color: #ec4899;
+}
+
+
+    /* Variant F – Electric Cyan */
+    .toggle-container.f {
+      background: #002b36;
+    }
+    .toggle-container.f .toggle-handle {
+      background: linear-gradient(145deg, #0891b2, #0e7490);
+    }
+    .toggle-container.f .toggle-input:checked + .toggle-handle {
+      background: linear-gradient(145deg, #22d3ee, #06b6d4);
+      box-shadow: 0 0 18px #22d3ee;
+    }
+    .toggle-container.f .toggle-input:checked ~ .toggle-text {
+      color: #22d3ee;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      .toggle-container {
+        height: 55px;
+      }
+      .toggle-handle {
+        width: 45px;
+        height: 45px;
+        top: 5px;
+        left: 5px;
+      }
+      .toggle-input:checked + .toggle-handle {
+        left: calc(100% - 50px);
+      }
+      .toggle-text {
+        font-size: 14px;
+      }
+    }
