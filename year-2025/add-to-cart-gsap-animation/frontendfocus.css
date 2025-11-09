@@ -1,0 +1,37 @@
+svg#button{
+ position:relative;
+  margin-right:auto;
+  margin-left:auto;
+  height:50px;
+  width:180px;
+  display:block;
+  top:150px;
+  border-radius:25px;
+  cursor:pointer;
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.1));
+}
+#paper{
+  position:absolute;
+   width:10px;
+  height:10px; transform:translate(80%,-20%)scale(0.00261)rotate(180deg);
+}
+#banana{
+  position:absolute;
+   width:10px;
+  height:10px; transform:translate(80%,0%)scale(0.002281)rotate(180deg);
+}
+#tomato{
+  position:absolute;
+   width:10px;
+  height:10px; transform:translate(80%,-10%)scale(0.001821)rotate(180deg);
+}
+#cart{
+  position:absolute;
+   width:10px;
+  height:10px; transform:translate(0%,100%)scale(0.00321)rotate(180deg);
+}
+@media screen and (max-width: 600px) {
+  #button{
+    top:100px !important;
+  }
+}
