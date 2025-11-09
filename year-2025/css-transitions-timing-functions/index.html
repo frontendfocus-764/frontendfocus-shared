@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Transition Timing Functions</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #2c205a;
+    }
+
+    .comment-note {
+        background-color: #fff;
+        margin-left: auto;
+        margin-right: auto;
+        color: #2c205a;
+        padding: 12px 0px;
+        font-size: 14px;
+        font-weight: bold;
+        border-left: 5px solid #ff9800;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        font-family: 'Segoe UI', sans-serif;
+        margin-top: 30px;
+        max-width: 400px;
+        }
+       
+     .comment-note span{
+        color: #bd1321;
+        text-decoration: underline;
+     }   
+
+    h1 {
+      font-size: x-large;
+      color: #fff;
+      max-width: 450px;
+      margin: 50px auto 30px auto;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 span{
+        font-size: 37px;
+        color: rgb(216, 70, 37);
+        margin-right: 5px;
+    }
+
+    p.description {
+      margin: 0 0 5px 0;
+      font-weight: bold;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    .img-div {
+      border: 2px solid #fff;
+      border-radius: 5px;
+      width: 400px;
+      padding-top: 2px;
+      overflow: hidden;
+    }
+
+    .bike {
+      width: 50px;
+      transition: transform 3s;
+    }
+
+    .img-div:hover .bike{
+      transform: translateX(350px);
+    }
+
+    /* Different transition timing functions */
+    #bike1 {
+      transition-timing-function: linear;
+    }
+
+    #bike2 {
+      transition-timing-function: ease;
+    }
+
+    #bike3 {
+      transition-timing-function: ease-in;
+    }
+
+    #bike4 {
+      transition-timing-function: ease-out;
+    }
+
+    #bike5 {
+      transition-timing-function: ease-in-out;
+    }
+
+    #bike6 {
+      transition-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55); /* elastic curve */
+    }
+
+    #bike7 {
+      transition-timing-function: steps(8, start);
+    }
+  </style>
+</head>
+<body>
+  <h1><span>CSS </span>Transition Timing Functions</h1>
+  <p class="comment-note">💡 Comment your email ID to receive <span>free</span> source code!</p>
+  <div class="container">
+    <p class="description">1. Linear</p>
+    <div class="img-div"><img src="img/ctf-car.png" class="bike" id="bike1" alt="bike"></div>
+
+    <p class="description">2. Ease</p>
+    <div class="img-div"><img src="img/ctf-car.png" class="bike" id="bike2" alt="bike"></div>
+
+    <p class="description">3. Ease-in</p>
+    <div class="img-div"><img src="img/ctf-car.png" class="bike" id="bike3" alt="bike"></div>
+
+    <p class="description">4. Ease-out</p>
+    <div class="img-div"><img src="img/ctf-car.png" class="bike" id="bike4" alt="bike"></div>
+
+    <p class="description">5. Ease-in-out</p>
+    <div class="img-div"><img src="img/ctf-car.png" class="bike" id="bike5" alt="bike"></div>
+
+    <p class="description">6. Cubic Bezier (custom curve)</p>
+    <div class="img-div"><img src="img/ctf-car.png" class="bike" id="bike6" alt="bike"></div>
+
+    <p class="description">7. Steps(8, start)</p>
+    <div class="img-div"><img src="img/ctf-car.png" class="bike" id="bike7" alt="bike"></div>
+  </div>
+</body>
+</html>
