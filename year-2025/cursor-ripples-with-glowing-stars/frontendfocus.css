@@ -1,0 +1,82 @@
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, #002533 10%, #001d2b 50%, #000f1a 90%);
+    overflow: hidden;
+    position: relative;
+    font-family: sans-serif;
+  }
+
+  h1 {
+    font-size: 2rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(0, 255, 255, 0.7);
+    position: absolute;
+    z-index: 2;
+  }
+
+  .cursor-ripple {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: radial-gradient(circle,
+        rgba(0, 255, 255, 0.9) 10%,
+        rgba(0, 180, 255, 0.7) 30%,
+        rgba(0, 100, 255, 0.6) 50%,
+        rgba(100, 255, 255, 0.5) 70%,
+        rgba(255, 255, 255, 0.3) 90%,
+        rgba(0, 50, 70, 0) 100%);
+    border-radius: 50%;
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: none;
+    animation: rippleEffect 2s linear forwards, colorShift 2s infinite alternate;
+  }
+
+  @keyframes rippleEffect {
+    0% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+
+    100% {
+      transform: scale(50);
+      opacity: 0;
+    }
+  }
+
+  @keyframes colorShift {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+
+  .glow-star {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    box-shadow:
+      0 0 6px rgba(255, 255, 255, 0.9),
+      0 0 12px rgba(0, 255, 255, 0.6),
+      0 0 20px rgba(0, 128, 255, 0.4);
+    animation: twinkle 3s infinite alternate ease-in-out;
+  }
+
+  @keyframes twinkle {
+    0% {
+      opacity: 0.3;
+      transform: scale(0.8);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
