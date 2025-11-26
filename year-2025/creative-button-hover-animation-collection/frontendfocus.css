@@ -1,0 +1,117 @@
+.btn {
+  padding: 10px 20px;
+    flex-direction: row;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s 
+ease;
+    display: flex;
+    min-width: 150px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 1. Pulse Animation */
+.btn-pulse {
+  background-color: #3498db;
+  color: white;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 2. Wobble Animation */
+.btn-wobble {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-wobble:hover {
+  animation: wobble 0.8s;
+}
+
+@keyframes wobble {
+  0%,
+  100% {
+    transform: translateX(0%);
+  }
+  15% {
+    transform: translateX(-25%) rotate(-5deg);
+  }
+  30% {
+    transform: translateX(20%) rotate(3deg);
+  }
+  45% {
+    transform: translateX(-15%) rotate(-3deg);
+  }
+  60% {
+    transform: translateX(10%) rotate(2deg);
+  }
+  75% {
+    transform: translateX(-5%) rotate(-1deg);
+  }
+}
+
+/* 3. Border Reveal */
+.btn-border-reveal {
+  background-color: transparent;
+  color: #9b59b6;
+  border: 2px solid #9b59b6;
+  position: relative;
+}
+
+.btn-border-reveal::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #9b59b6;
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.btn-border-reveal:hover::after {
+  width: 100%;
+}
+
+.btn-border-reveal:hover {
+  color: white;
+}
+
+/* 4. Rotate 3D */
+.btn-rotate-3d {
+  background-color: #f39c12;
+  color: white;
+  perspective: 300px;
+  transform-style: preserve-3d;
+}
+
+.btn-rotate-3d:hover {
+  animation: rotate3d 0.7s;
+}
+
+@keyframes rotate3d {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(180deg);
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
+}
