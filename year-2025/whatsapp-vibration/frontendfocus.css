@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+a {
+    text-decoration: none;
+}
+
+.floating_btn {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+@keyframes pulsing {
+    to {
+        box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+    }
+}
+
+.contact_icon {
+    background-color: #42db87;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translatey(0px);
+    animation: pulse 1.5s infinite;
+    box-shadow: 0 0 0 0 #42db87;
+    -webkit-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    font-weight: normal;
+    font-family: sans-serif;
+    text-decoration: none !important;
+    transition: all 300ms ease-in-out;
+}
+
+.text_icon {
+    margin-top: 8px;
+    color: #707070;
+    font-size: 16px;
+}
+
+/* To adjust on mobile */
+@media screen and (max-width: 768px) {
+ .floating_btn {
+    right: 30px;
+    bottom: 30px;
+ }   
+}
