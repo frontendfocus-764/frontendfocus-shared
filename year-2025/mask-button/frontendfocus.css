@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BUTTON COLOR THEME */
+:root {
+  --main-color: #1e88e5;
+  /* Change this to update all button colors */
+  --text-color: #ffffff;
+}
+
+.button-container-1,
+.button-container-2,
+.button-container-3 {
+  position: relative;
+  width: 150px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6vh;
+  overflow: hidden;
+  border: 1px solid var(--main-color);
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  transition: 0.5s;
+  letter-spacing: 1px;
+  border-radius: 8px;
+}
+
+/* BUTTON STYLES */
+.button-container-1 button,
+.button-container-2 button,
+.button-container-3 button {
+  width: 101%;
+  height: 100%;
+  font-family: "Lato", sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  background: var(--main-color);
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.mas {
+  position: absolute;
+  text-align: center;
+  width: 101%;
+  font-family: "Lato", sans-serif;
+  font-size: 11px;
+  margin-top: 17px;
+  font-weight: bold;
+  color: var(--main-color);
+  overflow: hidden;
+}
+
+/* MASK 1 */
+.button-container-1 button {
+  -webkit-mask-image: url("mask-back1.png");
+  mask-image: url("mask-back1.png");
+  -webkit-mask-size: 2300% 100%;
+  mask-size: 2300% 100%;
+  -webkit-animation: ani2 0.7s steps(22) forwards;
+  animation: ani2 0.7s steps(22) forwards;
+}
+
+.button-container-1 button:hover {
+  -webkit-animation: ani 0.7s steps(22) forwards;
+  animation: ani 0.7s steps(22) forwards;
+}
+
+/* MASK 2 */
+.button-container-2 {
+  margin-top: 7vh;
+}
+
+.button-container-2 button {
+  -webkit-mask-image: url("mask-back2.png");
+  mask-image: url("mask-back2.png");
+  -webkit-mask-size: 3000% 100%;
+  mask-size: 3000% 100%;
+  -webkit-animation: ani2 0.7s steps(29) forwards;
+  animation: ani2 0.7s steps(29) forwards;
+}
+
+.button-container-2 button:hover {
+  -webkit-animation: ani 0.7s steps(29) forwards;
+  animation: ani 0.7s steps(29) forwards;
+}
+
+/* MASK 3 */
+.button-container-3 {
+  margin-top: 8vh;
+}
+
+.button-container-3 button {
+  -webkit-mask-image: url("mask-back3.png");
+  mask-image: url("mask-back3.png");
+  -webkit-mask-size: 7100% 100%;
+  mask-size: 7100% 100%;
+  -webkit-animation: ani2 0.7s steps(70) forwards;
+  animation: ani2 0.7s steps(70) forwards;
+}
+
+.button-container-3 button:hover {
+  -webkit-animation: ani 0.7s steps(70) forwards;
+  animation: ani 0.7s steps(70) forwards;
+}
+
+/* ANIMATIONS */
+@-webkit-keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+@keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+@-webkit-keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+
+@keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
