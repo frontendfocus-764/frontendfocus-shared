@@ -1,0 +1,329 @@
+		body {
+  position: fixed;
+  height: 100svh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d8dee8;
+}
+body:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(150% 150% at 0% 20%, #d8dee8 20%, #788daf);
+}
+
+.button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 30vmin;
+  width: 1em;
+  height: 1em;
+  opacity: 0;
+  -webkit-animation: buttonIn 2s cubic-bezier(0.33, 0.45, 0.3, 1) forwards 2s;
+          animation: buttonIn 2s cubic-bezier(0.33, 0.45, 0.3, 1) forwards 2s;
+  background: none;
+  border-radius: 50%;
+}
+@-webkit-keyframes buttonIn {
+  from {
+    opacity: 0;
+    transform: scale3d(1.1, 1.15, 1);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes buttonIn {
+  from {
+    opacity: 0;
+    transform: scale3d(1.1, 1.15, 1);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.button:before, .button:after {
+  content: "";
+  border-radius: inherit;
+}
+.button:before {
+  filter: blur(0.025em);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: radial-gradient(160% 160% at 57.5% 60%, rgba(235, 238, 243, 0) 30%, #ebeef3 45%), radial-gradient(180% 200% at 40% 17.5%, rgba(152, 168, 194, 0) 35%, #98a8c2 50%), radial-gradient(120% 120% at 45% 45%, rgba(184, 195, 213, 0) 42%, rgba(152, 168, 194, 0.75) 50%);
+  background-color: #bcc6d8;
+  box-shadow: inset -0.05em -0.05em 0.025em -0.025em #a8b5cc, 0.115em 0.15em 0.1em -0.033em #98a9c2, 0.15em 0.2em 0.25em #a8b5cc, 0.5em 0.33em 0.5em 0.1em #a8b5cc, -0.1em -0.1em 0.05em -0.075em #dee3ec, -0.2em -0.2em 0.33em -0.075em #dadfe9;
+}
+.button:after {
+  position: absolute;
+  top: 0.025em;
+  right: 0.025em;
+  bottom: 0.025em;
+  left: 0.025em;
+  background: radial-gradient(150% 150% at 75% 75%, rgba(120, 141, 175, 0) 30%, #788daf), radial-gradient(150% 150% at -10% -10%, rgba(226, 230, 238, 0) 50%, #e2e6ee);
+  background-color: #b8c3d5;
+  transition: 0.75s cubic-bezier(0.33, 0.45, 0.3, 1);
+  transition-delay: 0.25s;
+  opacity: 0;
+  filter: blur(0.03em);
+  transform: scale3d(0.925, 0.94, 1);
+}
+
+.print {
+  position: relative;
+  width: 40%;
+  height: 0;
+  padding-bottom: 44.488%;
+  display: inline-block;
+  z-index: 1;
+  transform: scale3d(1.05, 1.05, 1);
+  backface-visiblity: hidden;
+  color: rgba(51, 170, 255, 0.5);
+}
+.print svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.print path {
+  stroke-width: 4;
+  fill: none;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  transition: 2s cubic-bezier(0.33, 0.45, 0.3, 1);
+  will-change: stroke-dashoffset, stroke, color, opacity;
+}
+.print--under {
+  margin-right: -40%;
+  mix-blend-mode: lighten;
+  filter: drop-shadow(0 0 0.033em currentColor);
+  stroke-dashoffset: 0.5;
+  transition: 2s cubic-bezier(0.33, 0.45, 0.3, 1);
+  -webkit-animation: printPulse 2s linear infinite 6.25s;
+          animation: printPulse 2s linear infinite 6.25s;
+}
+@-webkit-keyframes printPulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.33;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes printPulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.33;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.print--under path {
+  opacity: 0;
+  -webkit-animation: printIn 2s cubic-bezier(0.33, 0.45, 0.3, 1) forwards 3.2s;
+          animation: printIn 2s cubic-bezier(0.33, 0.45, 0.3, 1) forwards 3.2s;
+}
+@-webkit-keyframes printIn {
+  from {
+    opacity: 0;
+    stroke-dashoffset: 0.5;
+  }
+  to {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes printIn {
+  from {
+    opacity: 0;
+    stroke-dashoffset: 0.5;
+  }
+  to {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+.print--under path:nth-of-type(1) {
+  stroke: #a6ceff;
+}
+.print--under path:nth-of-type(2) {
+  stroke: #a6d1ff;
+}
+.print--under path:nth-of-type(3) {
+  stroke: #a6d4ff;
+}
+.print--under path:nth-of-type(4) {
+  stroke: #a6d7ff;
+}
+.print--under path:nth-of-type(5) {
+  stroke: #a6daff;
+}
+.print--over {
+  filter: drop-shadow(-0.0075em -0.0075em 0.005em rgba(0, 0, 51, 0.1)) drop-shadow(0.0075em 0.0075em 0.005em rgba(255, 255, 255, 0.25)) drop-shadow(0 0 0.04em currentColor);
+  opacity: 0;
+  transition: transform 2s cubic-bezier(0.33, 0.45, 0.3, 1), color 0s 0.4s, opacity 0.5s cubic-bezier(0.33, 0.45, 0.3, 1);
+}
+.print--over:after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -60%;
+  bottom: -40%;
+  left: -60%;
+  border-radius: 50%;
+  opacity: 0;
+  background: radial-gradient(32.5% 32.5% at 42.5% 42.5%, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0));
+  mix-blend-mode: color-dodge;
+  transition: opacity 0.3s cubic-bezier(0.33, 0.45, 0.3, 1);
+  -webkit-animation: glowPulse 3s linear infinite, glowTwist 3s linear infinite;
+          animation: glowPulse 3s linear infinite, glowTwist 3s linear infinite;
+}
+@-webkit-keyframes glowPulse {
+  0% {
+    transform: scale3d(0.9, 0.9, 1);
+  }
+  50% {
+    transform: scale3d(1, 1, 1);
+  }
+  100% {
+    transform: scale3d(0.9, 0.9, 1);
+  }
+}
+@keyframes glowPulse {
+  0% {
+    transform: scale3d(0.9, 0.9, 1);
+  }
+  50% {
+    transform: scale3d(1, 1, 1);
+  }
+  100% {
+    transform: scale3d(0.9, 0.9, 1);
+  }
+}
+@-webkit-keyframes glowTwist {
+  0% {
+    rotate: 0deg;
+  }
+  50% {
+    rotate: 180deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+@keyframes glowTwist {
+  0% {
+    rotate: 0deg;
+  }
+  50% {
+    rotate: 180deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+.print--over path {
+  opacity: 0;
+  stroke-dashoffset: 1;
+  transition: stroke 0.5s cubic-bezier(0.33, 0.45, 0.3, 1), opacity 0s 0.5s, stroke-dashoffset 0s 0.5s;
+}
+.print--over path:nth-of-type(1) {
+  stroke: #338fff;
+}
+.print--over path:nth-of-type(2) {
+  stroke: #3396ff;
+}
+.print--over path:nth-of-type(3) {
+  stroke: #339cff;
+}
+.print--over path:nth-of-type(4) {
+  stroke: #33a3ff;
+}
+.print--over path:nth-of-type(5) {
+  stroke: #33aaff;
+}
+
+.button:hover.test,
+.button.test.test {
+  -webkit-animation: none;
+          animation: none;
+  opacity: 1;
+  transform: none;
+  font-size: 60vmin;
+}
+.button:hover:after,
+.button.test:after {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0s;
+}
+.button:hover .print,
+.button.test .print {
+  transform: scale3d(1, 1, 1) translateZ(0);
+}
+.button:hover .print--over,
+.button.test .print--over {
+  color: rgba(111, 0, 255, 0.66);
+  opacity: 0.66;
+  transition: 1.5s cubic-bezier(0.33, 0.45, 0.3, 1) 4.5s, opacity 0.25s cubic-bezier(0.33, 0.45, 0.3, 1), transform 2s cubic-bezier(0.33, 0.45, 0.3, 1);
+}
+.button:hover .print--over:after,
+.button.test .print--over:after {
+  transition: opacity 2s cubic-bezier(0.33, 0.45, 0.3, 1) 5.25s;
+}
+.button:hover .print--over path,
+.button.test .print--over path {
+  opacity: 1;
+  stroke-dashoffset: 0;
+}
+.button:hover .print--over path:nth-of-type(1),
+.button.test .print--over path:nth-of-type(1) {
+  stroke: #2b00ff;
+  transition: opacity 0.25s cubic-bezier(0.33, 0.45, 0.3, 1) 0.35s, stroke-dashoffset 4.2s cubic-bezier(0.33, 0.45, 0.3, 1) 0.35s, stroke 1.2s cubic-bezier(0.33, 0.45, 0.3, 1) 4.65s, color 1.2s cubic-bezier(0.33, 0.45, 0.3, 1) 4.65s;
+}
+.button:hover .print--over path:nth-of-type(2),
+.button.test .print--over path:nth-of-type(2) {
+  stroke: #3c00ff;
+  transition: opacity 0.25s cubic-bezier(0.33, 0.45, 0.3, 1) 0.45s, stroke-dashoffset 4.4s cubic-bezier(0.33, 0.45, 0.3, 1) 0.45s, stroke 1.4s cubic-bezier(0.33, 0.45, 0.3, 1) 4.55s, color 1.4s cubic-bezier(0.33, 0.45, 0.3, 1) 4.55s;
+}
+.button:hover .print--over path:nth-of-type(3),
+.button.test .print--over path:nth-of-type(3) {
+  stroke: #4d00ff;
+  transition: opacity 0.25s cubic-bezier(0.33, 0.45, 0.3, 1) 0.55s, stroke-dashoffset 4.6s cubic-bezier(0.33, 0.45, 0.3, 1) 0.55s, stroke 1.6s cubic-bezier(0.33, 0.45, 0.3, 1) 4.45s, color 1.6s cubic-bezier(0.33, 0.45, 0.3, 1) 4.45s;
+}
+.button:hover .print--over path:nth-of-type(4),
+.button.test .print--over path:nth-of-type(4) {
+  stroke: #5e00ff;
+  transition: opacity 0.25s cubic-bezier(0.33, 0.45, 0.3, 1) 0.65s, stroke-dashoffset 4.8s cubic-bezier(0.33, 0.45, 0.3, 1) 0.65s, stroke 1.8s cubic-bezier(0.33, 0.45, 0.3, 1) 4.35s, color 1.8s cubic-bezier(0.33, 0.45, 0.3, 1) 4.35s;
+}
+.button:hover .print--over path:nth-of-type(5),
+.button.test .print--over path:nth-of-type(5) {
+  stroke: #6f00ff;
+  transition: opacity 0.25s cubic-bezier(0.33, 0.45, 0.3, 1) 0.75s, stroke-dashoffset 5s cubic-bezier(0.33, 0.45, 0.3, 1) 0.75s, stroke 2s cubic-bezier(0.33, 0.45, 0.3, 1) 4.25s, color 2s cubic-bezier(0.33, 0.45, 0.3, 1) 4.25s;
+}
