@@ -1,0 +1,142 @@
+:root {
+  --primary-color: #6a00ff;
+  --secondary-color: #009dff;
+  --text-color: #ffffff;
+  --border-color: #d4d4d4;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #555;
+  background: #f2f4f7;	
+  margin: 0;
+}
+
+.wrapper {
+  margin: 60px;
+}
+
+.description {
+  padding-left: 18px;
+  border-left: 3px solid var(--primary-color);
+}
+
+.description h3 {
+  font-weight: 600;
+  font-size: 22px;
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.description p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+ul.breadcrumbs {
+  margin: 25px 0 0;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+  display: inline-block;
+  vertical-align: top;
+  height: 40px;
+  background: #fff;
+  padding: 6px;
+  border-radius: 8px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+/* List items */
+ul.breadcrumbs li {
+  position: relative;
+  display: inline-block;
+  list-style: none;
+  border-left: 1px solid var(--border-color);
+  transition: 0.3s ease;
+}
+
+/* Arrow */
+ul.breadcrumbs li:before {
+  content: "";
+  position: absolute;
+  right: -9px;
+  top: -1px;
+  z-index: 20;
+  border-left: 10px solid #fff;
+  border-top: 22px solid transparent;
+  border-bottom: 22px solid transparent;
+  transition: 0.3s ease;
+}
+
+ul.breadcrumbs li:after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: -1px;
+  z-index: 10;
+  border-left: 10px solid var(--border-color);
+  border-top: 22px solid transparent;
+  border-bottom: 22px solid transparent;
+}
+
+/* Hover effect */
+ul.breadcrumbs li:hover:before {
+  border-left-color: var(--primary-color);
+}
+ul.breadcrumbs li:hover:after {
+  border-left-color: var(--primary-color);
+}
+
+ul.breadcrumbs li:hover a {
+  color: var(--text-color) !important;
+  background: var(--primary-color);
+}
+
+/* Links */
+ul.breadcrumbs li a {
+  display: block;
+  font-size: 13px;
+  line-height: 40px;
+  color: #666;
+  padding: 0 18px 0 28px;
+  text-decoration: none;
+  background: #fff;
+  border: 1px solid var(--border-color);
+  white-space: nowrap;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+/* Active state */
+ul.breadcrumbs li.active a {
+  background: var(--primary-color);
+  color: var(--text-color) !important;
+  border-color: var(--primary-color);
+}
+
+ul.breadcrumbs li.active:before,
+ul.breadcrumbs li.active:after {
+  border-left-color: var(--primary-color);
+}
+
+/* First item */
+ul.breadcrumbs li.first {
+  border-left: none;
+}
+ul.breadcrumbs li.first a {
+  font-size: 18px;
+  padding-left: 20px;
+  border-radius: 6px 0 0 6px;
+}
+
+/* Last item */
+ul.breadcrumbs li.last:before,
+ul.breadcrumbs li.last:after {
+  display: none;
+}
+ul.breadcrumbs li.last a {
+  padding-right: 20px;
+  border-radius: 0 10px 10px 0;
+}
