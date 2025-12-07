@@ -1,0 +1,32 @@
+html,
+body {
+    width: 100%;
+    height: 100vh;
+    font-size: 50px;
+    font-family: "Comfortaa", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: rgb(129, 2, 129);
+}
+
+.wrapper {
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.src-txt,
+.top-txt {
+    position: relative;
+}
+
+.top-txt {
+    user-select: none;
+    -webkit-user-select: none;
+}
