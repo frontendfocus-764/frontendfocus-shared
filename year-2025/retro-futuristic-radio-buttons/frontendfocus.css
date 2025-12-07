@@ -1,0 +1,95 @@
+html,
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #3d3e4a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.radio-btn-group {
+    margin: 10px;
+}
+
+input[type=radio] {
+    opacity: 0;
+    position: absolute;
+}
+
+input[type=radio]:checked+label::before {
+    box-shadow: 0 0 25px 2px #0763f7;
+}
+
+input[type=radio]:checked+label span {
+    color: #c40a35;
+}
+
+input[type=radio]:focus+label::before {
+    box-shadow: 0 0 25px 2px #0763f7;
+}
+
+label {
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    font-weight: 500;
+    font-style: italic;
+    align-items: center;
+    justify-content: center;
+    font-family: "IBM Plex Mono", monospace;
+    height: 50px;
+    padding: 0 30px;
+    position: relative;
+}
+
+label::before {
+    background-color: #24252c;
+    background-image: repeating-linear-gradient(0deg, #181a29, #181a29 1px, #202436 1px, #202436 2px);
+    border-radius: 10px;
+    content: "";
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    transform: skew(-15deg);
+    transition: box-shadow 700ms;
+    width: 100%;
+    z-index: -1;
+}
+
+label span {
+    transition: color 350ms;
+    z-index: 1;
+}
+
+label svg {
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+    transform: skew(-15deg);
+}
+
+label svg .blue rect {
+    fill: #76b3fa;
+    shape-rendering: crispEdges;
+    mix-blend-mode: plus-lighter;
+}
+
+label svg .pink rect {
+    fill: #ff6bd3;
+    shape-rendering: crispEdges;
+}
