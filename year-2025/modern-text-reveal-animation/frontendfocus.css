@@ -1,0 +1,40 @@
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, #0a0a0a, #000);
+    font-family: "Inter", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.txt {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 32px;
+    font-weight: 600;
+    color: #ffffff;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+}
+
+.txt span {
+    white-space: pre;
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+    filter: blur(6px);
+    animation: fadeIn 0.45s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
