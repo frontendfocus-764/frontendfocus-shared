@@ -1,0 +1,144 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", system-ui, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at top, #2c5364, #0f2027);
+    color: #ffffff;
+}
+
+/* Card */
+.field {
+    width: 420px;
+    padding: 26px 30px 24px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+    position: relative;
+}
+
+/* Input */
+.field input {
+    width: 100%;
+    padding: 14px 32px 8px 0;
+    font-size: 16px;
+    color: #ffffff;
+    background: none;
+    border: 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+    transition: border-color 0.3s ease;
+}
+
+.field input:focus {
+    outline: none;
+    border-bottom-color: #4fc3ff;
+}
+
+.field input:invalid {
+    box-shadow: none;
+}
+
+/* Label wrapper */
+.field label {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    pointer-events: none;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 0.25s ease;
+}
+
+/* Floating label */
+.field input:focus+label,
+.field input:valid+label,
+.field input.hasValue+label {
+    transform: translateY(-22px);
+    font-size: 12px;
+    color: #4fc3ff;
+    pointer-events: auto;
+}
+
+/* Toggle Password */
+.field .togglePass {
+    pointer-events: auto;
+    border: 0;
+    background: none;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    opacity: 0;
+    color: #ffffff;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.field .togglePass:hover {
+    transform: scale(1.15);
+}
+
+/* Toggle visibility state */
+.field input:focus+label .togglePass,
+.field input:valid+label .togglePass,
+.field input.hasValue+label .togglePass {
+    opacity: 0.65;
+}
+
+.field input:focus+label .togglePass.active,
+.field input:valid+label .togglePass.active,
+.field input.hasValue+label .togglePass.active {
+    opacity: 1;
+}
+
+/* Rules */
+.field__rules {
+    margin: 22px 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 8px;
+    column-gap: 18px;
+    font-size: 13px;
+}
+
+/* Rule item */
+.field__rules li {
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.55);
+    transition: color 0.25s ease;
+}
+
+/* Rule icon */
+.field__rules li::before {
+    content: "✔";
+    margin-right: 8px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.3);
+    transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+/* Passed rule */
+.field__rules li.pass {
+    color: #ffffff;
+}
+
+.field__rules li.pass::before {
+    color: #4fc3ff;
+    text-shadow: 0 0 10px rgba(79, 195, 255, 0.9);
+}

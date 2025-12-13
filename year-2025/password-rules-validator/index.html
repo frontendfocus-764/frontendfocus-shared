@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Smart Password Field UI (Show/Hide + Live Validation) | HTML CSS JavaScript</title>
+    <link rel="stylesheet" href="frontendfocus.css">
+</head>
+
+<body>
+    <div class='field'>
+        <input type='password' name='password' pattern='^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{9,}$'
+            required>
+        <label title='Toggle password visisbility'>Password<button type="button" class='togglePass'><i class="fa-regular fa-eye"></i></button>
+        </label>
+        <ul class='field__rules'>
+            <li>One lowercase character</li>
+            <li>One uppercase character</li>
+            <li>One number</li>
+            <li>One special character</li>
+            <li>9 characters minimum</li>
+        </ul>
+    </div>
+
+    <script src="frontendfocus.js"></script>
+
+</body>
+
+</html>
