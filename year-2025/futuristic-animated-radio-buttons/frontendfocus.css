@@ -1,0 +1,127 @@
+html,
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* Page Background */
+body {
+    background-color: #0f1113;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Container */
+.container {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Radio Group */
+.radio-btn-group {
+    margin: 12px;
+    min-width: 150px;
+}
+
+/* Hide native radio */
+input[type=radio] {
+    opacity: 0;
+    position: absolute;
+}
+
+/* Checked / Focus Glow */
+input[type=radio]:checked+label::before,
+input[type=radio]:focus+label::before {
+    box-shadow: 0 0 25px 2px #00d1b2;
+}
+
+/* Checked Text Color */
+input[type=radio]:checked+label span {
+    color: #020617;;
+}
+
+/* Label Base */
+label {
+    color: #e5e7eb;
+    cursor: pointer;
+    display: flex;
+    font-weight: 500;
+    font-style: italic;
+    align-items: center;
+    justify-content: center;
+    font-family: "IBM Plex Mono", monospace;
+    height: 52px;
+    padding: 0 32px;
+    position: relative;
+    user-select: none;
+}
+
+/* Button Background */
+label::before {
+    background-color: #111827;
+    background-image: repeating-linear-gradient(0deg,
+            #0f172a,
+            #0f172a 1px,
+            #1e293b 1px,
+            #1e293b 2px);
+    border-radius: 12px;
+    content: "";
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    transform: skew(-15deg);
+    transition: box-shadow 700ms, background-color 300ms;
+    width: 100%;
+    z-index: -1;
+}
+
+/* Button Text */
+label span {
+    transition: color 350ms;
+    z-index: 1;
+    letter-spacing: 0.05em;
+}
+
+/* SVG Overlay */
+label svg {
+    border-radius: 12px;
+    overflow: hidden;
+    position: absolute;
+    transform: skew(-15deg);
+    inset: 0;
+}
+
+/* Blue Animation Bars */
+label svg .blue rect {
+    fill: #3b82f6;
+    shape-rendering: crispEdges;
+    mix-blend-mode: plus-lighter;
+}
+
+/* Teal Animation Bars */
+label svg .pink rect {
+    fill: #22d3ee;
+    shape-rendering: crispEdges;
+}
+
+/* Hover Effect */
+label:hover::before {
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    label {
+        height: 48px;
+        padding: 0 24px;
+        font-size: 0.9rem;
+    }
+}
