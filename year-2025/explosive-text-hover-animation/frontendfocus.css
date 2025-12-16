@@ -1,0 +1,65 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #1a1a1a;
+    font-family: 'Arial', sans-serif;
+}
+
+.hover-container {
+    display: inline-block;
+    position: relative;
+}
+
+.explosive-text {
+    font-size: 3rem;
+    color: #fff;
+    letter-spacing: 0.1em;
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s ease-out;
+}
+
+.explosive-text:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.explosive-text:hover::before,
+.explosive-text:hover::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: burst 0.8s ease-out forwards;
+}
+
+.explosive-text:hover::before {
+    background: radial-gradient(circle, rgba(255, 0, 150, 0.6), transparent);
+    z-index: -1;
+}
+
+.explosive-text:hover::after {
+    background: radial-gradient(circle, rgba(0, 200, 255, 0.6), transparent);
+    z-index: -2;
+}
+
+@keyframes burst {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    70% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
