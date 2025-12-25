@@ -1,0 +1,71 @@
+body {
+            margin: 0;
+            padding: 0;
+            font-family: "Canva Sans", Arial, Helvetica, sans-serif;
+        }
+
+        .wrapper {
+            position: relative;
+        }
+
+        svg {
+            display: block;
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            z-index: 3;
+            top: 0;
+            left: 0;
+        }
+
+        .scrollElement {
+            position: absolute;
+            height: 6000px;
+            width: 100%;
+            top: 0;
+            z-index: 4;
+        }
+
+        .btn {
+            position: fixed;
+            bottom: 5%;
+            right: 0px;
+            transform: translateX(-50%);
+            border: 1px solid #fff;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            padding: 0.5rem 0.7em;
+            background-color: transparent;
+            color: #ffffff;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            cursor: pointer;
+            transition: all .3s;
+            z-index: 11;
+        }
+
+        .btn_works {
+            left: 100px;
+            right: unset;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #ffffff;
+            color: #1B1734;
+        }
+
+        /* MARK: ---0-490 Mobile */
+        @media (max-width: 490px) {
+
+            #text,
+            #arrow {
+                transform-origin: 50% 50%;
+                transform: translateY(-120px) scale(0.8);
+            }
+
+            #info2 {
+                transform-origin: 50% 50%;
+                transform: translateY(-120px) scale(0.8);
+            }
+        }
