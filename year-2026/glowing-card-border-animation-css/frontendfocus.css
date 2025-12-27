@@ -1,0 +1,175 @@
+@import url("https://fonts.bunny.net/css?family=abel:400");
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-dark: rgb(2, 6, 24);
+  --bg-light: rgb(229, 229, 229);
+  --txt-light: rgb(10, 10, 10);
+  --txt-dark: rgb(245, 245, 245);
+}
+
+body {
+  background-color: var(--bg-dark);
+  background-image: radial-gradient(#444, #000);
+  color: var(--txt-dark);
+  min-height: 100svh;
+  margin: 0;
+  padding: 1rem;
+  font-size: 1rem;
+  font-family: "Abel", sans-serif;
+  line-height: 1.5;
+  display: grid;
+  place-items: center;
+  gap: 2rem;
+}
+
+.cards {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+}
+
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  --animation-duration: 8s;
+  --border-width: 5px;
+  --glow-offset: -20px;
+  --border-radius: 0px;
+
+  position: relative;
+  border: solid var(--border-width) transparent;
+  border-radius: var(--border-radius);
+  background-image: url("ff-bg.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top center;
+}
+
+@media (min-width: 600px) {
+  .card {
+    min-height: 350px;
+  }
+}
+
+.card:nth-child(1) {
+  --moon-clr: rgb(1, 1, 1);
+}
+
+.card:nth-child(2) {
+  --moon-clr: rgb(166, 95, 0);
+}
+
+.card:nth-child(3) {
+  --moon-clr: rgb(159, 7, 18);
+}
+
+.card:nth-child(4) {
+  --moon-clr: rgb(0, 89, 138);
+}
+
+.card > div {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+  padding: 1rem;
+}
+
+.card > div::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, var(--moon-clr), transparent);
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  text-shadow: 1px 1px var(--moon-clr);
+}
+
+.card p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-shadow: 0 0 2px black;
+}
+
+.card a {
+  background-color: var(--moon-clr);
+  color: #fff;
+  font-size: 0.8rem;
+  text-transform: lowercase;
+  width: 80px;
+  padding: 0.25rem 0.5rem;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: width 150ms ease-in-out;
+}
+
+.card a:hover {
+  width: 100%;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: calc(var(--border-width) * -1);
+  border: inherit;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--angle),
+    var(--moon-clr) 40%,
+    transparent,
+    var(--moon-clr) 60%
+  ) border-box;
+  mask: conic-gradient(#fff 0 0) subtract,
+        conic-gradient(#fff 0 0) padding-box;
+  opacity: 0.75;
+  z-index: 1;
+  animation: neon-rotate var(--animation-duration) linear infinite;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: var(--glow-offset);
+  z-index: -2;
+  background: conic-gradient(
+    from var(--angle),
+    var(--moon-clr),
+    transparent,
+    var(--moon-clr)
+  );
+  border-radius: 15px;
+  filter: blur(12px);
+  opacity: 0.75;
+  animation: neon-rotate var(--animation-duration) linear infinite;
+}
+
+@keyframes neon-rotate {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
