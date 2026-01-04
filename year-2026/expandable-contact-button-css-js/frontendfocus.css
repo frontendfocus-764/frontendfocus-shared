@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #0f172a; /* dark navy */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  height: 100%;
+}
+
+#button-container,
+#button-container span,
+#button-container button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  font-size: 16px;
+  color: #e5e7eb;
+}
+
+/* Main container */
+#button-container {
+  height: 42px;
+  width: 320px;
+  padding: 0 16px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 2px solid #38bdf8; /* teal accent */
+  border-radius: 14px;
+  overflow: hidden;
+  transition: width 0.8s ease;
+}
+
+/* Icons & sections */
+#button-container > i,
+#button-container span {
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  padding-left: 12px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;  
+}
+
+/* Font Awesome icons */
+#button-container i {
+  font-size: 18px;
+  color: #38bdf8;
+  transition: transform 0.5s ease, color 0.3s;
+}
+
+#button-container i:hover {
+  color: #22d3ee;
+}
+
+/* Minimized state */
+#button-container.minimized {
+  width: 118px;
+}
+
+#button-container.minimized > i,
+#button-container.minimized span {
+  display: none;
+}
+
+#button-container.minimized button i {
+  transform: rotate(180deg);
+}
