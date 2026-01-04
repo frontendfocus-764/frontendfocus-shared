@@ -1,0 +1,93 @@
+::view-transition-group(*) {
+    animation-duration: .45s;
+    animation-timing-function: cubic-bezier(.4, 0, .2, 1);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, system-ui, sans-serif;
+    background: radial-gradient(circle at top, #0f172a, #020617);
+    color: #e5e7eb;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+h1 {
+    font-size: 22px;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+}
+
+/* Selected tags */
+.search {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 420px;
+    min-height: 52px;
+    padding: 12px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    margin-bottom: 24px;
+}
+
+/* Available tags */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 420px;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+button {
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #1e293b, #020617);
+    color: #e5e7eb;
+    transition: all .25s ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+}
+
+button:hover {
+    transform: translateY(-1px) scale(1.03);
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    color: #020617;
+}
+
+/* Remove icon */
+button span {
+    display: none;
+    font-size: 12px;
+    background: rgba(0, 0, 0, .25);
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+.search button {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: #022c22;
+}
+
+.search button span {
+    display: inline-block;
+}
