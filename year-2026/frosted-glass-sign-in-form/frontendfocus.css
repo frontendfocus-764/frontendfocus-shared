@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-style: preserve-3d;
+        }
+
+        #c {
+            background: #100216;
+            background-size: cover;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            z-index: -1;
+        }
+
+        h1 {
+            position: absolute;
+            top: 40px;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            color: white;
+            text-shadow: 0 0 5px black;
+            font-family: 'Poppins', Sans-Serif;
+            letter-spacing: 10px;
+        }
+
+        .glass {
+            width: min(300px, 80vw);
+            height: 400px;
+            background: radial-gradient(#fff2 30%, #fff4);
+            border-radius: 20px;
+            box-shadow: 5px 5px 10px #0007, -1px -1px 2px #fff, 1px 1px 2px #555;
+            backdrop-filter: blur(5px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            transform: translateY(25px);
+            transition: transform .25s;
+        }
+
+        .shine {
+            width: 20%;
+            height: 150%;
+            position: absolute;
+            transform: rotate(30deg);
+            background: #fff5;
+            animation: shine 10s infinite linear;
+            right: 200%;
+            filter: blur(5px);
+        }
+
+        @keyframes shine {
+            5% {
+                transform: translate(800px) rotate(35deg);
+            }
+
+            5.000001% {
+                transform: rotate(30deg);
+            }
+        }
+
+        .glass img {
+            width: 100px;
+            height: 100px;
+            min-width: 100px;
+            min-height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 20px;
+            cursor: pointer;
+            box-shadow: 0 0 25px -5px black;
+            border: solid white 1px;
+            transition: transform .25s;
+        }
+
+        .glass img:hover,
+        .glass img:focus {
+            transform: scale(1.5);
+        }
+
+        input,
+        input:focus,
+        button,
+        button:focus {
+            outline: none;
+            border: none;
+        }
+
+        .glass input {
+            margin: 10px;
+            height: 2em;
+            background: transparent;
+            border-bottom: dashed 2px #fff3;
+            color: #fffa;
+            transition: border .25s;
+        }
+
+        .glass input:focus {
+            color: white;
+            border-bottom: solid 2px #292;
+        }
+
+        .glass input[type=password] {
+            font-family: caption;
+            letter-spacing: 4px;
+        }
+
+        .glass input[type=password]::placeholder {
+            font-family: Arial;
+            letter-spacing: 0px;
+        }
+
+        button {
+            margin: 15px;
+            padding: .5rem 2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            color: #fffa;
+            background: #fff1;
+            box-shadow: 2px 2px 8px 0 #000, -2px -2px 8px 0 #fff7;
+            font-size: .75rem;
+            font-weight: 700;
+            font-family: 'Poppins', Sans-Serif;
+        }
+
+        button:active {
+            box-shadow: 4px 4px 8px #0007 inset, -4px -4px 8px #fff7 inset;
+            color: #999;
+        }
+
+        span {
+            text-decoration: underline;
+            color: white;
+            cursor: pointer;
+            font-size: .75rem;
+            font-family: Sans-Serif;
+            letter-spacing: 1px;
+        }
