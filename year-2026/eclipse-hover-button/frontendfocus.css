@@ -1,0 +1,29 @@
+   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+        body {
+            font-family: Inter, sans-serif;
+            background: #151515;
+        }
+
+        @keyframes eclipse {
+            0% {
+                transform: translateX(110%);
+            }
+
+            100% {
+                transform: translateX(-110%);
+            }
+        }
+
+        .eclipse {
+            background: white;
+            transform: translateX(50%);
+            filter: blur(2px);
+            animation: eclipse 3s linear infinite;
+        }
+
+        .eclipse.glow {
+            background-image:
+                radial-gradient(circle at 50% 50%, transparent, black),
+                linear-gradient(white, white);
+        }

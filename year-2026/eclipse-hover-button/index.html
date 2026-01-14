@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eclipse Glow Animation Using HTML, CSS & Tailwind | UI Effect</title>
+    <link rel="stylesheet" href="frontendfocus.css">
+</head>
+
+<body>
+    <main class="fixed w-screen h-screen flex items-center justify-center">
+        <div class="relative">
+            <div class="absolute inset-0 rounded-full overflow-hidden blur-sm">
+                <div class="eclipse glow absolute inset-0 rounded-full -z-[1]"></div>
+            </div>
+            <div class="relative rounded-full text-sm text-white font-thin bg-black/10 overflow-hidden">
+                <div class="eclipse absolute inset-0 rounded-full bg-white -z-[1]"></div>
+                <div class="m-[2px] px-4 py-1.5 rounded-full bg-black/95">
+                    Deploying Soon
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</body>
+
+</html>
