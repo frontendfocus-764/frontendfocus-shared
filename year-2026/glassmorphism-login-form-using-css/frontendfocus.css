@@ -1,0 +1,71 @@
+#login {
+  background: url("ff.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.divGroup {
+  display: inline-block;
+  text-align: center;
+}
+
+.inputCustomStyle {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background-color: #00000047;
+  color: white;
+  width: 100%;
+  border: 1px solid #00000073;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.glass {
+  position: relative;
+  box-sizing: border-box;
+  padding: 40px;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-radius: 25px 25px 25px 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25), inset 0 0 2px 0px white;
+  background: rgba(0, 0, 0, 0.0125);
+  overflow: hidden;
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.glassBtn {
+  position: relative;
+  /* box-sizing: border-box; */
+  padding: 15px;
+  margin: 5px;
+  width: 100px;
+  /* border: 2px solid rgba(0, 0, 0, 0.15); */
+  border-radius: 25px 25px 25px 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25), inset 0 0 2px 0px white;
+  background-color: #00000082;
+  color: white;
+  overflow: hidden;
+}
+
+.GlassButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.welcomeHeader {
+  color: whitesmoke;
+  font-family: "Roboto", sans-serif;
+}
