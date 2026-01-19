@@ -1,0 +1,178 @@
+/* ===== Base layout ===== */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #0a0f1a;
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Allow shadows to render outside */
+    overflow: visible;
+}
+
+/* = Fullscreen GLSL background canvas = */
+#glcanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+
+/* = Outer visible glassmorphic wrapper = */
+.testimonial-wrapper {
+    position: relative;
+    z-index: 10;
+    padding: 64px;
+    background: rgba(20, 24, 39, 0.36);
+    border-radius: 20px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    /* Darker shadow by default (less glow) */
+    box-shadow:
+        0 0 50px rgba(0, 0, 0, 8),
+        0 0 100px rgba(0, 0, 0, 0.52),
+        inset 0 0 40px rgba(255, 255, 255, 0.05);
+    transition: box-shadow 0.35s ease;
+
+    /* Prevent glow from being clipped */
+    overflow: visible;
+}
+
+/* Bright blue glow on hover */
+.testimonial-wrapper:hover {
+    box-shadow:
+        0 0 90px 25px rgba(0, 178, 255, 0.85),
+        0 0 160px 50px rgba(0, 178, 255, 0.65),
+        inset 0 0 50px rgba(255, 255, 255, 0.18);
+}
+
+/* = Main container = */
+.testimonial-container {
+    width: 100%;
+    max-width: 56rem;
+    padding-left: calc(1.125rem + 56px);
+    padding-top: 1.125rem;
+    padding-right: 1.125rem;
+    padding-bottom: 1.125rem;
+}
+
+/* = Grid layout = */
+.testimonial-grid {
+    display: grid;
+    gap: 8rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .testimonial-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* = Image styles = */
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 24rem;
+    perspective: 1000px;
+}
+
+.testimonial-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* = Glassmorphic testimonial content = */
+.testimonial-content {
+    background: rgba(28, 34, 54, 0.55);
+    border-radius: 16px;
+    padding: 2rem 2.5rem;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    transition: box-shadow 0.3s ease;
+
+    box-shadow:
+        inset 0 0 25px rgba(255, 255, 255, 0.08),
+        0 0 20px rgba(0, 178, 255, 0.2);
+}
+
+/* = Text styles = */
+.name {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #a6daff;
+    margin-bottom: 0.25rem;
+}
+
+.designation {
+    font-size: 0.9rem;
+    color: #74a9e7;
+    margin-bottom: 2rem;
+}
+
+.quote {
+    font-size: 1.2rem;
+    color: #d5e8ff;
+    line-height: 1.8;
+}
+
+/* = Arrow buttons = */
+.arrow-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.arrow-button {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 6px;
+    background: rgba(0, 178, 255, 0.15);
+    border: 1.5px solid rgba(0, 178, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        0 5px 15px rgba(0, 178, 255, 0.4),
+        inset 0 0 12px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.arrow-button svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: #d0eaff;
+    transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.arrow-button:hover {
+    background: rgba(0, 178, 255, 0.3);
+    transform: scale(1.15);
+    box-shadow:
+        0 8px 24px rgba(0, 178, 255, 0.8),
+        inset 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.arrow-button:hover svg {
+    fill: #fff;
+}
+
+.prev-button:hover svg {
+    transform: rotate(-15deg);
+}
+
+.next-button:hover svg {
+    transform: rotate(15deg);
+}
