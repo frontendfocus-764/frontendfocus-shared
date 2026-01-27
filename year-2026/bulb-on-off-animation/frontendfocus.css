@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Baloo Bhai 2", cursive;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+section {
+  text-align: center;
+}
+
+#bulb {
+  width: 200px;
+  transition: 0.4s ease;
+  filter: drop-shadow(0 0 10px rgba(0,0,0,0.4));
+}
+
+#bulb.on {
+  filter: drop-shadow(0 0 30px #22d3ee) brightness(1.3);
+  animation: glow 1.2s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 20px #22d3ee) brightness(1.2);
+  }
+  to {
+    filter: drop-shadow(0 0 40px #38bdf8) brightness(1.4);
+  }
+}
+
+.toggle-btn {
+  margin-top: 30px;
+  padding: 14px 36px;
+  font-size: 18px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  color: #020617;
+  background: linear-gradient(135deg, #22d3ee, #38bdf8);
+  box-shadow: 0 10px 25px rgba(56,189,248,0.4);
+  transition: 0.3s ease;
+}
+
+.toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(56,189,248,0.6);
+}
+
+.toggle-btn.active {
+  background: linear-gradient(135deg, #f43f5e, #fb7185);
+  color: #fff;
+}
