@@ -1,0 +1,61 @@
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: repeating-linear-gradient(
+      0deg,
+      hsla(103, 11%, 32%, 0.09) 0px,
+      hsla(103, 11%, 32%, 0.09) 1px,
+      transparent 1px,
+      transparent 11px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      hsla(103, 11%, 32%, 0.09) 0px,
+      hsla(103, 11%, 32%, 0.09) 1px,
+      transparent 1px,
+      transparent 11px
+    ),
+    linear-gradient(90deg, hsl(317, 13%, 6%), hsl(317, 13%, 6%));
+    font-family: "proxima-nova", sans-serif;
+    color: white;
+}
+
+svg {
+  width: 90vw;
+  height: auto;
+  overflow: visible;
+ 
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+h2 {
+  font-weight: 400;
+}
+h2 span {
+  font-weight: 700;
+  color: #5cceee;
+}
+
+a {
+  background: #5cceee;
+  color: white;
+  padding: 6px 10px;
+  text-decoration: none;
+  border-radius: 3px;
+  margin-top: 10px;
+}
+
+a:hover {
+  background: white;
+  color: #5cceee;
+}
+

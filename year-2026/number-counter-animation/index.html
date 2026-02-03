@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG Counter Animation</title>
+  <link rel="stylesheet" href="frontendfocus.css">
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 300">
+    <g id="elements">
+      <path id="circleLeft"
+        d="M321.5,200a50,50,0,0,1,0-100"
+        fill="none" stroke="#fff" stroke-width="2.09" />
+
+      <path id="circleRight"
+        d="M321.5,200a50,50,0,0,0,0-100"
+        fill="none" stroke="#fff" stroke-width="2.09" />
+
+      <text x="321.5" y="175"
+        font-size="50"
+        fill="#fff"
+        font-weight="700"
+        text-anchor="middle">10</text>
+    </g>
+  </svg>
+
+  <!-- GSAP CORE + REQUIRED PLUGINS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/DrawSVGPlugin.min.js"></script>
+
+  <script src="frontendfocus.js"></script>
+</body>
+</html>
