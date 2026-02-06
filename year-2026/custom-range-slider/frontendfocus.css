@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    font: inherit;
+}
+
+html,
+body {
+    display: grid;
+}
+
+html {
+    height: 100%;
+    background: #10102b;
+    background-blend-mode: screen;
+}
+
+.js {
+    --js: 1;
+}
+
+body {
+    --_js: var(--js, 0);
+    --not-js: calc(1 - var(--_js));
+    grid-gap: 2em;
+    place-content: center;
+}
+
+[type=range] {
+    --ratio:
+        calc((var(--val) - var(--min))/(var(--max) - var(--min)));
+    --track-w: min(41em, 100vw - 20px);
+    --thumb-h: 1.5em;
+    --thumb-w: var(--thumb-h);
+    --thumb-r: calc(.5*var(--thumb-h));
+    --thumb-x: var(--thumb-r);
+    --mover-o: calc(0.75em + -1*var(--thumb-r));
+    --mover-w:
+        calc(var(--track-w) - 2*var(--mover-o) - var(--thumb-w));
+    --progr-s:
+        calc(var(--thumb-w) + var(--mover-o) - var(--thumb-x));
+    --progr-w: calc(var(--progr-s) + var(--ratio)*var(--mover-w));
+    --input-g: linear-gradient(#b7b7b7, #dcdcdc);
+    --thumb-cw: xor;
+    place-self: center;
+    border: solid 0.625em transparent;
+    padding: 0.375em;
+    width: var(--track-w);
+    height: 1.5em;
+    border-radius: 1.75em;
+    box-shadow: 0 0.375em 0.75em #b0b0b0, -0.375em 0.75em 1px rgba(255, 255, 255, 0.1), inset 0 -1px 1px #b9b9b9, inset 0 -3px #e4e4e4;
+    background: linear-gradient(90deg, var(--c0), var(--c1) calc(100% + var(--_js)*var(--thumb-x))) 0/calc(var(--_js)*var(--progr-w)) 100% no-repeat content-box, var(--input-g) padding-box, linear-gradient(#d1d1d1, #f5f5f5) border-box;
+    filter: sepia(calc(1 - var(--sel, 0)));
+}
+
+[type=range],
+[type=range]::-webkit-slider-runnable-track,
+[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+
+@supports selector(::-moz-range-thumb) {
+    [type=range] {
+        border: none;
+        padding: 0;
+        width: calc(var(--track-w) - 2*var(--mover-o));
+        height: 3.5em;
+        box-shadow: none;
+        background: none;
+    }
+}
+
+[type=range]:nth-child(odd):nth-child(-n+3) {
+    --thumb-a: 0;
+}
+
+[type=range]:nth-child(3n+1) {
+    --thumb-h: 2em;
+    --thumb-w:
+        calc(var(--thumb-h) + 2*1.125em + var(--thumb-x));
+    --thumb-l:
+        linear-gradient(90deg, transparent var(--thumb-r), red 0),
+        repeating-linear-gradient(90deg,
+            transparent 0 0.5625em,
+            red 0 1.125em) var(--thumb-r)/ 2.25em 100%;
+    --thumb-m: var(--thumb-l);
+}
+
+[type=range]:nth-child(1) {
+    --slist:
+        red calc(100% - .5px),
+        transparent calc(100% + .5px);
+    --thumb-x: var(--thumb-h);
+    --thumb-m:
+        var(--thumb-l),
+        radial-gradient(circle 2.5em at 0 2.5em,
+            var(--slist)) 100%/ var(--thumb-x) 100%,
+        radial-gradient(circle 2.5em at 0 calc(100% - 2.5em),
+            var(--slist)) 100%/ var(--thumb-x) 100%;
+}
+
+[type=range]:nth-child(2) {
+    --thumb-b: calc(var(--thumb-r) - 0.4375em);
+    --thumb-s: inset 1px 1px 3px #8f8f8f;
+    --thumb-i:
+        var(--input-g) 0/ 100% 2.25em;
+    --thumb-o:
+        linear-gradient(90deg, var(--c0), var(--c1)) 100%/ calc(var(--_js)*(var(--progr-w) + var(--thumb-x)) + var(--not-js)*100%);
+}
+
+[type=range]:nth-child(3) {
+    --thumb-h: 3em;
+    --thumb-t:
+        translatey(calc(.25*var(--thumb-r) - .5*0.25em));
+    --thumb-g:
+        linear-gradient(hsla(0, 0%, 65%, .5),
+            hsla(0, 0%, 85%, .5)),
+        conic-gradient(from 150deg at 50% 0.5em,
+            #fff 60deg, transparent 0%) 0 0/ 100% 2em,
+        linear-gradient(#fff, #000);
+    --thumb-z: normal, difference;
+    --thumb-c:
+        polygon(50% 0,
+            6.6987298108% 75%,
+            93.3012701892% 75%);
+    --thumb-f: blur(1px) contrast(2) contrast(.8);
+    --slist:
+        transparent calc(100% - .5px),
+        red calc(100% + .5px);
+    --thumb-m:
+        linear-gradient(red, red),
+        radial-gradient(circle 0.25em at 50% 0.5em, var(--slist)) 0 0/ 100% 0.375em,
+        radial-gradient(circle 0.25em at 100% 0.125em, var(--slist)) 0 1.875em/ 0.6339745962em 0.375em,
+        radial-gradient(circle 0.25em at 0 0.125em, var(--slist)) 100% 1.875em/ 0.6339745962em 0.375em;
+}
+
+[type=range]:nth-child(5) {
+    --thumb-h: 2.5em;
+    --thumb-g:
+        radial-gradient(closest-side,
+            var(--c1) 0.5em,
+            #f3f3f3 calc(0.5em + 1px) 70%,
+            #b2b2b2);
+}
+
+[type=range]::-webkit-slider-runnable-track {
+    margin: var(--mover-o);
+}
+
+[type=range]::-moz-range-track {
+    border: solid 0.625em transparent;
+    padding: 0.375em;
+    width: var(--track-w);
+    height: 1.5em;
+    border-radius: 1.75em;
+    box-shadow: 0 0.375em 0.75em #b0b0b0, -0.375em 0.75em 1px rgba(255, 255, 255, 0.1), inset 0 -1px 1px #b9b9b9, inset 0 -3px #e4e4e4;
+    background: linear-gradient(90deg, var(--c0), var(--c1) calc(100% + var(--_js)*var(--thumb-x))) 0/calc(var(--_js)*var(--progr-w)) 100% no-repeat content-box, var(--input-g) padding-box, linear-gradient(#d1d1d1, #f5f5f5) border-box;
+}
+
+[type=range]::-webkit-slider-thumb {
+    box-sizing: border-box;
+    border: solid var(--thumb-b, 0) transparent;
+    width: var(--thumb-w);
+    height: var(--thumb-h);
+    border-radius: var(--thumb-a, var(--thumb-r));
+    transform: var(--thumb-t);
+    box-shadow: var(--thumb-s);
+    background: var(--thumb-g, var(--thumb-i, radial-gradient(circle 0.5em at calc(100% - var(--thumb-x)), var(--c1) calc(100% - 1px), transparent)) padding-box, var(--thumb-o, linear-gradient(#f2f2f2, #939393)) border-box);
+    background-blend-mode: var(--thumb-z);
+    clip-path: var(--thumb-c);
+    filter: var(--thumb-f);
+    mask: var(--thumb-m);
+    mask-repeat: no-repeat;
+    mask-composite: exclude;
+    cursor: ew-resize;
+}
+
+[type=range]::-moz-range-thumb {
+    box-sizing: border-box;
+    border: solid var(--thumb-b, 0) transparent;
+    width: var(--thumb-w);
+    height: var(--thumb-h);
+    border-radius: var(--thumb-a, var(--thumb-r));
+    transform: var(--thumb-t);
+    box-shadow: var(--thumb-s);
+    background: var(--thumb-g, var(--thumb-i, radial-gradient(circle 0.5em at calc(100% - var(--thumb-x)), var(--c1) calc(100% - 1px), transparent)) padding-box, var(--thumb-o, linear-gradient(#f2f2f2, #939393)) border-box);
+    background-blend-mode: var(--thumb-z);
+    clip-path: var(--thumb-c);
+    filter: var(--thumb-f);
+    mask: var(--thumb-m);
+    mask-repeat: no-repeat;
+    mask-composite: exclude;
+    cursor: ew-resize;
+}
+
+[type=range]:focus {
+    outline: none;
+}
+
+[type=range]:hover,
+[type=range]:focus {
+    --sel: 1;
+}
