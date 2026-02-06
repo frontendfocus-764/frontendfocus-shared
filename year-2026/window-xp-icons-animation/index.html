@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Windows XP Shutdown Icons</title>
+    <link rel="stylesheet" href="frontendfocus.css">
+</head>
+
+<body>
+    <main>
+	<header>Turn off computer</header>
+	<div class="btn-block">
+		<button id="stand-by" class="icon-btn icon-btn--yellow" type="button" aria-label="Stand By">
+			<svg class="icon icon--stand-by" viewBox="0 0 24 24" width="24px" height="24px" aria-hidden="true">
+				<g fill="none" stroke="#fff">
+					<polyline class="icon__part icon__part--1" points="12,2 12,12" stroke-dasharray="10 10" stroke-width="3" data-anim-end />
+					<circle class="icon__part icon__part--2" cx="12" cy="12" r="8" stroke-dasharray="50.265 50.265" stroke-dashoffset="-8.378" stroke-width="2" transform="rotate(-120,12,12)" />
+				</g>
+			</svg>
+		</button>
+		<span class="btn-block__u">S</span>tand By
+	</div>
+	<div class="btn-block">
+		<button id="turn-off" class="icon-btn icon-btn--red" type="button" aria-label="Turn Off">
+			<svg class="icon icon--turn-off" viewBox="0 0 24 24" width="24px" height="24px" aria-hidden="true">
+				<g fill="none" stroke="#fff">
+					<polyline class="icon__part icon__part--1" stroke-width="3" points="12,7 12,17" data-anim-end />
+					<circle class="icon__part icon__part--2" cx="12" cy="12" r="9" stroke-dasharray="56.549 56.549" stroke-linecap="square" stroke-width="2" transform="rotate(-90,12,12)" />
+				</g>
+			</svg>
+		</button>
+		T<span class="btn-block__u">u</span>rn Off
+	</div>
+	<div class="btn-block">
+		<button id="restart" class="icon-btn icon-btn--green" type="button" aria-label="Restart">
+			<svg class="icon icon--restart" viewBox="0 0 24 24" width="24px" height="24px" aria-hidden="true">
+				<g fill="none" stroke="#fff" stroke-dasharray="6 17" stroke-dashoffset="-5">
+					<polyline class="icon__part icon__part--1" points="0,0 0,11" stroke-width="3" transform="translate(12,12) rotate(0)" data-anim-end />
+					<polyline class="icon__part icon__part--1" points="0,0 0,11" stroke-width="2" transform="translate(12,12) rotate(45)" />
+					<polyline class="icon__part icon__part--1" points="0,0 0,11" stroke-width="3" transform="translate(12,12) rotate(90)" />
+					<polyline class="icon__part icon__part--1" points="0,0 0,11" stroke-width="2" transform="translate(12,12) rotate(135)" />
+					<polyline class="icon__part icon__part--1" points="0,0 0,11" stroke-width="3" transform="translate(12,12) rotate(180)" />
+					<polyline class="icon__part icon__part--1" points="0,0 0,11" stroke-width="2" transform="translate(12,12) rotate(225)" />
+					<polyline class="icon__part icon__part--1" points="0,0 0,11" stroke-width="3" transform="translate(12,12) rotate(270)" />
+					<polyline class="icon__part icon__part--1" points="0,0 0,11" stroke-width="2" transform="translate(12,12) rotate(315)" />
+				</g>
+			</svg>
+		</button>
+		<span class="btn-block__u">R</span>estart
+	</div>
+		</main>
+
+        <script src="frontendfocus.js"></script>
+</body>
+
+</html>
