@@ -1,0 +1,38 @@
+:root {
+  font-size: 13px;
+  font-family: monospace;
+  --fg-color: #323230;
+  --bg-color: #FDFDF2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  color: var(--fg-color);
+  background-color: var(--bg-color);
+}
+
+a {
+  color: inherit;
+}
+
+svg {
+  display: block;
+  fill: currentColor;
+}
+
+.hide {
+  opacity: 0;
+}
