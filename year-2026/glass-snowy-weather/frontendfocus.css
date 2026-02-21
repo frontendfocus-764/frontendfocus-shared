@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap');
+
+:root {
+  --glass: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --text: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Outfit', sans-serif;
+  overflow: hidden;
+  background-color: #0f172a;
+}
+
+/* Background Image simulating snowy environment */
+.background-scene {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: url('https://images.unsplash.com/photo-1483664852095-d6cc6870705d?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+  filter: blur(4px) brightness(0.7);
+  z-index: -1;
+}
+
+.weather-card {
+  position: relative;
+  width: 350px;
+  padding: 30px;
+  background: var(--glass);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid var(--glass-border);
+  border-radius: 25px;
+  color: var(--text);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.weather-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Dynamic Snowflakes CSS */
+.snowflake {
+  position: absolute;
+  top: -10px;
+  color: white;
+  font-size: 1em;
+  opacity: 0.8;
+  user-select: none;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to { transform: translateY(400px); opacity: 0; }
+}
+
+/* Top Section */
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(0,0,0,0.2);
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.live-date {
+  font-weight: 500;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Middle Section */
+.middle-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.icon-temp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.temp {
+  font-size: 4.5rem;
+  font-weight: 700;
+  background: linear-gradient(to bottom, #fff, #bde0fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.condition {
+  font-size: 1.1rem;
+  margin-top: -10px;
+  opacity: 0.9;
+}
+
+/* Weather Icon Animation */
+.cloud {
+  width: 60px; height: 30px;
+  background: #fff;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.cloud::after {
+  content: ''; position: absolute;
+  top: -15px; left: 10px;
+  width: 30px; height: 30px;
+  background: #fff;
+  border-radius: 50%;
+}
+.snowflakes-icon {
+  font-size: 20px;
+  position: absolute;
+  margin-top: 5px;
+  animation: spin 3s linear infinite;
+}
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* Bottom Details */
+.bottom-details {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--glass-border);
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
+.detail-box {
+  text-align: center;
+}
+
+.detail-box .label {
+  display: block;
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-bottom: 5px;
+}
+
+.detail-box .value {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Branding Footer */
+.widget-footer {
+  text-align: center;
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+.widget-footer a {
+  color: #a2d2ff;
+  text-decoration: none;
+}
