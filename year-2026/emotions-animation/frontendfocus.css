@@ -1,0 +1,130 @@
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #bdc5ff;
+}
+
+.grid {
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  place-items: center;
+}
+
+.runner {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 300vw;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+}
+
+.number {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 200px;
+  position: fixed;
+  bottom: 2rem;
+  left: calc(50% - 100px);
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  background: #fcfcfc;
+  height: 1rem;
+  border-radius: 0.25rem;
+  border: 3px solid black;
+}
+
+input[type=range]::-moz-range-track {
+  background: #fcfcfc;
+  height: 1rem;
+  border-radius: 0.25rem;
+  border: 3px solid black;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -0.75rem;
+  background-color: #ffd433;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 6px;
+  border: 3px solid black;
+  box-shadow: 2px 2px 0 0 black;
+}
+
+input[type=range]::-moz-range-thumb {
+  margin-top: -0.75rem;
+  background-color: #ffd433;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 6px;
+  border: 3px solid black;
+  box-shadow: 2px 2px 0 0 black;
+}
+
+svg {
+  overflow: visible;
+}
+
+.shadow {
+  fill: rgba(0, 0, 0, 0.1);
+}
+
+.leg, .foot, .mouth, .body, .eyebrows {
+  fill: none;
+  stroke: #000;
+  stroke-linecap: round;
+  stroke-width: 6px;
+}
+
+.foot, .mouth {
+  stroke-width: 8px;
+}
+
+.neutral {
+  fill: #99a1ff;
+}
+.neutral.dark {
+  fill: #808aff;
+}
+.neutral.shadow {
+  fill: #6672ff;
+  fill-opacity: 0.2;
+}
+
+.negative {
+  fill: #ff4d6f;
+}
+.negative.dark {
+  fill: #ff345a;
+}
+.negative.shadow {
+  fill: #ff1a46;
+  fill-opacity: 0.2;
+}
+
+.positive {
+  fill: #2fda98;
+}
+.positive.dark {
+  fill: #24cb8b;
+}
+.positive.shadow {
+  fill: #20b67c;
+  fill-opacity: 0.2;
+}
