@@ -1,0 +1,179 @@
+body {
+  margin: 0px;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Google Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 440;
+  font-style: normal;
+  font-variation-settings: "GRAD" 0;
+}
+body * {
+  box-sizing: border-box;
+  z-index: 2;
+}
+body:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: #111;
+  background: repeating-linear-gradient(-45deg, #000, #000 5px, #111 5px, #111 10px);
+  z-index: 0;
+}
+
+ul,
+li {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+div {
+  position: absolute;
+  width: 770px;
+  height: 200px;
+  line-height: 400px;
+  top: 52%;
+  left: 51%;
+  perspective: 800px;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+div:before, div:after {
+  font-size: 355px;
+  color: #eee;
+  position: absolute;
+  margin: 0px;
+  padding: 0px;
+  top: -130px;
+  left: 0px;
+  -webkit-box-reflect: below -130px linear-gradient(transparent, rgba(255, 255, 255, 0.06));
+}
+div:before {
+  content: "c";
+  text-indent: -20px;
+}
+div:after {
+  content: "r";
+  left: auto;
+  right: 30px;
+}
+
+div ul {
+  width: 0px;
+  height: 150px;
+  display: block;
+  left: 50%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  z-index: 3;
+  animation: spin 11s linear infinite alternate-reverse;
+}
+div ul:before, div ul:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 220px;
+  border-radius: 20px;
+  top: -30px;
+  left: -20px;
+  background: #fff;
+}
+div ul:before {
+  background: #eee;
+  transform: rotateY(-90deg);
+}
+div ul * {
+  transform-style: preserve-3d;
+}
+div ul > li {
+  display: block;
+  width: 180px;
+  height: 180px;
+  border: solid 25px #fff;
+  border-radius: 180px;
+  top: -10px;
+  left: 0px;
+  position: absolute;
+  transform: rotateY(calc(var(--i) * -90deg)) translateZ(0px) translateX(40px);
+  transform-origin: top left;
+  -webkit-box-reflect: below 2px linear-gradient(transparent, rgba(255, 255, 255, 0.1));
+}
+div ul > li:before, div ul > li:after {
+  content: "";
+  width: 100px;
+  height: 100px;
+  display: block;
+  opacity: 0.75;
+  border-radius: 100px;
+  position: absolute;
+  display: block;
+  background: #ffd700;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 1px);
+  mix-blend-mode: color-burn;
+}
+div ul > li:before {
+  transform: translate3d(-50%, -50%, -1px);
+}
+div ul > li:nth-child(1) {
+  outline: solid 1px #ffd700;
+  outline-offset: 1px;
+}
+div ul > li:nth-child(1):after {
+  background: #ffd700;
+}
+div ul > li:nth-child(1):before {
+  background: #ffe34d;
+}
+div ul > li:nth-child(2) {
+  outline: solid 1px #20a7db;
+  outline-offset: 1px;
+}
+div ul > li:nth-child(2):after {
+  background: #20a7db;
+}
+div ul > li:nth-child(2):before {
+  background: #60c2e8;
+}
+div ul > li:nth-child(3) {
+  outline: solid 1px #8fce00;
+  outline-offset: 1px;
+}
+div ul > li:nth-child(3):after {
+  background: #8fce00;
+}
+div ul > li:nth-child(3):before {
+  background: #b9ff1c;
+}
+div ul > li:nth-child(4) {
+  outline: solid 1px #ff0000;
+  outline-offset: 1px;
+}
+div ul > li:nth-child(4):after {
+  background: #ff0000;
+}
+div ul > li:nth-child(4):before {
+  background: #ff4d4d;
+}
+
+@keyframes spin {
+  0% {
+    transform: translateX(-50%) translateY(20px) rotateY(0deg) scale(1.05);
+  }
+  1% {
+    transform: translateX(-50%) translateY(20px) rotateY(0deg) scale(1.05);
+  }
+  99% {
+    transform: translateX(-50%) translateY(20px) rotateY(360deg) scale(1.05);
+  }
+  100% {
+    transform: translateX(-50%) translateY(20px) rotateY(360deg) scale(1.05);
+  }
+}
