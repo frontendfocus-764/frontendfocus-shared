@@ -1,0 +1,155 @@
+body {
+    font-family: system-ui;
+    background: #f6f7fb;
+}
+
+.videoSection {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.galleryTitle {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.gallerySub {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.galleryVid {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: .35s;
+    background: #000;
+}
+
+.galleryVid:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .25);
+}
+
+.galleryVid video {
+    width: 100%;
+    display: block;
+    opacity: .85;
+}
+
+.galleryVid::after {
+    content: "▶";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, .6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    transition: .3s;
+}
+
+.galleryVid:hover::after {
+    transform: translate(-50%, -50%) scale(1.15);
+}
+
+.badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #ff4d4d;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.duration {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, .6);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.desc {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 14px;
+    color: white;
+    background: linear-gradient(to top, rgba(0, 0, 0, .85), transparent);
+}
+
+.desc h4 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.desc p {
+    margin: 3px 0 0;
+    font-size: 13px;
+    opacity: .8;
+}
+
+.showvideo {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .75);
+}
+
+.vid-show {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    width: 90%;
+}
+
+.vid-show video {
+    width: 100%;
+    max-height: 80vh;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: -35px;
+    right: 0;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}

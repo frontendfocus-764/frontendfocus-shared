@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Gallery</title>
+    <link rel="stylesheet" href="frontendfocus.css">
+</head>
+
+<body>
+
+    <section class="videoSection">
+
+        <h2 class="galleryTitle">Clean Video Gallery UI for Websites</h2>
+        <p class="gallerySub">Short UI experiments, animations and frontend tricks</p>
+
+        <div class="gallery">
+
+            <div class="galleryVid">
+                <video class="videoTag">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                </video>
+
+                <span class="badge">UI</span>
+                <span class="duration">0:20</span>
+
+                <div class="desc">
+                    <h4>Glassmorphism Card UI</h4>
+                    <p>CSS + backdrop filter experiment</p>
+                </div>
+            </div>
+
+            <div class="galleryVid">
+                <video class="videoTag">
+                    <source src="https://www.w3schools.com/tags/movie.mp4" type="video/mp4">
+                </video>
+
+                <span class="badge">Animation</span>
+                <span class="duration">0:15</span>
+
+                <div class="desc">
+                    <h4>Hover Button Animation</h4>
+                    <p>Pure CSS interaction</p>
+                </div>
+            </div>
+
+            <div class="galleryVid">
+                <video class="videoTag">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                </video>
+
+                <span class="badge">JavaScript</span>
+                <span class="duration">0:18</span>
+
+                <div class="desc">
+                    <h4>Modal Popup System</h4>
+                    <p>Reusable JS component</p>
+                </div>
+            </div>
+
+            <div class="galleryVid">
+                <video class="videoTag">
+                    <source src="https://www.w3schools.com/tags/movie.mp4" type="video/mp4">
+                </video>
+
+                <span class="badge">Layout</span>
+                <span class="duration">0:22</span>
+
+                <div class="desc">
+                    <h4>Responsive Grid System</h4>
+                    <p>CSS Grid responsive layout</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <div class="showvideo">
+
+        <div class="overlay"></div>
+
+        <div class="vid-show">
+
+            <span class="close">✖</span>
+
+            <video controls id="popupVideo">
+                <source src="" type="video/mp4">
+            </video>
+
+        </div>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="frontendfocus.js">
+
+</body>
+
+</html>
