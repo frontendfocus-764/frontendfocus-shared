@@ -1,0 +1,14 @@
+body {
+  font: normal 16px/1.2 Calibri, sans-serif;
+}
+
+p,
+.owl-carousel .owl-item {
+  text-align: center;
+}
+
+.zoom {
+  width: auto !important;
+  height: 400px;
+  display: inline-block !important;
+}
