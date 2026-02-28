@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Animation Login Form</title>
+    <link rel="stylesheet" href="frontendfocus.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="hero-section">
+
+            <div class="moon"></div>
+
+            <div class="city-scroll-wrapper">
+                <div class="city-skyline" id="city">
+                    <i class="fas fa-building b1"></i><i class="fas fa-city b2"></i><i class="fas fa-hotel b3"></i><i
+                        class="fas fa-landmark b4"></i><i class="fas fa-hospital b5"></i>
+                    <i class="fas fa-building b2"></i><i class="fas fa-city b1"></i><i class="fas fa-hotel b4"></i><i
+                        class="fas fa-landmark b3"></i><i class="fas fa-hospital b5"></i>
+                    <i class="fas fa-building b1"></i><i class="fas fa-city b2"></i><i class="fas fa-hotel b3"></i><i
+                        class="fas fa-landmark b4"></i><i class="fas fa-hospital b5"></i>
+                    <i class="fas fa-building b2"></i><i class="fas fa-city b1"></i><i class="fas fa-hotel b4"></i><i
+                        class="fas fa-landmark b3"></i><i class="fas fa-hospital b5"></i>
+                </div>
+            </div>
+
+            <div class="content">
+                <h1 id="form-title">Welcome Back</h1>
+                <p id="form-subtitle">Secure Login System</p>
+            </div>
+
+            <div class="car-wrapper" id="car-wrapper">
+                <div class="car-body">
+                    <div class="cabin">
+                        <div class="seats"></div>
+                        <div class="glass" id="car-glass"></div>
+                    </div>
+                    <div class="light-front"></div>
+                    <div class="light-back"></div>
+                </div>
+                <div class="wheel front">
+                    <div class="rim"></div>
+                </div>
+                <div class="wheel back">
+                    <div class="rim"></div>
+                </div>
+                <div class="shadow"></div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <div class="tabs">
+                <div class="tab active" onclick="switchTab('login')">LOGIN</div>
+                <div class="tab" onclick="switchTab('register')">REGISTER</div>
+            </div>
+
+            <div class="input-box">
+                <i class="fas fa-envelope icon"></i>
+                <input type="email" id="email" placeholder="Email Address" autocomplete="off">
+            </div>
+
+            <div class="input-box">
+                <i class="fas fa-lock icon"></i>
+                <input type="password" id="pass-field" placeholder="Password">
+                <i class="fas fa-eye show-pass" id="toggle-eye"></i>
+            </div>
+
+            <div class="options">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+
+            <button class="login-btn" id="login-btn">LOGIN</button>
+        </div>
+    </div>
+
+    <script src="frontendfocus.js"></script>
+</body>
+
+</html>

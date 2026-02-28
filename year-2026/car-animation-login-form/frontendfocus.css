@@ -1,0 +1,464 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.main-container {
+  width: 100%; 
+  max-width: 380px; 
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  margin: 20px; 
+}
+ 
+.hero-section {
+  background: linear-gradient(to bottom, #4a0000, #900000);
+  height: 240px;
+  position: relative;
+  padding: 30px;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  border-radius: 0 0 50% 50% / 0 0 20px 20px;
+}
+
+.city-scroll-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.city-skyline {
+  display: flex;
+  width: max-content;
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  align-items: flex-end;
+  animation: moveCity 10s linear infinite;
+  animation-play-state: paused;
+}
+
+.city-skyline i {
+  font-size: 50px;
+  color: rgba(0, 0, 0, 0.25);
+  margin-right: 5px;
+  transform-origin: bottom;
+  transform: scaleY(3);
+}
+
+.b1 {
+  transform: scaleY(3.5) !important;
+}
+.b2 {
+  transform: scaleY(2.8) !important;
+}
+.b3 {
+  transform: scaleY(4.2) !important;
+}
+.b4 {
+  transform: scaleY(3) !important;
+}
+.b5 {
+  transform: scaleY(3.5) !important;
+  z-index: 2;
+}
+
+.moon {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
+  opacity: 0.9;
+}
+
+@keyframes moveCity {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+.content {
+  position: relative;
+  z-index: 5;
+}
+.content h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.content p {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.car-wrapper {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  width: 240px;
+  height: 60px;
+  transform: translateX(-50%);
+  z-index: 10;
+  transition: 0.5s ease-in-out;
+}
+
+.car-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #ff4d4d, #990000);
+  border-radius: 60px 80px 20px 20px;
+  box-shadow: inset -5px -5px 15px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.cabin {
+  position: absolute;
+  top: -20px;
+  left: 45px;
+  width: 100px;
+  height: 40px;
+  background-color: #1a1a1a;
+  border-radius: 50px 80px 0 0;
+  border: 3px solid #990000;
+  border-bottom: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.seats {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.seats::before,
+.seats::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  height: 25px;
+  width: 26px;
+  background: linear-gradient(105deg, #555 0%, #222 100%);
+  border-radius: 8px 15px 0 0;
+  transform: skewX(12deg);
+  border-left: 3px solid #cc0000;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.seats::before {
+  left: 12px;
+  transform: skewX(12deg) scale(0.9);
+  opacity: 0.8;
+  z-index: 1;
+}
+.seats::after {
+  right: 18px;
+  z-index: 2;
+}
+
+.glass {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(50, 50, 50, 0.8) 50%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  transform: translateY(0%);
+  transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 5;
+}
+.glass-open {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.light-front {
+  position: absolute;
+  top: 20px;
+  right: -5px;
+  width: 15px;
+  height: 25px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #fff;
+}
+.light-back {
+  position: absolute;
+  top: 20px;
+  left: -5px;
+  width: 12px;
+  height: 25px;
+  background: #222;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+
+.wheel {
+  position: absolute;
+  bottom: -18px;
+  width: 48px;
+  height: 48px;
+  background: #111;
+  border-radius: 50%;
+  border: 3px solid #222;
+  z-index: 5;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+.front {
+  right: 35px;
+}
+.back {
+  left: 35px;
+}
+.spinning {
+  animation: spin 0.2s infinite linear;
+}
+
+.rim {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  height: 70%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: conic-gradient(
+    #ddd 0deg,
+    #555 30deg,
+    #ddd 60deg,
+    #555 90deg,
+    #ddd 120deg,
+    #555 150deg,
+    #ddd 180deg,
+    #555 210deg,
+    #ddd 240deg,
+    #555 270deg,
+    #ddd 300deg,
+    #555 330deg,
+    #ddd 360deg
+  );
+  border: 2px solid #fff;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.rim::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: #333;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #fff;
+}
+.shadow {
+  position: absolute;
+  bottom: -25px;
+  left: 5%;
+  width: 90%;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  filter: blur(6px);
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.car-out {
+  animation: driveOut 1s forwards ease-in;
+}
+.car-in {
+  animation: driveIn 1s forwards ease-out;
+}
+@keyframes driveOut {
+  to {
+    left: 200%;
+    opacity: 0;
+  }
+}
+@keyframes driveIn {
+  from {
+    left: -100%;
+    opacity: 0;
+  }
+  to {
+    left: 50%;
+    opacity: 1;
+  }
+}
+
+.form-section {
+  padding: 50px 30px 30px;
+  background: #fff;
+}
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+.tab {
+  font-weight: 600;
+  color: #aaa;
+  cursor: pointer;
+  position: relative;
+  font-size: 14px;
+  transition: 0.3s;
+}
+.tab.active {
+  color: #d31027;
+}
+.tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #d31027;
+  border-radius: 5px;
+}
+.input-box {
+  position: relative;
+  margin-bottom: 20px;
+  background: #f9f9f9;
+  border-radius: 50px;
+  border: 1px solid #eee;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+}
+.input-box:focus-within {
+  border-color: #d31027;
+  box-shadow: 0 0 10px rgba(211, 16, 39, 0.1);
+}
+.input-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  padding-left: 10px;
+  font-size: 15px;
+  color: #333;
+}
+.input-box .icon {
+  color: #888;
+  font-size: 18px;
+}
+.show-pass {
+  cursor: pointer;
+  color: #888;
+  font-size: 14px;
+  margin-right: 5px;
+}
+.options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 25px;
+  align-items: center;
+  padding: 0 10px;
+}
+.options a {
+  text-decoration: none;
+  color: #d31027;
+  font-weight: 600;
+}
+.login-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  background: linear-gradient(to right, #d31027, #ea384d);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(211, 16, 39, 0.3);
+  transition: 0.3s;
+}
+.login-btn:hover {
+  background: linear-gradient(to right, #ea384d, #d31027);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(211, 16, 39, 0.4);
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear,
+input[type="password"]::-webkit-password-eye {
+  display: none !important;
+}
+
+@media (max-width: 360px) {
+  .hero-section {
+    height: 200px;
+    padding: 20px;
+  }
+  .car-wrapper {
+    transform: translateX(-50%) scale(0.85);
+    bottom: 15px;
+  }
+  .city-scroll-wrapper {
+    height: 150px;
+  }
+  .city-skyline i {
+    font-size: 40px;
+  }
+  .form-section {
+    padding: 30px 20px 20px;
+  }
+  .tabs {
+    gap: 20px;
+  }
+}
