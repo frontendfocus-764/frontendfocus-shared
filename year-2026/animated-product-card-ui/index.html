@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Card Animation</title>
+    <link rel="stylesheet" href="frontendfocus.css">
+</head>
+
+<body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <div class="card-wrapper">
+        <div class="product-card">
+            <div class="card-shimmer"></div>
+
+            <div class="product-header">
+                <div class="glow-effect"></div>
+                <div class="premium-badge"> Premium</div>
+                <div class="product-image-container">
+                    <img src="product.webp" alt="SonicPro X1 Headphones"
+                        class="product-image">
+                </div>
+            </div>
+
+            <div class="product-content">
+                <div class="product-category">Smart Audio</div>
+                <h2 class="product-name">SonicPro X1</h2>
+                <p class="product-description">
+                    Next-generation wireless headphones with AI noise cancellation, 48-hour battery life, and spatial
+                    audio technology.
+                </p>
+
+                <!-- Specs Grid -->
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">Battery</div>
+                        <div class="spec-value">48 Hours</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Noise Cancel</div>
+                        <div class="spec-value">AI-Powered</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Connectivity</div>
+                        <div class="spec-value">Bluetooth 5.3</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Weight</div>
+                        <div class="spec-value">185g</div>
+                    </div>
+                </div>
+
+                <!-- Price Section -->
+                <div class="price-section">
+                    <div>
+                        <div class="price-label">Price</div>
+                        <div style="display: flex; align-items: center;">
+                            <span class="price-value">$299</span>
+                            <span class="price-discount">$399</span>
+                        </div>
+                    </div>
+                    <div style="text-align: right; color: #ff006e; font-weight: 700; font-size: 14px;">
+                        Save 25%
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="btn btn-primary">Buy Now</button>
+                    <button class="btn btn-secondary">Learn More</button>
+                </div>
+
+                <!-- Rating Section -->
+                <div class="rating-section">
+                    <div class="stars">
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                    </div>
+                    <div class="rating-text">
+                        <span class="rating-count">4.9</span> / 5.0
+                    </div>
+                    <div class="rating-text">
+                        <span class="rating-count">2.3K</span> reviews
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="frontendfocus.js"></script>
+</body>
+
+</html>
