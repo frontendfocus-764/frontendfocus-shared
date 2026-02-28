@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap");
+
+* {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    color: white;
+    background: black;
+    font-family: "Cormorant Garamond", serif;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: clamp(1rem, 5vw, 5rem);
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 0.5em;
+    margin-right: -0.5em;
+    color: #cccccc;
+    width: 90vw;
+    max-width: 1200px;
+}
+
+section {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    visibility: hidden;
+    will-change: transform;
+}
+
+section .outer,
+section .inner {
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    will-change: transform;
+}
+
+section .bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+section .bg h2 {
+    z-index: 2;
+}
+
+section .bg .clip-text {
+    overflow: hidden;
+}
+
+.first .bg {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%), url(img/bg-1.jpg);
+}
+
+.second .bg {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%), url("img/bg-2.jpg");
+}
+
+.third .bg {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%), url(img/bg-3.jpg);
+}
+
+.fourth .bg {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%), url(img/bg-4.jpg);
+}
+
+.fifth .bg {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%), url("img/bg-5.jpg");
+    background-position: 50% 45%;
+}
