@@ -1,0 +1,200 @@
+	html,
+	body {
+	    height: 100%;
+	    font-size: 1.5vw;
+	    margin: 0px;
+	}
+
+	html {
+	    background-color: #000;
+	}
+
+	body {
+	    display: flex;
+	    justify-content: center;
+	    overflow: hidden;
+	    align-items: center;
+	    animation: spin 15s ease-in-out infinite;
+	}
+
+	body::before {
+	    content: "";
+	    position: absolute;
+	    width: 5rem;
+	    height: 5rem;
+	    border-radius: 50%;
+	    background-color: #ffebd7;
+	    filter: blur(0.1rem);
+	    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.1);
+	    transform: rotateX(9deg);
+	    animation: sun 20s linear infinite reverse;
+	    z-index: -1;
+	}
+
+	body::after {
+	    content: "";
+	    position: absolute;
+	    border-radius: 50%;
+	    background-image: linear-gradient(to bottom, #d5dbff, #ffebd7, #d5dbff);
+	    filter: blur(2.25rem);
+	    z-index: -1;
+	    animation: eclipse 20s linear infinite;
+	}
+
+	.moon {
+	    position: relative;
+	    width: 20rem;
+	    height: 20rem;
+	    border-radius: 50%;
+	    filter: blur(0.02rem);
+	    overflow: hidden;
+	}
+
+	.moon::after {
+	    content: "";
+	    position: absolute;
+	    width: 20rem;
+	    height: 20rem;
+	    box-shadow: inset 0px 0px 10rem #000, inset 0px 0px 4rem #000, inset 0px 0px 1rem #000;
+	    border-radius: 50%;
+	    background-image: url(ff-glob.png);
+	    background-position: center;
+	    background-size: 202%;
+	    background-repeat: no-repeat;
+	    mix-blend-mode: multiply;
+	    animation: brightness 20s ease infinite;
+	}
+
+	.moon::before {
+	    content: "";
+	    position: absolute;
+	    box-sizing: border-box;
+	    width: 20rem;
+	    height: 20rem;
+	    background-color: #101010;
+	    border-radius: 50%;
+	    animation: rotate 20s linear infinite;
+	    animation-delay: -10s;
+	    filter: blur(0.2rem);
+	}
+
+	@keyframes spin {
+	    0% {
+	        transform: rotateZ(-9deg);
+	    }
+
+	    50% {
+	        transform: rotateZ(9deg);
+	    }
+
+	    100% {
+	        transform: rotateZ(-9deg);
+	    }
+	}
+
+	@keyframes brightness {
+	    0% {
+	        filter: brightness(2.25);
+	    }
+
+	    50% {
+	        filter: brightness(1);
+	    }
+
+	    100% {
+	        filter: brightness(2.25);
+	    }
+	}
+
+	@keyframes sun {
+	    0% {
+	        transform: rotate(9deg) translateX(140rem);
+	    }
+
+	    50% {
+	        transform: translateX(0rem);
+	    }
+
+	    100% {
+	        transform: rotate(-9deg) translateX(-140rem);
+	    }
+	}
+
+	@keyframes eclipse {
+	    0% {
+	        width: 0rem;
+	        height: 0rem;
+	        transform: rotate(9deg);
+	    }
+
+	    45% {
+	        transform: translateX(-2rem);
+	    }
+
+	    50% {
+	        width: 16rem;
+	        height: 16rem;
+	    }
+
+	    55% {
+	        transform: translateX(2rem);
+	    }
+
+	    100% {
+	        width: 0rem;
+	        height: 0rem;
+	        transform: rotate(-9deg);
+	    }
+	}
+
+	@keyframes rotate {
+	    2.5% {
+	        border-right: 0 solid #fdfdfd;
+	        border-left: 10rem solid #101010;
+	        background-color: #101010;
+	        transform: rotate(9deg);
+	    }
+
+	    24.9999% {
+	        background-color: #101010;
+	    }
+
+	    25% {
+	        border-right: 10rem solid #fdfdfd;
+	        border-left: 10rem solid #101010;
+	        background-color: #fdfdfd;
+	    }
+
+	    47.5% {
+	        border-right: 0 solid #fdfdfd;
+	        border-left: 0 solid #101010;
+	        background-color: #fdfdfd;
+	        transform: rotate(0deg);
+	    }
+
+	    47.500001% {
+	        border-right: 0 solid #101010;
+	    }
+
+	    52.5% {
+	        border-right: 0 solid #101010;
+	    }
+
+	    74.99999% {
+	        background-color: #fdfdfd;
+	        border-left: 0 solid #fdfdfd;
+	    }
+
+	    75% {
+	        border-right: 10rem solid #101010;
+	        border-left: 10rem solid #fdfdfd;
+	        background-color: #101010;
+	    }
+
+	    97.5% {
+	        border-right: 10rem solid #101010;
+	        border-left: 0 solid #fdfdfd;
+	        background-color: #101010;
+	        transform: rotate(-9deg);
+	    }
+	}
