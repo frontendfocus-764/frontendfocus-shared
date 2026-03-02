@@ -1,0 +1,216 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #0f1116;
+  color: #fff;
+  font-family: system-ui;
+  padding: 50px;
+}
+h1 {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+.hk-toggle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.hk-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.hk-toggle span {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.hk-toggle input {
+  display: none;
+}
+.hk-toggle label {
+  width: 78px;
+  height: 38px;
+  border-radius: 40px;
+  position: relative;
+  cursor: pointer;
+}
+.hk-toggle label::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  border-radius: 50%;
+  transition: 0.35s;
+}
+
+/* 1 Cyber */
+.hk-tg-1 label {
+  background: #111;
+}
+.hk-tg-1 label::after {
+  background: #00f0ff;
+}
+.hk-tg-1 input:checked + label::after {
+  transform: translateX(38px);
+  box-shadow: 0 0 15px #00f0ff;
+}
+
+/* 2 iOS */
+.hk-tg-2 label {
+  background: #3a3f45;
+}
+.hk-tg-2 label::after {
+  background: #fff;
+}
+.hk-tg-2 input:checked + label {
+  background: #34c759;
+}
+.hk-tg-2 input:checked + label::after {
+  transform: translateX(38px);
+}
+
+/* 3 Material */
+.hk-tg-3 label {
+  background: #1f232b;
+}
+.hk-tg-3 label::after {
+  background: #9aa0a6;
+}
+.hk-tg-3 input:checked + label {
+  background: #1a73e8;
+}
+.hk-tg-3 input:checked + label::after {
+  transform: translateX(38px);
+  background: #fff;
+}
+
+/* 4 Neumorphism */
+.hk-tg-4 label {
+  background: #0e1015;
+  box-shadow: inset 3px 3px 6px #05070a, inset -3px -3px 6px #1c2030;
+}
+.hk-tg-4 label::after {
+  background: #e4e7ec;
+}
+.hk-tg-4 input:checked + label::after {
+  transform: translateX(38px);
+}
+
+/* 5 Glass */
+.hk-tg-5 label {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.hk-tg-5 label::after {
+  background: #fff;
+}
+.hk-tg-5 input:checked + label::after {
+  transform: translateX(38px);
+}
+
+/* 6 Minimal */
+.hk-tg-6 label {
+  background: #222;
+}
+.hk-tg-6 label::after {
+  width: 18px;
+  height: 18px;
+  top: 10px;
+  left: 10px;
+  background: #aaa;
+}
+.hk-tg-6 input:checked + label {
+  background: #00e5a8;
+}
+.hk-tg-6 input:checked + label::after {
+  transform: translateX(40px);
+  background: #fff;
+}
+
+/* 7 Glow */
+.hk-tg-7 label {
+  background: #262a33;
+}
+.hk-tg-7 label::after {
+  background: #fff;
+}
+.hk-tg-7 input:checked + label::after {
+  transform: translateX(38px);
+  box-shadow: 0 0 18px #4f8cff;
+}
+
+/* 8 Outline */
+.hk-tg-8 label {
+  background: transparent;
+  border: 2px solid #555;
+}
+.hk-tg-8 label::after {
+  background: #555;
+}
+.hk-tg-8 input:checked + label {
+  border-color: #4f8cff;
+}
+.hk-tg-8 input:checked + label::after {
+  transform: translateX(38px);
+  background: #4f8cff;
+}
+
+/* 9 Fill Slide */
+.hk-tg-9 label {
+  background: #1a1d24;
+  overflow: hidden;
+}
+.hk-tg-9 label::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ff7a18;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.35s;
+}
+.hk-tg-9 label::after {
+  background: #fff;
+  z-index: 2;
+}
+.hk-tg-9 input:checked + label::before {
+  transform: scaleX(1);
+}
+.hk-tg-9 input:checked + label::after {
+  transform: translateX(38px);
+}
+
+/* 10 Pulse */
+.hk-tg-10 label {
+  background: #232733;
+}
+.hk-tg-10 label::after {
+  background: #fff;
+}
+.hk-tg-10 input:checked + label {
+  background: #6a5cff;
+}
+.hk-tg-10 input:checked + label::after {
+  transform: translateX(38px);
+  animation: pulse 0.8s ease;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(106, 92, 255, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 14px rgba(106, 92, 255, 0);
+  }
+}
