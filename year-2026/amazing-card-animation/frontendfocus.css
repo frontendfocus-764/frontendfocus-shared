@@ -1,0 +1,201 @@
+body {
+  background: #050505;
+  font-family: Poppins, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  width: 1000px;
+}
+
+.card {
+  padding: 35px 25px;
+  background: #111;
+  border-radius: 15px;
+  text-align: center;
+  color: #fff;
+  transition: 0.4s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.card .icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+/* -----------------------------------
+   CARD 1 — NEON GLOW BORDER
+----------------------------------- */
+
+.card-glow {
+  border: 2px solid #00eaff;
+  box-shadow: 0 0 10px #00eaff;
+}
+.card-glow:hover {
+  box-shadow: 0 0 25px #00eaff, 0 0 60px #00eaff;
+  transform: translateY(-10px);
+}
+
+/* -----------------------------------
+   CARD 2 — SOFT LIFT POP
+----------------------------------- */
+
+.card-lift {
+  background: #181818;
+  border: 2px solid #444;
+}
+.card-lift:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* -----------------------------------
+   CARD 3 — SLIDE SHINE ANIMATION
+----------------------------------- */
+
+.card-slide::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  width: 60%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: skewX(-25deg);
+  transition: 0.5s;
+}
+.card-slide:hover::after {
+  left: 120%;
+}
+
+/* -----------------------------------
+   CARD 4 — ROTATION EFFECT
+----------------------------------- */
+
+.card-rotate {
+  border: 2px solid #ff00c8;
+}
+.card-rotate:hover {
+  transform: rotate(3deg) scale(1.04);
+  box-shadow: 0 0 25px #ff00c8;
+}
+
+/* -----------------------------------
+   CARD 5 — GRADIENT PULSE
+----------------------------------- */
+
+.card-gradient {
+  background: linear-gradient(135deg, #8a2be2, #00eaff);
+  animation: pulse 3s infinite linear;
+}
+@keyframes pulse {
+  0% {
+    filter: brightness(100%);
+  }
+  50% {
+    filter: brightness(130%);
+  }
+  100% {
+    filter: brightness(100%);
+  }
+}
+.card-gradient:hover {
+  transform: translateY(-12px);
+}
+
+/* -----------------------------------
+   CARD 6 — FLOATING SMOOTH
+----------------------------------- */
+
+.card-floating {
+  border: 2px solid #0ff;
+  animation: float 3.5s infinite ease-in-out;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.card-floating:hover {
+  box-shadow: 0 0 30px #0ff;
+}
+/* ===========================
+   CARD 4 — GLASS TILT EFFECT
+=========================== */
+.card-glass {
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.card-glass:hover {
+  transform: rotate3d(1, 1, 0, 15deg) scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+}
+
+/* ===========================
+   CARD 5 — SLIDE-UP REVEAL
+=========================== */
+.card-slide {
+  overflow: hidden;
+}
+.card-slide::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00aaff;
+  transition: 0.4s;
+  z-index: -1;
+}
+.card-slide:hover::before {
+  top: 0;
+}
+.card-slide:hover {
+  transform: translateY(-8px);
+}
+
+/* ===========================
+   CARD 6 — NEON FLOATING CARD
+=========================== */
+.card-neon {
+  border: 2px solid #0ff;
+  box-shadow: 0 0 15px #0ff;
+  animation: float 3s infinite ease-in-out;
+}
+.card-neon:hover {
+  box-shadow: 0 0 25px #0ff, 0 0 40px #0ff;
+  transform: scale(1.07);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Icons */
+.icon {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
