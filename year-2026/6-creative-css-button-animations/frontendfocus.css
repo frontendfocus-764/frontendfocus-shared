@@ -1,0 +1,240 @@
+body {
+  background: #050505;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Poppins, sans-serif;
+}
+
+.container {
+  display: flex;
+  gap: 70px;
+  flex-wrap: wrap;
+  width: 900px;
+  justify-content: center;
+}
+
+/* ----------------------------------
+   BUTTON 1 — NEON GLOW ANIMATION
+---------------------------------- */
+
+.btn-neon {
+  padding: 18px 50px;
+  font-size: 22px;
+  color: #00eaff;
+  background: transparent;
+  border: 2px solid #00eaff;
+  letter-spacing: 3px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.4s;
+  overflow: hidden;
+}
+
+.btn-neon:hover {
+  color: #050505;
+  background: #00eaff;
+  box-shadow: 0 0 20px #00eaff, 0 0 40px #00eaff;
+}
+
+.btn-neon::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: 0;
+  background: #00eaff;
+  animation: neon-slide 1.2s linear infinite;
+}
+
+@keyframes neon-slide {
+  0% {
+    top: -100%;
+  }
+  50% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+/* ----------------------------------
+   BUTTON 2 — GRADIENT SWIPE
+---------------------------------- */
+
+.btn-swipe {
+  padding: 18px 55px;
+  background: linear-gradient(90deg, #ff00c8, #007bff);
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.3s;
+}
+
+.btn-swipe::after {
+  content: "";
+  position: absolute;
+  height: 120%;
+  width: 0%;
+  top: 0;
+  left: 0;
+  background: #fff;
+  opacity: 0.1;
+  transform: skewX(-25deg);
+}
+
+.btn-swipe:hover::after {
+  width: 180%;
+  transition: 0.5s;
+}
+
+.btn-swipe:hover {
+  transform: scale(1.05);
+}
+
+/* ----------------------------------
+   BUTTON 3 — 3D PRESS + PULSE
+---------------------------------- */
+
+.btn-3d {
+  padding: 20px 60px;
+  background: #111;
+  color: #0af;
+  border: 2px solid #0af;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s;
+  box-shadow: 0 0 15px #0af;
+  animation: pulse 2s infinite;
+}
+
+.btn-3d:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px #0af, 0 0 60px #0af;
+}
+
+.btn-3d:active {
+  transform: translateY(2px);
+  box-shadow: 0 0 10px #0af inset;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 10px #0af;
+  }
+  50% {
+    box-shadow: 0 0 25px #0af;
+  }
+  100% {
+    box-shadow: 0 0 10px #0af;
+  }
+}
+
+/* ----------------------------------
+   BUTTON 4 — COLOR FILL ANIMATION
+---------------------------------- */
+
+.btn-fill {
+  padding: 18px 45px;
+  font-size: 22px;
+  border: 2px solid #ff4eff;
+  background: transparent;
+  color: #ff4eff;
+  letter-spacing: 2px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+.btn-fill::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  left: 0;
+  top: 0;
+  background: #ff4eff;
+  z-index: -1;
+  transition: 0.4s;
+}
+
+.btn-fill:hover::before {
+  width: 100%;
+}
+
+.btn-fill:hover {
+  color: #050505;
+}
+
+/* ----------------------------------
+   BUTTON 5 — OUTLINE FLASH
+---------------------------------- */
+
+.btn-outline {
+  padding: 18px 50px;
+  font-size: 22px;
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
+  box-shadow: 0 0 15px #fff, 0 0 30px #fff;
+  transform: scale(1.08);
+}
+
+/* ----------------------------------
+   BUTTON 6 — WAVE EFFECT (KEYFRAMES)
+---------------------------------- */
+
+.btn-wave {
+  padding: 18px 55px;
+  font-size: 22px;
+  background: #131313;
+  color: #0ff;
+  border: 2px solid #0ff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-wave::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 4px;
+  left: 0;
+  bottom: 0;
+  background: #0ff;
+  animation: wave 1.5s infinite;
+}
+
+@keyframes wave {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
