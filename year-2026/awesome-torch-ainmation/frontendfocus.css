@@ -1,0 +1,209 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #2f323c;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.wrapper {
+  margin: 0 auto;
+  position: relative;
+}
+.outer {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  padding: 350px 10% 350px 10%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+}
+.torchblock {
+  width: 150px;
+  height: 50px;
+  position: relative;
+  z-index: 0;
+  background-color: #85c86b;
+  border-top-left-radius: 25px;
+  -moz-border-top-left-radius: 25px;
+  -webkit-border-top-left-radius: 25px;
+  -ms-border-top-left-radius: 25px;
+  -o-border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  -moz-border-bottom-left-radius: 25px;
+  -webkit-border-bottom-left-radius: 25px;
+  -ms-border-bottom-left-radius: 25px;
+  -o-border-bottom-left-radius: 25px;
+  -webkit-box-shadow: 0px 0px 2px 0px rgba(255, 255, 255, 0.7);
+  -moz-box-shadow: 0px 0px 2px 0px rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 0px 2px 0px rgba(255, 255, 255, 0.7);
+}
+.torchblock:before {
+  content: "";
+  position: absolute;
+  right: -30px;
+  top: -5px;
+  width: 40px;
+  height: 10px;
+  background: #85c86b;
+  transform: rotate(-30deg);
+  -moz-transform: rotate(-30deg);
+  -ms-transform: rotate(-30deg);
+  -webkit-transform: rotate(-30deg);
+  -o-transform: rotate(-30deg);
+  z-index: 0;
+}
+.torchblock:after {
+  content: "";
+  position: absolute;
+  right: -30px;
+  bottom: -5px;
+  width: 40px;
+  height: 10px;
+  background: #85c86b;
+  transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+  z-index: 0;
+}
+.backbg {
+  position: absolute;
+  left: 145px;
+  top: 5px;
+  width: 25px;
+  height: 40px;
+  background-color: #2a2a2a;
+  z-index: -1;
+}
+.torchhead {
+  position: absolute;
+  right: -42px;
+  top: -15px;
+  z-index: 2;
+  height: 60px;
+  width: 10px;
+  border: 10px solid #85c86b;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 1);
+}
+.torchbtn {
+  background-color: #fff;
+  border: 0;
+  height: 12px;
+  width: 25px;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  margin: -6px 0 0;
+  border-radius: 5px;
+  outline: 0;
+}
+.torchbtn:focus,
+.torchbtn:hover {
+  outline: none;
+}
+.lightblock {
+  position: absolute;
+  top: -25px;
+  left: 18px;
+  height: 100px;
+  width: 555px;
+  z-index: 3;
+}
+input[name="switch"],
+input[name="switch"] + label {
+  position: absolute;
+  top: 18px;
+  width: 30px;
+  height: 15px;
+  margin: 0;
+  padding: 0;
+}
+input[name="switch"] + label {
+  left: 100px;
+  color: #fff;
+  background-color: #2a2a2a;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  z-index: 1;
+  transition: All 0.2s ease-in-out;
+  -moz-transition: All 0.2s ease-in-out;
+  -webkit-transition: All 0.2s ease-in-out;
+  -o-transition: All 0.2s ease-in-out;
+  -ms-transition: All 0.2s ease-in-out;
+}
+input[name="switch"] {
+  opacity: 0;
+  z-index: 9;
+  cursor: pointer;
+}
+input[value="on"] {
+  left: 100px;
+}
+input[value="off"] {
+  left: -500px;
+}
+input[value="on"]:checked {
+  left: -500px;
+}
+input[value="on"]:checked + input[value="off"] {
+  left: 100px;
+}
+input[value="on"]:checked ~ .lightblock {
+  background: rgba(255, 255, 255, 0.95);
+  transform: perspective(300px) rotateY(-45deg);
+  -webkit-transform: perspective(300px) rotateY(-45deg);
+  -moz-transform: perspective(300px) rotateY(-45deg);
+  -o-transform: perspective(300px) rotateY(-45deg);
+  -ms-background: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.9),
+    0 0 30px rgba(255, 255, 255, 0.8), 0 0 70px rgba(255, 255, 255, 0.9),
+    0 0 10px rgba(255, 255, 255, 0.9);
+}
+input[value="on"]:checked ~ #entypo-lamp {
+  left: 109px;
+}
+.btnouter {
+  border: 2px solid #393939;
+  width: 45px;
+  height: 19px;
+  position: absolute;
+  left: 95px;
+  top: 14px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -o-border-radius: 20px;
+  -ms-border-radius: 20px;
+  background: #494949;
+  z-index: 0;
+}
+.title {
+  color: #fff;
+  position: relative;
+  top: -80px;
+  font-size: 20px;
+}
+.circle {
+  background-color: #fff;
+  position: absolute;
+  right: -749px;
+  top: -119px;
+  width: 70px;
+  height: 289px;
+  border-radius: 50%;
+  z-index: -1;
+  line-height: 289px;
+  text-align: center;
+  opacity: 0;
+}
+input[value="on"]:checked ~ .circle,
+input[value="on"]:checked ~ .text {
+  opacity: 1;
+}
