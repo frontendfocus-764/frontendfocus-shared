@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  background: #05050a;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+  position: relative;
+}
+
+#shine-text {
+  font-size: 100px;
+  font-weight: 900;
+  letter-spacing: 12px;
+  color: #fff;
+  position: relative;
+  text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff, 0 0 40px #00eaff,
+    0 0 80px #00eaff;
+
+  /* smooth wave motion */
+  animation: wave 3s ease-in-out infinite alternate, glow 3s linear infinite;
+  overflow: hidden;
+}
+
+/* Shine effect */
+#shine-text::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  height: 100%;
+  width: 50%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.9),
+    transparent
+  );
+  animation: shine 2.5s infinite;
+}
+
+/* Wave Animation */
+@keyframes wave {
+  from {
+    transform: translateY(-10px) rotateX(15deg);
+  }
+  to {
+    transform: translateY(10px) rotateX(-15deg);
+  }
+}
+
+/* Glow pulsing */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px #00eaff, 0 0 30px #00eaff;
+  }
+  50% {
+    text-shadow: 0 0 25px #00eaff, 0 0 80px #00eaff;
+  }
+  100% {
+    text-shadow: 0 0 10px #00eaff, 0 0 30px #00eaff;
+  }
+}
+
+/* Shine */
+@keyframes shine {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
