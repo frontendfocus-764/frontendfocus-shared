@@ -1,0 +1,177 @@
+/* --- Base Styles & Variables --- */
+
+:root {
+  /* Light Mode */
+
+  --bg-color: #f0f0f0;
+
+  --text-color-primary: #333;
+
+  --text-color-secondary: #666;
+
+  --link-color: #007bff;
+
+  --link-hover-color: #0056b3;
+
+  --link-text-color: #ffffff;
+
+  /* P5 particle color (will be overridden by JS for dark mode) */
+
+  --particle-color-base: 150; /* Grayscale value for light mode */
+
+  --particle-alpha: 80;
+}
+
+/* --- Dark Mode Overrides --- */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #1a1a1a; /* Slightly darker bg */
+
+    --text-color-primary: #e0e0e0;
+
+    --text-color-secondary: #aaaaaa;
+
+    --link-color: #58a6ff;
+
+    --link-hover-color: #80bfff;
+
+    --link-text-color: #1a1a1a;
+
+    /* P5 particle color (will be overridden by JS for dark mode) */
+
+    --particle-color-base: 200; /* Lighter Gray for dark mode */
+
+    --particle-alpha: 60;
+  }
+}
+
+/* --- General Setup --- */
+
+body {
+  margin: 0;
+
+  min-height: 100vh;
+
+  font-family: "Arial", sans-serif;
+
+  background-color: var(--bg-color);
+
+  color: var(--text-color-primary);
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  overflow: hidden; /* Crucial to prevent scrollbars */
+
+  position: relative; /* Needed for positioning the overlay */
+}
+
+/* --- P5 Canvas Container --- */
+
+#canvas-container {
+  position: absolute; /* Take it out of flow */
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  z-index: 0; /* Behind the content */
+}
+
+/* --- Content Styling --- */
+
+.content-overlay {
+  position: relative; /* Sit on top of canvas */
+
+  z-index: 1; /* Ensure it's above the canvas */
+
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+}
+
+.text-content {
+  /* Optional: Add a subtle background to text area for readability */
+
+  /* background-color: rgba(255, 255, 255, 0.1); */
+
+  /* backdrop-filter: blur(2px); */
+
+  /* padding: 30px; */
+
+  /* border-radius: 10px; */
+}
+
+.status-code {
+  font-size: clamp(6rem, 25vw, 15rem); /* Responsive */
+
+  font-weight: bold;
+
+  margin: 0 0 10px 0;
+
+  color: var(--text-color-primary);
+
+  transition: color 0.3s ease;
+
+  line-height: 1; /* Prevent large line height causing overflow */
+}
+
+/* Individual digits for Anime.js targeting */
+
+.status-code .digit {
+  display: inline-block; /* Allows transform */
+
+  margin: 0 -0.05em; /* Adjust spacing slightly */
+}
+
+.message {
+  font-size: clamp(1.2rem, 4vw, 1.8rem); /* Responsive */
+
+  margin: 0 0 40px 0;
+
+  color: var(--text-color-secondary);
+
+  transition: color 0.3s ease;
+}
+
+/* --- Link Styling --- */
+
+.home-link {
+  display: inline-block;
+
+  padding: 12px 25px;
+
+  font-size: 1rem;
+
+  font-weight: bold;
+
+  color: var(--link-text-color);
+
+  background-color: var(--link-color);
+
+  text-decoration: none;
+
+  border-radius: 5px;
+
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.home-link:hover {
+  background-color: var(--link-hover-color);
+
+  transform: translateY(-2px);
+}
