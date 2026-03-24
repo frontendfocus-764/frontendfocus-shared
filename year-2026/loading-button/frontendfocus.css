@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+
+button {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  display: grid;
+  place-items: center;
+  height: 64px;
+  padding: 0 32px;
+  border: 0;
+  border-radius: 10px;
+  font-family: Poppins;
+  font-size: 18px;
+  color: #ffffff;
+  cursor: wait;
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(25px);
+  }
+  100% {
+    transform: translateX(-20px);
+  }
+}
+
+button > span {
+  position: relative;
+  z-index: 2;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: -100%;
+  width: 300%;
+  height: 100%;
+  background: #8f44fd
+    repeating-linear-gradient(
+    60deg,
+      transparent,
+      transparent 10px,
+      #7a3bd7 10px,
+      #7a3bd7 20px
+    );
+  
+  animation: loading 1s infinite linear;
+}
