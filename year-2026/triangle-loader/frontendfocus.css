@@ -1,0 +1,9 @@
+body {
+  background-color: #170523;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  margin: auto;
+}
