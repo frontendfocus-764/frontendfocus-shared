@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bar Animations Suite</title>
+    <link rel="stylesheet" href="frontendfocus.css">
+</head>
+<body>
+   <div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <div class="logo"></div>
+      <div class="titles">
+        <h1>Progress Lab</h1>
+        <p>6 premium progress styles • Start to run the animation sequence</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="startBtn" class="btn primary" type="button">Start</button>
+      <button id="resetBtn" class="btn" type="button">Reset</button>
+      <button id="pauseBtn" class="btn" type="button" aria-pressed="false">Pause</button>
+    </div>
+  </header>
+
+  <main class="grid">
+    <!-- 1) Simple fill -->
+    <section class="card" data-kind="simple">
+      <div class="head">
+        <h2>Simple Fill</h2>
+        <div class="meta"><span class="badge">Determinate</span><span class="pct" data-pct>0%</span></div>
+      </div>
+
+      <div class="bar bar--simple" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="track"></div>
+        <div class="fill" data-fill style="--p:0"></div>
+        <div class="glow"></div>
+      </div>
+
+      <p class="note">Classic left→right fill with a soft glow edge.</p>
+    </section>
+
+    <!-- 2) Segmented / step bar -->
+    <section class="card" data-kind="segmented">
+      <div class="head">
+        <h2>Segmented Steps</h2>
+        <div class="meta"><span class="badge">Step</span><span class="pct" data-pct>0%</span></div>
+      </div>
+
+      <div class="segments" data-segments aria-label="Segmented progress">
+        <!-- created by JS -->
+      </div>
+
+      <p class="note">10 steps with smooth “snap” and micro highlight.</p>
+    </section>
+
+    <!-- 3) Gradient moving fill -->
+    <section class="card" data-kind="gradient">
+      <div class="head">
+        <h2>Gradient Flow</h2>
+        <div class="meta"><span class="badge">Determinate</span><span class="pct" data-pct>0%</span></div>
+      </div>
+
+      <div class="bar bar--gradient" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="track"></div>
+        <div class="fill" data-fill style="--p:0"></div>
+        <div class="shine"></div>
+      </div>
+
+      <p class="note">Progress width + animated gradient drift.</p>
+    </section>
+
+    <!-- 4) Striped indeterminate -->
+    <section class="card" data-kind="striped">
+      <div class="head">
+        <h2>Striped Indeterminate</h2>
+        <div class="meta"><span class="badge">Indeterminate</span><span class="pct subtle">…</span></div>
+      </div>
+
+      <div class="bar bar--striped" aria-label="Indeterminate progress">
+        <div class="track"></div>
+        <div class="indeterminate" data-indeterminate></div>
+      </div>
+
+      <p class="note">Use when time is unknown (uploading/connecting).</p>
+    </section>
+
+    <!-- 5) Buffer bar (played vs buffered) -->
+    <section class="card" data-kind="buffer">
+      <div class="head">
+        <h2>Buffer (Played vs Buffered)</h2>
+        <div class="meta"><span class="badge">Dual</span><span class="pct" data-pct>0%</span></div>
+      </div>
+
+      <div class="bar bar--buffer" aria-label="Buffered progress">
+        <div class="track"></div>
+        <div class="buffer" data-buffer style="--b:0"></div>
+        <div class="fill" data-fill style="--p:0"></div>
+        <div class="cap"></div>
+      </div>
+
+      <div class="mini">
+        <div><span class="dot d1"></span>Buffered: <b data-btxt>0%</b></div>
+        <div><span class="dot d2"></span>Played: <b data-ptxt>0%</b></div>
+      </div>
+
+      <p class="note">Media-like progress: buffer leads, play follows.</p>
+    </section>
+
+    <!-- 6) Heat/progress bar (color changes with %) -->
+    <section class="card" data-kind="heat">
+      <div class="head">
+        <h2>Heat Progress</h2>
+        <div class="meta"><span class="badge">Color-shift</span><span class="pct" data-pct>0%</span></div>
+      </div>
+
+      <div class="bar bar--heat" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="track"></div>
+        <div class="fill" data-fill style="--p:0"></div>
+        <div class="marker" data-marker>0%</div>
+      </div>
+
+      <p class="note">Hue transitions from cool → warm as % increases.</p>
+    </section>
+  </main>
+</div> 
+
+<script src="frontenfocus.js"></script>
+</body>
+</html>
