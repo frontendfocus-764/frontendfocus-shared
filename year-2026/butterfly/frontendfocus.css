@@ -1,0 +1,868 @@
+/* ============================================
+           ROOT VARIABLES & RESET
+           ============================================ */
+:root {
+	--color-before: #1a0a2e;
+	--color-after: #ff6b35;
+	--color-glow: #00d4ff;
+	--color-accent: #7b2cbf;
+	--color-white: #ffffff;
+	--color-gold: #ffd700;
+	--transition-smooth: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* ============================================
+           BODY & MAIN CONTAINER
+           ============================================ */
+body {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	min-height: 100vh;
+	overflow-x: hidden;
+	background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0d0d0d 100%);
+	color: var(--color-white);
+}
+
+.container {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 20px;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+/* ============================================
+           HEADER WITH ::BEFORE AND ::AFTER
+           ============================================ */
+.header {
+	text-align: center;
+	padding: 40px 20px;
+	position: relative;
+}
+
+.header__title {
+	font-size: clamp(2rem, 6vw, 4rem);
+	font-weight: 900;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	position: relative;
+	display: inline-block;
+	background: linear-gradient(
+		90deg,
+		var(--color-glow),
+		var(--color-accent),
+		var(--color-after)
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+/* Decorative elements using ::before and ::after */
+.header__title::before,
+.header__title::after {
+	content: "◆";
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 1.5rem;
+	-webkit-text-fill-color: var(--color-glow);
+	animation: pulse 2s ease-in-out infinite;
+}
+
+.header__title::before {
+	left: -50px;
+	animation-delay: 0s;
+}
+
+.header__title::after {
+	right: -50px;
+	animation-delay: 1s;
+}
+
+.header__subtitle {
+	font-size: 1.1rem;
+	color: rgba(255, 255, 255, 0.7);
+	margin-top: 15px;
+	letter-spacing: 2px;
+}
+
+/* ============================================
+           METAMORPHOSIS STAGE
+           ============================================ */
+.stage {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 0 20px;
+	position: relative;
+}
+
+/* ============================================
+           THE CREATURE - CATERPILLAR TO BUTTERFLY
+           ============================================ */
+.creature-container {
+	position: relative;
+	width: 100%;
+	max-width: 600px;
+	height: 150px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* The Caterpillar (Before State) */
+.caterpillar {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	transition: var(--transition-smooth);
+	opacity: 1;
+	transform: scale(1);
+}
+
+.caterpillar.hidden {
+	opacity: 0;
+	transform: scale(0.5);
+	pointer-events: none;
+}
+
+.caterpillar__segment {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background: linear-gradient(145deg, #4ade80, #22c55e);
+	margin: 0 -8px;
+	position: relative;
+	box-shadow: 0 4px 15px rgba(74, 222, 128, 0.4),
+		inset 0 -5px 10px rgba(0, 0, 0, 0.2),
+		inset 0 5px 10px rgba(255, 255, 255, 0.3);
+	animation: segmentWiggle 1.5s ease-in-out infinite;
+}
+
+.caterpillar__segment:nth-child(1) {
+	animation-delay: 0s;
+}
+
+.caterpillar__segment:nth-child(2) {
+	animation-delay: 0.1s;
+}
+
+.caterpillar__segment:nth-child(3) {
+	animation-delay: 0.2s;
+}
+
+.caterpillar__segment:nth-child(4) {
+	animation-delay: 0.3s;
+}
+
+.caterpillar__segment:nth-child(5) {
+	animation-delay: 0.4s;
+}
+
+/* Caterpillar head with ::before and ::after for eyes */
+.caterpillar__head {
+	width: 60px;
+	height: 55px;
+	border-radius: 50% 50% 45% 45%;
+	background: linear-gradient(145deg, #4ade80, #22c55e);
+	margin-left: -8px;
+	position: relative;
+	box-shadow: 0 4px 15px rgba(74, 222, 128, 0.4),
+		inset 0 -5px 10px rgba(0, 0, 0, 0.2),
+		inset 0 5px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Eyes using ::before and ::after */
+.caterpillar__head::before,
+.caterpillar__head::after {
+	content: "";
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	background: var(--color-white);
+	border-radius: 50%;
+	top: 12px;
+	box-shadow: inset 4px 0 0 #333;
+	animation: blink 3s ease-in-out infinite;
+}
+
+.caterpillar__head::before {
+	left: 10px;
+}
+
+.caterpillar__head::after {
+	right: 10px;
+}
+
+/* Antennae */
+.caterpillar__antenna {
+	position: absolute;
+	width: 4px;
+	height: 25px;
+	background: linear-gradient(to top, #22c55e, #4ade80);
+	top: -20px;
+	border-radius: 4px;
+	transform-origin: bottom center;
+}
+
+.caterpillar__antenna--left {
+	left: 15px;
+	transform: rotate(-20deg);
+	animation: antennaWave 2s ease-in-out infinite;
+}
+
+.caterpillar__antenna--right {
+	right: 15px;
+	transform: rotate(20deg);
+	animation: antennaWave 2s ease-in-out infinite reverse;
+}
+
+.caterpillar__antenna::after {
+	content: "";
+	position: absolute;
+	top: -8px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 10px;
+	height: 10px;
+	background: #22c55e;
+	border-radius: 50%;
+}
+
+/* ============================================
+           THE COCOON (Transition State)
+           ============================================ */
+.cocoon {
+	position: absolute;
+	width: 80px;
+	height: 140px;
+	background: linear-gradient(145deg, #8b5a2b, #654321);
+	border-radius: 40% 40% 45% 45%;
+	opacity: 0;
+	transform: scale(0);
+	transition: var(--transition-smooth);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+		inset -10px 0 20px rgba(0, 0, 0, 0.3),
+		inset 10px 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.cocoon.visible {
+	opacity: 1;
+	transform: scale(1);
+	animation: cocoonPulse 2s ease-in-out infinite;
+}
+
+.cocoon.cracking {
+	animation: cocoonCrack 1s ease-out forwards;
+}
+
+/* Cocoon texture using ::before */
+.cocoon::before {
+	content: "";
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	right: 10%;
+	bottom: 10%;
+	background: repeating-linear-gradient(
+		90deg,
+		transparent,
+		transparent 5px,
+		rgba(0, 0, 0, 0.1) 5px,
+		rgba(0, 0, 0, 0.1) 10px
+	);
+	border-radius: inherit;
+}
+
+/* Cocoon glow using ::after */
+.cocoon::after {
+	content: "";
+	position: absolute;
+	top: -20px;
+	left: -20px;
+	right: -20px;
+	bottom: -20px;
+	background: radial-gradient(ellipse, rgba(139, 90, 43, 0.3), transparent 70%);
+	border-radius: 50%;
+	animation: cocoonGlow 3s ease-in-out infinite;
+}
+
+/* ============================================
+           THE BUTTERFLY (After State)
+           ============================================ */
+.butterfly {
+	position: absolute;
+	opacity: 0;
+	transform: scale(0);
+	transition: var(--transition-smooth);
+}
+
+.butterfly.visible {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.butterfly.flying {
+	animation: butterflyFloat 4s ease-in-out infinite;
+}
+
+.butterfly__body {
+	width: 20px;
+	height: 100px;
+	background: linear-gradient(180deg, #1a1a2e, #16213e);
+	border-radius: 10px;
+	position: relative;
+	z-index: 2;
+	box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+/* Butterfly head using ::before */
+.butterfly__body::before {
+	content: "";
+	position: absolute;
+	top: -15px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 25px;
+	height: 25px;
+	background: linear-gradient(145deg, #1a1a2e, #16213e);
+	border-radius: 50%;
+	box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+}
+
+/* Butterfly tail using ::after */
+.butterfly__body::after {
+	content: "";
+	position: absolute;
+	bottom: -10px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 0;
+	height: 0;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-top: 15px solid #16213e;
+}
+
+.butterfly__wings {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.butterfly__wing {
+	position: absolute;
+	width: 120px;
+	height: 160px;
+	border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+	transform-origin: center right;
+}
+
+.butterfly__wing--left-top {
+	background: linear-gradient(
+		135deg,
+		var(--color-glow) 0%,
+		var(--color-accent) 50%,
+		var(--color-after) 100%
+	);
+	top: -80px;
+	right: 10px;
+	transform: rotate(-15deg);
+	animation: wingFlapLeft 0.3s ease-in-out infinite;
+	box-shadow: 0 0 30px rgba(0, 212, 255, 0.5),
+		inset 0 0 40px rgba(255, 255, 255, 0.2);
+}
+
+.butterfly__wing--right-top {
+	background: linear-gradient(
+		-135deg,
+		var(--color-glow) 0%,
+		var(--color-accent) 50%,
+		var(--color-after) 100%
+	);
+	top: -80px;
+	left: 10px;
+	transform: rotate(15deg) scaleX(-1);
+	animation: wingFlapRight 0.3s ease-in-out infinite;
+	box-shadow: 0 0 30px rgba(0, 212, 255, 0.5),
+		inset 0 0 40px rgba(255, 255, 255, 0.2);
+}
+
+.butterfly__wing--left-bottom {
+	background: linear-gradient(
+		135deg,
+		var(--color-after) 0%,
+		var(--color-accent) 100%
+	);
+	width: 80px;
+	height: 100px;
+	top: 20px;
+	right: 10px;
+	transform: rotate(15deg);
+	animation: wingFlapLeft 0.3s ease-in-out infinite;
+	animation-delay: 0.05s;
+	box-shadow: 0 0 20px rgba(255, 107, 53, 0.5),
+		inset 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.butterfly__wing--right-bottom {
+	background: linear-gradient(
+		-135deg,
+		var(--color-after) 0%,
+		var(--color-accent) 100%
+	);
+	width: 80px;
+	height: 100px;
+	top: 20px;
+	left: 10px;
+	transform: rotate(-15deg) scaleX(-1);
+	animation: wingFlapRight 0.3s ease-in-out infinite;
+	animation-delay: 0.05s;
+	box-shadow: 0 0 20px rgba(255, 107, 53, 0.5),
+		inset 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+/* Wing patterns using ::before and ::after */
+.butterfly__wing--left-top::before,
+.butterfly__wing--right-top::before {
+	content: "";
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	background: rgba(255, 255, 255, 0.3);
+	border-radius: 50%;
+	top: 30%;
+	left: 30%;
+}
+
+.butterfly__wing--left-top::after,
+.butterfly__wing--right-top::after {
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 50%;
+	top: 50%;
+	left: 50%;
+}
+
+/* ============================================
+           PARTICLE SYSTEM
+           ============================================ */
+.particles {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.particle {
+	position: absolute;
+	border-radius: 50%;
+	pointer-events: none;
+	animation: particleFloat 8s ease-in-out infinite;
+}
+
+/* ============================================
+           CONTROLS
+           ============================================ */
+.controls {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 30px;
+	padding: 40px 20px;
+}
+
+.phase-indicator {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+}
+
+.phase-dot {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.2);
+	position: relative;
+	transition: var(--transition-smooth);
+	cursor: pointer;
+}
+
+.phase-dot.active {
+	background: var(--color-glow);
+	box-shadow: 0 0 20px var(--color-glow);
+}
+
+/* Phase labels using ::after */
+.phase-dot::after {
+	content: attr(data-label);
+	position: absolute;
+	top: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 0.75rem;
+	white-space: nowrap;
+	color: rgba(255, 255, 255, 0.6);
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.phase-dot:hover::after,
+.phase-dot.active::after {
+	opacity: 1;
+}
+
+.phase-line {
+	width: 60px;
+	height: 3px;
+	background: rgba(255, 255, 255, 0.2);
+	position: relative;
+	overflow: hidden;
+}
+
+.phase-line::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 0%;
+	background: var(--color-glow);
+	transition: width 0.8s ease;
+}
+
+.phase-line.progress-1::before {
+	width: 100%;
+}
+
+.phase-line.progress-2::before {
+	width: 100%;
+}
+
+.transform-btn {
+	padding: 18px 50px;
+	font-size: 1.2rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	background: linear-gradient(135deg, var(--color-accent), var(--color-glow));
+	color: var(--color-white);
+	box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3), 0 0 0 0 rgba(0, 212, 255, 0.5);
+	transition: var(--transition-smooth);
+}
+
+.transform-btn:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 15px 50px rgba(0, 212, 255, 0.4),
+		0 0 0 5px rgba(0, 212, 255, 0.2);
+}
+
+.transform-btn:active {
+	transform: translateY(0);
+}
+
+/* Button shine effect using ::before */
+.transform-btn::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.3),
+		transparent
+	);
+	transition: left 0.5s;
+}
+
+.transform-btn:hover::before {
+	left: 100%;
+}
+
+/* ============================================
+           STATUS TEXT
+           ============================================ */
+.status {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.status__text {
+	font-size: 1.5rem;
+	font-weight: 300;
+	letter-spacing: 2px;
+	position: relative;
+	display: inline-block;
+}
+
+/* Decorative quotes using ::before and ::after */
+.status__text::before {
+	content: '"';
+	position: absolute;
+	left: -25px;
+	top: -5px;
+	font-size: 2rem;
+	color: var(--color-glow);
+	opacity: 0.5;
+}
+
+.status__text::after {
+	content: '"';
+	position: absolute;
+	right: -25px;
+	top: -5px;
+	font-size: 2rem;
+	color: var(--color-glow);
+	opacity: 0.5;
+}
+
+/* ============================================
+           ANIMATIONS
+           ============================================ */
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 0.5;
+		transform: translateY(-50%) scale(1);
+	}
+
+	50% {
+		opacity: 1;
+		transform: translateY(-50%) scale(1.2);
+	}
+}
+
+@keyframes segmentWiggle {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-5px);
+	}
+}
+
+@keyframes blink {
+	0%,
+	45%,
+	55%,
+	100% {
+		transform: scaleY(1);
+	}
+
+	50% {
+		transform: scaleY(0.1);
+	}
+}
+
+@keyframes antennaWave {
+	0%,
+	100% {
+		transform: rotate(-20deg);
+	}
+
+	50% {
+		transform: rotate(-30deg);
+	}
+}
+
+@keyframes cocoonPulse {
+	0%,
+	100% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.03);
+	}
+}
+
+@keyframes cocoonGlow {
+	0%,
+	100% {
+		opacity: 0.5;
+	}
+
+	50% {
+		opacity: 1;
+	}
+}
+
+@keyframes cocoonCrack {
+	0% {
+		transform: scale(1);
+		filter: brightness(1);
+	}
+
+	50% {
+		transform: scale(1.1);
+		filter: brightness(1.5);
+	}
+
+	100% {
+		transform: scale(0);
+		filter: brightness(2);
+		opacity: 0;
+	}
+}
+
+@keyframes wingFlapLeft {
+	0%,
+	100% {
+		transform: rotate(-15deg) perspective(500px) rotateY(0deg);
+	}
+
+	50% {
+		transform: rotate(-15deg) perspective(500px) rotateY(40deg);
+	}
+}
+
+@keyframes wingFlapRight {
+	0%,
+	100% {
+		transform: rotate(15deg) scaleX(-1) perspective(500px) rotateY(0deg);
+	}
+
+	50% {
+		transform: rotate(15deg) scaleX(-1) perspective(500px) rotateY(40deg);
+	}
+}
+
+@keyframes butterflyFloat {
+	0%,
+	100% {
+		transform: scale(1) translate(0, 0) rotate(0deg);
+	}
+
+	25% {
+		transform: scale(1) translate(30px, -20px) rotate(5deg);
+	}
+
+	50% {
+		transform: scale(1) translate(0, -30px) rotate(0deg);
+	}
+
+	75% {
+		transform: scale(1) translate(-30px, -20px) rotate(-5deg);
+	}
+}
+
+@keyframes particleFloat {
+	0%,
+	100% {
+		transform: translate(0, 0) rotate(0deg);
+		opacity: 0;
+	}
+
+	10% {
+		opacity: 1;
+	}
+
+	90% {
+		opacity: 1;
+	}
+
+	100% {
+		transform: translate(var(--tx), var(--ty)) rotate(360deg);
+		opacity: 0;
+	}
+}
+
+@keyframes sparkle {
+	0%,
+	100% {
+		transform: scale(0) rotate(0deg);
+		opacity: 0;
+	}
+
+	50% {
+		transform: scale(1) rotate(180deg);
+		opacity: 1;
+	}
+}
+
+/* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+@media (max-width: 768px) {
+	.header__title::before,
+	.header__title::after {
+		display: none;
+	}
+
+	.creature-container {
+		height: 300px;
+	}
+
+	.caterpillar__segment {
+		width: 35px;
+		height: 35px;
+	}
+
+	.caterpillar__head {
+		width: 45px;
+		height: 40px;
+	}
+
+	.butterfly__wing {
+		width: 80px;
+		height: 110px;
+	}
+
+	.butterfly__wing--left-bottom,
+	.butterfly__wing--right-bottom {
+		width: 55px;
+		height: 70px;
+	}
+
+	.butterfly__body {
+		width: 15px;
+		height: 70px;
+	}
+
+	.transform-btn {
+		padding: 15px 35px;
+		font-size: 1rem;
+	}
+
+	.status__text {
+		font-size: 1.2rem;
+	}
+
+	.status__text::before,
+	.status__text::after {
+		display: none;
+	}
+}
+
+@media (max-width: 480px) {
+	.phase-indicator {
+		transform: scale(0.8);
+	}
+}

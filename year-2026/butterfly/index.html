@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Butterfly Metamorphosis</title>
+    <link rel="stylesheet" href="frontendfocus.css">
+</head>
+<body>
+   <!-- Particle Container -->
+<div class="particles" id="particles"></div>
+
+<div class="container">
+	<!-- Header Section -->
+	<header class="header">
+		<h1 class="header__title">Digital Metamorphosis</h1>
+		<p class="header__subtitle">Witness the transformation from before to after</p>
+	</header>
+
+	<!-- Main Stage -->
+	<main class="stage">
+		<div class="creature-container" id="creatureContainer">
+			<!-- Caterpillar (Before State) -->
+			<div class="caterpillar" id="caterpillar">
+				<div class="caterpillar__segment"></div>
+				<div class="caterpillar__segment"></div>
+				<div class="caterpillar__segment"></div>
+				<div class="caterpillar__segment"></div>
+				<div class="caterpillar__segment"></div>
+				<div class="caterpillar__head">
+					<div class="caterpillar__antenna caterpillar__antenna--left"></div>
+					<div class="caterpillar__antenna caterpillar__antenna--right"></div>
+				</div>
+			</div>
+
+			<!-- Cocoon (Transition State) -->
+			<div class="cocoon" id="cocoon"></div>
+
+			<!-- Butterfly (After State) -->
+			<div class="butterfly" id="butterfly">
+				<div class="butterfly__wings">
+					<div class="butterfly__wing butterfly__wing--left-top"></div>
+					<div class="butterfly__wing butterfly__wing--right-top"></div>
+					<div class="butterfly__wing butterfly__wing--left-bottom"></div>
+					<div class="butterfly__wing butterfly__wing--right-bottom"></div>
+				</div>
+				<div class="butterfly__body"></div>
+			</div>
+		</div>
+	</main>
+
+	<!-- Controls Section -->
+	<section class="controls">
+		<!-- Phase Indicator -->
+		<div class="phase-indicator">
+			<div class="phase-dot active" data-phase="0" data-label="Caterpillar"></div>
+			<div class="phase-line" id="line1"></div>
+			<div class="phase-dot" data-phase="1" data-label="Cocoon"></div>
+			<div class="phase-line" id="line2"></div>
+			<div class="phase-dot" data-phase="2" data-label="Butterfly"></div>
+		</div>
+
+		<!-- Transform Button -->
+		<button class="transform-btn" id="transformBtn">Transform</button>
+
+		<!-- Status Display -->
+		<div class="status">
+			<p class="status__text" id="statusText">The journey begins...</p>
+		</div>
+	</section>
+</div> 
+
+<script src="frontendfocus.js"></script>
+</body>
+</html>
