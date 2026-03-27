@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metal Button</title>
+    <link rel="stylesheet" href="frontendfocus.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Advanced Metal Button</h1>
+        <p class="description">Click, hover, or press space/enter to see effects</p>
+        
+        <div class="button-container">
+            <button class="metal-button" id="metalButton" aria-label="Animated metal button with up arrow">
+                <div class="button-inner">
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                        <path d="m26.71 10.29-10-10a1 1 0 0 0-1.41 0l-10 10 1.41 1.41L15 3.41V32h2V3.41l8.29 8.29z"/>
+                    </svg>
+                    <div class="sparkle-container">
+                        <div class="sparkle"></div>
+                        <div class="sparkle"></div>
+                        <div class="sparkle"></div>
+                        <div class="sparkle"></div>
+                    </div>
+                </div>
+                <div class="button-glow"></div>
+                <div class="button-shadow"></div>
+            </button>
+        </div>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="animationSpeed">Animation Speed</label>
+                <input type="range" id="animationSpeed" min="1" max="20" value="10">
+                <span id="speedValue">Normal</span>
+            </div>
+            <div class="control-group">
+                <label for="buttonSize">Button Size</label>
+                <input type="range" id="buttonSize" min="60" max="200" value="120">
+                <span id="sizeValue">120px</span>
+            </div>
+            <button class="control-btn" id="toggleAnimation">Pause Animation</button>
+            <button class="control-btn" id="toggleSound">Sound: On</button>
+        </div>
+    </div>
+
+    <script src="frontendfocus.js"></script>
+</body>
+</html>

@@ -1,0 +1,420 @@
+/* style.css */
+@property --gradient_rotate {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@property --pulse_scale {
+    syntax: "<number>";
+    initial-value: 1;
+    inherits: false;
+}
+
+@property --glow_opacity {
+    syntax: "<number>";
+    initial-value: 0;
+    inherits: false;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 1.6rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, 
+                rgb(10, 10, 20) 0%,
+                rgb(20, 20, 40) 50%,
+                rgb(10, 10, 25) 100%);
+    color: rgb(240, 240, 255);
+    padding: 2rem;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+    text-align: center;
+    background: linear-gradient(to right, #a0a0c0, #e0e0ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 15px rgba(160, 160, 220, 0.3);
+}
+
+.description {
+    font-size: 1.8rem;
+    text-align: center;
+    color: rgb(180, 180, 220);
+    margin-bottom: 1rem;
+}
+
+.button-container {
+    position: relative;
+    padding: 4rem;
+    display: grid;
+    place-items: center;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+}
+
+.metal-button {
+    --gradient_rotate: 0deg;
+    --pulse_scale: 1;
+    --glow_opacity: 0;
+    --border_width: 1.2rem;
+    
+    --metal_01: rgb(220, 220, 240);
+    --metal_02: rgb(180, 180, 210);
+    --metal_03: rgb(140, 140, 170);
+    --metal_04: rgb(100, 100, 130);
+    --metal_05: rgb(60, 60, 90);
+    --metal_06: rgb(20, 20, 30);
+    
+    --button_size: 120px;
+    
+    position: relative;
+    cursor: pointer;
+    width: var(--button_size);
+    height: var(--button_size);
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 60%),
+        linear-gradient(0deg,
+            rgb(10, 10, 15) 10%,
+            rgb(30, 30, 45) 90%) padding-box,
+        conic-gradient(from var(--gradient_rotate),
+            rgb(from var(--metal_01) r g b / 0.8),
+            rgb(from var(--metal_01) r g b / 0.1),
+            rgb(from var(--metal_06) r g b / 0.1),
+            rgb(from var(--metal_06) r g b / 1.0),
+            rgb(from var(--metal_04) r g b / 0.6),
+            rgb(from var(--metal_04) r g b / 0.1),
+            rgb(from var(--metal_04) r g b / 0.9),
+            rgb(from var(--metal_01) r g b / 0.8)) border-box;
+    
+    border-radius: 50%;
+    border: var(--border_width) solid transparent;
+    animation: button_gradient_rotate 12s linear infinite, button_pulse 4s ease-in-out infinite;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: scale(var(--pulse_scale));
+    overflow: hidden;
+}
+
+.button-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.arrow-icon {
+    width: 60%;
+    height: 60%;
+    fill: rgb(250, 250, 250);
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
+    transition: transform 0.2s ease;
+}
+
+.sparkle-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.sparkle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0;
+    filter: blur(1px);
+}
+
+.sparkle:nth-child(1) { top: 15%; left: 15%; }
+.sparkle:nth-child(2) { top: 15%; right: 15%; }
+.sparkle:nth-child(3) { bottom: 15%; left: 15%; }
+.sparkle:nth-child(4) { bottom: 15%; right: 15%; }
+
+.button-glow {
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, 
+                rgba(100, 150, 255, 0.7) 0%, 
+                transparent 70%);
+    opacity: var(--glow_opacity);
+    z-index: 1;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.button-shadow {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    box-shadow: 
+        inset 0 0 40px rgba(0, 0, 0, 0.9),
+        inset 0 0 20px rgba(0, 0, 0, 0.8),
+        0 5px 30px rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.metal-button::before {
+    content: "";
+    position: absolute;
+    inset: calc(-1 * var(--border_width));
+    z-index: -1;
+    border-radius: inherit;
+    background: 
+        conic-gradient(from var(--gradient_rotate),
+            rgb(from var(--metal_03) r g b / 1.0),
+            rgb(from var(--metal_01) r g b / 1.0),
+            rgb(from var(--metal_01) r g b / 1.0),
+            rgb(from var(--metal_06) r g b / 1.0),
+            rgb(from var(--metal_02) r g b / 1.0),
+            rgb(from var(--metal_05) r g b / 1.0),
+            rgb(from var(--metal_04) r g b / 1.0),
+            rgb(from var(--metal_03) r g b / 1.0)) border-box;
+    animation: button_gradient_rotate 8s linear infinite reverse;
+    border: 0.3rem solid transparent;
+    filter: blur(2px);
+}
+
+.metal-button::after {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: conic-gradient(from var(--gradient_rotate),
+        rgba(255, 255, 255, 0.05) 0%,
+        rgba(255, 255, 255, 0.1) 30%,
+        rgba(255, 255, 255, 0.05) 70%,
+        transparent 100%);
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+/* Hover effects */
+.metal-button:hover {
+    --pulse_scale: 1.05;
+    --glow_opacity: 0.6;
+}
+
+.metal-button:hover .arrow-icon {
+    transform: translateY(-3px);
+}
+
+.metal-button:active {
+    --pulse_scale: 0.95;
+    --glow_opacity: 0.9;
+    animation-play-state: running;
+}
+
+.metal-button:active .arrow-icon {
+    transform: translateY(2px);
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    background: rgba(20, 20, 40, 0.7);
+    padding: 2rem;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 600px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(100, 100, 150, 0.3);
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 150px;
+}
+
+.control-group label {
+    font-size: 1.5rem;
+    color: rgb(180, 180, 220);
+    font-weight: 500;
+}
+
+.control-group input[type="range"] {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(to right, rgb(60, 60, 90), rgb(140, 140, 200));
+    border-radius: 4px;
+    outline: none;
+}
+
+.control-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgb(220, 220, 240);
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(220, 220, 240, 0.7);
+}
+
+.control-group span {
+    font-size: 1.4rem;
+    color: rgb(200, 200, 230);
+}
+
+.control-btn {
+    background: linear-gradient(to bottom, rgb(60, 60, 90), rgb(40, 40, 70));
+    color: rgb(220, 220, 240);
+    border: none;
+    border-radius: 8px;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(100, 100, 150, 0.5);
+    align-self: center;
+}
+
+.control-btn:hover {
+    background: linear-gradient(to bottom, rgb(80, 80, 110), rgb(50, 50, 80));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes button_gradient_rotate {
+    from { --gradient_rotate: 0deg; }
+    to { --gradient_rotate: 360deg; }
+}
+
+@keyframes button_pulse {
+    0%, 100% { --pulse_scale: 1; }
+    50% { --pulse_scale: 1.02; }
+}
+
+@keyframes sparkle {
+    0% { 
+        opacity: 0; 
+        transform: scale(0.5) rotate(0deg); 
+    }
+    50% { 
+        opacity: 1; 
+        transform: scale(1.2) rotate(180deg); 
+    }
+    100% { 
+        opacity: 0; 
+        transform: scale(0.5) rotate(360deg); 
+    }
+}
+
+/* Focus state for accessibility */
+.metal-button:focus {
+    outline: 2px solid rgba(150, 180, 255, 0.8);
+    outline-offset: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+        gap: 2rem;
+    }
+    
+    h1 {
+        font-size: 2.8rem;
+    }
+    
+    .controls {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    
+    .instructions ul {
+        grid-template-columns: 1fr;
+    }
+    
+    .metal-button {
+        --button_size: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    .description {
+        font-size: 1.6rem;
+    }
+    
+    .metal-button {
+        --button_size: 90px;
+    }
+}
+
+/* style.css - Same as before, but adding click effect animation */
+@keyframes clickEffect {
+    0% { 
+        box-shadow: 
+            inset 0 0 40px rgba(0, 0, 0, 0.9),
+            inset 0 0 20px rgba(0, 0, 0, 0.8),
+            0 5px 30px rgba(0, 0, 0, 0.7),
+            0 0 0 0 rgba(100, 150, 255, 0.7);
+    }
+    50% { 
+        box-shadow: 
+            inset 0 0 40px rgba(0, 0, 0, 0.9),
+            inset 0 0 20px rgba(0, 0, 0, 0.8),
+            0 5px 30px rgba(0, 0, 0, 0.7),
+            0 0 0 15px rgba(100, 150, 255, 0);
+    }
+    100% { 
+        box-shadow: 
+            inset 0 0 40px rgba(0, 0, 0, 0.9),
+            inset 0 0 20px rgba(0, 0, 0, 0.8),
+            0 5px 30px rgba(0, 0, 0, 0.7),
+            0 0 0 0 rgba(100, 150, 255, 0);
+    }
+}
+
