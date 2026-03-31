@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Product Card UI</title>
+    <link rel="stylesheet" href="frontendfocus.css">
+</head>
+
+<body>
+    <div class="scope product-cards | -fluid-text">
+        <div class="_card-list | grid" style="
+      --grid--fill-mode: var(--product-cards--fill-mode, auto-fill);
+      --grid--row-gap: var(--product-cards--gap, 1.5rem);
+      --grid--column-gap: var(--product-cards--gap, 1.5rem);
+      --grid--column-max-count: var(--product-cards--column-max-count, 4);
+      --grid--column-min-width: var(--product-cards--column-min-width, 20rem);">
+
+            <section class="_card">
+                <h2 class="_heading | -fluid-text -trim-both" style="--fluid-text--min-font-size: 16;
+      --fluid-text--max-font-size: 24;">Product 01</h2>
+                <div class="_thumbnail-stack">
+                    <img src="https://picsum.photos/id/100/1200/630" alt="" width="400" height="210"
+                        fetchpriority="high" />
+                    <img src="https://picsum.photos/id/100/1200/630" alt="" width="400" height="210"
+                        fetchpriority="high" />
+                </div>
+                <p class="_category | -trim-both">Category A</p>
+                <p class="_price | -trim-both">&yen;2,000</p>
+                <p class="_description | -line-clamp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                <ul class="_tag-list | cluster" style="
+      --cluster--gap: 0.5rem;">
+                    <li class="_tag | -trim-both">Tag A</li>
+                    <li class="_tag | -trim-both">Tag B</li>
+                </ul>
+                <div class="_button"
+                    style="--purchase-button--background: var(--_accent); --purchase-button--foreground: var(--_accent-contrast);">
+                    <a href="#" class="scope purchase-button">Add To Cart</a>
+                </div>
+            </section>
+
+            <section class="_card" style="--product-card--accent: #4e8397;">
+                <h2 class="_heading | -fluid-text -trim-both" style="--fluid-text--min-font-size: 16;
+      --fluid-text--max-font-size: 24;">Product 02</h2>
+                <div class="_thumbnail-stack">
+                    <img src="https://picsum.photos/id/101/1200/630" alt="" width="400" height="210"
+                        fetchpriority="high" />
+                    <img src="https://picsum.photos/id/101/1200/630" alt="" width="400" height="210"
+                        fetchpriority="high" />
+                </div>
+                <p class="_category | -trim-both">Category B</p>
+                <p class="_price | -trim-both">&yen;2,000</p>
+                <p class="_description | -line-clamp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                <ul class="_tag-list | cluster" style="
+      --cluster--gap: 0.5rem;">
+                    <li class="_tag | -trim-both">Tag A</li>
+                    <li class="_tag | -trim-both">Tag B</li>
+                </ul>
+                <div class="_button"
+                    style="--purchase-button--background: var(--_accent); --purchase-button--foreground: var(--_accent-contrast);">
+                    <a href="#" class="scope purchase-button">Add To Cart</a>
+                </div>
+            </section>
+
+            <section class="_card" style="--product-card--accent: #ff8066;">
+                <h2 class="_heading | -fluid-text -trim-both" style="--fluid-text--min-font-size: 16;
+      --fluid-text--max-font-size: 24;">Product 03</h2>
+                <div class="_thumbnail-stack">
+                    <img src="https://picsum.photos/id/102/1200/630" alt="" width="400" height="210"
+                        fetchpriority="high" />
+                    <img src="https://picsum.photos/id/102/1200/630" alt="" width="400" height="210"
+                        fetchpriority="high" />
+                </div>
+                <p class="_category | -trim-both">Category C</p>
+                <p class="_price | -trim-both">&yen;2,000</p>
+                <p class="_description | -line-clamp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                <ul class="_tag-list | cluster" style="
+      --cluster--gap: 0.5rem;">
+                    <li class="_tag | -trim-both">Tag A</li>
+                    <li class="_tag | -trim-both">Tag B</li>
+                    <li class="_tag | -trim-both">Tag C</li>
+                </ul>
+                <div class="_button"
+                    style="--purchase-button--background: var(--_accent); --purchase-button--foreground: var(--_accent-contrast);">
+                    <a href="#" class="scope purchase-button">Add To Cart</a>
+                </div>
+            </section>
+
+            <!-- <section class="_card" style="--product-card--accent: #008bc9;">
+                <h2 class="_heading | -fluid-text -trim-both" style="--fluid-text--min-font-size: 16;
+      --fluid-text--max-font-size: 24;">Product 04</h2>
+                <div class="_thumbnail-stack">
+                    <img src="https://picsum.photos/id/103/1200/630" alt="" width="400" height="210"
+                        fetchpriority="high" />
+                    <img src="https://picsum.photos/id/103/1200/630" alt="" width="400" height="210"
+                        fetchpriority="high" />
+                </div>
+                <p class="_category | -trim-both">Category D</p>
+                <p class="_price | -trim-both">&yen;2,000</p>
+                <p class="_description | -line-clamp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                <ul class="_tag-list | cluster" style="
+      --cluster--gap: 0.5rem;">
+                    <li class="_tag | -trim-both">Tag A</li>
+                    <li class="_tag | -trim-both">Tag B</li>
+                    <li class="_tag | -trim-both">Tag C</li>
+                    <li class="_tag | -trim-both">Tag D</li>
+                </ul>
+                <div class="_button"
+                    style="--purchase-button--background: var(--_accent); --purchase-button--foreground: var(--_accent-contrast);">
+                    <a href="#" class="scope purchase-button">Add To Cart</a>
+                </div>
+            </section> -->
+
+        </div>
+
+        <!-- `display: none` can cause SVG filters to be ineffective in Firefox. -->
+        <svg width="0" height="0" style="visibility: hidden; position: fixed;">
+            <filter id="svg-inset-shadow">
+                <feOffset in="SourceAlpha" dx="6" dy="8" />
+                <feGaussianBlur in="SourceAlpha" stdDeviation="8" />
+                <feComposite in="SourceAlpha" operator="out" />
+                <feBlend in2="SourceGraphic" mode="multiply" />
+            </filter>
+        </svg>
+    </div>
+</body>
+
+</html>
