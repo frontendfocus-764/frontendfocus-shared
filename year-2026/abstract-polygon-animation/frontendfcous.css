@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: black;
+  overflow: hidden;
+}
+
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Blob base ───────────────────────────────────────── */
+.blob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  background: conic-gradient(red, orange, yellow, lime, cyan, blue, magenta, red);
+  mix-blend-mode: screen;
+  filter: blur(12px);
+  opacity: 0.5;
+  transform: translate(-50%, -50%);
+  animation:
+    morph   8s  ease-in-out infinite,
+    flow    10s ease-in-out infinite,
+    rainbow 10s linear     infinite;
+}
+
+/* ── Per-blob variants via :nth-child ────────────────── */
+.blob:nth-child(1) { width: 220px; height: 220px; animation-duration:  8s, 12s, 10s; }
+.blob:nth-child(2) { width: 180px; height: 180px; animation-duration: 10s, 15s, 12s; opacity: 0.45; }
+.blob:nth-child(3) { width: 250px; height: 250px; animation-duration:  7s, 11s, 14s; opacity: 0.55; }
+.blob:nth-child(4) { width: 200px; height: 200px; animation-duration:  9s, 13s, 11s; opacity: 0.40; }
+.blob:nth-child(5) { width: 240px; height: 240px; animation-duration: 12s, 12s, 15s; }
+.blob:nth-child(6) { width: 170px; height: 170px; animation-duration: 11s, 10s, 13s; opacity: 0.35; }
+.blob:nth-child(7) { width: 200px; height: 200px; animation-duration:  8s, 14s, 12s; opacity: 0.45; }
+
+/* ── Morph + spin combined ───────────────────────────── */
+@keyframes morph {
+  0%, 100% {
+    clip-path: polygon(50% 0%, 85% 15%, 100% 50%, 85% 85%, 50% 100%, 15% 85%, 0% 50%, 15% 15%);
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  25% {
+    clip-path: polygon(52% 2%, 82% 18%, 98% 48%, 88% 82%, 48% 98%, 12% 82%, 2% 48%, 18% 12%);
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  50% {
+    clip-path: polygon(48% 0%, 87% 12%, 100% 52%, 82% 87%, 52% 100%, 17% 87%, 0% 52%, 13% 12%);
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+  75% {
+    clip-path: polygon(50% 3%, 85% 20%, 100% 50%, 80% 85%, 50% 97%, 18% 80%, 0% 50%, 15% 15%);
+    transform: translate(-50%, -50%) rotate(270deg);
+  }
+}
+
+/* ── Float movement ──────────────────────────────────── */
+@keyframes flow {
+  0%, 100% { top: 50%; left: 50%; }
+  25%       { top: 40%; left: 60%; }
+  50%       { top: 60%; left: 40%; }
+  75%       { top: 45%; left: 55%; }
+}
+
+/* ── Rainbow via hue-rotate */
+@keyframes rainbow {
+  from { filter: blur(12px) hue-rotate(0deg);   }
+  to   { filter: blur(12px) hue-rotate(360deg); }
+}
+
+/* ── Scanlines ───────────────────────────────────────── */
+.scanlines {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.02) 0px,
+    rgba(255, 255, 255, 0.02) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  z-index: 10;
+}
