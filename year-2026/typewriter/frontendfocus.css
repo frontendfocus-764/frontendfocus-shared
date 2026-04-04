@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0f172a;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Text Style */
+.typing-wrapper {
+    font-size: 48px;
+    font-weight: 600;
+    background: linear-gradient(90deg, #38bdf8, #818cf8, #f472b6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Cursor */
+.cursor {
+    display: inline-block;
+    width: 3px;
+    height: 50px;
+    background: #38bdf8;
+    margin-left: 6px;
+    animation: blink 0.8s infinite;
+    vertical-align: bottom;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
