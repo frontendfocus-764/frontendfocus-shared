@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Cinematic Star Rating</title>
+    <link rel="stylesheet" href="frontendfocus.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+   <canvas id="bg-canvas"></canvas>
+
+<div class="card-wrap" id="cardWrap">
+<div class="card" id="card">
+
+  <!-- Product -->
+  <div class="product">
+    <div class="product__img">🎧</div>
+    <div>
+      <div class="product__name">Sony WH-1000XM5</div>
+      <div class="product__sub">Noise Cancelling Headphones</div>
+      <span class="product__badge">✓ Verified Purchase</span>
+    </div>
+  </div>
+
+  <!-- Existing score bar -->
+  <div class="existing">
+    <span class="existing__label">Avg Rating</span>
+    <div class="existing__bar"><div class="existing__fill"></div></div>
+    <div class="existing__score">
+      <span class="existing__num">4.6</span>
+      <span class="existing__max">/ 5</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- FORM BODY -->
+  <div class="form-body" id="formBody">
+    <div class="question">How would you rate it?</div>
+
+    <!-- Stars row — inputs + labels injected by JS -->
+    <div class="stars-row" id="starsRow" role="radiogroup" aria-label="Star Rating">
+      <input class="star-input star-input-1" type="radio" name="rating" value="1" id="r1" aria-label="1 star – Terrible">
+      <input class="star-input star-input-2" type="radio" name="rating" value="2" id="r2" aria-label="2 stars – Bad">
+      <input class="star-input star-input-3" type="radio" name="rating" value="3" id="r3" aria-label="3 stars – OK">
+      <input class="star-input star-input-4" type="radio" name="rating" value="4" id="r4" aria-label="4 stars – Good">
+      <input class="star-input star-input-5" type="radio" name="rating" value="5" id="r5" aria-label="5 stars – Excellent">
+    </div>
+
+    <!-- Description -->
+    <div class="rating-desc">
+      <div class="rating-desc__text" id="ratingText"></div>
+    </div>
+
+    <!-- Submit -->
+    <button class="submit-btn" id="submitBtn" disabled>
+      <span>Select a rating</span>
+    </button>
+  </div>
+
+  <!-- SUCCESS -->
+  <div class="success" id="successPanel">
+    <span class="success__icon">🎉</span>
+    <div class="success__title">Thanks for your review!</div>
+    <div class="success__sub">Your feedback helps others make better decisions.</div>
+    <div class="star-row-mini" id="successStars"></div>
+  </div>
+
+</div>
+</div> 
+
+<script src="frontendfocus.js"></script>
+</body>
+</html>
