@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Fan with Speed Controller</title>
+    <link rel="stylesheet" href="frontendfocus.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="card">
+            <div class="info">
+                Current Speed: <strong id="speedValue">0</strong>
+            </div>
+
+            <div class="fanArea">
+                <div class="fan" id="fan">
+                    <svg viewBox="0 0 240 240" aria-label="Modern fan">
+                        <defs>
+                            <linearGradient id="bladeGrad" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#9ee8ff"></stop>
+                                <stop offset="55%" stop-color="#65c8ff"></stop>
+                                <stop offset="100%" stop-color="#3e8ff0"></stop>
+                            </linearGradient>
+
+                            <linearGradient id="bladeShine" x1="0" y1="0" x2="0.9" y2="1">
+                                <stop offset="0%" stop-color="rgba(255,255,255,0.75)"></stop>
+                                <stop offset="100%" stop-color="rgba(255,255,255,0)"></stop>
+                            </linearGradient>
+
+                            <radialGradient id="hubGrad" cx="35%" cy="35%" r="70%">
+                                <stop offset="0%" stop-color="#4653a2"></stop>
+                                <stop offset="70%" stop-color="#24306e"></stop>
+                                <stop offset="100%" stop-color="#18224e"></stop>
+                            </radialGradient>
+
+                            <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+                                <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#5fd6ff" flood-opacity="0.18">
+                                </feDropShadow>
+                            </filter>
+                        </defs>
+
+                        <g filter="url(#softGlow)">
+                            <g transform="translate(120 120)">
+                                <g class="blade bladeTop">
+                                    <path d="
+                    M 0 -16
+                    C 18 -18, 30 -42, 28 -86
+                    C 27 -110, 14 -123, 0 -124
+                    C -13 -123, -24 -111, -25 -90
+                    C -27 -48, -16 -20, 0 -16
+                    Z
+                  " fill="url(#bladeGrad)"></path>
+                                    <path d="
+                    M -2 -22
+                    C 8 -28, 15 -52, 12 -92
+                    C 11 -106, 7 -113, 2 -116
+                    C 6 -108, 6 -88, 4 -58
+                    C 3 -42, 0 -29, -2 -22
+                    Z
+                  " fill="rgba(255,255,255,0.22)"></path>
+                                </g>
+
+                                <g class="blade bladeRight" transform="rotate(90)">
+                                    <path d="
+                    M 0 -16
+                    C 18 -18, 30 -42, 28 -86
+                    C 27 -110, 14 -123, 0 -124
+                    C -13 -123, -24 -111, -25 -90
+                    C -27 -48, -16 -20, 0 -16
+                    Z
+                  " fill="url(#bladeGrad)"></path>
+                                    <path d="
+                    M -2 -22
+                    C 8 -28, 15 -52, 12 -92
+                    C 11 -106, 7 -113, 2 -116
+                    C 6 -108, 6 -88, 4 -58
+                    C 3 -42, 0 -29, -2 -22
+                    Z
+                  " fill="rgba(255,255,255,0.22)"></path>
+                                </g>
+
+                                <g class="blade bladeBottom" transform="rotate(180)">
+                                    <path d="
+                    M 0 -16
+                    C 18 -18, 30 -42, 28 -86
+                    C 27 -110, 14 -123, 0 -124
+                    C -13 -123, -24 -111, -25 -90
+                    C -27 -48, -16 -20, 0 -16
+                    Z
+                  " fill="url(#bladeGrad)"></path>
+                                    <path d="
+                    M -2 -22
+                    C 8 -28, 15 -52, 12 -92
+                    C 11 -106, 7 -113, 2 -116
+                    C 6 -108, 6 -88, 4 -58
+                    C 3 -42, 0 -29, -2 -22
+                    Z
+                  " fill="rgba(255,255,255,0.22)"></path>
+                                </g>
+
+                                <g class="blade bladeLeft" transform="rotate(270)">
+                                    <path d="
+                    M 0 -16
+                    C 18 -18, 30 -42, 28 -86
+                    C 27 -110, 14 -123, 0 -124
+                    C -13 -123, -24 -111, -25 -90
+                    C -27 -48, -16 -20, 0 -16
+                    Z
+                  " fill="url(#bladeGrad)"></path>
+                                    <path d="
+                    M -2 -22
+                    C 8 -28, 15 -52, 12 -92
+                    C 11 -106, 7 -113, 2 -116
+                    C 6 -108, 6 -88, 4 -58
+                    C 3 -42, 0 -29, -2 -22
+                    Z
+                  " fill="rgba(255,255,255,0.22)"></path>
+                                </g>
+                            </g>
+                        </g>
+
+                        <circle cx="120" cy="120" r="24" fill="url(#hubGrad)"></circle>
+                        <circle cx="120" cy="120" r="12" fill="#22306f"></circle>
+                        <circle cx="120" cy="120" r="6" fill="#73e1ff"></circle>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button data-mode="on">ON</button>
+                <button data-mode="off" class="active">OFF</button>
+                <button data-mode="1">1</button>
+                <button data-mode="2">2</button>
+                <button data-mode="3">3</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="frontendfocus.js"></script>
+</body>
+
+</html>
