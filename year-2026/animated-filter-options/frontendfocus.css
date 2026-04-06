@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  color: #222;
+  background-color: #ececec;
+  font-size: 24px;
+  font-family: "Space Grotesk", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+label {
+  padding: 12px 18px;
+  border-radius: 99px;
+  background-color: #e2dfea;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  transition: all 0.25s;
+}
+label:has(input:checked) {
+  gap: 12px;
+  background-color: #d6caef;
+}
+label input {
+  display: none;
+}
+label input:checked ~ .text {
+  opacity: 1;
+  width: auto;
+}
+label .text {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  opacity: 0;
+  transition: all 0.25s;
+  interpolate-size: allow-keywords;
+}
