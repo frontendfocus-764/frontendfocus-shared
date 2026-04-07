@@ -1,0 +1,44 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #222;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #ddd;
+}
+
+.wrapper {
+  display: grid;
+  place-content: center;
+  height: calc(100vb - 1em);
+}
+
+.box {
+  width: 400px;
+  height: 250px;
+  background-color: darkred;
+  font-size: 4em;
+  display: grid;
+  place-content: center;
+  transition: all 1s;
+}
+
+button {
+  all: unset;
+  background: green;
+  line-height: 1;
+  padding: 0.5em 0.75em;
+  border-radius: 6px;
+  position: relative;
+  z-index: 10;
+  margin-top: 1em;
+  width: max-content;
+  cursor: pointer;
+}
+
+.rotate {
+  transform: perspective(5em) rotate3d(0, 1, 0, 180deg);
+  transform-origin: top center;
+}
