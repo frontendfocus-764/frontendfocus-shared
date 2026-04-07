@@ -1,0 +1,38 @@
+*, *::before, *::after { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+body { 
+  background: #050810; 
+  overflow: hidden; 
+  cursor: none; 
+}
+
+#cursor {
+  position: fixed; 
+  pointer-events: none; 
+  z-index: 999;
+  width: 10px; 
+  height: 10px; 
+  border-radius: 50%;
+  background: rgba(0, 220, 255, 0.95);
+  box-shadow: 0 0 14px 5px rgba(0,200,255,0.45);
+  transform: translate(-50%, -50%);
+  left: -100px; 
+  top: -100px;
+}
+
+#hint {
+  position: fixed; 
+  bottom: 28px; 
+  left: 50%; 
+  transform: translateX(-50%);
+  color: rgba(0,200,255,0.3); 
+  font: 400 12px/1 'Courier New', monospace;
+  letter-spacing: 0.25em; 
+  text-transform: uppercase; 
+  pointer-events: none;
+  z-index: 99;
+}
