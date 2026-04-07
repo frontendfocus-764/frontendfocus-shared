@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #0a0f1c;
+  color: white;
+  overflow: hidden;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+/* ============= CANVAS ============= */
+#canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ============= FLIPPING TEXT ============= */
+.hero-content h1 {
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  font-weight: 900;
+  letter-spacing: -6px;
+  margin-bottom: 1.5rem;
+  perspective: 1400px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  z-index: 2;
+  position: relative;
+}
+
+.letter {
+  display: inline-block;
+  opacity: 0;
+  transform-style: preserve-3d;
+  animation: flipIn 0.95s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes flipIn {
+  0%   { transform: rotateY(-100deg) translateY(40px); opacity: 0; }
+  40%  { transform: rotateY(30deg) translateY(-18px); }
+  70%  { transform: rotateY(-12deg) translateY(8px); }
+  100% { transform: rotateY(0deg) translateY(0); opacity: 1; }
+}
+
+.subtitle {
+  font-size: 1.6rem;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.9s forwards 1.4s;
+  z-index: 2;
+  position: relative;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
