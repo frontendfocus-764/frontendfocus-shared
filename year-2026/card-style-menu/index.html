@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Style Menu</title>
+    <link rel="stylesheet" href="frontendfocus.css">
+</head>
+
+<body>
+    <svg display="none">
+        <symbol id="home" viewBox="0 0 32 32">
+            <g fill="currentColor">
+                <polygon points="16 0,0 10,0 32,10 32,10 16,22 16,22 32,32 32,32 10" />
+            </g>
+        </symbol>
+        <symbol id="portfolio" viewBox="0 0 32 32">
+            <g fill="currentColor">
+                <path
+                    d="M30,8h-6v-2c0-1.1-.9-2-2-2H10c-1.1,0-2,.9-2,2v2H2c-1.1,0-2,.9-2,2V26c0,1.1,.9,2,2,2H30c1.1,0,2-.9,2-2V10c0-1.1-.9-2-2-2Zm-20-1c0-.55,.45-1,1-1h10c.55,0,1,.45,1,1v1H10v-1Z" />
+            </g>
+        </symbol>
+        <symbol id="about" viewBox="0 0 32 32">
+            <g fill="currentColor">
+                <path
+                    d="M16,0C7.163,0,0,7.163,0,16s7.163,16,16,16,16-7.163,16-16S24.837,0,16,0Zm2,22c0,1.1-.9,2-2,2s-2-.9-2-2v-6c0-1.1,.9-2,2-2s2,.9,2,2v6Zm-2-10c-1.105,0-2-.895-2-2s.895-2,2-2,2,.895,2,2-.895,2-2,2Z" />
+            </g>
+        </symbol>
+        <symbol id="contact" viewBox="0 0 32 32">
+            <g fill="currentColor">
+                <path
+                    d="M30,4H2c-1.1,0-2,.9-2,2v14c0,1.1,.9,2,2,2h3.169l5.417,5.417c.778,.778,2.051,.778,2.828,0l5.417-5.417h11.169c1.1,0,2-.9,2-2V6c0-1.1-.9-2-2-2ZM5,8h6c.55,0,1,.45,1,1s-.45,1-1,1H5c-.55,0-1-.45-1-1s.45-1,1-1Zm0,4h14c.55,0,1,.45,1,1s-.45,1-1,1H5c-.55,0-1-.45-1-1s.45-1,1-1Zm22,6H5c-.55,0-1-.45-1-1s.45-1,1-1H27c.55,0,1,.45,1,1s-.45,1-1,1Z" />
+            </g>
+        </symbol>
+    </svg>
+
+    <nav class="nav">
+        <ul class="nav__items">
+            <li class="nav__item nav__item--active">
+                <a class="nav__item-link" href="#">
+                    <svg class="nav__item-icon" width="32px" height="32px" aria-hidden="true">
+                        <use xlink:href="#home" />
+                    </svg>
+                    Home
+                </a>
+            </li>
+            <li class="nav__item">
+                <a class="nav__item-link" href="#">
+                    <svg class="nav__item-icon" width="32px" height="32px" aria-hidden="true">
+                        <use xlink:href="#portfolio" />
+                    </svg>
+                    Portfolio
+                </a>
+            </li>
+            <li class="nav__item">
+                <a class="nav__item-link" href="#">
+                    <svg class="nav__item-icon" width="32px" height="32px" aria-hidden="true">
+                        <use xlink:href="#about" />
+                    </svg>
+                    About
+                </a>
+            </li>
+            <li class="nav__item">
+                <a class="nav__item-link" href="#">
+                    <svg class="nav__item-icon" width="32px" height="32px" aria-hidden="true">
+                        <use xlink:href="#contact" />
+                    </svg>
+                    Contact
+                </a>
+            </li>
+        </ul>
+        <svg class="nav__arrow" width="12px" height="6px" aria-hidden="true">
+            <polyline fill="none" stroke="currentColor" stroke-width="2" points="1,1 6,5 11,1" />
+        </svg>
+    </nav>
+    <main>
+        <h1>A Fun Navigation Demo</h1>
+        <p>Stuff and things ask to go outside and ask to come inside and ask to go outside and ask to come inside don’t
+            nosh on the birds making bread on the bathrobe but catty ipsum. Annoy owner until he gives you food say meow
+            repeatedly until belly rubs, feels good lick the plastic bag i is not fat, i is fluffy has closed eyes but
+            still sees you.</p>
+        <p>Attack the dog then pretend like nothing happened sit and stare meow, i dreamt about fish yum! So the cat was
+            chasing the mouse dream about hunting birds. Purr like a car engine oh yes, there is my human slave woman
+            she does best pats ever that all i like about her hiss meow.</p>
+        <p>The fat cat sat on the mat bat away with paws, why use post when this sofa is here yet this is the day so
+            sleep on my human’s head. Behind the couch pet me pet me don’t pet me meow and spread kitty litter all over
+            house.</p>
+    </main>
+
+    <script src="frontendfocus.js"></script>
+</body>
+
+</html>
