@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Expression Animation</title>
+    <link rel="stylesheet" href="frontendfocus.css">
+</head>
+
+<body>
+    <button class="mode-switch" title="Switch Theme">
+        <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" width="36" height="36" viewBox="0 0 24 24">
+            <defs></defs>
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+        </svg>
+    </button>
+    <div class="container">
+        <div class="box green">
+            <h2 class="name">Nike Air Max</h2>
+            <a href="#" class="buy">Buy Now</a>
+            <div class="circle"></div>
+            <img class="product" src="img/green.png" />
+        </div>
+        <div class="box blue">
+            <h2 class="name">Nike Air Max</h2>
+            <a href="#" class="buy">Buy Now</a>
+            <div class="circle"></div>
+            <img class="product" src="img/blue.png" />
+        </div>
+        <div class="box red">
+            <h2 class="name">Nike Air Max</h2>
+            <a href="#" class="buy">Buy Now</a>
+            <div class="circle"></div>
+            <img class="product" src="img/red.png" />
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".box"), {
+            max: 15,
+            speed: 300,
+            easing: "cubic-bezier(.03,.98,.52,.99)",
+            scale: 1.05,
+        });
+    </script>
+    <script src="frontendfocus.js"></script>
+</body>
+
+</html>
