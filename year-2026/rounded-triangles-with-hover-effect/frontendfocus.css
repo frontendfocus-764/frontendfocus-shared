@@ -1,0 +1,53 @@
+@property --r {
+  syntax: "<length>";
+  initial-value: 0px;
+  inherits: true;
+}
+
+.tri {
+  --r: 40px;  
+  width: 300px;
+  aspect-ratio: 1/cos(30deg);
+  --_g:calc(tan(60deg)*var(--r)) bottom var(--r),#000 98%,#0000 101%;
+  -webkit-mask:
+    conic-gradient(from -30deg at 50% calc(200% - 3*var(--r)/2),#000 60deg,#0000 0)
+     0 100%/100% calc(100% - 3*var(--r)/2) no-repeat,
+    radial-gradient(var(--r) at 50% calc(2*var(--r)),#000 98%,#0000 101%),
+    radial-gradient(var(--r) at left  var(--_g)),
+    radial-gradient(var(--r) at right var(--_g));
+  clip-path: polygon(50% 0,100% 100%,0 100%);
+  transition: --r .6s;
+  cursor: pointer;
+}
+
+.alt {
+  --_g:calc(tan(60deg)*var(--r)) top var(--r),#000 98%,#0000 101%;
+  -webkit-mask:
+    conic-gradient(from 150deg at 50% calc(3*var(--r)/2 - 100%),#000 60deg,#0000 0)
+     0 0/100% calc(100% - 3*var(--r)/2) no-repeat,
+    radial-gradient(var(--r) at 50% calc(100% - 2*var(--r)),#000 98%,#0000 101%),
+    radial-gradient(var(--r) at left  var(--_g)),
+    radial-gradient(var(--r) at right var(--_g));
+  clip-path: polygon(50% 100%,100% 0,0 0);
+}
+
+img:hover {
+  --r: 10px;
+}
+
+img {
+  object-fit: cover;
+}
+
+img + img {
+   margin-left: -80px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  grid-auto-flow: column;
+  background: radial-gradient(circle,#8A9B0F,#9DE0AD);
+}
