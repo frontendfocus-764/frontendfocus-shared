@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <title>Toggle Password</title>
+</head>
+<body>
+    <div class="container">
+        <svg id="lock" width="28" height="28" viewBox="0 0 55 55">
+            <path
+                d="M44.05064,26.35243a2.79478,2.79478,0,0,0-2.05238-.845h-.96642V19.70883a13.01549,13.01549,0,0,0-3.98477-9.54056A13.01759,13.01759,0,0,0,27.5042,6.18119a13.01466,13.01466,0,0,0-9.54288,3.98708,13.01551,13.01551,0,0,0-3.98476,9.54056v5.79855h-.96644a2.88526,2.88526,0,0,0-2.89926,2.89927V45.8a2.886,2.886,0,0,0,2.89926,2.89927H41.99826A2.886,2.886,0,0,0,44.89753,45.8V28.40666a2.79637,2.79637,0,0,0-.84689-2.05423Zm-8.8169-.845H19.7728V19.70883a7.73329,7.73329,0,0,1,7.7314-7.72909,7.73013,7.73013,0,0,1,7.72955,7.72909Zm0,0" />
+        </svg>
+        <input type="password" placeholder="Password" id="password">
+        <div id="eye-wrapper" onclick="toggle()">
+            <svg id="open" width="25" height="25">
+                <g stroke="#7D4262" stroke-miterlimit="10">
+                    <path d="M21.632 12.5a9.759 9.759 0 01-18.264 0 9.759 9.759 0 0118.264 0z" fill="none" />
+                    <circle cx="12.5" cy="12.5" r="3" fill="#7D4262" />
+                    <path fill="none" d="M12.5 5v1-4M9.291 6.337L7.709 2.663M15.709 6.337l1.582-3.674" />
+                </g>
+            </svg>
+            <svg id="close" width="25" height="25">
+                <g fill="none" stroke="#7D4262" stroke-miterlimit="10">
+                    <path
+                        d="M21.632 12.5a9.759 9.759 0 01-18.264 0M12.5 19.5v-1 4M9.291 18.163l-1.582 3.674M15.709 18.163l1.582 3.674" />
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <script src="frontendfocus.js"></script>
+</body>
+
+</html>
