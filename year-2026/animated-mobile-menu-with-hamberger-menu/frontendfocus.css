@@ -1,0 +1,193 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+:root {
+  --color: #1950FF;
+  --white: #fff;
+}
+
+body {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #333;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.device {
+  position: relative;
+  width: 300px;
+  height: 600px;
+  background: #FFF;
+  border: 1px solid #EEE;
+  border-radius: 30px;
+  box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  border-radius: 30px;
+  background: linear-gradient(to bottom, #eee, #ddd);
+}
+
+.navTrigger {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1000;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: 0;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  -webkit-appearence: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.navTrigger:focus {
+  outline: none;
+}
+.navTrigger svg {
+  width: 64px;
+  height: 48px;
+  top: -6px;
+  left: -14px;
+  stroke: var(--color);
+  stroke-width: 4px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  display: block;
+  position: absolute;
+}
+.navTrigger svg path {
+  transition: stroke-dasharray var(--duration, 0.85s) var(--easing, ease) var(--delay, 0s), stroke-dashoffset var(--duration, 0.85s) var(--easing, ease) var(--delay, 0s);
+  stroke-dasharray: var(--array-1, 26px) var(--array-2, 100px);
+  stroke-dashoffset: var(--offset, 126px);
+  transform: translateZ(0);
+}
+.navTrigger svg path:nth-child(2) {
+  --duration: .7s;
+  --easing: ease-in;
+  --offset: 100px;
+  --array-2: 74px;
+}
+.navTrigger svg path:nth-child(3) {
+  --offset: 133px;
+  --array-2: 107px;
+}
+.navTrigger.active svg {
+  stroke: var(--white);
+}
+.navTrigger.active svg path {
+  --offset: 57px;
+}
+.navTrigger.active svg path:nth-child(1), .navTrigger.active svg path:nth-child(3) {
+  --delay: .15s;
+  --easing: cubic-bezier(.2, .4, .2, 1.1);
+}
+.navTrigger.active svg path:nth-child(2) {
+  --duration: .4s;
+  --offset: 2px;
+  --array-1: 1px;
+}
+.navTrigger.active svg path:nth-child(3) {
+  --offset: 58px;
+}
+
+.navMenu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  background: #FFF;
+  opacity: 0;
+  z-index: -1;
+  visibility: hidden;
+  transition: all 0.375s;
+}
+.navMenu.active {
+  opacity: 1;
+  z-index: 100;
+  visibility: visible;
+}
+.navMenu.active::before {
+  transform: skew(-14deg) translateX(0);
+}
+.navMenu.active li {
+  opacity: 1;
+  transform: translateY(0);
+}
+.navMenu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: -15px;
+  background: #1950FF;
+  transform-origin: 0 0;
+  transform: skew(-14deg) translateX(-120%);
+  transition: all 0.275s 0.1s;
+}
+.navMenu ul {
+  list-style: none;
+  padding: 0;
+  display: inline-flex;
+  flex-direction: column;
+  height: 93%;
+  /* Should be 100%, but we have a notice message :D */
+  align-items: flex-end;
+  justify-content: center;
+  transform: translateX(-18%) skew(-16deg);
+}
+.navMenu ul li {
+  display: block;
+  margin: 0.5rem 0;
+  text-align: right;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.navMenu ul li a {
+  position: relative;
+  left: 0;
+  display: block;
+  padding: 12px 0;
+  color: var(--white);
+  font-size: 1.4em;
+  text-decoration: none;
+  transform: skew(16deg);
+  transition: 0.25s;
+}
+.navMenu ul li a:hover {
+  left: 10px;
+}
+.navMenu ul li:nth-child(1) {
+  transition: all 275ms 275ms;
+}
+.navMenu ul li:nth-child(2) {
+  transition: all 275ms 325ms;
+}
+.navMenu ul li:nth-child(3) {
+  transition: all 275ms 375ms;
+}
+.navMenu ul li:nth-child(4) {
+  transition: all 275ms 425ms;
+}
+.navMenu ul li:nth-child(5) {
+  transition: all 275ms 475ms;
+}
