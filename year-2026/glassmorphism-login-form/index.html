@@ -1,59 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glassmorphism Login Form</title>
-    <link rel="stylesheet" href="frontendfocus.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <section>
-        <div class="leaves">
-            <div class="set">
-                <div><img decoding="async" src="./images/leaf_01.png" alt="leaf 01"
-                        title="leaf 01 Glassmorphism Login Form Using HTML &amp; CSS"></div>
-                <div><img decoding="async" src="./images/leaf_02.png" alt="leaf 02"
-                        title="leaf 02 Glassmorphism Login Form Using HTML &amp; CSS"></div>
-                <div><img decoding="async" src="./images/leaf_03.png" alt="leaf 03"
-                        title="leaf 03 Glassmorphism Login Form Using HTML &amp; CSS"></div>
-                <div><img decoding="async" src="./images/leaf_04.png" alt="leaf 04"
-                        title="leaf 04 Glassmorphism Login Form Using HTML &amp; CSS"></div>
-                <div><img decoding="async" src="./images/leaf_01.png" alt="leaf 01"
-                        title="leaf 01 Glassmorphism Login Form Using HTML &amp; CSS"></div>
-                <div><img decoding="async" src="./images/leaf_02.png" alt="leaf 02"
-                        title="leaf 02 Glassmorphism Login Form Using HTML &amp; CSS"></div>
-                <div><img decoding="async" src="./images/leaf_03.png" alt="leaf 03"
-                        title="leaf 03 Glassmorphism Login Form Using HTML &amp; CSS"></div>
-                <div><img decoding="async" src="./images/leaf_04.png" alt="leaf 04"
-                        title="leaf 04 Glassmorphism Login Form Using HTML &amp; CSS"></div>
-            </div>
-        </div>
-        <img decoding="async" src="./images/bg.jpg" class="bg" alt="bg"
-            title="bg Glassmorphism Login Form Using HTML &amp; CSS">
-        <img decoding="async" src="./images/girl.png" class="girl" alt="girl"
-            title="girl Glassmorphism Login Form Using HTML &amp; CSS">
-        <img decoding="async" src="./images/trees.png" class="trees" alt="trees"
-            title="trees Glassmorphism Login Form Using HTML &amp; CSS">
+   <div class="page">
+  <div class="background-shape shape-1"></div>
+  <div class="background-shape shape-2"></div>
 
-        <div class="login">
-            <h2>Sign In</h2>
-            <div class="inputBox">
-                <input type="text" placeholder="Username">
-            </div>
-            <div class="inputBox">
-                <input type="password" placeholder="Password">
-            </div>
-            <div class="inputBox">
-                <input type="submit" value="Login" id="btn">
-            </div>
-            <div class="group">
-                <a href="#">Forgot Password</a>
-                <a href="#">Signup</a>
-            </div>
+  <div class="login-card">
+    <div class="card-header">
+      <span class="card-badge">Modern UI</span>
+      <h1>Welcome Back</h1>
+      <p>Sign in to continue to your dashboard with a clean glassmorphism login form.</p>
+    </div>
+
+    <form class="login-form">
+      <div class="input-group">
+        <label for="email">Email Address</label>
+        <div class="input-wrapper">
+          <span class="input-icon">✉</span>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="off"
+          />
         </div>
-    </section>
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <div class="input-wrapper">
+          <span class="input-icon">🔒</span>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+          />
+          <button class="toggle-password" id="togglePassword" type="button" aria-label="Afficher ou masquer le mot de passe">
+            Show
+          </button>
+        </div>
+      </div>
+
+      <div class="form-options">
+        <label class="remember-me">
+          <input type="checkbox" />
+          <span>Remember me</span>
+        </label>
+
+        <a href="#" class="forgot-link">Forgot Password?</a>
+      </div>
+
+      <button class="submit-btn" type="submit">Sign In</button>
+    </form>
+
+    <div class="card-footer">
+      <p>Don’t have an account? <a href="#">Create one</a></p>
+    </div>
+  </div>
+</div> 
+
+<script src="main.js"></script>
 </body>
-
 </html>
