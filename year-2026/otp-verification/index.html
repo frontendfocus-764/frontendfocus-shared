@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <link rel="stylesheet" href="frontendfocus.css">
+</head>
+<body>
+   <div class="container">
+          <h1>OTP Verification</h1>
+          <p>Enter the 6-digit code sent to your device</p>
+          <div id="timer">Time remaining: 3:00</div>
+          <div class="otp-input">
+              <input type="number" min="0" max="9" required>
+              <input type="number" min="0" max="9" required>
+              <input type="number" min="0" max="9" required>
+              <input type="number" min="0" max="9" required>
+              <input type="number" min="0" max="9" required>
+              <input type="number" min="0" max="9" required>
+          </div>
+          <button onclick="verifyOTP()">Verify</button>
+          <button id="resendButton" onclick="resendOTP()" disabled>Resend Code</button>
+      </div> 
+
+      <script src="frontendfocus.js"></script>
+</body>
+</html>
