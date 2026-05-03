@@ -1,0 +1,48 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  cursor: url(cursor.png) 32 32,move;
+  background: rgb(238,238,238);
+  overflow: hidden;  
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;  
+  top: 50%;
+  left: 50%;  
+  width: 750px;
+  height: 450px;  
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -50%);  
+  cursor: url(cursor.png),move;
+  cursor: url(cursor.png) 32 32,move;
+}
+
+.list-item {  
+  position: absolute;
+  top: 0;
+  left: 0;  
+  height: 140px;
+  width: 240px;
+}
+
+.item-content {
+  height: 100%;
+  border: 0px solid rgba(123, 123, 123, 0.498039);
+  border-radius: 4px;
+  color: rgb(153, 153, 153);
+  line-height: 140px;
+  padding-left: 32px;
+  font-size: 24px;
+  font-weight: 400;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0,0,0,0.2) 0px 1px 2px 0px;
+}
+
