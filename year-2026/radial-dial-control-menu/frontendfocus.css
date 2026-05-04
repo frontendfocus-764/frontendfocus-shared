@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Mona Sans";
-  src: url("https://assets.codepen.io/64/Mona-Sans.woff2") format("woff2 supports variations"), url("https://assets.codepen.io/64/Mona-Sans.woff2") format("woff2-variations");
+  src: url("./Mona-Sans.woff2") format("woff2 supports variations"), url("./Mona-Sans.woff2") format("woff2-variations");
   font-weight: 100 1000;
 }
 @layer properties {
