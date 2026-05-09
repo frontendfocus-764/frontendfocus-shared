@@ -1,0 +1,153 @@
+body {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.mechanical-toggle {
+    --bg-color: #e0e5ec;
+    --accent-emerald: #2ecc71;
+    --old-tech-blue: #3498db;
+    --off-color: #94a3b8;
+    --container-w: 80px;
+    --container-h: 40px;
+    --thumb-size: 32px;
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --shadow-out: 6px 6px 12px #b8bec9, -6px -6px 12px #ffffff;
+    --shadow-in: inset 2px 2px 5px #b8bec9, inset -2px -2px 5px #ffffff;
+    position: relative;
+    display: inline-block;
+    width: var(--container-w);
+    height: var(--container-h);
+    cursor: pointer;
+}
+
+.mechanical-toggle input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-color);
+    border-radius: 50px;
+    box-shadow: var(--shadow-in);
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    width: 50px;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow:
+        0 4px 0 rgba(0, 0, 0, 0.05),
+        0 -4px 0 rgba(0, 0, 0, 0.05);
+    transform: translateY(-50%);
+    transition: var(--transition);
+    z-index: 0;
+}
+
+.thumb {
+    position: absolute;
+    height: var(--thumb-size);
+    width: var(--thumb-size);
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--bg-color);
+    border-radius: 50%;
+    box-shadow: var(--shadow-out);
+    transition: var(--transition);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.thumb::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: var(--off-color);
+    border-radius: 50%;
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+}
+
+.thumb-details::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 0.5px dashed rgba(0, 0, 0, 0.1);
+}
+
+.glow {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: var(--accent-emerald);
+    filter: blur(15px);
+    opacity: 0;
+    transition: var(--transition);
+    left: 0;
+    top: 0;
+}
+
+.mechanical-toggle input:checked+.slider::before {
+    background: var(--old-tech-blue);
+    box-shadow:
+        0 4px 0 var(--old-tech-blue),
+        0 -4px 0 var(--old-tech-blue);
+    filter: drop-shadow(0 0 2px rgba(52, 152, 219, 0.5));
+}
+
+.mechanical-toggle input:checked+.slider .thumb {
+    left: calc(var(--container-w) - var(--thumb-size) - 4px);
+    border-color: rgba(46, 204, 113, 0.3);
+}
+
+.mechanical-toggle input:checked+.slider .thumb::after {
+    background: var(--accent-emerald);
+    box-shadow: 0 0 8px var(--accent-emerald);
+}
+
+.mechanical-toggle input:checked+.slider {
+    box-shadow:
+        inset 2px 2px 5px #b8bec9,
+        inset -2px -2px 5px #ffffff,
+        0 0 15px rgba(46, 204, 113, 0.2);
+}
+
+.mechanical-toggle input:checked + .slider .glow {
+  opacity: 0.15;
+  left: 40px;
+}
+.mechanical-toggle:hover .thumb {
+  box-shadow:
+    4px 4px 8px #b8bec9,
+    -4px -4px 8px #ffffff;
+}
+
+.mechanical-toggle:active .thumb {
+  transform: translateY(-50%) scale(0.95);
+  box-shadow: var(--shadow-in);
+}
