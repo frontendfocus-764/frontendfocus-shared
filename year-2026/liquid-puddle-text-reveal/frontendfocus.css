@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: #f6f1e6;
+  --drops-color: #231d1c;
+}
+
+body {
+  background: var(--text-color);
+  font-family: Georgia, serif;
+}
+
+.canvas {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.canvas--animated .puddle__letter {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.puddle {
+  position: absolute;
+  display: flex;
+  transform: rotate(var(--r, 0deg)) translate(calc(-50% - var(--x, 0)), calc(-50% - var(--y, 0)));
+  top: 50%;
+  left: 50%;
+  color: var(--text-color);
+  font-size: 6vmin;
+  white-space: pre;
+}
+.puddle__letter {
+  transform: translateY(800px);
+  padding: 0.1em 0.2em;
+  margin: -0.1em -0.2em;
+  will-change: transform;
+  -webkit-animation: drop 0.8s var(--delay) ease-out forwards paused;
+          animation: drop 0.8s var(--delay) ease-out forwards paused;
+}
+
+.combined-puddles {
+  position: relative;
+  height: 100%;
+  z-index: -1;
+  filter: url(#drops-filter);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.combined-puddles .puddle__letter {
+  border-radius: 50%;
+  color: var(--drops-color);
+  background-color: currentColor;
+}
+.combined-puddles .puddle__letter--t-1 {
+  box-shadow: 0.0138040956em 0.0138979971em 0 0.0252342737em currentColor;
+}
+.combined-puddles .puddle__letter--t-2 {
+  box-shadow: 0.0184538163em 0.016125032em 0 0.3053579255em currentColor;
+}
+.combined-puddles .puddle__letter--t-3 {
+  box-shadow: 0.013255057em 0.0044896624em 0 0.2720252025em currentColor;
+}
+.combined-puddles .puddle__letter--t-4 {
+  box-shadow: 0.0095762013em 0.0002779286em 0 0.1887964329em currentColor;
+}
+.combined-puddles .puddle__letter--t-5 {
+  box-shadow: 0.0128257375em 0.0278037206em 0 0.1632441477em currentColor;
+}
+.combined-puddles .puddle__letter--t-6 {
+  box-shadow: 0.0250295034em 0.0029715481em 0 0.1038979796em currentColor;
+}
+.combined-puddles .puddle__letter--t-7 {
+  box-shadow: 0.0058210341em 0.0047571145em 0 0.3697167377em currentColor;
+}
+.combined-puddles .puddle__letter--t-8 {
+  box-shadow: 0.0049221423em 0.0131260295em 0 0.1068602619em currentColor;
+}
+.combined-puddles .puddle__letter--t-9 {
+  box-shadow: 0.01406925em 0.0078551227em 0 0.3449930146em currentColor;
+}
+.combined-puddles .puddle__letter--t-10 {
+  box-shadow: 0.0274826237em 0.0121953287em 0 0.3432744669em currentColor;
+}
+
+@-webkit-keyframes drop {
+  0% {
+    transform: translate(0, 100vh);
+  }
+  85% {
+    transform: translate(0, -0.15em);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes drop {
+  0% {
+    transform: translate(0, 100vh);
+  }
+  85% {
+    transform: translate(0, -0.15em);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
