@@ -58,7 +58,7 @@ h1 {
     grid: repeat(3, 1fr)/repeat(3, 1fr);
     background: yellow;
     padding: 8em;
-    background: url("https://meowlivia.s3.us-east-2.amazonaws.com/codepen/background/desert.jpg") no-repeat center center/cover;
+    background: url("./img/desert.jpg") no-repeat center center/cover;
 }
 
 .concept-one h1 {
@@ -117,7 +117,7 @@ h1 {
     display: grid;
     grid: 100%/repeat(6, 1fr);
     padding: 5em 15em;
-    background: url(https://meowlivia.s3.us-east-2.amazonaws.com/codepen/background/forest.jpg) center center/cover;
+    background: url(./img/forest.jpg) center center/cover;
 }
 
 .concept-two .hover {
@@ -143,7 +143,7 @@ h1 {
 
 .concept-three {
     padding: 5em;
-    background: url(https://meowlivia.s3.us-east-2.amazonaws.com/codepen/background/canyon.jpg) center center/cover;
+    background: url(./img/canyon.jpg) center center/cover;
 }
 
 .concept-three .word {
@@ -192,7 +192,7 @@ h1 {
     align-items: center;
     justify-content: center;
     letter-spacing: 2em;
-    background: url(https://meowlivia.s3.us-east-2.amazonaws.com/codepen/background/glacier.jpg) no-repeat center center/cover;
+    background: url(./img/glacier.jpg) no-repeat center center/cover;
 }
 
 .concept-four h1 {
@@ -206,7 +206,7 @@ h1 {
 }
 
 .concept-five {
-    background: url(https://meowlivia.s3.us-east-2.amazonaws.com/codepen/background/mountains.jpg) center center/cover;
+    background: url(./img/mountains.jpg) center center/cover;
     display: flex;
     align-items: center;
 }
@@ -239,7 +239,7 @@ h1 {
 .concept-six {
     display: flex;
     align-items: center;
-    background: url(https://meowlivia.s3.us-east-2.amazonaws.com/codepen/background/beach.jpg) top right/cover;
+    background: url(./img/beach.jpg) top right/cover;
 }
 
 .concept-six .word {
@@ -283,7 +283,7 @@ h1 {
 }
 
 .concept-seven {
-    background: url(https://meowlivia.s3.us-east-2.amazonaws.com/codepen/background/fries.jpg) top center/cover;
+    background: url(./img/fries.jpg) top center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -329,7 +329,7 @@ h1 {
 }
 
 .concept-eight {
-    background: url(https://meowlivia.s3.us-east-2.amazonaws.com/codepen/background/falls.jpg) center center/cover;
+    background: url(./img/falls.jpg) center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
