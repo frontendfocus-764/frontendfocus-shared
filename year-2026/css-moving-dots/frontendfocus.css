@@ -1,0 +1,71 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  perspective: 24em;
+  
+  * {
+    transform-style: preserve-3d;
+  }
+}
+
+.scene {
+  position: relative;
+  
+  * { position: absolute; }
+}
+
+.bigDots {
+  animation: rotate 32s infinite linear reverse;
+
+  i {
+    inset: -2.5em;
+    background-image: radial-gradient(circle at top, hsl(calc(var(--i) * 120) 100% 75%), #000);
+    border-radius: 50%;
+    translate: calc(var(--i) * 6em);
+    box-shadow: 0 0 1em #000;
+    animation: rotate 32s infinite linear;
+  }
+}
+
+.dots {
+  --delay: calc(pow(var(--d), 2.5) * -0.005s - var(--d) * 0.05s);
+    
+  animation-composition: add;
+  animation:
+    rotate 6s var(--delay) infinite linear,
+    rotate 32s infinite linear reverse;
+  
+  i {
+    --n: calc(var(--i) / 7.5 - 1);
+    --translateX: calc(var(--n) * 12em);
+    --translateY: calc(sin((var(--i) + 1) / 17 * 360deg) * 12em);
+    
+    inset: calc(var(--d) * -0.05em - 0.2em);
+    background-image: radial-gradient(circle at top, hsl(calc(var(--n) * 120) 100% 75%), #000);
+    border-radius: 50%;
+    box-shadow: 0 0 1em #000;
+    animation-composition: add;
+    animation:
+      translate 3s var(--delay) infinite ease-in-out alternate,
+      rotate 6s var(--delay) infinite linear reverse,
+      rotate 32s infinite linear;
+  }
+}
+
+@keyframes rotate {
+  to { rotate: y 360deg; }
+}
+
+@keyframes translate {
+  from { translate: var(--translateX) var(--translateY); }
+  to { translate: var(--translateX) calc(var(--translateY) * -1); }
+}
