@@ -1,0 +1,180 @@
+.wrapper {
+  --speed: 6s;
+  --play-state: running;
+
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #e5e7eb;
+}
+
+.title {
+  margin: 0 0 20px;
+}
+
+/* hide radios */
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* traffic light */
+.traffic-light {
+  width: 70px;
+  background: #111;
+  padding: 12px;
+  border-radius: 14px;
+  margin: 0 auto 30px;
+}
+
+.light {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  margin: 10px auto;
+  display: block;
+  cursor: pointer;
+  opacity: 0.25;
+  transition: opacity 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.red {
+  background: #ef4444;
+}
+
+.yellow {
+  background: #facc15;
+}
+
+.green {
+  background: #22c55e;
+}
+
+/* active lights */
+#stop:checked ~ .traffic-light .red {
+  opacity: 1;
+  box-shadow: 0 0 18px #ef4444;
+}
+
+#slow:checked ~ .traffic-light .yellow {
+  opacity: 1;
+  box-shadow: 0 0 18px #facc15;
+}
+
+#go:checked ~ .traffic-light .green {
+  opacity: 1;
+  box-shadow: 0 0 18px #22c55e;
+}
+
+/* variable changes */
+#stop:checked ~ .road {
+  --play-state: paused;
+  --speed: 6s;
+}
+
+#slow:checked ~ .road {
+  --play-state: running;
+  --speed: 12s;
+}
+
+#go:checked ~ .road {
+  --play-state: running;
+  --speed: 2.5s;
+}
+
+/* road */
+.road {
+  position: relative;
+  height: 160px;
+  background: #374151;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.road::before,
+.road::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    transparent 0 20px,
+    #f3f4f6 20px 40px
+  );
+}
+
+.road::before {
+  top: 53px;
+}
+
+.road::after {
+  top: 106px;
+}
+
+/* cars */
+.car {
+  position: absolute;
+  left: -90px;
+  width: 70px;
+  height: 32px;
+  border-radius: 8px;
+  animation-name: drive;
+  animation-duration: var(--speed);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: var(--play-state);
+}
+
+.car::before,
+.car::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  width: 12px;
+  height: 12px;
+  background: #111;
+  border-radius: 50%;
+}
+
+.car::before {
+  left: 10px;
+}
+
+.car::after {
+  right: 10px;
+}
+
+.car1 {
+  top: 15px;
+  background: #ef4444;
+}
+
+.car2 {
+  top: 68px;
+  background: #3b82f6;
+  animation-delay: 1s;
+}
+
+.car3 {
+  top: 121px;
+  background: #22c55e;
+  animation-delay: 2s;
+}
+
+@keyframes drive {
+  from {
+    left: -90px;
+  }
+  to {
+    left: calc(100% + 20px);
+  }
+}
