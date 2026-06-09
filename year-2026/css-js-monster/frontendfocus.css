@@ -1,0 +1,223 @@
+body {
+  background-color: dimgray;
+}
+
+.eyeball,
+.hair-tuft,
+#leftPupil,
+#rightPupil,
+.drool,
+.hand {
+  position: absolute;
+}
+
+.creature-cage {
+  position: relative;
+  margin: auto;
+  border: 0.5rem solid #090909;
+  background-color: #eee;
+}
+@media (min-width: 768px) {
+  .creature-cage {
+    width: 24rem;
+    margin-top: 5rem;
+  }
+}
+
+.creature-body {
+  height: 15rem;
+  margin: 10rem auto 0;
+  border-radius: 60% 60% 0 0;
+  background-color: #5e35b1;
+}
+
+.eyeball {
+  width: 50px;
+  height: 50px;
+  top: 30%;
+  left: 20%;
+  border-radius: 50%;
+  padding: 22px;
+  box-shadow: 2px 8px 6px #200568;
+  background-color: #1de9b6;
+}
+.eyeball::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #FFF;
+  z-index: 1;
+}
+.eyeball.right {
+  left: 55%;
+}
+
+.brow {
+  position: relative;
+  width: 80px;
+  height: 30px;
+  bottom: 45px;
+  right: 35px;
+  z-index: 20;
+  border: 6px solid;
+  border-radius: 50%;
+  border-color: transparent;
+  box-shadow: 3px -5px 1px #090909;
+  transform: rotate(-20deg);
+}
+.brow.right {
+  transform: rotateY(190deg);
+}
+
+#leftPupil,
+#rightPupil {
+  width: 30px;
+  height: 30px;
+  top: 2.3rem;
+  right: 1rem;
+  transform-origin: 1px;
+  border-radius: 50%;
+  padding: 2px;
+  background-color: #090909;
+}
+#leftPupil::after,
+#rightPupil::after {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  bottom: -4px;
+  left: -3px;
+  border: 5px solid #b2ff59;
+  border-radius: 50%;
+}
+
+.hair-tuft {
+  width: 65px;
+  height: 50px;
+  left: 10%;
+  bottom: 25%;
+}
+.hair-tuft.hair-tuft-right {
+  left: 75%;
+  bottom: 13%;
+  transform: rotateY(180deg);
+}
+
+.hair {
+  position: relative;
+  width: 35px;
+  height: 50px;
+  -webkit-clip-path: polygon(50% 0%, 0 100%, 100% 100%);
+          clip-path: polygon(50% 0%, 0 100%, 100% 100%);
+  background-color: #7441d9;
+  transform: rotateX(180deg);
+}
+.hair.hair-right, .hair.hair-right-dark {
+  left: 40%;
+  bottom: 200%;
+}
+.hair.hair-middle-dark, .hair.hair-middle-light {
+  left: 20%;
+  bottom: 100%;
+}
+.hair.hair-middle-dark {
+  background-color: #4f2c94;
+}
+
+.mouth {
+  position: relative;
+  width: 19%;
+  height: 21%;
+  left: 39%;
+  top: 45%;
+  border-radius: 13% 13% 50% 50%;
+  background-color: #090909;
+}
+
+.tongue {
+  position: relative;
+  width: 72%;
+  height: 26%;
+  left: 7%;
+  bottom: -46%;
+  border: 6.5px dashed;
+  border-color: transparent transparent white;
+  border-radius: 50%;
+  background-color: #ec407a;
+}
+
+.drool {
+  top: 61%;
+  width: 10px;
+  border-radius: 27% 50% 20% 77%;
+  box-shadow: 4px 8px 7px #200568;
+  background: linear-gradient(#00bcd4, #80deea);
+  -webkit-animation: drooling 2.5s 2s cubic-bezier(0.73, -0.44, 0.43, 1.49);
+          animation: drooling 2.5s 2s cubic-bezier(0.73, -0.44, 0.43, 1.49);
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.hand {
+  width: 90px;
+  height: 55px;
+  top: 96%;
+}
+.hand.hand-left {
+  left: 10%;
+  transform: rotateY(180deg);
+}
+.hand.hand-right {
+  right: 10%;
+}
+.hand .finger {
+  position: relative;
+  width: 25%;
+  height: 85%;
+  border-radius: 20% 20% 50% 50%;
+  box-shadow: 0px 3px 15px #090909;
+  background-color: #9162e4;
+}
+.hand .finger.finger-middle {
+  width: 25%;
+  height: 94%;
+  left: 29%;
+  bottom: 80%;
+}
+.hand .finger.finger-right {
+  width: 20%;
+  height: 68%;
+  left: 60%;
+  bottom: 164%;
+}
+
+@-webkit-keyframes drooling {
+  0% {
+    height: 0px;
+    opacity: 0;
+  }
+  70% {
+    height: 20px;
+  }
+  100% {
+    height: 42px;
+    opscity: 0.5;
+  }
+}
+
+@keyframes drooling {
+  0% {
+    height: 0px;
+    opacity: 0;
+  }
+  70% {
+    height: 20px;
+  }
+  100% {
+    height: 42px;
+    opscity: 0.5;
+  }
+}
