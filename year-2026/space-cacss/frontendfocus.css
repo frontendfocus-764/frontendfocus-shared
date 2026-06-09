@@ -1,0 +1,154 @@
+@import url(https://fonts.googleapis.com/css?family=Terminal+Dosis);
+
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  
+  background-color: hsl(0,0%,18%);
+  
+  -webkit-background-size: 3px 3px;
+  background-image: -webkit-linear-gradient(  0deg, hsla(0,0%,0%,0) 0, hsla(0,0%,10%,1) 3px),
+    -webkit-linear-gradient( 90deg, hsla(0,0%,0%,0) 0, hsla(0,0%,10%,1) 5px);
+  
+  background-image: -moz-linear-gradient( hsl(0,0%,11%), hsl(0,0%,11%) );
+  background-image:  -ms-linear-gradient( hsl(0,0%,11%), hsl(0,0%,11%) );
+  background-image:   -o-linear-gradient( hsl(0,0%,11%), hsl(0,0%,11%) );
+}
+
+body { 
+  margin: 0;
+  padding: 50px;
+  text-align: center;
+  font: 13px/18px "Droid Sans", "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+/* Space CaCSS ------------------------------------------------- */
+
+div {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0px auto;
+  border-radius: 50%;
+  border: 10px solid hsla(0,0%,0%,.7);
+  box-shadow: inset 0 15px 15px -5px hsla(0,0%,100%,.7),
+    inset 0 -5px 10px 3px hsla(0,0%,0%,.6), 
+    0 8px 10px 2px hsla(0,0%,0%,.3);
+  
+  background-position: center;
+  transform: scale(.66);
+  transition: transform .5s cubic-bezier(.32,0,.15,1);
+}
+
+div:hover {
+  cursor: none;
+  transform: scale(1);
+  transition: transform .2s cubic-bezier(.32,0,.15,1);
+}
+
+/* Particle Ping Pong -------------------------------------------- */
+
+.particle {
+  background-size: 12px 12px;
+  background-color: #000;
+  
+  /* the default highlight was too strong */
+  box-shadow: inset 0 15px 15px -5px hsla(0,0%,100%,.25), inset 0 -5px 10px 3px hsla(0,0%,0%,.6), 0 8px 10px 2px hsla(0,0%,0%,.3);
+  background-image: radial-gradient( #555 0px, hsla(0,0%,0%,0) 2px, hsla(0,0%,0%,0) 24px),
+    repeating-radial-gradient( white 0px, black 2px, black 48px);
+}
+.particle:hover {
+  animation: particle-size .24s linear infinite, particle-positon .48s linear infinite alternate;
+}
+
+@keyframes particle-size { from { background-size: 6px 6px, 12px 12px; } to { background-size: 12px 12px, 24px 24px; } }
+@keyframes particle-positon { from { background-position: 60px, 60px; } to { background-position: 140px, 140px; } }
+
+/* Growing cells -------------------------------------------- */
+
+.cells {
+  background-size: 24px 24px;
+  background-color: #fff;
+  background-image: repeating-radial-gradient( black 8px, white 12px);
+}
+
+.cells:hover {
+  animation: cells 0.4s linear infinite;
+}
+
+@keyframes cells { from { background-size: 12px 12px; } to { background-size: 24px 24px; } }
+
+/* Jelly -------------------------------------------- */
+
+.jelly {
+  background-size: 60px 60px;
+  background-color: hsla(320,80%,60%,1);
+  background-image: repeating-radial-gradient( hsla(320,100%,60%,.6) 0px, hsla(220,100%,60%,0) 60%),
+    repeating-radial-gradient( hsla(330,100%,40%,1) 12%, hsla(320,80%,60%,1) 24px);
+}
+
+.jelly:hover {
+  animation: jelly 1.4s cubic-bezier(.1,.4,.9,.6) infinite;
+}
+
+@keyframes jelly {
+  from { background-size:  60px  60px,  24px  24px; }
+  50%  { background-size: 120px 120px, 100px 100px; }
+  to   { background-size:  24px  24px, 140px 140px; }
+}
+
+/* Blobbs -------------------------------------------- */
+
+.blobbs {
+  background-size: 66px 66px;
+  background-color: hsl(200,100%,50%);
+  background-image: repeating-radial-gradient( hsla(200,100%,80%,.8) 0px, hsla(200,100%,80%,.5) 4px, hsla(200,100%,80%,0) 50px),
+    repeating-radial-gradient( hsla(260,100%, 0%, 0) 0px, hsla(260,100%,50%,.1) 2px, hsla(260,100%, 0%,0) 10px);
+}
+
+.blobbs:hover {
+  animation: blobbs-position 6s cubic-bezier(.4,0,.2,1) infinite,
+    blobbs-size .75s cubic-bezier(.4,0,.2,1) infinite alternate;
+}
+
+@keyframes blobbs-position {
+  0% { background-position: left top, left top; }
+  25% { background-position: right top, left bottom; }
+  50% { background-position: right bottom, right bottom; }
+  75% { background-position: left bottom, right top; }
+  100% { background-position: left top, left top; }
+}
+
+@keyframes blobbs-size { from { background-size: 200px 200px, 200px 200px; } to { background-size:  66px  66px, 66px 66px; } }
+
+/* The Chase -------------------------------------------- */
+
+.chase {
+  background-repeat: no-repeat, repeat;
+  background-size: 180px 180px;
+  background-color: hsl(50,100%,70%);
+  background-image: repeating-radial-gradient( hsla(50,100%,100%,1) 0px, hsla(50,100%,90%, 1) 10px, hsla(50,100%,70%,.2)  12px, hsla(50,100%,70%,0) 130px),
+    repeating-radial-gradient( hsla(20,100%, 50%,0) 20%, hsla(20,100%,50%,.4) 80%,  hsla(50,100%,70%, 1) 120px);
+}
+
+.chase:hover {
+  animation: chase-position 1.2s infinite, chase-size .4s infinite alternate;
+}
+
+@keyframes chase-position {
+  0% { background-position: left top, left top; }
+  25% { background-position: right top, left bottom; }
+  50% { background-position: right bottom, right bottom; }
+  75% { background-position: left bottom, right top; }
+  100% { background-position: left top, left top; }
+}
+
+@keyframes chase-size {
+  from { background-size: 120px 120px, 300px 300px; }
+  50% { background-size: 160px 160px, 150px 150px; }
+  to   { background-size: 180px 180px, 100px 100px; }
+}
