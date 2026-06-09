@@ -1,0 +1,156 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+body{
+  position: relative;
+  width:100%;
+  min-height:100vh;
+  height:100%;
+  background:rgb(27, 28, 33);
+  overflow-x:hidden;
+  overflow-y:hidden;
+  -webkit-overflow-x:hidden;
+  -webkit-overflow-y:hidden;
+}
+
+.body-animation{
+  animation: thunderLight 2s linear infinite;
+}
+
+.ground{
+  position:absolute;
+  width:2500px;
+  height:70px;
+  bottom:0;
+  opacity:0.5;
+  background: linear-gradient(50deg, rgba(67, 95, 140, 0.2) 38%, rgb(193, 208, 232), rgb(98, 123, 163, 0.5) 50%);
+  animation: groundAnimation 2000ms linear infinite;
+  transition:all 0.3;
+}
+
+@keyframes groundAnimation{
+  0%{
+    transform: translateX(-1000px)
+  }
+  100%{
+    transform: translateX(0px)
+  }
+}
+
+
+
+.raindrop{
+  position: absolute;
+  top:-5px;
+  width:2px;
+  height:5px;
+  background: rgb(89, 112, 194);
+  border-radius:50%;
+}
+
+.raindrop::before{
+  position: absolute;
+  content: "";
+  background: transparent;
+  border-top: 0px solid transparent;
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-bottom: 4px solid rgb(89, 112, 194);
+  top:-3px;
+}
+
+.puddle{
+  position:absolute;
+  width:20px;
+  height:10px;
+  background:rgb(109, 117, 138);
+  animation: puddle 500ms linear;
+  transition: all 0.3s;
+  transform:translateY(-45deg);
+  border-radius:50%;
+}
+
+.puddle-drop{
+  position:absolute;
+  content:"";
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background:rgb(95, 111, 130);
+  border: 1px solid white;
+  animation: puddleDrop 900ms linear;
+}
+
+@keyframes puddle{
+  0%{
+    border-left:2px solid white;
+    border-right:4px solid white;
+    opacity:0.5;
+  }
+  50%{
+    border-left:1px solid white;
+    background:rgb(100, 136, 176);
+    opacity:1;
+  }
+  75%{
+    border-left:none;
+    opacity:0.5;
+  }
+  100%{
+    border-left:1px solid white;
+    opacity4:0;
+  }
+}
+
+
+@keyframes puddleDrop{
+  0%{
+    width:7px;
+    height:7px;
+    opacity:1;
+    top:0px;
+  }
+  30%{
+    opacity:0.8;
+    width:2px;
+    height:5px;
+    top:-50px;
+  }
+  75%{
+    width:2px;
+    height:2px;
+    opacity:0.3;
+    top:-10px;
+  }
+  100%{
+    opacity:0;
+  }
+}
+
+
+@keyframes thunderLight {
+  0%{
+    background: rgb(122, 135, 194)
+  }
+  5%{
+    background:rgb(27, 28, 33);
+  }
+  60%{
+    background:rgb(27, 28, 33);
+  }
+  85%{
+    background: rgb(71, 73, 82);
+  }
+  90%{
+    background:rgb(27, 28, 33);
+  }
+  95%{
+    background: rgb(71, 73, 82)
+  }
+  100%{
+    background:rgb(27, 28, 33);
+  }
+}
