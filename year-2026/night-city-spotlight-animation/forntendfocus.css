@@ -1,0 +1,211 @@
+html, body {
+  height: 100%;
+
+  overflow: hidden;
+}
+.ag-spotlight-moving_box {
+  height: 100%;
+  width: 100%;
+  background: url(ff-bg.jpg) no-repeat scroll 50% 0 #002841;
+  background-size: cover;
+
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.ag-spotlight-moving_spotlight {
+  bottom: 3.4375em;
+  z-index: -1;
+  width: 14.375em;
+  height: 128.125em;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-color: rgba(255, 255, 255, 0.08);
+
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+
+  -webkit-animation: an-spotlight-moving-right 20s cubic-bezier(0.6, 0, 0.55, 0.8) infinite;
+  -moz-animation: an-spotlight-moving-right 20s cubic-bezier(0.6, 0, 0.55, 0.8) infinite;
+  -o-animation: an-spotlight-moving-right 20s cubic-bezier(0.6, 0, 0.55, 0.8) infinite;
+  animation: an-spotlight-moving-right 20s cubic-bezier(0.6, 0, 0.55, 0.8) infinite;
+
+  -webkit-clip-path: polygon(0 0, 100% 0, 60% 100%, 40% 100%);
+  clip-path: polygon(0 0, 100% 0, 60% 100%, 40% 100%);
+
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+
+  position: absolute;
+}
+.ag-spotlight-moving_spotlight-right {
+  right: -3.4375em;
+}
+.ag-spotlight-moving_spotlight-left {
+  left: -3.4375em;
+
+  -webkit-animation-name: an-spotlight-moving-left;
+  -moz-animation-name: an-spotlight-moving-left;
+  -o-animation-name: an-spotlight-moving-left;
+  animation-name: an-spotlight-moving-left;
+}
+.ag-spotlight-moving_airplane {
+  top: 9.375em;
+  right: -8.8125em;
+  width: 8.8125em;
+  height: 6.9375em;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-image: url(airplane.png);
+
+  -webkit-animation: an-airplane 20s linear backwards infinite;
+  -moz-animation: an-airplane 20s linear backwards infinite;
+  -o-animation: an-airplane 20s linear backwards infinite;
+  animation: an-airplane 20s linear backwards infinite;
+
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+
+  position: absolute;
+}
+
+@-webkit-keyframes an-spotlight-moving-right {
+  0%, 100% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  50% {
+    -webkit-transform: rotate(-75deg);
+    transform: rotate(-75deg);
+  }
+}
+@-moz-keyframes an-spotlight-moving-right {
+  0%, 100% {
+    -moz-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  50% {
+    -moz-transform: rotate(-75deg);
+    transform: rotate(-75deg);
+  }
+}
+@-o-keyframes an-spotlight-moving-right {
+  0%, 100% {
+    -o-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  50% {
+    -o-transform: rotate(-75deg);
+    transform: rotate(-75deg);
+  }
+}
+@keyframes an-spotlight-moving-right {
+  0%, 100% {
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  50% {
+    -webkit-transform: rotate(-75deg);
+    -moz-transform: rotate(-75deg);
+    -o-transform: rotate(-75deg);
+    transform: rotate(-75deg);
+  }
+}
+
+@-webkit-keyframes an-spotlight-moving-left {
+  0%, 100% {
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
+  }
+  50% {
+    -webkit-transform: rotate(75deg);
+    transform: rotate(75deg);
+  }
+}
+@-moz-keyframes an-spotlight-moving-left {
+  0%, 100% {
+    -moz-transform: rotate(10deg);
+    transform: rotate(10deg);
+  }
+  50% {
+    -moz-transform: rotate(75deg);
+    transform: rotate(75deg);
+  }
+}
+@-o-keyframes an-spotlight-moving-left {
+  0%, 100% {
+    -o-transform: rotate(10deg);
+    transform: rotate(10deg);
+  }
+  50% {
+    -o-transform: rotate(75deg);
+    transform: rotate(75deg);
+  }
+}
+@keyframes an-spotlight-moving-left {
+  0%, 100% {
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -o-transform: rotate(10deg);
+    transform: rotate(10deg);
+  }
+  50% {
+    -webkit-transform: rotate(75deg);
+    -moz-transform: rotate(75deg);
+    -o-transform: rotate(75deg);
+    transform: rotate(75deg);
+  }
+}
+
+@-webkit-keyframes an-airplane {
+  0%, 85% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(-43.75em, -16.25em);
+    transform: translate(-43.75em, -16.25em);
+  }
+}
+@-moz-keyframes an-airplane {
+  0%, 85% {
+    -moz-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -moz-transform: translate(-43.75em, -16.25em);
+    transform: translate(-43.75em, -16.25em);
+  }
+}
+@-o-keyframes an-airplane {
+  0%, 85% {
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -o-transform: translate(-43.75em, -16.25em);
+    transform: translate(-43.75em, -16.25em);
+  }
+}
+@keyframes an-airplane {
+  0%, 85% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(-43.75em, -16.25em);
+    -moz-transform: translate(-43.75em, -16.25em);
+    -o-transform: translate(-43.75em, -16.25em);
+    transform: translate(-43.75em, -16.25em);
+  }
+}
