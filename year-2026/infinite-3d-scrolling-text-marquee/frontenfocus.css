@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  color: #222;
+  background-color: #ececec;
+  font-size: 36px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 800px;
+  --depth: -200px;
+  --side-rotation: 50deg;
+  --marquee-width: clamp(300px, 40vw, 500px);
+  --speed: 7s;
+}
+
+.marquee-wrapper {
+  width: var(--marquee-width);
+  height: min(100vh, 600px);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: translateZ(var(--depth));
+  background-image: repeating-linear-gradient(0deg, #fffa 0 1px, transparent 1px 40px), repeating-linear-gradient(-90deg, #fffa 0 1px, transparent 1px 40px);
+}
+.marquee-wrapper .marquee {
+  width: max-content;
+  padding: 12px 0;
+  border: 1px solid;
+  border-width: 2px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: 12px;
+  animation: marquee linear var(--speed) infinite both;
+}
+.marquee-wrapper.center {
+  background-color: #fff5;
+}
+.marquee-wrapper.left {
+  transform-origin: right center;
+  transform: translateZ(var(--depth)) rotateY(var(--side-rotation));
+  mask: linear-gradient(to right, transparent, #000 10%);
+}
+.marquee-wrapper.left .marquee {
+  animation-name: marquee-left;
+}
+.marquee-wrapper.right {
+  transform-origin: left center;
+  transform: translateZ(var(--depth)) rotateY(calc(var(--side-rotation) * -1));
+  mask: linear-gradient(to left, transparent, #000 10%);
+}
+.marquee-wrapper.right .marquee {
+  animation-name: marquee-right;
+  animation-duration: calc(var(--speed) * 2);
+}
+.marquee-wrapper .emoji-1 {
+  display: inline-block;
+  animation: rotate 1s linear both infinite alternate;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes marquee-left {
+  from {
+    transform: translateX(calc(-50% + var(--marquee-width)));
+  }
+  to {
+    transform: translateX(calc(-100% + var(--marquee-width)));
+  }
+}
+@keyframes marquee-right {
+  from {
+    transform: translateX(calc(var(--marquee-width) * -1));
+  }
+  to {
+    transform: translateX(calc(-50% - var(--marquee-width)));
+  }
+}
+@keyframes rotate {
+  from {
+    rotate: -15deg;
+  }
+  to {
+    rotate: 15deg;
+  }
+}
