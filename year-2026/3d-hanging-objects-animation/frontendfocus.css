@@ -1,0 +1,180 @@
+html,
+body {
+    font-family: Avenir, sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eaebe8;
+    background-image: -webkit-linear-gradient(-65deg, #eaebe8 35%, #827d71 100%);
+    background-image: linear-gradient(-65deg, #eaebe8 35%, #827d71 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #FFF;
+}
+
+#gsapWrapper {
+    display: block;
+    position: relative;
+    visibility: hidden;
+    opacity: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    #gsapBody {
+
+        -webkit-perspective: 1000px;
+        perspective: 1000px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+
+        @media (max-width: 996px) {
+            left: -40vw;
+        }
+
+        #shadow3dWrapper {
+
+            transform-origin: 0% 50%;
+            -webkit-transform: rotateY(30deg);
+            transform: rotateY(30deg);
+            top: -150px;
+
+            #shadow3d {
+
+                -webkit-transform: scale(1.6, 1.8);
+                transform: scale(1.6, 1.8);
+                width: 50vw;
+                height: 100px;
+                overflow: visible;
+
+                div.chimeBase {
+                    transform-origin: 50% 50%;
+                    -webkit-transform: rotateY(-30deg);
+                    transform: rotateY(-30deg);
+                    -webkit-filter: blur(3px) brightness(0.85);
+                    filter: blur(3px) brightness(0.85);
+                    overflow: visible;
+
+                    svg {
+                        -webkit-transform: rotateY(-30deg);
+                        transform: rotateY(-30deg);
+                        -webkit-filter: url("#hBlur") brightness(1);
+                        filter: url("#hBlur") brightness(01);
+                        overflow: visible;
+                    }
+
+                }
+
+            }
+
+        }
+
+        #world3d {
+
+            -webkit-transform: rotateY(-25deg);
+            transform: rotateY(-25deg);
+            width: 512px;
+            height: 100px;
+            top: 0;
+
+        }
+
+        #world3d,
+        #shadow3dWrapper #shadow3d {
+
+            position: absolute;
+            left: 50%;
+            margin-left: -25vw;
+
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            will-change: transform;
+
+            div.chimeBase {
+                position: absolute;
+                z-index: -1;
+                left: 300px;
+                top: 0px;
+                width: 100px;
+                padding-top: 600px;
+                margin-top: -450px;
+                -webkit-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+                will-change: transform;
+                background-repeat: no-repeat;
+                background-position: bottom center;
+                overflow: visible;
+                visibility: hidden;
+
+                @supports (-webkit-touch-callout: none) {
+                    background-position: bottom 6px center;
+                }
+
+                @media (max-height: 400px) {
+                    padding-top: 500px;
+                }
+
+                &.stagger {
+                    margin-top: -350px;
+                }
+
+                svg {
+                    width: 100px;
+                    height: 135px;
+                    min-width: 100px;
+                    min-height: 135px;
+                    margin: 0px;
+                    padding: 0px;
+                    flood-color: currentColor;
+                    will-change: transform;
+                    overflow: visible;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+#resetWrapper {
+
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 75px;
+    height: 75px;
+    cursor: pointer;
+    opacity: 0.5;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    @media (max-width: 996px) {
+
+        right: 10px;
+        top: 10px;
+        width: 60px;
+        height: 60px;
+
+        svg {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+}

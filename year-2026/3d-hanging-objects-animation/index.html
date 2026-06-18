@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <title>3D Hanging Objects Animation | GSAP</title>
+</head>
+
+<body>
+    <div id="gsapWrapper" style="opacity: 1; visibility: inherit;">
+        <div id="gsapBody">
+            <div id="shadow3dWrapper"
+                style="translate: none; rotate: none; scale: none; transform: rotateY(25.0918deg); transform-origin: 0% 50%;">
+                <div id="shadow3d">
+
+                    <div class="chimeBase stagger" id="cS0"
+                        style="transform: translateX(493.383px) translateY(40px) translateZ(0px); background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyBpZD0ic3ZnMSIgd2lkdGg9IjEwIiBoZWlnaHQ9IjE2MjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZmlsbD0iI2NjYTM3ZiIgZmlsbC1vcGFjaXR5PSIwLjIiCmQ9Ik0gNSwwClYgMTA2MwpIIDYKViAwCloKCm0gMCwxMTU2CnYgNDYKYyAwLC0xIDEsMSAxLDAKdiAtNDYKegoKbSAwLDEzOQp2IDQ2CmggMQp2IC00Ngp6CgptIDAsMTQwCnYgNDYKaCAxCnYgLTQ2CnoiIC8+Cjwvc3ZnPg==&quot;);">
+
+                        <svg id="c200" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <circle cx="50" cy="45" r="45" opacity="0.5" fill="#FFF0" stroke="none" />
+                        </svg>
+                        <svg id="c201" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <circle cx="50" cy="45" r="45" opacity="0.5" fill="#FFF0" stroke="none" />
+                        </svg>
+                        <svg id="c202" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <circle cx="50" cy="45" r="45" opacity="0.5" fill="#FFF0" stroke="none" />
+                        </svg>
+                        <svg id="c203" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <circle cx="50" cy="45" r="45" opacity="0.5" fill="#FFF0" stroke="none" />
+                        </svg>
+
+                    </div>
+
+                    <div class="chimeBase" id="cS1"
+                        style="transform: translateX(727.884px) translateY(40px) translateZ(0px); background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyBpZD0ic3ZnMSIgd2lkdGg9IjEwIiBoZWlnaHQ9IjE2MjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZmlsbD0iI2NjYTM3ZiIgZmlsbC1vcGFjaXR5PSIwLjIiCmQ9Im0gNSwwCnYgMTIwMgpjIDAsLTEgMSwxIDEsMApWIDAKWgoKbSAwLDEyOTUKdiA0NgpoIDEKdiAtNDYKegoKbSAwLDE0MAp2IDQ2CmggMQp2IC00Ngp6IiAvPgo8L3N2Zz4=&quot;);">
+
+                        <svg id="c210" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <circle cx="50" cy="45" r="45" opacity="0.5" fill="#FFF0" stroke="none" />
+                        </svg>
+
+                        <svg id="c211" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <circle cx="50" cy="45" r="45" opacity="0.5" fill="#FFF0" stroke="none" />
+                        </svg>
+                        <svg id="c212" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <circle cx="50" cy="45" r="45" opacity="0.5" fill="#FFF0" stroke="none" />
+                        </svg>
+
+                    </div>
+
+                    <div class="chimeBase stagger" id="cS2"
+                        style="transform: translateX(406.617px) translateY(40px) translateZ(0px); background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyBpZD0ic3ZnMSIgd2lkdGg9IjEwIiBoZWlnaHQ9IjE2MjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZmlsbD0iI2NjYTM3ZiIgZmlsbC1vcGFjaXR5PSIwLjIiCmQ9Im0gNSwwCnYgMTIwMgpjIDAsLTEgMSwxIDEsMApWIDAKWgoKbSAwLDEyOTUKdiA0NgpoIDEKdiAtNDYKegoKbSAwLDE0MAp2IDQ2CmggMQp2IC00Ngp6IiAvPgo8L3N2Zz4=&quot;);">
+
+                        <svg id="c220" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <circle cx="50" cy="45" r="45" opacity="0.5" fill="#FFF0" stroke="none" />
+                        </svg>
+                        <svg id="c221" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <circle cx="50" cy="45" r="45" opacity="0.5" fill="#FFF0" stroke="none" />
+                        </svg>
+                        <svg id="c222" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <circle cx="50" cy="45" r="45" opacity="0.5" fill="#FFF0" stroke="none" />
+                        </svg>
+
+                    </div>
+                    <div class="chimeBase" id="cS3"
+                        style="transform: translateX(172.116px) translateY(40px) translateZ(0px); background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyBpZD0ic3ZnMSIgd2lkdGg9IjEwIiBoZWlnaHQ9IjE2MjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZmlsbD0iI2NjYTM3ZiIgZmlsbC1vcGFjaXR5PSIwLjIiCmQ9Ik0gNSwwClYgMTM0MQpIIDYKViAwCloKCm0gMCwxNDM1CnYgNDYKaCAxCnYgLTQ2CnoiIC8+Cjwvc3ZnPg==&quot;);">
+
+                        <svg id="c230" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <circle cx="50" cy="45" r="45" opacity="0.5" fill="#FFF0" stroke="none" />
+                        </svg>
+                        <svg id="c231" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <circle cx="50" cy="45" r="45" opacity="0.5" fill="#FFF0" stroke="none" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div id="world3d">
+                <div class="chimeBase stagger" id="cB0"
+                    style="background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxNjIwIj4KPHBhdGggZmlsbD0iI2NjYTM3ZiIgc3Ryb2tlPSIjNWMzZTIyIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1vcGFjaXR5PSIwLjIiCmQ9Ik0gNCwwClYgMTA2MQpIIDcKViAwCloKCm0gMCwxMTY0CnYgMzYKYyAwLC0xIDIsMSAzLDAKdiAtMzYKegoKbSAwLDEzOQp2IDM2CmggMwp2IC0zNgp6CgptIDAsMTM4CnYgMzgKaCAzCnYgLTM4CnoiIC8+Cjwvc3ZnPg==&quot;);">
+
+                    <svg id="c00" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        <g class="filters">
+                            <use class="path01" href="#path01" opacity="0.5" fill="#FFF0"></use>
+                            <use class="path02" href="#path02" />
+                        </g>
+                        <use href="#bKnot1" />
+                        <use href="#bKnot2" />
+                        <use class="sideL" href="#sideL" />
+                        <use class="sideR" href="#sideR" />
+                    </svg>
+                    <svg id="c01" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        <g class="filters">
+                            <use class="path01" href="#path01" opacity="0.5" fill="#FFF0"></use>
+                            <use class="path02" href="#path02" />
+                        </g>
+                        <use href="#bKnot1" />
+                        <use href="#bKnot2" />
+                        <use class="sideL" href="#sideL" />
+                        <use class="sideR" href="#sideR" />
+                    </svg>
+                    <svg id="c02" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        <g class="filters">
+                            <use class="path01" href="#path01" opacity="0.5" fill="#FFF0"></use>
+                            <use class="path02" href="#path02" />
+                        </g>
+                        <use href="#bKnot1" />
+                        <use href="#bKnot2" />
+                        <use class="sideL" href="#sideL" />
+                        <use class="sideR" href="#sideR" />
+                    </svg>
+                    <svg id="c03" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        <g class="filters">
+                            <use class="path01" href="#path01" opacity="0.5" fill="#FFF0"></use>
+                            <use class="path02" href="#path02" />
+                        </g>
+                        <use href="#bKnot1" />
+                        <use class="sideL" href="#sideL" />
+                        <use class="sideR" href="#sideR" />
+                    </svg>
+
+                </div>
+
+                <div class="chimeBase" id="cB1"
+                    style="background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxNjIwIj4KPHBhdGggZmlsbD0iI2NjYTM3ZiIgc3Ryb2tlPSIjNWMzZTIyIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1vcGFjaXR5PSIwLjIiCmQ9Im0gNCwwCnYgMTIwMApjIDAsLTEgMiwxIDMsMApWIDAKWgoKbSAwLDEzMDMKdiAzNgpoIDMKdiAtMzYKegoKbSAwLDEzOAp2IDM4CmggMwp2IC0zOAp6IiAvPgo8L3N2Zz4=&quot;);">
+
+                    <svg id="c10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        <g class="filters">
+                            <use class="path01" href="#path01" opacity="0.5" fill="#FFF0"></use>
+                            <use class="path02" href="#path02" />
+                        </g>
+                        <use href="#bKnot1" />
+                        <use href="#bKnot2" />
+                        <use class="sideL" href="#sideL" />
+                        <use class="sideR" href="#sideR" />
+                    </svg>
+
+                    <svg id="c11" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        <g class="filters">
+                            <use class="path01" href="#path01" opacity="0.5" fill="#FFF0"></use>
+                            <use class="path02" href="#path02" />
+                        </g>
+                        <use href="#bKnot1" />
+                        <use href="#bKnot2" />
+                        <use class="sideL" href="#sideL" />
+                        <use class="sideR" href="#sideR" />
+                    </svg>
+
+                    <svg id="c12" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        <g class="filters">
+                            <use class="path01" href="#path01" opacity="0.5" fill="#FFF0"></use>
+                            <use class="path02" href="#path02" />
+                        </g>
+                        <use href="#bKnot1" />
+                        <use class="sideL" href="#sideL" />
+                        <use class="sideR" href="#sideR" />
+                    </svg>
+
+                </div>
+
+                <div class="chimeBase stagger" id="cB2"
+                    style="background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxNjIwIj4KPHBhdGggZmlsbD0iI2NjYTM3ZiIgc3Ryb2tlPSIjNWMzZTIyIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1vcGFjaXR5PSIwLjIiCmQ9Im0gNCwwCnYgMTIwMApjIDAsLTEgMiwxIDMsMApWIDAKWgoKbSAwLDEzMDMKdiAzNgpoIDMKdiAtMzYKegoKbSAwLDEzOAp2IDM4CmggMwp2IC0zOAp6IiAvPgo8L3N2Zz4=&quot;);">
+
+                    <svg id="c20" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        <g class="filters">
+                            <use class="path01" href="#path01" opacity="0.5" fill="#FFF0"></use>
+                            <use class="path02" href="#path02" />
+                        </g>
+                        <use href="#bKnot1" />
+                        <use href="#bKnot2" />
+                        <use class="sideL" href="#sideL" />
+                        <use class="sideR" href="#sideR" />
+                    </svg>
+
+                    <svg id="c21" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        <g class="filters">
+                            <use class="path01" href="#path01" opacity="0.5" fill="#FFF0"></use>
+                            <use class="path02" href="#path02" />
+                        </g>
+                        <use href="#bKnot1" />
+                        <use href="#bKnot2" />
+                        <use class="sideL" href="#sideL" />
+                        <use class="sideR" href="#sideR" />
+                    </svg>
+
+                    <svg id="c22" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        <g class="filters">
+                            <use class="path01" href="#path01" opacity="0.5" fill="#FFF0"></use>
+                            <use class="path02" href="#path02" />
+                        </g>
+                        <use href="#bKnot1" />
+                        <use class="sideL" href="#sideL" />
+                        <use class="sideR" href="#sideR" />
+                    </svg>
+
+                </div>
+
+                <div class="chimeBase" id="cB3"
+                    style="background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxNjIwIj4KPHBhdGggZmlsbD0iI2NjYTM3ZiIgc3Ryb2tlPSIjNWMzZTIyIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1vcGFjaXR5PSIwLjIiCmQ9Ik0gNCwwClYgMTMzOQpIIDcKViAwCloKCm0gMCwxNDQxCnYgMzgKaCAzCnYgLTM4CnoiIC8+Cjwvc3ZnPg==&quot;);">
+
+                    <svg id="c30" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        <g class="filters">
+                            <use class="path01" href="#path01" opacity="0.5" fill="#FFF0"></use>
+                            <use class="path02" href="#path02" />
+                        </g>
+                        <use href="#bKnot1" />
+                        <use href="#bKnot2" />
+                        <use class="sideL" href="#sideL" />
+                        <use class="sideR" href="#sideR" />
+                    </svg>
+
+                    <svg id="c31" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        <g class="filters">
+                            <use class="path01" href="#path01" opacity="0.5" fill="#FFF0"></use>
+                            <use class="path02" href="#path02" />
+                        </g>
+                        <use href="#bKnot1" />
+                        <use class="sideL" href="#sideL" />
+                        <use class="sideR" href="#sideR" />
+                    </svg>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <svg width="0" height="0" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+        <defs>
+            <filter id="hBlur" height="400%" width="400%" x="-100%" y="-100%" color-interpolation-filters="sRGB">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="25 5" />
+            </filter>
+
+            <path id="path01" stroke="none"
+                d="M 51,1 C 37,1 23,9 17,23 9,39 8,61 18,77 26,89 41,95 55,94 62,94 69,91 75,87 85,80 91,68 92,56 94,39 89,23 77,11 70,4 61,1 51,1 Z" />
+            <path id="path02" stroke="none" fill="#FFF"
+                d="M 51,1 C 37,1 23,9 17,23 9,39 8,61 18,77 26,89 41,95 55,94 62,94 69,91 75,87 85,80 91,68 92,56 94,39 89,23 77,11 70,4 61,1 51,1 Z" />
+
+            <ellipse id="bKnot1" fill="#8c6745" stroke="none" cx="50" cy="4" rx="4" ry="4" />
+            <ellipse id="bKnot2" fill="#8c6745" stroke="none" cx="50" cy="90" rx="4" ry="4" />
+
+            <path id="sideL" fill="#FFF" stroke="none"
+                d="M 43 2 C 32 4 22 12 17 23 C 9 39 8 61 18 77 C 24 86 33 91 43 93 C 33 91 25 85 20 77 C 10 61 11 39 19 23 C 23 12 33 5 43 2 z" />
+            <path id="sideR" fill="#0008" stroke="none"
+                d="M 60 2 C 66 3 71 6 75 11 C 87 23 92 39 90 56 C 89 68 83 80 73 87 C 69 90 65 92 60 93 C 66 92 71 90 75 87 C 85 80 91 68 92 56 C 94 39 89 23 77 11 C 72 6 66 3 60 2 z" />
+        </defs>
+    </svg>
+
+    <div id="resetWrapper">
+        <svg id="reset" width="75" height="75" viewBox="0 0 75 75" xmlns="http://www.w3.org/2000/svg"
+            xmlns:svg="http://www.w3.org/2000/svg">
+            <circle fill="#FFF0" stroke="none" cx="37.5" cy="37.5" r="37.5" />
+            <path id="resetBt" fill="#b3b3b3" stroke="none"
+                d="M 349,0 A 36.6,36.6 0 0 0 334.8,70.2 l 41.8,17.9 a 447.7,447.7 0 0 0 16.2,859.7 34,34 0 0 0 9.5,1.3 36.6,36.6 0 0 0 8.8,-71.9 374.6,374.6 0 0 1 0,-723.3 36.6,36.6 0 0 0 4.3,-1 l -24.4,57 a 36.6,36.6 0 0 0 33.6,51 36.6,36.6 0 0 0 34,-22.3 L 514.7,107.2 a 36.6,36.6 0 0 0 0,-28 36.6,36.6 0 0 0 -19.6,-20.1 L 363.5,2.9 A 36.6,36.6 0 0 0 349,0 Z M 634.4,68.7 a 36.6,36.6 0 0 0 -10.9,71.3 374.6,374.6 0 0 1 14.3,713.1 l 26.1,-43.5 a 36.6,36.6 0 1 0 -62.3,-38.2 l -75,121.8 a 36.6,36.6 0 0 0 -4.4,27.6 36.6,36.6 0 0 0 16.5,22.7 l 121.8,75 a 36.6,36.6 0 0 0 18.3,5.5 36.6,36.6 0 0 0 21.8,-68 l -50.1,-30 a 447.7,447.7 0 0 0 -5.9,-855.8 36.6,36.6 0 0 0 -10.2,-1.3 z"
+                transform="matrix(0.06617301,0,0,0.06617301,3.471535,3.4442072)" />
+        </svg>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="frontendfocus.js"></script>
+</body>
+
+</html>
