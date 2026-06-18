@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <title>Neon Sign Generator</title>
+</head>
+<body>
+  <div class="cyber-container">
+    <h1 class="cyber-title">NEON SIGN STUDIO</h1>
+    
+    <div class="neon-display" id="neonDisplay">
+      <span id="neonText">CYBERPUNK</span>
+    </div>
+    
+    <div class="control-panel">
+      <div class="control-group">
+        <label for="textInput">Sign Text:</label>
+        <input type="text" id="textInput" value="CYBERPUNK" maxlength="15">
+      </div>
+      
+      <div class="control-group">
+        <label for="neonColor">Neon Color:</label>
+        <input type="color" id="neonColor" value="#ff00ff">
+        <input type="text" id="colorHex" value="#ff00ff" class="hex-input">
+      </div>
+      
+      <div class="control-group">
+        <label for="glowIntensity">Glow Intensity:</label>
+        <input type="range" id="glowIntensity" min="5" max="50" value="20">
+      </div>
+    </div>
+    
+    <div class="blink-controls">
+      <button id="blinkBtn">Toggle Blink Mode</button>
+      <div class="blink-rate">
+        <label for="blinkSpeed">Blink Speed:</label>
+        <input type="range" id="blinkSpeed" min="200" max="2000" value="1000" disabled>
+      </div>
+    </div>
+  </div>
+
+  <script src="frontendfocus.js"></script>
+</body>
+</html>

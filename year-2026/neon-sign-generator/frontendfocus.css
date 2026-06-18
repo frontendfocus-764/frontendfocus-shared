@@ -1,0 +1,244 @@
+/* Color palette */
+:root {
+  --neon-pink: #ff00ff;
+  --cyber-blue: #00f0ff;
+  --matrix-green: #00ff41;
+  --dark-bg: #0d0221;
+  --panel-bg: #1a1b41;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Scanline overlay effect */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(
+      rgba(0, 240, 255, 0.03) 1px, 
+      transparent 1px
+    );
+  background-size: 100% 3px;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.cyber-container {
+  width: 90%;
+  max-width: 800px;
+  padding: 2rem;
+  background-color: var(--panel-bg);
+  border: 2px solid var(--cyber-blue);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* CRT screen curvature effect */
+.cyber-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 240, 255, 0.05) 0%,
+    rgba(0, 240, 255, 0) 70%
+  );
+  pointer-events: none;
+}
+
+.cyber-title {
+  color: var(--cyber-blue);
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px var(--cyber-blue);
+  letter-spacing: 3px;
+  font-size: 1.8rem;
+  position: relative;
+}
+
+.cyber-title::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--cyber-blue),
+    transparent
+  );
+  margin-top: 0.5rem;
+}
+
+.neon-display {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  padding: 3rem 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.neon-display::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(
+    45deg,
+    #ff00ff,
+    #00f0ff,
+    #ff00ff
+  );
+  background-size: 200% 200%;
+  animation: borderGlow 3s linear infinite;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+@keyframes borderGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+#neonText {
+  font-size: 4rem;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.control-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: var(--cyber-blue);
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+input[type="text"],
+input[type="color"],
+input[type="range"] {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--cyber-blue);
+  color: white;
+  padding: 0.5rem;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.hex-input {
+  margin-top: 0.5rem;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  height: 5px;
+  background: linear-gradient(
+    to right,
+    #ff00ff,
+    #00f0ff
+  );
+  margin-top: 0.8rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.blink-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+button {
+  background: none;
+  border: 2px solid var(--neon-pink);
+  color: white;
+  padding: 0.8rem;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  background: rgba(255, 0, 255, 0.1);
+  text-shadow: 0 0 10px var(--neon-pink);
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 0, 255, 0.4),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+.blink-rate {
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  #neonText {
+    font-size: 2.5rem;
+  }
+  
+  .control-panel {
+    grid-template-columns: 1fr;
+  }
+}
