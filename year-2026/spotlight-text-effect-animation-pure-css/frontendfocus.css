@@ -1,0 +1,64 @@
+@property --x {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 50%;
+}
+
+@property --y {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 50%;
+}
+
+body {
+  background: #000;
+  overflow: hidden;
+  margin: 0;
+}
+
+.spotlight {  
+  width: 100vw;
+  height: 100vh;
+  background-image: radial-gradient(
+    circle max(30vmin, 120px) at var(--x) var(--y),
+    transparent max(20vmin, 80px),
+    rgba(0, 0, 0, .8)
+  );
+  animation: spotlightX 4s infinite alternate ease-in-out,
+    spotlightY 3s infinite alternate ease-in-out;
+  
+  position: absolute;
+  z-index: 1;
+}
+
+.container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.text {
+  align-items: center;
+  color: #fff;
+  font-size: 20vw;
+}
+
+@keyframes spotlightX {
+  from {
+    --x: 20%;
+  }
+  to {
+    --x: 80%;
+  }
+}
+
+@keyframes spotlightY {
+  from {
+    --y: 20%;
+  }
+  to {
+    --y: 80%;
+  }
+}
