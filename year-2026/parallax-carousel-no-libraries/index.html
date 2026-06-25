@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <title>Parallax Carousel — No Libraries | CSS JavaScript</title>
+</head>
+<body>
+   <div class="mzaCarousel" id="mzaCarousel" aria-roledescription="carousel" aria-label="Featured cards">
+  <div class="mzaCarousel-viewport" tabindex="0">
+    <div class="mzaCarousel-track">
+      <article class="mzaCarousel-slide" role="group" aria-roledescription="slide" aria-label="1 of 5">
+        <div class="mzaCard" style="--mzaCard-bg:url('img/para1.jpg');">
+          <header class="mzaCard-head mzaPar-1">
+            <h2 class="mzaCard-title">Edge Visuals</h2>
+            <p class="mzaCard-kicker">Design systems that breathe</p>
+          </header>
+          <p class="mzaCard-text mzaPar-2">Build adaptive UI foundations with tokens, motion, and accessible color ramps. Ship faster without sameness.</p>
+          <footer class="mzaCard-actions mzaPar-3"><button class="mzaBtn">See case study</button></footer>
+        </div>
+      </article>
+
+      <article class="mzaCarousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 5">
+        <div class="mzaCard" style="--mzaCard-bg:url('img/para2.jpg');">
+          <header class="mzaCard-head mzaPar-1">
+            <h2 class="mzaCard-title">Realtime Dashboards</h2>
+            <p class="mzaCard-kicker">Signal over noise</p>
+          </header>
+          <p class="mzaCard-text mzaPar-2">Stream metrics, smooth spikes, and highlight deltas. Clarity first, chrome last.</p>
+          <footer class="mzaCard-actions mzaPar-3"><button class="mzaBtn">View live demo</button></footer>
+        </div>
+      </article>
+
+      <article class="mzaCarousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 5">
+        <div class="mzaCard" style="--mzaCard-bg:url('img/para3.jpg');">
+          <header class="mzaCard-head mzaPar-1">
+            <h2 class="mzaCard-title">Brand Motion</h2>
+            <p class="mzaCard-kicker">Identity in motion</p>
+          </header>
+          <p class="mzaCard-text mzaPar-2">Translate marks into kinetic systems. Timing, easing, and restraint create memory.</p>
+          <footer class="mzaCard-actions mzaPar-3"><button class="mzaBtn">Explore reels</button></footer>
+        </div>
+      </article>
+
+      <article class="mzaCarousel-slide" role="group" aria-roledescription="slide" aria-label="4 of 5">
+        <div class="mzaCard" style="--mzaCard-bg:url('img/para4.jpg');">
+          <header class="mzaCard-head mzaPar-1">
+            <h2 class="mzaCard-title">E-commerce UX</h2>
+            <p class="mzaCard-kicker">Frictionless paths</p>
+          </header>
+          <p class="mzaCard-text mzaPar-2">Model intent, compress choice, and keep the dopamine loop honest. Checkout in one breath.</p>
+          <footer class="mzaCard-actions mzaPar-3"><button class="mzaBtn">See patterns</button></footer>
+        </div>
+      </article>
+
+      <article class="mzaCarousel-slide" role="group" aria-roledescription="slide" aria-label="5 of 5">
+        <div class="mzaCard" style="--mzaCard-bg:url('img/para5.jpg');">
+          <header class="mzaCard-head mzaPar-1">
+            <h2 class="mzaCard-title">Content Engines</h2>
+            <p class="mzaCard-kicker">Scale without sludge</p>
+          </header>
+          <p class="mzaCard-text mzaPar-2">Structured content, image policy, and smart defaults. Publish daily, stay sharp.</p>
+          <footer class="mzaCard-actions mzaPar-3"><button class="mzaBtn">Read playbook</button></footer>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="mzaCarousel-controls" aria-label="Controls">
+    <button class="mzaCarousel-prev" aria-label="Previous slide" type="button">‹</button>
+    <button class="mzaCarousel-next" aria-label="Next slide" type="button">›</button>
+  </div>
+
+  <div class="mzaCarousel-pagination" role="tablist" aria-label="Slide navigation"></div>
+  <div class="mzaCarousel-progress" aria-hidden="true"><span class="mzaCarousel-progressBar"></span></div>
+</div> 
+
+<script src="frontendfocus.js"></script>
+</body>
+</html>
