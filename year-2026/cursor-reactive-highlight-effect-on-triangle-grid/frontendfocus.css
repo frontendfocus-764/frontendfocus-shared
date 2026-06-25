@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap");
+@property --glow-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #ADF5FF;
+}
+:root {
+  --gap: 0.125rem;
+  --triangle-base: 3rem;
+  --triangle-base-height: calc(1.733 * var(--triangle-base));
+  --triangle-width: calc(var(--triangle-base) - var(--gap));
+  --triangle-height: calc(var(--triangle-base-height) - var(--gap));
+}
+
+html, body {
+  background: #0D0C1D;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.hero {
+  position: relative;
+  background: radial-gradient(#2C666E, #161B33);
+  background-size: 400% 400%;
+  background-position: 100% 100%;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: calc(var(--gap) * 2);
+  overflow: hidden;
+  animation: bg-animation 20s alternate infinite;
+}
+
+h1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  padding: 1rem;
+  transform: translate(-50%, -50%);
+  background: #0D0C1D;
+  border-radius: 5rem;
+  box-shadow: 0 0 1rem 1rem #0D0C1D;
+  color: white;
+  font-size: 2.5rem;
+  font-family: "Bruno Ace", cursive;
+  text-align: center;
+}
+
+@keyframes bg-animation {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 400% 400%;
+  }
+}
+#glow {
+  position: absolute;
+  width: 50vw;
+  height: 100vw;
+  background: radial-gradient(circle closest-side, var(--glow-color), transparent);
+  animation: glow-animation 5.2s ease infinite alternate;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes glow-animation {
+  from {
+    --glow-color: #ADF5FF;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  to {
+    --glow-color: #FF6978;
+    transform: translate(-50%, -50%) scale(1) rotate(90deg);
+  }
+}
+.triangle-container {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), calc(var(--triangle-base) * 2 + var(--gap)));
+  width: 100%;
+  height: 100%;
+}
+
+.triangle-set {
+  display: inline-block;
+  position: relative;
+  width: calc(var(--triangle-base) * 2 + var(--gap));
+  height: var(--triangle-base-height);
+}
+.triangle-set--offset {
+  transform: translateX(calc(-1 * var(--triangle-base) - 0.5 * var(--gap)));
+}
+.triangle-set::before, .triangle-set::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: var(--gap);
+  border-right: var(--triangle-width) solid transparent;
+  border-left: var(--triangle-width) solid transparent;
+}
+.triangle-set::before {
+  left: calc(-1 * var(--triangle-base));
+  border-bottom: var(--triangle-height) solid #0D0C1D;
+}
+.triangle-set::after {
+  right: calc(var(--gap) * 2.5);
+  border-top: var(--triangle-height) solid #0D0C1D;
+}
