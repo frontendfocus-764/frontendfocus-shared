@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <title>Magnifying Lens Navigation Bar | CSS JavaScript</title>
+</head>
+<body>
+<div class="action-bar">
+  <button interestfor="account">
+    <span class="material-symbols-outlined">person</span>
+  </button>
+  <button interestfor="pinned">
+    <span class="material-symbols-outlined">push_pin</span>
+  </button>
+  <button class="selected" interestfor="following">
+    <span class="material-symbols-outlined">alternate_email</span>
+  </button>
+  <button interestfor="email">
+    <span class="material-symbols-outlined">mail</span>
+  </button>
+  <button interestfor="edit">
+    <span class="material-symbols-outlined">edit</span>
+  </button>
+  <button interestfor="business">
+    <span class="material-symbols-outlined">cases</span>
+  </button>
+</div>
+
+<div class="anchored-pointer">
+</div>
+
+<!-- tooltips -->
+<div id="account" popover="hint">Profile</div>
+<div id="pinned" popover="hint">Pinned</div>
+<div id="following" popover="hint">Following</div>
+<div id="email" popover="hint">Inbox</div>
+<div id="edit" popover="hint">Edit</div>
+<div id="business" popover="hint">Business</div>
+
+<!-- SVG filter -->
+<svg width="0" height="0">
+  <filter id="filter" color-interpolation-filters="linearRGB" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse">
+    <feDisplacementMap in="SourceGraphic" in2="SourceGraphic" scale="5" xChannelSelector="A" yChannelSelector="A" x="5" y="-5" width="100%" height="100%" result="displacementMap"/>
+  </filter>
+</svg> 
+
+<script src="frontendfocus.js"></script>
+</body>
+</html>
