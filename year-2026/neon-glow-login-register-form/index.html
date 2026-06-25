@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>Sliding Login/Register Authentication Form with CSS & JavaScript Animations</title>
+</head>
+<body>
+   <div class="hero">
+		<div class="main-box">
+			<div class="form-box">
+				<div id="after"></div>
+				<div class="button-box">
+					<div id="btn"></div>
+					<button id="log" type="button" class="toggle-btn" onclick="login()">Log in</button>
+					<button id="reg" type="button" class="toggle-btn" onclick="register()">Register</button>
+				</div>
+				<div class="social-icons">
+					<a class="icon-link" href="#">
+						<i class="fab fa-facebook cont-icon"></i>
+					</a>
+					<a class="icon-link" href="#">
+						<i class="fab fa-instagram cont-icon"></i>
+					</a>
+					<a class="icon-link"  href="#">
+						<i class="fab fa-github cont-icon"></i>
+					</a>
+					
+				</div>
+				<form id="login" class="input-group">
+					<input type="text" class="input-field" placeholder="User" required>
+					<input id="pwd" type="Password" class="input-field" placeholder="Password" required>			
+					<input type="submit" class="submit-btn" value="Log in">
+				</form>
+				<form id="register" class="input-group">
+					<input type="text" class="input-field" placeholder="User" required>
+					<input type="email" class="input-field" placeholder="Email" required>
+					<input id="pwd" type="Password" class="input-field" placeholder="Password" required>
+					
+					<input type="submit" class="submit-btn" value="Register">
+				</form>
+			</div>
+			<span class="sp sp-t"></span>
+			<span class="sp sp-r"></span>
+			<span class="sp sp-b"></span>
+			<span class="sp sp-l"></span>
+		</div>
+	</div> 
+
+    <script src="frontendfocus.js"></script>
+</body>
+</html>
