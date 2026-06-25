@@ -1,0 +1,407 @@
+:root {
+    --poppinsFont: "Poppins", sans-serif;
+    --robotoFont: "Roboto", sans-serif;
+    --fredokaFont: "Fredoka", sans-serif;
+
+    --boneWhite: #F9F6EE;
+    --boneWhite: hsla(43.64deg, 47.83%, 95.49%, .6);
+    --boneWhite: hsla(0deg, 0.83%, 65.86%, 1);
+
+    --irriAqua: hsla(179.75deg, 94.4%, 50.98%, 1);
+    --irriPeach: hsla(350.23deg, 55.84%, 84.9%, 1);
+    --irriPink: hsla(325.61deg, 70.69%, 77.25%, 1);
+    --irriPurple: hsla(277.66deg, 54.65%, 66.27%, 1);
+    --irriBlue: hsla(224.7deg, 97.63%, 49.61%, 1);
+
+    --holoAqua: hsla(162.09deg, 65.05%, 59.61%, 1);
+    --holoGreen: hsla(137.7deg, 83.56%, 71.37%, 1);
+    --holoYellowGreen: hsla(98.82deg, 80.95%, 79.41%, 1);
+    --holoYellow: hsla(51.43deg, 61.6%, 75.49%, 1);
+    --holoOrange: hsla(11.61deg, 86.92%, 79.02%, 1);
+    --holoRed: hsla(345deg, 57.14%, 58.82%, 1);
+
+    --rainbowPink: hsla(330.41deg, 79.57%, 63.53%, 1);
+    /* PINK */
+    --rainbowRed: hsla(0deg, 100%, 68.63%, 1);
+    /* RED */
+    --rainbowOrange: hsla(24.26deg, 64.76%, 58.82%, 1);
+    /* ORANGE */
+    --rainbowGreen: hsla(82.75deg, 71.83%, 41.76%, 1);
+    /* GREEN */
+    --rainbowAqua: hsla(180deg, 77.78%, 37.06%, 1);
+    /* AQUA */
+    --rainbowBlue: hsla(230.37deg, 79.41%, 60%, 1);
+    /* BLUE */
+    --rainbowPurple: hsla(273.05deg, 70.46%, 53.53%, 1);
+    /* PURPLE */
+
+    --shineAngle: 103deg;
+    --shineAngle: 77deg;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+[type=submit],
+[type=reset],
+button,
+html [type=button] {
+    -webkit-appearance: button;
+    text-transform: none;
+}
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: var(--poppinsFont);
+    font-family: var(--robotoFont);
+    font-family: var(--fredokaFont);
+    font-weight: 200;
+}
+
+body {
+    color: var(--boneWhite);
+    background: hsla(228deg, 12.2%, 8.04%, 1);
+    padding: 100px 0;
+}
+
+.dark-shine-button-wrapper {
+    --borderRadius: .9375em;
+    /* add border radius before to keep the radius of items smooth slightly more radius */
+    --borderRadiusBefore: .94875em;
+
+    position: relative;
+    width: 100%;
+    max-width: 11.5625em;
+    height: 100%;
+    max-height: 2.8125em;
+    transition: all 200ms ease;
+
+    border-radius: var(--borderRadius);
+
+    margin: 1.25em auto;
+    padding: 0;
+
+    border: 0.0625em solid hsla(210deg, 14.97%, 1.64%, 1);
+
+    box-shadow: 0 0.21875em 0.0625em rgba(255, 255, 255, .21) inset,
+        0 -0.125em 0.5em rgba(255, 255, 255, .22),
+        0 0.125em 0.3125em rgba(0, 0, 0, 0.45),
+        0 0.5em 0.625em rgba(0, 0, 0, 0.65);
+}
+
+.dark-shine-button-wrapper:active {
+    transform: scale(.95);
+}
+
+.dark-shine-button {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: var(--borderRadius);
+
+    background:
+        linear-gradient(var(--shineAngle),
+            hsla(200, 5.7%, 10.4%, 1) 5%,
+            hsla(240, 5.3%, 3.7%, 1) 46.5%,
+            hsla(200, 4.8%, 24.3%, 1) 50.7%,
+            hsla(207.3, 4.4%, 48.8%, 1) 100.0%) padding-box,
+        /* MAIN BACKGROUND */
+        linear-gradient(176deg,
+            hsla(202.3, 91.8%, 33.3%, 1),
+            /* light blue */
+            hsla(221.9, 90.4%, 24.5%, 1),
+            /* darker blue */
+            hsla(323, 73.8%, 37.5%, 1) 75%
+            /* maroon */
+        ) border-box;
+    /* BORDER BACKGROUND */
+    border: 0.09375em solid transparent;
+    /* 1.5px */
+    border: 0.125em solid transparent;
+    /* 2px */
+    /* color: #232d2d; */
+
+    background-size: 118% 105%, 100% 100%;
+    background-repeat: no-repeat;
+
+    animation: shineBackgroundStart 350ms forwards linear;
+    /* overflow: hidden; */
+}
+
+.dark-shine-button.irridecent {
+    background:
+        linear-gradient(var(--shineAngle),
+            hsla(200, 5.7%, 10.4%, 1) 5%,
+            hsla(240, 5.3%, 3.7%, 1) 46.5%,
+            hsla(200, 4.8%, 24.3%, 1) 50.7%,
+            hsla(207.3, 4.4%, 48.8%, 1) 100.0%) padding-box,
+        /* MAIN BACKGROUND */
+        linear-gradient(122deg,
+            var(--irriAqua),
+            var(--irriPeach),
+            var(--irriPink),
+            var(--irriPurple),
+            var(--irriBlue) 75%) border-box;
+    /* BORDER BACKGROUND */
+
+}
+
+.dark-shine-button.holo {
+    background:
+        linear-gradient(var(--shineAngle),
+            hsla(200, 5.7%, 10.4%, 1) 5%,
+            hsla(240, 5.3%, 3.7%, 1) 46.5%,
+            hsla(200, 4.8%, 24.3%, 1) 50.7%,
+            hsla(207.3, 4.4%, 48.8%, 1) 100.0%) padding-box,
+        /* MAIN BACKGROUND */
+        linear-gradient(122deg,
+            var(--holoAqua),
+            var(--holoGreen),
+            var(--holoYellowGreen),
+            var(--holoYellow),
+            var(--holoOrange),
+            var(--holoRed) 75%) border-box;
+    /* BORDER BACKGROUND */
+}
+
+.dark-shine-button.rainbow {
+    background:
+        linear-gradient(var(--shineAngle),
+            hsla(200, 5.7%, 10.4%, 1) 5%,
+            hsla(240, 5.3%, 3.7%, 1) 46.5%,
+            hsla(200, 4.8%, 24.3%, 1) 50.7%,
+            hsla(207.3, 4.4%, 48.8%, 1) 100.0%) padding-box,
+        /* MAIN BACKGROUND */
+        linear-gradient(103deg,
+            var(--rainbowPink),
+            /* PINK */
+            var(--rainbowRed),
+            /* RED */
+            var(--rainbowOrange),
+            /* ORANGE */
+            var(--rainbowGreen),
+            /* GREEN */
+            var(--rainbowAqua),
+            /* AQUA */
+            var(--rainbowBlue),
+            /* BLUE */
+            var(--rainbowPurple) 75%
+            /* PURPLE */
+        ) border-box;
+    /* BORDER BACKGROUND */
+}
+
+.dark-shine-button.irridecent-two {
+    background:
+        linear-gradient(var(--shineAngle),
+            hsla(200, 5.7%, 10.4%, 1) 5%,
+            hsla(240, 5.3%, 3.7%, 1) 46.5%,
+            hsla(200, 4.8%, 24.3%, 1) 50.7%,
+            hsla(207.3, 4.4%, 48.8%, 1) 100.0%) padding-box,
+        /* MAIN BACKGROUND */
+        linear-gradient(127deg,
+            #fc4b6d,
+            /* red */
+            #ed8433,
+            /* orange */
+            #e0b523,
+            /* yellow */
+            #0de685,
+            /* green */
+            #fa4a9e,
+            /* pink */
+            #b850de,
+            /* purple */
+            #19ecca 75%
+            /* aqua */
+        ) border-box;
+    /* BORDER BACKGROUND */
+}
+
+.dark-shine-button:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: var(--borderRadiusBefore);
+}
+
+.dark-shine-button-wrapper:hover .dark-shine-button {
+    cursor: pointer;
+    animation: shineBackgroundMove 350ms forwards linear;
+}
+
+.dark-shine-button-wrapper:active .dark-shine-button {
+    animation: shineBackgroundActive 50ms forwards linear;
+    box-shadow: 0 0.0625em 0.25em rgba(0, 0, 0, .5) inset,
+        0 0 0.5em rgba(0, 0, 0, .2) inset,
+        0 -0.125em 1.25em rgba(128, 128, 128, .28),
+        0 0.0625em 0.3125em rgba(0, 0, 0, .45),
+        0 0.125em 0.625em rgba(0, 0, 0, .75);
+}
+
+@keyframes shineBackgroundStart {
+    0% {
+        background-size: 100% 105%, 100% 100%;
+    }
+
+    100% {
+        background-size: 118% 105%, 100% 100%;
+    }
+}
+
+@keyframes shineBackgroundActive {
+    0% {
+        background: linear-gradient(var(--shineAngle), hsla(200, 5.7%, 10.4%, 1) 5%, hsla(0, 0%, 6.7%, 1) 46.5%, hsla(200, 4.8%, 24.3%, 1) 48.7%, hsla(207.3, 4.4%, 48.8%, 1) 100.0%) padding-box,
+            /* MAIN BACKGROUND */
+            linear-gradient(-176deg, hsla(202.3, 91.8%, 33.3%, 1), hsla(221.9, 90.4%, 24.5%, 1), hsla(323, 73.8%, 37.5%, 1)) border-box;
+        /* BORDER BACKGROUND */
+        background-size: 102% 105%, 100% 100%;
+        /* transform: translate(-50%, -50%) scale(1); */
+    }
+
+    50% {
+        background-size: 106% 105%, 100% 100%;
+        /* transform: translate(-50%, -50%) scale(.97); */
+    }
+
+    100% {
+        background: linear-gradient(var(--shineAngle), hsl(200, 5.7%, 10.4%) 5%, hsl(0, 0%, 6.7%) 46.5%, hsl(195, 4.8%, 16.5%) 48.7%, hsl(216, 6%, 32.9%) 100.0%) padding-box,
+            /* MAIN BACKGROUND */
+            linear-gradient(-176deg, hsla(202.3, 91.8%, 33.3%, 1), hsla(221.9, 90.4%, 24.5%, 1), hsla(323, 73.8%, 37.5%, 1)) border-box;
+        /* BORDER BACKGROUND */
+        background-size: 113% 105%, 100% 100%;
+        /* transform: translate(-50%, -50%) scale(.95); */
+    }
+}
+
+@keyframes shineBackgroundMove {
+    0% {
+        background-size: 118% 105%, 100% 100%;
+    }
+
+    100% {
+        background-size: 103% 105%, 100% 100%;
+    }
+}
+
+.click-text {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: grid;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+
+    font-size: 1.3em;
+    font-weight: 600;
+    color: hsla(323.4, 82.7%, 40.8%, 1);
+    text-shadow: 0 -0.0625em 0.125em rgba(0, 0, 0, .6);
+}
+
+.dark-shine-button.irridecent .click-text {
+    color: var(--irriPurple);
+}
+
+.dark-shine-button.holo .click-text {
+    color: var(--holoRed);
+}
+
+.dark-shine-button.rainbow .click-text {
+    color: var(--rainbowOrange);
+}
+
+.dark-shine-button.irridecent-two .click-text {
+    color: #fa4a9e;
+}
+
+.dark-shine-button-wrapper:hover .click-text {
+    text-shadow: 0 -0.0625em 0.125em rgba(0, 0, 0, .6);
+}
+
+.dark-shine-button-wrapper:active .click-text {
+    text-shadow: -0.03125em -0.0625em 0.125em rgba(0, 0, 0, .6),
+        0.03125em 0.0625em 0.03125em rgba(255, 255, 255, .2);
+    /* white light */
+
+    text-shadow: -0.03125em -0.0625em 0.125em rgba(0, 0, 0, .6),
+        0.03125em 0.0625em 0.03125em hsla(202.3, 91.8%, 33.3%, .75);
+    /* blue light */
+
+}
+
+.button-shine {
+    content: "";
+    width: 101.73%;
+    height: 109.8%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: var(--borderRadius);
+
+    background:
+        linear-gradient(var(--shineAngle),
+            hsla(240, 5.3%, 3.7%, 1) 0%,
+            hsla(240, 5.3%, 3.7%, 1) 100%) padding-box,
+        /* MAIN BACKGROUND */
+        repeating-linear-gradient(118deg,
+            transparent 0%,
+            transparent 15%,
+            hsl(0deg 0% 100% / 38.67%) 25%,
+            transparent 35%,
+            transparent 50%) border-box,
+        /* BORDER BACKGROUND */
+        repeating-linear-gradient(120deg,
+            transparent 0%,
+            transparent 15%,
+            hsl(0deg 0% 100% / 36.67%) 25%,
+            transparent 35%,
+            transparent 50%) border-box,
+        /* BORDER BACKGROUND */
+        repeating-linear-gradient(120deg,
+            transparent 0%,
+            transparent 15%,
+            hsl(0deg 0% 100% / 36.67%) 25%,
+            transparent 35%,
+            transparent 50%) border-box;
+    /* BORDER BACKGROUND */
+
+    background-blend-mode: normal, overlay, screen, color-dodge;
+
+    border: 0.09375em solid transparent;
+
+    background-size: 200%;
+    background-position: 0 0, calc(var(--bmx) + 32%) var(--bmy), calc(var(--bmx) + 30%) var(--bmy), calc(var(--bmx) + 28%) var(--bmy);
+
+    mix-blend-mode: screen;
+}
+
+.dark-shine-button.irridecent .button-shine,
+.dark-shine-button.holo .button-shine,
+.dark-shine-button.rainbow .button-shine {
+    background-blend-mode: normal, overlay, screen, color-dodge;
+    mix-blend-mode: screen;
+}
