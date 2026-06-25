@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+:root {
+  --Foreground: #f0f0f0;
+  --Background: #0d0d0d;
+  --ForegroundT: #f0f0f0af;
+}
+
+* {
+  box-sizing: border-box;
+  margin: auto;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  background: var(--Background);
+  overflow: hidden;
+  perspective: 1440px;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transform-style: preserve-3d;
+}
+
+.crest {
+  position: relative;
+  height: 50vh;
+  aspect-ratio: 1/1;
+  transform-style: preserve-3d;
+  animation: rotate 10s linear infinite 5s;
+}
+
+.tri {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  translate: 0vh -5vh 0vh;
+}
+.tri .line {
+  position: absolute;
+  width: 112.5%;
+  height: 4px;
+  background: var(--Foreground);
+  bottom: 0;
+  opacity: 0;
+  translate: 0 50% 0;
+  border-radius: 4px;
+  animation: renderOpacityOn 0.2s linear infinite 4s, revealFlicker 0.5s linear 6 0.3s;
+}
+.tri .line.left {
+  transform-origin: left;
+  rotate: -63.435deg;
+  width: 125%;
+  animation-delay: 4.1s, 0.5s;
+  transform: translate(-11%, 11%);
+}
+.tri .line.right {
+  transform-origin: right;
+  rotate: 63.435deg;
+  right: 0;
+  width: 125%;
+  animation-delay: 4.2s, 0.7s;
+}
+.tri .line::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  filter: blur(15px);
+  animation-delay: 0.0351929893s;
+}
+
+.sqHolder {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  opacity: 0;
+  translate: 0vh -5vh 0vh;
+  animation: revealOpacity 0.2s linear 4s forwards;
+}
+
+.sq {
+  position: absolute;
+  width: 15%;
+  top: 100%;
+  aspect-ratio: 1/1;
+  background: var(--Background);
+  border: 1px solid var(--Foreground);
+  box-shadow: 0 0 15px var(--ForegroundT);
+  translate: -50% -50%;
+  border-radius: 50%;
+  animation-duration: 2s, 0.2s, 0.2s;
+  animation-timing-function: lienar;
+  animation-iteration-count: infinite;
+}
+.sq.left {
+  animation-name: sqLeft, renderBoxShadow, renderBorder;
+  animation-delay: 5s, 0.7945555972s, 0.4292710182s;
+}
+.sq.top {
+  top: 0;
+  left: 50%;
+  animation-name: sqTop, renderBoxShadow, renderBorder;
+  animation-delay: 5s, 0.4020948005s, 0.1274956518s;
+}
+.sq.right {
+  left: 100%;
+  animation-name: sqRight, renderBoxShadow, renderBorder;
+  animation-delay: 5s, 0.1983680582s, 0.485402143s;
+}
+
+@keyframes rotate {
+  100% {
+    rotate: 360deg;
+  }
+}
+@keyframes renderOpacityOn {
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes renderOpacityOff {
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes renderBoxShadow {
+  100% {
+    box-shadow: 0 0 15px transparent;
+  }
+}
+@keyframes renderBorder {
+  100% {
+    border-color: transparent;
+  }
+}
+@keyframes revealOpacity {
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes revealTransform {
+  25% {
+    rotate: -1 1 0 90deg;
+  }
+  100% {
+    translate: 0vh -5vh 0vh;
+    rotate: 1 1 1 0deg;
+  }
+}
+@keyframes revealFlicker {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes sqLeft {
+  0%, 100% {
+    transform: translate(0vh, 0vh);
+  }
+  33.3% {
+    transform: translate(25vh, -50vh);
+  }
+  66.6% {
+    transform: translate(50vh, 0vh);
+  }
+}
+@keyframes sqTop {
+  0%, 100% {
+    transform: translate(0vh, 0vh);
+  }
+  33.3% {
+    transform: translate(25vh, 50vh);
+  }
+  66.6% {
+    transform: translate(-25vh, 50vh);
+  }
+}
+@keyframes sqRight {
+  0%, 100% {
+    transform: translate(0vh, 0vh);
+  }
+  33.3% {
+    transform: translate(-50vh, 0vh);
+  }
+  66.6% {
+    transform: translate(-25vh, -50vh);
+  }
+}
