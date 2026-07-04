@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <title>Product Spotlight Grid | CSS JavaScript Tutorial</title>
+</head>
+<body>
+    <div class="container">
+  <header>
+    <span class="eyebrow">CSS Spotlight + JS Filter</span>
+    <h1>Product<br /><span>Spotlight</span></h1>
+    <p class="subtitle">Cursor-driven SVG clip reveal. Static HTML + minimal JS. Filter by category.</p>
+  </header>
+
+  <nav class="filters" id="filters" aria-label="Filter products">
+    <button class="filter is-active" data-filter="all" aria-pressed="true">All</button>
+    <button class="filter" data-filter="Photography" aria-pressed="false">Photography</button>
+    <button class="filter" data-filter="Audio" aria-pressed="false">Audio</button>
+    <button class="filter" data-filter="Smart Home" aria-pressed="false">Smart Home</button>
+    <span id="filter-count" class="filter-count"></span>
+  </nav>
+
+  <main>
+    <div class="items" id="grid">
+
+      <!-- 0 -->
+      <div class="item" data-category="Photography" tabindex="0" aria-label="Aperture Pro Camera">
+        <div class="meta"><span class="chip">4K</span><span class="chip">Mirrorless</span></div>
+        <svg viewBox="0 0 300 375" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <clipPath id="clip-0">
+              <circle cx="150" cy="187.5" r="0"></circle>
+            </clipPath>
+          </defs>
+          <text class="svg-text" x="50%" y="50%" dy=".3em">Aperture Pro</text>
+          <g clip-path="url(#clip-0)">
+            <image href="./img/img-1.jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"></image>
+            <text class="svg-masked-text" x="50%" y="50%" dy=".3em">Aperture Pro</text>
+          </g>
+        </svg>
+        <div class="desc">
+          <div class="ttl">Aperture Pro Camera</div>
+          <div class="copy">Flagship clarity with stabilized optics.</div>
+          <div class="actions">
+            <button class="btn">Learn more</button>
+            <button class="btn ghost">Quick view</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1 -->
+      <div class="item" data-category="Photography" tabindex="0" aria-label="Luma Studio Light">
+        <div class="meta"><span class="chip">RGB</span><span class="chip">Softbox</span></div>
+        <svg viewBox="0 0 300 375" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <clipPath id="clip-1">
+              <circle cx="150" cy="187.5" r="0"></circle>
+            </clipPath>
+          </defs>
+          <text class="svg-text" x="50%" y="50%" dy=".3em">Luma Light</text>
+          <g clip-path="url(#clip-1)">
+            <image href="./img/img-2.jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"></image>
+            <text class="svg-masked-text" x="50%" y="50%" dy=".3em">Luma Light</text>
+          </g>
+        </svg>
+        <div class="desc">
+          <div class="ttl">Luma Studio Light</div>
+          <div class="copy">Soft, controllable light for any scene.</div>
+          <div class="actions">
+            <button class="btn">Learn more</button>
+            <button class="btn ghost">Quick view</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="item" data-category="Audio" tabindex="0" aria-label="EchoWave Headphones">
+        <div class="meta"><span class="chip">Wireless</span><span class="chip">ANC</span></div>
+        <svg viewBox="0 0 300 375" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <clipPath id="clip-2">
+              <circle cx="150" cy="187.5" r="0"></circle>
+            </clipPath>
+          </defs>
+          <text class="svg-text" x="50%" y="50%" dy=".3em">EchoWave</text>
+          <g clip-path="url(#clip-2)">
+            <image href="./img/img-3.jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"></image>
+            <text class="svg-masked-text" x="50%" y="50%" dy=".3em">EchoWave</text>
+          </g>
+        </svg>
+        <div class="desc">
+          <div class="ttl">EchoWave Headphones</div>
+          <div class="copy">Immersive sound with adaptive noise control.</div>
+          <div class="actions">
+            <button class="btn">Learn more</button>
+            <button class="btn ghost">Quick view</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="item" data-category="Audio" tabindex="0" aria-label="BeatBox Speaker">
+        <div class="meta"><span class="chip">Portable</span><span class="chip">Waterproof</span></div>
+        <svg viewBox="0 0 300 375" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <clipPath id="clip-3">
+              <circle cx="150" cy="187.5" r="0"></circle>
+            </clipPath>
+          </defs>
+          <text class="svg-text" x="50%" y="50%" dy=".3em">BeatBox</text>
+          <g clip-path="url(#clip-3)">
+            <image href="./img/img-4.jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"></image>
+            <text class="svg-masked-text" x="50%" y="50%" dy=".3em">BeatBox</text>
+          </g>
+        </svg>
+        <div class="desc">
+          <div class="ttl">BeatBox Speaker</div>
+          <div class="copy">Punchy bass, all-day battery, take it anywhere.</div>
+          <div class="actions">
+            <button class="btn">Learn more</button>
+            <button class="btn ghost">Quick view</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="item" data-category="Smart Home" tabindex="0" aria-label="HomeGuard Doorbell">
+        <div class="meta"><span class="chip">1080p</span><span class="chip">Motion</span></div>
+        <svg viewBox="0 0 300 375" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <clipPath id="clip-4">
+              <circle cx="150" cy="187.5" r="0"></circle>
+            </clipPath>
+          </defs>
+          <text class="svg-text" x="50%" y="50%" dy=".3em">HomeGuard</text>
+          <g clip-path="url(#clip-4)">
+            <image href="./img/img-5.jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"></image>
+            <text class="svg-masked-text" x="50%" y="50%" dy=".3em">HomeGuard</text>
+          </g>
+        </svg>
+        <div class="desc">
+          <div class="ttl">HomeGuard Doorbell</div>
+          <div class="copy">Smart alerts with crystal-clear two-way audio.</div>
+          <div class="actions">
+            <button class="btn">Learn more</button>
+            <button class="btn ghost">Quick view</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="item" data-category="Smart Home" tabindex="0" aria-label="Aura Smart Lamp">
+        <div class="meta"><span class="chip">Ambient</span><span class="chip">App</span></div>
+        <svg viewBox="0 0 300 375" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <clipPath id="clip-5">
+              <circle cx="150" cy="187.5" r="0"></circle>
+            </clipPath>
+          </defs>
+          <text class="svg-text" x="50%" y="50%" dy=".3em">Aura Lamp</text>
+          <g clip-path="url(#clip-5)">
+            <image href="./img/img-6.jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"></image>
+            <text class="svg-masked-text" x="50%" y="50%" dy=".3em">Aura Lamp</text>
+          </g>
+        </svg>
+        <div class="desc">
+          <div class="ttl">Aura Smart Lamp</div>
+          <div class="copy">Tunable ambiance with scenes and schedules.</div>
+          <div class="actions">
+            <button class="btn">Learn more</button>
+            <button class="btn ghost">Quick view</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="item" data-category="Photography" tabindex="0" aria-label="Pro Camera">
+        <div class="meta"><span class="chip">4K</span><span class="chip">Mirrorless</span></div>
+        <svg viewBox="0 0 300 375" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <clipPath id="clip-6">
+              <circle cx="150" cy="187.5" r="0"></circle>
+            </clipPath>
+          </defs>
+          <text class="svg-text" x="50%" y="50%" dy=".3em">Pro Camera</text>
+          <g clip-path="url(#clip-6)">
+            <image href="./img/img-7.jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"></image>
+            <text class="svg-masked-text" x="50%" y="50%" dy=".3em">Pro Camera</text>
+          </g>
+        </svg>
+        <div class="desc">
+          <div class="ttl">Pro Camera</div>
+          <div class="copy">Flagship clarity with stabilized optics.</div>
+          <div class="actions">
+            <button class="btn">Learn more</button>
+            <button class="btn ghost">Quick view</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="item" data-category="Smart Home" tabindex="0" aria-label="Smart Lamp">
+        <div class="meta"><span class="chip">Ambient</span><span class="chip">App</span></div>
+        <svg viewBox="0 0 300 375" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <clipPath id="clip-7">
+              <circle cx="150" cy="187.5" r="0"></circle>
+            </clipPath>
+          </defs>
+          <text class="svg-text" x="50%" y="50%" dy=".3em">Smart Lamp</text>
+          <g clip-path="url(#clip-7)">
+            <image href="./img/img-8.jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"></image>
+            <text class="svg-masked-text" x="50%" y="50%" dy=".3em">Smart Lamp</text>
+          </g>
+        </svg>
+        <div class="desc">
+          <div class="ttl">Smart Lamp</div>
+          <div class="copy">Tunable ambiance with scenes and schedules.</div>
+          <div class="actions">
+            <button class="btn">Learn more</button>
+            <button class="btn ghost">Quick view</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="modal-inner">
+    <button class="close-modal" id="close-modal" aria-label="Close">✕ Close</button>
+    <img class="modal-content" id="modal-image" alt="Preview" />
+  </div>
+</div>
+
+<script src="frontendfocus.js"></script>
+</body>
+</html>
