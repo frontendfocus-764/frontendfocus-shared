@@ -1,0 +1,202 @@
+:root {
+  --bg: #1f1f1f;
+  --text: #DBDBDB;
+  --muted: #DBDBDB;
+  --accent: #FF79F1; /* pink button */
+  --radius: 8px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background-color: var(--bg);
+  display: flex;
+  align-items: center;         /* vertical center */
+  justify-content: center;     /* horizontal center */
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Lexend', sans-serif;
+  color: var(--text);
+}
+
+.subscribe-outer { position: relative; }
+
+/* Track width matches input width. Ensure it's at least face width (232px). */
+.track {
+  width: clamp(232px, 92vw, 720px);
+  height: 190px;               /* enough to fit the face block */
+  position: relative;
+  margin-inline: auto;
+}
+
+/* Draggable character */
+.chloe {
+  position: absolute;
+  top: 0;
+  left: 0;                     /* we move via translateX var */
+  transform: translateY(54px) translateX(var(--chx, 0px));
+  display: inline-block;
+  cursor: grab;
+  touch-action: none;          /* reliable horizontal dragging on touch */
+  user-select: none;
+  transition: transform 220ms cubic-bezier(.22,.61,.36,1); /* default soft */
+}
+
+.chloe.dragging { cursor: grabbing; }
+
+.error-message {
+	position: absolute;
+	top: -40%;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+	
+	&.is-active {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.error-text {
+	font-size: 40px;  
+}
+
+.eyeWhite {
+  position: absolute;
+  top: 83px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  overflow: hidden;            /* keep pupils inside */
+}
+
+.eyeball-left,
+.eyeball-right {
+  position: absolute;
+  top: 95px;
+  left: 50%;
+  z-index: 1;
+  transition: transform 120ms cubic-bezier(.22,.61,.36,1);
+  will-change: transform;
+}
+
+/* neutral base */
+.eyeball-left  { transform: translateX(-50%) translateX(-40px); }
+.eyeball-right { transform: translateX(-50%) translateX(40px); }
+
+.mask { position: relative; z-index: 2; }
+
+.subscribe {
+  width: clamp(232px, 92vw, 720px);  /* same width as .track */
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.input {
+  width: 100%;
+  height: 64px;
+  padding: 0 22px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.65);
+  background: transparent;
+  color: var(--text);
+  font-size: 20px;
+  outline: none;
+  transition: box-shadow .18s ease, border-color .18s ease;
+}
+
+.input::placeholder { color: var(--muted); }
+
+.input:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 6px color-mix(in oklch, var(--accent), transparent 82%);
+}
+
+.btn {
+  width: 100%;
+  height: 64px;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: #121212;
+  font-weight: 500;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform .12s ease, filter .12s ease;
+		font-weight: bold;
+}
+
+.btn:hover { filter: brightness(1.5); }
+.btn:active { transform: translateY(0); }
+
+form:has(input[type="email"]:valid) .btn { filter: brightness(1.05); }
+
+/* Error arc sits above the face */
+.error-arc {
+  position: absolute;
+  top: -26px;                 /* tweak as needed (-26 ~ -18) */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 520px;
+  height: 120px;
+  pointer-events: none;
+  z-index: 999;               /* be safely above .mask */
+  opacity: 0;                 /* hidden by default */
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+.error-arc__text {
+  font: 600 24px/1.1 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  fill: var(--text);
+}
+
+/* Reveal the arc and add a tiny rise when invalid */
+.subscribe-outer.has-error .error-arc {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+/* (Optional) subtle input emphasis on error */
+.subscribe-outer.has-error .input {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 6px color-mix(in oklch, var(--accent), transparent 82%);
+}
+
+/* Success pill: hidden by default, same width as the form */
+.subscribe_success {
+  width: clamp(232px, 92vw, 720px);
+  height: 142px;
+  margin-top: 18px;
+  border-radius: 200px;
+  background: #29D259;
+  color: var(--bg);
+  font-size: 40px;
+	 font-weight: bold;
+
+  /* center text */
+  display: none;                 /* hidden until success */
+  align-items: center;           
+  justify-content: center;
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(6px) scale(.98);
+  transition: opacity 1s ease, transform 1s ease;
+
+	position: relative; 
+	z-index: -1; 
+}
+
+/* When success, swap form -> pill */
+.subscribe-outer.success .subscribe        { display: none; }
+.subscribe-outer.success .subscribe_success{
+  display: flex;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Motion-safe */
+@media (prefers-reduced-motion: reduce) {
+  .subscribe_success { transition: none; }
+}

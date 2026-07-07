@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Interactive Subscribe Form with Cursor-Following Mascot | HTML CSS JavaScript</title>
+</head>
+<body>
+   <div class="subscribe-outer">
+    <!-- Track width == input width -->
+    <div class="track" id="track">
+      <div class="chloe" id="chloe" aria-label="Drag left or right">
+
+		<!-- Error arc text (initially empty/hidden). Sits above the face) -->
+        <svg class="error-message" viewBox="0 0 500 500">
+        <path id="curve" fill="transparent" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
+        <text class="error-text" fill="white" width="500" text-anchor="middle">
+            <textPath xlink:href="#curve" startOffset="50%">
+            Oops! Email, please!
+            </textPath>
+        </text>
+        </svg>														
+							
+        <!-- eye whites -->
+        <div class="eyeWhite" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="118" height="57" fill="none">
+            <ellipse cx="99" cy="28" fill="#fff" rx="19" ry="28"/>
+            <ellipse cx="19" cy="28" fill="#fff" rx="19" ry="28"/>
+          </svg>
+        </div>
+
+        <!-- left eyeball -->
+        <div class="eyeball-left" id="eyeball-left" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" fill="none">
+            <circle cx="20" cy="20" r="20" fill="url(#left-gradient)"/>
+            <circle cx="22" cy="11" r="6" fill="#FCF5F3"/>
+            <circle cx="25" cy="20" r="3" fill="#FCF5F3"/>
+            <defs>
+              <linearGradient id="left-gradient" x1="0" x2="35" y1="17.5" y2="17.5" gradientUnits="userSpaceOnUse">
+                <stop offset=".317" stop-color="#BD00A9"/>
+                <stop offset="1" stop-color="#57004E"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <!-- right eyeball -->
+        <div class="eyeball-right" id="eyeball-right" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" fill="none">
+            <circle cx="20" cy="20" r="20" fill="url(#right-gradient)"/>
+            <circle cx="23" cy="11" r="6" fill="#FCF5F3"/>
+            <circle cx="26" cy="20" r="3" fill="#FCF5F3"/>
+            <defs>
+              <linearGradient id="right-gradient" x1="0" x2="35" y1="17.5" y2="17.5" gradientUnits="userSpaceOnUse">
+                <stop offset=".317" stop-color="#BD00A9"/>
+                <stop offset="1" stop-color="#57004E"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <!-- face -->
+        <div class="mask">
+          <svg width="232" height="172" fill="none" viewBox="0 0 232 172" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="gradient-a" x1="117.999" x2="118.004" y1="0" y2="168" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FFB3BA"/>
+                <stop offset=".2" stop-color="#FF8FA3"/>
+                <stop offset=".5" stop-color="#E85A9B"/>
+                <stop offset=".75" stop-color="#C73A9C"/>
+                <stop offset="1" stop-color="#8B1A89"/>
+              </linearGradient>
+            </defs>
+            <path fill="url(#gradient-a)" d="M115.972 0c18.723 0 36.111 5.717 50.512 15.501 8.836-12.564 25.962-16.522 39.52-8.694 14.349 8.284 19.264 26.631 10.98 40.98A29.875 29.875 0 0 1 201.197 61c3.096 9.1 4.775 18.853 4.775 29 0 49.706-40.294 78-90 78-49.705 0-90-28.294-90-78 0-11.353 2.103-22.215 5.939-32.218a29.86 29.86 0 0 1-12.888-11.994c-8.284-14.349-3.368-32.696 10.98-40.98 13.405-7.74 30.3-3.958 39.219 8.272C82.847 4.78 98.852 0 115.972 0ZM75.023 82.807c-10.493 0-19 12.536-19 28s8.507 28 19 28c10.494 0 19-12.536 19-28s-8.506-28-19-28Zm80 0c-10.493 0-19 12.536-19 28s8.507 28 19 28c10.494 0 19-12.536 19-28s-8.506-28-19-28Z"/>
+            <path fill="#FFDBE4" d="M115.023 43.807c40.87 0 74 29.001 74 64.776 0 35.775-33.131 55.224-74 55.224s-74-19.449-74-55.224c0-35.775 33.131-64.776 74-64.776Zm-40 39c-10.493 0-19 12.536-19 28s8.507 28 19 28c10.494 0 19-12.536 19-28s-8.506-28-19-28Zm80 0c-10.493 0-19 12.536-19 28s8.507 28 19 28c10.494 0 19-12.536 19-28s-8.506-28-19-28Z"/>
+            <path fill="#BD00A9" d="M75.504 75.077c-2.605-.046-8.154 1.337-12.012 3.029-.954.418-.556 1.312.467 1.114 12.928-2.505 20.976 1.09 20.976 1.09.985.357 1.706-.947.879-1.591l-.349-.271c-2.507-2.534-6.355-3.308-9.962-3.371ZM151.051 75.077c2.605-.046 8.153 1.337 12.012 3.029.954.418.556 1.312-.467 1.114-12.928-2.505-20.976 1.09-20.976 1.09-.985.357-1.706-.947-.879-1.591l.348-.271c2.507-2.534 6.355-3.308 9.962-3.371Z"/>
+            <path stroke="#EFC6B8" stroke-width="2" d="M115 45c40.442 0 73 28.789 73 64.04 0 17.605-8.098 31.049-21.242 40.128C153.58 158.271 135.296 163 115 163c-20.296 0-38.58-4.729-51.758-13.832C50.1 140.089 42 126.645 42 109.04 42 73.789 74.558 45 115 45Z"/>
+            <ellipse cx="155.023" cy="110.807" stroke="#BD00A9" stroke-width="2" rx="19" ry="28"/>
+            <ellipse cx="75.023" cy="110.807" stroke="#BD00A9" stroke-width="2" rx="19" ry="28"/>
+            <path class="nose" fill="#BD00A9" stroke="#BD00A9" d="M118 121.5c1.644 0 3.036.174 4.005.697.473.256.839.591 1.09 1.029.251.439.405 1.014.405 1.774 0 .663-.296 1.333-.804 1.991-.506.657-1.196 1.265-1.912 1.79a4.696 4.696 0 0 1-5.568 0c-.716-.525-1.406-1.133-1.912-1.79-.508-.658-.804-1.328-.804-1.991 0-.76.154-1.335.405-1.774.251-.438.617-.773 1.09-1.029.969-.523 2.361-.697 4.005-.697Z"/>
+            <ellipse class="nose_light" cx="120" cy="124.501" fill="#FCF5F3" rx="2" ry="1.5"/>
+            <!-- Original mouth path (we swap to an ellipse on error) -->
+            <path class="mouth" stroke="#BD00A9" stroke-linecap="round" stroke-width="2"
+              d="M130.283 141.002c-3.315 2.561-7.811 4-12.5 4-4.688 0-9.185-1.439-12.5-4M132.863 141.968l-.879-.424a5.134 5.134 0 0 1-2.467-2.543M103 142.299l.831-.513A5.137 5.137 0 0 0 106.02 139"/>
+            <path class="arms" fill="#FFDBE4" stroke="#EBB6A5" stroke-width="2" d="M17.105 139h24.98l5.031 5.031a53.938 53.938 0 0 0 6.972 5.881l5.77 4.088H31.532v2.169c0 6.817-2.99 12.999-9.164 14.242-1.919.387-3.769.589-5.262.589C8.204 171 1 163.831 1 155c0-8.693 6.981-15.776 15.69-15.995l.415-.005ZM214.895 139h-24.981l-5.03 5.031a53.988 53.988 0 0 1-6.972 5.881l-5.77 4.088h28.326v2.169c0 6.817 2.99 12.999 9.164 14.242 1.919.387 3.769.589 5.263.589 8.9 0 16.105-7.169 16.105-16 0-8.693-6.981-15.776-15.689-15.995l-.416-.005Z"/>
+                <path class="arms_light" fill="#fff" d="M226.009 149.937c1.616 3.555 1.245 7.201-.829 8.144-2.073.943-1.31-2.882-2.926-6.437s-5-5.494-2.926-6.437c2.074-.943 5.065 1.175 6.681 4.73ZM27.603 149.937c1.616 3.555 1.245 7.201-.829 8.144-2.074.943-1.31-2.882-2.926-6.437s-5-5.494-2.926-6.437c2.073-.943 5.065 1.175 6.68 4.73Z"/>
+            <path class="head_light" fill="#fff" d="M117.5 31c27.062 0 46.5 13.773 46.5 13.773 0 2.45-19.438-9.273-46.5-9.273S71.5 46 66 44.773C66 44.773 90.438 31 117.5 31Z" opacity=".4"/>
+          </svg>
+        </div>							
+      </div>
+    </div>
+
+    <form class="subscribe" action="" method="post" novalidate>
+      <input class="input" id="email" type="email" name="email"  autocomplete="off" autocorrect="off"  autocapitalize="off" spellcheck="false" placeholder="Enter email" required />
+      <button class="btn" type="submit">Subscribe</button>
+    </form>
+		 <div class="subscribe_success">Thanks for watching</div>
+  </div> 
+
+  <script src="frontendfocus.js"></script>
+</body>
+</html>
