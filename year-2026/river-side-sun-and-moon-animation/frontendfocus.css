@@ -1,0 +1,144 @@
+html {
+  height: 100%;
+  --day-color: #ffda7e;
+  --night-color: #080818;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  max-height: 100dvh;
+  max-width: 100dvw;
+  overflow: hidden;
+  background-color: var(--night-color);
+  transition: background-color 1s;
+}
+
+html:has(.night:checked) body {
+  background-color: var(--night-color);
+}
+html:has(.day:checked) body {
+  background-color: var(--day-color);
+}
+html:has(.day:checked) img.lake {
+  filter: sepia(1);
+}
+html:has(.day:checked) .column-of-circles img:nth-child(1) {
+  offset-distance: 75%;
+}
+html:has(.day:checked) .column-of-circles img:nth-child(2) {
+  offset-distance: 125%;
+}
+
+img.lake {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 100%;
+  filter: sepia(0);
+  transition: all 1s;
+  z-index: 1;
+}
+
+.cloud {
+  position: absolute;
+  z-index: 2;
+}
+.cloud:nth-of-type(1) {
+  top: 135px;
+  right: 0;
+  height: 70px;
+  opacity: 0.7;
+  animation: move-from-right 54s linear infinite both;
+}
+.cloud:nth-of-type(2) {
+  top: 20px;
+  right: 0;
+  height: 40px;
+  opacity: 1;
+  animation: move-from-right 66s linear infinite both;
+}
+.cloud:nth-of-type(3) {
+  top: 60px;
+  left: 0;
+  height: 55px;
+  opacity: 0.85;
+  animation: move-from-left 60s linear infinite both;
+}
+
+.column-of-circles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80dvh;
+  width: 70dvw;
+  transition: all 1s;
+}
+.column-of-circles img {
+  width: 180px;
+  height: 180px;
+  transition: all 1s;
+}
+.column-of-circles img:nth-child(1) {
+  border-radius: 50%;
+  offset-path: ellipse(50% 40% at 50% 50%);
+  offset-rotate: 0deg;
+  offset-distance: 25%;
+}
+.column-of-circles img:nth-child(2) {
+  border-radius: 50%;
+  offset-path: ellipse(50% 40% at 50% 50%);
+  offset-rotate: 0deg;
+  offset-distance: 75%;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.btn {
+  position: absolute;
+  bottom: 2rem;
+  padding: 1rem 2rem;
+  color: var(--fr-color);
+  background-color: var(--bg-color);
+  cursor: pointer;
+  transition: all 0.25s;
+  z-index: 2;
+}
+.btn:hover {
+  color: var(--bg-color);
+  background-color: var(--fr-color);
+}
+.btn.btn-night {
+  right: 2rem;
+  --bg-color: var(--night-color);
+  --fr-color: var(--day-color);
+}
+.btn.btn-day {
+  left: 2rem;
+  --bg-color: var(--day-color);
+  --fr-color: var(--night-color);
+}
+
+@keyframes move-from-right {
+  from {
+    right: 0%;
+    transform: translateX(100%);
+  }
+  to {
+    right: 100%;
+    transform: translateX(-100%);
+  }
+}
+@keyframes move-from-left {
+  from {
+    left: 0%;
+    transform: translateX(-100%);
+  }
+  to {
+    left: 100%;
+    transform: translateX(100%);
+  }
+}
