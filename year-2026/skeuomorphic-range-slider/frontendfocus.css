@@ -1,0 +1,97 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 2em;
+  min-height: 100vh;
+  background-color: #f2f2f3;
+  font-size: 2em;
+}
+
+.slider-wrapper {
+  --slider-height: .375em;
+  --slider-value: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: 3.125em;
+  padding: 0.25em;
+  width: 10em;
+  background-image: linear-gradient(to bottom, #cdccd7, #efeef2);
+  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
+}
+.slider-wrapper:nth-child(1) {
+  --slider-color: #1664e4;
+}
+.slider-wrapper:nth-child(2) {
+  --slider-color: #e5681c;
+}
+
+.slider-track {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: inherit;
+  height: var(--slider-height);
+  width: calc(100%);
+  background-image: linear-gradient(to bottom, #fff, transparent), linear-gradient(to right, var(--slider-color) 0% calc(var(--slider-value) * 1%), #cccbd2 calc(var(--slider-value) * 1%) 100%);
+  background-blend-mode: overlay, normal;
+  box-shadow: inset 0 0.0625em 0.125em rgba(0, 0, 0, 0.4);
+}
+
+.slider-input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: inherit;
+  width: calc(100% + .875em);
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.slider-input::-webkit-slider-thumb {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 50%;
+  padding: 0.5em;
+  width: 1.25em;
+  height: 1.25em;
+}
+.slider-input::-moz-range-thumb {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 50%;
+  padding: 0.5em;
+  width: 1.25em;
+  height: 1.25em;
+}
+
+.slider-thumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: calc(var(--slider-value) / 100 * (100% - var(--slider-height)) + var(--slider-height) / 2);
+  transform: translateX(-50%);
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+  background-image: linear-gradient(to bottom, #f0f0f2, #c5c5cf);
+  box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.3);
+}
+.slider-thumb::before {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+  width: 68%;
+  height: 68%;
+  background-image: linear-gradient(to bottom, #c5c5cf, #f0f0f2);
+}
