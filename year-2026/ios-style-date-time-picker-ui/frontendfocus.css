@@ -1,0 +1,115 @@
+[data-scroll-start-target] {
+  scroll-start-target-block: auto;
+}
+
+.picker {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 2ch;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.picker::before,
+.picker::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  background: linear-gradient(
+    hsl(200 20% 10%), 
+    65%,
+    hsl(200 20% 10% / 0%)
+  );
+  /*   backdrop-filter: blur(1px); */
+  width: 100%;
+  height: calc(50% - 3.5ex);
+  pointer-events: none;
+}
+
+.picker::after {
+  top: auto;
+  bottom: 0;
+  background: linear-gradient(
+    hsl(200 20% 10% / 0%), 
+    35%, 
+    hsl(200 20% 10%)
+  ); 
+}
+
+.picker > * {
+  display: grid;
+  grid-auto-rows: 9vmin;
+  align-items: center;
+  max-block-size: calc(9vmin * 5);
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scroll-snap-type: y mandatory;
+  padding-inline-end: 1ch;
+  font-size: 7vmin;
+  font-weight: lighter;
+  color: hsl(0 0% 20%);
+  scroll-behavior: smooth;
+}
+
+.picker > [title]::before {
+  content: attr(title);
+  position: sticky;
+  top: 0;
+  align-self: start;
+  color: hsl(0 0% 65%);
+  z-index: 1;
+  font-size: min(.5em, 40%);
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 1px 1px hsl(0 0% 0% / 50%);
+  text-transform: uppercase;
+}
+
+.picker > [title]:first-child::before {
+  text-align: end;
+}
+
+.picker > * > * {
+  scroll-snap-align: center;
+}
+
+date {
+  text-align: end;
+}
+
+time {
+  text-align: center;
+}
+
+date, time {
+  color: hsl(200 20% 80%);
+}
+
+html {
+  block-size: 100%;
+  inline-size: 100%;
+  background: hsl(200 20% 10%);
+}
+
+body {
+  min-block-size: 100%;
+  min-inline-size: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  display: grid;
+  gap: 5vmin;
+  place-content: center;
+  font-family: system-ui, sans-serif;
+}
+
+output {
+  font-size: 5vmax;
+  background: hsl(200 20% 5%);
+  color: hsl(200 50% 90%);
+  padding: 1rem;
+  min-width: 600px;
+    text-align: center;
+  border-radius: 1rem;
+  max-inline-size: fit-content;
+  margin-inline: auto;
+}
