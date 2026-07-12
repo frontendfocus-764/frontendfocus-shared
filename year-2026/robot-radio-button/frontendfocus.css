@@ -1,0 +1,56 @@
+@font-face {font-family: "Alternate Gothic No2 D"; src: url("https://assets.codepen.io/35984/Alternate+Gothic+No2+D.woff2") format("woff2")}
+
+body {
+ background-color: #dfdfdf;
+ overflow: hidden;
+ text-align:center;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+	font-family: 'Alternate Gothic No2 D';
+}
+:root {
+	--ui-grey: #d9d9d9;
+	--ui-green: #1DD1A1;
+	--ui-amber: #FECA57;
+	--ui-red: #FF6B6B;
+	--ui-shadow: #697683;
+	--ui-shadow-glow: #1DD1A1;
+	--ui-blue: #1789f2;
+}
+body,
+html {
+ height: 100%;
+ width: 100%;
+ margin: 0;
+ padding: 0;
+}
+
+svg {
+ width: 800px;
+ height: 100%;
+ visibility: hidden;
+ 
+}
+
+#robotHandHorns {
+	opacity: 0;
+}
+
+#offRing {
+	cursor: pointer;
+}
+
+text {
+	user-select: none;	
+}
+#aiText {
+	font-size: 80px;
+	fill: var(--ui-blue);
+	text-anchor: middle;
+}
+
+.label {
+	font-size: 34px;
+	text-anchor: middle;
+}
