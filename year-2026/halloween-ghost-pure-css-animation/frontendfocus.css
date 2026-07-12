@@ -1,0 +1,175 @@
+/* colors */
+body {
+  background: #111;
+}
+
+.container {
+  padding: 30px 30px 50px 30px;
+  margin: 0 auto;
+  position: relative;
+  width: 250px;
+  transform: scale(0.75);
+  transition: 1s all ease-in-out;
+  opacity: 0.8;
+  cursor: pointer;
+}
+.container:hover {
+  opacity: 0.3;
+  transform: translate(10%) rotate(2deg) scale(0.85);
+}
+.container:hover .mouth.animate-smile {
+  -webkit-animation: 0;
+  background: #111;
+  transform: scale(0.5) translateY(5%);
+}
+.container:hover .mouth:before {
+  display: none;
+}
+
+.ghost {
+  width: 250px;
+  height: 300px;
+  background: #f8f8ff;
+  border-radius: 50% 50% 0 0;
+  box-shadow: 0 5px 40px 0px rgba(255, 255, 255, 0.7);
+  position: relative;
+  opacity: 0.8;
+}
+.ghost:before, .ghost:after {
+  content: "";
+  background: #f8f8ff;
+  position: absolute;
+  z-index: 10;
+  bottom: -17px;
+  width: 160px;
+  height: 190px;
+  border-radius: 18%;
+}
+.ghost:before {
+  left: 3px;
+  transform: skew(-34deg) rotate(-23deg);
+}
+.ghost:after {
+  right: 3px;
+  transform: skew(34deg) rotate(24deg);
+}
+.ghost .bottom-container-left,
+.ghost .bottom-container-right {
+  width: 160px;
+  height: 100px;
+  overflow: hidden;
+  bottom: -90px;
+  position: absolute;
+  z-index: 20;
+}
+.ghost .bottom-container-left .wave,
+.ghost .bottom-container-right .wave {
+  display: block;
+  position: relative;
+  height: 40px;
+  background: #f8f8ff;
+}
+.ghost .bottom-container-left .wave:before,
+.ghost .bottom-container-right .wave:before {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  width: 100%;
+  height: 300px;
+  background-color: #111;
+  right: -25%;
+  top: 20px;
+}
+.ghost .bottom-container-left .wave:after,
+.ghost .bottom-container-right .wave:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  width: 100%;
+  height: 300px;
+  background-color: #f8f8ff;
+  left: -25%;
+  top: -240px;
+}
+.ghost .bottom-container-left {
+  transform: rotate(180deg) scaleY(-1);
+}
+.ghost .bottom-container-right {
+  right: 0;
+}
+.ghost .face {
+  position: absolute;
+  z-index: 20;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 70px;
+}
+.ghost .face .eye {
+  background: #111;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+}
+.ghost .face .eye:before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #f8f8ff;
+  position: absolute;
+  right: 8px;
+  top: 6px;
+}
+.ghost .face .eye.eye-left {
+  left: 0;
+}
+.ghost .face .eye.eye-right {
+  right: 0;
+}
+.ghost .face .mouth {
+  background: #111;
+  width: 42px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  left: 30%;
+  z-index: -1;
+  bottom: 0;
+}
+.ghost .face .mouth:before {
+  content: "";
+  background: #f8f8ff;
+  width: 48px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 6px;
+  transition: all 0.3s ease;
+}
+
+.animate-hover {
+  animation: animate-hover 6s ease-in-out infinite alternate;
+}
+
+@keyframes animate-hover {
+  0% {
+    transform: translatey(0px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translatey(-33px);
+    opacity: 1;
+    box-shadow: 0 5px 50px 0px white;
+  }
+  100% {
+    transform: translatey(0px);
+    opacity: 0.8;
+  }
+}
