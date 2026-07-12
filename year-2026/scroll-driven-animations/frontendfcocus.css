@@ -1,0 +1,326 @@
+body {
+  margin: 0;
+  background-color: rgb(0, 0, 0);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 0.97rem;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  overflow-x: hidden;
+}
+* {
+  box-sizing: border-box;
+}
+:root {
+  --Shadowcolor: rgb(255, 255, 255);
+}
+
+.ttl-block {
+  margin-top: min(10vw, 3rem);
+  margin-inline: auto;
+}
+
+@keyframes card_fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+    filter: grayscale(50%) brightness(0) blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: grayscale(10%) brightness(0.8) blur(0px);
+  }
+}
+
+@keyframes move-H {
+  to {
+    transform: translateX(calc(-100% + 65vw));
+  }
+}
+@keyframes card-txt-H_fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(35%);
+    filter: brightness(0) blur(5px) drop-shadow(0px 0px 3px rgba(0, 0, 0, 1))
+      drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.7))
+      drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.4))
+      drop-shadow(0px 0px 17px rgba(0, 0, 0, 0.4));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: brightness(1) blur(0px) drop-shadow(0px 0px 3px rgba(0, 0, 0, 1))
+      drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.7))
+      drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.4))
+      drop-shadow(0px 0px 17px rgba(0, 0, 0, 0.4));
+  }
+}
+
+@keyframes card-txt-V_fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(150%);
+    filter: brightness(0) blur(5px) drop-shadow(0px 0px 3px rgba(0, 0, 0, 1))
+      drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.7))
+      drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.4))
+      drop-shadow(0px 0px 17px rgba(0, 0, 0, 0.4));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: brightness(1) blur(0px) drop-shadow(0px 0px 3px rgba(0, 0, 0, 1))
+      drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.7))
+      drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.4))
+      drop-shadow(0px 0px 17px rgba(0, 0, 0, 0.4));
+  }
+}
+
+.card {
+  aspect-ratio: 3 / 2.5;
+  border-radius: 0.9rem;
+  box-shadow:
+    inset 0px 1px 0px var(--Shadowcolor),
+    inset 0px -1px 0px var(--Shadowcolor),
+    inset 1px 0px 0px var(--Shadowcolor),
+    inset -1px 0px 0px var(--Shadowcolor);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-txt {
+  width: fit-content;
+  color: #fff;
+  display: table;
+  opacity: 0;
+  z-index: 1;
+}
+
+h1 {
+  font-size: min(5.5vw, 2.35rem);
+  line-height: 1;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+h2 {
+  font-size: min(9.15vw, 5rem);
+  line-height: 1;
+  font-weight: bold;
+  white-space: nowrap;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+p {
+  padding-left: min(1.5vw, 0.7rem);
+  font-size: min(2.15vw, 0.96rem);
+  line-height: 1.45;
+  font-weight: normal;
+  text-align: left;
+  text-wrap: balance; 
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.v-con {
+  width: 100%;
+  max-width: 1000px;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+}
+.v-con .card {
+  width: 650px;
+  max-width: 650px;
+  margin: 5rem auto;
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  animation: card_fadeIn linear both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 45%;
+  position: relative;
+  left: -3rem;
+}
+.v-con :nth-child(1 of .card) {
+  background-image: url(./img/subway_ticket_gates03.png);
+}
+.v-con :nth-child(2 of .card) {
+  background-image: url(./img/cafe01.png);
+}
+.v-con :nth-child(3 of .card) {
+  background-image: url(./img/subway_Inside02.png);
+}
+.v-con :nth-child(4 of .card) {
+  background-image: url(./img/chinese_restaurant_i06.png);
+}
+.v-con :nth-child(5 of .card) {
+  background-image: url(./img/2024/03/ryokan02.png);
+}
+
+.v-con .card-txt {
+  animation: card-txt-V_fadeIn linear both;
+  animation-timeline: view();
+  animation-range: contain -50% cover 60%;
+  position: absolute;
+  bottom: 11.5rem;
+  right: -11.9rem;
+}
+.v-con p {
+  width: 38vw;
+  max-width: 15rem;
+}
+
+.h-con {
+  margin-bottom: 15rem;
+  height: 500vh;
+  view-timeline-name: --section-scroll;
+}
+
+.h-sticky-wrapper {
+  width: 100%;
+  height: 100vh;
+  padding-left: 40vw;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+}
+
+.h-moving-con {
+  padding: 0 15vw;
+  animation: move-H linear both;
+  animation-timeline: --section-scroll;
+  animation-range: contain 0% contain 100%;
+  display: flex;
+  gap: min(9.25vw, 5rem);
+}
+
+.h-moving-con .card {
+  width: 800px;
+  max-width: 800px;
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.h-moving-con .card {
+  animation: card_fadeIn linear both;
+  animation-timeline: --section-scroll;
+  --step: 18%;
+  --duration: 18%;
+  --start: calc((var(--i) - 1) * var(--step));
+  --end: calc(var(--start) + var(--duration));
+  animation-range: contain var(--start) contain var(--end);
+}
+
+.h-moving-con .card-txt {
+  margin-left: -26.5rem;
+  position: relative;
+  bottom: -12.5rem;
+}
+.h-moving-con .card-txt {
+  animation: card-txt-H_fadeIn linear both;
+  animation-timeline: --section-scroll;
+  --step: 18%;
+  --duration: 18%;
+  --start: calc((var(--i) - 1) * var(--step));
+  --end: calc(var(--start) + var(--duration));
+  animation-range: contain var(--start) contain var(--end);
+}
+
+.h-moving-con p {
+  width: 25rem;
+  max-width: 50rem;
+}
+
+.h-moving-con :nth-child(1 of .card-txt) {
+  --i: 0.5;
+}
+.h-moving-con :nth-child(2 of .card-txt) {
+  --i: 1.5;
+}
+.h-moving-con :nth-child(3 of .card-txt) {
+  --i: 2.5;
+}
+.h-moving-con :nth-child(4 of .card-txt) {
+  --i: 4.2;
+}
+.h-moving-con :nth-child(5 of .card-txt) {
+  --i: 5.3;
+}
+
+.h-moving-con :nth-child(1 of .card) {
+  --i: 0.5;
+}
+.h-moving-con :nth-child(2 of .card) {
+  --i: 1.5;
+}
+.h-moving-con :nth-child(3 of .card) {
+  --i: 2.5;
+}
+.h-moving-con :nth-child(4 of .card) {
+  --i: 4.2;
+}
+.h-moving-con :nth-child(5 of .card) {
+  --i: 5.3;
+}
+
+.h-moving-con :nth-child(1 of .card) {
+  background-image: url(./img/subway_ticket_gates03.png);
+}
+.h-moving-con :nth-child(2 of .card) {
+  background-image: url(./img/2024/01/cafe01.png);
+}
+.h-moving-con :nth-child(3 of .card) {
+  background-image: url(./img/subway_Inside02.png);
+}
+.h-moving-con :nth-child(4 of .card) {
+  background-image: url(./img/chinese_restaurant_i06.png);
+}
+.h-moving-con :nth-child(5 of .card) {
+  background-image: url(./img/2024/03/ryokan02.png);
+}
+
+@media (max-width: 700px) {
+  .ttl-block {
+    margin-top: 21.5vw;
+  }
+  p {
+    line-height: 1.34;
+  }
+
+  .v-con .card {
+    width: 70vw;
+    margin: 5vw auto;
+    left: -6.75vw;
+  }
+
+  .v-con .card-txt {
+    bottom: 18.25vw;
+    right: -19.5vw;
+  }
+
+  .h-con {
+    height: 300vh; 
+  }
+
+  .h-sticky-wrapper {
+    height: 70vh;
+    padding-left: 40vw;
+  }
+  .h-moving-con .card {
+    width: 90vw;
+    margin-inline: min(8.5vw, 3rem);
+  }
+  .h-moving-con .card-txt {
+    margin-left: -60.5vw;
+    bottom: -21.15vw;
+  }
+  .h-moving-con p {
+    width: 50vw;
+  }
+}
