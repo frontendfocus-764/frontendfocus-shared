@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Fondamento&display=swap");
+
+:root {
+  --color-space-dark: #191d32;
+  --color-space-support: #351e29;
+  --color-space: #282f44;
+  --color-dark-liver: #453a49;
+  --color-liver: #634570;
+  --color-catawba: #6d3b47;
+  --color-catawba-light: #8c516c;
+  --color-lightest: #fafafa;
+  --orb-size: 110px;
+  --option-size: 80px;
+  --circle-size: 320px;
+}
+
+/* basic styling */
+
+select {
+  appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-align-last: center; /* Safari fix */
+  border: 4px dashed var(--color-space);
+  width: var(--orb-size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  font-family: "Fondamento", cursive;
+  box-shadow: inset 0 1px 1px #ccc, inset 0 -1px 1px #aaa, 0 2px 4px -3px #666;
+  transition: box-shadow 0.3s ease-out, color 0.3s ease-out;
+  color: var(--color-lightest);
+  /* Background images and padding used for when no customizable select support */
+  background: var(--color-dark-liver)
+    url("potion.svg") center 12px /
+    calc(var(--orb-size) / 4) no-repeat;
+  padding-block: calc(var(--orb-size) / 2) 15px;
+  &:is(:hover, :focus) {
+    background-color: var(--color-liver);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+      rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  }
+  @supports (appearance: base-select) {
+    &,
+    &::picker(select) {
+      appearance: base-select;
+    }
+  }
+}
+
+@supports (appearance: base-select) {
+  select {
+    anchor-name: --select;
+    padding-block: 0;
+    align-items: center;
+    background-image: none;
+    &::picker-icon {
+      display: none;
+    }
+    .icon {
+      width: calc(var(--option-size) * 0.375);
+      height: calc(var(--option-size) * 0.625);
+      transform: rotate(20deg);
+      transition: transform 0.15s;
+    }
+  }
+
+  ::picker(select) {
+    --rotation-divide: calc(180deg / 2);
+
+    position-anchor: --select;
+    top: anchor(center);
+    left: anchor(center);
+    transform: translate(-50%, -50%);
+    overflow: visible;
+    transition: overlay 0.5s, display 0.5s, pointer-events 0.5s;
+    transition-behavior: allow-discrete;
+    /*  Removing some UA styles */
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+  }
+
+  /* style options */
+
+  option {
+    --half-circle: calc(var(--circle-size) / -2);
+    --deg: calc(var(--rotation-divide) * sibling-index());
+    --negative: calc(var(--deg) / -1);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--option-size);
+    aspect-ratio: 1;
+    margin: calc(var(--option-size) / -2);
+    background: var(--color-catawba);
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: inset 0 1px 1px #ccc, inset 0 -1px 1px #aaa, 0 2px 4px -3px #666;
+    transition: opacity 0.5s, box-shadow 0.3s, transform 0.5s;
+    cursor: grab;
+    &::checkmark {
+      display: none;
+    }
+    &:checked {
+      background: var(--color-catawba-light);
+    }
+    & span {
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.1rem;
+      color: var(--color-lightest);
+      opacity: 0;
+    }
+  }
+
+  option:is(:hover, :focus) {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+      rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  }
+
+  option:is(:hover, :focus, :checked) .icon {
+    transform: rotate(0);
+  }
+
+  /* Potion icon text (fades in with a delay) */
+
+  select:open option {
+    transform: rotate(var(--deg)) translate(var(--half-circle))
+      rotate(var(--negative));
+    opacity: 1;
+    & span {
+      animation: fade-in 0.4s ease-out forwards 0.4s;
+    }
+    @starting-style {
+      transform: none;
+      opacity: 0;
+    }
+  }
+
+  select:open::picker(select) {
+    pointer-events: auto;
+    @starting-style {
+      pointer-events: none;
+    }
+  }
+
+  /* count circle placement */
+
+  .items:has(option:nth-child(2)) {
+    --rotation-divide: calc(360deg / sibling-count());
+  }
+
+  /* thats enough potions for you! */
+  option:nth-child(1n + 7) {
+    display: none;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+/* general styles */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 5vh 5vw;
+  font-family: "Fondamento", cursive;
+  background-image: radial-gradient(
+    circle,
+    var(--color-space-dark),
+    var(--color-space-support)
+  );
+}
+
+/* potion colors */
+
+.icon-health {
+  --potion-color: red;
+  --support-color: darkred;
+}
+
+.icon-mana {
+  --potion-color: blue;
+  --support-color: darkblue;
+}
+
+.icon-stamina {
+  --potion-color: yellow;
+  --support-color: orange;
+}
+
+.icon-strength {
+  --potion-color: purple;
+  --support-color: indigo;
+}
+
+.icon-fortify {
+  --potion-color: lime;
+  --support-color: green;
+}
+
+.icon-frenzy {
+  --potion-color: hotpink;
+  --support-color: orchid;
+}
