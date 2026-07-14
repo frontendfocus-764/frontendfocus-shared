@@ -1,0 +1,96 @@
+* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+:root {
+	--hue: 223;
+	--bg: hsl(var(--hue),10%,90%);
+	--fg: hsl(var(--hue),10%,10%);
+	--primary: hsl(var(--hue),90%,55%);
+	--disabled: hsl(var(--hue),10%,75%);
+	font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+}
+body, button {
+	font: 1em/1.5 Hind, sans-serif;
+}
+body {
+	background: var(--bg);
+	color: var(--fg);
+	height: 100vh;
+	display: grid;
+	place-items: center;
+}
+button {
+	background: hsl(var(--hue),90%,55%);
+	border-radius: 0.2em;
+	color: #fff;
+	cursor: pointer;
+	margin: auto;
+	padding: 0.5em 1em;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	transition: background 0.15s linear;
+}
+button:hover {
+	background: hsl(var(--hue),90%,45%);
+}
+.sp {
+	--incTrans: 0.1; /* in seconds */
+	display: block;
+	margin-bottom: 1.5em;
+	overflow: visible;
+	width: 12.75em;
+	height: 1.5em;
+}
+.sp__bar, .sp__hub {
+	stroke: var(--disabled);
+}
+.sp__hub--done, .sp__dot--done {
+	transition: r 0.2s cubic-bezier(0,0,0.33,1.67);
+}
+.sp__hub--done {
+	r: 10px;
+}
+.sp__hub--done ~ .sp__bar-fill {
+	transition: all calc(1s * var(--incTrans)) linear;
+}
+.sp__bar-fill, .sp__hub-fill {
+	stroke: var(--primary);
+}
+.sp__bar-fill {
+	stroke-dasharray: 40 40;
+	stroke-dashoffset: 40;
+}
+.sp__hub-fill {
+	stroke-dasharray: 0 62.8 0;
+	visibility: hidden;
+}
+.sp__hub-fill--done {
+	stroke-dasharray: 31.4 0 31.4;
+	transition: all 0.2s 0.2s ease-out;
+	visibility: visible;
+}
+.sp__dot {
+	fill: var(--primary);
+}
+.sp__dot--done {
+	r: 4px;
+	transition-delay: 0.4s;
+}
+.status {
+	margin-bottom: 4.5em;
+	text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: hsl(var(--hue),10%,10%);
+		--fg: hsl(var(--hue),10%,90%);
+		--primary: hsl(var(--hue),90%,65%);
+		--disabled: hsl(var(--hue),10%,30%);
+	}
+}

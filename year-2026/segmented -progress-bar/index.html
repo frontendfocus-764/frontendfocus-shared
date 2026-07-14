@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <title>Segmented Progress Bar</title>
+</head>
+<body>
+   <main>
+	<svg class="sp" width="204px" height="24px" viewBox="0 0 204 24" xmlns="http://www.w3.org/2000/svg">
+		<!-- Part 1 -->
+		<circle data-dot="1" class="sp__dot" cx="12" cy="12" r="0" fill="#000"/>
+		<line class="sp__bar" x1="22" y1="12" x2="62" y2="12" fill="none" stroke="#000" stroke-width="4" />
+		<circle data-hub="1" class="sp__hub" cx="12" cy="12" r="2" fill="none" stroke="#000" stroke-width="4" />
+		<line data-bar="1" class="sp__bar-fill" x1="22" y1="12" x2="62" y2="12" fill="none" stroke="#000" stroke-width="4" />
+		<circle data-hub-fill="1" class="sp__hub-fill" cx="12" cy="12" r="10" fill="none" stroke-width="4" transform="rotate(180,12,12)" />
+		<!-- Part 2 -->
+		<circle data-dot="2" class="sp__dot" cx="72" cy="12" r="0" fill="#000"/>
+		<line class="sp__bar" x1="82" y1="12" x2="122" y2="12" fill="none" stroke="#000" stroke-width="4" />
+		<circle data-hub="2" class="sp__hub" cx="72" cy="12" r="2" fill="none" stroke="#000" stroke-width="4" />
+		<line data-bar="2" class="sp__bar-fill" x1="82" y1="12" x2="122" y2="12" fill="none" stroke="#000" stroke-width="4" />
+		<circle data-hub-fill="2" class="sp__hub-fill" cx="72" cy="12" r="10" fill="none" stroke-width="4" transform="rotate(180,72,12)" />
+		<!-- Part 3 -->
+		<circle data-dot="3" class="sp__dot" cx="132" cy="12" r="0" fill="#000"/>
+		<line class="sp__bar" x1="142" y1="12" x2="182" y2="12" fill="none" stroke="#000" stroke-width="4" />
+		<circle data-hub="3" class="sp__hub" cx="132" cy="12" r="2" fill="none" stroke="#000" stroke-width="4" />
+		<line data-bar="3" class="sp__bar-fill" x1="142" y1="12" x2="182" y2="12" fill="none" stroke="#000" stroke-width="4" />
+		<circle data-hub-fill="3" class="sp__hub-fill" cx="132" cy="12" r="10" fill="none" stroke-width="4" transform="rotate(180,132,12)" />
+		<!-- Part 4 -->
+		<circle data-dot="4" class="sp__dot" cx="192" cy="12" r="0" fill="#000"/>
+		<circle data-hub="4" class="sp__hub" cx="192" cy="12" r="2" fill="none" stroke="#000" stroke-width="4" />
+		<circle data-hub-fill="4" class="sp__hub-fill" cx="192" cy="12" r="10" fill="none" stroke-width="4" transform="rotate(180,192,12)" />
+	</svg>
+	<p class="status"></p>
+	<button id="reset" type="button">Reset</button>
+</main>
+
+<script src="frontendfocus.js"></script>
+</body>
+</html>
