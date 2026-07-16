@@ -1,0 +1,99 @@
+:root {
+  --bg-color: #0b0f19;
+  --primary-glow: rgba(0, 229, 255, 0.15);
+  --text-color: #8da2b5;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  background-image: radial-gradient(
+    circle at center,
+    #131c2d 0%,
+    var(--bg-color) 70%
+  );
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  overflow: hidden;
+}
+
+.loader-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Umgebungslicht hinter dem Kolben */
+.ambient-glow {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  background: var(--primary-glow);
+  filter: blur(40px);
+  border-radius: 50%;
+  z-index: 0;
+  animation: pulse-glow 4s infinite alternate ease-in-out;
+}
+
+canvas {
+  position: relative;
+  z-index: 1;
+  /* Verhindert unscharfe Kanten auf non-Retina */
+  image-rendering: auto;
+}
+
+.loading-text {
+  position: relative;
+  z-index: 1;
+  color: var(--text-color);
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+/* Animierte Punkte */
+.dots::after {
+  content: "";
+  position: absolute;
+  animation: dots 2s infinite steps(4, end);
+}
+
+@keyframes dots {
+  0%,
+  20% {
+    content: "";
+  }
+  40% {
+    content: ".";
+  }
+  60% {
+    content: "..";
+  }
+  80%,
+  100% {
+    content: "...";
+  }
+}
+
+@keyframes pulse-glow {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+}
