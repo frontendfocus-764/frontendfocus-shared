@@ -1,0 +1,269 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-size: .6vh;
+  display: grid;
+  height: 100vh;
+  background-image: radial-gradient(at 0 0,#330,#001818);
+  background-size: 100vw 100vh;
+  perspective: 150em;
+  overflow: hidden;
+}
+
+body * {
+  transform-style: preserve-3d;
+}
+
+.fish {
+  place-self: center;
+  display: flex;
+  margin-right: 105em;
+  animation: swim 5s linear infinite;
+  position: absolute;
+}
+
+@keyframes swim {
+  0% {
+    translate: 100vw
+  }
+  100% {
+    translate: -100vw;
+  }
+}
+
+.head, .torso, .tail {
+  position: relative;
+}
+
+.pelvic, :is(.tail, .dorsal) div, :where(.head, .torso, .tail, .tail div)::after, :where(.head, .torso, .tail, .tail div:not(.dorsal))::before {
+  position: absolute;
+}
+
+.head {
+  width: 69em;
+  height: 69em;
+  background-image: conic-gradient(from -105deg at 20% 93%,#000, #0000 15deg), radial-gradient(at 38% 50%, #333 0%, #222 60%, #010101);
+  box-shadow: inset 4em -2em 3em #fff2;
+  border-radius: 30em 43em 30em 5em;
+  transform-origin: 9% 104%;
+  scale: 1.33 1;
+  transform: skewY(-10deg) rotate(45deg);
+  z-index: 1;
+  filter: sepia() saturate(3);
+}
+
+.head::before {
+  content: '';
+  inset: 29em 28em;
+  position: absolute;
+  background-image: radial-gradient(#000 35%, #555 35%);
+  box-shadow: 0 0 5em 1em #000, inset 0 0 2em #000;
+  border-radius: 50%;
+  translate: -20em 10em;
+}
+
+.head::after {
+  content: '';
+  width: 40em;
+  height: 15em;
+  background-image: repeating-conic-gradient(at 0 100%,#000 .5%, #333 2%);
+  border-radius: 100% 0;
+  box-shadow: 3em -3em 5em #000;
+  top: 61%;
+  left: 94%;
+}
+
+.notHead {
+  display: flex;
+}
+
+.torso, .tail {
+  width: 10em;
+  height: 100em;
+  margin-left: -1px;
+}
+
+:where(.torso, .tail, .tail div:not(.dorsal, .dorsal div))::before {
+  content: '';
+  inset: 0;
+  background-image: radial-gradient(#0003,#000f 80%), repeating-linear-gradient(57deg, #0006 50%, #000b 50% 53%, #0006 70% 100%), repeating-linear-gradient(123deg, #aaa 50%, #555 50% 53%, #aaa 70% 100%);
+  background-size: 320em 100em, 10em 15em, 10em 15em;
+  background-position: calc((var(--nth) - 1)*-10em - 120em) 0, 0 0, 0 0;
+  clip-path: polygon(0 calc(20%*(1 - sin(19deg*(var(--nth) - 1)))), 100% calc(20%*(1 - sin(19deg*(var(--nth) - 0)))), 100% calc(100% - 5%*(1 - sin(19deg*(var(--nth) - 0)))), 0 calc(100% - 5%*(1 - sin(19deg*(var(--nth) - 1)))));
+  filter: sepia() saturate(3);
+}
+
+:where(.torso:nth-child(n+6), .tail, .tail div)::after {
+  content: '';
+  inset: -15% 0 10% 0;
+  background-image: linear-gradient(123deg, #000 0%, #111 30% 50%, #000 50%, #111 80% 100%);
+  background-size: 10em 15em;
+  background-position-x: 4em;
+  clip-path: polygon(0 calc(20%*(1 - sin(19deg*(var(--nth) - 1)))), 100% calc(20%*(1 - sin(19deg*(var(--nth) - 0)))), 100% 100%, 0 100%);
+  z-index: -1;
+  filter: sepia() saturate(3);
+}
+
+.tail div {
+  inset: 0 -99% 0 99%;
+}
+
+.tail, .tail div {
+  transform-origin: 0 0;
+  animation: wag 1s ease-in-out alternate infinite;
+}
+
+@keyframes wag {
+  0% {
+    rotate: y 3deg;
+  }
+  100% {
+    rotate: y -3deg;
+  }
+}
+
+.torso:nth-child(1) {
+  --nth: 1;
+}
+
+.torso:nth-child(2) {
+  --nth: 2;
+}
+
+.torso:nth-child(3) {
+  --nth: 3;
+}
+
+.torso:nth-child(4) {
+  --nth: 4;
+}
+
+.torso:nth-child(5) {
+  --nth: 5;
+}
+
+.torso:nth-child(6) {
+  --nth: 6;
+}
+
+.torso:nth-child(7) {
+  --nth: 7;
+}
+
+.pelvic {
+  width: 40em;
+  height: 25em;
+  top: 99%;
+  border-radius: 0 10em 10em 0;
+  background-image: repeating-conic-gradient(at 0 0,#000 2%, #222 5%);
+  filter: sepia() saturate(3) hue-rotate(-30deg) brightness(.66);
+  mask-image: conic-gradient(from 90deg at 0 0, black 40deg, transparent 45deg);
+  -webkit-mask-image: conic-gradient(from 90deg at 0 0, black 40deg, transparent 45deg);
+  transform-origin: 0 0;
+  rotate: -10deg;
+}
+
+.tail {
+  --nth: 8;
+}
+
+.tail div {
+  --nth: 9;
+}
+
+.tail div div {
+  --nth: 10;
+}
+
+.tail div div div {
+  --nth: 11;
+}
+
+.tail div div div div {
+  --nth: 12;
+}
+
+.tail div div div div div   {
+  --nth: 13;
+}
+
+.tail div div div div div div  {
+  --nth: 14;
+}
+
+.tail div div div div div div div  {
+  --nth: 15;
+}
+
+.tail div div div div div div div div  {
+  --nth: 16;
+}
+
+.tail div div div div div div:after {
+  content: none;
+}
+
+.torso:nth-child(6)::after {
+  mask-image: conic-gradient(at 100% 0%,#000 215deg, #0000 135deg);
+  -webkit-mask-image: conic-gradient(at 100% 0%,#000 215deg, #0000 135deg);
+}
+
+.tail > div > div > div > div > div::after {
+  mask-image: conic-gradient(from 205deg at 100% 40%,#000 180deg, #0000 180deg);
+  -webkit-mask-image: conic-gradient(from 205deg at 100% 40%,#000 180deg, #0000 180deg);
+}
+
+.dorsal {
+  margin-left: -5em;
+  perspective: 150em;
+  perspective-origin: 0 63em;
+  transform-style: flat;
+}
+
+.dorsal div {
+  background-image: repeating-conic-gradient(at -50% 0%,#000 .5deg, #111 2deg 4deg);
+  width: 50em;
+  left: 0;
+  aspect-ratio: 2;
+  top: 63em;
+  border-radius: 0 61% 0 72%;
+  transform-origin: 0 100%;
+  box-shadow: -1em 0 1em #000;
+  filter: sepia() saturate(3) hue-rotate(-30deg) brightness(.66);
+  mask-image: linear-gradient(90deg, #000, #000a);
+  -webkit-mask-image: linear-gradient(90deg, #000, #000a);
+  transform-origin: 0 0;
+  scale: 1 2;
+}
+
+.dorsal .upper {
+  transform: rotateX(137deg);
+}
+
+.dorsal .lower {
+  transform: rotateX(41deg);
+}
+
+@media (orientation: portrait) {
+
+  body {
+    font-size: .6vw;
+    width: 100vw;
+  }
+
+  .fish {
+    place-self: auto;
+  }
+
+  @keyframes swim {
+    0% {
+      rotate: 90deg;
+      translate: 0 100vh;
+    }
+    100% {
+      rotate: 90deg;
+      translate: 0 -150vh;
+    }
+  }
+
+}
