@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <title>iquid Glass Volume Animation | HTML CSS JS</title>
+</head>
+<body>
+    <div id="volRealWorld" style="position:fixed; inset:0; pointer-events:none; overflow:hidden;">
+        <div class="orb-1 ambient-orb"></div>
+    </div>
+    
+    <div class="vol-container" id="volContainer">
+        <div class="vol-glass" id="volGlass">
+            <div class="vol-clone" id="volClone">
+                <div class="vol-clone-world" id="volCloneWorld"></div>
+            </div>
+            <div class="vol-inner" id="volInner">
+                <div class="vol-fill" id="volFill"></div>
+            </div>
+            <svg style="width: 0; height: 0; position: absolute;">
+                <defs>
+                    <filter id="volGlassFilter" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="0.2" result="blurred" />
+                        <feImage id="volDisplacementImage" href="" x="0" y="0" width="80" height="320" result="displacement_map" preserveAspectRatio="none" />
+                        <feDisplacementMap id="volDisplacementMap" in="blurred" in2="displacement_map" scale="40" xChannelSelector="R" yChannelSelector="G" result="displaced" />
+                        <feColorMatrix in="displaced" type="saturate" values="1.1" result="displaced_saturated" />
+                        <feImage id="volSpecularImage" href="" x="0" y="0" width="80" height="320" result="specular_layer" preserveAspectRatio="none" />
+                        <feComponentTransfer in="specular_layer" result="specular_faded">
+                            <feFuncA type="linear" slope="0.8" />
+                        </feComponentTransfer>
+                        <feBlend in="specular_faded" in2="displaced_saturated" mode="screen" />
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+    </div>
+    <script src="frontendfocus.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+:root {
+    --font-rounded: 'Nunito', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    font-family: var(--font-rounded);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    background: radial-gradient(circle at center, #5a4a2a 0%, #2a2015 35%, #0a0805 100%);
+}
+
+/* VOLUME CONTROL STYLES */
+.vol-container {
+    position: relative;
+    width: 80px;
+    height: 320px;
+    border-radius: 40px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 10;
+    cursor: pointer;
+    touch-action: none;
+    box-shadow: inset 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.vol-glass {
+    position: absolute;
+    width: 80px;
+    height: 320px;
+    bottom: -1px;
+    left: -1px;
+    border-radius: 40px;
+    pointer-events: none;
+    z-index: 15;
+    will-change: transform;
+    transform-origin: bottom center;
+}
+
+.vol-clone {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: inherit;
+    z-index: 1;
+    will-change: filter;
+    contain: strict;
+}
+
+.use-backdrop-filter .vol-clone {
+    display: none;
+}
+
+.use-backdrop-filter .vol-inner {
+    backdrop-filter: url(#volGlassFilter);
+    -webkit-backdrop-filter: url(#volGlassFilter);
+}
+
+.vol-clone-world {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    will-change: transform;
+    transform-origin: bottom left;
+    background: radial-gradient(circle at 50% 50%, #302611 0%, #0e0b04 100%);
+}
+
+.vol-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.vol-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, #d97706, #fbbf24);
+    z-index: -1;
+    transition: opacity 0.2s;
+    opacity: 0.9;
+}
+
+/* Ambient orbs */
+.ambient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+#volRealWorld .orb-1 {
+    background: #f59e0b;
+    width: 200px;
+    height: 400px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
