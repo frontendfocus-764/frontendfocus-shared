@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="frontendfocus.css" />
+    <title>Gsap Animated Download Button</title>
+  </head>
+  <body>
+    <!-- Decorative wavy lines -->
+    <div class="deco">
+      <svg viewBox="0 0 140 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M120 10 Q80 40 120 70 Q160 100 120 130 Q80 160 120 190 Q160 220 120 250 Q80 280 120 290"
+          stroke="#00d4d4"
+          stroke-width="1.5"
+          fill="none"
+        />
+        <path
+          d="M90 10 Q50 40 90 70 Q130 100 90 130 Q50 160 90 190 Q130 220 90 250 Q50 280 90 290"
+          stroke="#00d4d4"
+          stroke-width="1"
+          fill="none"
+          opacity=".5"
+        />
+        <path
+          d="M60 20 Q20 50 60 80 Q100 110 60 140 Q20 170 60 200 Q100 230 60 260"
+          stroke="#00d4d4"
+          stroke-width="0.7"
+          fill="none"
+          opacity=".25"
+        />
+      </svg>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+      <div class="h-bar"></div>
+      <div class="h-text">
+        <div class="h-title">Download Button</div>
+        <div class="h-sub">with Gsap animated</div>
+      </div>
+    </div>
+
+    <!-- Button -->
+    <div class="btn-wrap">
+      <div class="dl-btn" id="dlBtn">
+        <!-- SVG ring -->
+        <svg viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#00d4d4" />
+              <stop offset="100%" stop-color="#00ffee" />
+            </linearGradient>
+          </defs>
+          <circle class="ring-track" cx="65" cy="65" r="65" />
+          <circle class="ring-progress" cx="65" cy="65" r="65" id="arcCircle" />
+        </svg>
+
+        <!-- Pulse ring -->
+        <div class="pulse" id="pulse"></div>
+
+        <!-- Inner -->
+        <div class="inner" id="inner">
+          <div class="arrow-icon" id="arrowIcon">
+            <div class="arrow-shaft"></div>
+            <div class="arrow-head"></div>
+            <div class="arrow-line"></div>
+          </div>
+          <div class="pct" id="pctLabel"></div>
+
+          <!-- Tick (hidden initially) -->
+          <div class="tick" id="tick">
+            <svg viewBox="0 0 32 32">
+              <polyline
+                class="tick-path"
+                id="tickPath"
+                points="5,17 13,25 27,8"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="state-label" id="stateLabel">click to download</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="frontendfocus.js"></script>
+  </body>
+</html>

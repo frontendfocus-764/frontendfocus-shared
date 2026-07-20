@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700&display=swap');
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --cyan:  #00d4d4;
+  --teal:  #00b4cc;
+  --bg:    #060810;
+  --track: rgba(255, 255, 255, 0.07);
+}
+
+html, body {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg);
+  font-family: 'Syne', sans-serif;
+  overflow: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background: radial-gradient(ellipse 50% 50% at 50% 55%, rgba(0,180,200,0.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* Decorative waves */
+.deco {
+  position: fixed; right: -40px; top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.15; pointer-events: none;
+}
+.deco svg { width: 140px; height: 300px; }
+
+/* Header */
+.header {
+  position: fixed; top: 0; left: 0;
+  padding: 28px 36px;
+  display: flex; align-items: flex-start; gap: 10px;
+}
+.h-bar {
+  width: 3px; height: 52px;
+  background: linear-gradient(to bottom, var(--cyan), transparent);
+  border-radius: 2px; flex-shrink: 0;
+}
+.h-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(26px, 4vw, 42px);
+  letter-spacing: 2px;
+  color: #fff; line-height: 1;
+}
+.h-sub {
+  font-size: 12px; letter-spacing: 4px;
+  color: rgba(0, 212, 212, 0.5);
+  margin-top: 3px; font-style: italic;
+}
+
+/* Button wrapper */
+.btn-wrap {
+  position: relative;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 20px;
+}
+
+/* Main button */
+.dl-btn {
+  position: relative;
+  width: 160px; height: 160px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* SVG ring */
+.dl-btn svg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  transform: rotate(-90deg);
+  overflow: visible;
+}
+
+.ring-track {
+  fill: none;
+  stroke: var(--track);
+  stroke-width: 3;
+}
+
+.ring-progress {
+  fill: none;
+  stroke: url(#arcGrad);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 408;
+  stroke-dashoffset: 408;
+  filter: drop-shadow(0 0 6px rgba(0, 212, 212, 0.8));
+  transition: stroke-dashoffset 0.05s linear;
+}
+
+/* Inner circle */
+.inner {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110px; height: 110px;
+  border-radius: 50%;
+  background: rgba(0, 212, 212, 0.04);
+  border: 1px solid rgba(0, 212, 212, 0.15);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 6px;
+  transition: background 0.3s;
+}
+.dl-btn:hover .inner {
+  background: rgba(0, 212, 212, 0.08);
+}
+
+/* Arrow icon */
+.arrow-icon {
+  width: 28px; height: 28px;
+  position: relative;
+}
+.arrow-shaft {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 2px; height: 16px;
+  background: var(--cyan);
+  border-radius: 1px;
+  box-shadow: 0 0 8px var(--cyan);
+}
+.arrow-head {
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 0; height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid var(--cyan);
+  filter: drop-shadow(0 0 4px var(--cyan));
+}
+.arrow-line {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--cyan);
+  border-radius: 1px;
+  box-shadow: 0 0 8px var(--cyan);
+}
+
+/* Percent label */
+.pct {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px; font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 1px;
+  min-height: 18px;
+}
+
+/* State label */
+.state-label {
+  font-size: 11px; letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.25);
+  font-style: italic;
+  transition: color 0.3s;
+}
+
+/* Tick */
+.tick {
+  display: none;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.tick svg {
+  transform: none;
+  position: static;
+  width: 32px; height: 32px;
+}
+.tick-path {
+  stroke: var(--cyan);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  filter: drop-shadow(0 0 6px rgba(0, 212, 212, 0.9));
+}
+
+/* Pulse ring */
+.pulse {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110px; height: 110px;
+  border-radius: 50%;
+  border: 1px solid var(--cyan);
+  opacity: 0; pointer-events: none;
+}
