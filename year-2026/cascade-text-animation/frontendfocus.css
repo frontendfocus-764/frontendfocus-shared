@@ -1,0 +1,33 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #080710;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  font-family: 'Recursive', sans-serif;
+  font-size: clamp(52px, 10vw, 116px);
+  font-weight: 400;
+  color: rgba(232, 234, 240, 0.92);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  display: flex;
+  text-transform: uppercase;
+}
+
+.char {
+  display: inline-block;
+  white-space: pre;
+  will-change: transform, opacity;
+}
