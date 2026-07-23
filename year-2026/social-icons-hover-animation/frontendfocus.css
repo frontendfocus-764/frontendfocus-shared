@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+.containSocial {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  display: grid;
+  grid-template: 1fr/repeat(6, 1ft);
+  height: 100px;
+  width: 600px;
+}
+.containSocial svg {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+.containSocial .facebook-svg {
+  grid-area: 1/1/span 1/span 1;
+}
+.containSocial .facebook-svg:hover {
+  cursor: pointer;
+}
+.containSocial .facebook-svg:hover .fb-logoCircle {
+  fill: #222c62;
+}
+.containSocial .facebook-svg:hover .fb-ring {
+  fill: #222c62;
+}
+.containSocial .facebook-svg .fb-logoCircle {
+  transform-origin: 50% 50%;
+  transition: fill 800ms ease-in-out;
+}
+.containSocial .facebook-svg .fb-ring {
+  transform-origin: 50% 50%;
+  transition: fill 800ms ease-in-out;
+}
+.containSocial .instagram-svg {
+  grid-area: 1/2/span 1/span 1;
+}
+.containSocial .instagram-svg:hover {
+  cursor: pointer;
+}
+.containSocial .instagram-svg:hover .ig-logoCircle {
+  fill: #754198;
+}
+.containSocial .instagram-svg:hover .ig-ring {
+  fill: #754198;
+}
+.containSocial .instagram-svg .ig-logoCircle {
+  transform-origin: 50% 50%;
+  transition: fill 800ms ease-in-out;
+}
+.containSocial .instagram-svg .ig-ring {
+  transform-origin: 50% 50%;
+  transition: fill 800ms ease-in-out;
+}
+.containSocial .twitter-svg {
+  grid-area: 1/3/span 1/span 1;
+}
+.containSocial .twitter-svg:hover {
+  cursor: pointer;
+}
+.containSocial .twitter-svg:hover .tw-logoCircle {
+  fill: #025c85;
+}
+.containSocial .twitter-svg:hover .tw-ring {
+  fill: #025c85;
+}
+.containSocial .twitter-svg .tw-logoCircle {
+  transform-origin: 50% 50%;
+  transition: fill 800ms ease-in-out;
+}
+.containSocial .twitter-svg .tw-ring {
+  transform-origin: 50% 50%;
+  transition: fill 800ms ease-in-out;
+}
+.containSocial .youTube-svg {
+  grid-area: 1/4/span 1/span 1;
+}
+.containSocial .youTube-svg:hover {
+  cursor: pointer;
+}
+.containSocial .youTube-svg:hover .yt-logoCircle {
+  fill: #de8d12;
+}
+.containSocial .youTube-svg:hover .yt-ring {
+  fill: #de8d12;
+}
+.containSocial .youTube-svg .yt-logoCircle {
+  transform-origin: 50% 50%;
+  transition: fill 800ms ease-in-out;
+}
+.containSocial .youTube-svg .yt-ring {
+  transform-origin: 50% 50%;
+  transition: fill 800ms ease-in-out;
+}
+.containSocial .pinterest-svg {
+  grid-area: 1/5/span 1/span 1;
+}
+.containSocial .pinterest-svg:hover {
+  cursor: pointer;
+}
+.containSocial .pinterest-svg:hover .pt-logoCircle {
+  fill: #8d0019;
+}
+.containSocial .pinterest-svg:hover .pt-ring {
+  fill: #8d0019;
+}
+.containSocial .pinterest-svg .pt-logoCircle {
+  transform-origin: 50% 50%;
+  transition: fill 800ms ease-in-out;
+}
+.containSocial .pinterest-svg .pt-ring {
+  transform-origin: 50% 50%;
+  transition: fill 800ms ease-in-out;
+}
+.containSocial .codepen-svg {
+  grid-area: 1/6/span 1/span 1;
+}
+.containSocial .codepen-svg:hover {
+  cursor: pointer;
+}
+.containSocial .codepen-svg:hover .cp-logoCircle {
+  fill: #616161;
+}
+.containSocial .codepen-svg:hover .cp-ring {
+  fill: #616161;
+}
+.containSocial .codepen-svg .cp-logoCircle {
+  transform-origin: 50% 50%;
+  transition: fill 800ms ease-in-out;
+}
+.containSocial .codepen-svg .cp-ring {
+  transform-origin: 50% 50%;
+  transition: fill 800ms ease-in-out;
+}
