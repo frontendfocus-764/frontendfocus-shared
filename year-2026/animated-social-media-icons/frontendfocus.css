@@ -1,0 +1,74 @@
+:root {
+  --primary-color: #c8dc71;
+  --gradient-color: linear-gradient(180deg, #d2ff00 0%, #00d2ff 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  background-color: #16181b;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Social Box */
+.social-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.75rem 1.25rem;
+}
+
+.social-box .item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  aspect-ratio: 1;
+  font-size: 1.5rem;
+  color: #c5c5c5;
+  background-color: #242529;
+  border-radius: 50px;
+  transition: color 0.15s ease-in, box-shadow 0.75s cubic-bezier(0.74, 0.01, 0.02);
+}
+
+.social-box .item svg {
+  transition: transform 0.75s ease-in-out;
+}
+
+@property --fill-color {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 0%;
+}
+.social-box .item:hover {
+  color: var(--primary-color);
+  --fill-color: 100%;
+  box-shadow: 0 0 1.5rem black;
+}
+
+.social-box .item:hover svg {
+  transform: scale(1.25);
+}
+
+.social-box .item::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  inset: -3px;
+  border-radius: inherit;
+  background: conic-gradient(var(--primary-color) var(--fill-color), transparent var(--fill-color));
+  transition: --fill-color 0.75s ease-in-out;
+}
