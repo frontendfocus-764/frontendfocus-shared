@@ -1,0 +1,40 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    background: #111827;
+    overflow: hidden;
+}
+
+ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    width: 750px;
+}
+
+ul:nth-child(3) ,ul:nth-child(2){
+    margin-top: 100px;
+}
+
+a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 60px;
+    color: #fff;
+    transition: 0.5s ease;
+}
+
+a:hover{
+    font-size: 50px;
+    color: #01FFF4;
+    box-shadow: 0 0 40px #01FFF4;
+}
