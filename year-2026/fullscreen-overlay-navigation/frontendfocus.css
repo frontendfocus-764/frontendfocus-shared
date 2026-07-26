@@ -1,0 +1,212 @@
+html,
+body {
+  width: 100%;
+  margin: 0px;
+}
+
+html {
+  background: #eeecec;
+  overflow-x: hidden;
+}
+
+#container {
+  z-index: 111;
+}
+
+.navT {
+  transition: all 0.25s;
+  z-index: 111;
+  cursor: pointer;
+  width: 100%;
+  background: #212121;
+  height: 65px;
+  left: 0;
+  top: 0;
+  position: fixed;
+}
+
+.navT .icon {
+  transition: all 0.25s;
+  position: absolute;
+  width: 30px;
+  height: 1px;
+  left: 15px;
+  top: 30px;
+  background-color: white;
+}
+
+.navT .icon:before,
+.navT .icon:after {
+  transition: all 0.25s;
+  width: 30px;
+  height: 1px;
+  left: 0;
+  background: white;
+  position: absolute;
+  content: "";
+}
+
+.navT .icon:before {
+  top: -10px;
+}
+
+.navT .icon:after {
+  top: 10px;
+}
+
+.navT:hover {
+  background: black;
+}
+
+.navT:hover .icon:before {
+  top: -12px;
+}
+
+.navT:hover .icon:after {
+  top: 12px;
+}
+
+.navT.active .icon {
+  transform: rotate(180deg);
+  background-color: transparent;
+  left: 10px;
+}
+
+.navT.active .icon:before,
+.navT.active .icon:after {
+  top: 0;
+}
+
+.navT.active .icon:before {
+  transform: rotate(45deg);
+}
+
+.navT.active .icon:after {
+  transform: rotate(-45deg);
+}
+
+#menu {
+  z-index: 111;
+  transition: all 0.5s;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 65px;
+  font-size: 18px;
+  font-family: sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  width: 100%;
+  height: 0;
+  border-bottom: 1px solid transparent;
+  overflow: hidden;
+}
+
+#menu ul {
+  list-style: none;
+  padding: 0;
+  letter-spacing: 0.4em;
+}
+
+#menu li:first-child {
+  margin-top: 0;
+}
+
+#menu li {
+  transition: all 0.2s;
+  margin-top: 20px;
+  padding: 5px 0;
+  color: white;
+}
+
+#menu a {
+  padding: 8px;
+  transition: all 0.25s;
+  cursor: pointer;
+}
+
+#menu a:hover {
+  letter-spacing: 0.5em;
+  text-decoration: underline;
+}
+
+#menu.open {
+  height: 270px;
+  width: 100%;
+  background: #f3581b;
+  border-bottom: 1px solid black;
+}
+
+.space {
+  letter-spacing: 0;
+}
+
+.content {
+  width: 100%;
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: 100;
+  transition: top 0.5s;
+  position: absolute;
+  top: 65px;
+  margin: 0 auto;
+}
+
+.content h1 {
+  font-size: 3em;
+  text-transform: uppercase;
+  margin-top: 85px;
+  margin-left: 10px;
+}
+
+.content h2 {
+  font-size: 1em;
+  text-transform: uppercase;
+  margin-top: -25px;
+  margin-left: 10px;
+  font-weight: 400;
+  letter-spacing: 0.7em;
+}
+
+.content.shift {
+  top: 335px;
+}
+
+p {
+  max-width: 600px;
+  font-size: 0.75em;
+  line-height: 1.75em;
+  text-align: left;
+  margin-left: 10px;
+}
+
+#second {
+  background: black;
+  width: 100%;
+  height: 300px;
+  padding-top: 50px;
+}
+
+#second h2 {
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+}
+
+#second h5 {
+  color: white;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-weight: 200;
+  letter-spacing: 0.25em;
+  text-align: center;
+}
+
+#bar {
+  width: 40%;
+  height: 200px;
+  margin: 0 auto;
+  border: 1px dashed white;
+}
