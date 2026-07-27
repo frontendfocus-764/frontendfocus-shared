@@ -1,0 +1,240 @@
+fieldset {
+  border: 2px solid
+    if(
+      style(--color-scheme: light): color-mix(
+          in oklab,
+          var(--theme-accent),
+          transparent 80%
+        )
+        ; /* uses NOT over ELSE to respect `prefers-color-scheme` */ not
+        style(--color-scheme: light): color-mix(
+          in oklab,
+          var(--theme-accent),
+          transparent 70%
+        )
+        ;
+    );
+  border-radius: 5px;
+  corner-shape: notch;
+  color: var(--theme-text);
+  outline: 7px ridge
+    if(
+      style(--color-scheme: light): color-mix(
+          in oklab,
+          var(--theme-accent),
+          transparent 25%
+        )
+        ; /* uses NOT over ELSE to respect `prefers-color-scheme` */ not
+        style(--color-scheme: light): color-mix(
+          in oklab,
+          var(--theme-accent),
+          transparent 25%
+        )
+        ;
+    );
+  outline-offset: 2px;
+
+  filter: drop-shadow(
+      0 0 1dvw
+        color-mix(
+          in oklab,
+          light-dark(transparent, var(--theme-accent)),
+          transparent 5%
+        )
+    )
+    drop-shadow(
+      0 0 5dvw
+        color-mix(
+          in oklab,
+          light-dark(transparent, var(--theme-accent)),
+          transparent 25%
+        )
+    );
+
+  font-family: "Silkscreen", monospace;
+  font-size: 1.75rex;
+  letter-spacing: -0.075ch;
+  text-rendering: geometricprecision;
+
+  display: grid;
+  gap: 0;
+
+  margin: 0;
+  padding: 0;
+
+  max-width: 30px;
+  padding: 6px 12px;
+
+  position: relative;
+  z-index: 3;
+
+  legend {
+    color: color-mix(in oklab, var(--theme-accent), transparent 25%);
+    text-align: center;
+    text-box: trim-both cap alphabetic;
+    top: -0.5ex;
+    position: relative;
+    padding-top: 0.84ex;
+  }
+}
+
+input {
+  --d: 10px;
+  --rotation: 225deg;
+
+  appearance: none;
+
+  background: currentColor;
+  color: inherit;
+
+  border-radius: 6px;
+  corner-shape: notch;
+  rotate: var(--rotation);
+
+  margin-top: -1px;
+
+  outline: 2px solid color-mix(in oklab, var(--theme-text), transparent 50%);
+  outline-offset: 2px;
+
+  height: var(--d);
+  width: var(--d);
+
+  label:hover &:not(:checked) {
+    --rotation: 90deg;
+    corner-shape: superellipse(-0.25);
+    outline-color: color-mix(in oklab, var(--theme-text), transparent 75%);
+  }
+
+  &:checked {
+    --rotation: unset;
+    color: inherit;
+    outline-color: color-mix(in oklab, var(--theme-accent), transparent 25%);
+    outline-offset: 3px;
+    corner-shape: superellipse(-0.5);
+
+    label:hover & {
+      outline-color: color-mix(in oklab, var(--theme-accent), transparent 0%);
+    }
+  }
+}
+
+label {
+  border-radius: 6px;
+  corner-shape: superellipse(-1);
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  user-select: none;
+  padding: 19px 24px 18px;
+
+  span {
+    text-box: trim-both cap alphabetic;
+    display: inline-block;
+  }
+
+  &:has(:checked) {
+    background: var(--theme-text);
+    color: var(--theme-canvas);
+
+    input {
+      color: var(--theme-accent);
+    }
+  }
+
+  &:is(:focus-visible),
+  &:has(:focus-within) {
+    --rotation: 225deg;
+    outline-width: 2px;
+    outline-style: solid;
+    outline-offset: -4px;
+  }
+
+  &:is(:focus-visible) {
+    outline-color: color-mix(in oklab, var(--theme-accent), transparent 50%);
+    &:not(:has(:checked)):hover {
+      background: color-mix(in oklab, var(--theme-accent), transparent 84%);
+    }
+  }
+
+  &:has(:focus-within) {
+    outline-color: color-mix(in oklab, var(--theme-accent), transparent 50%);
+  }
+
+  &:has(:focus) {
+    outline-color: color-mix(in oklab, var(--theme-accent), transparent 50%);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html,
+  body,
+  fieldset,
+  label,
+  input {
+    transition-property:
+      background, border-color, box-shadow, color, filter, rotate;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+  }
+
+  label,
+  input {
+    &:focus-within,
+    &:focus,
+    &:hover,
+    &:focus-visible {
+      transition-property: background, border-color, rotate;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in;
+    }
+  }
+}
+
+:root {
+  --white: 0 0 90%;
+  --black: 0 0 10%;
+  --gray: 0 0 45%;
+
+  --gold: 36deg 75% 33%;
+  --turq: 150deg 55% 35%;
+
+  --theme-canvas: light-dark(hsl(var(--white)), hsl(var(--black)));
+
+  --theme-text: light-dark(hsl(var(--black)), hsl(var(--white)));
+
+  --theme-text-2: ;
+
+  --theme-accent: light-dark(hsl(var(--gold)), hsl(var(--turq)));
+
+  --color-scheme: light dark;
+  color-scheme: var(--color-scheme);
+  &:has(#color-scheme input[value="light"]:checked) {
+    --color-scheme: light;
+  }
+  &:has(#color-scheme input[value="dark"]:checked) {
+    --color-scheme: dark;
+  }
+
+  container: html / inline-size;
+}
+
+@font-face {
+  src: url("https://assets.codepen.io/2392/Silkscreen-Regular.woff2");
+  font-family: "Silkscreen";
+}
+
+body {
+  accent-color: var(--theme-accent);
+  background: var(--theme-canvas);
+  color: var(--theme-text);
+
+  box-sizing: border-box;
+  display: grid;
+  place-content: center;
+
+  height: 100cqh;
+  margin: 0;
+  padding: 3rem 3cqw;
+}
