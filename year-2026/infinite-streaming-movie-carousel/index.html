@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="frontendfocus.css" />
+    <title>Infinite Streaming Movie Carousel</title>
+  </head>
+  <body>
+    <main>
+      <section class="streaming-section" aria-labelledby="streaming-title">
+        <header class="section-header">
+          <div>
+            <p class="eyebrow">Featured collection</p>
+            <h1 id="streaming-title">Now Streaming</h1>
+          </div>
+
+          <a href="#all-movies">View all movies</a>
+        </header>
+
+        <div class="slider">
+          <div class="slider-track">
+            <!-- Primary movie row -->
+            <ul class="movie-row" aria-label="Featured movies">
+              <li>
+                <a href="#dune-part-two">
+                  <img
+                    src="./img/img1.webp"
+                    alt="Dune: Part Two movie poster"
+                    width="500"
+                    height="750"
+                  />
+
+                  <span class="movie-info">
+                    <strong>Dune: Part Two</strong>
+                    <small>Science Fiction · 2024</small>
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#the-batman">
+                  <img
+                    src="./img/img2.webp"
+                    alt="The Batman movie poster"
+                    width="500"
+                    height="750"
+                  />
+
+                  <span class="movie-info">
+                    <strong>The Batman</strong>
+                    <small>Crime · 2022</small>
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#spider-verse">
+                  <img
+                    src="./img/img3.webp"
+                    alt="Spider-Man: Across the Spider-Verse movie poster"
+                    width="500"
+                    height="750"
+                  />
+
+                  <span class="movie-info">
+                    <strong>Across the Spider-Verse</strong>
+                    <small>Animation · 2023</small>
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#oppenheimer">
+                  <img
+                    src="./img/img4.webp"
+                    alt="Oppenheimer movie poster"
+                    width="500"
+                    height="750"
+                  />
+
+                  <span class="movie-info">
+                    <strong>Oppenheimer</strong>
+                    <small>Drama · 2023</small>
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#barbie">
+                  <img
+                    src="./img/img5.webp"
+                    alt="Barbie movie poster"
+                    width="500"
+                    height="750"
+                  />
+
+                  <span class="movie-info">
+                    <strong>Barbie</strong>
+                    <small>Comedy · 2023</small>
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#avatar">
+                  <img
+                    src="./img/img6.webp"
+                    alt="Avatar: The Way of Water movie poster"
+                    width="500"
+                    height="750"
+                  />
+
+                  <span class="movie-info">
+                    <strong>Avatar: The Way of Water</strong>
+                    <small>Adventure · 2022</small>
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#top-gun">
+                  <img
+                    src="./img/img7.webp"
+                    alt="Top Gun: Maverick movie poster"
+                    width="500"
+                    height="750"
+                  />
+
+                  <span class="movie-info">
+                    <strong>Top Gun: Maverick</strong>
+                    <small>Action · 2022</small>
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#guardians">
+                  <img
+                    src="./img/img8.webp"
+                    alt="Guardians of the Galaxy Vol. 3 movie poster"
+                    width="500"
+                    height="750"
+                  />
+
+                  <span class="movie-info">
+                    <strong>Guardians of the Galaxy Vol. 3</strong>
+                    <small>Action · 2023</small>
+                  </span>
+                </a>
+              </li>
+            </ul>
+
+            <!--
+          Duplicate row keeps the animation seamless.
+          It is hidden from screen readers to avoid repeated content.
+        -->
+            <ul class="movie-row" aria-hidden="true">
+              <li>
+                <a href="#dune-part-two-copy" tabindex="-1">
+                  <img
+                    src="./img/img1.webp"
+                    alt=""
+                    width="500"
+                    height="750"
+                  />
+
+                  <span class="movie-info">
+                    <strong>Dune: Part Two</strong>
+                    <small>Science Fiction · 2024</small>
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#the-batman-copy" tabindex="-1">
+                  <img
+                    src="./img/img2.webp"
+                    alt=""
+                    width="500"
+                    height="750"
+                  />
+
+                  <span class="movie-info">
+                    <strong>The Batman</strong>
+                    <small>Crime · 2022</small>
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#spider-verse-copy" tabindex="-1">
+                  <img
+                    src="./img/img3.webp"
+                    alt=""
+                    width="500"
+                    height="750"
+                  />
+
+                  <span class="movie-info">
+                    <strong>Across the Spider-Verse</strong>
+                    <small>Animation · 2023</small>
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#oppenheimer-copy" tabindex="-1">
+                  <img
+                    src="./img/img4.webp"
+                    alt=""
+                    width="500"
+                    height="750"
+                  />
+
+                  <span class="movie-info">
+                    <strong>Oppenheimer</strong>
+                    <small>Drama · 2023</small>
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#barbie-copy" tabindex="-1">
+                  <img
+                    src="./img/img5.webp"
+                    alt=""
+                    width="500"
+                    height="750"
+                  />
+
+                  <span class="movie-info">
+                    <strong>Barbie</strong>
+                    <small>Comedy · 2023</small>
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#avatar-copy" tabindex="-1">
+                  <img
+                    src="./img/img6.webp"
+                    alt=""
+                    width="500"
+                    height="750"
+                  />
+
+                  <span class="movie-info">
+                    <strong>Avatar: The Way of Water</strong>
+                    <small>Adventure · 2022</small>
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#top-gun-copy" tabindex="-1">
+                  <img
+                    src="./img/img7.webp"
+                    alt=""
+                    width="500"
+                    height="750"
+                  />
+
+                  <span class="movie-info">
+                    <strong>Top Gun: Maverick</strong>
+                    <small>Action · 2022</small>
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#guardians-copy" tabindex="-1">
+                  <img
+                    src="./img/img8.webp"
+                    alt=""
+                    width="500"
+                    height="750"
+                  />
+
+                  <span class="movie-info">
+                    <strong>Guardians of the Galaxy Vol. 3</strong>
+                    <small>Action · 2023</small>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
