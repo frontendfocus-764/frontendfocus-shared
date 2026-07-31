@@ -1,0 +1,35 @@
+form {
+  --circular-range-w: 320px;
+  font-family: system-ui, sans-serif;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat( auto-fit, minmax(320px, 1fr) );
+  margin-inline: auto;
+  max-width: 1024px;
+}
+
+label {
+  display: grid;
+  font-weight: 700;
+  place-content: center;
+  width: 100%;
+}
+
+.bottom-arc {
+  --circular-range-output-as: start;
+  --circular-range-output-gr: 4;
+  clip-path: inset(40% 0 0 0);
+  margin-top: -140px;
+}
+
+.top-arc {
+  clip-path: inset(0 0 40% 0);
+  margin-bottom: -120px;
+}
+
+.full-circle,
+.left-arc,
+.oven {
+  --circular-range-output-as: center;
+  --circular-range-output-gr: 3;
+}
