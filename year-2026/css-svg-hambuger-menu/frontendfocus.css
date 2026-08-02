@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css?family=Fredoka+One");
+@import url("https://fonts.googleapis.com/css?family=Chewy");
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+svg {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;  
+  padding: 70px 0;
+}
+
+nav {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: none;
+}
+
+.hamburger-menu {
+  position: relative;
+  top: 0px;
+  right: 0;
+  height: 100%;
+  margin: auto;
+}
+
+a {
+  pointer-events: none;
+  cursor: default;
+}
+
+#menu {
+  width: 200px;
+  position: relative;
+  height: 100%;
+}
+
+.topbun {
+  width: auto;
+  z-index: 5;
+}
+
+.tomato {
+  background-position: 8px;
+  width: auto;
+  z-index: 4;
+  color: #8b2220;
+  transform: translateY(40px);
+}
+
+.lettuce {
+  width: auto;
+  z-index: 3;
+  color: #53a037;
+  transform: translateY(60px);
+}
+
+.cheese {
+  background-size: 100% 100%;
+  width: auto;
+  z-index: 2;
+  color: #dca250;
+  transform: translateY(75px);
+}
+
+.meat {
+ background-size: 100% 100%;
+  width: auto;
+  z-index: 1;
+  color: #926263;
+  transform: translateY(80px);
+}
+
+.bottombun {
+  background-size: 100% 100%;
+  width: auto;
+  transform: translateY(80px);
+}
+
+.menu-item {
+  position: absolute;
+  width: 100%;
+  font-family: "Fredoka One", arial;
+  font-weight: bold;
+  font-size: 0.8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s;
+  height: 100%;
+}
+
+.menu-item p {
+  position: absolute;
+  margin: 0;
+  height: 60%;
+  font-size: 2em;
+}
+
+input {
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  width: 200px;
+  height: 100px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+input:checked {
+  top: 0;
+  height: 100px;
+}
+
+input:checked + #menu .tomato {
+  transform: translateY(90px);
+  transition: transform 0.3s;
+}
+
+input:checked + #menu .lettuce {
+  transform: translateY(170px);
+  transition: transform 0.3s;
+}
+
+input:checked + #menu .cheese {
+  transform: translateY(250px);
+  transition: transform 0.3s;
+}
+
+input:checked + #menu .meat {
+  transform: translateY(330px);
+  transition: transform 0.3s;
+}
+
+input:checked + #menu .bottombun {
+  transform: translateY(370px);
+  transition: transform 0.3s;
+}
+
+input:checked + #menu a {
+  pointer-events: auto;
+  cursor: pointer;
+}
