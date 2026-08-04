@@ -1,0 +1,395 @@
+:root {
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    --w: 700px;
+    --min-w: 120px;
+    --animation: linear(0, 0.0157, 0.0314, 0.0471, 0.0627, 0.0782, 0.0937, 0.1091, 0.1243, 0.1395, 0.1545, 0.1694, 0.1841, 0.1986, 0.2129, 0.227, 0.2409, 0.2545, 0.2679, 0.281, 0.2939, 0.3065, 0.3187, 0.3307, 0.3423, 0.3536, 0.3645, 0.3751, 0.3853, 0.3951, 0.4045, 0.4135, 0.4222, 0.4304, 0.4382, 0.4455, 0.4524, 0.4589, 0.4649, 0.4704, 0.4755, 0.4801, 0.4843, 0.488, 0.4911, 0.4938, 0.4961, 0.4978, 0.499, 0.4998, 0.5, 0.5002, 0.501, 0.5022, 0.5039, 0.5062, 0.5089, 0.512, 0.5157, 0.5199, 0.5245, 0.5296, 0.5351, 0.5411, 0.5476, 0.5545, 0.5618, 0.5696, 0.5778, 0.5865, 0.5955, 0.6049, 0.6147, 0.6249, 0.6355, 0.6464, 0.6577, 0.6693, 0.6813, 0.6935, 0.7061, 0.719, 0.7321, 0.7455, 0.7591, 0.773, 0.7871, 0.8014, 0.8159, 0.8306, 0.8455, 0.8605, 0.8757, 0.8909, 0.9063, 0.9218, 0.9373, 0.9529, 0.9686, 0.9843, 1);
+    --animation-b: linear(0, 0.0282, 0.1054, 0.2195, 0.3584, 0.5107, 0.6659, 0.8149, 0.9506, 1.0676, 1.1625, 1.2335, 1.2805, 1.3046, 1.3083, 1.2944, 1.2666, 1.2285, 1.1839, 1.1362, 1.0885, 1.0435, 1.0032, 0.9691, 0.9421, 0.9225, 0.9102, 0.9048, 0.9055, 0.9113, 0.921, 0.9335, 0.9477, 0.9626, 0.9771, 0.9906, 1.0025, 1.0124, 1.0201, 1.0254, 1.0285, 1.0296, 1.0288, 1.0266, 1.0233, 1.0192, 1.0147, 1.0101, 1.0057, 1.0017, 0.9982, 0.9953, 0.9932, 0.9918, 0.991, 0.9909, 0.9913, 0.9921, 0.9932, 0.9945, 0.9959, 0.9973, 0.9986, 0.9998, 1.0009, 1.0017, 1.0023, 1.0026, 1.0028, 1.0028, 1.0026, 1.0024, 1.002, 1.0016, 1.0011, 1.0007, 1.0003, 0.9999, 0.9996, 0.9994, 0.9993, 0.9992, 0.9991, 0.9991, 0.9992, 0.9993, 0.9994, 0.9996, 0.9997, 0.9998, 0.9999, 1, 1.0001, 1.0002, 1.0002, 1.0003, 1.0003, 1.0003, 1.0002, 1.0002, 1);
+}
+
+@layer base {
+    hr {
+        width: 100%;
+        border-color: #6a6a6a;
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        display: flex;
+        place-items: center;
+        min-width: 320px;
+        min-height: 100vh;
+    }
+
+    #app {
+        max-width: 1280px;
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid #6a6a6a;
+        border-right: 1px solid #6a6a6a;
+    }
+
+    #app > div {
+        padding: 1rem;
+        align-self: center;
+    }
+
+    #app > div h1 {
+        margin: 0 0 1rem;
+        text-shadow: 3px 3px black;
+    }
+
+    #app > div h1 > span {
+        background: white;
+        color: #f840a8;
+        padding: 0 0.5rem;
+        text-shadow: none;
+    }
+}
+
+@layer diffs {
+    @property --step {
+        syntax: "<length>";
+        inherits: true;
+        initial-value: 0px;
+    }
+
+    @property --min-w {
+        syntax: "<length>";
+        inherits: true;
+        initial-value: 20px;
+    }
+
+    div.diff_1 {
+        width: var(--w);
+        aspect-ratio: 16/9;
+        grid-template-columns: auto auto 1fr;
+    }
+
+    div.diff_1 .image-first {
+        z-index: 3;
+    }
+
+    div.diff_1 .image-first .image {
+        background-image: url("./img/img-1.webp");
+        background-size: cover;
+        filter: invert(1);
+    }
+
+    div.diff_1 .image-first .resizer {
+        width: 50px;
+        z-index: inherit;
+    }
+
+    div.diff_1 .image-second {
+        position: relative;
+        z-index: 2;
+    }
+
+    div.diff_1 .image-second .image {
+        background-image: url("./img/img-1.webp");
+        background-size: cover;
+        filter: brightness(2.5);
+    }
+
+    div.diff_1 .image-second .resizer {
+        width: 190px;
+        min-width: 50px;
+        z-index: inherit;
+    }
+
+    div.diff_1 .image-third {
+        z-index: -1;
+        width: 100%;
+        background: url("./img/img-1.webp") no-repeat;
+        background-size: cover;
+    }
+
+    div.diff_2 {
+        width: var(--w);
+        aspect-ratio: 16 / 9;
+        grid-template-columns: auto 1fr;
+    }
+
+    div.diff_2 .image-first {
+        z-index: 3;
+        box-sizing: border-box;
+    }
+
+    div.diff_2 .image-first .image {
+        background-image: url("./img/img-1.webp");
+        background-size: cover;
+        filter: invert(1);
+    }
+
+    div.diff_2 .image-first .resizer {
+        width: calc(var(--w) / 2);
+        z-index: inherit;
+    }
+
+    div.diff_2 .image-second {
+        z-index: 2;
+        width: 100%;
+        background: url("./img/img-1.webp") no-repeat;
+        background-size: cover;
+    }
+
+    div.diff_3 {
+        width: var(--w);
+        aspect-ratio: 16/9;
+        grid-template-columns: auto auto 1fr;
+    }
+
+    div.diff_3 .image-second {
+        --window-w: 180px;
+        position: relative;
+        z-index: 2;
+    }
+
+    div.diff_3 .image-second .image {
+        background-image: url("./img/img-1.webp");
+        background-size: cover;
+        filter: invert(1);
+    }
+
+    div.diff_3 .image-second .left_image {
+        width: calc(100% - var(--window-w));
+        position: absolute;
+        height: 100%;
+        background: url("./img/img-1.webp") no-repeat;
+        background-size: cover;
+        border-right: 2px solid #ffffff6e;
+    }
+
+    div.diff_3 .image-second .window {
+        position: absolute;
+        height: 100%;
+        width: var(--window-w);
+        right: 0;
+    }
+
+    div.diff_3 .image-second .resizer {
+        width: calc(var(--w) / 2);
+        min-width: var(--window-w);
+        z-index: inherit;
+    }
+
+    div.diff_3 .image-third {
+        z-index: -1;
+        width: 100%;
+        background: url("./img/img-1.webp") no-repeat;
+        background-size: cover;
+    }
+
+    div.diff_4 {
+        --w: 462px;
+        height: 422px;
+        width: var(--w);
+        grid-template-columns: auto auto 1fr;
+    }
+
+    div.diff_4 .image-first {
+        z-index: 5;
+    }
+
+    div.diff_4 .image-first .image {
+        background-image: url("./img/img-2.webp");
+        background-position-y: 40%;
+        filter: none;
+    }
+
+    div.diff_4 .image-first .resizer {
+        width: calc(calc(var(--w) / 5) * 1);
+        z-index: inherit;
+    }
+
+    div.diff_4 .image-second {
+        z-index: 4;
+    }
+
+    div.diff_4 .image-second .image {
+        background-image: url("./img/img-3.webp");
+        background-position-y: 40%;
+        filter: none;
+    }
+
+    div.diff_4 .image-second .resizer {
+        width: calc(calc(var(--w) / 5) * 2);
+        z-index: inherit;
+    }
+
+    div.diff_4 .image-third {
+        z-index: 3;
+        background: none;
+        width: auto;
+    }
+
+    div.diff_4 .image-third .image {
+        background-image: url("./img/img-4.webp");
+        background-position-y: 40%;
+        filter: none;
+    }
+
+    div.diff_4 .image-third .resizer {
+        width: calc(calc(var(--w) / 5) * 3);
+        z-index: inherit;
+    }
+
+    div.diff_4 .image-fourth {
+        z-index: 2;
+    }
+
+    div.diff_4 .image-fourth .image {
+        background-image: url("./img/img-5.webp");
+        background-position-y: 40%;
+        filter: none;
+    }
+
+    div.diff_4 .image-fourth .resizer {
+        width: calc(calc(var(--w) / 5) * 4);
+        z-index: inherit;
+    }
+
+    div.diff_4 .image-fifth {
+        background-image: url("./img/img-6.webp");
+        background-position-y: 40%;
+        z-index: -1;
+        width: 100%;
+        position: absolute;
+        height: 100%;
+    }
+
+    div.diff_5 {
+        width: var(--w);
+        height: 500px;
+        grid-template-columns: auto 1fr;
+        animation: inc 4s var(--animation) infinite alternate, win 2s var(--animation-b) infinite alternate;
+    }
+
+    div.diff_5 .image-first {
+        width: 100%;
+        background-image: url("./img/img-7.webp");
+        background-size: cover;
+        z-index: 0;
+    }
+
+    div.diff_5 .image-second {
+        z-index: 2;
+        border-right: 2px solid #ffffff6e;
+    }
+
+    div.diff_5 .image-second > .image {
+        background-image: url("./img/img-8.webp");
+        background-size: cover;
+        filter: grayscale(1);
+    }
+
+    div.diff_5 .image-second > .resizer {
+        width: calc(var(--min-w) + var(--step));
+        z-index: 1;
+    }
+
+    div.diff_5 .image-third {
+        z-index: 1;
+        top: 0;
+        border-right: 2px solid #ffffff6e;
+    }
+
+    div.diff_5 .image-third > .image {
+        background-image: url("./img/img-7.webp");
+        background-size: cover;
+    }
+
+    div.diff_5 .image-third > .resizer {
+        width: calc(0px + var(--step));
+        z-index: 2;
+    }
+
+    .diff-container {
+        position: relative;
+        display: grid;
+        width: var(--w);
+        overflow: hidden;
+        container-type: inline-size;
+    }
+
+    .diff-container .image-container {
+        position: absolute;
+        height: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .diff-container .image-container > .image {
+        position: absolute;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+    }
+
+    .diff-container .image-container:has(> .resizer) {
+        position: absolute;
+        min-width: 0;
+        height: 100%;
+        max-width: 100%;
+        border-right: 2px solid #ffffff6e;
+    }
+
+    .diff-container .image-container:has(> .resizer) .resizer {
+        position: relative;
+        overflow: auto;
+        resize: horizontal;
+        margin-inline: -16px;
+        padding-inline: 16px;
+        top: 50%;
+        right: 8px;
+        height: 16px;
+        max-width: 100%;
+        opacity: 0;
+    }
+
+    .diff-container .image-container:has(> .resizer)::before {
+        content: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3C!--%20License%3A%20PD.%20Made%20by%20Mary%20Akveo%3A%20https%3A%2F%2Fmaryakveo.com%2F%20--%3E%3Csvg%20fill%3D%22%23000000%22%20width%3D%2224px%22%20height%3D%2224px%22%20viewBox%3D%220%200%2024%2024%22%20id%3D%22left-right-scroll-bar-2%22%20data-name%3D%22Line%20Color%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20class%3D%22icon%20line-color%22%3E%3Cline%20id%3D%22secondary%22%20x1%3D%2212%22%20y1%3D%226%22%20x2%3D%2212%22%20y2%3D%2218%22%20style%3D%22fill%3A%20none%3B%20stroke%3A%20rgb(0%2C%200%2C%200)%3B%20stroke-linecap%3A%20round%3B%20stroke-linejoin%3A%20round%3B%20stroke-width%3A%202%3B%22%3E%3C%2Fline%3E%3Cpolyline%20id%3D%22primary%22%20points%3D%225%2010%203%2012%205%2014%22%20style%3D%22fill%3A%20none%3B%20stroke%3A%20rgb(0%2C%200%2C%200)%3B%20stroke-linecap%3A%20round%3B%20stroke-linejoin%3A%20round%3B%20stroke-width%3A%202%3B%22%3E%3C%2Fpolyline%3E%3Cpolyline%20id%3D%22primary-2%22%20data-name%3D%22primary%22%20points%3D%2219%2014%2021%2012%2019%2010%22%20style%3D%22fill%3A%20none%3B%20stroke%3A%20rgb(0%2C%200%2C%200)%3B%20stroke-linecap%3A%20round%3B%20stroke-linejoin%3A%20round%3B%20stroke-width%3A%202%3B%22%3E%3C%2Fpolyline%3E%3Cpath%20id%3D%22primary-3%22%20data-name%3D%22primary%22%20d%3D%22M8%2C12H3m13%2C0h5%22%20style%3D%22fill%3A%20none%3B%20stroke%3A%20rgb(0%2C%200%2C%200)%3B%20stroke-linecap%3A%20round%3B%20stroke-linejoin%3A%20round%3B%20stroke-width%3A%202%3B%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
+        position: absolute;
+        top: 50%;
+        right: -17px;
+        width: 24px;
+        height: 24px;
+        margin-top: -8px;
+        color: #a19dd0;
+        border-radius: 50%;
+        padding: .25rem;
+        mix-blend-mode: luminosity;
+        filter: drop-shadow(2px 4px 6px white) invert(1);
+        z-index: 1;
+    }
+
+    @keyframes inc {
+        to {
+            --step: calc(var(--w) - var(--min-w));
+        }
+    }
+
+    @keyframes win {
+        to {
+            --min-w: 160px;
+        }
+    }
+}
