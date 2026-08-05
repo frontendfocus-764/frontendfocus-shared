@@ -1,0 +1,358 @@
+:root {
+    color-scheme: dark;
+    line-height: 1.5;
+    font-family: "Geist Pixel", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "ELSH" 0;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+header, footer {
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+header {
+    color: color-mix(white 20%, transparent);
+}
+
+header h1 {
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .footer-support {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.5rem;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.72;
+}
+
+footer .footer-support .meta-chip {
+    padding: 0.18rem 0.5rem;
+    border: 1px solid color-mix(in srgb, white 16%, transparent);
+    border-radius: 999px;
+    background: color-mix(in srgb, white 7%, transparent);
+    font-size: 0.82em;
+    line-height: 1.2;
+}
+
+footer .social-links {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .social-links a {
+    display: inline-grid;
+    width: 2.5rem;
+    height: 2.5rem;
+    place-items: center;
+    border: 1px solid color-mix(in srgb, white 18%, transparent);
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: border-color 160ms ease, transform 160ms ease, background 160ms ease;
+}
+
+footer .social-links a:hover {
+    border-color: color-mix(in srgb, white 48%, transparent);
+    background: color-mix(in srgb, white 8%, transparent);
+    transform: translateY(-2px);
+}
+
+footer .social-links a:focus-visible {
+    outline: 2px solid color-mix(in srgb, white 72%, transparent);
+    outline-offset: 3px;
+}
+
+@layer select {
+    select, ::picker(select) {
+        appearance: base-select;
+    }
+
+    ::picker(select)::backdrop {
+        display: none;
+    }
+
+    select {
+        --size: 10rem;
+        --gap: 1rem;
+        --padding: 1rem;
+        --outline-w: 6rem;
+        --option-fs: 2.5rem;
+        --option-w: calc(var(--outline-w) - calc(var(--padding) * 2));
+        --radius: calc(
+                var(--size) / 2 +
+                var(--gap) +
+                var(--outline-w) +
+                1rem /* 1rem - fix for show border */
+        );
+        --size-out: calc(var(--size) / 2 + var(--gap) + var(--padding));
+        --bounce: linear(0, 0.0464, 0.0915, 0.1353, 0.1779, 0.2193, 0.2595, 0.2986, 0.3364, 0.3731, 0.4087, 0.4432, 0.4765, 0.5088, 0.54, 0.5701, 0.5992, 0.6273, 0.6544, 0.6805, 0.7056, 0.7298, 0.753, 0.7753, 0.7967, 0.8172, 0.8368, 0.8556, 0.8735, 0.8906, 0.9069, 0.9224, 0.9371, 0.9511, 0.9643, 0.9768, 0.9885, 0.9996, 1.01, 1.0197, 1.0288, 1.0372, 1.0451, 1.0523, 1.059, 1.065, 1.0706, 1.0756, 1.08, 1.084, 1.0875, 1.0905, 1.0931, 1.0952, 1.0969, 1.0982, 1.0991, 1.0997, 1.0998, 1.0997, 1.0992, 1.0984, 1.0973, 1.096, 1.0943, 1.0925, 1.0904, 1.0881, 1.0856, 1.0829, 1.0801, 1.0771, 1.074, 1.0708, 1.0675, 1.0641, 1.0606, 1.0571, 1.0535, 1.05, 1.0464, 1.0429, 1.0393, 1.0359, 1.0325, 1.0291, 1.0259, 1.0228, 1.0198, 1.017, 1.0143, 1.0118, 1.0095, 1.0074, 1.0055, 1.0039, 1.0025, 1.0015, 1.0007, 1.0002, 1);
+
+        anchor-name: --select;
+        position: relative;
+        aspect-ratio: 1 / 1;
+        border-radius: 9999px;
+
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        width: var(--size);
+        height: var(--size);
+        border: 2px solid #333;
+
+        box-shadow: 0 0 1rem #424242;
+        outline: #313131 solid 0;
+        outline-offset: var(--gap);
+        transition: .2s outline .4s ease, scale .4s var(--bounce), box-shadow .2s ease;
+    }
+
+    select:hover {
+        box-shadow: 0 0 1rem #4694bd;
+        background: none;
+    }
+
+    select::picker(select) {
+        background: none;
+        border: none;
+        z-index: -1;
+        overflow: visible;
+
+        height: var(--size);
+        width: var(--size);
+        position-anchor: --select;
+        top: anchor(center);
+        left: anchor(center);
+        opacity: 0;
+        translate: 0 -50%;
+
+        animation: rotation .05s ease forwards;
+        transition: overlay .5s ease, display .5s, opacity .5s ease;
+        transition-behavior: allow-discrete;
+    }
+
+    select::picker-icon {
+        display: none;
+    }
+
+    select:not(:open) {
+        color: color-mix(white 10%, transparent);
+        font-size: 1rem;
+        white-space: nowrap;
+        animation: .4s scale .6s ease forwards;
+    }
+
+    select:before {
+        content: var(--active);
+        position: absolute;
+        font-size: 4rem;
+    }
+
+    select:open {
+        outline-width: var(--outline-w);
+        transition: outline .4s var(--bounce);
+        background: color-mix(white 10%, transparent);
+        box-shadow: none;
+    }
+
+    select:open option {
+        opacity: 1;
+        scale: 1;
+    }
+
+    @starting-style {
+        select:open option {
+            scale: .25;
+        }
+    }
+
+    select:open::picker(select) {
+        opacity: 1;
+        --rotation2: calc(var(--rotation) - 10deg);
+    }
+
+    @starting-style {
+        select:open::picker(select) {
+            opacity: 0;
+            --rotation2: calc(var(--rotation));
+        }
+    }
+
+    select:open:before {
+        color: color-mix(white 20%, transparent);
+    }
+
+    select:open::after {
+        content: '▶';
+        margin-top: 9px;
+    }
+
+    select:has(option:hover):after {
+        rotate: var(--hover-angle, 0deg);
+    }
+
+    select option {
+        --count: sibling-count();
+        --idx: sibling-index();
+        --step: calc(360deg / var(--count));
+        --angle: calc((var(--idx) - 1) * var(--step));
+
+        clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+
+        position: absolute;
+        top: 50%;
+        translate: 0 -50%;
+        opacity: 0;
+        padding-inline-end: var(--padding);
+        width: var(--option-w);
+        height: calc(2 * var(--radius) * tan(180deg / var(--count)));
+        white-space: normal;
+        font-size: var(--option-fs);
+        color: color-mix(white 80%, transparent);
+        padding-inline-start: var(--size-out);
+
+        rotate: var(--rotation2);
+        transform-origin: 0 50%;
+        transform: rotate(var(--angle));
+        transition: .4s transform 0.4s ease, .2s opacity 0.4s ease, rotate .4s ease, padding-inline-start 0.4s ease, scale .4s var(--bounce);
+    }
+
+    select option::checkmark {
+        content: none;
+    }
+
+    select option:checked:after {
+        filter: drop-shadow(0px 0px 4px black);
+    }
+
+    select option:active {
+        background: transparent;
+    }
+
+    select option::after {
+        content: attr(data-emoji);
+        rotate: calc(-1 * (var(--angle) + var(--rotation)));
+        transition: .4s rotate ease, .25s scale ease;
+    }
+
+    select option::before {
+        content: '';
+        position: absolute;
+        width: calc(var(--outline-w) - calc(var(--padding) * 2));
+        height: 1px;
+        background: color-mix(white 10%, transparent);
+        transform-origin: left center;
+        transform: translateX(calc(-1 * var(--size-out))) rotate(calc(var(--step) / 2)) translateX(var(--size-out));
+        transition: margin 0.4s ease, width 0.4s ease;
+        pointer-events: none;
+    }
+
+    select option:hover {
+        --indent: 1rem;
+        cursor: pointer;
+        background: transparent;
+        padding-inline-start: calc(var(--size-out) + var(--indent));
+    }
+
+    select option:hover:not(:checked) {
+        color: white;
+    }
+
+    select option:hover::before {
+        margin-inline-start: calc(-1 * var(--indent));
+        transition: margin-inline-start 0.4s ease, width 0.4s ease;
+    }
+
+    select option:hover::after {
+        --size: 1px;
+        --negative: calc(-1 * var(--size));
+        --color: black;
+        scale: 1.25;
+        filter: drop-shadow(var(--size) var(--size) 0px var(--color)) drop-shadow(var(--negative) var(--size) 0px var(--color)) drop-shadow(var(--size) var(--negative) 0px var(--color)) drop-shadow(var(--negative) var(--negative) 0px var(--color));
+    }
+
+    select option:focus-visible {
+        outline: none;
+        text-decoration: underline;
+        text-decoration-style: wavy;
+        text-underline-offset: .25rem;
+        text-decoration-color: lightsalmon;
+    }
+
+    select:after {
+        z-index: 1;
+        color: white;
+        width: 100%;
+        position: absolute;
+        text-align: right;
+        padding-inline: 1rem;
+        box-sizing: border-box;
+        font-size: 1rem;
+        transition: rotate .2s cubic-bezier(0.1, 0.7, 0.5, 1);
+    }
+}
+
+@property --rotation {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0deg;
+}
+
+@property --rotation2 {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0deg;
+}
+
+@property --active {
+    syntax: "<string>";
+    inherits: true;
+    initial-value: "🐺";
+}
+
+@keyframes scale {
+    0% {
+        scale: 1;
+    }
+    50% {
+        scale: .8;
+        font-size: .75rem;
+    }
+    100% {
+        scale: 1;
+        font-size: 1rem;
+        color: color-mix(white 100%, transparent);
+    }
+}
+
+@keyframes rotation {
+    to {
+        --rotation2: calc(var(--rotation));
+    }
+}
