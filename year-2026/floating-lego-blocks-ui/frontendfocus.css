@@ -1,0 +1,216 @@
+:root {
+  --block-left: #e94d52;
+  --block-top: #ee7478;
+  --block-right: #de1b22;
+  --bounce: linear(0 0%, 0 2.27%, 0.02 4.53%, 0.04 6.8%, 0.06 9.07%, 0.1 11.33%, 0.14 13.6%, 0.25 18.15%, 0.39 22.7%, 0.56 27.25%, 0.77 31.8%, 1 36.35%, 0.89 40.9%, 0.85 43.18%, 0.81 45.45%, 0.79 47.72%, 0.77 50%, 0.75 52.27%, 0.75 54.55%, 0.75 56.82%, 0.77 59.1%, 0.79 61.38%, 0.81 63.65%, 0.85 65.93%, 0.89 68.2%, 1 72.7%, 0.97 74.98%, 0.95 77.25%, 0.94 79.53%, 0.94 81.8%, 0.94 84.08%, 0.95 86.35%, 0.97 88.63%, 1 90.9%, 0.99 93.18%, 0.98 95.45%, 0.99 97.73%, 1 100%);
+}
+
+*,
+*::before,
+*::after {
+  transform-style: preserve-3d;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  perspective: 500vmin;
+  font-family: Arial, Helvetica, serif;
+  background-color: #bdd4e7;
+  background-image: linear-gradient(135deg, #bdd4e7 0%, #8693ab 74%);
+}
+
+body .cam {
+  float: left;
+  box-sizing: border-box;
+  position: relative;
+  width: 33.33vw;
+  height: 33.33vh;
+}
+
+body .cam:nth-child(1):hover ~ .camera {
+  transform: rotateX(11deg) rotateY(11deg);
+}
+
+body .cam:nth-child(2):hover ~ .camera {
+  transform: rotateX(11deg) rotateY(0deg);
+}
+
+body .cam:nth-child(3):hover ~ .camera {
+  transform: rotateX(11deg) rotateY(-11deg);
+}
+
+body .cam:nth-child(4):hover ~ .camera {
+  transform: rotateX(0deg) rotateY(11deg);
+}
+
+body .cam:nth-child(6):hover ~ .camera {
+  transform: rotateX(0deg) rotateY(-11deg);
+}
+
+body .cam:nth-child(7):hover ~ .camera {
+  transform: rotateX(-11deg) rotateY(11deg);
+}
+
+body .cam:nth-child(8):hover ~ .camera {
+  transform: rotateX(-11deg) rotateY(0deg);
+}
+
+body .cam:nth-child(9):hover ~ .camera {
+  transform: rotateX(-11deg) rotateY(-11deg);
+}
+
+body .cam:active ~ .camera .content .lego-block {
+  animation-play-state: paused;
+}
+
+body .camera {
+  transition: transform 0.5s ease-in-out;
+  position: absolute;
+  top: calc(50% - 50vmin);
+  left: calc(50% - 25vmin);
+  z-index: -1;
+}
+
+body .camera .content {
+  width: 50vmin;
+  height: 100vmin;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  transform: rotateX(-20deg) rotateY(45deg) scale3d(1.5, 1.5, 1.5) translateX(5vmin) translateY(2.5vmin);
+}
+
+body .camera .content .lego-block {
+  width: 10vmin;
+  height: 7vmin;
+  background: var(--block-right);
+  animation: block1 3s var(--bounce) infinite;
+}
+
+body .camera .content .lego-block::before {
+  content: "";
+  position: absolute;
+  width: 10vmin;
+  height: 7vmin;
+  background: var(--block-left);
+  transform: rotateY(90deg) translateZ(-5vmin) translateX(5vmin);
+}
+
+body .camera .content .lego-block::after {
+  content: "";
+  position: absolute;
+  width: 10vmin;
+  height: 10vmin;
+  background: var(--block-top);
+  transform: rotateY(-90deg) rotateX(90deg) translateZ(5vmin) translateX(-5vmin);
+}
+
+body .camera .content .lego-block span {
+  position: absolute;
+  width: 2.5vmin;
+  height: 1vmin;
+  background: var(--block-right);
+  transform: translate3d(1.5vmin, -0.95vmin, -2.5vmin) rotateY(-45deg);
+}
+
+body .camera .content .lego-block span::before,
+body .camera .content .lego-block span::after {
+  content: "";
+  position: absolute;
+  width: 2.5vmin;
+  height: 2.5vmin;
+  background: var(--block-right);
+  border-radius: 50%;
+  top: 1vmin;
+  left: 1vmin;
+  z-index: 1;
+  transform: translate3d(-1vmin, -1.35vmin, 0vmin) rotateX(-90deg);
+}
+
+body .camera .content .lego-block span::after {
+  transform: translate3d(-1vmin, -2.3vmin, 0vmin) rotateX(-90deg);
+  background: var(--block-top);
+  z-index: -1;
+}
+
+body .camera .content .lego-block span:nth-child(2) {
+  transform: translate3d(6vmin, -0.95vmin, -2.5vmin) rotateY(-45deg);
+}
+
+body .camera .content .lego-block span:nth-child(3) {
+  transform: translate3d(6vmin, -0.95vmin, -7.5vmin) rotateY(-45deg);
+}
+
+body .camera .content .lego-block span:nth-child(4) {
+  transform: translate3d(1.5vmin, -0.95vmin, -7.5vmin) rotateY(-45deg);
+}
+
+body .camera .content .lego-block:nth-child(1) {
+  --block-left: #e94d52;
+  --block-top: #ee7478;
+  --block-right: #de1b22;
+}
+
+body .camera .content .lego-block:nth-child(2) {
+  --block-left: #e9a54d;
+  --block-top: #eec374;
+  --block-right: #dea01b;
+  animation-name: block2;
+}
+
+body .camera .content .lego-block:nth-child(3) {
+  --block-left: #6ce94d;
+  --block-top: #74ee74;
+  --block-right: #32de1b;
+  animation-name: block3;
+}
+
+body .camera .content .lego-block:nth-child(4) {
+  --block-left: #4d50e9;
+  --block-top: #747cee;
+  --block-right: #2f1bde;
+  animation-name: block4;
+}
+
+@keyframes block1 {
+  0%, 2.5%, 97.5%, 100% {
+    transform: translate3d(0vmin, 0vmin, 0vmin);
+  }
+  50% {
+    transform: translate3d(0vmin, -9vmin, 0vmin);
+  }
+}
+
+@keyframes block2 {
+  0%, 5%, 95%, 100% {
+    transform: translate3d(0vmin, 0vmin, 0vmin);
+  }
+  50% {
+    transform: translate3d(0vmin, -3vmin, 0vmin);
+  }
+}
+
+@keyframes block3 {
+  0%, 7.5%, 87.5%, 100% {
+    transform: translate3d(0vmin, 0vmin, 0vmin);
+  }
+  50% {
+    transform: translate3d(0vmin, 3vmin, 0vmin);
+  }
+}
+
+@keyframes block4 {
+  0%, 10%, 90%, 100% {
+    transform: translate3d(0vmin, 0vmin, 0vmin);
+  }
+  50% {
+    transform: translate3d(0vmin, 9vmin, 0vmin);
+  }
+}
