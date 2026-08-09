@@ -1,0 +1,102 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+:root {
+  color-scheme: dark;
+}
+body {
+  min-width: 20rem;
+  margin: 0;
+  background: radial-gradient(circle at center, #202341, #0b0c16 65%);
+  color: #fff;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+.demo {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 2rem;
+}
+.orbit {
+  position: relative;
+  width: min(78vmin, 40rem);
+  height: min(78vmin, 40rem);
+  border: 1px solid rgba(143, 155, 255, 0.45);
+  border-radius: 50%;
+  box-shadow: 0 0 4rem rgba(100, 115, 255, 0.1), inset 0 0 4rem rgba(100, 115, 255, 0.08);
+}
+.orbit::before,
+.orbit::after {
+  content: "";
+  position: absolute;
+  inset: 12.5%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: inherit;
+}
+.orbit::after {
+  inset: 25%;
+}
+.orbit__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: clamp(4rem, 16vmin, 7rem);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 3rem rgba(129, 140, 248, 0.35);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  translate: -50% -50%;
+}
+.orbit__satellite {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  background: #8f9bff;
+  box-shadow: 0 0 1rem rgba(143, 155, 255, 0.8), 0 0 2rem rgba(143, 155, 255, 0.4);
+  animation: orbit 30s linear infinite;
+}
+.orbit__satellite--1 {
+  animation-delay: 0s;
+}
+.orbit__satellite--2 {
+  animation-delay: -5s;
+}
+.orbit__satellite--3 {
+  animation-delay: -10s;
+}
+.orbit__satellite--4 {
+  animation-delay: -15s;
+}
+.orbit__satellite--5 {
+  animation-delay: -20s;
+}
+.orbit__satellite--6 {
+  animation-delay: -25s;
+}
+@keyframes orbit {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(calc(min(78vmin, 40rem) / 2)) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(calc(min(78vmin, 40rem) / 2)) rotate(-360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .orbit__satellite {
+    animation-play-state: paused;
+  }
+}
