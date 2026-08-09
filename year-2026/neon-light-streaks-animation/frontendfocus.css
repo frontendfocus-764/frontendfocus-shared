@@ -1,0 +1,12 @@
+body {
+	display: grid;
+	place-items: center;
+	margin: 0;
+	height: 100dvh;
+	background: #000;
+}
+
+#gl {
+	width: 90dvw;
+	height: 90dvh;
+}
