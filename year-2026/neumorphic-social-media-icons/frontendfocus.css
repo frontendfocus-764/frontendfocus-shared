@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #e5e5e5;
+}
+.link {
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  margin: 10px;
+  border-radius: 30%;
+  box-shadow: 9px 9px 18px #bebebe, -9px -9px 18px #fff;
+  position: relative;
+  overflow: hidden;
+  line-height: 90px;
+  font-size: 30px;
+  transition: 0.8s;
+  text-align: center;
+  padding: 5.5px;
+}
+.yt {
+  color: #ff0000;
+}
+.fb {
+  color: #4267b2;
+}
+.ig {
+  color: #e949a3;
+}
+.git {
+  color: #222;
+}
+.tweet {
+  color: #1da1f2;
+}
+.yt:hover,
+.fb:hover,
+.ig:hover,
+.git:hover,
+.tweet:hover {
+  color: #f1f1f1;
+}
+.link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 0%;
+  z-index: -1;
+  transition: 0.8s;
+  border-radius: 0 0 50% 50%;
+}
+.yt::before {
+  background: #ff0000;
+}
+.fb::before {
+  background: #4267b2;
+}
+.ig::before {
+  background: #e949a3;
+}
+.git::before {
+  background: #222;
+}
+.tweet::before {
+  background: #1da1f2;
+}
+.yt:hover::before,
+.fb:hover::before,
+.ig:hover::before,
+.git:hover::before,
+.tweet:hover::before {
+  height: 180%;
+}
