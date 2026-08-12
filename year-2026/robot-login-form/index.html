@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <title>Robot Login Form with Expression | HTML CSS JS</title>
+</head>
+<body>
+     <div class="scene">
+    <main class="stage" id="stage">
+
+    <!-- robot -->
+    <div class="robot" id="robot" data-mood="idle">
+
+      <div class="bubble" id="bubble" role="status" aria-live="polite">
+        <span id="bubbleText">Hi. I'm Volt. I guard this form.</span>
+      </div>
+
+      <div class="antenna" aria-hidden="true">
+        <span class="antenna-rod"></span>
+        <span class="antenna-tip"></span>
+      </div>
+
+      <div class="head3d" aria-hidden="true">
+        <div class="head" id="head">
+          <span class="ear ear--l"></span>
+          <span class="ear ear--r"></span>
+
+          <!-- front -->
+          <div class="face face--front">
+            <div class="visor">
+              <div class="eyes" id="eyes">
+                <span class="eye eye--l"></span>
+                <span class="eye eye--r"></span>
+              </div>
+              <span class="cheek cheek--l"></span>
+              <span class="cheek cheek--r"></span>
+              <span class="mouth"></span>
+            </div>
+          </div>
+
+          <!-- back -->
+          <div class="face face--back">
+            <div class="panel">
+              <span class="panel-lights"><i></i><i></i><i></i></span>
+              <div class="meter" id="meter">
+                <i></i><i></i><i></i><i></i>
+              </div>
+              <p class="panel-label" id="panelLabel">NOT LOOKING</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- form -->
+    <form class="card" id="form" novalidate>
+      <span class="hand hand--l" aria-hidden="true"></span>
+      <span class="hand hand--r" aria-hidden="true"></span>
+
+      <h1 class="title">Beep boop. Who goes there?</h1>
+
+      <label class="field">
+        <svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4.5 4.5 0 1 0-4.5-4.5A4.5 4.5 0 0 0 12 12Zm0 2c-3.9 0-8 2-8 5v1.5h16V19c0-3-4.1-5-8-5Z"/></svg>
+        <input id="name" type="text" placeholder="Your name" autocomplete="name" aria-label="Your name">
+      </label>
+
+      <label class="field">
+        <svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm8 7.3L4.4 7h15.2L12 12.3ZM4 9.2V17h16V9.2l-8 5.3-8-5.3Z"/></svg>
+        <input id="email" type="email" placeholder="Your email" autocomplete="email" aria-label="Your email">
+      </label>
+
+      <label class="field">
+        <svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5Zm-3 8V7a3 3 0 0 1 6 0v3H9Zm3 4a2 2 0 0 1 1 3.7V19h-2v-1.3a2 2 0 0 1 1-3.7Z"/></svg>
+        <input id="password" type="password" placeholder="Super secret password" autocomplete="new-password" aria-label="Password">
+        <button class="peek" id="togglePass" type="button" aria-label="Show password" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5c-5 0-9.3 3.1-11 7.5C2.7 16.9 7 20 12 20s9.3-3.1 11-7.5C21.3 8.1 17 5 12 5Zm0 12.5a5 5 0 1 1 5-5 5 5 0 0 1-5 5Zm0-8a3 3 0 1 0 3 3 3 3 0 0 0-3-3Z"/></svg>
+        </button>
+      </label>
+
+      <button class="btn" id="loginBtn" type="submit">
+        <span class="btn-bolt" aria-hidden="true">⚡</span>
+        <span class="btn-label" id="btnLabel">LOG ME IN</span>
+      </button>
+
+      <span class="foot foot--l" aria-hidden="true"></span>
+      <span class="foot foot--r" aria-hidden="true"></span>
+    </form>
+  </main>
+</div>
+    <script src="frontendfocus.js"></script>
+</body>
+</html>
