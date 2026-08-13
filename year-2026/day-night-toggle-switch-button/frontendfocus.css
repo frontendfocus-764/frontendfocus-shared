@@ -1,0 +1,336 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7rem;
+    margin: 10px;
+    transition: all .5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.day-night-toggle {
+    position: relative;
+    width: 1000px;
+    height: 400px;
+}
+
+/* CONTAINER
+########################################################### */
+.toggle-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 200px;
+    border-radius: 100px;
+    overflow: hidden;
+    transition: all .2s;
+    cursor: pointer;
+    background-color: rgb(33, 166, 255);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+.toggle-container::after {
+    content: '';
+    position: absolute;
+    width: 502px;
+    height: 202px;
+    border-radius: 100px;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    box-shadow: inset -6px -6px rgba(0, 0, 0, 0.2),
+        inset 6px 6px rgba(255, 255, 255, 0.2),
+        inset -5px 2px 30px rgba(0, 0, 0, 0.3);
+}
+
+.toggle-container--night {
+    background-color: rgb(7, 39, 61);
+}
+
+/* RADIANT
+########################################################### */
+.radiant {
+    position: absolute;
+    top: -70px;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all .5s ease-out;
+}
+.sun-radiant { 
+    left: -70px;
+    transition-delay: .5s;
+    opacity: 1;
+}
+.moon-radiant { 
+    right: -70px;
+    transition-delay: 0s;
+    transform: translateX(350px);
+    opacity: 0;
+}
+
+.radiant::after {
+    content: '';
+    position: absolute;
+    top: 45px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all .5s ease-out;
+}
+.sun-radiant::after {
+    left: 45px;
+}
+.moon-radiant::after {
+    right: 45px;
+}
+
+.radiant::before {
+    content: '';
+    position: absolute;
+    top: -45px;
+    width: 430px;
+    height: 430px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(0);
+    transition: all .5s ease-out;
+}
+.sun-radiant::before {
+    left: -45px;
+}
+.moon-radiant::before {
+    right: -45px;
+}
+
+.sun-radiant--night {
+    transition-delay: 0s;
+    transform: translateX(-350px);
+    opacity: 0;
+}
+.sun-radiant--night::before {
+    transition-delay: 0s;
+    transform: translateX(-100px);
+}
+.sun-radiant--night::after {
+    transition-delay: 0s;
+    transform: translateX(100px);
+}
+.moon-radiant--night {
+    transition-delay: .5s;
+    transform: translateX(0);
+    opacity: 1;
+}
+.moon-radiant--night::before {
+    transition-delay: .5s;
+    transform: translateX(0);
+}
+.moon-radiant--night::after {
+    transition-delay: .5s;
+    transform: translateX(0);
+}
+
+/* CLOUDS
+########################################################### */
+.cloud {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform .8s;
+}
+.cloud--1 {
+    bottom: 60px;
+    right: -35px;
+    background-color: rgb(211, 236, 252);
+    box-shadow: -40px 50px rgb(211, 236, 252),
+        -80px 100px rgb(211, 236, 252),
+        -160px 110px rgb(211, 236, 252),
+        -220px 120px rgb(211, 236, 252),
+        -260px 110px rgb(211, 236, 252),
+        -320px 140px rgb(211, 236, 252),
+        -360px 140px rgb(211, 236, 252),
+        -400px 170px rgb(211, 236, 252);
+}
+.cloud--2 {
+    bottom: 100px;
+    right: -15px;
+    opacity: .4;
+    background-color: white;
+    box-shadow: -40px 50px white,
+        -80px 100px white,
+        -160px 110px white,
+        -220px 120px white,
+        -260px 110px white,
+        -320px 140px white,
+        -360px 140px white,
+        -400px 170px white;
+    transition-delay: .05s;
+}
+.cloud--night {
+    transform: translateY(200px);
+}
+
+
+/* STARS
+########################################################### */
+.star {
+    position: absolute;
+    background-color: white;
+    clip-path: polygon(50% 0, 65% 35%, 100% 50%, 65% 65%, 50% 100%, 35% 65%, 0 50%, 35% 35%);
+    opacity: 0;
+    transition: all .5s;
+}
+.stars--night > .star { opacity: .6; }
+.stars--night > .star--1 { animation: sparkle 1s linear .5s infinite; }
+.stars--night > .star--2 { animation: sparkle 1s linear 1s infinite; }
+.stars--night > .star--3 { animation: sparkle 1s linear .7s infinite; }
+.star--1 {
+    height: 15px;
+    width: 15px;
+    top: 50px;
+    left: 100px;
+}
+.star--2 {
+    height: 18px;
+    width: 18px;
+    top: 130px;
+    left: 60px;
+}
+.star--3 {
+    height: 12px;
+    width: 12px;
+    top: 110px;
+    left: 190px;
+}
+.star--1b {
+    height: 15px;
+    width: 15px;
+    top: 50px;
+    right: 100px;
+}
+.star--2b {
+    height: 18px;
+    width: 18px;
+    top: 130px;
+    right: 60px;
+}
+.star--3b {
+    height: 12px;
+    width: 12px;
+    top: 110px;
+    right: 190px;
+}
+
+.star-round {
+    height: 3px;
+    width: 3px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: white;
+    opacity: 0;
+    transition: all .5s;
+}
+.star-round--1 { top: 90px; left: 120px; }
+.star-round--2 { top: 40px; left: 50px; }
+.star-round--3 { top: 80px; left: 35px; }
+.star-round--4 { top: 160px; left: 160px; }
+.star-round--5 { top: 30px; left: 180px; }
+.star-round--6 { top: 60px; left: 200px; }
+.star-round--1b { top: 90px; right: 120px; }
+.star-round--2b { top: 40px; right: 50px; }
+.star-round--3b { top: 80px; right: 35px; }
+.star-round--4b { top: 160px; right: 160px; }
+.star-round--5b { top: 30px; right: 180px; }
+.star-round--6b { top: 60px; right: 200px; }
+
+.stars--night > .star-round {
+    opacity: .6;
+    animation: sparkle 1s linear .5s infinite;
+}
+
+
+@keyframes sparkle {
+    0% { opacity: .6; }
+    50% { opacity: .8; }
+    100% { opacity: .6; }
+}
+
+
+/* DOT
+########################################################### */
+.toggle-dot {
+    height: 160px;
+    width: 160px;
+    background-color: rgb(255, 230, 0);
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    box-shadow: inset -2px -5px 5px rgb(204, 156, 0), 
+        inset 2px 5px 5px rgb(255, 246, 168);
+    transition: transform 1s ease-in-out, color .4s;
+    transform: translateX(0) rotate(0deg);
+}
+
+.toggle-dot--night {
+    background-color: rgb(215, 223, 233);
+    box-shadow: inset -2px -5px 5px rgb(112, 140, 175), 
+        inset 2px 5px 5px rgb(237, 241, 245);
+    transform-origin: center;
+    transform: translateX(300px) rotate(360deg);
+}
+
+
+/* MOON CRATERS
+########################################################### */
+.toggle-crater {
+    background-color: rgb(158, 176, 197);
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: inset 2px 5px 2px rgb(133, 156, 185);
+    opacity: 0;
+    transition: all .5s;
+}
+.toggle-crater--1 {
+    height: 35px;
+    width: 35px;
+    top: 20px;
+    left: 65px;
+}
+.toggle-crater--2 {
+    height: 52px;
+    width: 52px;
+    top: 50px;
+    left: 15px;
+}
+.toggle-crater--3 {
+    height: 42px;
+    width: 42px;
+    bottom: 30px;
+    right: 30px;
+}
+.toggle-crater--night {
+    opacity: 1;
+}
