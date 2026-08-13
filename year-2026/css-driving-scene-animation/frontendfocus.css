@@ -1,0 +1,688 @@
+@keyframes moving {
+  0% {
+    right: 120%;
+    animation-timing-function: ease-out;
+  }
+  35% {
+    right: 30%;
+  }
+  36%,
+  56% {
+    right: 29.8%;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    right: -80em;
+  }
+}
+
+@keyframes shaking {
+  from {transform: translateY(.1em);}
+  to {transform: translateY(0);}
+}
+
+@keyframes goWheel {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: ease-out;
+  }
+  36%,
+  56% {
+    transform: rotate(350deg);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: rotate(910deg);
+  }
+}
+
+@keyframes stableWheel {
+  from {transform: translateY(-.9em);}
+  to {transform: translateY(-.8em);}
+}
+
+@keyframes rearLight {
+  0%, 27% {background: maroon;box-shadow: none;}
+  28%, 56% {background: red;box-shadow: -.2em -.2em 20px red;}
+  57%,100% {background: maroon;box-shadow: none;}
+}
+/* Traffic Sign Frames */
+@keyframes red {
+  0%,
+  20% {
+    background: #444;
+    box-shadow: none;
+  }
+  21%,
+  52% {
+    background: red;
+    box-shadow: -0.2em 0 20px red;
+  }
+  53%,
+  100% {
+    background: #444;
+    box-shadow: none;
+  }
+}
+
+@keyframes yellow {
+  0%,
+  20% {
+    background: orange;
+    box-shadow: -0.2em 0 20px orange;
+  }
+  21%,
+  89% {
+    background: #444;
+    box-shadow: none;
+  }
+  90%,
+  100% {
+    background: orange;
+    box-shadow: -0.2em 0 20px orange;
+  }
+}
+
+@keyframes green {
+  0%,
+  52% {
+    background: #444;
+    box-shadow: none;
+  }
+  53%,
+  91% {
+    background: green;
+    box-shadow: -0.2em 0 20px green;
+  }
+  92%,
+  100% {
+    background: #444;
+    box-shadow: none;
+  }
+}
+
+/* Car */
+
+.car {
+  animation: moving 10s linear -2s infinite, shaking .2s linear infinite alternate;
+}
+
+.wheel {
+  animation: stableWheel .2s linear infinite alternate;
+}
+.st {
+  animation: goWheel 10s linear -2s infinite;
+}
+
+.rearLight {
+  animation: rearLight 10s linear -2s infinite;
+}
+
+
+/* Traffic Sign */
+
+.red {
+  animation: red 10s linear -2s infinite;
+}
+
+.yellow {
+  animation: yellow 10s linear -2s infinite;
+}
+
+.green {
+  animation: green 10s linear -2s infinite;
+}
+
+
+
+/* --Scene-- */
+body {
+  background: lightblue;
+  height: 30em;
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+}
+@media screen and (max-width:450px) {
+  body {
+    font-size: 70%;
+  }
+}
+/* Bachground wall & waste basket */
+.wall {
+  width: 100%;
+  height: 12.5em;
+  position: absolute;
+  top: 2.5em;
+  right: 0;
+  background: #efefef;
+  background: linear-gradient(to left,rgba(135, 135, 135, 0.5) 0%,rgb(150, 150, 150) 2.5%,rgba(135, 135, 135, 0.5) 5%,rgba(0, 0, 0, 0) 5.1%,rgba(0, 0, 0, 0) 100%), linear-gradient(to left,rgba(135, 135, 135, 0.5) 0%,rgb(150, 150, 150) 2.5%,rgba(135, 135, 135, 0.5) 5%,rgba(0, 0, 0, 0) 5.1%,rgba(0, 0, 0, 0) 100%), linear-gradient(to left,rgba(135, 135, 135, 0.5) 0%,rgb(150, 150, 150) 2.5%,rgba(135, 135, 135, 0.5) 5%,rgba(0, 0, 0, 0) 5.1%,rgba(0, 0, 0, 0) 100%), linear-gradient(to left,rgba(135, 135, 135, 0.5) 0%,rgb(150, 150, 150) 2.5%,rgba(135, 135, 135, 0.5) 5%,rgba(0, 0, 0, 0) 5.1%,rgba(0, 0, 0, 0) 100%), linear-gradient(to top,rgba(135, 135, 135, 0.5) 0%,rgb(150, 150, 150) 2.5%,rgba(135, 135, 135, 0.5) 5%,rgba(0, 0, 0, 0) 5.1%,rgba(0, 0, 0, 0) 100%), #efefef;
+  
+  background-repeat: repeat-x,repeat-x,repeat-x,repeat-x,repeat;
+  background-size: 5em 2.5em,5em 2.5em,5em 2.5em,5em 2.5em, auto 2.5em;
+  background-position:2.6em 0, 0 2.5em, 2.6em 5em, 0 7.5em, 2.6em 10em;
+  box-shadow: inset 10px 10px 38px -22px #333;
+  overflow: hidden;
+}
+.wall:after {
+  content: "ADEN WILL SURVIVE :)";
+  position: absolute;
+  width: 700px;
+  bottom: 2.5em;
+  left: 40px;
+  color: maroon;
+  font-weight: bold;
+  font-size: 2em;
+  font-family: 'Nosifer', cursive;
+  transform: rotate(-4deg);
+  letter-spacing: .1em;
+}
+
+.wall:before { 
+  /*  Upper pavement  */
+  content: "";
+  width: 100%;
+  height: 2.5em;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #ccc;
+}
+.basket {
+  width: 4.5em;
+  height: 7em;
+  position: absolute;
+  right: 20%;
+  top: 6.5em;
+  border: solid #888;
+  border-width: .7em .7em 0;
+  border-radius:50% 50% 0 0 / 40% 40% 0 0;
+}
+.basket:after {
+  content: "";
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  height: .5em;
+  background: #888;
+}
+.basket:before {
+  content: " KEEP ADEN CLEAN";
+  position: absolute;
+  width: 80%;
+  padding-top: 2em;
+  height: 4.5em;
+  top: 15%;right: 0;left: 0;
+  margin: auto;
+  background: #444;
+  z-index: 3;
+  border-radius: 50% / 1em;
+  box-shadow: inset 0 -4.8em 0 chocolate;
+  text-align: center;
+  line-height: 1.2;
+  font-weight: bold;
+  color: #f0f0f0;
+  text-shadow: 1px 1px 0  #444, 1px -1px 0 #444, -1px 1px 0  #444, -1px -1px 0 #444;
+  letter-spacing: .1em;
+  font-size: .8em;
+}
+/* Car */
+
+.car {
+  position: absolute;
+  top: 18em;
+  right: 30%;
+}
+
+.cbody {
+  width: 30em;
+  height: 6em;
+  position: relative;
+  background: darkorange;
+  border-radius: 2em 2em 0 0;
+}
+
+
+/* Doors and windows */
+
+.mainframe {
+  width: 50%;
+  height: 9.8em;
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: auto;
+  transform: translateY(-4.4em);
+  background: #222;
+  background: linear-gradient(135deg, rgba(13, 13, 13, 1) 0%, rgba(56, 56, 56, 1) 27%, rgba(13, 13, 13, 1) 38%, rgba(1, 1, 1, 1) 57%, rgba(78, 78, 78, 1) 76%, rgba(56, 56, 56, 1) 94%, rgba(27, 27, 27, 1) 100%);
+  /* From Color Zilla */
+  border: .3em solid darkorange;
+  border-radius: 1em;
+  border-top-right-radius: 4.5em;
+  border-top-left-radius: 2em;
+}
+
+.mainframe:before,
+.mainframe:after {
+  content: "";
+  position: absolute;
+  top: 42.4%;
+  right: 0;
+  bottom: -.2em;
+  left: 0;
+  background: darkorange;
+  border-radius: 0 0 1em 1em;
+  border: .1em solid #444;
+  border-top-width: 0;
+}
+
+.mainframe:after {
+  top: 0;
+  right: 48.5%;
+  bottom: -.2em;
+  left: 48.5%;
+  border-radius: 0;
+  border-bottom-color: darkorange;
+}
+
+.mainframe .hand {
+  width: 38.5%;
+  height: .5em;
+  position: absolute;
+  top: 55%;
+  right: 30%;
+  margin: auto;
+  border-width: 0 2em;
+  border-style: solid;
+  border-color: #444;
+  border-radius: 0 0 1em 1em;
+}
+.mainframe .mirror {
+  width: .5em;
+  height: .5em;
+  background: silver;
+  border-radius: .3em;
+  position: absolute;
+  top: 40%;
+  right: -.2em;
+}
+.mainframe .mirror:after {
+  content: "";
+  width: 1.8em;
+  height: 1.1em;
+  position: absolute;
+  right: .3em;
+  bottom: .2em;
+  background: silver;
+  border-radius: .5em .5em .2em .5em ;
+}
+/* Wheels cover */
+
+.wheelCover {
+  width: 6em;
+  height: 3em;
+  position: absolute;
+  border-radius: 3em 3em 0 0;
+  overflow: hidden;
+  bottom: -1em;
+  box-shadow: 0 -.5em 0 silver;
+}
+
+.lc {
+  /* Left cover */
+  left: 1em;
+}
+
+.rc {
+  right: 1em;
+}
+
+.wheelCover:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2em;
+  background: #333;
+}
+
+
+/* Wheels */
+
+.wh {
+  width: 6em;
+  height: 6em;
+  position: absolute;
+  border-radius: 3em 3em 0 0;
+  overflow: hidden;
+  bottom: -4em;
+  transform: translate3d(0,0,0);
+  transform-style: flat;
+  /* Fix for webkit based browsers https://goo.gl/VuBe5k */
+}
+
+.lw {
+  left: 1em;
+}
+
+.rw {
+  right: 1em;
+}
+
+.wheel {
+  transform: translateY(-.8em);
+}
+
+.wheel,
+.wheel:before,
+.wheel:after {
+  width: 85%;
+  height: 85%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  border-radius: 50%;
+  background: #111;
+}
+
+.wheel:before {
+  content: "";
+  width: 30%;
+  height: 30%;
+  background: #ccc;
+}
+
+.wheel:after {
+  content: "";
+  color: white;
+  text-align: center;
+  line-height: 1.5em;
+  width: 15%;
+  height: 15%;
+  background: #555;
+}
+
+.st,
+.st:after,
+.st:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 0;
+  height: 70%;
+  border-right: 1px solid #333;
+  border-left: 1px solid #555;
+  z-index: -1;
+}
+
+.st:before {
+  height: 90%;
+  transform: rotate(-120deg);
+}
+
+.st:after {
+  height: 90%;
+  transform: rotate(120deg);
+}
+
+.lw .st {
+  transform: rotate(-50deg);
+}
+
+
+/* Iron line */
+
+.line {
+  width: 17em;
+  height: .6em;
+  position: absolute;
+  top: 5.9em;
+  right: 0;
+  left: 0;
+  margin: auto;
+  background: silver;
+  border-radius: 0 0 .5em .5em;
+  z-index: 2;
+}
+
+.line:after,
+.line:before {
+  content: "";
+  width: 2em;
+  height: 100%;
+  position: absolute;
+  background: silver;
+  left: -7.2em;
+  border-radius: 1em 0 1em 1em;
+}
+
+.line:before {
+  left: auto;
+  right: -7.2em;
+  border-radius: 0 1em 1em 1em;
+}
+
+
+/* Front and rear lights */
+
+.frontLight {
+  width: 1.5em;
+  height: 2.5em;
+  position: absolute;
+  right: 0;
+  background: yellow;
+  border-radius: 0 1em 0 1em;;
+  border-bottom: 1px solid #444;
+  border-left: 1px solid #444;
+  overflow: hidden;
+  transform: rotate(0);
+}
+
+.rearLight {
+  width: 2em;
+  height: 2em;
+  position: absolute;
+  background: maroon;
+  border-radius: 1.8em 0;
+  border: solid #444;
+  border-width: 0 1px 1px 0;
+}
+
+
+/* Trunk and engine door */
+
+.engine {
+  width: 5.7em;
+  height: .5em;
+  border: solid #444;
+  border-width: 0 0 1px 1px;
+  position: absolute;
+  right: 1.5em;
+  border-bottom-left-radius: 1em;
+}
+
+.petrol {
+  width: 2em;
+  height: 2em;
+  border: 1px solid #444;
+  position: absolute;
+  top: 1em;
+  left: 2.5em;
+  border-radius: .5em;
+}
+
+.petrol:after {
+  content: "";
+  width: .5em;
+  height: .5em;
+  background: #444;
+  position: absolute;
+  left: .5em;
+  bottom: .5em;
+  border-radius: 50%;
+}
+
+
+/*  Road  */
+
+.path {
+  width: 100%;
+  height: .8em;
+  background: #ccc;
+  background: linear-gradient(90deg, rgba(0, 2, 34, 1) 0%, rgba(0, 2, 34, 1) 50%, rgba(247, 240, 29, 1) 51%, rgba(247, 240, 29, 1) 100%);
+  background-size: 8em;
+  background-repeat: repeate-x;
+  background-position: 99%;
+  border-bottom: .4em solid #333;
+  position: absolute;
+  top: 28em;
+}
+
+.lp:before, /* the lower gray pavement */
+.up:before {
+  content: "";
+  width: 100%;
+  height: 50em;
+  background: #ccc;
+  position: absolute;
+  top: 1.1em;
+  z-index: -1;
+}
+
+.up {
+  /* Upper Path */
+  top: 15em;
+  height: 2em;
+  border-bottom: 0;
+  border-top: .4em solid #333;
+  background-position: 98%;
+}
+
+.up:before {
+  /* Will be the road */
+  top: 2em;
+  height: 15em;
+  background: #222;
+  background: radial-gradient(ellipse at center, rgba(76, 76, 76, 1) 0%, rgba(89, 89, 89, 1) 12%, rgba(102, 102, 102, 1) 22%, rgba(71, 71, 71, 1) 32%, rgba(60, 60, 60, 1) 38%, rgba(34, 34, 34, 1) 49%, rgba(51, 51, 51, 1) 60%, rgba(43, 43, 43, 1) 76%, rgba(60, 60, 60, 1) 91%, rgba(53, 53, 53, 1) 100%);
+  background-size: 3px 3px;
+}
+
+.up:after {
+  /* Will be the white small lines */
+  content: "";
+  width: 83%;
+  height: .8em;
+  position: absolute;
+  top: 6em;
+  left: 0;
+  transform: skewX(10deg);
+  background: #fefefe;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 79%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0) 100%);
+  background-size: 5em;
+  background-position: 101%;
+}
+
+.lp:after {
+  /*  Will be the white long line  */
+  content: "";
+  width: .8em;
+  height: 12em;
+  position: absolute;
+  top: -11em;
+  right: 13%;
+  background: #fefefe;
+  z-index: -1;
+  transform: skewX(10deg);
+}
+
+
+/* Traffic Sign */
+
+.traffic-sign {
+  width: .9em;
+  height: 23em;
+  position: absolute;
+  top: 9em;
+  right: 10%;
+  background: #777;
+  border-right: .2em solid #555;
+  border-radius: 1em 1em 0 0;
+}
+
+.traffic-sign:before {
+  content: "";
+  width: 4em;
+  height: 4em;
+  position: absolute;
+  bottom: -1.8em;
+  left: -1.4em;
+  z-index: -1;
+  background: #aaa;
+  border-radius: 1em;
+  box-shadow: 0 12px 0 #888;
+}
+
+.sign {
+  width: .8em;
+  height: 6.4em;
+  position: absolute;
+  top: 2.5em;
+  left: -.3em;
+  border: .4em solid #555;
+  border-right-width: .9em;
+  border-left: 0;
+  border-radius: .5em;
+  background: #777;
+  z-index: 999;
+}
+
+.sign div {
+  width: .6em;
+  height: 1.5em;
+  position: absolute;
+  border-radius: 50%;
+  left: -.2em;
+}
+
+.sign div:after {
+  content: "";
+  position: absolute;
+  z-index: -12;
+  top: 0;
+  right: -.3em;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  background: #666;
+}
+.sign div:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1em;
+  height: .2em;
+  background: #666;
+  border-top-left-radius: 100%;
+}
+.red {
+  top: .5em;
+  background: red;
+}
+
+.yellow {
+  top: 2.5em;
+  background: orange;
+}
+
+.green {
+  top: 4.5em;
+  background: darkgreen;
+}
