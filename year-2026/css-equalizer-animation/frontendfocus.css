@@ -1,0 +1,71 @@
+x-equalizer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  inline-size: min(400px, calc(100vw - 2em));
+  block-size:  auto;
+  aspect-ratio: 4 / 3;
+  > * {
+    --size: calc(.1 + .9 * calc(.5 + .5 * sin(4 * var(--t) + 47 + var(--sibling-index) * 73)));
+    flex-grow: 1;
+    background-color: hsl(calc(200deg - 200deg * calc(var(--size))), 100%, 50%);
+    block-size: calc(var(--size) * 100% * 3 / 4);
+    margin: 2px;
+    --box-shadow-scale-px: clamp(.25px, 0.5vw, 1px);
+    box-shadow: 0px calc(8 * var(--box-shadow-scale-px)) calc(16 * var(--box-shadow-scale-px)) calc(4 * var(--box-shadow-scale-px)) hsl(calc(200deg - 200deg * calc(var(--size))), 100%, 50%, .5);
+  }
+}
+
+:nth-child( 1) { --sibling-index:  1 }
+:nth-child( 2) { --sibling-index:  2 }
+:nth-child( 3) { --sibling-index:  3 }
+:nth-child( 4) { --sibling-index:  4 }
+:nth-child( 5) { --sibling-index:  5 }
+:nth-child( 6) { --sibling-index:  6 }
+:nth-child( 7) { --sibling-index:  7 }
+:nth-child( 8) { --sibling-index:  8 }
+:nth-child( 9) { --sibling-index:  9 }
+:nth-child(10) { --sibling-index: 10 }
+:nth-child(11) { --sibling-index: 11 }
+:nth-child(12) { --sibling-index: 12 }
+:nth-child(13) { --sibling-index: 13 }
+:nth-child(14) { --sibling-index: 14 }
+:nth-child(15) { --sibling-index: 15 }
+:nth-child(16) { --sibling-index: 16 }
+:nth-child(17) { --sibling-index: 17 }
+:nth-child(18) { --sibling-index: 18 }
+:nth-child(19) { --sibling-index: 19 }
+:nth-child(20) { --sibling-index: 20 }
+
+* { --sibling-index: sibling-index(); }
+
+@layer base {
+  html {
+    color-scheme: light dark;
+    font-family: system-ui;
+    font-size: clamp(17px, 2vw, 19px);
+    body {
+      margin: 0;
+      min-block-size: 100vh;
+      display: grid;
+      place-content: center;
+    }
+  }
+}
+
+@layer base.timeline {
+  @property --t { 
+    syntax: "<number>";
+    initial-value: 0.0;
+    inherits: true;
+  }
+  @keyframes root-sequence { 
+    from { --t: 0.0 } 
+    to   { --t: 1000000.0 }
+  }
+  :root {
+    --t: 0.0;
+    animation: root-sequence 1000000s linear infinite;
+  }
+}
+
