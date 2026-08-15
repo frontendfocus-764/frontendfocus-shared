@@ -1,0 +1,256 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: #f7f4ec;
+  background: #050711;
+  font-family: "Helvetica Neue", "Avenir Next", Avenir, Helvetica, Arial, sans-serif;
+}
+
+.eclipse-hero {
+  --cycle: 24s;
+  position: relative;
+  min-height: 100svh;
+  isolation: isolate;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 40%, rgba(22, 28, 45, 0.18) 0%, rgba(4, 6, 15, 0.5) 52%, rgba(3, 5, 13, 0.94) 100%), radial-gradient(circle at 50% 40%, #273044 0%, #111728 34%, #080b16 67%, #050711 100%);
+}
+.eclipse-hero::before {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 40%, rgba(0, 0, 0, 0.74) 0%, rgba(2, 4, 11, 0.64) 25%, rgba(2, 4, 11, 0.28) 54%, transparent 78%);
+  opacity: 0;
+  animation: eclipse-darken var(--cycle) ease-in-out infinite;
+}
+
+.eclipse-hero__sky {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.eclipse-hero__stars {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 8% 17%, rgba(255, 255, 255, 0.9) 0 1px, transparent 1.5px), radial-gradient(circle at 17% 62%, rgba(209, 220, 244, 0.72) 0 1px, transparent 1.6px), radial-gradient(circle at 25% 9%, rgba(255, 255, 255, 0.75) 0 1px, transparent 1.6px), radial-gradient(circle at 36% 78%, rgba(255, 255, 255, 0.65) 0 1px, transparent 1.5px), radial-gradient(circle at 47% 27%, rgba(225, 231, 246, 0.84) 0 1.2px, transparent 1.7px), radial-gradient(circle at 58% 84%, rgba(255, 255, 255, 0.75) 0 1px, transparent 1.5px), radial-gradient(circle at 69% 12%, rgba(255, 255, 255, 0.8) 0 1px, transparent 1.6px), radial-gradient(circle at 78% 72%, rgba(217, 226, 247, 0.85) 0 1.2px, transparent 1.8px), radial-gradient(circle at 89% 23%, rgba(255, 255, 255, 0.75) 0 1px, transparent 1.5px), radial-gradient(circle at 94% 89%, rgba(255, 255, 255, 0.65) 0 1px, transparent 1.5px);
+  opacity: 0.04;
+  animation: eclipse-stars var(--cycle) ease-in-out infinite;
+}
+
+.eclipse-hero__stars--near {
+  transform: scale(1.02);
+  filter: drop-shadow(0 0 2px rgba(219, 228, 255, 0.65));
+  background-image: radial-gradient(circle at 12% 38%, rgba(255, 255, 255, 0.9) 0 1.4px, transparent 2px), radial-gradient(circle at 31% 91%, rgba(255, 255, 255, 0.8) 0 1.2px, transparent 1.8px), radial-gradient(circle at 42% 13%, rgba(226, 232, 250, 0.9) 0 1.3px, transparent 1.9px), radial-gradient(circle at 65% 66%, rgba(255, 255, 255, 0.86) 0 1.4px, transparent 2px), radial-gradient(circle at 83% 42%, rgba(224, 232, 252, 0.86) 0 1.2px, transparent 1.8px), radial-gradient(circle at 91% 8%, rgba(255, 255, 255, 0.9) 0 1.4px, transparent 2px);
+  animation-name: eclipse-stars-near;
+}
+
+.eclipse-hero__system {
+  position: absolute;
+  z-index: 2;
+  top: 12%;
+  left: 50%;
+  width: clamp(15.5rem, 34vw, 34rem);
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+}
+
+.eclipse-hero__sun,
+.eclipse-hero__moon,
+.eclipse-hero__corona {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.eclipse-hero__sun {
+  inset: 12%;
+  background: radial-gradient(circle at 35% 32%, rgba(255, 246, 173, 0.76) 0%, transparent 18%), radial-gradient(circle at 56% 54%, #ffd473 0%, #f6a839 58%, #d75d17 88%, #a82f0d 100%);
+  box-shadow: 0 0 1.4rem rgba(255, 181, 60, 0.8), 0 0 4.5rem rgba(255, 135, 28, 0.48), 0 0 10rem rgba(255, 114, 19, 0.22);
+}
+.eclipse-hero__sun::after {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  content: "";
+  background: radial-gradient(circle at 67% 29%, rgba(180, 70, 10, 0.26) 0 1.6%, transparent 2.6%), radial-gradient(circle at 29% 61%, rgba(255, 235, 139, 0.3) 0 2%, transparent 3%), radial-gradient(circle at 63% 72%, rgba(186, 74, 11, 0.18) 0 2.3%, transparent 3.2%);
+  mix-blend-mode: soft-light;
+  animation: sun-breathe 6s ease-in-out infinite;
+}
+
+.eclipse-hero__moon-track {
+  position: absolute;
+  z-index: 4;
+  inset: 12%;
+  transform: translate3d(calc(-50vw - 70%), -16%, 0);
+  animation: moon-transit var(--cycle) cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  will-change: transform;
+}
+
+.eclipse-hero__moon {
+  inset: 0;
+  overflow: hidden;
+  background: radial-gradient(circle at 31% 28%, rgba(119, 130, 151, 0.09) 0 4%, transparent 4.8%), radial-gradient(circle at 66% 66%, rgba(0, 0, 0, 0.32) 0 6%, transparent 7%), radial-gradient(circle at 68% 34%, #161b26 0%, #0a0d14 57%, #030408 100%);
+  box-shadow: inset -0.65rem -0.45rem 1.1rem rgba(0, 0, 0, 0.78), inset 0.35rem 0.15rem 0.55rem rgba(118, 129, 151, 0.09), -0.13rem 0 0.3rem rgba(255, 220, 139, 0.12);
+}
+
+.eclipse-hero__corona {
+  inset: -9%;
+  opacity: 0;
+  background: repeating-conic-gradient(from 4deg, rgba(255, 244, 209, 0.72) 0deg, transparent 3deg, transparent 13deg), radial-gradient(circle, transparent 58%, rgba(255, 247, 217, 0.95) 64%, rgba(255, 224, 151, 0.38) 73%, transparent 82%);
+  filter: blur(2px) drop-shadow(0 0 1.3rem rgba(255, 218, 143, 0.85));
+  animation: corona-reveal var(--cycle) ease-in-out infinite;
+  will-change: opacity, transform;
+}
+
+@media only screen and (min-width: 768px) {
+  .eclipse-hero {
+    /* min-height: 50rem; */
+    background: radial-gradient(circle at 50% 40%, rgba(22, 28, 45, 0.18) 0%, rgba(4, 6, 15, 0.5) 52%, rgba(3, 5, 13, 0.94) 100%), radial-gradient(circle at 50% 40%, #273044 0%, #111728 34%, #080b16 67%, #050711 100%);
+  }
+}
+
+@keyframes moon-transit {
+  0%, 8% {
+    transform: translate3d(calc(-50vw - 70%), -16%, 0);
+    animation-timing-function: cubic-bezier(0.16, 0.72, 0.34, 0.96);
+  }
+  49% {
+    transform: translate3d(0%, 0%, 0);
+  }
+  54% {
+    transform: translate3d(0%, 0%, 0);
+    animation-timing-function: cubic-bezier(0.5, 0, 0.82, 0.28);
+  }
+  92%, 100% {
+    transform: translate3d(calc(50vw + 70%), 16%, 0);
+  }
+}
+@keyframes corona-reveal {
+  0%, 28%, 73%, 100% {
+    opacity: 0;
+    transform: scale(0.94) rotate(0deg);
+  }
+  38% {
+    opacity: 0.1;
+    transform: scale(0.97) rotate(1deg);
+  }
+  46% {
+    opacity: 0.58;
+    transform: scale(1.04) rotate(2deg);
+  }
+  49%, 54% {
+    opacity: 1;
+    transform: scale(1.14) rotate(4deg);
+  }
+  58% {
+    opacity: 0.62;
+    transform: scale(1.07) rotate(3deg);
+  }
+  66% {
+    opacity: 0.14;
+    transform: scale(0.98) rotate(1deg);
+  }
+}
+@keyframes eclipse-darken {
+  0%, 28%, 73%, 100% {
+    opacity: 0;
+  }
+  38% {
+    opacity: 0.16;
+  }
+  46% {
+    opacity: 0.72;
+  }
+  49%, 54% {
+    opacity: 0.9;
+  }
+  58% {
+    opacity: 0.7;
+  }
+  66% {
+    opacity: 0.14;
+  }
+}
+@keyframes eclipse-stars {
+  0%, 28%, 73%, 100% {
+    opacity: 0.04;
+  }
+  38% {
+    opacity: 0.12;
+  }
+  46% {
+    opacity: 0.62;
+  }
+  49%, 54% {
+    opacity: 0.9;
+  }
+  58% {
+    opacity: 0.64;
+  }
+  66% {
+    opacity: 0.12;
+  }
+}
+@keyframes eclipse-stars-near {
+  0%, 32%, 70%, 100% {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+  44% {
+    opacity: 0.35;
+  }
+  49%, 54% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+  60% {
+    opacity: 0.32;
+  }
+}
+@keyframes sun-breathe {
+  0%, 100% {
+    opacity: 0.72;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .eclipse-hero::before {
+    opacity: 0.45;
+    animation: none;
+  }
+  .eclipse-hero__stars {
+    opacity: 0.42;
+    animation: none;
+  }
+  .eclipse-hero__stars--near {
+    opacity: 0.25;
+    transform: none;
+  }
+  .eclipse-hero__moon-track {
+    transform: translate3d(-22%, -2%, 0);
+    animation: none;
+  }
+  .eclipse-hero__corona {
+    opacity: 0.42;
+    transform: scale(1.02);
+    animation: none;
+  }
+  .eclipse-hero__sun::after {
+    animation: none;
+  }
+}
