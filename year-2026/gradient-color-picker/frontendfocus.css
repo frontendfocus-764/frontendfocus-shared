@@ -1,0 +1,82 @@
+@import url('https://fonts.bunny.net/css?family=barlow:400&display=swap');
+
+html {
+	font-family: 'barlow', sans-serif;
+}
+
+body {
+	height: 100vh;
+	font-size: 2rem;
+	font-weight: 400;
+    margin: 0;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.column {
+	align-self: center;
+	width: 95%;
+	text-align: center;
+}
+
+#colorscontent {
+	text-align: center;
+  margin: 2rem auto 0;
+}
+
+.container .IroColorPicker {
+	display: inline-block !important;
+}
+
+.IroColorPicker svg.IroHandle circle:first-child {
+  stroke: #aaa;
+}
+
+.IroColorPicker svg.IroHandle--isActive circle:first-child {
+  stroke: #000;
+}
+
+#reverser {
+	margin-top: 1rem;
+}
+
+#transition {
+	margin-top: 2rem;
+}
+
+.btn {
+	color: #fff;
+	font-size: 1.25rem;
+	padding: .5rem 1.5rem;
+	background-color: rgba(96, 67, 149, 1);
+	border: 2px solid rgba(96, 67, 149, 1);
+	text-decoration: none;
+	-o-transition: all .3s;
+  -ms-transition: all .3s;
+  -moz-transition: all .3s;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.btn:hover {
+	background-color: rgba(96, 67, 149, 0);
+	border: 2px solid rgba(255, 255, 255, 1);
+}
+
+.btn .fa-rotate {
+	transition: transform 0.5s ease 0s;
+}
+
+.btn:hover .fa-rotate {
+	transform: rotate(180deg);
+}
+
+.btn i {
+	font-size: 1rem;
+	margin-left: .75rem;
+}

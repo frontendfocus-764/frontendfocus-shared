@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Gradient Color Picker</title>
+</head>
+<body>
+    <div class="container">
+	<div class="colorpicker column">
+		<div id="picker"></div>
+		<div id="reverser"><a href="#" id="reverse-colours" class="btn">reverse colours <i class="fa-solid fa-rotate"></i></a></div>
+		<div id="transition">
+			<input id="gradient-stop" name="gradient-stop" type="range" value="100" step="2">
+		</div>
+		<div id="colorscontent" style="color:#2f3640;">
+			linear-gradient(90deg, rgba(255,195,0,1) 0%, rgba(107,0,205,1) 100%)
+		</div>
+	</div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5.5.2/dist/iro.min.js"></script>
+<script src="frontendfocus.js"></script>
+</body>
+</html>
