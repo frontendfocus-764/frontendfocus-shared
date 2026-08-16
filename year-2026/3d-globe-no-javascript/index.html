@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <title>CSS 3D Rotating Globe Animation</title>
+</head>
+<body>
+   <div class="globe">
+	<div class="ring" style="--lat: 75deg; --lat-idx: 0;">
+		<div class="face" style="--lon: 0deg; --lon-idx: 0;"></div>
+		<div class="face" style="--lon: 30deg; --lon-idx: 1;"></div>
+		<div class="face" style="--lon: 60deg; --lon-idx: 2;"></div>
+		<div class="face" style="--lon: 90deg; --lon-idx: 3;"></div>
+		<div class="face" style="--lon: 120deg; --lon-idx: 4;"></div>
+		<div class="face" style="--lon: 150deg; --lon-idx: 5;"></div>
+		<div class="face" style="--lon: 180deg; --lon-idx: 6;"></div>
+		<div class="face" style="--lon: 210deg; --lon-idx: 7;"></div>
+		<div class="face" style="--lon: 240deg; --lon-idx: 8;"></div>
+		<div class="face" style="--lon: 270deg; --lon-idx: 9;"></div>
+		<div class="face" style="--lon: 300deg; --lon-idx: 10;"></div>
+		<div class="face" style="--lon: 330deg; --lon-idx: 11;"></div>
+	</div>
+
+	<div class="ring" style="--lat: 45deg; --lat-idx: 1;">
+		<div class="face" style="--lon: 0deg; --lon-idx: 0;"></div>
+		<div class="face" style="--lon: 30deg; --lon-idx: 1;"></div>
+		<div class="face" style="--lon: 60deg; --lon-idx: 2;"></div>
+		<div class="face" style="--lon: 90deg; --lon-idx: 3;"></div>
+		<div class="face" style="--lon: 120deg; --lon-idx: 4;"></div>
+		<div class="face" style="--lon: 150deg; --lon-idx: 5;"></div>
+		<div class="face" style="--lon: 180deg; --lon-idx: 6;"></div>
+		<div class="face" style="--lon: 210deg; --lon-idx: 7;"></div>
+		<div class="face" style="--lon: 240deg; --lon-idx: 8;"></div>
+		<div class="face" style="--lon: 270deg; --lon-idx: 9;"></div>
+		<div class="face" style="--lon: 300deg; --lon-idx: 10;"></div>
+		<div class="face" style="--lon: 330deg; --lon-idx: 11;"></div>
+	</div>
+
+	<div class="ring" style="--lat: 15deg; --lat-idx: 2;">
+		<div class="face" style="--lon: 0deg; --lon-idx: 0;"></div>
+		<div class="face" style="--lon: 30deg; --lon-idx: 1;"></div>
+		<div class="face" style="--lon: 60deg; --lon-idx: 2;"></div>
+		<div class="face" style="--lon: 90deg; --lon-idx: 3;"></div>
+		<div class="face" style="--lon: 120deg; --lon-idx: 4;"></div>
+		<div class="face" style="--lon: 150deg; --lon-idx: 5;"></div>
+		<div class="face" style="--lon: 180deg; --lon-idx: 6;"></div>
+		<div class="face" style="--lon: 210deg; --lon-idx: 7;"></div>
+		<div class="face" style="--lon: 240deg; --lon-idx: 8;"></div>
+		<div class="face" style="--lon: 270deg; --lon-idx: 9;"></div>
+		<div class="face" style="--lon: 300deg; --lon-idx: 10;"></div>
+		<div class="face" style="--lon: 330deg; --lon-idx: 11;"></div>
+	</div>
+
+	<div class="ring" style="--lat: -15deg; --lat-idx: 3;">
+		<div class="face" style="--lon: 0deg; --lon-idx: 0;"></div>
+		<div class="face" style="--lon: 30deg; --lon-idx: 1;"></div>
+		<div class="face" style="--lon: 60deg; --lon-idx: 2;"></div>
+		<div class="face" style="--lon: 90deg; --lon-idx: 3;"></div>
+		<div class="face" style="--lon: 120deg; --lon-idx: 4;"></div>
+		<div class="face" style="--lon: 150deg; --lon-idx: 5;"></div>
+		<div class="face" style="--lon: 180deg; --lon-idx: 6;"></div>
+		<div class="face" style="--lon: 210deg; --lon-idx: 7;"></div>
+		<div class="face" style="--lon: 240deg; --lon-idx: 8;"></div>
+		<div class="face" style="--lon: 270deg; --lon-idx: 9;"></div>
+		<div class="face" style="--lon: 300deg; --lon-idx: 10;"></div>
+		<div class="face" style="--lon: 330deg; --lon-idx: 11;"></div>
+	</div>
+
+	<div class="ring" style="--lat: -45deg; --lat-idx: 4;">
+		<div class="face" style="--lon: 0deg; --lon-idx: 0;"></div>
+		<div class="face" style="--lon: 30deg; --lon-idx: 1;"></div>
+		<div class="face" style="--lon: 60deg; --lon-idx: 2;"></div>
+		<div class="face" style="--lon: 90deg; --lon-idx: 3;"></div>
+		<div class="face" style="--lon: 120deg; --lon-idx: 4;"></div>
+		<div class="face" style="--lon: 150deg; --lon-idx: 5;"></div>
+		<div class="face" style="--lon: 180deg; --lon-idx: 6;"></div>
+		<div class="face" style="--lon: 210deg; --lon-idx: 7;"></div>
+		<div class="face" style="--lon: 240deg; --lon-idx: 8;"></div>
+		<div class="face" style="--lon: 270deg; --lon-idx: 9;"></div>
+		<div class="face" style="--lon: 300deg; --lon-idx: 10;"></div>
+		<div class="face" style="--lon: 330deg; --lon-idx: 11;"></div>
+	</div>
+
+	<div class="ring" style="--lat: -75deg; --lat-idx: 5;">
+		<div class="face" style="--lon: 0deg; --lon-idx: 0;"></div>
+		<div class="face" style="--lon: 30deg; --lon-idx: 1;"></div>
+		<div class="face" style="--lon: 60deg; --lon-idx: 2;"></div>
+		<div class="face" style="--lon: 90deg; --lon-idx: 3;"></div>
+		<div class="face" style="--lon: 120deg; --lon-idx: 4;"></div>
+		<div class="face" style="--lon: 150deg; --lon-idx: 5;"></div>
+		<div class="face" style="--lon: 180deg; --lon-idx: 6;"></div>
+		<div class="face" style="--lon: 210deg; --lon-idx: 7;"></div>
+		<div class="face" style="--lon: 240deg; --lon-idx: 8;"></div>
+		<div class="face" style="--lon: 270deg; --lon-idx: 9;"></div>
+		<div class="face" style="--lon: 300deg; --lon-idx: 10;"></div>
+		<div class="face" style="--lon: 330deg; --lon-idx: 11;"></div>
+	</div>
+</div>
+<div class="atmosphere"></div>
+</body>
+</html>

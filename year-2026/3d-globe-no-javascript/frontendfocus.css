@@ -1,0 +1,57 @@
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url("./img/ff-bg.jpg");
+	background-size: cover;
+	overflow: hidden;
+}
+
+.globe {
+	position: relative;
+	width: 0;
+	height: 0;
+	transform-style: preserve-3d;
+	transform: rotateX(-25deg);
+	animation: spin 20s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotateX(-25deg) rotateY(0deg);
+	}
+	100% {
+		transform: rotateX(-25deg) rotateY(360deg);
+	}
+}
+
+.ring {
+	transform-style: preserve-3d;
+}
+
+.face {
+	position: absolute;
+	width: 82px;
+	height: 82px;
+	top: -41px;
+	left: -41px;
+
+	background-image: url("./img/globe.jpg");
+	background-size: 984px 492px;
+	background-position: calc(var(--lon-idx) * -82px) calc(var(--lat-idx) * -82px);
+	backface-visibility: hidden;
+
+	transform: rotateY(var(--lon)) rotateX(var(--lat)) translateZ(150px);
+}
+
+.atmosphere {
+	position: absolute;
+	width: 325px;
+	height: 325px;
+	border-radius: 50%;
+	box-shadow: inset -30px -30px 50px rgba(0, 0, 0, 0.8),
+		inset 10px 10px 30px rgba(255, 255, 255, 0.4),
+		0 0 15px rgba(100, 150, 255, 0.5);
+}
