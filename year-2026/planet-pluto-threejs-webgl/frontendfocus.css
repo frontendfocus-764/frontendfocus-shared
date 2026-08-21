@@ -1,0 +1,18 @@
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000000;
+            font-family: 'Orbitron', sans-serif;
+            cursor: grab;
+        }
+        body:active {
+            cursor: grabbing;
+        }
+        #container {
+            width: 100vw;
+            height: 100vh;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
