@@ -1,0 +1,198 @@
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --transDur: 0.4s;
+  --timing: ease-in-out;
+  font-size: calc(20px + (30 - 20) * (100vw - 320px) / (1280 - 320));
+}
+@supports (font-size: clamp(20px, 1em + 1vw, 30px)) {
+  :root {
+    font-size: clamp(20px, 1em + 1vw, 30px);
+  }
+}
+body,
+input {
+  font:
+    1em/1.5 "Varela Round",
+    sans-serif;
+}
+body,
+label {
+  display: flex;
+}
+body {
+  background: #5583f6;
+  color: #17181c;
+  height: 100vh;
+}
+form {
+  background: #b6cafb;
+  border-radius: 0.75em;
+  box-shadow:
+    0.1em 0.1em 0 #fff2 inset,
+    -0.1em -0.1em 0 #0002 inset,
+    0 0.5em 1.5em #0007;
+  margin: auto;
+  padding: 0.75em 1.5em;
+}
+input[type="radio"],
+label {
+  cursor: pointer;
+}
+input[type="radio"],
+input[type="radio"]:before,
+input[type="radio"]:after {
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+}
+input[type="radio"] {
+  box-shadow:
+    0.25em 0.25em 0.5em #0004,
+    0 -0.1em 0 0.1em #0004,
+    0 0.1em 0 0.1em #fff4,
+    0 0 1.5em #0004 inset;
+  margin-right: 0.75em;
+  transition: box-shadow var(--transDur) var(--timing);
+  -webkit-appearance: none;
+  appearance: none;
+}
+input[type="radio"]:before,
+input[type="radio"]:after {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+input[type="radio"]:before {
+  animation: flipFalseBefore var(--transDur) var(--timing);
+  background:
+    linear-gradient(#0000 25%, #0004 75%),
+    radial-gradient(50% 100% at 15% 50%, #0b46da 8%, #0b46da00 24%),
+    radial-gradient(50% 100% at 85% 50%, #0b46da 8%, #0b46da00 24%),
+    radial-gradient(100% 100% at center, #3368f500 41%, #3368f5 46%),
+    radial-gradient(100% 100% at center, #0d4df200 36%, #0d4df2 38%),
+    radial-gradient(100% 100% at 22% 38%, #fff4 6%, #fff0 12%),
+    radial-gradient(100% 100% at 35% 25%, #fff4, #fff0 13%),
+    radial-gradient(120% 100% at 50% 20%, #fff2, #fff0 13%),
+    radial-gradient(100% 100% at 40% 40%, #fff4 4%, #fff0 12%),
+    radial-gradient(100% 100% at 65% 20%, #fff4 4%, #fff0 12%),
+    radial-gradient(100% 100% at 75% 33%, #fff4 6%, #fff0 12%),
+    radial-gradient(
+      3em 3em at center,
+      #386df5 13%,
+      #255ff4 25% 49%,
+      #255ff400 50%
+    );
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 3em 3em;
+}
+input[type="radio"]:checked:before {
+  animation: flipTrueBefore var(--transDur) var(--timing);
+  border-radius: 50% 50% 50% 50% / 100% 100% 0% 0%;
+  height: 1.5em;
+}
+input[type="radio"]:after {
+  animation: flipFalseAfter var(--transDur) var(--timing);
+  background: #fff;
+  box-shadow:
+    0 0.05em 0 0.2em #fff1 inset,
+    0 -0.05em 0 0.2em #0003 inset,
+    0 0 0 0.75em #255ff4 inset,
+    0 0.1em 0 0.8em #0003 inset,
+    0 -0.1em 0 0.8em #fff3 inset,
+    0 0 0 0.9em #255ff4 inset,
+    0.2em 0.2em 0.2em 0.8em #0003 inset;
+  filter: brightness(0.1);
+  -webkit-filter: brightness(0.1);
+  transform: rotateX(-180deg);
+}
+input[type="radio"]:checked {
+  box-shadow:
+    0.25em 0.25em 1em #0000,
+    0 -0.1em 0 0.1em #0004,
+    0 0.1em 0 0.1em #fff7,
+    0 0 1.5em #0004 inset;
+}
+input[type="radio"]:checked:after {
+  animation: flipTrueAfter var(--transDur) var(--timing);
+  filter: brightness(1);
+  -webkit-filter: brightness(1);
+  transform: rotateX(0);
+}
+input[type="radio"]:focus {
+  outline: transparent;
+}
+input[type="radio"]:focus + span {
+  color: #255ff4;
+}
+label {
+  display: flex;
+  align-items: center;
+  margin: 0.75em 0;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+}
+input[type="radio"].pristine:before,
+input[type="radio"].pristine:after {
+  animation-name: none;
+}
+/* Animations */
+@keyframes flipTrueBefore {
+  from {
+    border-radius: 50%;
+    height: 3em;
+  }
+  50%,
+  to {
+    border-radius: 50% 50% 50% 50% / 100% 100% 0% 0%;
+    height: 1.5em;
+  }
+}
+@keyframes flipFalseBefore {
+  from,
+  50% {
+    background-position: 0 100%;
+    border-radius: 50% 50% 50% 50% / 0% 0% 100% 100%;
+    height: 1.5em;
+    transform: translateY(1.5em);
+  }
+  to {
+    background-position: 0 100%;
+    border-radius: 50%;
+    height: 3em;
+    transform: translateY(0);
+  }
+}
+@keyframes flipTrueAfter {
+  from {
+    filter: brightness(0.1);
+    -webkit-filter: brightness(0.1);
+    transform: rotateX(-180deg);
+  }
+  to {
+    filter: brightness(1);
+    -webkit-filter: brightness(1);
+    transform: rotateX(0);
+  }
+}
+@keyframes flipFalseAfter {
+  from {
+    filter: brightness(1);
+    -webkit-filter: brightness(1);
+    transform: rotateX(0);
+  }
+  to {
+    filter: brightness(0.1);
+    -webkit-filter: brightness(0.1);
+    transform: rotateX(180deg);
+  }
+}
