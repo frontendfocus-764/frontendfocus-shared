@@ -1,0 +1,16 @@
+body {
+  background-color: #021721;
+  font-family: Tahoma, Verdana;
+  margin: 0;
+}
+
+.counterText {
+  text-shadow: -1px 0px 15px #fff;
+}
+
+#chart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
