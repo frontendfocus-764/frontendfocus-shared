@@ -1,0 +1,115 @@
+html,
+body{
+  height:100%;
+  background:#24a1e0;
+  margin: 0;
+}
+
+.process{
+  height: 100%;
+}
+
+.container{
+  padding: 20px 0;
+  position:relative;
+}
+
+.process .animation{
+  height:140px;
+}
+
+.animation,
+.animation-holder{
+  position:relative;
+}
+.animation-holder{
+  overflow: hidden;
+  height: 321px;
+  padding: 20px 0px;
+}
+
+.animation{
+  width: auto;
+  white-space: nowrap;
+  animation: moving 3s linear infinite;
+  z-index: 1;
+  position: absolute;
+  top: 50px;
+}
+
+.box-wrapper{
+    transition: 1s;
+    display:inline-block;
+    top: 50%;
+    width:120px;
+    height:120px;
+    margin-right:120px;
+}
+
+.box{
+  width:120px;
+  height:120px;
+}
+
+@keyframes moving{
+  0%{
+     transform: translateX(-240px);
+  }
+  100%{
+     transform: translateX(0);
+  }
+}
+
+.tape{
+  background: #48b1e5;
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  z-index: 0;
+  border-bottom: 10px solid #1e96d2;
+}
+
+.cell-phone{
+  position:absolute;
+  top: 0px;
+  right:100px;
+   z-index: 1;
+}
+.cell-phone .text{
+  animation: textvisibility 3s linear infinite;
+}
+
+.cell-phone .scan{
+  animation: scanvisibility 3s linear infinite;
+}
+
+.cell-phone .scan .redline{
+  animation: scanning 3s linear infinite;
+}
+
+@keyframes scanning{
+  0%{transform: translateY(0px)}
+  17%{transform: translateY(94px);}
+  32%{transform: translateY(0px);}
+  50%{transform: translateY(94px);}
+  51% {
+  visibility: hidden;
+  transform: translateY(94px);
+}
+  100%{visibility:hidden;transform: translateY(0px)}
+}
+
+@keyframes scanvisibility{
+  0%{visibility:visible;}
+  51%{visibility:hidden;}
+  100%{visibility:hidden;}
+}
+
+@keyframes textvisibility{
+  0%{visibility:hidden;}
+  51%{visibility:hidden;}
+  52%{visibility:visible;}
+  100%{visibility:visible;}
+}
