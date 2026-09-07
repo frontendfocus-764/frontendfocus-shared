@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <title>Moonlit Koi Pond Animation | Koi Fish Swimming with HTML & CSS</title>
+</head>
+<body>
+     <input class="pause-toggle" type="checkbox" id="pause" aria-label="Pause pond animation">
+  <label class="pause-control" for="pause" title="Pause or resume the pond"><span class="pause-icon" aria-hidden="true"></span><span class="pause-copy">Pause</span><span class="play-copy">Resume</span></label>
+  <main class="pond" aria-label="Moonlit koi pond: ivory, orange, and golden koi drift through dark water beneath lily pads, soft silver ripples, and tiny fireflies.">
+    <div class="art" aria-hidden="true">
+      <div class="water-light"></div>
+      <div class="water-grain"></div>
+      <div class="moon"><span></span></div>
+      <div class="moon-trail"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="ripple ripple--one"><i></i><i></i><i></i></div>
+      <div class="ripple ripple--two"><i></i><i></i><i></i></div>
+      <div class="ripple ripple--three"><i></i><i></i><i></i></div>
+      <div class="swimmer swimmer--1"><div class="koi koi--ivory"><span class="tail"></span><span class="fin fin--near"></span><span class="fin fin--far"></span><span class="body"></span><span class="spine"></span><span class="eye eye--near"></span><span class="eye eye--far"></span></div></div>
+      <div class="swimmer swimmer--2"><div class="koi koi--coral"><span class="tail"></span><span class="fin fin--near"></span><span class="fin fin--far"></span><span class="body"></span><span class="spine"></span><span class="eye eye--near"></span><span class="eye eye--far"></span></div></div>
+      <div class="swimmer swimmer--3"><div class="koi koi--gold"><span class="tail"></span><span class="fin fin--near"></span><span class="fin fin--far"></span><span class="body"></span><span class="spine"></span><span class="eye eye--near"></span><span class="eye eye--far"></span></div></div>
+      <div class="swimmer swimmer--4"><div class="koi koi--ivory"><span class="tail"></span><span class="fin fin--near"></span><span class="fin fin--far"></span><span class="body"></span><span class="spine"></span><span class="eye eye--near"></span><span class="eye eye--far"></span></div></div>
+      <div class="swimmer swimmer--5"><div class="koi koi--coral"><span class="tail"></span><span class="fin fin--near"></span><span class="fin fin--far"></span><span class="body"></span><span class="spine"></span><span class="eye eye--near"></span><span class="eye eye--far"></span></div></div>
+      <div class="swimmer swimmer--6"><div class="koi koi--gold"><span class="tail"></span><span class="fin fin--near"></span><span class="fin fin--far"></span><span class="body"></span><span class="spine"></span><span class="eye eye--near"></span><span class="eye eye--far"></span></div></div>
+      <div class="pad" style="--x:9%;--y:18%;--size:1.2;--turn:25deg;--delay:-0s"><span></span></div>
+      <div class="pad" style="--x:20%;--y:11%;--size:0.8;--turn:-45deg;--delay:-2s"><span></span></div>
+      <div class="pad" style="--x:4%;--y:34%;--size:0.7;--turn:80deg;--delay:-4s"><span></span></div>
+      <div class="pad" style="--x:15%;--y:31%;--size:1;--turn:160deg;--delay:-6s"><span></span></div>
+      <div class="pad" style="--x:25%;--y:23%;--size:0.64;--turn:-20deg;--delay:-8s"><span></span></div>
+      <div class="pad" style="--x:85%;--y:77%;--size:1.22;--turn:-35deg;--delay:-10s"><span></span></div>
+      <div class="pad" style="--x:95%;--y:65%;--size:0.85;--turn:65deg;--delay:-12s"><span></span></div>
+      <div class="pad" style="--x:97%;--y:87%;--size:1.1;--turn:170deg;--delay:-14s"><span></span></div>
+      <div class="pad" style="--x:76%;--y:89%;--size:0.76;--turn:30deg;--delay:-16s"><span></span></div>
+      <div class="pad" style="--x:88%;--y:96%;--size:0.68;--turn:-90deg;--delay:-18s"><span></span></div>
+      <div class="pad" style="--x:2%;--y:91%;--size:0.9;--turn:-35deg;--delay:-20s"><span></span></div>
+      <div class="flower flower--one"><i style="--petal:0"></i><i style="--petal:1"></i><i style="--petal:2"></i><i style="--petal:3"></i><i style="--petal:4"></i><i style="--petal:5"></i><i style="--petal:6"></i><i style="--petal:7"></i><b></b></div>
+      <div class="flower flower--two"><i style="--petal:0"></i><i style="--petal:1"></i><i style="--petal:2"></i><i style="--petal:3"></i><i style="--petal:4"></i><i style="--petal:5"></i><i style="--petal:6"></i><i style="--petal:7"></i><b></b></div>
+      <i class="firefly" style="--x:10%;--y:14%;--delay:-0.00s;--duration:8s"></i>
+      <i class="firefly" style="--x:24%;--y:19%;--delay:-1.73s;--duration:9s"></i>
+      <i class="firefly" style="--x:7%;--y:47%;--delay:-3.46s;--duration:10s"></i>
+      <i class="firefly" style="--x:30%;--y:8%;--delay:-5.19s;--duration:11s"></i>
+      <i class="firefly" style="--x:38%;--y:75%;--delay:-6.92s;--duration:12s"></i>
+      <i class="firefly" style="--x:67%;--y:84%;--delay:-8.65s;--duration:8s"></i>
+      <i class="firefly" style="--x:90%;--y:57%;--delay:-10.38s;--duration:9s"></i>
+      <i class="firefly" style="--x:81%;--y:73%;--delay:-12.11s;--duration:10s"></i>
+      <i class="firefly" style="--x:91%;--y:89%;--delay:-13.84s;--duration:11s"></i>
+      <i class="firefly" style="--x:18%;--y:81%;--delay:-15.57s;--duration:12s"></i>
+      <i class="firefly" style="--x:76%;--y:13%;--delay:-17.30s;--duration:8s"></i>
+      <i class="firefly" style="--x:55%;--y:26%;--delay:-19.03s;--duration:9s"></i>
+      <i class="firefly" style="--x:35%;--y:44%;--delay:-20.76s;--duration:10s"></i>
+      <i class="firefly" style="--x:68%;--y:61%;--delay:-22.49s;--duration:11s"></i>
+      <i class="firefly" style="--x:4%;--y:73%;--delay:-24.22s;--duration:12s"></i>
+      <i class="firefly" style="--x:94%;--y:30%;--delay:-25.95s;--duration:8s"></i>
+      <i class="firefly" style="--x:47%;--y:92%;--delay:-27.68s;--duration:9s"></i>
+      <i class="firefly" style="--x:58%;--y:12%;--delay:-29.41s;--duration:10s"></i>
+      <div class="vignette"></div>
+    </div>
+  </main>
+</body>
+</html>
