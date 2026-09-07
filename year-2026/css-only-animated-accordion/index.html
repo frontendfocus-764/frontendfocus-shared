@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <title>Css-only Animated Accordion</title>
+</head>
+<body>
+    <main>
+	<section class="accordion" id="overview">
+		<h1 class="title"><a href="#overview">Overview</a></h1>
+		<div class="content">
+			<div class="wrapper">
+				<p>
+					This CodePen demonstrates how we can animate the opening and closing
+					states of an accordion with fancy reveal animation using only CSS. This
+					concept is suitable for creating <strong>FAQ sections</strong>,
+					<strong>Table of Contents</strong>, and more.
+				</p>
+			</div>
+		</div>
+	</section>
+
+<section class="accordion" id="how-does-it-work">
+	<h1 class="title"><a href="#how-does-it-work">How does it work?</a></h1>
+	<div class="content">
+		<div class="wrapper">
+			<p>
+				CSS Grid allows the accordion to smoothly expand by transitioning
+				<code>grid-template-rows</code> from <code>0fr</code> to <code>1fr</code>,
+				without relying on fixed <code>max-height</code> values.
+			</p>
+			<p>
+				The reveal effect uses <code>clip-path</code> and
+				<code>mix-blend-mode</code> with pseudo-elements, creating a smooth
+				circular animation when the accordion opens and closes.
+			</p>
+		</div>
+	</div>
+</section>
+
+<section class="accordion" id="inspiration">
+	<h1 class="title"><a href="#inspiration">Inspiration</a></h1>
+	<div class="content">
+		<div class="wrapper">
+			<p>
+				This CSS-only accordion was inspired by techniques for animating
+				accordion height from zero to auto, combined with a circular reveal
+				effect.
+			</p>
+		</div>
+	</div>
+</section>
+
+</main>
+</body>
+</html>
