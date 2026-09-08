@@ -1,0 +1,635 @@
+/* ============================================================
+   Sakura: a pure CSS blossom scene
+   Everything below is gradients, pseudo-elements and transforms.
+   ============================================================ */
+
+:root {
+  /* sky */
+  --sky-top:    #fdf8f4;
+  --sky-mid:    #f8e8ee;
+  --sky-low:    #ebe4f3;
+  --cream:      #fffaf6;
+
+  /* blossom tones, light to deep */
+  --a: #fffafc;   /* near white   */
+  --b: #ffe4ed;   /* pale blush   */
+  --c: #f7b8cd;   /* sakura pink  */
+  --d: #e08fae;   /* dusty rose   */
+  --e: #c4768f;   /* deep rose    */
+  --gold: #d8a25f;
+
+  /* bark */
+  --bark-hi: #8a5b5e;
+  --bark-mid:#5c3a40;
+  --bark-lo: #2f2027;
+
+  --lav: #ded6ee;
+  --peach: #ffeadd;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--sky-low);
+}
+
+/* ---------- the stage ---------------------------------------------------- */
+
+.scene {
+  /* One knob. --sp scales the entire drawing: the tree, the size of a blossom
+     mass, and every offset from the trunk head. Everything is expressed in
+     --u, a single design unit, so the scene keeps its proportions at any size
+     and simply crops. The media queries below only ever change --sp and where
+     the tree stands. */
+  --sp: 1;
+
+  /* The design unit. The skeleton is drawn in an SVG whose viewBox is 100
+     units wide, and .tree is laid out 100 units wide, so one unit on the
+     drawing is exactly one --u on the page. Every canopy offset below is a
+     count of those units, which is why the blossom masses stay welded to the
+     limbs no matter how the tree is scaled or moved. */
+  --u: calc(1vw * var(--sp));
+
+  /* Where the tree stands. --tree-y is how far the root flare sinks below the
+     bottom of the frame; the ground wash covers the cut. */
+  --tree-x: 0vw;
+  --tree-y: calc(-2 * var(--u));
+
+  /* The fork, where the trunk stops being a trunk. This is the origin every
+     limb, cloud and blossom is measured from. Its viewBox coordinates are
+     (16.3, 22) on a 42-unit-tall drawing, hence the 20 below. Declared on
+     .scene, not :root, so a media query overriding --sp or --tree-x
+     recomputes it. */
+  --head-x: calc(var(--tree-x) + 16.3 * var(--u));
+  --head-y: calc(20 * var(--u) + var(--tree-y));
+
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+  isolation: isolate;
+
+  background:
+    radial-gradient(circle at 74% 12%, rgba(255,255,255,.95), transparent 34%),
+    radial-gradient(circle at 20% 30%, rgba(255,214,229,.42), transparent 40%),
+    radial-gradient(circle at 92% 78%, rgba(226,216,242,.5),  transparent 45%),
+    linear-gradient(163deg, var(--sky-top) 0%, var(--sky-mid) 46%, var(--sky-low) 100%);
+}
+
+/* soft warm light source, upper right */
+.glow {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 55% 40% at 78% 8%,  rgba(255,247,238,.9), transparent 70%),
+    radial-gradient(ellipse 70% 50% at 38% 22%, rgba(255,226,238,.35), transparent 72%);
+}
+
+/* barely-there light through the branches */
+.rays {
+  position: absolute;
+  inset: -25% -30%;
+  z-index: 2;
+  opacity: .13;
+  filter: blur(24px);
+  background: repeating-linear-gradient(
+    104deg,
+    transparent 0 5.5%,
+    rgba(255,252,246,.85) 6% 7.4%,
+    transparent 8% 13%
+  );
+  -webkit-mask-image: radial-gradient(ellipse 40% 52% at 84% 4%, #000, transparent 72%);
+          mask-image: radial-gradient(ellipse 40% 52% at 84% 4%, #000, transparent 72%);
+}
+
+/* ---------- atmospheric bokeh -------------------------------------------- */
+
+.bokeh {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+
+.bokeh i {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--sz);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  opacity: var(--o);
+  filter: blur(var(--blur));
+  background: radial-gradient(circle at 38% 34%, var(--cream), var(--b) 55%, rgba(255,228,237,0) 78%);
+  animation: drift 34s ease-in-out infinite alternate;
+  animation-delay: calc(var(--sz) * -.06);
+}
+
+.bokeh i:nth-child(3n) {
+  background: radial-gradient(circle at 40% 36%, #fff, var(--lav) 58%, rgba(222,214,238,0) 80%);
+}
+
+.bokeh i:nth-child(4n) {
+  background: radial-gradient(circle at 42% 38%, #fff, var(--peach) 56%, rgba(255,234,221,0) 80%);
+}
+
+@keyframes drift {
+  from { translate: 0 0; }
+  to   { translate: 2.5vw -3vh; }
+}
+
+/* distant blossom haze, sits behind the tree */
+.haze {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  opacity: .55;
+  filter: blur(26px);
+  background:
+    radial-gradient(ellipse 30% 22% at 30% 26%, rgba(247,184,205,.55), transparent 70%),
+    radial-gradient(ellipse 34% 20% at 62% 16%, rgba(255,228,237,.6),  transparent 70%),
+    radial-gradient(ellipse 26% 18% at 86% 32%, rgba(224,143,174,.35), transparent 70%);
+}
+
+/* ---------- tree --------------------------------------------------------- */
+
+/* The skeleton is one inline SVG. Its viewBox is 100 x 42 units and the box is
+   laid out 100 units wide, so the drawing and the scene share a coordinate
+   system: 1 unit on a path is 1 --u on the page. Nothing here is scaled by a
+   transform, so the bark stays crisp at any size. */
+.tree {
+  position: absolute;
+  left: var(--tree-x);
+  bottom: var(--tree-y);
+  width: calc(100 * var(--u));
+  aspect-ratio: 100 / 42;
+  z-index: 5;
+}
+
+.skeleton {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Bark tones live here rather than in the markup, so the palette stays in one
+   file. */
+.skeleton .k0 { stop-color: #24181c; }
+.skeleton .k1 { stop-color: var(--bark-lo); }
+.skeleton .k2 { stop-color: var(--bark-mid); }
+.skeleton .k3 { stop-color: #1b1114; }
+
+/* the light down the trunk */
+.skeleton .lit   { stop-color: rgba(198,152,146,.9); }
+.skeleton .unlit { stop-color: rgba(198,152,146,0); }
+.skeleton .fork-tone { stop-color: #33232a; }
+
+/* One flat tone for every limb and for the fillet that closes the crotch, so
+   overlapping wood reads as a single mass. */
+.skeleton .limbs,
+.skeleton .crotch { fill: #33232a; }
+
+/* and the light that models it back into something round */
+.skeleton .lit-flank {
+  fill: var(--bark-mid);
+  opacity: .55;
+}
+
+/* ---------- blossom clouds ----------------------------------------------- */
+
+.canopy {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+}
+
+.cloud {
+  position: absolute;
+  left: calc(var(--head-x) + var(--dx) * var(--sp));
+  bottom: calc(var(--head-y) + var(--dy) * var(--sp));
+  width: calc(var(--w) * var(--sp));
+  aspect-ratio: var(--ar, 1.35);
+  translate: -50% 50%;
+  rotate: var(--r, 0deg);
+  opacity: var(--o, 1);
+  filter: blur(var(--soft, 3px));
+  animation: breathe var(--bd, 28s) ease-in-out infinite alternate;
+
+  /* the blobs below are wider than the box, so feather the edges out
+     instead of letting the element clip them into a rectangle */
+  -webkit-mask-image: radial-gradient(ellipse 50% 49% at 50% 50%, #000 52%, transparent 94%);
+          mask-image: radial-gradient(ellipse 50% 49% at 50% 50%, #000 52%, transparent 94%);
+
+  /* a unified base mass, mid-tone blobs over it, highlights last.
+     Soft falloff everywhere, so nothing reads as a hard circle. */
+  background:
+    radial-gradient(circle at 34% 29%, var(--a) 0%, transparent 25%),
+    radial-gradient(circle at 61% 23%, var(--a) 0%, transparent 21%),
+    radial-gradient(circle at 47% 57%, var(--a) 0%, transparent 20%),
+    radial-gradient(circle at 25% 41%, var(--c2) 0%, transparent 33%),
+    radial-gradient(circle at 71% 39%, var(--c2) 0%, transparent 33%),
+    radial-gradient(circle at 46% 21%, var(--c2) 0%, transparent 31%),
+    radial-gradient(circle at 36% 70%, var(--c3) 0%, transparent 29%),
+    radial-gradient(circle at 66% 71%, var(--c3) 0%, transparent 27%),
+    radial-gradient(circle at 84% 55%, var(--c2) 0%, transparent 23%),
+    radial-gradient(circle at 15% 57%, var(--c2) 0%, transparent 21%),
+    radial-gradient(ellipse 45% 43% at 50% 48%, var(--c1) 0%, transparent 76%);
+}
+
+/* near-white blossom flecks catching the light */
+.cloud::before {
+  content: "";
+  position: absolute;
+  inset: 4%;
+  filter: blur(.5px);
+  background:
+    radial-gradient(circle at 18% 32%, var(--a) 0 2.6%, transparent 3.2%),
+    radial-gradient(circle at 44% 27%, var(--a) 0 3%,   transparent 3.6%),
+    radial-gradient(circle at 66% 23%, var(--a) 0 2.6%, transparent 3.2%),
+    radial-gradient(circle at 26% 72%, var(--a) 0 2.2%, transparent 2.8%),
+    radial-gradient(circle at 83% 42%, var(--a) 0 2.2%, transparent 2.8%),
+    radial-gradient(circle at 61% 59%, var(--a) 0 2%,   transparent 2.6%),
+    radial-gradient(circle at 35% 48%, var(--a) 0 2.4%, transparent 3%),
+    radial-gradient(circle at 74% 68%, var(--a) 0 2%,   transparent 2.6%),
+    radial-gradient(circle at 52% 12%, var(--a) 0 2.2%, transparent 2.8%),
+    radial-gradient(circle at 12% 52%, var(--a) 0 2%,   transparent 2.6%);
+  -webkit-mask-image: radial-gradient(ellipse 48% 47% at 50% 48%, #000 45%, transparent 88%);
+          mask-image: radial-gradient(ellipse 48% 47% at 50% 48%, #000 45%, transparent 88%);
+}
+
+/* deeper flecks in the shaded parts, plus the mass shadow underneath */
+.cloud::after {
+  content: "";
+  position: absolute;
+  inset: 4%;
+  filter: blur(.9px);
+  background:
+    radial-gradient(circle at 31% 56%, var(--d) 0 2.2%, transparent 2.8%),
+    radial-gradient(circle at 57% 49%, var(--e) 0 1.8%, transparent 2.4%),
+    radial-gradient(circle at 72% 62%, var(--d) 0 2%,   transparent 2.6%),
+    radial-gradient(circle at 47% 74%, var(--d) 0 2%,   transparent 2.6%),
+    radial-gradient(circle at 22% 44%, var(--e) 0 1.6%, transparent 2.2%),
+    radial-gradient(circle at 64% 36%, var(--d) 0 1.8%, transparent 2.4%),
+    radial-gradient(circle at 39% 66%, var(--e) 0 1.6%, transparent 2.2%),
+    radial-gradient(circle at 86% 54%, var(--d) 0 1.6%, transparent 2.2%),
+    radial-gradient(ellipse 58% 38% at 44% 80%, rgba(178,106,131,.42), transparent 64%);
+  -webkit-mask-image: radial-gradient(ellipse 50% 48% at 50% 50%, #000 50%, transparent 92%);
+          mask-image: radial-gradient(ellipse 50% 48% at 50% 50%, #000 50%, transparent 92%);
+}
+
+@keyframes breathe {
+  from { rotate: var(--r, 0deg); }
+  to   { rotate: calc(var(--r, 0deg) + .8deg); }
+}
+
+/* the crown: a few big pale masses with sky left between them */
+.c1 { --dx: 5.2vw; --dy: 18.4vw; --w: 31vw; --ar: 1.4; --r: -9deg; --o: 1; --soft: 3px; --bd: 31s;
+      --c1: var(--b); --c2: var(--c); --c3: var(--d); }
+.c2 { --dx: 17.2vw; --dy: 29.0vw; --w: 27vw; --ar: 1.5; --r: 7deg; --o: .96; --soft: 4px; --bd: 27s;
+      --c1: var(--b); --c2: var(--c); --c3: var(--c); }
+.c3 { --dx: 35.2vw; --dy: 22.8vw; --w: 26vw; --ar: 1.35; --r: -5deg; --o: .93; --soft: 4px; --bd: 34s;
+      --c1: var(--b); --c2: var(--c); --c3: var(--d); }
+.c4 { --dx: 48.2vw; --dy: 27.8vw; --w: 19vw; --ar: 1.3; --r: 13deg; --o: .78; --soft: 6px; --bd: 29s;
+      --c1: var(--b); --c2: var(--c); --c3: var(--c); }
+.c5 { --dx: 13.2vw; --dy: 9.7vw; --w: 19vw; --ar: 1.2; --r: -16deg; --o: .93; --soft: 3px; --bd: 25s;
+      --c1: var(--b); --c2: var(--d); --c3: var(--e); }
+.c6 { --dx: 29.2vw; --dy: 9.0vw; --w: 17vw; --ar: 1.3; --r: 5deg; --o: .86; --soft: 4px; --bd: 36s;
+      --c1: var(--b); --c2: var(--c); --c3: var(--d); }
+.c7 { --dx: -4.9vw; --dy: 25.3vw; --w: 16vw; --ar: 1.15; --r: -20deg; --o: .66; --soft: 7px; --bd: 32s;
+      --c1: var(--b); --c2: var(--c); --c3: var(--c); }
+
+/* ---------- detailed blossoms -------------------------------------------- */
+
+.flowers {
+  position: absolute;
+  inset: 0;
+  z-index: 7;
+}
+
+/* five petals in a ring plus a small centre, all in one element */
+.blossom {
+  position: absolute;
+  left: calc(var(--head-x) + var(--dx) * var(--sp));
+  bottom: calc(var(--head-y) + var(--dy) * var(--sp));
+  width: clamp(7px, calc(1.35vw * var(--sp)), 28px);
+  aspect-ratio: 1;
+  translate: -50% 50%;
+  rotate: var(--r);
+  scale: var(--s);
+  opacity: var(--o);
+  filter: blur(var(--soft, 0));
+
+  background:
+    radial-gradient(circle at 50% 50%, var(--gold) 0 8%, transparent 9%),
+    radial-gradient(circle at 50% 23%, var(--tone) 0 26%, transparent 27%),
+    radial-gradient(circle at 76% 42%, var(--tone) 0 26%, transparent 27%),
+    radial-gradient(circle at 66% 72%, var(--tone) 0 26%, transparent 27%),
+    radial-gradient(circle at 34% 72%, var(--tone) 0 26%, transparent 27%),
+    radial-gradient(circle at 24% 42%, var(--tone) 0 26%, transparent 27%);
+}
+
+/* tiny buds near the tips */
+.flowers .blossom:nth-child(6n) {
+  background:
+    radial-gradient(circle at 50% 50%, var(--e) 0 24%, var(--d) 26%, transparent 46%);
+}
+
+/* ---------- falling petals ----------------------------------------------- */
+
+.petals {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  pointer-events: none;
+}
+
+.petal {
+  position: absolute;
+  top: -12vh;
+  left: var(--x);
+  width: clamp(11px, 1.8vmin, 22px);
+  aspect-ratio: 1.4;
+  opacity: var(--o);
+  animation: fall var(--d) linear var(--delay) infinite;
+}
+
+.petal::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 74% 26% 70% 30% / 60% 60% 40% 40%;
+  scale: var(--s);
+  background: linear-gradient(132deg, #fff 0%, var(--c) 46%, var(--e) 100%);
+  animation:
+    sway var(--sway) ease-in-out infinite alternate,
+    tumble var(--spin) linear infinite;
+}
+
+.petal:nth-child(3n)::before {
+  background: linear-gradient(132deg, #fff 0%, var(--b) 44%, var(--d) 100%);
+}
+
+.petal:nth-child(5n)::before {
+  background: linear-gradient(132deg, var(--b) 0%, var(--d) 50%, #a85c76 100%);
+}
+
+.petal:nth-child(4n) { filter: blur(.7px); }
+.petal:nth-child(7n) { filter: blur(1.4px); }
+
+@keyframes fall {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(var(--drift), 118vh, 0); }
+}
+
+@keyframes sway {
+  from { translate: -14px 0; }
+  to   { translate: 20px 0; }
+}
+
+@keyframes tumble {
+  from { rotate: var(--tilt); }
+  to   { rotate: calc(var(--tilt) + 540deg); }
+}
+
+/* ---------- foreground depth --------------------------------------------- */
+
+.foreground {
+  position: absolute;
+  inset: 0;
+  z-index: 9;
+  pointer-events: none;
+}
+
+.fg {
+  left: var(--x);
+  top: var(--y);
+  bottom: auto;
+  translate: -50% -50%;
+  width: clamp(60px, 10vmin, 150px);
+
+  --tone: var(--b);
+  --r: 0deg;
+  --s: 1;
+  --o: .4;
+  filter: blur(3px);
+}
+
+.f1 { --x: 4%;  --y: 12%; --r: 24deg;  --s: 1.15; --o: .38; --tone: var(--b); }
+.f2 { --x: 93%; --y: 62%; --r: -40deg; --s: 1.5;  --o: .34; --tone: var(--c); }
+.f3 { --x: 82%; --y: 4%;  --r: 62deg;  --s: .95;  --o: .32; --tone: var(--a); }
+.f4 { --x: 68%; --y: 92%; --r: -12deg; --s: 1.3;  --o: .24; --tone: var(--c); }
+
+/* ---------- ground & vignette -------------------------------------------- */
+
+.ground {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 16% 4% at 14% 99%, rgba(90,58,64,.3), transparent 72%),
+    radial-gradient(ellipse 42% 12% at 17% 99%, rgba(196,118,143,.26), transparent 70%),
+    radial-gradient(ellipse 70% 26% at 30% 104%, rgba(255,236,226,.85), transparent 72%),
+    radial-gradient(ellipse 120% 90% at 50% 50%, transparent 58%, rgba(176,150,168,.18) 100%);
+}
+
+/* ============================================================
+   Per-element scatter. Everything above stays generic;
+   the irregularity lives here.
+   ============================================================ */
+
+/* blossom scatter: on the rims of the masses, plus buds on the bare limbs.
+   Offsets are in design units (vw at --sp: 1) from the trunk head, the same
+   frame the limbs are drawn in. */
+.flowers .blossom:nth-child(1){--dx:1.6vw;--dy:28.6vw;--s:0.76;--r:169deg;--o:0.8;--tone:var(--b);--soft:0}
+.flowers .blossom:nth-child(2){--dx:0.0vw;--dy:27.2vw;--s:0.95;--r:66deg;--o:0.96;--tone:var(--c);--soft:0}
+.flowers .blossom:nth-child(3){--dx:13.9vw;--dy:28.1vw;--s:0.89;--r:-22deg;--o:0.9;--tone:var(--d);--soft:0}
+.flowers .blossom:nth-child(4){--dx:9.9vw;--dy:25.5vw;--s:1.26;--r:91deg;--o:0.75;--tone:var(--a);--soft:0}
+.flowers .blossom:nth-child(5){--dx:-3.6vw;--dy:14.5vw;--s:0.84;--r:-4deg;--o:0.72;--tone:var(--b);--soft:0}
+.flowers .blossom:nth-child(6){--dx:-5.7vw;--dy:12.5vw;--s:1.11;--r:-153deg;--o:0.91;--tone:var(--c);--soft:0}
+.flowers .blossom:nth-child(7){--dx:-3.1vw;--dy:20.4vw;--s:1.03;--r:-148deg;--o:0.7;--tone:var(--d);--soft:0}
+.flowers .blossom:nth-child(8){--dx:6.7vw;--dy:11.3vw;--s:0.68;--r:89deg;--o:0.93;--tone:var(--a);--soft:0.5px}
+.flowers .blossom:nth-child(9){--dx:12.2vw;--dy:13.1vw;--s:0.78;--r:-110deg;--o:0.81;--tone:var(--b);--soft:0}
+.flowers .blossom:nth-child(10){--dx:18.7vw;--dy:23.8vw;--s:0.89;--r:-8deg;--o:0.75;--tone:var(--c);--soft:0}
+.flowers .blossom:nth-child(11){--dx:26.0vw;--dy:30.6vw;--s:0.73;--r:126deg;--o:0.72;--tone:var(--d);--soft:0}
+.flowers .blossom:nth-child(12){--dx:11.8vw;--dy:36.6vw;--s:0.61;--r:129deg;--o:1.0;--tone:var(--a);--soft:0}
+.flowers .blossom:nth-child(13){--dx:9.5vw;--dy:26.6vw;--s:1.1;--r:39deg;--o:0.62;--tone:var(--b);--soft:1px}
+.flowers .blossom:nth-child(14){--dx:24.7vw;--dy:30.2vw;--s:1.12;--r:154deg;--o:0.83;--tone:var(--c);--soft:0}
+.flowers .blossom:nth-child(15){--dx:13.6vw;--dy:20.8vw;--s:0.66;--r:49deg;--o:0.71;--tone:var(--d);--soft:0}
+.flowers .blossom:nth-child(16){--dx:20.4vw;--dy:20.9vw;--s:0.84;--r:-17deg;--o:0.63;--tone:var(--a);--soft:0.5px}
+.flowers .blossom:nth-child(17){--dx:24.9vw;--dy:21.2vw;--s:0.51;--r:70deg;--o:0.69;--tone:var(--b);--soft:0}
+.flowers .blossom:nth-child(18){--dx:45.2vw;--dy:25.1vw;--s:1.11;--r:95deg;--o:0.84;--tone:var(--c);--soft:0}
+.flowers .blossom:nth-child(19){--dx:29.8vw;--dy:14.8vw;--s:1.2;--r:149deg;--o:0.8;--tone:var(--d);--soft:0}
+.flowers .blossom:nth-child(20){--dx:33.3vw;--dy:28.0vw;--s:0.94;--r:-156deg;--o:0.82;--tone:var(--a);--soft:0}
+.flowers .blossom:nth-child(21){--dx:32.4vw;--dy:17.4vw;--s:1.25;--r:-122deg;--o:0.64;--tone:var(--b);--soft:0}
+.flowers .blossom:nth-child(22){--dx:33.4vw;--dy:17.3vw;--s:0.92;--r:20deg;--o:0.96;--tone:var(--c);--soft:0}
+.flowers .blossom:nth-child(23){--dx:40.5vw;--dy:30.9vw;--s:1.26;--r:31deg;--o:0.83;--tone:var(--d);--soft:0}
+.flowers .blossom:nth-child(24){--dx:36.3vw;--dy:28.5vw;--s:0.77;--r:-7deg;--o:0.79;--tone:var(--a);--soft:0.5px}
+.flowers .blossom:nth-child(25){--dx:39.4vw;--dy:28.6vw;--s:1.1;--r:-52deg;--o:0.71;--tone:var(--b);--soft:0}
+.flowers .blossom:nth-child(26){--dx:53.3vw;--dy:22.8vw;--s:0.67;--r:140deg;--o:0.92;--tone:var(--c);--soft:1px}
+.flowers .blossom:nth-child(27){--dx:44.5vw;--dy:34.9vw;--s:0.62;--r:-83deg;--o:0.83;--tone:var(--d);--soft:0}
+.flowers .blossom:nth-child(28){--dx:40.4vw;--dy:30.9vw;--s:0.58;--r:-35deg;--o:0.69;--tone:var(--a);--soft:0}
+.flowers .blossom:nth-child(29){--dx:40.3vw;--dy:24.1vw;--s:0.53;--r:100deg;--o:0.76;--tone:var(--b);--soft:0}
+.flowers .blossom:nth-child(30){--dx:8.1vw;--dy:9.4vw;--s:1.05;--r:-107deg;--o:0.92;--tone:var(--c);--soft:0}
+.flowers .blossom:nth-child(31){--dx:6.2vw;--dy:5.0vw;--s:1.05;--r:-85deg;--o:0.65;--tone:var(--d);--soft:0}
+.flowers .blossom:nth-child(32){--dx:9.7vw;--dy:15.9vw;--s:1.17;--r:60deg;--o:0.61;--tone:var(--a);--soft:0.5px}
+.flowers .blossom:nth-child(33){--dx:16.5vw;--dy:4.7vw;--s:0.96;--r:1deg;--o:0.97;--tone:var(--b);--soft:0}
+.flowers .blossom:nth-child(34){--dx:6.0vw;--dy:4.3vw;--s:0.86;--r:76deg;--o:0.64;--tone:var(--c);--soft:0}
+.flowers .blossom:nth-child(35){--dx:8.5vw;--dy:10.8vw;--s:1.03;--r:-145deg;--o:0.79;--tone:var(--d);--soft:0}
+.flowers .blossom:nth-child(36){--dx:23.0vw;--dy:4.1vw;--s:0.77;--r:-25deg;--o:0.95;--tone:var(--a);--soft:0}
+.flowers .blossom:nth-child(37){--dx:24.1vw;--dy:13.9vw;--s:1.19;--r:-114deg;--o:0.89;--tone:var(--b);--soft:0}
+.flowers .blossom:nth-child(38){--dx:21.6vw;--dy:12.5vw;--s:1.24;--r:-166deg;--o:0.74;--tone:var(--c);--soft:0}
+.flowers .blossom:nth-child(39){--dx:26.4vw;--dy:12.4vw;--s:1.02;--r:99deg;--o:0.99;--tone:var(--d);--soft:1px}
+.flowers .blossom:nth-child(40){--dx:36.6vw;--dy:10.7vw;--s:0.98;--r:-128deg;--o:0.89;--tone:var(--a);--soft:0.5px}
+.flowers .blossom:nth-child(41){--dx:-10.5vw;--dy:24.7vw;--s:1.06;--r:92deg;--o:0.86;--tone:var(--b);--soft:0}
+.flowers .blossom:nth-child(42){--dx:-4.0vw;--dy:30.1vw;--s:1.13;--r:-141deg;--o:1.0;--tone:var(--c);--soft:0}
+.flowers .blossom:nth-child(43){--dx:-8.0vw;--dy:27.7vw;--s:0.99;--r:133deg;--o:0.88;--tone:var(--d);--soft:0}
+.flowers .blossom:nth-child(44){--dx:8vw;--dy:4.2vw;--s:0.55;--r:-123deg;--o:.9;--tone:var(--c);--soft:0}
+.flowers .blossom:nth-child(45){--dx:13.5vw;--dy:5.2vw;--s:0.5;--r:-54deg;--o:.9;--tone:var(--c);--soft:0}
+.flowers .blossom:nth-child(46){--dx:19vw;--dy:6.1vw;--s:0.6;--r:-146deg;--o:.9;--tone:var(--c);--soft:0}
+.flowers .blossom:nth-child(47){--dx:24vw;--dy:7vw;--s:0.5;--r:-148deg;--o:.9;--tone:var(--c);--soft:0}
+.flowers .blossom:nth-child(48){--dx:5.5vw;--dy:8.4vw;--s:0.6;--r:79deg;--o:.9;--tone:var(--c);--soft:0}
+.flowers .blossom:nth-child(49){--dx:10.5vw;--dy:9.5vw;--s:0.45;--r:39deg;--o:.9;--tone:var(--c);--soft:0}
+
+/* petal scatter */
+.petal:nth-child(1){--x:99.6%;--d:9.5s;--delay:-16.8s;--drift:94px;--s:1.01;--o:0.69;--sway:5.4s;--spin:8.4s;--tilt:36deg}
+.petal:nth-child(2){--x:90.4%;--d:15.7s;--delay:-14.6s;--drift:104px;--s:0.86;--o:0.6;--sway:5.7s;--spin:11.9s;--tilt:22deg}
+.petal:nth-child(3){--x:27.2%;--d:10.4s;--delay:-14.7s;--drift:91px;--s:0.73;--o:0.89;--sway:3.1s;--spin:7.9s;--tilt:-18deg}
+.petal:nth-child(4){--x:5.9%;--d:9.1s;--delay:-7.2s;--drift:37px;--s:0.93;--o:0.67;--sway:2.7s;--spin:10.2s;--tilt:22deg}
+.petal:nth-child(5){--x:76.8%;--d:9.6s;--delay:-1.6s;--drift:-43px;--s:0.89;--o:0.92;--sway:5.6s;--spin:10.4s;--tilt:28deg}
+.petal:nth-child(6){--x:95.8%;--d:17.4s;--delay:-2.2s;--drift:104px;--s:0.97;--o:0.48;--sway:6.0s;--spin:9.2s;--tilt:-24deg}
+.petal:nth-child(7){--x:46.4%;--d:17.3s;--delay:-9.4s;--drift:75px;--s:0.8;--o:0.58;--sway:5.1s;--spin:9.9s;--tilt:4deg}
+.petal:nth-child(8){--x:32.7%;--d:13.3s;--delay:-5.2s;--drift:-31px;--s:0.67;--o:0.51;--sway:5.6s;--spin:9.2s;--tilt:-8deg}
+.petal:nth-child(9){--x:66.6%;--d:13.3s;--delay:-8.5s;--drift:36px;--s:0.73;--o:0.46;--sway:4.8s;--spin:6.6s;--tilt:-31deg}
+.petal:nth-child(10){--x:94.5%;--d:11.2s;--delay:-2.5s;--drift:-16px;--s:0.66;--o:0.49;--sway:5.5s;--spin:6.0s;--tilt:10deg}
+.petal:nth-child(11){--x:74.6%;--d:11.5s;--delay:-8.6s;--drift:-68px;--s:0.98;--o:0.66;--sway:5.6s;--spin:14.7s;--tilt:-29deg}
+.petal:nth-child(12){--x:15.3%;--d:13.0s;--delay:-17.4s;--drift:-53px;--s:0.78;--o:0.81;--sway:3.8s;--spin:12.4s;--tilt:-12deg}
+.petal:nth-child(13){--x:48.7%;--d:17.0s;--delay:-8.1s;--drift:80px;--s:0.65;--o:0.61;--sway:3.0s;--spin:10.3s;--tilt:21deg}
+.petal:nth-child(14){--x:52.9%;--d:17.8s;--delay:-2.5s;--drift:-43px;--s:0.58;--o:0.69;--sway:3.4s;--spin:7.1s;--tilt:0deg}
+.petal:nth-child(15){--x:13.1%;--d:16.4s;--delay:-5.4s;--drift:58px;--s:0.85;--o:0.8;--sway:5.9s;--spin:11.9s;--tilt:36deg}
+.petal:nth-child(16){--x:56.8%;--d:17.3s;--delay:-17.8s;--drift:-22px;--s:0.8;--o:0.61;--sway:5.9s;--spin:9.8s;--tilt:-15deg}
+.petal:nth-child(17){--x:10.8%;--d:12.2s;--delay:-12.0s;--drift:25px;--s:1.12;--o:0.95;--sway:4.1s;--spin:7.4s;--tilt:-11deg}
+.petal:nth-child(18){--x:-0.3%;--d:16.7s;--delay:-10.6s;--drift:39px;--s:0.68;--o:0.78;--sway:4.1s;--spin:14.3s;--tilt:10deg}
+.petal:nth-child(19){--x:61.4%;--d:12.6s;--delay:-14.1s;--drift:23px;--s:0.97;--o:0.6;--sway:3.7s;--spin:13.2s;--tilt:-30deg}
+.petal:nth-child(20){--x:0.9%;--d:13.1s;--delay:-16.5s;--drift:9px;--s:0.8;--o:0.93;--sway:4.3s;--spin:11.7s;--tilt:-15deg}
+.petal:nth-child(21){--x:55.1%;--d:17.6s;--delay:-5.3s;--drift:-1px;--s:1.06;--o:0.84;--sway:3.7s;--spin:8.6s;--tilt:19deg}
+.petal:nth-child(22){--x:22.7%;--d:16.7s;--delay:-2.6s;--drift:-44px;--s:1.08;--o:0.92;--sway:6.0s;--spin:6.7s;--tilt:-32deg}
+.petal:nth-child(23){--x:33.9%;--d:10.6s;--delay:-15.7s;--drift:3px;--s:0.86;--o:0.67;--sway:5.4s;--spin:13.7s;--tilt:-3deg}
+.petal:nth-child(24){--x:9.5%;--d:13.0s;--delay:-1.5s;--drift:93px;--s:0.91;--o:0.73;--sway:5.9s;--spin:14.3s;--tilt:-26deg}
+.petal:nth-child(25){--x:4.4%;--d:11.2s;--delay:-1.8s;--drift:12px;--s:0.82;--o:0.9;--sway:5.7s;--spin:12.6s;--tilt:23deg}
+.petal:nth-child(26){--x:71.6%;--d:16.5s;--delay:-12.2s;--drift:-26px;--s:0.7;--o:0.65;--sway:3.8s;--spin:13.4s;--tilt:-17deg}
+.petal:nth-child(27){--x:7.9%;--d:12.9s;--delay:-0.6s;--drift:-23px;--s:0.78;--o:0.79;--sway:3.6s;--spin:12.0s;--tilt:-21deg}
+.petal:nth-child(28){--x:12.9%;--d:15.1s;--delay:-5.0s;--drift:21px;--s:0.58;--o:0.69;--sway:5.4s;--spin:13.7s;--tilt:17deg}
+
+/* bokeh scatter */
+.bokeh i:nth-child(1){--x:6.0%;--y:7.4%;--sz:166px;--o:0.32;--blur:16px}
+.bokeh i:nth-child(2){--x:56.4%;--y:38.9%;--sz:225px;--o:0.21;--blur:30px}
+.bokeh i:nth-child(3){--x:73.8%;--y:19.5%;--sz:144px;--o:0.16;--blur:30px}
+.bokeh i:nth-child(4){--x:45.1%;--y:24.4%;--sz:186px;--o:0.29;--blur:15px}
+.bokeh i:nth-child(5){--x:55.5%;--y:4.6%;--sz:132px;--o:0.19;--blur:17px}
+.bokeh i:nth-child(6){--x:55.9%;--y:69.7%;--sz:116px;--o:0.19;--blur:20px}
+.bokeh i:nth-child(7){--x:9.8%;--y:47.4%;--sz:125px;--o:0.29;--blur:36px}
+.bokeh i:nth-child(8){--x:65.0%;--y:5.5%;--sz:103px;--o:0.23;--blur:17px}
+.bokeh i:nth-child(9){--x:44.1%;--y:41.3%;--sz:185px;--o:0.22;--blur:33px}
+.bokeh i:nth-child(10){--x:10.7%;--y:28.4%;--sz:109px;--o:0.38;--blur:31px}
+
+/* ============================================================
+   Responsive crop. --sp scales every length in the tree and the
+   canopy together, so the composition holds its proportions as
+   the viewport narrows; the rest is re-staging.
+   ============================================================ */
+
+@media (min-width: 1900px) {
+  .scene { --sp: .9; --tree-x: 5vw; }
+}
+
+@media (max-width: 1100px) {
+  .scene { --sp: 1.05; }
+}
+
+@media (max-width: 860px) {
+  .scene { --sp: 1.2; }
+  .c4 { --o: .62; }
+  .c7 { --o: .5; }
+  .petal:nth-child(n + 21) { display: none; }
+  .bokeh i:nth-child(n + 8) { display: none; }
+}
+
+/* phones: the tree slides into the corner and the outermost masses thin out.
+   The aspect-ratio rules below do the actual scaling. */
+@media (max-width: 620px) {
+  .scene { --tree-x: -10vw; }
+
+  .c4, .c7 { --o: .55; }
+
+  .petal:nth-child(n + 15) { display: none; }
+  .f2, .f4 { display: none; }
+  .rays { opacity: .1; }
+}
+
+@media (max-width: 430px) {
+  .petal:nth-child(n + 12) { display: none; }
+}
+
+/* A tall frame needs a taller tree with more reach, or the crown ends up
+   sitting in the bottom half with dead sky above it. The tree scales as one
+   piece now, so height comes from --sp alone: the trunk thickens along with
+   the reach and the drawing crops harder at the right edge, which is the
+   trade for the whole scene holding its proportions. */
+@media (max-aspect-ratio: 5 / 4) {
+  .scene { --sp: 1.7; }
+}
+
+@media (max-aspect-ratio: 1 / 1) {
+  .scene { --sp: 2.1; }
+}
+
+@media (max-aspect-ratio: 4 / 5) {
+  .scene { --sp: 2.5; --tree-x: -14vw; }
+}
+
+@media (max-aspect-ratio: 3 / 5) {
+  .scene { --sp: 3; --tree-x: -20vw; }
+}
+
+/* Short, wide frames are the mirror problem: there is not enough height
+   for the tree at full size, so pull the whole thing in. */
+@media (max-height: 620px) and (min-aspect-ratio: 3 / 2) {
+  .scene { --sp: .8; }
+}
+
+@media (max-height: 460px) and (min-aspect-ratio: 3 / 2) {
+  .scene { --sp: .65; }
+}
+
+/* ============================================================
+   Reduced motion: petals settle into a still arrangement
+   instead of drifting.
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .bokeh i,
+  .cloud,
+  .petal,
+  .petal::before {
+    animation: none !important;
+  }
+
+  .petal {
+    top: calc(22% + var(--drift));
+    transform: none;
+  }
+
+  .petal::before {
+    rotate: var(--tilt);
+  }
+}
