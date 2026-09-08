@@ -1,0 +1,200 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light);
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700..900");
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.title {
+  font-family: "Inter";
+  font-weight: 900;
+  font-size: 5vw;
+  width: 60vw;
+  margin: 0 20vw;
+  line-height: 2em;
+}
+
+.fancy-font {
+  line-height: 1em;
+  font-size: 1.5em;
+}
+
+.font-shadows {
+  font-family: "Shadows Into Light";
+  letter-spacing: 0.14em;
+}
+
+.font-pacifico {
+  font-family: "Pacifico";
+}
+
+#sunny,
+#rainy {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+}
+
+#sunny {
+  background: #84aaf5;
+  color: black;
+  z-index: 201;
+}
+
+#rainy {
+  background: #001338;
+  color: white;
+  z-index: 101;
+}
+
+#sun,
+#moon {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: white;
+  opacity: 0.95;
+  box-shadow: 0px 0px 40px 15px white;
+  z-index: -2;
+}
+
+#sun {
+  left: 6vw;
+  filter: sepia(0.5);
+}
+
+#moon {
+  right: 6vw;
+}
+
+.crater {
+  background-color: lightgray;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.crater:before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  box-shadow: -5px 0 0 2px darkgray;
+  top: 2px;
+  left: 7px;
+}
+.crater:nth-child(1) {
+  top: 15%;
+  left: 55%;
+  transform: scale(1.4);
+}
+.crater:nth-child(2) {
+  top: 40%;
+  left: 70%;
+  transform: scale(1.3);
+}
+.crater:nth-child(3) {
+  left: 20%;
+  transform: scale(1);
+}
+.crater:nth-child(4) {
+  left: 30%;
+  top: 30%;
+  transform: scale(1.8);
+}
+
+#rain {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+}
+
+.drop {
+  position: absolute;
+  bottom: 100%;
+  width: 2px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  animation: drop 0.5s linear infinite;
+
+  &:after {
+    position: absolute;
+    top: -120px;
+    height: 120px;
+    width: 2px;
+    background-color: inherit;
+    content: "";
+  }
+}
+
+@keyframes drop {
+  0% {
+    bottom: 100%;
+    opacity: 1;
+  }
+  75% {
+    bottom: 10%;
+    opacity: 1;
+  }
+  100% {
+    bottom: -10%;
+    opacity: 0;
+  }
+}
+
+#clouds {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+}
+
+.cloud {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  left: -200px;
+  background-color: white;
+  border-radius: 50%;
+  animation: cloudMove linear infinite;
+  filter: drop-shadow(0 0 0.2rem white);
+
+  &:before,
+  &:after {
+    content: "";
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+  }
+
+  &:before {
+    width: 70%;
+    height: 70%;
+    left: -30%;
+    top: 30%;
+  }
+
+  &:after {
+    width: 80%;
+    height: 80%;
+    right: -35%;
+    bottom: 0;
+  }
+}
+
+@keyframes cloudMove {
+  0% {
+    left: -200px;
+  }
+  100% {
+    left: 110vw;
+  }
+}
