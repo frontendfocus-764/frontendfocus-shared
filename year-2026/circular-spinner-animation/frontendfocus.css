@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #121212;
+}
+
+.spinner {
+    color: white;
+    font-size: 100px;
+    cursor: pointer;
+    user-select: none;
+    animation: spin 3s linear infinite;
+}
+
+.spinner.fast {
+    animation-duration: 0.2s;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
