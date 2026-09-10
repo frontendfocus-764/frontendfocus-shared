@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>Invoice Payment Progress Stepper | HTML CSS Animation</title>
+</head>
+<body>
+    <section class="container">
+        <section class="invoice-container">
+            <div class="invoice-slot">
+                <div class="slot-hole"></div>
+            </div>
+            <div class="invoice">
+                <h2 class="title">Trip Invoice Goa Summer 2025</h2>
+
+                <p class="amount">
+                    Total <span class="value">₹1,50,000</span>
+                </p>
+
+                <p class="amount">
+                    Per Person <span class="value">₹30,000</span>
+                </p>
+
+                <hr />
+
+                <ul class="payers-list">
+                    <li>
+                        <div class="payer-image-container">
+                            <img src="./img/user1.jpg" />
+                        </div>
+                        <p>
+                            You
+                            <span class="pay-tag">
+                                <i class="fa-solid fa-circle-check"></i> Paid
+                            </span>
+                        </p>
+                    </li>
+
+                    <li>
+                        <div class="payer-image-container">
+                            <img src="./img/user4.jpg" />
+                        </div>
+                        <p>
+                            Rahul
+                            <span class="pay-tag">
+                                <i class="fa-solid fa-circle-check"></i> Paid
+                            </span>
+                        </p>
+                    </li>
+
+                    <li>
+                        <div class="payer-image-container">
+                            <img
+                                src="./img/user3.jpg" />
+                        </div>
+                        <p>
+                            Priya
+                            <span class="pay-tag">
+                                <i class="fa-solid fa-circle-check"></i> Paid
+                            </span>
+                        </p>
+                    </li>
+
+                    <li>
+                        <div class="payer-image-container">
+                            <img src="./img/user1.jpg" />
+                        </div>
+                        <p>
+                            Amit
+                            <span class="pay-tag">
+                                <i class="fa-solid fa-clock"></i> Unpaid
+                            </span>
+                        </p>
+                    </li>
+
+                    <li>
+                        <div class="payer-image-container">
+                            <img
+                                src="./img/user2.jpg" />
+                        </div>
+                        <p>
+                            Neha
+                            <span class="pay-tag">
+                                <i class="fa-solid fa-clock"></i> Unpaid
+                            </span>
+                        </p>
+                    </li>
+                </ul>
+
+                <div class="payment-status">
+                    <p class="heading">
+                        Payment Status
+                        <span>Unpaid</span>
+                    </p>
+
+                    <div class="status-progress">
+                        <div class="checkpoint">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+
+                        <div class="checkpoint">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+
+                        <div class="checkpoint">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+
+                        <div class="checkpoint">
+                            <span class="circle"></span>
+                        </div>
+
+                        <div class="checkpoint">
+                            <i class="fa-solid fa-stamp"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn reminder-btn">
+                        Send Reminder
+                    </button>
+
+                    <button class="btn download-btn">
+                        Download Invoice
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <hr />
+
+        <div class="payment-info">
+            <p>Payment Method</p>
+
+            <div class="card-info">
+                <p>UPI — ****2986</p>
+                <span class="card-icon"></span>
+            </div>
+        </div>
+
+        <button class="pay-now-btn">
+            Pay Now
+        </button>
+    </section>
+</body>
+</html>
