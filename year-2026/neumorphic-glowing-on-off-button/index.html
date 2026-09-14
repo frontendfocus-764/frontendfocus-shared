@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <title>Neumorphic Glowing On/Off Button | HTML CSS & JavaScript</title>
+</head>
+<body>
+    <main>
+        <div class="col">
+            <button id="btn1" class="btn" type="button" aria-pressed="false">
+                <svg class="btn__icon" viewBox="0 0 24 24" width="24px" height="24px" aria-hidden="true">
+                    <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <polyline points="12,1 12,10" />
+                        <circle fill="none" cx="12" cy="13" r="9" stroke-dasharray="49.48 7.07" stroke-dashoffset="10.6" />
+                    </g>
+                </svg>
+                <span class="btn__sr">Power (Light)</span>
+            </button>
+        </div>
+        <div class="col col--dark">
+            <button id="btn2" class="btn" type="button" aria-pressed="false">
+                <svg class="btn__icon" viewBox="0 0 24 24" width="24px" height="24px" aria-hidden="true">
+                    <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <polyline points="12,1 12,10" />
+                        <circle fill="none" cx="12" cy="13" r="9" stroke-dasharray="49.48 7.07" stroke-dashoffset="10.6" />
+                    </g>
+                </svg>
+                <span class="btn__sr">Power (Dark)</span>
+            </button>
+        </div>
+    </main>
+    <script src="frontendfocus.js"></script>
+</body>
+</html>
