@@ -1,0 +1,1439 @@
+:root {
+  --ink: #191411;
+  --plaster: #efe6d8;
+  --tungsten: #e8a94e;
+  --brass: #9c8154;
+  --gold-light: #f2d9a8;
+  --toast: #c08238;
+  --syrup: #7a4a26;
+  --beet: #7a2e35;
+
+  /* every paint below is mixed from the palette above */
+  --enamel: color-mix(in oklab, var(--ink) 78%, var(--syrup));
+  --enamel-deep: color-mix(in oklab, var(--ink) 60%, black);
+  --rim-lit: color-mix(in oklab, var(--gold-light) 55%, var(--brass));
+  --rim-dark: color-mix(in oklab, var(--ink) 68%, var(--brass));
+  --wall-shaded: color-mix(in oklab, var(--ink) 72%, var(--syrup));
+  --wall-dark: color-mix(in oklab, var(--ink) 55%, black);
+  --broth-lit: color-mix(in oklab, var(--gold-light) 60%, var(--tungsten));
+  --broth-mid: color-mix(in oklab, var(--toast) 62%, var(--gold-light));
+  --broth-deep: color-mix(in oklab, var(--syrup) 55%, var(--toast));
+  --bordeaux: color-mix(in oklab, var(--beet) 72%, var(--ink));
+  --bordeaux-deep: color-mix(in oklab, var(--beet) 45%, var(--ink));
+  --borscht-lit: color-mix(in oklab, var(--beet) 62%, var(--tungsten));
+  --potato-flesh: color-mix(in oklab, var(--gold-light) 72%, var(--toast));
+  --smetana: color-mix(in oklab, var(--plaster) 90%, var(--gold-light));
+  --smetana-shade: color-mix(in oklab, var(--plaster) 74%, var(--syrup));
+  --dill: color-mix(in oklab, var(--brass) 70%, var(--toast));
+  --dill-light: color-mix(in oklab, var(--brass) 60%, var(--gold-light));
+
+  /* three easings: quick dye layers, slow dye layers, arrivals */
+  --ease-soft: cubic-bezier(0.3, 0, 0.22, 1);
+  --ease-long: cubic-bezier(0.42, 0, 0.3, 1);
+  --ease-out-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  background: var(--ink);
+}
+
+/* the room: ink, one lamp up and to the left, a pool of it on the
+   floor. Overflow stays hidden: the beet waits above the frame. */
+.scene {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  font-size: clamp(4px, 1.05vmin, 12px);
+  width: 92em;
+  height: 74em;
+  background: radial-gradient(
+      46em 34em at 42% 26%,
+      color-mix(in oklab, var(--tungsten) 15%, transparent),
+      transparent 68%
+    ),
+    radial-gradient(
+      66em 15em at 47% 81%,
+      color-mix(in oklab, var(--tungsten) 14%, transparent),
+      transparent 72%
+    ),
+    var(--ink);
+}
+
+.scene > * {
+  position: absolute;
+}
+
+/* the pot stands on its shadow: tight where it touches,
+   longer where the light cannot reach around it */
+.shadow {
+  left: 20em;
+  top: 54.4em;
+  width: 60em;
+  height: 10.4em;
+  background: radial-gradient(
+      19em 2.6em at 44% 42%,
+      rgb(0 0 0 / 0.52),
+      rgb(0 0 0 / 0.4) 52%,
+      transparent 78%
+    ),
+    radial-gradient(30em 5em at 60% 52%, rgb(0 0 0 / 0.34), transparent 72%);
+}
+
+/* flat tab lugs: a lit top plane, a hard edge, a dark underside */
+.handle {
+  top: 33.4em;
+  width: 12em;
+  height: 3.6em;
+  background: linear-gradient(270deg, rgb(0 0 0 / 0.3), transparent 55%),
+    linear-gradient(
+      184deg,
+      color-mix(in oklab, var(--tungsten) 40%, var(--enamel)) 0 48%,
+      color-mix(in oklab, var(--enamel) 55%, black) 58%,
+      var(--enamel-deep) 100%
+    );
+  box-shadow: inset 0 0.45em 0.35em -0.2em color-mix(in oklab, var(--gold-light)
+        34%, transparent);
+}
+
+.handle-left {
+  left: 13.2em;
+  rotate: -2deg;
+  border-radius: 1.3em 0.5em 0.6em 1.4em / 1.1em 0.5em 0.6em 1.2em;
+}
+
+/* the far handle sees less of the lamp */
+.handle-right {
+  left: 66.8em;
+  rotate: 2deg;
+  border-radius: 0.5em 1.3em 1.4em 0.6em / 0.5em 1.1em 1.2em 0.6em;
+  background: linear-gradient(90deg, rgb(0 0 0 / 0.3), transparent 55%),
+    linear-gradient(
+      176deg,
+      color-mix(in oklab, var(--tungsten) 24%, var(--enamel)) 0 48%,
+      color-mix(in oklab, var(--enamel) 55%, black) 58%,
+      var(--enamel-deep) 100%
+    );
+}
+
+.pot-body {
+  left: 23.25em;
+  top: 30em;
+  width: 45.5em;
+  height: 30.5em;
+  border-radius: 2.5em 2.5em 50% 50% / 3em 3em 47% 47%;
+  background: radial-gradient(
+      30em 26em at 30% 4%,
+      color-mix(in oklab, var(--tungsten) 22%, transparent),
+      transparent 62%
+    ),
+    linear-gradient(94deg, transparent 55%, rgb(0 0 0 / 0.3) 94%),
+    linear-gradient(
+      178deg,
+      var(--enamel) 10%,
+      var(--enamel-deep) 64%,
+      color-mix(in oklab, var(--enamel-deep) 62%, black) 97%
+    );
+  box-shadow: inset 0 2.4em 3em -1.1em rgb(0 0 0 / 0.55);
+}
+
+/* enamel keeps one soft vertical sheen */
+.pot-body::before {
+  content: "";
+  position: absolute;
+  left: 9em;
+  top: 4.5em;
+  width: 7em;
+  height: 18em;
+  border-radius: 50%;
+  background: radial-gradient(
+    closest-side at 50% 40%,
+    color-mix(in oklab, var(--plaster) 12%, transparent),
+    transparent 70%
+  );
+}
+
+/* inside the rim, the far wall shows before the broth begins */
+.inner-wall {
+  left: 24.5em;
+  top: 16.75em;
+  width: 43em;
+  height: 26.5em;
+  border-radius: 50%;
+  background: radial-gradient(
+      26em 14em at 30% 20%,
+      color-mix(in oklab, var(--brass) 20%, transparent),
+      transparent 62%
+    ),
+    linear-gradient(180deg, var(--wall-dark), var(--wall-shaded) 80%);
+}
+
+/* the dye is three registered percentages: two reaches out of the
+   entry point and one slow suffusion of the base. Their resting
+   values are the finished borscht; the keyframes only remember
+   how pale it began. */
+@property --spread-a {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+@property --spread-b {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+@property --broth-shift {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+/* the travelling front is wide and soft; it tightens to nothing
+   as the liquid homogenises */
+@property --spread-edge {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+/* the broth at rest is Act III: the beet has found every wall.
+   Act I - the pale broth and its fat eyes - lies underneath,
+   revealed only while the dye still travels. */
+.broth {
+  left: 25.75em;
+  top: 20.5em;
+  width: 40.5em;
+  height: 22.4em;
+  border-radius: 50%;
+  --spread-a: 100%;
+  --spread-b: 100%;
+  --broth-shift: 100%;
+  --spread-edge: 0%;
+  animation: spread-a 3.05s var(--ease-long) 2.55s both,
+    spread-b 2.5s var(--ease-soft) 2.6s both,
+    broth-suffuses 3.1s var(--ease-long) 2.58s both;
+  background:
+    /* the lamp's glaze, arriving as the liquid deepens */ radial-gradient(
+      60% 55% at 33% 26%,
+      color-mix(
+        in oklab,
+        var(--borscht-lit) calc(var(--broth-shift) * 0.45),
+        transparent
+      ),
+      transparent 65%
+    ),
+    /* the dye's main reach - its leading edge softer than its core */
+      radial-gradient(
+        130% 118% at 62% 38%,
+        var(--bordeaux) calc(var(--spread-a) * 0.58),
+        color-mix(in oklab, var(--bordeaux) 56%, var(--ink))
+          calc(var(--spread-a) + var(--spread-edge)),
+        transparent calc(var(--spread-a) + var(--spread-edge) * 2 + 14%)
+      ),
+    /* the dye settling heavier in two places: one runs ahead,
+       one arrives late and fast */
+      radial-gradient(
+        46% 52% at 63% 58%,
+        color-mix(in oklab, var(--bordeaux-deep) 55%, transparent),
+        transparent calc(var(--spread-b) * 0.72)
+      ),
+    radial-gradient(
+      30% 36% at 76% 28%,
+      color-mix(in oklab, var(--bordeaux-deep) 38%, transparent),
+      transparent calc(var(--spread-b) * 1.4 - 70%)
+    ),
+    /* Act I's fat eyes, waiting under the dye */
+      radial-gradient(
+        5.4em 3.2em at 64% 37%,
+        color-mix(in oklab, var(--toast) 36%, transparent) 0 48%,
+        color-mix(in oklab, var(--gold-light) 60%, transparent) 56% 66%,
+        transparent 75%
+      ),
+    radial-gradient(
+      3.8em 2.2em at 29% 56%,
+      color-mix(in oklab, var(--toast) 32%, transparent) 0 46%,
+      color-mix(in oklab, var(--gold-light) 50%, transparent) 55% 66%,
+      transparent 76%
+    ),
+    radial-gradient(
+      2.6em 1.5em at 45% 71%,
+      color-mix(in oklab, var(--toast) 30%, transparent) 0 44%,
+      color-mix(in oklab, var(--gold-light) 42%, transparent) 54% 66%,
+      transparent 78%
+    ),
+    radial-gradient(
+      1.9em 1.1em at 77% 57%,
+      color-mix(in oklab, var(--toast) 28%, transparent) 0 42%,
+      color-mix(in oklab, var(--gold-light) 38%, transparent) 52% 66%,
+      transparent 80%
+    ),
+    radial-gradient(
+      1.4em 0.8em at 52% 27%,
+      color-mix(in oklab, var(--toast) 26%, transparent) 0 40%,
+      color-mix(in oklab, var(--gold-light) 34%, transparent) 52% 68%,
+      transparent 80%
+    ),
+    radial-gradient(
+      1.3em 0.7em at 60% 33%,
+      color-mix(in oklab, var(--plaster) 38%, transparent),
+      transparent 72%
+    ),
+    radial-gradient(
+      0.9em 0.5em at 26.5% 52.5%,
+      color-mix(in oklab, var(--plaster) 27%, transparent),
+      transparent 74%
+    ),
+    /* the pale base, warming as the dye suffuses it */
+      radial-gradient(
+        112% 96% at 33% 26%,
+        color-mix(
+          in oklab,
+          var(--broth-lit) calc(100% - var(--broth-shift) * 0.55),
+          var(--borscht-lit)
+        ),
+        color-mix(
+            in oklab,
+            var(--broth-mid) calc(100% - var(--broth-shift) * 0.6),
+            var(--bordeaux)
+          )
+          26%,
+        color-mix(
+            in oklab,
+            var(--broth-deep) calc(100% - var(--broth-shift) * 0.5),
+            var(--bordeaux)
+          )
+          62%,
+        color-mix(
+            in oklab,
+            color-mix(in oklab, var(--broth-deep) 45%, var(--ink))
+              calc(100% - var(--broth-shift) * 0.45),
+            var(--bordeaux-deep)
+          )
+          94%
+      );
+  box-shadow: inset 0 3.2em 3.8em -1.1em rgb(10 4 5 / 0.72),
+    inset 0 -1.6em 1.8em -0.6em rgb(10 4 5 / 0.55);
+}
+
+/* one hot glint says wet; a wide glow would say cream */
+.broth::before {
+  content: "";
+  position: absolute;
+  left: 6.4em;
+  top: 4.2em;
+  width: 8em;
+  height: 2.8em;
+  border-radius: 50%;
+  rotate: -8deg;
+  background: radial-gradient(
+      58% 62% at 42% 45%,
+      color-mix(in oklab, var(--plaster) 72%, transparent),
+      color-mix(in oklab, var(--plaster) 22%, transparent) 55%,
+      transparent 78%
+    ),
+    radial-gradient(
+      20% 40% at 78% 30%,
+      color-mix(in oklab, var(--plaster) 32%, transparent),
+      transparent 70%
+    );
+}
+
+/* fat eyes at rest - barely there: a warmth in the surface,
+   not a garnish. Act I gives them their pale-broth look. */
+.broth::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+      3em 1.8em at 68% 30%,
+      color-mix(in oklab, var(--tungsten) 22%, transparent) 0 40%,
+      transparent 72%
+    ),
+    radial-gradient(
+      2.2em 1.3em at 30% 58%,
+      color-mix(in oklab, var(--tungsten) 18%, transparent) 0 38%,
+      transparent 74%
+    ),
+    radial-gradient(
+      1.6em 0.95em at 47% 74%,
+      color-mix(in oklab, var(--tungsten) 15%, transparent) 0 36%,
+      transparent 76%
+    );
+  animation: gloss-arrives 1.25s ease 6.4s both;
+}
+
+/* the simmer - a few small domes forming near the hot wall,
+   swelling, drifting up, popping with a tiny ring. The pot was
+   simmering before we arrived: every cycle starts mid-phase.
+   They stop when the borscht is done; the rest set barely bothers. */
+.bubble::before,
+.bubble::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.bubble::before {
+  background: radial-gradient(
+    closest-side at 36% 30%,
+    var(--plaster) 0 14%,
+    color-mix(in oklab, var(--gold-light) 72%, transparent) 34%,
+    color-mix(in oklab, var(--toast) 48%, transparent) 60%,
+    color-mix(in oklab, var(--syrup) 52%, transparent) 82%,
+    color-mix(in oklab, var(--syrup) 20%, transparent) 92%,
+    transparent
+  );
+}
+
+.bubble::after {
+  border: 0.2em solid color-mix(in oklab, var(--gold-light) 70%, transparent);
+}
+
+.bubble-a {
+  left: 31.4em;
+  top: 29em;
+  width: 2.2em;
+  height: 1.35em;
+}
+
+.bubble-a::before {
+  animation: bubble-simmers 2.6s ease-in-out -1.2s 3 both;
+}
+
+.bubble-a::after {
+  animation: bubble-pops 2.6s ease-out -1.2s 3 both;
+}
+
+.bubble-b {
+  left: 58.9em;
+  top: 27.6em;
+  width: 1.75em;
+  height: 1.1em;
+}
+
+.bubble-b::before {
+  animation: bubble-simmers 3.7s ease-in-out -0.9s 2 both;
+}
+
+.bubble-b::after {
+  animation: bubble-pops 3.7s ease-out -0.9s 2 both;
+}
+
+.bubble-c {
+  left: 35.5em;
+  top: 35.7em;
+  width: 2.4em;
+  height: 1.5em;
+}
+
+.bubble-c::before {
+  animation: bubble-simmers 3.1s ease-in-out -2.2s 3 both;
+}
+
+.bubble-c::after {
+  animation: bubble-pops 3.1s ease-out -2.2s 3 both;
+}
+
+.bubble-d {
+  left: 54.1em;
+  top: 37.1em;
+  width: 1.55em;
+  height: 0.95em;
+}
+
+.bubble-d::before {
+  animation: bubble-simmers 2.3s ease-in-out -2.1s 4 both;
+}
+
+.bubble-d::after {
+  animation: bubble-pops 2.3s ease-out -2.1s 4 both;
+}
+
+/* on low heat, a lazy bubble now and then - long quiet gaps,
+   mostly one at a time, never a boil */
+.bubble-rest-a {
+  left: 33em;
+  top: 31.7em;
+  width: 1.7em;
+  height: 1.05em;
+}
+
+.bubble-rest-a::before {
+  animation: bubble-rests 11s ease-in-out 8.2s infinite;
+}
+
+.bubble-rest-b {
+  left: 58.2em;
+  top: 34.8em;
+  width: 1.5em;
+  height: 0.9em;
+}
+
+.bubble-rest-b::before {
+  animation: bubble-rests 12s ease-in-out 12.6s infinite;
+}
+
+.bubble-rest-c {
+  left: 47.5em;
+  top: 38.2em;
+  width: 1.6em;
+  height: 1em;
+}
+
+.bubble-rest-c::before {
+  animation: bubble-rests 9s ease-in-out 10.4s infinite;
+}
+
+/* the same dome, remixed for bordeaux: the pale act's syrup rim
+   would vanish here, so the shadow side turns borscht-dark */
+.bubble-rest-a::before,
+.bubble-rest-b::before,
+.bubble-rest-c::before {
+  background: radial-gradient(
+    closest-side at 36% 30%,
+    var(--plaster) 0 16%,
+    color-mix(in oklab, var(--gold-light) 80%, transparent) 36%,
+    color-mix(in oklab, var(--tungsten) 42%, transparent) 60%,
+    color-mix(in oklab, var(--bordeaux-deep) 70%, transparent) 84%,
+    transparent
+  );
+}
+
+/* Act II's travellers: three pieces from the same cut as the
+   julienne, above the frame until called */
+.beet-drop,
+.beet-drop-b,
+.beet-drop-c {
+  opacity: 0;
+  background: linear-gradient(
+    178deg,
+    color-mix(in oklab, var(--beet) 72%, var(--tungsten)) 0 32%,
+    var(--beet) 58%,
+    color-mix(in oklab, var(--beet) 60%, var(--ink)) 100%
+  );
+}
+
+/* the first gets the ceremony - the hang, the ring, the droplets */
+.beet-drop {
+  left: 48.4em;
+  top: 26.4em;
+  width: 3.6em;
+  height: 1.9em;
+  rotate: 8deg;
+  border-radius: 0.6em 0.45em 0.7em 0.5em / 0.5em 0.65em 0.45em 0.7em;
+  animation: beet-falls 2s 1.45s both;
+}
+
+/* the other two follow quickly, each with a small plip */
+.beet-drop-b {
+  left: 52.6em;
+  top: 28.6em;
+  width: 3em;
+  height: 1.7em;
+  rotate: -12deg;
+  border-radius: 0.55em 0.4em 0.6em 0.45em / 0.45em 0.6em 0.4em 0.55em;
+  animation: beet-follows 1.1s 2.19s both, tips-left 1.1s 2.19s both;
+}
+
+.beet-drop-c {
+  left: 49.3em;
+  top: 29.8em;
+  width: 2.2em;
+  height: 1.9em;
+  rotate: 15deg;
+  border-radius: 0.6em 0.5em 0.55em 0.65em / 0.55em 0.6em 0.5em 0.6em;
+  animation: beet-follows 1.05s 2.52s both, tips-right 1.05s 2.52s both;
+}
+
+.beet-drop-b::before,
+.beet-drop-c::before {
+  content: "";
+  position: absolute;
+  inset: -1.4em -1.8em;
+  border: 0.3em solid color-mix(in oklab, var(--beet) 38%, transparent);
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.beet-drop-b::before {
+  rotate: 12deg;
+  animation: plip-ripples 0.7s ease-out 2.87s both;
+}
+
+.beet-drop-c::before {
+  rotate: -15deg;
+  animation: plip-ripples 0.7s ease-out 3.17s both;
+}
+
+/* on contact: one ring, already carrying the first of the dye */
+.ring {
+  left: 44.6em;
+  top: 25em;
+  width: 11em;
+  height: 5em;
+  border: 0.5em solid color-mix(in oklab, var(--beet) 52%, transparent);
+  border-radius: 50%;
+  opacity: 0;
+  animation: ring-ripples 1s ease-out 2.53s both;
+}
+
+/* and a couple of droplets */
+.droplets {
+  left: 48.6em;
+  top: 25.6em;
+  width: 3em;
+  height: 2em;
+}
+
+.droplets::before,
+.droplets::after {
+  content: "";
+  position: absolute;
+  width: 0.65em;
+  height: 0.5em;
+  border-radius: 50%;
+  opacity: 0;
+  background: color-mix(in oklab, var(--gold-light) 78%, var(--tungsten));
+}
+
+.droplets::before {
+  left: 0.2em;
+  top: 0.8em;
+  animation: droplet-left 0.8s 2.56s both;
+}
+
+.droplets::after {
+  left: 2em;
+  top: 0.6em;
+  width: 0.5em;
+  height: 0.4em;
+  animation: droplet-right 0.65s 2.6s both;
+}
+
+/* Act III contents. No straight lines, no mirrored halves:
+   every piece its own tilt, its own light, its own shadow.
+   They settle in one by one, each on its own delay. */
+
+/* beet julienne - the colour source, matte, always deeper
+   than the broth it dyed */
+.beet-baton {
+  background: linear-gradient(
+    178deg,
+    color-mix(in oklab, var(--beet) 84%, var(--ink)) 0 32%,
+    color-mix(in oklab, var(--beet) 60%, var(--ink)) 58%,
+    color-mix(in oklab, var(--beet) 46%, var(--ink)) 100%
+  );
+  box-shadow: 0.25em 0.4em 0.6em -0.2em rgb(8 3 4 / 0.5),
+    inset 0 -0.3em 0.3em -0.15em
+      color-mix(in oklab, var(--bordeaux-deep) 60%, transparent);
+}
+
+.beet-a {
+  left: 32.6em;
+  top: 33.8em;
+  width: 8.2em;
+  height: 1.6em;
+  rotate: -19deg;
+  border-radius: 0.6em 0.4em 0.7em 0.5em / 0.5em 0.6em 0.4em 0.7em;
+  animation: settle-in 0.7s var(--ease-out-soft) 5.1s both,
+    bobs 7.2s ease-in-out -2.1s infinite;
+}
+
+/* one stick lies across another */
+.beet-b {
+  left: 37.4em;
+  top: 35.2em;
+  width: 7.4em;
+  height: 1.5em;
+  rotate: 14deg;
+  border-radius: 0.5em 0.7em 0.4em 0.6em / 0.6em 0.4em 0.7em 0.5em;
+  animation: settle-in 0.7s var(--ease-out-soft) 5.63s both,
+    bobs 6.4s ease-in-out -4.4s infinite;
+}
+
+.beet-c {
+  left: 56.6em;
+  top: 36.4em;
+  width: 6.8em;
+  height: 1.5em;
+  rotate: -6deg;
+  border-radius: 0.7em 0.5em 0.6em 0.4em / 0.4em 0.7em 0.5em 0.6em;
+  animation: settle-in 0.7s var(--ease-out-soft) 6.02s both,
+    bobs 8.3s ease-in-out -1.3s infinite;
+}
+
+/* potato takes the broth's stain at its waterline */
+.potato {
+  background: linear-gradient(
+    182deg,
+    color-mix(in oklab, var(--potato-flesh) 70%, var(--plaster)) 8%,
+    var(--potato-flesh) 46%,
+    color-mix(in oklab, var(--potato-flesh) 55%, var(--beet)) 96%
+  );
+  box-shadow: 0.3em 0.5em 0.8em -0.25em rgb(10 4 5 / 0.5),
+    inset 0 -0.45em 0.4em -0.2em
+      color-mix(in oklab, var(--beet) 50%, transparent);
+}
+
+/* the potatoes plummet; their plips stay small - the full ring
+   belongs to the first beet alone */
+.potato-a::before,
+.potato-b::before {
+  content: "";
+  position: absolute;
+  inset: -1em -1.3em;
+  border: 0.25em solid color-mix(in oklab, var(--gold-light) 32%, transparent);
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.potato-a {
+  left: 36.4em;
+  top: 28.4em;
+  width: 4.8em;
+  height: 3.4em;
+  rotate: 9deg;
+  border-radius: 58% 42% 52% 48% / 52% 60% 40% 48%;
+  animation: plops-in 0.5s 5.24s both, tips-right 0.5s 5.24s both,
+    bobs 6.8s ease-in-out -3.2s infinite;
+}
+
+.potato-a::before {
+  rotate: -9deg;
+  animation: plip-ripples 0.6s ease-out 5.53s both;
+}
+
+.potato-b {
+  left: 57.6em;
+  top: 26.9em;
+  width: 4em;
+  height: 2.9em;
+  rotate: -13deg;
+  border-radius: 46% 54% 42% 58% / 60% 44% 56% 40%;
+  animation: plops-in 0.5s 5.44s both, tips-left 0.5s 5.44s both,
+    bobs 7.9s ease-in-out -0.6s infinite;
+}
+
+.potato-b::before {
+  rotate: 13deg;
+  animation: plip-ripples 0.6s ease-out 5.73s both;
+}
+
+.cabbage {
+  background: linear-gradient(
+    184deg,
+    color-mix(in oklab, var(--gold-light) 62%, var(--toast)) 10%,
+    color-mix(in oklab, var(--gold-light) 45%, var(--toast)) 55%,
+    color-mix(in oklab, var(--gold-light) 40%, var(--beet)) 95%
+  );
+  box-shadow: 0.25em 0.4em 0.7em -0.2em rgb(10 4 5 / 0.35),
+    inset 0 -0.35em 0.3em -0.15em
+      color-mix(in oklab, var(--beet) 45%, transparent);
+}
+
+.cabbage-a {
+  left: 42.6em;
+  top: 34.2em;
+  width: 5.6em;
+  height: 1.2em;
+  rotate: -24deg;
+  border-radius: 65% 35% 70% 30% / 90% 75% 25% 15%;
+  animation: settle-in 0.7s var(--ease-out-soft) 5.86s both,
+    bobs 6.2s ease-in-out -5.1s infinite;
+}
+
+/* one shred sits deeper than the rest */
+.cabbage-b {
+  left: 30.2em;
+  top: 29.3em;
+  width: 4.8em;
+  height: 1.1em;
+  rotate: 14deg;
+  box-shadow: 0.25em 0.4em 0.7em -0.2em rgb(10 4 5 / 0.35),
+    inset 0 -0.7em 0.5em -0.1em
+      color-mix(in oklab, var(--beet) 65%, transparent);
+  border-radius: 30% 70% 35% 65% / 20% 85% 80% 20%;
+  animation: settle-in 0.7s var(--ease-out-soft) 5.44s both,
+    bobs 8.7s ease-in-out -2.7s infinite;
+}
+
+.cabbage-c {
+  left: 51.9em;
+  top: 25.4em;
+  width: 3.4em;
+  height: 0.9em;
+  rotate: -31deg;
+  border-radius: 70% 30% 60% 40% / 80% 20% 90% 30%;
+  animation: settle-in 0.65s var(--ease-out-soft) 6.14s both,
+    bobs 7.4s ease-in-out -3.8s infinite;
+}
+
+/* smetana - a spooned dollop, wider than tall, matte; the borscht
+   stains its lower flank pink from below */
+.smetana {
+  left: 48.2em;
+  top: 29.2em;
+  width: 9em;
+  height: 4em;
+  rotate: -7deg;
+  border-radius: 58% 42% 52% 48% / 62% 55% 40% 48%;
+  background: linear-gradient(
+      354deg,
+      color-mix(in oklab, var(--beet) 38%, var(--smetana)) 0 9%,
+      transparent 26%
+    ),
+    radial-gradient(
+      64% 58% at 34% 30%,
+      var(--smetana),
+      color-mix(in oklab, var(--smetana) 72%, var(--smetana-shade)) 62%,
+      var(--smetana-shade) 94%
+    );
+  box-shadow: 0.35em 0.6em 1em -0.25em rgb(10 4 5 / 0.5),
+    inset 0 -0.9em 1em -0.3em color-mix(in oklab, var(--beet) 45%, transparent);
+  animation: smetana-lands 0.85s ease-out 6.75s both,
+    bobs-least 9.2s ease-in-out -1.7s infinite;
+}
+
+/* the peak the spoon left, a little off the light's side */
+.smetana::before {
+  content: "";
+  position: absolute;
+  left: 14%;
+  top: -30%;
+  width: 4.4em;
+  height: 2.5em;
+  rotate: -12deg;
+  border-radius: 55% 45% 58% 42% / 70% 62% 38% 45%;
+  background: radial-gradient(
+    closest-side at 42% 62%,
+    var(--smetana) 58%,
+    color-mix(in oklab, var(--smetana) 82%, var(--smetana-shade)) 100%
+  );
+  box-shadow: 0.2em 0.35em 0.6em -0.25em rgb(10 4 5 / 0.35);
+}
+
+/* one gloss point */
+.smetana::after {
+  content: "";
+  position: absolute;
+  left: 22%;
+  top: -8%;
+  width: 1.1em;
+  height: 0.6em;
+  border-radius: 50%;
+  rotate: -18deg;
+  background: radial-gradient(closest-side, var(--plaster), transparent 75%);
+}
+
+/* dill - the pinch from above, in two loose waves; scattered,
+   never a pattern, and never more than one round dot on the white */
+.dill-pinch-a,
+.dill-pinch-b {
+  left: 25.75em;
+  top: 20.5em;
+  width: 40.5em;
+  height: 22.4em;
+  border-radius: 50%;
+}
+
+/* the wave that lands on the smetana */
+.dill-pinch-a {
+  animation: dill-flutters-a 0.95s 6.82s both, tips-pinch-l 0.95s 6.82s both,
+    bobs-least 9.2s ease-in-out -1.7s infinite;
+  background: radial-gradient(
+      1.5em 0.42em at 58.5% 43%,
+      var(--dill) 62%,
+      transparent 78%
+    ),
+    radial-gradient(
+      0.75em 0.55em at 68% 38%,
+      var(--dill-light) 58%,
+      transparent 78%
+    ),
+    radial-gradient(1.2em 0.4em at 62% 55%, var(--dill) 58%, transparent 78%);
+}
+
+/* the wave that lands on the broth */
+.dill-pinch-b {
+  animation: dill-flutters-b 1.08s 6.72s both, tips-pinch-r 1.08s 6.72s both,
+    bobs 8.1s ease-in-out -4.6s infinite;
+  background: radial-gradient(
+      1em 0.65em at 37% 31%,
+      var(--dill-light) 55%,
+      transparent 76%
+    ),
+    radial-gradient(0.95em 0.6em at 30% 61%, var(--dill) 55%, transparent 76%),
+    radial-gradient(
+      1.2em 0.65em at 49% 79%,
+      var(--dill-light) 55%,
+      transparent 74%
+    ),
+    radial-gradient(0.8em 0.5em at 71% 24%, var(--dill) 52%, transparent 78%),
+    radial-gradient(0.95em 0.55em at 60% 62%, var(--dill) 55%, transparent 76%);
+}
+
+/* brass rim: one ring, lit where the lamp finds its upper arc */
+.rim {
+  left: 23em;
+  top: 15.5em;
+  width: 46em;
+  height: 29em;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    var(--rim-lit),
+    var(--brass) 45deg,
+    var(--rim-dark) 120deg,
+    var(--rim-dark) 170deg,
+    color-mix(in oklab, var(--rim-dark) 55%, var(--brass)) 230deg,
+    var(--brass) 275deg,
+    var(--gold-light) 302deg,
+    var(--gold-light) 328deg,
+    var(--rim-lit) 350deg,
+    var(--rim-lit)
+  );
+  mask: radial-gradient(closest-side, transparent 0 92.4%, #000 93.4%);
+}
+
+/* steam - three breaths, thin while the broth is pale, full once
+   it is borscht; their drift is the only thing that never rests */
+.steam {
+  border-radius: 50%;
+  will-change: transform;
+}
+
+.steam-a {
+  left: 27em;
+  top: 3.5em;
+  width: 11em;
+  height: 21em;
+  rotate: -9deg;
+  filter: blur(1.9em);
+  animation: steam-swells 7.5s ease both,
+    steam-drifts 8.5s ease-in-out -2.8s infinite;
+  background: radial-gradient(
+      46% 38% at 42% 28%,
+      color-mix(in oklab, var(--plaster) 13%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      52% 60% at 52% 62%,
+      color-mix(in oklab, var(--plaster) 18%, transparent),
+      transparent 74%
+    );
+}
+
+.steam-b {
+  left: 44em;
+  top: 1.8em;
+  width: 13em;
+  height: 25em;
+  rotate: 6deg;
+  filter: blur(2.2em);
+  animation: steam-swells 7.5s ease both,
+    steam-drifts-wide 9.5s ease-in-out -5.2s infinite;
+  background: radial-gradient(
+      44% 34% at 55% 24%,
+      color-mix(in oklab, var(--plaster) 10%, transparent),
+      transparent 72%
+    ),
+    radial-gradient(
+      50% 58% at 46% 66%,
+      color-mix(in oklab, var(--plaster) 13%, transparent),
+      transparent 74%
+    );
+}
+
+.steam-c {
+  left: 36em;
+  top: 10em;
+  width: 8em;
+  height: 14em;
+  rotate: -18deg;
+  filter: blur(1.6em);
+  animation: steam-swells 7.5s ease both,
+    steam-drifts 7.2s ease-in-out -1.6s infinite;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in oklab, var(--plaster) 12%, transparent),
+    transparent 76%
+  );
+}
+
+/* the choreography - about eight seconds, once.
+   Every keyframe below describes only how things began;
+   where a "to" is missing, the resting rule already knows the end. */
+
+/* Act I - the simmer: form at the wall, swell, drift up, pop */
+@keyframes bubble-simmers {
+  0% {
+    opacity: 0;
+    scale: 0.4;
+    translate: 0 0.3em;
+  }
+  12% {
+    opacity: 1;
+  }
+  70% {
+    scale: 0.95;
+    translate: 0 -0.1em;
+  }
+  82% {
+    opacity: 1;
+    scale: 1;
+    translate: 0 -0.25em;
+  }
+  86%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes bubble-pops {
+  0%,
+  82% {
+    opacity: 0;
+    scale: 0.5;
+  }
+  86% {
+    opacity: 0.6;
+    scale: 0.95;
+  }
+  100% {
+    opacity: 0;
+    scale: 1.35;
+  }
+}
+
+@keyframes bubble-rests {
+  0% {
+    opacity: 0;
+    scale: 0.5;
+    translate: 0 0.2em;
+  }
+  6% {
+    opacity: 0.85;
+  }
+  16% {
+    opacity: 0.85;
+    scale: 0.9;
+    translate: 0 -0.15em;
+  }
+  22%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Act II - the beet arrives: eased in, a beat of doubt, the fall.
+   The beat is a moving hold - airborne things never stand still,
+   so it keeps sinking slowly and keeps a degree of turn. */
+@keyframes beet-falls {
+  0% {
+    translate: 0 -30em;
+    opacity: 1;
+    rotate: -26deg;
+    animation-timing-function: cubic-bezier(0.2, 0.7, 0.55, 0.92);
+  }
+  14% {
+    translate: 0 -20.5em;
+    rotate: -5deg;
+    animation-timing-function: linear;
+  }
+  22% {
+    translate: 0 -19.7em;
+    rotate: -3.5deg;
+    animation-timing-function: cubic-bezier(0.45, 0.09, 0.8, 0.4);
+  }
+  55% {
+    translate: 0 0.4em;
+    rotate: 14deg;
+    animation-timing-function: ease-out;
+  }
+  62% {
+    translate: 0 0;
+    scale: 1 0.94;
+  }
+  75% {
+    scale: 1 1;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes ring-ripples {
+  0% {
+    opacity: 0;
+    scale: 0.22;
+  }
+  12% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    scale: 1;
+  }
+}
+
+/* the second and third pieces: no hang, just the fall */
+@keyframes beet-follows {
+  0% {
+    translate: 0 -33em;
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.85, 0.4);
+  }
+  60% {
+    translate: 0 0.35em;
+    animation-timing-function: ease-out;
+  }
+  68% {
+    translate: 0 0;
+    scale: 1 0.95;
+  }
+  80% {
+    scale: 1 1;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes tips-left {
+  from {
+    rotate: -24deg;
+  }
+}
+
+@keyframes tips-right {
+  from {
+    rotate: 27deg;
+  }
+}
+
+/* the potatoes arrive the same way, later, and stay */
+@keyframes plops-in {
+  0% {
+    translate: 0 -34em;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.85, 0.4);
+  }
+  62% {
+    translate: 0 0.3em;
+    animation-timing-function: ease-out;
+  }
+  72% {
+    translate: 0 0;
+    scale: 1 0.95;
+  }
+  84% {
+    scale: 1 1;
+  }
+}
+
+@keyframes plip-ripples {
+  0% {
+    opacity: 0;
+    scale: 0.3;
+  }
+  14% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    scale: 1;
+  }
+}
+
+@keyframes droplet-left {
+  0% {
+    translate: 0 0;
+    opacity: 0;
+    animation-timing-function: ease-out;
+  }
+  18% {
+    opacity: 1;
+  }
+  52% {
+    translate: -1.9em -2.8em;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    translate: -2.6em 0.3em;
+    opacity: 0;
+  }
+}
+
+@keyframes droplet-right {
+  0% {
+    translate: 0 0;
+    opacity: 0;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1;
+  }
+  55% {
+    translate: 1.5em -2.2em;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    translate: 2em 0.2em;
+    opacity: 0;
+  }
+}
+
+/* the colour spreads unevenly - two reaches on different clocks,
+   and the colour finds the far wall last */
+@keyframes spread-a {
+  from {
+    /* -62% swallows the widened front, so nothing shows before contact */
+    --spread-a: -62%;
+    --spread-edge: 24%;
+  }
+}
+
+@keyframes spread-b {
+  from {
+    --spread-b: 0%;
+  }
+}
+
+@keyframes broth-suffuses {
+  from {
+    --broth-shift: 0%;
+  }
+}
+
+/* the gentle bob - buoyancy rides the free transform property,
+   so it composes with the settle's translate instead of fighting it */
+@keyframes bobs {
+  0%,
+  100% {
+    transform: translateY(0.18em) rotate(0.6deg);
+  }
+  50% {
+    transform: translateY(-0.18em) rotate(-0.6deg);
+  }
+}
+
+@keyframes bobs-least {
+  0%,
+  100% {
+    transform: translateY(0.1em) rotate(0.3deg);
+  }
+  50% {
+    transform: translateY(-0.1em) rotate(-0.3deg);
+  }
+}
+
+/* Act III - everything comes home */
+@keyframes settle-in {
+  from {
+    opacity: 0;
+    translate: 0 1em;
+  }
+}
+
+/* the smetana lands last, with one small settle */
+@keyframes smetana-lands {
+  0% {
+    opacity: 0;
+    translate: 0 -1.8em;
+    scale: 1.05;
+  }
+  55% {
+    opacity: 1;
+    translate: 0 0.18em;
+    scale: 0.99;
+  }
+  100% {
+    translate: 0 0;
+    scale: 1;
+  }
+}
+
+/* the pinch from above - the lightest things in the room fall
+   slowest: a gentle S of sway, a slow turn, and a settle with
+   no bounce. Too light to splash. */
+@keyframes dill-flutters-a {
+  0% {
+    opacity: 0;
+    translate: 0.55em -5.5em;
+    animation-timing-function: cubic-bezier(0.4, 0.1, 0.6, 0.9);
+  }
+  14% {
+    opacity: 1;
+  }
+  35% {
+    translate: -0.25em -3.2em;
+    animation-timing-function: cubic-bezier(0.4, 0.1, 0.6, 0.9);
+  }
+  70% {
+    translate: 0.3em -1.1em;
+    animation-timing-function: cubic-bezier(0.25, 0.4, 0.45, 1);
+  }
+  100% {
+    translate: 0 0;
+  }
+}
+
+@keyframes dill-flutters-b {
+  0% {
+    opacity: 0;
+    translate: -0.5em -6em;
+    animation-timing-function: cubic-bezier(0.4, 0.1, 0.6, 0.9);
+  }
+  15% {
+    opacity: 1;
+  }
+  40% {
+    translate: 0.3em -3.4em;
+    animation-timing-function: cubic-bezier(0.4, 0.1, 0.6, 0.9);
+  }
+  72% {
+    translate: -0.25em -1em;
+    animation-timing-function: cubic-bezier(0.25, 0.4, 0.45, 1);
+  }
+  100% {
+    translate: 0 0;
+  }
+}
+
+@keyframes tips-pinch-l {
+  0% {
+    rotate: -6deg;
+  }
+  45% {
+    rotate: -1.5deg;
+  }
+  80% {
+    rotate: 2deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+
+@keyframes tips-pinch-r {
+  0% {
+    rotate: 5deg;
+  }
+  40% {
+    rotate: 1deg;
+  }
+  78% {
+    rotate: -2deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+
+@keyframes gloss-arrives {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes steam-swells {
+  0% {
+    opacity: 0.3;
+  }
+  30% {
+    opacity: 0.36;
+  }
+  55% {
+    opacity: 0.55;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes steam-drifts {
+  0%,
+  100% {
+    translate: 0 0.7em;
+  }
+  50% {
+    translate: 0.5em -0.9em;
+  }
+}
+
+@keyframes steam-drifts-wide {
+  0%,
+  100% {
+    translate: 0 0.9em;
+  }
+  50% {
+    translate: -0.7em -1.2em;
+  }
+}
+
+/* the twin: without motion, the pot is simply already cooked,
+   and the steam holds still */
+@media (prefers-reduced-motion: reduce) {
+  .scene *,
+  .scene *::before,
+  .scene *::after {
+    animation: none;
+  }
+}
+
+/* replay, without a script: while the button is held, every
+   animation is removed; letting go starts the kitchen over */
+.cook {
+  position: fixed;
+  top: 1rem;
+  right: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 1.1em;
+  border: 1px solid color-mix(in oklab, var(--brass) 45%, transparent);
+  border-radius: 2px;
+  background: none;
+  color: color-mix(in oklab, var(--plaster) 60%, transparent);
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.cook:hover {
+  color: var(--plaster);
+  border-color: var(--brass);
+}
+
+.cook:focus-visible {
+  outline: 2px solid var(--tungsten);
+  outline-offset: 3px;
+}
+
+.cook:active ~ .scene *,
+.cook:active ~ .scene *::before,
+.cook:active ~ .scene *::after {
+  animation: none;
+}
+
+/* no motion, nothing to replay */
+@media (prefers-reduced-motion: reduce) {
+  .cook {
+    display: none;
+  }
+}
