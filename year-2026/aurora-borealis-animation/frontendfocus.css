@@ -1,0 +1,940 @@
+@charset "UTF-8";
+
+:root {
+  --aurora-start-color: rgba(255, 0, 151, 0.26);
+  --aurora-start-color-transparent: rgba(190, 92, 255, 0);
+  --aurora-end-color: rgba(0, 255, 71, 0.43);
+  --aurora-end-color-transparent: rgba(0, 255, 71, 0);
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  min-height: 100vh;
+  background: linear-gradient(#010f29, black);
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  perspective: 1100px;
+  transform-style: preserve-3d;
+  filter: none;
+}
+
+.sac-particles {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  transform-style: preserve-3d;
+  transform: translateY(-100px) scale(2.5);
+  display: flex;
+  justify-content: center;
+}
+
+.sac-particle__dot {
+  position: absolute;
+  top: 0;
+  bottom: auto;
+  width: 10px;
+  height: var(--wave-height);
+  margin-left: calc(clamp(7px, 1.45vw, 16px) / -2);
+  transform-origin: top center;
+  background: linear-gradient(
+    0deg,
+    var(--aurora-end-color-transparent) 0%,
+    var(--aurora-end-color) 6%,
+    var(--aurora-start-color) 27%,
+    var(--aurora-start-color-transparent) 100%
+  );
+  border-radius: 0;
+  box-shadow:
+    0 -13px 5px 1px rgba(0, 255, 0, 0.3),
+    0 -117px 5px 1px #ff0097;
+  opacity: 0.78;
+  animation-fill-mode: both;
+  animation-play-state: running;
+}
+
+.sac-particle__dot:nth-child(1) {
+  --wave-x: -204px;
+  --wave-z: 4.364592px;
+  --wave-height: 502px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 0s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(2) {
+  --wave-x: -198px;
+  --wave-z: 8.518789px;
+  --wave-height: 501px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 0.31s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(3) {
+  --wave-x: -192px;
+  --wave-z: 12.262337px;
+  --wave-height: 505px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 0.62s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(4) {
+  --wave-x: -186px;
+  --wave-z: 15.414778px;
+  --wave-height: 504px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 0.93s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(5) {
+  --wave-x: -180px;
+  --wave-z: 17.824147px;
+  --wave-height: 504px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 1.24s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(6) {
+  --wave-x: -174px;
+  --wave-z: 19.374302px;
+  --wave-height: 503px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 1.55s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(7) {
+  --wave-x: -168px;
+  --wave-z: 19.990517px;
+  --wave-height: 502px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 1.86s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(8) {
+  --wave-x: -162px;
+  --wave-z: 19.643086px;
+  --wave-height: 509px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 2.17s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(9) {
+  --wave-x: -156px;
+  --wave-z: 18.348759px;
+  --wave-height: 502px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 2.48s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(10) {
+  --wave-x: -150px;
+  --wave-z: 16.169928px;
+  --wave-height: 510px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 2.79s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(11) {
+  --wave-x: -144px;
+  --wave-z: 13.211624px;
+  --wave-height: 507px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 3.1s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(12) {
+  --wave-x: -138px;
+  --wave-z: 9.616452px;
+  --wave-height: 501px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 3.41s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(13) {
+  --wave-x: -132px;
+  --wave-z: 5.557719px;
+  --wave-height: 501px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 3.72s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(14) {
+  --wave-x: -126px;
+  --wave-z: 1.231074px;
+  --wave-height: 502px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 4.03s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(15) {
+  --wave-x: -120px;
+  --wave-z: -3.154914px;
+  --wave-height: 504px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 4.34s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(16) {
+  --wave-x: -114px;
+  --wave-z: -7.388819px;
+  --wave-height: 504px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 4.65s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(17) {
+  --wave-x: -108px;
+  --wave-z: -11.266546px;
+  --wave-height: 509px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 4.96s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(18) {
+  --wave-x: -102px;
+  --wave-z: -14.601167px;
+  --wave-height: 510px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 5.27s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(19) {
+  --wave-x: -96px;
+  --wave-z: -17.231938px;
+  --wave-height: 501px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 5.58s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(20) {
+  --wave-x: -90px;
+  --wave-z: -19.032041px;
+  --wave-height: 509px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 5.89s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(21) {
+  --wave-x: -84px;
+  --wave-z: -19.914703px;
+  --wave-height: 504px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 6.2s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(22) {
+  --wave-x: -78px;
+  --wave-z: -19.837375px;
+  --wave-height: 509px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 6.51s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(23) {
+  --wave-x: -72px;
+  --wave-z: -18.803784px;
+  --wave-height: 507px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 6.82s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(24) {
+  --wave-x: -66px;
+  --wave-z: -16.863755px;
+  --wave-height: 504px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 7.13s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(25) {
+  --wave-x: -60px;
+  --wave-z: -14.110807px;
+  --wave-height: 508px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 7.44s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(26) {
+  --wave-x: -54px;
+  --wave-z: -10.677645px;
+  --wave-height: 510px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 7.75s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(27) {
+  --wave-x: -48px;
+  --wave-z: -6.729767px;
+  --wave-height: 505px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 8.06s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(28) {
+  --wave-x: -42px;
+  --wave-z: -2.45748px;
+  --wave-height: 501px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 8.37s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(29) {
+  --wave-x: -36px;
+  --wave-z: 1.93327px;
+  --wave-height: 503px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 8.68s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(30) {
+  --wave-x: -30px;
+  --wave-z: 6.230827px;
+  --wave-height: 507px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 8.99s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(31) {
+  --wave-x: -24px;
+  --wave-z: 10.228026px;
+  --wave-height: 506px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 9.3s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(32) {
+  --wave-x: -18px;
+  --wave-z: 13.732183px;
+  --wave-height: 505px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 9.61s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(33) {
+  --wave-x: -12px;
+  --wave-z: 16.574377px;
+  --wave-height: 503px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 9.92s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(34) {
+  --wave-x: -6px;
+  --wave-z: 18.617603px;
+  --wave-height: 504px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 10.23s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(35) {
+  --wave-x: 0px;
+  --wave-z: 19.763365px;
+  --wave-height: 506px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 10.54s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(36) {
+  --wave-x: 6px;
+  --wave-z: 19.956432px;
+  --wave-height: 502px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 10.85s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(37) {
+  --wave-x: 12px;
+  --wave-z: 19.187497px;
+  --wave-height: 502px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 11.16s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(38) {
+  --wave-x: 18px;
+  --wave-z: 17.493627px;
+  --wave-height: 507px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 11.47s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(39) {
+  --wave-x: 24px;
+  --wave-z: 14.956474px;
+  --wave-height: 502px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 11.78s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(40) {
+  --wave-x: 30px;
+  --wave-z: 11.698344px;
+  --wave-height: 506px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 12.09s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(41) {
+  --wave-x: 36px;
+  --wave-z: 7.876293px;
+  --wave-height: 506px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 12.4s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(42) {
+  --wave-x: 42px;
+  --wave-z: 3.674566px;
+  --wave-height: 510px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 12.71s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(43) {
+  --wave-x: 48px;
+  --wave-z: -0.704295px;
+  --wave-height: 505px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 13.02s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(44) {
+  --wave-x: 54px;
+  --wave-z: -5.049205px;
+  --wave-height: 501px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 13.33s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(45) {
+  --wave-x: 60px;
+  --wave-z: -9.150718px;
+  --wave-height: 508px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 13.64s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(46) {
+  --wave-x: 66px;
+  --wave-z: -12.811119px;
+  --wave-height: 509px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 13.95s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(47) {
+  --wave-x: 72px;
+  --wave-z: -15.853959px;
+  --wave-height: 502px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 14.26s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(48) {
+  --wave-x: 78px;
+  --wave-z: -18.132558px;
+  --wave-height: 507px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 14.57s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(49) {
+  --wave-x: 84px;
+  --wave-z: -19.537074px;
+  --wave-height: 502px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 14.88s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+.sac-particle__dot:nth-child(50) {
+  --wave-x: 90px;
+  --wave-z: -19.999804px;
+  --wave-height: 509px;
+  --wave-y: 0px;
+  --pendulum-duration: 12s;
+  --pendulum-delay: 15.19s;
+  transform: rotateX(78deg) translateX(var(--wave-x)) translateY(var(--wave-y))
+    translateZ(var(--wave-z)) rotateY(0deg) translateZ(-25px);
+  animation: aurora-pendulum 12s ease-in-out infinite;
+  animation-delay: var(--pendulum-delay);
+}
+
+@keyframes aurora-pendulum {
+  0% {
+    transform: rotateX(78deg) translateX(var(--wave-x))
+      translateY(var(--wave-y)) translateZ(var(--wave-z)) rotateY(0deg)
+      translateZ(-25px);
+  }
+  50% {
+    transform: rotateX(78deg) translateX(var(--wave-x))
+      translateY(var(--wave-y)) translateZ(var(--wave-z)) rotateY(180deg)
+      translateZ(25px);
+  }
+  100% {
+    transform: rotateX(78deg) translateX(var(--wave-x))
+      translateY(var(--wave-y)) translateZ(var(--wave-z)) rotateY(0deg)
+      translateZ(-25px);
+  }
+}
+
+@media (min-width: 600px) {
+  .sac-particle__dot:nth-child(1) {
+    --wave-x: -73.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(2) {
+    --wave-x: -70.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(3) {
+    --wave-x: -67.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(4) {
+    --wave-x: -64.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(5) {
+    --wave-x: -61.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(6) {
+    --wave-x: -58.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(7) {
+    --wave-x: -55.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(8) {
+    --wave-x: -52.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(9) {
+    --wave-x: -49.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(10) {
+    --wave-x: -46.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(11) {
+    --wave-x: -43.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(12) {
+    --wave-x: -40.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(13) {
+    --wave-x: -37.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(14) {
+    --wave-x: -34.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(15) {
+    --wave-x: -31.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(16) {
+    --wave-x: -28.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(17) {
+    --wave-x: -25.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(18) {
+    --wave-x: -22.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(19) {
+    --wave-x: -19.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(20) {
+    --wave-x: -16.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(21) {
+    --wave-x: -13.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(22) {
+    --wave-x: -10.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(23) {
+    --wave-x: -7.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(24) {
+    --wave-x: -4.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(25) {
+    --wave-x: -1.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(26) {
+    --wave-x: 1.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(27) {
+    --wave-x: 4.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(28) {
+    --wave-x: 7.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(29) {
+    --wave-x: 10.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(30) {
+    --wave-x: 13.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(31) {
+    --wave-x: 16.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(32) {
+    --wave-x: 19.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(33) {
+    --wave-x: 22.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(34) {
+    --wave-x: 25.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(35) {
+    --wave-x: 28.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(36) {
+    --wave-x: 31.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(37) {
+    --wave-x: 34.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(38) {
+    --wave-x: 37.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(39) {
+    --wave-x: 40.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(40) {
+    --wave-x: 43.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(41) {
+    --wave-x: 46.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(42) {
+    --wave-x: 49.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(43) {
+    --wave-x: 52.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(44) {
+    --wave-x: 55.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(45) {
+    --wave-x: 58.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(46) {
+    --wave-x: 61.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(47) {
+    --wave-x: 64.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(48) {
+    --wave-x: 67.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(49) {
+    --wave-x: 70.5px;
+    width: 5px;
+  }
+  .sac-particle__dot:nth-child(50) {
+    --wave-x: 73.5px;
+    width: 5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sac-particle__dot {
+    animation-play-state: paused;
+  }
+}
