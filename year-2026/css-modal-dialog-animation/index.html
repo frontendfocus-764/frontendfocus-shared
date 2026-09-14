@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <title>CSS Modal Dialog Animation | Smooth Open & Close Effect</title>
+</head>
+<body>
+    <input type="checkbox" name="dialog_state" id="dialog_state" class="dialog_state" />
+
+    <div id='dialog'>
+    <label id="dlg-back" for="dialog_state"></label>
+
+    <div id='dlg-wrap'>
+        <label id="dlg-close" for="dialog_state">
+            <i class="icon ion-ios-close-empty"></i>
+        </label>
+
+        <h2 id='dlg-header'>Ready to Continue?</h2>
+
+        <div id='dlg-content'>
+            This action will apply the selected changes. Would you like to continue?
+        </div>
+
+        <label id='dlg-prompt'>
+            <div class='button positive'>
+                <i class="icon ion-ios-checkmark-empty"></i> Yes, Continue
+            </div>
+
+            <label class="button" for="dialog_state">
+                <i class="icon ion-ios-close-empty"></i> Cancel
+            </label>
+        </label>
+    </div>
+   </div>
+
+    <main id='main' class='main_area'>
+    <div class='center'>
+        <label class="button" for="dialog_state">
+        <i class="icon ion-ios-upload-outline"></i>
+        Open the dialog
+        </label>
+    </div>
+    <div id='console'></div>
+    </main>
+</body>
+</html>
