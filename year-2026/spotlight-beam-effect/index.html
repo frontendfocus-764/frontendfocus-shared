@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <title>Realistic Spotlight Beam Effect | HTML, CSS & JS</title>
+</head>
+<body>
+    <div class="aperture-light" data-clean="false">
+      <div
+        class="aperture-light__canvas"
+        role="img"
+        aria-label="A flare contracts into a light beam above a curved glass rim."
+      ></div>
+      <div
+        class="aperture-light__controls"
+        role="group"
+        aria-label="Animation playback"
+      >
+        <button
+          class="aperture-light__toggle"
+          type="button"
+          data-playing="true"
+          aria-label="Pause animation"
+          title="Play / pause · Space"
+        >
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path
+              class="aperture-light__play-icon"
+              d="M6 3.5 16 10 6 16.5Z"
+              fill="currentColor"
+            ></path>
+            <path
+              class="aperture-light__pause-icon"
+              d="M7 4v12M13 4v12"
+              stroke="currentColor"
+              stroke-width="2"
+            ></path>
+          </svg>
+          <span class="aperture-light__play-label">Play</span>
+          <span class="aperture-light__pause-label">Pause</span>
+        </button>
+        <button
+          class="aperture-light__replay"
+          type="button"
+          aria-label="Replay animation"
+          title="Replay · R"
+        >
+          <svg
+            viewBox="0 0 20 20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.25"
+            aria-hidden="true"
+          >
+            <path d="M4 7a6.5 6.5 0 1 1-.4 5M4 2.5V7h4.5"></path>
+          </svg>
+        </button>
+        <div class="aperture-light__timeline" style="--progress: 0%">
+          <span class="aperture-light__rail" aria-hidden="true">
+            <span></span>
+          </span>
+          <span class="aperture-light__ticks" aria-hidden="true"></span>
+          <input
+            type="range"
+            min="0"
+            max="14.066666666666666"
+            step="0.03333333333333333"
+            aria-label="Animation time in seconds"
+            aria-valuetext="0.00 seconds"
+            value="0"
+          />
+        </div>
+        <div class="aperture-light__time">
+          <output aria-live="off">00:00:00</output>
+          <span aria-label="Duration 14 seconds and 2 frames">/ 00:14:02</span>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="frontendfocus.js"></script>
+</body>
+</html>
