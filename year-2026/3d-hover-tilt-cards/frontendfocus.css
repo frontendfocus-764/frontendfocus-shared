@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;500;700;800;900;1000&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  background-color: #181a1f;
+  padding: 0px 20px;
+}
+
+.container {
+  padding: 50px 0px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.parent {
+  height: 400px;
+  width: 300px;
+  padding: 20px;
+  perspective: 1000px;
+}
+
+.card {
+  padding-top: 100px;
+  transform-style: preserve-3d;
+  background-image: url("card.jpg");
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+  border-radius: 10px;
+}
+.card:hover {
+  background-position: 80% 20%;
+  transform: rotate3d(0.5, 1, 0, 30deg);
+}
+
+.content-box {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.811);
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: rgba(239, 68, 68, 0.925) 0px 20px 50px -25px;
+  transition: all 0.5s ease-in-out;
+  padding: 50px 25px 25px 25px;
+  transform-style: preserve-3d;
+}
+.content-box .card-title {
+  color: white;
+  font-size: 25px;
+  font-weight: 900;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 20px);
+}
+.content-box .card-title:hover {
+  transform: translate3d(0px, 0px, 50px);
+}
+.content-box .card-content {
+  padding-top: 15px;
+  font-size: 12px;
+  color: #b9b9b9;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 20px);
+}
+.content-box .card-content:hover {
+  transform: translate3d(0px, 0px, 50px);
+}
+.content-box .see-more {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-weight: 900;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #ef4444;
+  padding-top: 15px;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 20px);
+}
+.content-box .see-more:hover {
+  transform: translate3d(0px, 0px, 50px);
+}
+
+.date-box {
+  position: absolute;
+  top: 75px;
+  left: 25px;
+  height: 60px;
+  width: 60px;
+  background-color: black;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: #ef4444 0px 20px 60px 0px, #f87171 0px 18px 36px -18px;
+  transform: translate3d(0px, 0px, 50px);
+}
+.date-box span {
+  display: block;
+  text-align: center;
+}
+.date-box .month {
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+}
+.date-box .date {
+  font-size: 20px;
+  font-weight: 900;
+  color: #ef4444;
+}
+
+.card2, .card3, .card4 {
+  filter: none;
+}
