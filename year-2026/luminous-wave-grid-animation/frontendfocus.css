@@ -1,0 +1,9691 @@
+html {
+  height: 100%;
+  background: 50% 50% no-repeat
+    url('data:image/svg+xml,<svg viewBox="-20 -5 60 40" width="140" xmlns="http://www.w3.org/2000/svg" opacity="0.2"><path d="M1 8l11-7 11 7v8l-11 7-11-7zm0 0l11 8 11-8m0 8L12 8 1 16M12 1v7m0 8v7" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"/><text x="-12" y="32" font-size="5" font-family="monospace" fill="currentColor">Built on CodePen</text></svg>');
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  background:
+    radial-gradient(
+      circle at 50% 18%,
+      rgba(90, 104, 127, 0.22),
+      transparent 32%
+    ),
+    linear-gradient(180deg, #0a111c 0%, #02070d 100%);
+  font-family: Inter, "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wave-grid {
+  width: min(100vw, 1200px);
+  height: auto;
+  display: block;
+  transform: scale(1.85);
+}
+
+.node-layer {
+  filter: none;
+}
+
+.node {
+  animation-duration: 12s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.node-core,
+.node-halo {
+  fill: rgba(255, 178, 84, 1);
+  stroke: none;
+}
+
+.node-core {
+  r: 1.2px;
+  fill-opacity: 0.75;
+}
+
+.node-halo--1 {
+  r: 2.4px;
+  fill-opacity: 0.35;
+}
+
+.node-halo--2 {
+  r: 3.8px;
+  fill-opacity: 0.17;
+}
+
+.node.is-hot .node-core {
+  fill: #fff0ce;
+  r: 2.6px;
+  fill-opacity: 1;
+}
+
+.node.is-hot .node-halo--1 {
+  r: 3.6px;
+  fill-opacity: 0.52;
+}
+
+.node.is-hot .node-halo--2 {
+  r: 5.6px;
+  fill-opacity: 0.09;
+}
+
+.node-0-0 {
+  animation-name: node-0-0-wave;
+}
+
+@keyframes node-0-0-wave {
+
+  0% {
+    transform: translate(253.0px, 428.58px);
+  }
+
+  12.5% {
+    transform: translate(252.06px, 424.44px);
+  }
+
+  25% {
+    transform: translate(255.35px, 438.8px);
+  }
+
+  37.5% {
+    transform: translate(260.82px, 462.59px);
+  }
+
+  50% {
+    transform: translate(265.21px, 481.68px);
+  }
+
+  62.5% {
+    transform: translate(266.08px, 485.5px);
+  }
+
+  75% {
+    transform: translate(262.99px, 472.03px);
+  }
+
+  87.5% {
+    transform: translate(257.59px, 448.55px);
+  }
+
+  100% {
+    transform: translate(253.0px, 428.58px);
+  }
+
+}
+
+.node-0-1 {
+  animation-name: node-0-1-wave;
+}
+
+@keyframes node-0-1-wave {
+
+  0% {
+    transform: translate(298.88px, 453.5px);
+  }
+
+  12.5% {
+    transform: translate(297.0px, 444.23px);
+  }
+
+  25% {
+    transform: translate(296.47px, 441.62px);
+  }
+
+  37.5% {
+    transform: translate(297.61px, 447.25px);
+  }
+
+  50% {
+    transform: translate(299.73px, 457.7px);
+  }
+
+  62.5% {
+    transform: translate(301.58px, 466.8px);
+  }
+
+  75% {
+    transform: translate(302.09px, 469.33px);
+  }
+
+  87.5% {
+    transform: translate(300.98px, 463.86px);
+  }
+
+  100% {
+    transform: translate(298.88px, 453.5px);
+  }
+
+}
+
+.node-0-2 {
+  animation-name: node-0-2-wave;
+}
+
+@keyframes node-0-2-wave {
+
+  0% {
+    transform: translate(343.55px, 479.21px);
+  }
+
+  12.5% {
+    transform: translate(340.23px, 460.35px);
+  }
+
+  25% {
+    transform: translate(336.33px, 438.14px);
+  }
+
+  37.5% {
+    transform: translate(334.17px, 425.85px);
+  }
+
+  50% {
+    transform: translate(335.11px, 431.22px);
+  }
+
+  62.5% {
+    transform: translate(338.56px, 450.83px);
+  }
+
+  75% {
+    transform: translate(342.4px, 472.67px);
+  }
+
+  87.5% {
+    transform: translate(344.43px, 484.21px);
+  }
+
+  100% {
+    transform: translate(343.55px, 479.21px);
+  }
+
+}
+
+.node-0-3 {
+  animation-name: node-0-3-wave;
+}
+
+@keyframes node-0-3-wave {
+
+  0% {
+    transform: translate(386.33px, 501.57px);
+  }
+
+  12.5% {
+    transform: translate(381.72px, 470.57px);
+  }
+
+  25% {
+    transform: translate(375.55px, 429.08px);
+  }
+
+  37.5% {
+    transform: translate(371.49px, 401.75px);
+  }
+
+  50% {
+    transform: translate(372.21px, 406.6px);
+  }
+
+  62.5% {
+    transform: translate(377.22px, 440.33px);
+  }
+
+  75% {
+    transform: translate(383.3px, 481.21px);
+  }
+
+  87.5% {
+    transform: translate(386.96px, 505.81px);
+  }
+
+  100% {
+    transform: translate(386.33px, 501.57px);
+  }
+
+}
+
+.node-0-4 {
+  animation-name: node-0-4-wave;
+}
+
+@keyframes node-0-4-wave {
+
+  0% {
+    transform: translate(427.1px, 517.4px);
+  }
+
+  12.5% {
+    transform: translate(421.81px, 473.91px);
+  }
+
+  25% {
+    transform: translate(414.81px, 416.32px);
+  }
+
+  37.5% {
+    transform: translate(410.29px, 379.2px);
+  }
+
+  50% {
+    transform: translate(411.38px, 388.19px);
+  }
+
+  62.5% {
+    transform: translate(417.3px, 436.83px);
+  }
+
+  75% {
+    transform: translate(424.12px, 492.91px);
+  }
+
+  87.5% {
+    transform: translate(428.01px, 524.87px);
+  }
+
+  100% {
+    transform: translate(427.1px, 517.4px);
+  }
+
+}
+
+.node-0-5 {
+  animation-name: node-0-5-wave;
+}
+
+@keyframes node-0-5-wave {
+
+  0% {
+    transform: translate(466.22px, 524.79px);
+  }
+
+  12.5% {
+    transform: translate(461.1px, 470.63px);
+  }
+
+  25% {
+    transform: translate(454.67px, 402.67px);
+  }
+
+  37.5% {
+    transform: translate(450.88px, 362.67px);
+  }
+
+  50% {
+    transform: translate(452.46px, 379.3px);
+  }
+
+  62.5% {
+    transform: translate(458.23px, 440.27px);
+  }
+
+  75% {
+    transform: translate(464.35px, 505.01px);
+  }
+
+  87.5% {
+    transform: translate(467.49px, 538.19px);
+  }
+
+  100% {
+    transform: translate(466.22px, 524.79px);
+  }
+
+}
+
+.node-0-6 {
+  animation-name: node-0-6-wave;
+}
+
+@keyframes node-0-6-wave {
+
+  0% {
+    transform: translate(504.33px, 523.1px);
+  }
+
+  12.5% {
+    transform: translate(500.21px, 462.09px);
+  }
+
+  25% {
+    transform: translate(495.43px, 391.44px);
+  }
+
+  37.5% {
+    transform: translate(493.03px, 355.82px);
+  }
+
+  50% {
+    transform: translate(494.75px, 381.35px);
+  }
+
+  62.5% {
+    transform: translate(499.33px, 449.06px);
+  }
+
+  75% {
+    transform: translate(503.76px, 514.65px);
+  }
+
+  87.5% {
+    transform: translate(505.71px, 543.55px);
+  }
+
+  100% {
+    transform: translate(504.33px, 523.1px);
+  }
+
+}
+
+.node-0-7 {
+  animation-name: node-0-7-wave;
+}
+
+@keyframes node-0-7-wave {
+
+  0% {
+    transform: translate(542.19px, 512.93px);
+  }
+
+  12.5% {
+    transform: translate(539.66px, 450.61px);
+  }
+
+  25% {
+    transform: translate(537.03px, 385.79px);
+  }
+
+  37.5% {
+    transform: translate(536.01px, 360.56px);
+  }
+
+  50% {
+    transform: translate(537.34px, 393.47px);
+  }
+
+  62.5% {
+    transform: translate(540.06px, 460.57px);
+  }
+
+  75% {
+    transform: translate(542.45px, 519.41px);
+  }
+
+  87.5% {
+    transform: translate(543.28px, 539.85px);
+  }
+
+  100% {
+    transform: translate(542.19px, 512.93px);
+  }
+
+}
+
+.node-0-8 {
+  animation-name: node-0-8-wave;
+}
+
+@keyframes node-0-8-wave {
+
+  0% {
+    transform: translate(580.5px, 496.07px);
+  }
+
+  12.5% {
+    transform: translate(579.73px, 439.05px);
+  }
+
+  25% {
+    transform: translate(579.04px, 387.89px);
+  }
+
+  37.5% {
+    transform: translate(578.88px, 376.38px);
+  }
+
+  50% {
+    transform: translate(579.38px, 412.8px);
+  }
+
+  62.5% {
+    transform: translate(580.17px, 471.8px);
+  }
+
+  75% {
+    transform: translate(580.79px, 517.65px);
+  }
+
+  87.5% {
+    transform: translate(580.92px, 527.18px);
+  }
+
+  100% {
+    transform: translate(580.5px, 496.07px);
+  }
+
+}
+
+.node-0-9 {
+  animation-name: node-0-9-wave;
+}
+
+@keyframes node-0-9-wave {
+
+  0% {
+    transform: translate(619.78px, 475.34px);
+  }
+
+  12.5% {
+    transform: translate(620.39px, 430.35px);
+  }
+
+  25% {
+    transform: translate(620.82px, 398.37px);
+  }
+
+  37.5% {
+    transform: translate(620.79px, 400.52px);
+  }
+
+  50% {
+    transform: translate(620.32px, 435.33px);
+  }
+
+  62.5% {
+    transform: translate(619.72px, 480.02px);
+  }
+
+  75% {
+    transform: translate(619.33px, 508.74px);
+  }
+
+  87.5% {
+    transform: translate(619.35px, 506.88px);
+  }
+
+  100% {
+    transform: translate(619.78px, 475.34px);
+  }
+
+}
+
+.node-0-10 {
+  animation-name: node-0-10-wave;
+}
+
+@keyframes node-0-10-wave {
+
+  0% {
+    transform: translate(660.19px, 454.35px);
+  }
+
+  12.5% {
+    transform: translate(661.3px, 426.88px);
+  }
+
+  25% {
+    transform: translate(661.75px, 415.97px);
+  }
+
+  37.5% {
+    transform: translate(661.23px, 428.71px);
+  }
+
+  50% {
+    transform: translate(660.09px, 456.85px);
+  }
+
+  62.5% {
+    transform: translate(659.02px, 483.25px);
+  }
+
+  75% {
+    transform: translate(658.61px, 493.22px);
+  }
+
+  87.5% {
+    transform: translate(659.09px, 481.55px);
+  }
+
+  100% {
+    transform: translate(660.19px, 454.35px);
+  }
+
+}
+
+.node-0-11 {
+  animation-name: node-0-11-wave;
+}
+
+@keyframes node-0-11-wave {
+
+  0% {
+    transform: translate(701.49px, 436.98px);
+  }
+
+  12.5% {
+    transform: translate(701.97px, 429.81px);
+  }
+
+  25% {
+    transform: translate(701.43px, 437.93px);
+  }
+
+  37.5% {
+    transform: translate(700.19px, 456.26px);
+  }
+
+  50% {
+    transform: translate(699.0px, 473.76px);
+  }
+
+  62.5% {
+    transform: translate(698.55px, 480.53px);
+  }
+
+  75% {
+    transform: translate(699.06px, 472.86px);
+  }
+
+  87.5% {
+    transform: translate(700.28px, 454.95px);
+  }
+
+  100% {
+    transform: translate(701.49px, 436.98px);
+  }
+
+}
+
+.node-0-12 {
+  animation-name: node-0-12-wave;
+}
+
+@keyframes node-0-12-wave {
+
+  0% {
+    transform: translate(743.07px, 426.58px);
+  }
+
+  12.5% {
+    transform: translate(741.91px, 438.83px);
+  }
+
+  25% {
+    transform: translate(739.85px, 460.59px);
+  }
+
+  37.5% {
+    transform: translate(738.12px, 478.9px);
+  }
+
+  50% {
+    transform: translate(737.68px, 483.53px);
+  }
+
+  62.5% {
+    transform: translate(738.77px, 472.01px);
+  }
+
+  75% {
+    transform: translate(740.8px, 450.58px);
+  }
+
+  87.5% {
+    transform: translate(742.6px, 431.55px);
+  }
+
+  100% {
+    transform: translate(743.07px, 426.58px);
+  }
+
+}
+
+.node-0-13 {
+  animation-name: node-0-13-wave;
+}
+
+@keyframes node-0-13-wave {
+
+  0% {
+    transform: translate(784.12px, 425.17px);
+  }
+
+  12.5% {
+    transform: translate(780.83px, 452.19px);
+  }
+
+  25% {
+    transform: translate(777.43px, 480.19px);
+  }
+
+  37.5% {
+    transform: translate(775.82px, 493.38px);
+  }
+
+  50% {
+    transform: translate(776.86px, 484.83px);
+  }
+
+  62.5% {
+    transform: translate(780.0px, 459.0px);
+  }
+
+  75% {
+    transform: translate(783.51px, 430.17px);
+  }
+
+  87.5% {
+    transform: translate(785.26px, 415.8px);
+  }
+
+  100% {
+    transform: translate(784.12px, 425.17px);
+  }
+
+}
+
+.node-0-14 {
+  animation-name: node-0-14-wave;
+}
+
+@keyframes node-0-14-wave {
+
+  0% {
+    transform: translate(823.88px, 432.92px);
+  }
+
+  12.5% {
+    transform: translate(818.79px, 467.18px);
+  }
+
+  25% {
+    transform: translate(814.88px, 493.46px);
+  }
+
+  37.5% {
+    transform: translate(814.26px, 497.65px);
+  }
+
+  50% {
+    transform: translate(817.24px, 477.61px);
+  }
+
+  62.5% {
+    transform: translate(822.26px, 443.84px);
+  }
+
+  75% {
+    transform: translate(826.44px, 415.71px);
+  }
+
+  87.5% {
+    transform: translate(827.13px, 411.03px);
+  }
+
+  100% {
+    transform: translate(823.88px, 432.92px);
+  }
+
+}
+
+.node-0-15 {
+  animation-name: node-0-15-wave;
+}
+
+@keyframes node-0-15-wave {
+
+  0% {
+    transform: translate(861.92px, 448.08px);
+  }
+
+  12.5% {
+    transform: translate(856.18px, 480.75px);
+  }
+
+  25% {
+    transform: translate(853.15px, 498.02px);
+  }
+
+  37.5% {
+    transform: translate(854.4px, 490.91px);
+  }
+
+  50% {
+    transform: translate(859.29px, 463.05px);
+  }
+
+  62.5% {
+    transform: translate(865.17px, 429.57px);
+  }
+
+  75% {
+    transform: translate(868.51px, 410.61px);
+  }
+
+  87.5% {
+    transform: translate(867.11px, 418.53px);
+  }
+
+  100% {
+    transform: translate(861.92px, 448.08px);
+  }
+
+}
+
+.node-0-16 {
+  animation-name: node-0-16-wave;
+}
+
+@keyframes node-0-16-wave {
+
+  0% {
+    transform: translate(898.27px, 467.57px);
+  }
+
+  12.5% {
+    transform: translate(893.7px, 490.1px);
+  }
+
+  25% {
+    transform: translate(893.2px, 492.55px);
+  }
+
+  37.5% {
+    transform: translate(897.04px, 473.65px);
+  }
+
+  50% {
+    transform: translate(903.16px, 443.44px);
+  }
+
+  62.5% {
+    transform: translate(908.03px, 419.42px);
+  }
+
+  75% {
+    transform: translate(908.58px, 416.72px);
+  }
+
+  87.5% {
+    transform: translate(904.44px, 437.11px);
+  }
+
+  100% {
+    transform: translate(898.27px, 467.57px);
+  }
+
+}
+
+.node-0-17 {
+  animation-name: node-0-17-wave;
+}
+
+@keyframes node-0-17-wave {
+
+  0% {
+    transform: translate(933.41px, 487.71px);
+  }
+
+  12.5% {
+    transform: translate(932.17px, 493.12px);
+  }
+
+  25% {
+    transform: translate(935.89px, 476.91px);
+  }
+
+  37.5% {
+    transform: translate(942.61px, 447.65px);
+  }
+
+  50% {
+    transform: translate(948.5px, 422.05px);
+  }
+
+  62.5% {
+    transform: translate(949.86px, 416.09px);
+  }
+
+  75% {
+    transform: translate(945.83px, 433.66px);
+  }
+
+  87.5% {
+    transform: translate(938.98px, 463.47px);
+  }
+
+  100% {
+    transform: translate(933.41px, 487.71px);
+  }
+
+}
+
+.node-1-0 {
+  animation-name: node-1-0-wave;
+}
+
+@keyframes node-1-0-wave {
+
+  0% {
+    transform: translate(260.78px, 407.69px);
+  }
+
+  12.5% {
+    transform: translate(258.86px, 399.02px);
+  }
+
+  25% {
+    transform: translate(262.39px, 414.97px);
+  }
+
+  37.5% {
+    transform: translate(269.09px, 445.2px);
+  }
+
+  50% {
+    transform: translate(274.91px, 471.48px);
+  }
+
+  62.5% {
+    transform: translate(276.66px, 479.35px);
+  }
+
+  75% {
+    transform: translate(273.42px, 464.73px);
+  }
+
+  87.5% {
+    transform: translate(266.9px, 435.29px);
+  }
+
+  100% {
+    transform: translate(260.78px, 407.69px);
+  }
+
+}
+
+.node-1-1 {
+  animation-name: node-1-1-wave;
+}
+
+@keyframes node-1-1-wave {
+
+  0% {
+    transform: translate(305.6px, 432.82px);
+  }
+
+  12.5% {
+    transform: translate(303.03px, 419.68px);
+  }
+
+  25% {
+    transform: translate(302.83px, 418.64px);
+  }
+
+  37.5% {
+    transform: translate(305.12px, 430.36px);
+  }
+
+  50% {
+    transform: translate(308.5px, 447.63px);
+  }
+
+  62.5% {
+    transform: translate(310.97px, 460.3px);
+  }
+
+  75% {
+    transform: translate(311.16px, 461.28px);
+  }
+
+  87.5% {
+    transform: translate(308.97px, 450.04px);
+  }
+
+  100% {
+    transform: translate(305.6px, 432.82px);
+  }
+
+}
+
+.node-1-2 {
+  animation-name: node-1-2-wave;
+}
+
+@keyframes node-1-2-wave {
+
+  0% {
+    transform: translate(349.14px, 458.13px);
+  }
+
+  12.5% {
+    transform: translate(345.46px, 436.36px);
+  }
+
+  25% {
+    transform: translate(342.06px, 416.31px);
+  }
+
+  37.5% {
+    transform: translate(341.03px, 410.22px);
+  }
+
+  50% {
+    transform: translate(343.02px, 421.96px);
+  }
+
+  62.5% {
+    transform: translate(346.77px, 444.14px);
+  }
+
+  75% {
+    transform: translate(350.05px, 463.47px);
+  }
+
+  87.5% {
+    transform: translate(351.01px, 469.15px);
+  }
+
+  100% {
+    transform: translate(349.14px, 458.13px);
+  }
+
+}
+
+.node-1-3 {
+  animation-name: node-1-3-wave;
+}
+
+@keyframes node-1-3-wave {
+
+  0% {
+    transform: translate(390.8px, 479.53px);
+  }
+
+  12.5% {
+    transform: translate(386.11px, 446.8px);
+  }
+
+  25% {
+    transform: translate(380.63px, 408.58px);
+  }
+
+  37.5% {
+    transform: translate(377.69px, 388.05px);
+  }
+
+  50% {
+    transform: translate(379.23px, 398.83px);
+  }
+
+  62.5% {
+    transform: translate(384.23px, 433.66px);
+  }
+
+  75% {
+    transform: translate(389.53px, 470.66px);
+  }
+
+  87.5% {
+    transform: translate(392.17px, 489.07px);
+  }
+
+  100% {
+    transform: translate(390.8px, 479.53px);
+  }
+
+}
+
+.node-1-4 {
+  animation-name: node-1-4-wave;
+}
+
+@keyframes node-1-4-wave {
+
+  0% {
+    transform: translate(430.53px, 493.97px);
+  }
+
+  12.5% {
+    transform: translate(425.37px, 449.98px);
+  }
+
+  25% {
+    transform: translate(419.18px, 397.2px);
+  }
+
+  37.5% {
+    transform: translate(415.75px, 367.94px);
+  }
+
+  50% {
+    transform: translate(417.45px, 382.41px);
+  }
+
+  62.5% {
+    transform: translate(423.08px, 430.41px);
+  }
+
+  75% {
+    transform: translate(429.01px, 480.99px);
+  }
+
+  87.5% {
+    transform: translate(431.97px, 506.22px);
+  }
+
+  100% {
+    transform: translate(430.53px, 493.97px);
+  }
+
+}
+
+.node-1-5 {
+  animation-name: node-1-5-wave;
+}
+
+@keyframes node-1-5-wave {
+
+  0% {
+    transform: translate(468.71px, 499.63px);
+  }
+
+  12.5% {
+    transform: translate(463.83px, 446.14px);
+  }
+
+  25% {
+    transform: translate(458.24px, 384.82px);
+  }
+
+  37.5% {
+    transform: translate(455.43px, 354.06px);
+  }
+
+  50% {
+    transform: translate(457.41px, 375.79px);
+  }
+
+  62.5% {
+    transform: translate(462.75px, 434.33px);
+  }
+
+  75% {
+    transform: translate(468.0px, 491.88px);
+  }
+
+  87.5% {
+    transform: translate(470.35px, 517.57px);
+  }
+
+  100% {
+    transform: translate(468.71px, 499.63px);
+  }
+
+}
+
+.node-1-6 {
+  animation-name: node-1-6-wave;
+}
+
+@keyframes node-1-6-wave {
+
+  0% {
+    transform: translate(505.98px, 495.95px);
+  }
+
+  12.5% {
+    transform: translate(502.12px, 436.67px);
+  }
+
+  25% {
+    transform: translate(498.07px, 374.61px);
+  }
+
+  37.5% {
+    transform: translate(496.45px, 349.73px);
+  }
+
+  50% {
+    transform: translate(498.43px, 380.11px);
+  }
+
+  62.5% {
+    transform: translate(502.58px, 443.83px);
+  }
+
+  75% {
+    transform: translate(506.29px, 500.63px);
+  }
+
+  87.5% {
+    transform: translate(507.62px, 521.03px);
+  }
+
+  100% {
+    transform: translate(505.98px, 495.95px);
+  }
+
+}
+
+.node-1-7 {
+  animation-name: node-1-7-wave;
+}
+
+@keyframes node-1-7-wave {
+
+  0% {
+    transform: translate(543.11px, 483.64px);
+  }
+
+  12.5% {
+    transform: translate(540.77px, 423.92px);
+  }
+
+  25% {
+    transform: translate(538.65px, 369.54px);
+  }
+
+  37.5% {
+    transform: translate(538.14px, 356.49px);
+  }
+
+  50% {
+    transform: translate(539.61px, 394.22px);
+  }
+
+  62.5% {
+    transform: translate(542.04px, 456.26px);
+  }
+
+  75% {
+    transform: translate(543.94px, 504.88px);
+  }
+
+  87.5% {
+    transform: translate(544.36px, 515.61px);
+  }
+
+  100% {
+    transform: translate(543.11px, 483.64px);
+  }
+
+}
+
+.node-1-8 {
+  animation-name: node-1-8-wave;
+}
+
+@keyframes node-1-8-wave {
+
+  0% {
+    transform: translate(580.79px, 464.6px);
+  }
+
+  12.5% {
+    transform: translate(580.09px, 410.84px);
+  }
+
+  25% {
+    transform: translate(579.58px, 371.73px);
+  }
+
+  37.5% {
+    transform: translate(579.6px, 373.59px);
+  }
+
+  50% {
+    transform: translate(580.14px, 415.11px);
+  }
+
+  62.5% {
+    transform: translate(580.84px, 468.57px);
+  }
+
+  75% {
+    transform: translate(581.29px, 503.06px);
+  }
+
+  87.5% {
+    transform: translate(581.27px, 501.49px);
+  }
+
+  100% {
+    transform: translate(580.79px, 464.6px);
+  }
+
+}
+
+.node-1-9 {
+  animation-name: node-1-9-wave;
+}
+
+@keyframes node-1-9-wave {
+
+  0% {
+    transform: translate(619.51px, 441.84px);
+  }
+
+  12.5% {
+    transform: translate(620.05px, 400.54px);
+  }
+
+  25% {
+    transform: translate(620.29px, 381.76px);
+  }
+
+  37.5% {
+    transform: translate(620.08px, 398.18px);
+  }
+
+  50% {
+    transform: translate(619.55px, 438.68px);
+  }
+
+  62.5% {
+    transform: translate(619.04px, 477.99px);
+  }
+
+  75% {
+    transform: translate(618.82px, 494.53px);
+  }
+
+  87.5% {
+    transform: translate(619.01px, 480.1px);
+  }
+
+  100% {
+    transform: translate(619.51px, 441.84px);
+  }
+
+}
+
+.node-1-10 {
+  animation-name: node-1-10-wave;
+}
+
+@keyframes node-1-10-wave {
+
+  0% {
+    transform: translate(659.41px, 419.18px);
+  }
+
+  12.5% {
+    transform: translate(660.34px, 395.54px);
+  }
+
+  25% {
+    transform: translate(660.22px, 398.5px);
+  }
+
+  37.5% {
+    transform: translate(659.14px, 426.1px);
+  }
+
+  50% {
+    transform: translate(657.79px, 460.77px);
+  }
+
+  62.5% {
+    transform: translate(656.94px, 482.47px);
+  }
+
+  75% {
+    transform: translate(657.04px, 479.82px);
+  }
+
+  87.5% {
+    transform: translate(658.05px, 454.16px);
+  }
+
+  100% {
+    transform: translate(659.41px, 419.18px);
+  }
+
+}
+
+.node-1-11 {
+  animation-name: node-1-11-wave;
+}
+
+@keyframes node-1-11-wave {
+
+  0% {
+    transform: translate(700.22px, 400.71px);
+  }
+
+  12.5% {
+    transform: translate(700.45px, 397.23px);
+  }
+
+  25% {
+    transform: translate(699.01px, 419.35px);
+  }
+
+  37.5% {
+    transform: translate(696.83px, 452.82px);
+  }
+
+  50% {
+    transform: translate(695.2px, 477.83px);
+  }
+
+  62.5% {
+    transform: translate(695.0px, 480.96px);
+  }
+
+  75% {
+    transform: translate(696.32px, 460.61px);
+  }
+
+  87.5% {
+    transform: translate(698.48px, 427.5px);
+  }
+
+  100% {
+    transform: translate(700.22px, 400.71px);
+  }
+
+}
+
+.node-1-12 {
+  animation-name: node-1-12-wave;
+}
+
+@keyframes node-1-12-wave {
+
+  0% {
+    transform: translate(741.3px, 389.96px);
+  }
+
+  12.5% {
+    transform: translate(739.88px, 405.45px);
+  }
+
+  25% {
+    transform: translate(736.66px, 440.82px);
+  }
+
+  37.5% {
+    transform: translate(733.6px, 474.28px);
+  }
+
+  50% {
+    transform: translate(732.41px, 487.4px);
+  }
+
+  62.5% {
+    transform: translate(733.67px, 473.53px);
+  }
+
+  75% {
+    transform: translate(736.76px, 439.71px);
+  }
+
+  87.5% {
+    transform: translate(739.96px, 404.63px);
+  }
+
+  100% {
+    transform: translate(741.3px, 389.96px);
+  }
+
+}
+
+.node-1-13 {
+  animation-name: node-1-13-wave;
+}
+
+@keyframes node-1-13-wave {
+
+  0% {
+    transform: translate(781.78px, 389.03px);
+  }
+
+  12.5% {
+    transform: translate(778.31px, 418.57px);
+  }
+
+  25% {
+    transform: translate(773.53px, 459.31px);
+  }
+
+  37.5% {
+    transform: translate(770.24px, 487.4px);
+  }
+
+  50% {
+    transform: translate(770.14px, 488.22px);
+  }
+
+  62.5% {
+    transform: translate(773.29px, 461.35px);
+  }
+
+  75% {
+    transform: translate(778.06px, 420.72px);
+  }
+
+  87.5% {
+    transform: translate(781.67px, 389.96px);
+  }
+
+  100% {
+    transform: translate(781.78px, 389.03px);
+  }
+
+}
+
+.node-1-14 {
+  animation-name: node-1-14-wave;
+}
+
+@keyframes node-1-14-wave {
+
+  0% {
+    transform: translate(820.88px, 398.02px);
+  }
+
+  12.5% {
+    transform: translate(815.74px, 433.88px);
+  }
+
+  25% {
+    transform: translate(810.32px, 471.68px);
+  }
+
+  37.5% {
+    transform: translate(807.66px, 490.27px);
+  }
+
+  50% {
+    transform: translate(809.09px, 480.25px);
+  }
+
+  62.5% {
+    transform: translate(813.92px, 446.59px);
+  }
+
+  75% {
+    transform: translate(819.53px, 407.47px);
+  }
+
+  87.5% {
+    transform: translate(822.51px, 386.67px);
+  }
+
+  100% {
+    transform: translate(820.88px, 398.02px);
+  }
+
+}
+
+.node-1-15 {
+  animation-name: node-1-15-wave;
+}
+
+@keyframes node-1-15-wave {
+
+  0% {
+    transform: translate(858.16px, 415.04px);
+  }
+
+  12.5% {
+    transform: translate(852.53px, 448.28px);
+  }
+
+  25% {
+    transform: translate(847.89px, 475.62px);
+  }
+
+  37.5% {
+    transform: translate(846.78px, 482.2px);
+  }
+
+  50% {
+    transform: translate(849.75px, 464.67px);
+  }
+
+  62.5% {
+    transform: translate(855.26px, 432.16px);
+  }
+
+  75% {
+    transform: translate(860.17px, 403.15px);
+  }
+
+  87.5% {
+    transform: translate(861.41px, 395.84px);
+  }
+
+  100% {
+    transform: translate(858.16px, 415.04px);
+  }
+
+}
+
+.node-1-16 {
+  animation-name: node-1-16-wave;
+}
+
+@keyframes node-1-16-wave {
+
+  0% {
+    transform: translate(893.63px, 436.73px);
+  }
+
+  12.5% {
+    transform: translate(889.3px, 458.89px);
+  }
+
+  25% {
+    transform: translate(887.16px, 469.87px);
+  }
+
+  37.5% {
+    transform: translate(888.35px, 463.74px);
+  }
+
+  50% {
+    transform: translate(892.26px, 443.78px);
+  }
+
+  62.5% {
+    transform: translate(896.68px, 421.16px);
+  }
+
+  75% {
+    transform: translate(898.97px, 409.44px);
+  }
+
+  87.5% {
+    transform: translate(897.68px, 416.03px);
+  }
+
+  100% {
+    transform: translate(893.63px, 436.73px);
+  }
+
+}
+
+.node-1-17 {
+  animation-name: node-1-17-wave;
+}
+
+@keyframes node-1-17-wave {
+
+  0% {
+    transform: translate(927.81px, 459.19px);
+  }
+
+  12.5% {
+    transform: translate(926.86px, 463.49px);
+  }
+
+  25% {
+    transform: translate(928.89px, 454.33px);
+  }
+
+  37.5% {
+    transform: translate(932.78px, 436.75px);
+  }
+
+  50% {
+    transform: translate(936.3px, 420.85px);
+  }
+
+  62.5% {
+    transform: translate(937.31px, 416.29px);
+  }
+
+  75% {
+    transform: translate(935.18px, 425.92px);
+  }
+
+  87.5% {
+    transform: translate(931.23px, 443.76px);
+  }
+
+  100% {
+    transform: translate(927.81px, 459.19px);
+  }
+
+}
+
+.node-2-0 {
+  animation-name: node-2-0-wave;
+}
+
+@keyframes node-2-0-wave {
+
+  0% {
+    transform: translate(268.18px, 387.57px);
+  }
+
+  12.5% {
+    transform: translate(266.42px, 379.3px);
+  }
+
+  25% {
+    transform: translate(270.58px, 398.76px);
+  }
+
+  37.5% {
+    transform: translate(277.95px, 433.24px);
+  }
+
+  50% {
+    transform: translate(284.1px, 461.99px);
+  }
+
+  62.5% {
+    transform: translate(285.69px, 469.4px);
+  }
+
+  75% {
+    transform: translate(281.9px, 451.7px);
+  }
+
+  87.5% {
+    transform: translate(274.71px, 418.07px);
+  }
+
+  100% {
+    transform: translate(268.18px, 387.57px);
+  }
+
+}
+
+.node-2-1 {
+  animation-name: node-2-1-wave;
+}
+
+@keyframes node-2-1-wave {
+
+  0% {
+    transform: translate(311.96px, 412.69px);
+  }
+
+  12.5% {
+    transform: translate(309.68px, 400.58px);
+  }
+
+  25% {
+    transform: translate(310.2px, 403.33px);
+  }
+
+  37.5% {
+    transform: translate(313.19px, 419.2px);
+  }
+
+  50% {
+    transform: translate(316.83px, 438.48px);
+  }
+
+  62.5% {
+    transform: translate(319.0px, 450.0px);
+  }
+
+  75% {
+    transform: translate(318.52px, 447.42px);
+  }
+
+  87.5% {
+    transform: translate(315.63px, 432.13px);
+  }
+
+  100% {
+    transform: translate(311.96px, 412.69px);
+  }
+
+}
+
+.node-2-2 {
+  animation-name: node-2-2-wave;
+}
+
+@keyframes node-2-2-wave {
+
+  0% {
+    transform: translate(354.4px, 437.33px);
+  }
+
+  12.5% {
+    transform: translate(351.15px, 417.5px);
+  }
+
+  25% {
+    transform: translate(348.63px, 402.08px);
+  }
+
+  37.5% {
+    transform: translate(348.38px, 400.55px);
+  }
+
+  50% {
+    transform: translate(350.56px, 413.87px);
+  }
+
+  62.5% {
+    transform: translate(353.82px, 433.8px);
+  }
+
+  75% {
+    transform: translate(356.24px, 448.59px);
+  }
+
+  87.5% {
+    transform: translate(356.48px, 450.03px);
+  }
+
+  100% {
+    transform: translate(354.4px, 437.33px);
+  }
+
+}
+
+.node-2-3 {
+  animation-name: node-2-3-wave;
+}
+
+@keyframes node-2-3-wave {
+
+  0% {
+    transform: translate(394.98px, 457.55px);
+  }
+
+  12.5% {
+    transform: translate(390.86px, 427.79px);
+  }
+
+  25% {
+    transform: translate(386.4px, 395.52px);
+  }
+
+  37.5% {
+    transform: translate(384.31px, 380.45px);
+  }
+
+  50% {
+    transform: translate(385.97px, 392.43px);
+  }
+
+  62.5% {
+    transform: translate(390.28px, 423.59px);
+  }
+
+  75% {
+    transform: translate(394.59px, 454.71px);
+  }
+
+  87.5% {
+    transform: translate(396.48px, 468.38px);
+  }
+
+  100% {
+    transform: translate(394.98px, 457.55px);
+  }
+
+}
+
+.node-2-4 {
+  animation-name: node-2-4-wave;
+}
+
+@keyframes node-2-4-wave {
+
+  0% {
+    transform: translate(433.71px, 470.4px);
+  }
+
+  12.5% {
+    transform: translate(429.18px, 430.42px);
+  }
+
+  25% {
+    transform: translate(424.07px, 385.27px);
+  }
+
+  37.5% {
+    transform: translate(421.52px, 362.76px);
+  }
+
+  50% {
+    transform: translate(423.27px, 378.17px);
+  }
+
+  62.5% {
+    transform: translate(428.11px, 420.94px);
+  }
+
+  75% {
+    transform: translate(433.0px, 464.07px);
+  }
+
+  87.5% {
+    transform: translate(435.23px, 483.79px);
+  }
+
+  100% {
+    transform: translate(433.71px, 470.4px);
+  }
+
+}
+
+.node-2-5 {
+  animation-name: node-2-5-wave;
+}
+
+@keyframes node-2-5-wave {
+
+  0% {
+    transform: translate(471.0px, 474.16px);
+  }
+
+  12.5% {
+    transform: translate(466.72px, 425.64px);
+  }
+
+  25% {
+    transform: translate(462.16px, 373.83px);
+  }
+
+  37.5% {
+    transform: translate(460.18px, 351.34px);
+  }
+
+  50% {
+    transform: translate(462.17px, 373.91px);
+  }
+
+  62.5% {
+    transform: translate(466.73px, 425.74px);
+  }
+
+  75% {
+    transform: translate(471.0px, 474.23px);
+  }
+
+  87.5% {
+    transform: translate(472.69px, 493.39px);
+  }
+
+  100% {
+    transform: translate(471.0px, 474.16px);
+  }
+
+}
+
+.node-2-6 {
+  animation-name: node-2-6-wave;
+}
+
+@keyframes node-2-6-wave {
+
+  0% {
+    transform: translate(507.49px, 468.38px);
+  }
+
+  12.5% {
+    transform: translate(504.13px, 414.88px);
+  }
+
+  25% {
+    transform: translate(500.94px, 364.19px);
+  }
+
+  37.5% {
+    transform: translate(499.99px, 349.16px);
+  }
+
+  50% {
+    transform: translate(501.96px, 380.46px);
+  }
+
+  62.5% {
+    transform: translate(505.48px, 436.35px);
+  }
+
+  75% {
+    transform: translate(508.38px, 482.57px);
+  }
+
+  87.5% {
+    transform: translate(509.18px, 495.2px);
+  }
+
+  100% {
+    transform: translate(507.49px, 468.38px);
+  }
+
+}
+
+.node-2-7 {
+  animation-name: node-2-7-wave;
+}
+
+@keyframes node-2-7-wave {
+
+  0% {
+    transform: translate(543.95px, 453.85px);
+  }
+
+  12.5% {
+    transform: translate(541.93px, 400.55px);
+  }
+
+  25% {
+    transform: translate(540.37px, 359.23px);
+  }
+
+  37.5% {
+    transform: translate(540.31px, 357.44px);
+  }
+
+  50% {
+    transform: translate(541.78px, 396.44px);
+  }
+
+  62.5% {
+    transform: translate(543.8px, 450.02px);
+  }
+
+  75% {
+    transform: translate(545.19px, 486.79px);
+  }
+
+  87.5% {
+    transform: translate(545.25px, 488.3px);
+  }
+
+  100% {
+    transform: translate(543.95px, 453.85px);
+  }
+
+}
+
+.node-2-8 {
+  animation-name: node-2-8-wave;
+}
+
+@keyframes node-2-8-wave {
+
+  0% {
+    transform: translate(581.05px, 432.64px);
+  }
+
+  12.5% {
+    transform: translate(580.46px, 385.73px);
+  }
+
+  25% {
+    transform: translate(580.15px, 361.01px);
+  }
+
+  37.5% {
+    transform: translate(580.33px, 375.27px);
+  }
+
+  50% {
+    transform: translate(580.87px, 418.69px);
+  }
+
+  62.5% {
+    transform: translate(581.44px, 463.65px);
+  }
+
+  75% {
+    transform: translate(581.71px, 485.29px);
+  }
+
+  87.5% {
+    transform: translate(581.56px, 472.97px);
+  }
+
+  100% {
+    transform: translate(581.05px, 432.64px);
+  }
+
+}
+
+.node-2-9 {
+  animation-name: node-2-9-wave;
+}
+
+@keyframes node-2-9-wave {
+
+  0% {
+    transform: translate(619.26px, 407.91px);
+  }
+
+  12.5% {
+    transform: translate(619.69px, 373.66px);
+  }
+
+  25% {
+    transform: translate(619.74px, 370.16px);
+  }
+
+  37.5% {
+    transform: translate(619.36px, 399.8px);
+  }
+
+  50% {
+    transform: translate(618.82px, 443.06px);
+  }
+
+  62.5% {
+    transform: translate(618.43px, 474.38px);
+  }
+
+  75% {
+    transform: translate(618.39px, 477.43px);
+  }
+
+  87.5% {
+    transform: translate(618.72px, 450.73px);
+  }
+
+  100% {
+    transform: translate(619.26px, 407.91px);
+  }
+
+}
+
+.node-2-10 {
+  animation-name: node-2-10-wave;
+}
+
+@keyframes node-2-10-wave {
+
+  0% {
+    transform: translate(658.7px, 383.72px);
+  }
+
+  12.5% {
+    transform: translate(659.33px, 367.07px);
+  }
+
+  25% {
+    transform: translate(658.63px, 385.69px);
+  }
+
+  37.5% {
+    transform: translate(657.07px, 427.01px);
+  }
+
+  50% {
+    transform: translate(655.62px, 465.46px);
+  }
+
+  62.5% {
+    transform: translate(655.06px, 480.1px);
+  }
+
+  75% {
+    transform: translate(655.68px, 463.69px);
+  }
+
+  87.5% {
+    transform: translate(657.17px, 424.37px);
+  }
+
+  100% {
+    transform: translate(658.7px, 383.72px);
+  }
+
+}
+
+.node-2-11 {
+  animation-name: node-2-11-wave;
+}
+
+@keyframes node-2-11-wave {
+
+  0% {
+    transform: translate(699.05px, 364.36px);
+  }
+
+  12.5% {
+    transform: translate(698.85px, 367.55px);
+  }
+
+  25% {
+    transform: translate(696.48px, 405.19px);
+  }
+
+  37.5% {
+    transform: translate(693.5px, 452.58px);
+  }
+
+  50% {
+    transform: translate(691.63px, 482.43px);
+  }
+
+  62.5% {
+    transform: translate(691.8px, 479.68px);
+  }
+
+  75% {
+    transform: translate(693.94px, 445.66px);
+  }
+
+  87.5% {
+    transform: translate(696.95px, 397.81px);
+  }
+
+  100% {
+    transform: translate(699.05px, 364.36px);
+  }
+
+}
+
+.node-2-12 {
+  animation-name: node-2-12-wave;
+}
+
+@keyframes node-2-12-wave {
+
+  0% {
+    transform: translate(739.63px, 353.5px);
+  }
+
+  12.5% {
+    transform: translate(737.73px, 375.11px);
+  }
+
+  25% {
+    transform: translate(733.3px, 425.37px);
+  }
+
+  37.5% {
+    transform: translate(729.13px, 472.68px);
+  }
+
+  50% {
+    transform: translate(727.47px, 491.6px);
+  }
+
+  62.5% {
+    transform: translate(729.1px, 473.11px);
+  }
+
+  75% {
+    transform: translate(733.24px, 426.01px);
+  }
+
+  87.5% {
+    transform: translate(737.69px, 375.59px);
+  }
+
+  100% {
+    transform: translate(739.63px, 353.5px);
+  }
+
+}
+
+.node-2-13 {
+  animation-name: node-2-13-wave;
+}
+
+@keyframes node-2-13-wave {
+
+  0% {
+    transform: translate(779.55px, 353.3px);
+  }
+
+  12.5% {
+    transform: translate(775.6px, 388.18px);
+  }
+
+  25% {
+    transform: translate(769.41px, 442.81px);
+  }
+
+  37.5% {
+    transform: translate(764.7px, 484.42px);
+  }
+
+  50% {
+    transform: translate(763.87px, 491.76px);
+  }
+
+  62.5% {
+    transform: translate(767.3px, 461.43px);
+  }
+
+  75% {
+    transform: translate(773.33px, 408.18px);
+  }
+
+  87.5% {
+    transform: translate(778.56px, 362.03px);
+  }
+
+  100% {
+    transform: translate(779.55px, 353.3px);
+  }
+
+}
+
+.node-2-14 {
+  animation-name: node-2-14-wave;
+}
+
+@keyframes node-2-14-wave {
+
+  0% {
+    transform: translate(818.0px, 363.77px);
+  }
+
+  12.5% {
+    transform: translate(812.42px, 404.06px);
+  }
+
+  25% {
+    transform: translate(805.45px, 454.47px);
+  }
+
+  37.5% {
+    transform: translate(801.08px, 486.0px);
+  }
+
+  50% {
+    transform: translate(801.51px, 482.94px);
+  }
+
+  62.5% {
+    transform: translate(806.52px, 446.72px);
+  }
+
+  75% {
+    transform: translate(813.57px, 395.78px);
+  }
+
+  87.5% {
+    transform: translate(818.5px, 360.16px);
+  }
+
+  100% {
+    transform: translate(818.0px, 363.77px);
+  }
+
+}
+
+.node-2-15 {
+  animation-name: node-2-15-wave;
+}
+
+@keyframes node-2-15-wave {
+
+  0% {
+    transform: translate(854.53px, 382.77px);
+  }
+
+  12.5% {
+    transform: translate(848.51px, 419.58px);
+  }
+
+  25% {
+    transform: translate(842.2px, 458.11px);
+  }
+
+  37.5% {
+    transform: translate(839.14px, 476.84px);
+  }
+
+  50% {
+    transform: translate(840.86px, 466.31px);
+  }
+
+  62.5% {
+    transform: translate(846.51px, 431.76px);
+  }
+
+  75% {
+    transform: translate(853.05px, 391.83px);
+  }
+
+  87.5% {
+    transform: translate(856.48px, 370.84px);
+  }
+
+  100% {
+    transform: translate(854.53px, 382.77px);
+  }
+
+}
+
+.node-2-16 {
+  animation-name: node-2-16-wave;
+}
+
+@keyframes node-2-16-wave {
+
+  0% {
+    transform: translate(889.16px, 406.73px);
+  }
+
+  12.5% {
+    transform: translate(884.44px, 431.74px);
+  }
+
+  25% {
+    transform: translate(880.52px, 452.52px);
+  }
+
+  37.5% {
+    transform: translate(879.57px, 457.56px);
+  }
+
+  50% {
+    transform: translate(882.09px, 444.19px);
+  }
+
+  62.5% {
+    transform: translate(886.73px, 419.6px);
+  }
+
+  75% {
+    transform: translate(890.83px, 397.88px);
+  }
+
+  87.5% {
+    transform: translate(891.86px, 392.42px);
+  }
+
+  100% {
+    transform: translate(889.16px, 406.73px);
+  }
+
+}
+
+.node-2-17 {
+  animation-name: node-2-17-wave;
+}
+
+@keyframes node-2-17-wave {
+
+  0% {
+    transform: translate(922.43px, 431.47px);
+  }
+
+  12.5% {
+    transform: translate(920.99px, 438.19px);
+  }
+
+  25% {
+    transform: translate(921.11px, 437.62px);
+  }
+
+  37.5% {
+    transform: translate(922.72px, 430.08px);
+  }
+
+  50% {
+    transform: translate(924.91px, 419.87px);
+  }
+
+  62.5% {
+    transform: translate(926.38px, 412.98px);
+  }
+
+  75% {
+    transform: translate(926.25px, 413.57px);
+  }
+
+  87.5% {
+    transform: translate(924.61px, 421.28px);
+  }
+
+  100% {
+    transform: translate(922.43px, 431.47px);
+  }
+
+}
+
+.node-3-0 {
+  animation-name: node-3-0-wave;
+}
+
+@keyframes node-3-0-wave {
+
+  0% {
+    transform: translate(275.59px, 369.86px);
+  }
+
+  12.5% {
+    transform: translate(274.86px, 366.33px);
+  }
+
+  25% {
+    transform: translate(279.73px, 389.88px);
+  }
+
+  37.5% {
+    transform: translate(287.06px, 425.3px);
+  }
+
+  50% {
+    transform: translate(292.5px, 451.63px);
+  }
+
+  62.5% {
+    transform: translate(293.15px, 454.79px);
+  }
+
+  75% {
+    transform: translate(288.68px, 433.18px);
+  }
+
+  87.5% {
+    transform: translate(281.44px, 398.13px);
+  }
+
+  100% {
+    transform: translate(275.59px, 369.86px);
+  }
+
+}
+
+.node-3-1 {
+  animation-name: node-3-1-wave;
+}
+
+@keyframes node-3-1-wave {
+
+  0% {
+    transform: translate(318.28px, 394.67px);
+  }
+
+  12.5% {
+    transform: translate(317.05px, 387.89px);
+  }
+
+  25% {
+    transform: translate(318.4px, 395.29px);
+  }
+
+  37.5% {
+    transform: translate(321.49px, 412.27px);
+  }
+
+  50% {
+    transform: translate(324.48px, 428.63px);
+  }
+
+  62.5% {
+    transform: translate(325.65px, 435.06px);
+  }
+
+  75% {
+    transform: translate(324.37px, 428.03px);
+  }
+
+  87.5% {
+    transform: translate(321.34px, 411.41px);
+  }
+
+  100% {
+    transform: translate(318.28px, 394.67px);
+  }
+
+}
+
+.node-3-2 {
+  animation-name: node-3-2-wave;
+}
+
+@keyframes node-3-2-wave {
+
+  0% {
+    transform: translate(359.6px, 418.39px);
+  }
+
+  12.5% {
+    transform: translate(357.43px, 404.68px);
+  }
+
+  25% {
+    transform: translate(355.9px, 394.99px);
+  }
+
+  37.5% {
+    transform: translate(355.93px, 395.22px);
+  }
+
+  50% {
+    transform: translate(357.52px, 405.23px);
+  }
+
+  62.5% {
+    transform: translate(359.68px, 418.93px);
+  }
+
+  75% {
+    transform: translate(361.17px, 428.32px);
+  }
+
+  87.5% {
+    transform: translate(361.13px, 428.1px);
+  }
+
+  100% {
+    transform: translate(359.6px, 418.39px);
+  }
+
+}
+
+.node-3-3 {
+  animation-name: node-3-3-wave;
+}
+
+@keyframes node-3-3-wave {
+
+  0% {
+    transform: translate(399.1px, 437.2px);
+  }
+
+  12.5% {
+    transform: translate(396.05px, 414.42px);
+  }
+
+  25% {
+    transform: translate(392.7px, 389.38px);
+  }
+
+  37.5% {
+    transform: translate(391.07px, 377.18px);
+  }
+
+  50% {
+    transform: translate(392.19px, 385.6px);
+  }
+
+  62.5% {
+    transform: translate(395.36px, 409.25px);
+  }
+
+  75% {
+    transform: translate(398.62px, 433.66px);
+  }
+
+  87.5% {
+    transform: translate(400.14px, 445.0px);
+  }
+
+  100% {
+    transform: translate(399.1px, 437.2px);
+  }
+
+}
+
+.node-3-4 {
+  animation-name: node-3-4-wave;
+}
+
+@keyframes node-3-4-wave {
+
+  0% {
+    transform: translate(436.84px, 448.3px);
+  }
+
+  12.5% {
+    transform: translate(433.32px, 416.14px);
+  }
+
+  25% {
+    transform: translate(429.36px, 379.93px);
+  }
+
+  37.5% {
+    transform: translate(427.36px, 361.73px);
+  }
+
+  50% {
+    transform: translate(428.66px, 373.55px);
+  }
+
+  62.5% {
+    transform: translate(432.38px, 407.51px);
+  }
+
+  75% {
+    transform: translate(436.2px, 442.47px);
+  }
+
+  87.5% {
+    transform: translate(438.0px, 458.86px);
+  }
+
+  100% {
+    transform: translate(436.84px, 448.3px);
+  }
+
+}
+
+.node-3-5 {
+  animation-name: node-3-5-wave;
+}
+
+@keyframes node-3-5-wave {
+
+  0% {
+    transform: translate(473.25px, 450.07px);
+  }
+
+  12.5% {
+    transform: translate(469.85px, 410.12px);
+  }
+
+  25% {
+    transform: translate(466.35px, 369.03px);
+  }
+
+  37.5% {
+    transform: translate(464.94px, 352.44px);
+  }
+
+  50% {
+    transform: translate(466.57px, 371.6px);
+  }
+
+  62.5% {
+    transform: translate(470.14px, 413.56px);
+  }
+
+  75% {
+    transform: translate(473.45px, 452.38px);
+  }
+
+  87.5% {
+    transform: translate(474.69px, 466.95px);
+  }
+
+  100% {
+    transform: translate(473.25px, 450.07px);
+  }
+
+}
+
+.node-3-6 {
+  animation-name: node-3-6-wave;
+}
+
+@keyframes node-3-6-wave {
+
+  0% {
+    transform: translate(508.98px, 442.15px);
+  }
+
+  12.5% {
+    transform: translate(506.29px, 397.82px);
+  }
+
+  25% {
+    transform: translate(503.96px, 359.53px);
+  }
+
+  37.5% {
+    transform: translate(503.5px, 351.95px);
+  }
+
+  50% {
+    transform: translate(505.22px, 380.27px);
+  }
+
+  62.5% {
+    transform: translate(507.98px, 425.61px);
+  }
+
+  75% {
+    transform: translate(510.12px, 460.79px);
+  }
+
+  87.5% {
+    transform: translate(510.52px, 467.37px);
+  }
+
+  100% {
+    transform: translate(508.98px, 442.15px);
+  }
+
+}
+
+.node-3-7 {
+  animation-name: node-3-7-wave;
+}
+
+@keyframes node-3-7-wave {
+
+  0% {
+    transform: translate(544.78px, 425.47px);
+  }
+
+  12.5% {
+    transform: translate(543.18px, 381.73px);
+  }
+
+  25% {
+    transform: translate(542.18px, 354.23px);
+  }
+
+  37.5% {
+    transform: translate(542.44px, 361.24px);
+  }
+
+  50% {
+    transform: translate(543.78px, 397.96px);
+  }
+
+  62.5% {
+    transform: translate(545.34px, 440.81px);
+  }
+
+  75% {
+    transform: translate(546.24px, 465.41px);
+  }
+
+  87.5% {
+    transform: translate(546.01px, 459.3px);
+  }
+
+  100% {
+    transform: translate(544.78px, 425.47px);
+  }
+
+}
+
+.node-3-8 {
+  animation-name: node-3-8-wave;
+}
+
+@keyframes node-3-8-wave {
+
+  0% {
+    transform: translate(581.31px, 402.21px);
+  }
+
+  12.5% {
+    transform: translate(580.86px, 365.04px);
+  }
+
+  25% {
+    transform: translate(580.74px, 355.17px);
+  }
+
+  37.5% {
+    transform: translate(581.03px, 379.29px);
+  }
+
+  50% {
+    transform: translate(581.54px, 421.35px);
+  }
+
+  62.5% {
+    transform: translate(581.96px, 455.93px);
+  }
+
+  75% {
+    transform: translate(582.07px, 464.59px);
+  }
+
+  87.5% {
+    transform: translate(581.81px, 443.06px);
+  }
+
+  100% {
+    transform: translate(581.31px, 402.21px);
+  }
+
+}
+
+.node-3-9 {
+  animation-name: node-3-9-wave;
+}
+
+@keyframes node-3-9-wave {
+
+  0% {
+    transform: translate(619.01px, 375.73px);
+  }
+
+  12.5% {
+    transform: translate(619.31px, 351.16px);
+  }
+
+  25% {
+    transform: translate(619.17px, 363.08px);
+  }
+
+  37.5% {
+    transform: translate(618.68px, 403.32px);
+  }
+
+  50% {
+    transform: translate(618.15px, 446.32px);
+  }
+
+  62.5% {
+    transform: translate(617.89px, 468.05px);
+  }
+
+  75% {
+    transform: translate(618.01px, 457.67px);
+  }
+
+  87.5% {
+    transform: translate(618.47px, 420.26px);
+  }
+
+  100% {
+    transform: translate(619.01px, 375.73px);
+  }
+
+}
+
+.node-3-10 {
+  animation-name: node-3-10-wave;
+}
+
+@keyframes node-3-10-wave {
+
+  0% {
+    transform: translate(657.96px, 350.27px);
+  }
+
+  12.5% {
+    transform: translate(658.23px, 343.03px);
+  }
+
+  25% {
+    transform: translate(656.98px, 377.14px);
+  }
+
+  37.5% {
+    transform: translate(655.07px, 429.49px);
+  }
+
+  50% {
+    transform: translate(653.64px, 468.81px);
+  }
+
+  62.5% {
+    transform: translate(653.41px, 474.95px);
+  }
+
+  75% {
+    transform: translate(654.51px, 445.03px);
+  }
+
+  87.5% {
+    transform: translate(656.38px, 393.77px);
+  }
+
+  100% {
+    transform: translate(657.96px, 350.27px);
+  }
+
+}
+
+.node-3-11 {
+  animation-name: node-3-11-wave;
+}
+
+@keyframes node-3-11-wave {
+
+  0% {
+    transform: translate(697.82px, 330.31px);
+  }
+
+  12.5% {
+    transform: translate(697.08px, 342.42px);
+  }
+
+  25% {
+    transform: translate(693.88px, 395.15px);
+  }
+
+  37.5% {
+    transform: translate(690.31px, 453.72px);
+  }
+
+  50% {
+    transform: translate(688.38px, 485.5px);
+  }
+
+  62.5% {
+    transform: translate(688.99px, 475.47px);
+  }
+
+  75% {
+    transform: translate(691.87px, 428.17px);
+  }
+
+  87.5% {
+    transform: translate(695.56px, 367.53px);
+  }
+
+  100% {
+    transform: translate(697.82px, 330.31px);
+  }
+
+}
+
+.node-3-12 {
+  animation-name: node-3-12-wave;
+}
+
+@keyframes node-3-12-wave {
+
+  0% {
+    transform: translate(737.86px, 319.64px);
+  }
+
+  12.5% {
+    transform: translate(735.32px, 349.47px);
+  }
+
+  25% {
+    transform: translate(729.82px, 414.05px);
+  }
+
+  37.5% {
+    transform: translate(724.85px, 472.39px);
+  }
+
+  50% {
+    transform: translate(723.0px, 494.11px);
+  }
+
+  62.5% {
+    transform: translate(725.1px, 469.49px);
+  }
+
+  75% {
+    transform: translate(730.19px, 409.62px);
+  }
+
+  87.5% {
+    transform: translate(735.61px, 346.07px);
+  }
+
+  100% {
+    transform: translate(737.86px, 319.64px);
+  }
+
+}
+
+.node-3-13 {
+  animation-name: node-3-13-wave;
+}
+
+@keyframes node-3-13-wave {
+
+  0% {
+    transform: translate(777.16px, 320.39px);
+  }
+
+  12.5% {
+    transform: translate(772.53px, 362.69px);
+  }
+
+  25% {
+    transform: translate(765.1px, 430.55px);
+  }
+
+  37.5% {
+    transform: translate(759.38px, 482.78px);
+  }
+
+  50% {
+    transform: translate(758.21px, 493.5px);
+  }
+
+  62.5% {
+    transform: translate(762.1px, 458.01px);
+  }
+
+  75% {
+    transform: translate(769.25px, 392.66px);
+  }
+
+  87.5% {
+    transform: translate(775.71px, 333.62px);
+  }
+
+  100% {
+    transform: translate(777.16px, 320.39px);
+  }
+
+}
+
+.node-3-14 {
+  animation-name: node-3-14-wave;
+}
+
+@keyframes node-3-14-wave {
+
+  0% {
+    transform: translate(814.92px, 332.45px);
+  }
+
+  12.5% {
+    transform: translate(808.64px, 379.35px);
+  }
+
+  25% {
+    transform: translate(800.3px, 441.72px);
+  }
+
+  37.5% {
+    transform: translate(794.74px, 483.25px);
+  }
+
+  50% {
+    transform: translate(794.67px, 483.75px);
+  }
+
+  62.5% {
+    transform: translate(800.13px, 443.0px);
+  }
+
+  75% {
+    transform: translate(808.46px, 380.74px);
+  }
+
+  87.5% {
+    transform: translate(814.83px, 333.06px);
+  }
+
+  100% {
+    transform: translate(814.92px, 332.45px);
+  }
+
+}
+
+.node-3-15 {
+  animation-name: node-3-15-wave;
+}
+
+@keyframes node-3-15-wave {
+
+  0% {
+    transform: translate(850.67px, 353.46px);
+  }
+
+  12.5% {
+    transform: translate(843.91px, 396.18px);
+  }
+
+  25% {
+    transform: translate(836.13px, 445.4px);
+  }
+
+  37.5% {
+    transform: translate(831.72px, 473.28px);
+  }
+
+  50% {
+    transform: translate(832.87px, 466.07px);
+  }
+
+  62.5% {
+    transform: translate(839.01px, 427.18px);
+  }
+
+  75% {
+    transform: translate(846.99px, 376.74px);
+  }
+
+  87.5% {
+    transform: translate(852.0px, 345.02px);
+  }
+
+  100% {
+    transform: translate(850.67px, 353.46px);
+  }
+
+}
+
+.node-3-16 {
+  animation-name: node-3-16-wave;
+}
+
+@keyframes node-3-16-wave {
+
+  0% {
+    transform: translate(884.47px, 379.58px);
+  }
+
+  12.5% {
+    transform: translate(878.91px, 410.07px);
+  }
+
+  25% {
+    transform: translate(873.38px, 440.39px);
+  }
+
+  37.5% {
+    transform: translate(870.97px, 453.58px);
+  }
+
+  50% {
+    transform: translate(872.94px, 442.79px);
+  }
+
+  62.5% {
+    transform: translate(878.26px, 413.6px);
+  }
+
+  75% {
+    transform: translate(883.99px, 382.18px);
+  }
+
+  87.5% {
+    transform: translate(886.64px, 367.69px);
+  }
+
+  100% {
+    transform: translate(884.47px, 379.58px);
+  }
+
+}
+
+.node-3-17 {
+  animation-name: node-3-17-wave;
+}
+
+@keyframes node-3-17-wave {
+
+  0% {
+    transform: translate(916.85px, 406.4px);
+  }
+
+  12.5% {
+    transform: translate(914.34px, 418.54px);
+  }
+
+  25% {
+    transform: translate(912.67px, 426.63px);
+  }
+
+  37.5% {
+    transform: translate(912.78px, 426.1px);
+  }
+
+  50% {
+    transform: translate(914.61px, 417.24px);
+  }
+
+  62.5% {
+    transform: translate(917.13px, 405.08px);
+  }
+
+  75% {
+    transform: translate(918.85px, 396.76px);
+  }
+
+  87.5% {
+    transform: translate(918.73px, 397.31px);
+  }
+
+  100% {
+    transform: translate(916.85px, 406.4px);
+  }
+
+}
+
+.node-4-0 {
+  animation-name: node-4-0-wave;
+}
+
+@keyframes node-4-0-wave {
+
+  0% {
+    transform: translate(283.28px, 355.94px);
+  }
+
+  12.5% {
+    transform: translate(284.14px, 360.24px);
+  }
+
+  25% {
+    transform: translate(289.52px, 387.13px);
+  }
+
+  37.5% {
+    transform: translate(296.03px, 419.65px);
+  }
+
+  50% {
+    transform: translate(299.92px, 439.11px);
+  }
+
+  62.5% {
+    transform: translate(299.14px, 435.22px);
+  }
+
+  75% {
+    transform: translate(294.1px, 410.0px);
+  }
+
+  87.5% {
+    transform: translate(287.5px, 377.05px);
+  }
+
+  100% {
+    transform: translate(283.28px, 355.94px);
+  }
+
+}
+
+.node-4-1 {
+  animation-name: node-4-1-wave;
+}
+
+@keyframes node-4-1-wave {
+
+  0% {
+    transform: translate(324.81px, 380.13px);
+  }
+
+  12.5% {
+    transform: translate(325.09px, 381.73px);
+  }
+
+  25% {
+    transform: translate(327.13px, 393.26px);
+  }
+
+  37.5% {
+    transform: translate(329.69px, 407.74px);
+  }
+
+  50% {
+    transform: translate(331.27px, 416.73px);
+  }
+
+  62.5% {
+    transform: translate(331.0px, 415.2px);
+  }
+
+  75% {
+    transform: translate(329.02px, 403.99px);
+  }
+
+  87.5% {
+    transform: translate(326.46px, 389.44px);
+  }
+
+  100% {
+    transform: translate(324.81px, 380.13px);
+  }
+
+}
+
+.node-4-2 {
+  animation-name: node-4-2-wave;
+}
+
+@keyframes node-4-2-wave {
+
+  0% {
+    transform: translate(364.95px, 402.65px);
+  }
+
+  12.5% {
+    transform: translate(364.24px, 398.0px);
+  }
+
+  25% {
+    transform: translate(363.58px, 393.7px);
+  }
+
+  37.5% {
+    transform: translate(363.36px, 392.3px);
+  }
+
+  50% {
+    transform: translate(363.72px, 394.62px);
+  }
+
+  62.5% {
+    transform: translate(364.44px, 399.29px);
+  }
+
+  75% {
+    transform: translate(365.09px, 403.56px);
+  }
+
+  87.5% {
+    transform: translate(365.3px, 404.94px);
+  }
+
+  100% {
+    transform: translate(364.95px, 402.65px);
+  }
+
+}
+
+.node-4-3 {
+  animation-name: node-4-3-wave;
+}
+
+@keyframes node-4-3-wave {
+
+  0% {
+    transform: translate(403.34px, 419.86px);
+  }
+
+  12.5% {
+    transform: translate(401.65px, 406.85px);
+  }
+
+  25% {
+    transform: translate(399.31px, 388.73px);
+  }
+
+  37.5% {
+    transform: translate(397.68px, 376.14px);
+  }
+
+  50% {
+    transform: translate(397.77px, 376.83px);
+  }
+
+  62.5% {
+    transform: translate(399.52px, 390.35px);
+  }
+
+  75% {
+    transform: translate(401.86px, 408.43px);
+  }
+
+  87.5% {
+    transform: translate(403.42px, 420.51px);
+  }
+
+  100% {
+    transform: translate(403.34px, 419.86px);
+  }
+
+}
+
+.node-4-4 {
+  animation-name: node-4-4-wave;
+}
+
+@keyframes node-4-4-wave {
+
+  0% {
+    transform: translate(440.07px, 429.1px);
+  }
+
+  12.5% {
+    transform: translate(437.77px, 407.36px);
+  }
+
+  25% {
+    transform: translate(434.85px, 379.74px);
+  }
+
+  37.5% {
+    transform: translate(433.04px, 362.65px);
+  }
+
+  50% {
+    transform: translate(433.49px, 366.94px);
+  }
+
+  62.5% {
+    transform: translate(435.91px, 389.83px);
+  }
+
+  75% {
+    transform: translate(438.8px, 417.1px);
+  }
+
+  87.5% {
+    transform: translate(440.49px, 433.04px);
+  }
+
+  100% {
+    transform: translate(440.07px, 429.1px);
+  }
+
+}
+
+.node-4-5 {
+  animation-name: node-4-5-wave;
+}
+
+@keyframes node-4-5-wave {
+
+  0% {
+    transform: translate(475.59px, 428.87px);
+  }
+
+  12.5% {
+    transform: translate(473.2px, 399.86px);
+  }
+
+  25% {
+    transform: translate(470.66px, 368.98px);
+  }
+
+  37.5% {
+    transform: translate(469.51px, 355.07px);
+  }
+
+  50% {
+    transform: translate(470.51px, 367.19px);
+  }
+
+  62.5% {
+    transform: translate(473.0px, 397.43px);
+  }
+
+  75% {
+    transform: translate(475.46px, 427.21px);
+  }
+
+  87.5% {
+    transform: translate(476.5px, 439.89px);
+  }
+
+  100% {
+    transform: translate(475.59px, 428.87px);
+  }
+
+}
+
+.node-4-6 {
+  animation-name: node-4-6-wave;
+}
+
+@keyframes node-4-6-wave {
+
+  0% {
+    transform: translate(510.55px, 418.91px);
+  }
+
+  12.5% {
+    transform: translate(508.61px, 385.87px);
+  }
+
+  25% {
+    transform: translate(507.04px, 359.21px);
+  }
+
+  37.5% {
+    transform: translate(506.84px, 355.77px);
+  }
+
+  50% {
+    transform: translate(508.14px, 377.83px);
+  }
+
+  62.5% {
+    transform: translate(510.1px, 411.21px);
+  }
+
+  75% {
+    transform: translate(511.57px, 436.16px);
+  }
+
+  87.5% {
+    transform: translate(511.75px, 439.26px);
+  }
+
+  100% {
+    transform: translate(510.55px, 418.91px);
+  }
+
+}
+
+.node-4-7 {
+  animation-name: node-4-7-wave;
+}
+
+@keyframes node-4-7-wave {
+
+  0% {
+    transform: translate(545.67px, 400.27px);
+  }
+
+  12.5% {
+    transform: translate(544.53px, 367.96px);
+  }
+
+  25% {
+    transform: translate(544.01px, 353.16px);
+  }
+
+  37.5% {
+    transform: translate(544.45px, 365.56px);
+  }
+
+  50% {
+    transform: translate(545.56px, 397.02px);
+  }
+
+  62.5% {
+    transform: translate(546.66px, 428.16px);
+  }
+
+  75% {
+    transform: translate(547.13px, 441.59px);
+  }
+
+  87.5% {
+    transform: translate(546.74px, 430.37px);
+  }
+
+  100% {
+    transform: translate(545.67px, 400.27px);
+  }
+
+}
+
+.node-4-8 {
+  animation-name: node-4-8-wave;
+}
+
+@keyframes node-4-8-wave {
+
+  0% {
+    transform: translate(581.6px, 375.25px);
+  }
+
+  12.5% {
+    transform: translate(581.29px, 349.42px);
+  }
+
+  25% {
+    transform: translate(581.33px, 352.92px);
+  }
+
+  37.5% {
+    transform: translate(581.69px, 383.39px);
+  }
+
+  50% {
+    transform: translate(582.14px, 421.35px);
+  }
+
+  62.5% {
+    transform: translate(582.42px, 444.91px);
+  }
+
+  75% {
+    transform: translate(582.38px, 441.81px);
+  }
+
+  87.5% {
+    transform: translate(582.05px, 413.6px);
+  }
+
+  100% {
+    transform: translate(581.6px, 375.25px);
+  }
+
+}
+
+.node-4-9 {
+  animation-name: node-4-9-wave;
+}
+
+@keyframes node-4-9-wave {
+
+  0% {
+    transform: translate(618.73px, 347.37px);
+  }
+
+  12.5% {
+    transform: translate(618.89px, 333.84px);
+  }
+
+  25% {
+    transform: translate(618.59px, 359.34px);
+  }
+
+  37.5% {
+    transform: translate(618.03px, 406.59px);
+  }
+
+  50% {
+    transform: translate(617.56px, 446.72px);
+  }
+
+  62.5% {
+    transform: translate(617.42px, 458.42px);
+  }
+
+  75% {
+    transform: translate(617.69px, 436.04px);
+  }
+
+  87.5% {
+    transform: translate(618.22px, 390.62px);
+  }
+
+  100% {
+    transform: translate(618.73px, 347.37px);
+  }
+
+}
+
+.node-4-10 {
+  animation-name: node-4-10-wave;
+}
+
+@keyframes node-4-10-wave {
+
+  0% {
+    transform: translate(657.12px, 321.03px);
+  }
+
+  12.5% {
+    transform: translate(657.01px, 324.31px);
+  }
+
+  25% {
+    transform: translate(655.33px, 371.79px);
+  }
+
+  37.5% {
+    transform: translate(653.22px, 431.51px);
+  }
+
+  50% {
+    transform: translate(651.89px, 469.15px);
+  }
+
+  62.5% {
+    transform: translate(651.99px, 466.44px);
+  }
+
+  75% {
+    transform: translate(653.47px, 424.6px);
+  }
+
+  87.5% {
+    transform: translate(655.6px, 364.32px);
+  }
+
+  100% {
+    transform: translate(657.12px, 321.03px);
+  }
+
+}
+
+.node-4-11 {
+  animation-name: node-4-11-wave;
+}
+
+@keyframes node-4-11-wave {
+
+  0% {
+    transform: translate(696.4px, 300.84px);
+  }
+
+  12.5% {
+    transform: translate(695.1px, 322.78px);
+  }
+
+  25% {
+    transform: translate(691.25px, 388.29px);
+  }
+
+  37.5% {
+    transform: translate(687.36px, 454.31px);
+  }
+
+  50% {
+    transform: translate(685.53px, 485.43px);
+  }
+
+  62.5% {
+    transform: translate(686.58px, 467.71px);
+  }
+
+  75% {
+    transform: translate(690.04px, 408.87px);
+  }
+
+  87.5% {
+    transform: translate(694.17px, 338.65px);
+  }
+
+  100% {
+    transform: translate(696.4px, 300.84px);
+  }
+
+}
+
+.node-4-12 {
+  animation-name: node-4-12-wave;
+}
+
+@keyframes node-4-12-wave {
+
+  0% {
+    transform: translate(735.79px, 290.65px);
+  }
+
+  12.5% {
+    transform: translate(732.59px, 329.52px);
+  }
+
+  25% {
+    transform: translate(726.29px, 405.97px);
+  }
+
+  37.5% {
+    transform: translate(720.89px, 471.58px);
+  }
+
+  50% {
+    transform: translate(719.09px, 493.36px);
+  }
+
+  62.5% {
+    transform: translate(721.67px, 462.08px);
+  }
+
+  75% {
+    transform: translate(727.5px, 391.26px);
+  }
+
+  87.5% {
+    transform: translate(733.53px, 318.08px);
+  }
+
+  100% {
+    transform: translate(735.79px, 290.65px);
+  }
+
+}
+
+.node-4-13 {
+  animation-name: node-4-13-wave;
+}
+
+@keyframes node-4-13-wave {
+
+  0% {
+    transform: translate(774.39px, 292.54px);
+  }
+
+  12.5% {
+    transform: translate(769.04px, 343.06px);
+  }
+
+  25% {
+    transform: translate(760.71px, 421.7px);
+  }
+
+  37.5% {
+    transform: translate(754.45px, 480.76px);
+  }
+
+  50% {
+    transform: translate(753.27px, 491.91px);
+  }
+
+  62.5% {
+    transform: translate(757.66px, 450.49px);
+  }
+
+  75% {
+    transform: translate(765.67px, 374.88px);
+  }
+
+  87.5% {
+    transform: translate(772.89px, 306.73px);
+  }
+
+  100% {
+    transform: translate(774.39px, 292.54px);
+  }
+
+}
+
+.node-4-14 {
+  animation-name: node-4-14-wave;
+}
+
+@keyframes node-4-14-wave {
+
+  0% {
+    transform: translate(811.38px, 306.2px);
+  }
+
+  12.5% {
+    transform: translate(804.33px, 360.64px);
+  }
+
+  25% {
+    transform: translate(795.01px, 432.64px);
+  }
+
+  37.5% {
+    transform: translate(788.83px, 480.33px);
+  }
+
+  50% {
+    transform: translate(788.72px, 481.19px);
+  }
+
+  62.5% {
+    transform: translate(794.72px, 434.86px);
+  }
+
+  75% {
+    transform: translate(804.01px, 363.08px);
+  }
+
+  87.5% {
+    transform: translate(811.24px, 307.28px);
+  }
+
+  100% {
+    transform: translate(811.38px, 306.2px);
+  }
+
+}
+
+.node-4-15 {
+  animation-name: node-4-15-wave;
+}
+
+@keyframes node-4-15-wave {
+
+  0% {
+    transform: translate(846.31px, 329.07px);
+  }
+
+  12.5% {
+    transform: translate(838.68px, 378.9px);
+  }
+
+  25% {
+    transform: translate(829.84px, 436.68px);
+  }
+
+  37.5% {
+    transform: translate(824.77px, 469.85px);
+  }
+
+  50% {
+    transform: translate(825.9px, 462.46px);
+  }
+
+  62.5% {
+    transform: translate(832.72px, 417.9px);
+  }
+
+  75% {
+    transform: translate(841.79px, 358.63px);
+  }
+
+  87.5% {
+    transform: translate(847.67px, 320.19px);
+  }
+
+  100% {
+    transform: translate(846.31px, 329.07px);
+  }
+
+}
+
+.node-4-16 {
+  animation-name: node-4-16-wave;
+}
+
+@keyframes node-4-16-wave {
+
+  0% {
+    transform: translate(879.26px, 357.06px);
+  }
+
+  12.5% {
+    transform: translate(872.64px, 394.58px);
+  }
+
+  25% {
+    transform: translate(865.92px, 432.63px);
+  }
+
+  37.5% {
+    transform: translate(862.84px, 450.08px);
+  }
+
+  50% {
+    transform: translate(864.95px, 438.1px);
+  }
+
+  62.5% {
+    transform: translate(871.21px, 402.69px);
+  }
+
+  75% {
+    transform: translate(878.2px, 363.09px);
+  }
+
+  87.5% {
+    transform: translate(881.65px, 343.53px);
+  }
+
+  100% {
+    transform: translate(879.26px, 357.06px);
+  }
+
+}
+
+.node-4-17 {
+  animation-name: node-4-17-wave;
+}
+
+@keyframes node-4-17-wave {
+
+  0% {
+    transform: translate(910.79px, 385.6px);
+  }
+
+  12.5% {
+    transform: translate(906.89px, 405.09px);
+  }
+
+  25% {
+    transform: translate(903.82px, 420.41px);
+  }
+
+  37.5% {
+    transform: translate(903.3px, 423.01px);
+  }
+
+  50% {
+    transform: translate(905.61px, 411.47px);
+  }
+
+  62.5% {
+    transform: translate(909.47px, 392.15px);
+  }
+
+  75% {
+    transform: translate(912.66px, 376.25px);
+  }
+
+  87.5% {
+    transform: translate(913.21px, 373.49px);
+  }
+
+  100% {
+    transform: translate(910.79px, 385.6px);
+  }
+
+}
+
+.node-5-0 {
+  animation-name: node-5-0-wave;
+}
+
+@keyframes node-5-0-wave {
+
+  0% {
+    transform: translate(291.39px, 346.66px);
+  }
+
+  12.5% {
+    transform: translate(294.03px, 360.29px);
+  }
+
+  25% {
+    transform: translate(299.52px, 388.63px);
+  }
+
+  37.5% {
+    transform: translate(304.54px, 414.53px);
+  }
+
+  50% {
+    transform: translate(306.29px, 423.57px);
+  }
+
+  62.5% {
+    transform: translate(303.86px, 411.02px);
+  }
+
+  75% {
+    transform: translate(298.53px, 383.5px);
+  }
+
+  87.5% {
+    transform: translate(293.3px, 356.53px);
+  }
+
+  100% {
+    transform: translate(291.39px, 346.66px);
+  }
+
+}
+
+.node-5-1 {
+  animation-name: node-5-1-wave;
+}
+
+@keyframes node-5-1-wave {
+
+  0% {
+    transform: translate(331.67px, 369.9px);
+  }
+
+  12.5% {
+    transform: translate(333.62px, 381.34px);
+  }
+
+  25% {
+    transform: translate(336.02px, 395.34px);
+  }
+
+  37.5% {
+    transform: translate(337.46px, 403.77px);
+  }
+
+  50% {
+    transform: translate(337.14px, 401.91px);
+  }
+
+  62.5% {
+    transform: translate(335.24px, 390.78px);
+  }
+
+  75% {
+    transform: translate(332.83px, 376.69px);
+  }
+
+  87.5% {
+    transform: translate(331.34px, 367.95px);
+  }
+
+  100% {
+    transform: translate(331.67px, 369.9px);
+  }
+
+}
+
+.node-5-2 {
+  animation-name: node-5-2-wave;
+}
+
+@keyframes node-5-2-wave {
+
+  0% {
+    transform: translate(370.57px, 391.0px);
+  }
+
+  12.5% {
+    transform: translate(371.42px, 396.75px);
+  }
+
+  25% {
+    transform: translate(371.35px, 396.26px);
+  }
+
+  37.5% {
+    transform: translate(370.4px, 389.82px);
+  }
+
+  50% {
+    transform: translate(369.11px, 381.11px);
+  }
+
+  62.5% {
+    transform: translate(368.24px, 375.25px);
+  }
+
+  75% {
+    transform: translate(368.31px, 375.74px);
+  }
+
+  87.5% {
+    transform: translate(369.28px, 382.3px);
+  }
+
+  100% {
+    transform: translate(370.57px, 391.0px);
+  }
+
+}
+
+.node-5-3 {
+  animation-name: node-5-3-wave;
+}
+
+@keyframes node-5-3-wave {
+
+  0% {
+    transform: translate(407.81px, 406.48px);
+  }
+
+  12.5% {
+    transform: translate(407.55px, 404.42px);
+  }
+
+  25% {
+    transform: translate(405.95px, 391.63px);
+  }
+
+  37.5% {
+    transform: translate(403.9px, 375.32px);
+  }
+
+  50% {
+    transform: translate(402.62px, 365.11px);
+  }
+
+  62.5% {
+    transform: translate(402.89px, 367.28px);
+  }
+
+  75% {
+    transform: translate(404.55px, 380.47px);
+  }
+
+  87.5% {
+    transform: translate(406.58px, 396.68px);
+  }
+
+  100% {
+    transform: translate(407.81px, 406.48px);
+  }
+
+}
+
+.node-5-4 {
+  animation-name: node-5-4-wave;
+}
+
+@keyframes node-5-4-wave {
+
+  0% {
+    transform: translate(443.51px, 413.84px);
+  }
+
+  12.5% {
+    transform: translate(442.45px, 403.51px);
+  }
+
+  25% {
+    transform: translate(440.32px, 382.73px);
+  }
+
+  37.5% {
+    transform: translate(438.33px, 363.39px);
+  }
+
+  50% {
+    transform: translate(437.7px, 357.27px);
+  }
+
+  62.5% {
+    transform: translate(438.83px, 368.23px);
+  }
+
+  75% {
+    transform: translate(441.0px, 389.4px);
+  }
+
+  87.5% {
+    transform: translate(442.92px, 408.11px);
+  }
+
+  100% {
+    transform: translate(443.51px, 413.84px);
+  }
+
+}
+
+.node-5-5 {
+  animation-name: node-5-5-wave;
+}
+
+@keyframes node-5-5-wave {
+
+  0% {
+    transform: translate(478.11px, 411.7px);
+  }
+
+  12.5% {
+    transform: translate(476.73px, 394.4px);
+  }
+
+  25% {
+    transform: translate(474.92px, 371.72px);
+  }
+
+  37.5% {
+    transform: translate(473.75px, 357.05px);
+  }
+
+  50% {
+    transform: translate(473.95px, 359.56px);
+  }
+
+  62.5% {
+    transform: translate(475.4px, 377.65px);
+  }
+
+  75% {
+    transform: translate(477.19px, 400.16px);
+  }
+
+  87.5% {
+    transform: translate(478.3px, 414.04px);
+  }
+
+  100% {
+    transform: translate(478.11px, 411.7px);
+  }
+
+}
+
+.node-5-6 {
+  animation-name: node-5-6-wave;
+}
+
+@keyframes node-5-6-wave {
+
+  0% {
+    transform: translate(512.27px, 399.93px);
+  }
+
+  12.5% {
+    transform: translate(511.06px, 378.68px);
+  }
+
+  25% {
+    transform: translate(510.07px, 361.3px);
+  }
+
+  37.5% {
+    transform: translate(509.9px, 358.46px);
+  }
+
+  50% {
+    transform: translate(510.67px, 371.96px);
+  }
+
+  62.5% {
+    transform: translate(511.9px, 393.39px);
+  }
+
+  75% {
+    transform: translate(512.85px, 410.08px);
+  }
+
+  87.5% {
+    transform: translate(513.0px, 412.73px);
+  }
+
+  100% {
+    transform: translate(512.27px, 399.93px);
+  }
+
+}
+
+.node-5-7 {
+  animation-name: node-5-7-wave;
+}
+
+@keyframes node-5-7-wave {
+
+  0% {
+    transform: translate(546.67px, 379.65px);
+  }
+
+  12.5% {
+    transform: translate(545.96px, 358.99px);
+  }
+
+  25% {
+    transform: translate(545.8px, 354.19px);
+  }
+
+  37.5% {
+    transform: translate(546.28px, 368.3px);
+  }
+
+  50% {
+    transform: translate(547.1px, 392.44px);
+  }
+
+  62.5% {
+    transform: translate(547.78px, 412.24px);
+  }
+
+  75% {
+    transform: translate(547.93px, 416.69px);
+  }
+
+  87.5% {
+    transform: translate(547.48px, 403.44px);
+  }
+
+  100% {
+    transform: translate(546.67px, 379.65px);
+  }
+
+}
+
+.node-5-8 {
+  animation-name: node-5-8-wave;
+}
+
+@keyframes node-5-8-wave {
+
+  0% {
+    transform: translate(581.92px, 353.28px);
+  }
+
+  12.5% {
+    transform: translate(581.76px, 338.75px);
+  }
+
+  25% {
+    transform: translate(581.91px, 352.52px);
+  }
+
+  37.5% {
+    transform: translate(582.29px, 385.56px);
+  }
+
+  50% {
+    transform: translate(582.65px, 417.53px);
+  }
+
+  62.5% {
+    transform: translate(582.8px, 430.67px);
+  }
+
+  75% {
+    transform: translate(582.66px, 418.23px);
+  }
+
+  87.5% {
+    transform: translate(582.3px, 386.58px);
+  }
+
+  100% {
+    transform: translate(581.92px, 353.28px);
+  }
+
+}
+
+.node-5-9 {
+  animation-name: node-5-9-wave;
+}
+
+@keyframes node-5-9-wave {
+
+  0% {
+    transform: translate(618.41px, 324.48px);
+  }
+
+  12.5% {
+    transform: translate(618.44px, 321.64px);
+  }
+
+  25% {
+    transform: translate(618.03px, 357.3px);
+  }
+
+  37.5% {
+    transform: translate(617.46px, 407.68px);
+  }
+
+  50% {
+    transform: translate(617.05px, 443.13px);
+  }
+
+  62.5% {
+    transform: translate(617.03px, 445.56px);
+  }
+
+  75% {
+    transform: translate(617.39px, 413.81px);
+  }
+
+  87.5% {
+    transform: translate(617.96px, 363.84px);
+  }
+
+  100% {
+    transform: translate(618.41px, 324.48px);
+  }
+
+}
+
+.node-5-10 {
+  animation-name: node-5-10-wave;
+}
+
+@keyframes node-5-10-wave {
+
+  0% {
+    transform: translate(656.13px, 297.74px);
+  }
+
+  12.5% {
+    transform: translate(655.68px, 310.95px);
+  }
+
+  25% {
+    transform: translate(653.73px, 368.1px);
+  }
+
+  37.5% {
+    transform: translate(651.57px, 431.25px);
+  }
+
+  50% {
+    transform: translate(650.4px, 465.37px);
+  }
+
+  62.5% {
+    transform: translate(650.77px, 454.56px);
+  }
+
+  75% {
+    transform: translate(652.51px, 403.63px);
+  }
+
+  87.5% {
+    transform: translate(654.75px, 338.1px);
+  }
+
+  100% {
+    transform: translate(656.13px, 297.74px);
+  }
+
+}
+
+.node-5-11 {
+  animation-name: node-5-11-wave;
+}
+
+@keyframes node-5-11-wave {
+
+  0% {
+    transform: translate(694.7px, 277.75px);
+  }
+
+  12.5% {
+    transform: translate(692.93px, 308.74px);
+  }
+
+  25% {
+    transform: translate(688.69px, 383.15px);
+  }
+
+  37.5% {
+    transform: translate(684.73px, 452.63px);
+  }
+
+  50% {
+    transform: translate(683.1px, 481.13px);
+  }
+
+  62.5% {
+    transform: translate(684.51px, 456.4px);
+  }
+
+  75% {
+    transform: translate(688.36px, 388.98px);
+  }
+
+  87.5% {
+    transform: translate(692.67px, 313.27px);
+  }
+
+  100% {
+    transform: translate(694.7px, 277.75px);
+  }
+
+}
+
+.node-5-12 {
+  animation-name: node-5-12-wave;
+}
+
+@keyframes node-5-12-wave {
+
+  0% {
+    transform: translate(733.33px, 268.32px);
+  }
+
+  12.5% {
+    transform: translate(729.57px, 315.37px);
+  }
+
+  25% {
+    transform: translate(722.84px, 399.77px);
+  }
+
+  37.5% {
+    transform: translate(717.34px, 468.6px);
+  }
+
+  50% {
+    transform: translate(715.77px, 488.31px);
+  }
+
+  62.5% {
+    transform: translate(718.76px, 450.87px);
+  }
+
+  75% {
+    transform: translate(725.04px, 372.13px);
+  }
+
+  87.5% {
+    transform: translate(731.3px, 293.72px);
+  }
+
+  100% {
+    transform: translate(733.33px, 268.32px);
+  }
+
+}
+
+.node-5-13 {
+  animation-name: node-5-13-wave;
+}
+
+@keyframes node-5-13-wave {
+
+  0% {
+    transform: translate(771.11px, 271.42px);
+  }
+
+  12.5% {
+    transform: translate(765.16px, 329.39px);
+  }
+
+  25% {
+    transform: translate(756.38px, 414.96px);
+  }
+
+  37.5% {
+    transform: translate(750.03px, 476.76px);
+  }
+
+  50% {
+    transform: translate(749.09px, 485.97px);
+  }
+
+  62.5% {
+    transform: translate(753.92px, 438.89px);
+  }
+
+  75% {
+    transform: translate(762.42px, 356.07px);
+  }
+
+  87.5% {
+    transform: translate(769.88px, 283.39px);
+  }
+
+  100% {
+    transform: translate(771.11px, 271.42px);
+  }
+
+}
+
+.node-5-14 {
+  animation-name: node-5-14-wave;
+}
+
+@keyframes node-5-14-wave {
+
+  0% {
+    transform: translate(807.23px, 286.57px);
+  }
+
+  12.5% {
+    transform: translate(799.53px, 347.98px);
+  }
+
+  25% {
+    transform: translate(789.75px, 425.95px);
+  }
+
+  37.5% {
+    transform: translate(783.51px, 475.65px);
+  }
+
+  50% {
+    transform: translate(783.69px, 474.27px);
+  }
+
+  62.5% {
+    transform: translate(790.2px, 422.38px);
+  }
+
+  75% {
+    transform: translate(800.02px, 344.03px);
+  }
+
+  87.5% {
+    transform: translate(807.45px, 284.8px);
+  }
+
+  100% {
+    transform: translate(807.23px, 286.57px);
+  }
+
+}
+
+.node-5-15 {
+  animation-name: node-5-15-wave;
+}
+
+@keyframes node-5-15-wave {
+
+  0% {
+    transform: translate(841.29px, 310.99px);
+  }
+
+  12.5% {
+    transform: translate(832.88px, 367.68px);
+  }
+
+  25% {
+    transform: translate(823.55px, 430.66px);
+  }
+
+  37.5% {
+    transform: translate(818.47px, 464.95px);
+  }
+
+  50% {
+    transform: translate(820.01px, 454.53px);
+  }
+
+  62.5% {
+    transform: translate(827.49px, 404.04px);
+  }
+
+  75% {
+    transform: translate(837.17px, 338.77px);
+  }
+
+  87.5% {
+    transform: translate(843.17px, 298.27px);
+  }
+
+  100% {
+    transform: translate(841.29px, 310.99px);
+  }
+
+}
+
+.node-5-16 {
+  animation-name: node-5-16-wave;
+}
+
+@keyframes node-5-16-wave {
+
+  0% {
+    transform: translate(873.37px, 340.43px);
+  }
+
+  12.5% {
+    transform: translate(865.73px, 385.1px);
+  }
+
+  25% {
+    transform: translate(858.42px, 427.88px);
+  }
+
+  37.5% {
+    transform: translate(855.41px, 445.44px);
+  }
+
+  50% {
+    transform: translate(858.19px, 429.18px);
+  }
+
+  62.5% {
+    transform: translate(865.4px, 387.04px);
+  }
+
+  75% {
+    transform: translate(873.12px, 341.89px);
+  }
+
+  87.5% {
+    transform: translate(876.56px, 321.78px);
+  }
+
+  100% {
+    transform: translate(873.37px, 340.43px);
+  }
+
+}
+
+.node-5-17 {
+  animation-name: node-5-17-wave;
+}
+
+@keyframes node-5-17-wave {
+
+  0% {
+    transform: translate(904.05px, 370.19px);
+  }
+
+  12.5% {
+    transform: translate(898.75px, 397.53px);
+  }
+
+  25% {
+    transform: translate(894.89px, 417.48px);
+  }
+
+  37.5% {
+    transform: translate(894.57px, 419.13px);
+  }
+
+  50% {
+    transform: translate(897.96px, 401.63px);
+  }
+
+  62.5% {
+    transform: translate(903.23px, 374.44px);
+  }
+
+  75% {
+    transform: translate(907.32px, 353.34px);
+  }
+
+  87.5% {
+    transform: translate(907.67px, 351.54px);
+  }
+
+  100% {
+    transform: translate(904.05px, 370.19px);
+  }
+
+}
+
+.node-6-0 {
+  animation-name: node-6-0-wave;
+}
+
+@keyframes node-6-0-wave {
+
+  0% {
+    transform: translate(299.9px, 342.16px);
+  }
+
+  12.5% {
+    transform: translate(304.18px, 364.93px);
+  }
+
+  25% {
+    transform: translate(309.32px, 392.27px);
+  }
+
+  37.5% {
+    transform: translate(312.36px, 408.43px);
+  }
+
+  50% {
+    transform: translate(311.66px, 404.73px);
+  }
+
+  62.5% {
+    transform: translate(307.59px, 383.11px);
+  }
+
+  75% {
+    transform: translate(302.39px, 355.43px);
+  }
+
+  87.5% {
+    transform: translate(299.14px, 338.12px);
+  }
+
+  100% {
+    transform: translate(299.9px, 342.16px);
+  }
+
+}
+
+.node-6-1 {
+  animation-name: node-6-1-wave;
+}
+
+@keyframes node-6-1-wave {
+
+  0% {
+    transform: translate(338.86px, 364.18px);
+  }
+
+  12.5% {
+    transform: translate(342.35px, 385.22px);
+  }
+
+  25% {
+    transform: translate(344.69px, 399.37px);
+  }
+
+  37.5% {
+    transform: translate(344.6px, 398.8px);
+  }
+
+  50% {
+    transform: translate(342.12px, 383.83px);
+  }
+
+  62.5% {
+    transform: translate(338.62px, 362.75px);
+  }
+
+  75% {
+    transform: translate(336.16px, 347.92px);
+  }
+
+  87.5% {
+    transform: translate(336.26px, 348.53px);
+  }
+
+  100% {
+    transform: translate(338.86px, 364.18px);
+  }
+
+}
+
+.node-6-2 {
+  animation-name: node-6-2-wave;
+}
+
+@keyframes node-6-2-wave {
+
+  0% {
+    transform: translate(376.48px, 383.68px);
+  }
+
+  12.5% {
+    transform: translate(378.75px, 399.51px);
+  }
+
+  25% {
+    transform: translate(378.9px, 400.52px);
+  }
+
+  37.5% {
+    transform: translate(376.83px, 386.16px);
+  }
+
+  50% {
+    transform: translate(373.7px, 364.34px);
+  }
+
+  62.5% {
+    transform: translate(371.32px, 347.77px);
+  }
+
+  75% {
+    transform: translate(371.16px, 346.7px);
+  }
+
+  87.5% {
+    transform: translate(373.33px, 361.79px);
+  }
+
+  100% {
+    transform: translate(376.48px, 383.68px);
+  }
+
+}
+
+.node-6-3 {
+  animation-name: node-6-3-wave;
+}
+
+@keyframes node-6-3-wave {
+
+  0% {
+    transform: translate(412.53px, 397.39px);
+  }
+
+  12.5% {
+    transform: translate(413.56px, 405.8px);
+  }
+
+  25% {
+    transform: translate(412.35px, 395.9px);
+  }
+
+  37.5% {
+    transform: translate(409.57px, 372.98px);
+  }
+
+  50% {
+    transform: translate(406.77px, 350.03px);
+  }
+
+  62.5% {
+    transform: translate(405.67px, 340.99px);
+  }
+
+  75% {
+    transform: translate(406.97px, 351.62px);
+  }
+
+  87.5% {
+    transform: translate(409.83px, 375.15px);
+  }
+
+  100% {
+    transform: translate(412.53px, 397.39px);
+  }
+
+}
+
+.node-6-4 {
+  animation-name: node-6-4-wave;
+}
+
+@keyframes node-6-4-wave {
+
+  0% {
+    transform: translate(447.17px, 402.95px);
+  }
+
+  12.5% {
+    transform: translate(447.21px, 403.34px);
+  }
+
+  25% {
+    transform: translate(445.56px, 386.73px);
+  }
+
+  37.5% {
+    transform: translate(443.12px, 362.2px);
+  }
+
+  50% {
+    transform: translate(441.31px, 344.08px);
+  }
+
+  62.5% {
+    transform: translate(441.27px, 343.66px);
+  }
+
+  75% {
+    transform: translate(443.02px, 361.2px);
+  }
+
+  87.5% {
+    transform: translate(445.46px, 385.76px);
+  }
+
+  100% {
+    transform: translate(447.17px, 402.95px);
+  }
+
+}
+
+.node-6-5 {
+  animation-name: node-6-5-wave;
+}
+
+@keyframes node-6-5-wave {
+
+  0% {
+    transform: translate(480.84px, 399.12px);
+  }
+
+  12.5% {
+    transform: translate(480.33px, 392.6px);
+  }
+
+  25% {
+    transform: translate(478.98px, 375.13px);
+  }
+
+  37.5% {
+    transform: translate(477.55px, 356.63px);
+  }
+
+  50% {
+    transform: translate(476.9px, 348.19px);
+  }
+
+  62.5% {
+    transform: translate(477.43px, 355.09px);
+  }
+
+  75% {
+    transform: translate(478.82px, 373.01px);
+  }
+
+  87.5% {
+    transform: translate(480.22px, 391.13px);
+  }
+
+  100% {
+    transform: translate(480.84px, 399.12px);
+  }
+
+}
+
+.node-6-6 {
+  animation-name: node-6-6-wave;
+}
+
+@keyframes node-6-6-wave {
+
+  0% {
+    transform: translate(514.15px, 385.84px);
+  }
+
+  12.5% {
+    transform: translate(513.56px, 375.2px);
+  }
+
+  25% {
+    transform: translate(512.93px, 363.74px);
+  }
+
+  37.5% {
+    transform: translate(512.63px, 358.27px);
+  }
+
+  50% {
+    transform: translate(512.84px, 362.11px);
+  }
+
+  62.5% {
+    transform: translate(513.44px, 372.93px);
+  }
+
+  75% {
+    transform: translate(514.06px, 384.26px);
+  }
+
+  87.5% {
+    transform: translate(514.35px, 389.56px);
+  }
+
+  100% {
+    transform: translate(514.15px, 385.84px);
+  }
+
+}
+
+.node-6-7 {
+  animation-name: node-6-7-wave;
+}
+
+@keyframes node-6-7-wave {
+
+  0% {
+    transform: translate(547.78px, 364.35px);
+  }
+
+  12.5% {
+    transform: translate(547.43px, 353.88px);
+  }
+
+  25% {
+    transform: translate(547.48px, 355.32px);
+  }
+
+  37.5% {
+    transform: translate(547.89px, 367.77px);
+  }
+
+  50% {
+    transform: translate(548.42px, 383.67px);
+  }
+
+  62.5% {
+    transform: translate(548.75px, 393.75px);
+  }
+
+  75% {
+    transform: translate(548.71px, 392.38px);
+  }
+
+  87.5% {
+    transform: translate(548.31px, 380.32px);
+  }
+
+  100% {
+    transform: translate(547.78px, 364.35px);
+  }
+
+}
+
+.node-6-8 {
+  animation-name: node-6-8-wave;
+}
+
+@keyframes node-6-8-wave {
+
+  0% {
+    transform: translate(582.29px, 337.16px);
+  }
+
+  12.5% {
+    transform: translate(582.24px, 332.14px);
+  }
+
+  25% {
+    transform: translate(582.46px, 352.07px);
+  }
+
+  37.5% {
+    transform: translate(582.81px, 384.16px);
+  }
+
+  50% {
+    transform: translate(583.09px, 409.32px);
+  }
+
+  62.5% {
+    transform: translate(583.14px, 413.87px);
+  }
+
+  75% {
+    transform: translate(582.94px, 395.46px);
+  }
+
+  87.5% {
+    transform: translate(582.59px, 363.84px);
+  }
+
+  100% {
+    transform: translate(582.29px, 337.16px);
+  }
+
+}
+
+.node-6-9 {
+  animation-name: node-6-9-wave;
+}
+
+@keyframes node-6-9-wave {
+
+  0% {
+    transform: translate(618.03px, 307.98px);
+  }
+
+  12.5% {
+    transform: translate(617.97px, 313.79px);
+  }
+
+  25% {
+    transform: translate(617.51px, 355.16px);
+  }
+
+  37.5% {
+    transform: translate(616.96px, 405.07px);
+  }
+
+  50% {
+    transform: translate(616.63px, 435.01px);
+  }
+
+  62.5% {
+    transform: translate(616.68px, 430.04px);
+  }
+
+  75% {
+    transform: translate(617.1px, 392.53px);
+  }
+
+  87.5% {
+    transform: translate(617.66px, 341.79px);
+  }
+
+  100% {
+    transform: translate(618.03px, 307.98px);
+  }
+
+}
+
+.node-6-10 {
+  animation-name: node-6-10-wave;
+}
+
+@keyframes node-6-10-wave {
+
+  0% {
+    transform: translate(654.98px, 281.37px);
+  }
+
+  12.5% {
+    transform: translate(654.28px, 302.21px);
+  }
+
+  25% {
+    transform: translate(652.22px, 364.36px);
+  }
+
+  37.5% {
+    transform: translate(650.14px, 427.26px);
+  }
+
+  50% {
+    transform: translate(649.15px, 456.95px);
+  }
+
+  62.5% {
+    transform: translate(649.72px, 439.88px);
+  }
+
+  75% {
+    transform: translate(651.58px, 383.65px);
+  }
+
+  87.5% {
+    transform: translate(653.79px, 317.0px);
+  }
+
+  100% {
+    transform: translate(654.98px, 281.37px);
+  }
+
+}
+
+.node-6-11 {
+  animation-name: node-6-11-wave;
+}
+
+@keyframes node-6-11-wave {
+
+  0% {
+    transform: translate(692.7px, 261.97px);
+  }
+
+  12.5% {
+    transform: translate(690.62px, 299.59px);
+  }
+
+  25% {
+    transform: translate(686.28px, 378.11px);
+  }
+
+  37.5% {
+    transform: translate(682.45px, 447.3px);
+  }
+
+  50% {
+    transform: translate(681.08px, 472.12px);
+  }
+
+  62.5% {
+    transform: translate(682.74px, 442.08px);
+  }
+
+  75% {
+    transform: translate(686.73px, 370.0px);
+  }
+
+  87.5% {
+    transform: translate(690.97px, 293.27px);
+  }
+
+  100% {
+    transform: translate(692.7px, 261.97px);
+  }
+
+}
+
+.node-6-12 {
+  animation-name: node-6-12-wave;
+}
+
+@keyframes node-6-12-wave {
+
+  0% {
+    transform: translate(730.43px, 253.53px);
+  }
+
+  12.5% {
+    transform: translate(726.35px, 306.31px);
+  }
+
+  25% {
+    transform: translate(719.57px, 393.89px);
+  }
+
+  37.5% {
+    transform: translate(714.29px, 462.15px);
+  }
+
+  50% {
+    transform: translate(713.02px, 478.51px);
+  }
+
+  62.5% {
+    transform: translate(716.28px, 436.42px);
+  }
+
+  75% {
+    transform: translate(722.68px, 353.73px);
+  }
+
+  87.5% {
+    transform: translate(728.78px, 274.82px);
+  }
+
+  100% {
+    transform: translate(730.43px, 253.53px);
+  }
+
+}
+
+.node-6-13 {
+  animation-name: node-6-13-wave;
+}
+
+@keyframes node-6-13-wave {
+
+  0% {
+    transform: translate(767.27px, 257.84px);
+  }
+
+  12.5% {
+    transform: translate(760.99px, 320.94px);
+  }
+
+  25% {
+    transform: translate(752.25px, 408.8px);
+  }
+
+  37.5% {
+    transform: translate(746.21px, 469.49px);
+  }
+
+  50% {
+    transform: translate(745.63px, 475.26px);
+  }
+
+  62.5% {
+    transform: translate(750.75px, 423.82px);
+  }
+
+  75% {
+    transform: translate(759.32px, 337.73px);
+  }
+
+  87.5% {
+    transform: translate(766.52px, 265.4px);
+  }
+
+  100% {
+    transform: translate(767.27px, 257.84px);
+  }
+
+}
+
+.node-6-14 {
+  animation-name: node-6-14-wave;
+}
+
+@keyframes node-6-14-wave {
+
+  0% {
+    transform: translate(802.44px, 274.24px);
+  }
+
+  12.5% {
+    transform: translate(794.38px, 340.56px);
+  }
+
+  25% {
+    transform: translate(784.7px, 420.12px);
+  }
+
+  37.5% {
+    transform: translate(778.88px, 467.98px);
+  }
+
+  50% {
+    transform: translate(779.54px, 462.6px);
+  }
+
+  62.5% {
+    transform: translate(786.39px, 406.2px);
+  }
+
+  75% {
+    transform: translate(796.25px, 325.14px);
+  }
+
+  87.5% {
+    transform: translate(803.28px, 267.35px);
+  }
+
+  100% {
+    transform: translate(802.44px, 274.24px);
+  }
+
+}
+
+.node-6-15 {
+  animation-name: node-6-15-wave;
+}
+
+@keyframes node-6-15-wave {
+
+  0% {
+    transform: translate(835.58px, 299.8px);
+  }
+
+  12.5% {
+    transform: translate(826.69px, 361.62px);
+  }
+
+  25% {
+    transform: translate(817.48px, 425.75px);
+  }
+
+  37.5% {
+    transform: translate(812.94px, 457.32px);
+  }
+
+  50% {
+    transform: translate(815.15px, 441.9px);
+  }
+
+  62.5% {
+    transform: translate(823.14px, 386.32px);
+  }
+
+  75% {
+    transform: translate(832.86px, 318.73px);
+  }
+
+  87.5% {
+    transform: translate(838.29px, 280.9px);
+  }
+
+  100% {
+    transform: translate(835.58px, 299.8px);
+  }
+
+}
+
+.node-6-16 {
+  animation-name: node-6-16-wave;
+}
+
+@keyframes node-6-16-wave {
+
+  0% {
+    transform: translate(866.79px, 330.13px);
+  }
+
+  12.5% {
+    transform: translate(858.41px, 380.64px);
+  }
+
+  25% {
+    transform: translate(851.15px, 424.46px);
+  }
+
+  37.5% {
+    transform: translate(848.84px, 438.35px);
+  }
+
+  50% {
+    transform: translate(852.6px, 415.67px);
+  }
+
+  62.5% {
+    transform: translate(860.6px, 367.44px);
+  }
+
+  75% {
+    transform: translate(868.44px, 320.21px);
+  }
+
+  87.5% {
+    transform: translate(871.12px, 304.03px);
+  }
+
+  100% {
+    transform: translate(866.79px, 330.13px);
+  }
+
+}
+
+.node-6-17 {
+  animation-name: node-6-17-wave;
+}
+
+@keyframes node-6-17-wave {
+
+  0% {
+    transform: translate(896.65px, 360.51px);
+  }
+
+  12.5% {
+    transform: translate(890.21px, 394.79px);
+  }
+
+  25% {
+    transform: translate(886.21px, 416.05px);
+  }
+
+  37.5% {
+    transform: translate(886.77px, 413.08px);
+  }
+
+  50% {
+    transform: translate(891.6px, 387.39px);
+  }
+
+  62.5% {
+    transform: translate(898.11px, 352.78px);
+  }
+
+  75% {
+    transform: translate(902.44px, 329.7px);
+  }
+
+  87.5% {
+    transform: translate(901.82px, 333.01px);
+  }
+
+  100% {
+    transform: translate(896.65px, 360.51px);
+  }
+
+}
+
+.node-7-0 {
+  animation-name: node-7-0-wave;
+}
+
+@keyframes node-7-0-wave {
+
+  0% {
+    transform: translate(308.67px, 341.81px);
+  }
+
+  12.5% {
+    transform: translate(314.2px, 372.15px);
+  }
+
+  25% {
+    transform: translate(318.55px, 395.99px);
+  }
+
+  37.5% {
+    transform: translate(319.34px, 400.31px);
+  }
+
+  50% {
+    transform: translate(316.16px, 382.86px);
+  }
+
+  62.5% {
+    transform: translate(310.7px, 352.94px);
+  }
+
+  75% {
+    transform: translate(306.1px, 327.74px);
+  }
+
+  87.5% {
+    transform: translate(305.24px, 323.0px);
+  }
+
+  100% {
+    transform: translate(308.67px, 341.81px);
+  }
+
+}
+
+.node-7-1 {
+  animation-name: node-7-1-wave;
+}
+
+@keyframes node-7-1-wave {
+
+  0% {
+    transform: translate(346.26px, 362.43px);
+  }
+
+  12.5% {
+    transform: translate(350.94px, 391.47px);
+  }
+
+  25% {
+    transform: translate(352.84px, 403.29px);
+  }
+
+  37.5% {
+    transform: translate(350.97px, 391.71px);
+  }
+
+  50% {
+    transform: translate(346.32px, 362.78px);
+  }
+
+  62.5% {
+    transform: translate(341.47px, 332.64px);
+  }
+
+  75% {
+    transform: translate(339.38px, 319.7px);
+  }
+
+  87.5% {
+    transform: translate(341.42px, 332.38px);
+  }
+
+  100% {
+    transform: translate(346.26px, 362.43px);
+  }
+
+}
+
+.node-7-2 {
+  animation-name: node-7-2-wave;
+}
+
+@keyframes node-7-2-wave {
+
+  0% {
+    transform: translate(382.58px, 380.26px);
+  }
+
+  12.5% {
+    transform: translate(385.95px, 404.45px);
+  }
+
+  25% {
+    transform: translate(385.95px, 404.41px);
+  }
+
+  37.5% {
+    transform: translate(382.56px, 380.14px);
+  }
+
+  50% {
+    transform: translate(377.6px, 344.54px);
+  }
+
+  62.5% {
+    transform: translate(373.95px, 318.41px);
+  }
+
+  75% {
+    transform: translate(373.96px, 318.46px);
+  }
+
+  87.5% {
+    transform: translate(377.61px, 344.66px);
+  }
+
+  100% {
+    transform: translate(382.58px, 380.26px);
+  }
+
+}
+
+.node-7-3 {
+  animation-name: node-7-3-wave;
+}
+
+@keyframes node-7-3-wave {
+
+  0% {
+    transform: translate(417.44px, 392.24px);
+  }
+
+  12.5% {
+    transform: translate(419.45px, 409.25px);
+  }
+
+  25% {
+    transform: translate(418.3px, 399.49px);
+  }
+
+  37.5% {
+    transform: translate(414.57px, 367.94px);
+  }
+
+  50% {
+    transform: translate(410.31px, 331.8px);
+  }
+
+  62.5% {
+    transform: translate(408.09px, 313.02px);
+  }
+
+  75% {
+    transform: translate(409.38px, 323.9px);
+  }
+
+  87.5% {
+    transform: translate(413.31px, 357.23px);
+  }
+
+  100% {
+    transform: translate(417.44px, 392.24px);
+  }
+
+}
+
+.node-7-4 {
+  animation-name: node-7-4-wave;
+}
+
+@keyframes node-7-4-wave {
+
+  0% {
+    transform: translate(451.02px, 396.18px);
+  }
+
+  12.5% {
+    transform: translate(451.89px, 405.21px);
+  }
+
+  25% {
+    transform: translate(450.39px, 389.75px);
+  }
+
+  37.5% {
+    transform: translate(447.32px, 357.86px);
+  }
+
+  50% {
+    transform: translate(444.39px, 327.53px);
+  }
+
+  62.5% {
+    transform: translate(443.42px, 317.56px);
+  }
+
+  75% {
+    transform: translate(445.06px, 334.49px);
+  }
+
+  87.5% {
+    transform: translate(448.23px, 367.32px);
+  }
+
+  100% {
+    transform: translate(451.02px, 396.18px);
+  }
+
+}
+
+.node-7-5 {
+  animation-name: node-7-5-wave;
+}
+
+@keyframes node-7-5-wave {
+
+  0% {
+    transform: translate(483.73px, 390.94px);
+  }
+
+  12.5% {
+    transform: translate(483.87px, 392.86px);
+  }
+
+  25% {
+    transform: translate(482.7px, 377.24px);
+  }
+
+  37.5% {
+    transform: translate(480.85px, 352.58px);
+  }
+
+  50% {
+    transform: translate(479.39px, 333.21px);
+  }
+
+  62.5% {
+    transform: translate(479.24px, 331.14px);
+  }
+
+  75% {
+    transform: translate(480.48px, 347.69px);
+  }
+
+  87.5% {
+    transform: translate(482.34px, 372.5px);
+  }
+
+  100% {
+    transform: translate(483.73px, 390.94px);
+  }
+
+}
+
+.node-7-6 {
+  animation-name: node-7-6-wave;
+}
+
+@keyframes node-7-6-wave {
+
+  0% {
+    transform: translate(516.18px, 376.57px);
+  }
+
+  12.5% {
+    transform: translate(516.04px, 373.92px);
+  }
+
+  25% {
+    transform: translate(515.54px, 364.63px);
+  }
+
+  37.5% {
+    transform: translate(514.97px, 354.03px);
+  }
+
+  50% {
+    transform: translate(514.67px, 348.38px);
+  }
+
+  62.5% {
+    transform: translate(514.81px, 351.12px);
+  }
+
+  75% {
+    transform: translate(515.32px, 360.57px);
+  }
+
+  87.5% {
+    transform: translate(515.88px, 371.09px);
+  }
+
+  100% {
+    transform: translate(516.18px, 376.57px);
+  }
+
+}
+
+.node-7-7 {
+  animation-name: node-7-7-wave;
+}
+
+@keyframes node-7-7-wave {
+
+  0% {
+    transform: translate(548.99px, 354.36px);
+  }
+
+  12.5% {
+    transform: translate(548.89px, 351.16px);
+  }
+
+  25% {
+    transform: translate(549.0px, 354.7px);
+  }
+
+  37.5% {
+    transform: translate(549.27px, 362.84px);
+  }
+
+  50% {
+    transform: translate(549.52px, 370.76px);
+  }
+
+  62.5% {
+    transform: translate(549.62px, 373.88px);
+  }
+
+  75% {
+    transform: translate(549.51px, 370.43px);
+  }
+
+  87.5% {
+    transform: translate(549.25px, 362.37px);
+  }
+
+  100% {
+    transform: translate(548.99px, 354.36px);
+  }
+
+}
+
+.node-7-8 {
+  animation-name: node-7-8-wave;
+}
+
+@keyframes node-7-8-wave {
+
+  0% {
+    transform: translate(582.7px, 326.89px);
+  }
+
+  12.5% {
+    transform: translate(582.72px, 328.19px);
+  }
+
+  25% {
+    transform: translate(582.95px, 349.79px);
+  }
+
+  37.5% {
+    transform: translate(583.25px, 378.15px);
+  }
+
+  50% {
+    transform: translate(583.45px, 396.76px);
+  }
+
+  62.5% {
+    transform: translate(583.44px, 395.58px);
+  }
+
+  75% {
+    transform: translate(583.22px, 375.21px);
+  }
+
+  87.5% {
+    transform: translate(582.92px, 346.74px);
+  }
+
+  100% {
+    transform: translate(582.7px, 326.89px);
+  }
+
+}
+
+.node-7-9 {
+  animation-name: node-7-9-wave;
+}
+
+@keyframes node-7-9-wave {
+
+  0% {
+    transform: translate(617.61px, 297.9px);
+  }
+
+  12.5% {
+    transform: translate(617.49px, 308.89px);
+  }
+
+  25% {
+    transform: translate(617.04px, 351.22px);
+  }
+
+  37.5% {
+    transform: translate(616.54px, 397.76px);
+  }
+
+  50% {
+    transform: translate(616.27px, 422.4px);
+  }
+
+  62.5% {
+    transform: translate(616.37px, 412.88px);
+  }
+
+  75% {
+    transform: translate(616.79px, 373.82px);
+  }
+
+  87.5% {
+    transform: translate(617.31px, 325.81px);
+  }
+
+  100% {
+    transform: translate(617.61px, 297.9px);
+  }
+
+}
+
+.node-7-10 {
+  animation-name: node-7-10-wave;
+}
+
+@keyframes node-7-10-wave {
+
+  0% {
+    transform: translate(653.66px, 271.91px);
+  }
+
+  12.5% {
+    transform: translate(652.86px, 296.75px);
+  }
+
+  25% {
+    transform: translate(650.86px, 358.96px);
+  }
+
+  37.5% {
+    transform: translate(648.94px, 418.61px);
+  }
+
+  50% {
+    transform: translate(648.12px, 443.94px);
+  }
+
+  62.5% {
+    transform: translate(648.79px, 423.38px);
+  }
+
+  75% {
+    transform: translate(650.63px, 366.23px);
+  }
+
+  87.5% {
+    transform: translate(652.68px, 302.31px);
+  }
+
+  100% {
+    transform: translate(653.66px, 271.91px);
+  }
+
+}
+
+.node-7-11 {
+  animation-name: node-7-11-wave;
+}
+
+@keyframes node-7-11-wave {
+
+  0% {
+    transform: translate(690.43px, 253.47px);
+  }
+
+  12.5% {
+    transform: translate(688.25px, 293.98px);
+  }
+
+  25% {
+    transform: translate(684.09px, 371.61px);
+  }
+
+  37.5% {
+    transform: translate(680.55px, 437.45px);
+  }
+
+  50% {
+    transform: translate(679.43px, 458.46px);
+  }
+
+  62.5% {
+    transform: translate(681.18px, 425.73px);
+  }
+
+  75% {
+    transform: translate(685.06px, 353.49px);
+  }
+
+  87.5% {
+    transform: translate(689.01px, 279.9px);
+  }
+
+  100% {
+    transform: translate(690.43px, 253.47px);
+  }
+
+}
+
+.node-7-12 {
+  animation-name: node-7-12-wave;
+}
+
+@keyframes node-7-12-wave {
+
+  0% {
+    transform: translate(727.15px, 246.16px);
+  }
+
+  12.5% {
+    transform: translate(723.03px, 301.0px);
+  }
+
+  25% {
+    transform: translate(716.58px, 386.81px);
+  }
+
+  37.5% {
+    transform: translate(711.73px, 451.36px);
+  }
+
+  50% {
+    transform: translate(710.78px, 464.06px);
+  }
+
+  62.5% {
+    transform: translate(714.11px, 419.74px);
+  }
+
+  75% {
+    transform: translate(720.27px, 337.63px);
+  }
+
+  87.5% {
+    transform: translate(725.91px, 262.58px);
+  }
+
+  100% {
+    transform: translate(727.15px, 246.16px);
+  }
+
+}
+
+.node-7-13 {
+  animation-name: node-7-13-wave;
+}
+
+@keyframes node-7-13-wave {
+
+  0% {
+    transform: translate(762.95px, 251.59px);
+  }
+
+  12.5% {
+    transform: translate(756.7px, 316.31px);
+  }
+
+  25% {
+    transform: translate(748.45px, 401.71px);
+  }
+
+  37.5% {
+    transform: translate(743.0px, 458.13px);
+  }
+
+  50% {
+    transform: translate(742.83px, 459.91px);
+  }
+
+  62.5% {
+    transform: translate(748.0px, 406.33px);
+  }
+
+  75% {
+    transform: translate(756.2px, 321.45px);
+  }
+
+  87.5% {
+    transform: translate(762.72px, 253.9px);
+  }
+
+  100% {
+    transform: translate(762.95px, 251.59px);
+  }
+
+}
+
+.node-7-14 {
+  animation-name: node-7-14-wave;
+}
+
+@keyframes node-7-14-wave {
+
+  0% {
+    transform: translate(797.11px, 268.92px);
+  }
+
+  12.5% {
+    transform: translate(789.08px, 336.94px);
+  }
+
+  25% {
+    transform: translate(780.03px, 413.62px);
+  }
+
+  37.5% {
+    transform: translate(774.98px, 456.47px);
+  }
+
+  50% {
+    transform: translate(776.17px, 446.34px);
+  }
+
+  62.5% {
+    transform: translate(783.12px, 387.45px);
+  }
+
+  75% {
+    transform: translate(792.49px, 308.06px);
+  }
+
+  87.5% {
+    transform: translate(798.63px, 256.04px);
+  }
+
+  100% {
+    transform: translate(797.11px, 268.92px);
+  }
+
+}
+
+.node-7-15 {
+  animation-name: node-7-15-wave;
+}
+
+@keyframes node-7-15-wave {
+
+  0% {
+    transform: translate(829.3px, 295.1px);
+  }
+
+  12.5% {
+    transform: translate(820.35px, 359.24px);
+  }
+
+  25% {
+    transform: translate(811.82px, 420.4px);
+  }
+
+  37.5% {
+    transform: translate(808.23px, 446.12px);
+  }
+
+  50% {
+    transform: translate(811.21px, 424.78px);
+  }
+
+  62.5% {
+    transform: translate(819.42px, 365.95px);
+  }
+
+  75% {
+    transform: translate(828.58px, 300.24px);
+  }
+
+  87.5% {
+    transform: translate(832.92px, 269.18px);
+  }
+
+  100% {
+    transform: translate(829.3px, 295.1px);
+  }
+
+}
+
+.node-7-16 {
+  animation-name: node-7-16-wave;
+}
+
+@keyframes node-7-16-wave {
+
+  0% {
+    transform: translate(859.64px, 325.74px);
+  }
+
+  12.5% {
+    transform: translate(850.97px, 379.64px);
+  }
+
+  25% {
+    transform: translate(844.35px, 420.76px);
+  }
+
+  37.5% {
+    transform: translate(843.19px, 427.94px);
+  }
+
+  50% {
+    transform: translate(848.04px, 397.82px);
+  }
+
+  62.5% {
+    transform: translate(856.51px, 345.19px);
+  }
+
+  75% {
+    transform: translate(863.82px, 299.82px);
+  }
+
+  87.5% {
+    transform: translate(865.18px, 291.35px);
+  }
+
+  100% {
+    transform: translate(859.64px, 325.74px);
+  }
+
+}
+
+.node-7-17 {
+  animation-name: node-7-17-wave;
+}
+
+@keyframes node-7-17-wave {
+
+  0% {
+    transform: translate(888.72px, 356.13px);
+  }
+
+  12.5% {
+    transform: translate(881.59px, 395.23px);
+  }
+
+  25% {
+    transform: translate(878.09px, 414.41px);
+  }
+
+  37.5% {
+    transform: translate(880.0px, 403.92px);
+  }
+
+  50% {
+    transform: translate(886.37px, 369.02px);
+  }
+
+  62.5% {
+    transform: translate(893.75px, 328.56px);
+  }
+
+  75% {
+    transform: translate(897.65px, 307.15px);
+  }
+
+  87.5% {
+    transform: translate(895.49px, 319.0px);
+  }
+
+  100% {
+    transform: translate(888.72px, 356.13px);
+  }
+
+}
+
+.node-8-0 {
+  animation-name: node-8-0-wave;
+}
+
+@keyframes node-8-0-wave {
+
+  0% {
+    transform: translate(317.45px, 344.37px);
+  }
+
+  12.5% {
+    transform: translate(323.74px, 379.83px);
+  }
+
+  25% {
+    transform: translate(326.97px, 398.07px);
+  }
+
+  37.5% {
+    transform: translate(325.47px, 389.64px);
+  }
+
+  50% {
+    transform: translate(320.01px, 358.84px);
+  }
+
+  62.5% {
+    transform: translate(313.56px, 322.4px);
+  }
+
+  75% {
+    transform: translate(310.0px, 302.32px);
+  }
+
+  87.5% {
+    transform: translate(311.67px, 311.72px);
+  }
+
+  100% {
+    transform: translate(317.45px, 344.37px);
+  }
+
+}
+
+.node-8-1 {
+  animation-name: node-8-1-wave;
+}
+
+@keyframes node-8-1-wave {
+
+  0% {
+    transform: translate(353.68px, 363.49px);
+  }
+
+  12.5% {
+    transform: translate(359.08px, 398.02px);
+  }
+
+  25% {
+    transform: translate(360.23px, 405.38px);
+  }
+
+  37.5% {
+    transform: translate(356.57px, 381.94px);
+  }
+
+  50% {
+    transform: translate(349.95px, 339.6px);
+  }
+
+  62.5% {
+    transform: translate(344.13px, 302.37px);
+  }
+
+  75% {
+    transform: translate(342.81px, 293.99px);
+  }
+
+  87.5% {
+    transform: translate(346.9px, 320.13px);
+  }
+
+  100% {
+    transform: translate(353.68px, 363.49px);
+  }
+
+}
+
+.node-8-2 {
+  animation-name: node-8-2-wave;
+}
+
+@keyframes node-8-2-wave {
+
+  0% {
+    transform: translate(388.72px, 379.69px);
+  }
+
+  12.5% {
+    transform: translate(392.77px, 409.61px);
+  }
+
+  25% {
+    transform: translate(392.32px, 406.23px);
+  }
+
+  37.5% {
+    transform: translate(387.57px, 371.18px);
+  }
+
+  50% {
+    transform: translate(380.98px, 322.56px);
+  }
+
+  62.5% {
+    transform: translate(376.44px, 289.09px);
+  }
+
+  75% {
+    transform: translate(376.97px, 293.01px);
+  }
+
+  87.5% {
+    transform: translate(382.2px, 331.6px);
+  }
+
+  100% {
+    transform: translate(388.72px, 379.69px);
+  }
+
+}
+
+.node-8-3 {
+  animation-name: node-8-3-wave;
+}
+
+@keyframes node-8-3-wave {
+
+  0% {
+    transform: translate(422.42px, 390.09px);
+  }
+
+  12.5% {
+    transform: translate(425.03px, 412.89px);
+  }
+
+  25% {
+    transform: translate(423.64px, 400.76px);
+  }
+
+  37.5% {
+    transform: translate(418.92px, 359.58px);
+  }
+
+  50% {
+    transform: translate(413.37px, 311.23px);
+  }
+
+  62.5% {
+    transform: translate(410.4px, 285.26px);
+  }
+
+  75% {
+    transform: translate(412.0px, 299.27px);
+  }
+
+  87.5% {
+    transform: translate(417.09px, 343.62px);
+  }
+
+  100% {
+    transform: translate(422.42px, 390.09px);
+  }
+
+}
+
+.node-8-4 {
+  animation-name: node-8-4-wave;
+}
+
+@keyframes node-8-4-wave {
+
+  0% {
+    transform: translate(454.94px, 392.65px);
+  }
+
+  12.5% {
+    transform: translate(456.32px, 407.29px);
+  }
+
+  25% {
+    transform: translate(454.71px, 390.14px);
+  }
+
+  37.5% {
+    transform: translate(450.92px, 349.77px);
+  }
+
+  50% {
+    transform: translate(447.04px, 308.39px);
+  }
+
+  62.5% {
+    transform: translate(445.48px, 291.78px);
+  }
+
+  75% {
+    transform: translate(447.3px, 311.17px);
+  }
+
+  87.5% {
+    transform: translate(451.27px, 353.5px);
+  }
+
+  100% {
+    transform: translate(454.94px, 392.65px);
+  }
+
+}
+
+.node-8-5 {
+  animation-name: node-8-5-wave;
+}
+
+@keyframes node-8-5-wave {
+
+  0% {
+    transform: translate(486.72px, 386.36px);
+  }
+
+  12.5% {
+    transform: translate(487.24px, 393.44px);
+  }
+
+  25% {
+    transform: translate(486.0px, 376.47px);
+  }
+
+  37.5% {
+    transform: translate(483.65px, 344.34px);
+  }
+
+  50% {
+    transform: translate(481.54px, 315.33px);
+  }
+
+  62.5% {
+    transform: translate(480.97px, 307.51px);
+  }
+
+  75% {
+    transform: translate(482.32px, 326.01px);
+  }
+
+  87.5% {
+    transform: translate(484.71px, 358.87px);
+  }
+
+  100% {
+    transform: translate(486.72px, 386.36px);
+  }
+
+}
+
+.node-8-6 {
+  animation-name: node-8-6-wave;
+}
+
+@keyframes node-8-6-wave {
+
+  0% {
+    transform: translate(518.3px, 371.33px);
+  }
+
+  12.5% {
+    transform: translate(518.4px, 373.12px);
+  }
+
+  25% {
+    transform: translate(517.84px, 362.42px);
+  }
+
+  37.5% {
+    transform: translate(516.94px, 345.18px);
+  }
+
+  50% {
+    transform: translate(516.22px, 331.44px);
+  }
+
+  62.5% {
+    transform: translate(516.13px, 329.56px);
+  }
+
+  75% {
+    transform: translate(516.71px, 340.71px);
+  }
+
+  87.5% {
+    transform: translate(517.61px, 358.04px);
+  }
+
+  100% {
+    transform: translate(518.3px, 371.33px);
+  }
+
+}
+
+.node-8-7 {
+  animation-name: node-8-7-wave;
+}
+
+@keyframes node-8-7-wave {
+
+  0% {
+    transform: translate(550.28px, 348.92px);
+  }
+
+  12.5% {
+    transform: translate(550.29px, 349.16px);
+  }
+
+  25% {
+    transform: translate(550.34px, 350.86px);
+  }
+
+  37.5% {
+    transform: translate(550.41px, 353.01px);
+  }
+
+  50% {
+    transform: translate(550.45px, 354.35px);
+  }
+
+  62.5% {
+    transform: translate(550.44px, 354.1px);
+  }
+
+  75% {
+    transform: translate(550.39px, 352.42px);
+  }
+
+  87.5% {
+    transform: translate(550.32px, 350.27px);
+  }
+
+  100% {
+    transform: translate(550.28px, 348.92px);
+  }
+
+}
+
+.node-8-8 {
+  animation-name: node-8-8-wave;
+}
+
+@keyframes node-8-8-wave {
+
+  0% {
+    transform: translate(583.14px, 321.71px);
+  }
+
+  12.5% {
+    transform: translate(583.18px, 325.24px);
+  }
+
+  25% {
+    transform: translate(583.38px, 344.26px);
+  }
+
+  37.5% {
+    transform: translate(583.62px, 367.06px);
+  }
+
+  50% {
+    transform: translate(583.76px, 380.48px);
+  }
+
+  62.5% {
+    transform: translate(583.72px, 377.19px);
+  }
+
+  75% {
+    transform: translate(583.53px, 358.95px);
+  }
+
+  87.5% {
+    transform: translate(583.29px, 335.9px);
+  }
+
+  100% {
+    transform: translate(583.14px, 321.71px);
+  }
+
+}
+
+.node-8-9 {
+  animation-name: node-8-9-wave;
+}
+
+@keyframes node-8-9-wave {
+
+  0% {
+    transform: translate(617.15px, 293.41px);
+  }
+
+  12.5% {
+    transform: translate(617.03px, 305.31px);
+  }
+
+  25% {
+    transform: translate(616.62px, 344.11px);
+  }
+
+  37.5% {
+    transform: translate(616.19px, 385.33px);
+  }
+
+  50% {
+    transform: translate(615.98px, 405.89px);
+  }
+
+  62.5% {
+    transform: translate(616.09px, 395.41px);
+  }
+
+  75% {
+    transform: translate(616.47px, 359.1px);
+  }
+
+  87.5% {
+    transform: translate(616.91px, 316.46px);
+  }
+
+  100% {
+    transform: translate(617.15px, 293.41px);
+  }
+
+}
+
+.node-8-10 {
+  animation-name: node-8-10-wave;
+}
+
+@keyframes node-8-10-wave {
+
+  0% {
+    transform: translate(652.24px, 268.45px);
+  }
+
+  12.5% {
+    transform: translate(651.47px, 292.89px);
+  }
+
+  25% {
+    transform: translate(649.67px, 350.56px);
+  }
+
+  37.5% {
+    transform: translate(647.97px, 404.92px);
+  }
+
+  50% {
+    transform: translate(647.28px, 426.93px);
+  }
+
+  62.5% {
+    transform: translate(647.92px, 406.34px);
+  }
+
+  75% {
+    transform: translate(649.6px, 352.71px);
+  }
+
+  87.5% {
+    transform: translate(651.42px, 294.52px);
+  }
+
+  100% {
+    transform: translate(652.24px, 268.45px);
+  }
+
+}
+
+.node-8-11 {
+  animation-name: node-8-11-wave;
+}
+
+@keyframes node-8-11-wave {
+
+  0% {
+    transform: translate(687.96px, 251.24px);
+  }
+
+  12.5% {
+    transform: translate(685.92px, 290.23px);
+  }
+
+  25% {
+    transform: translate(682.16px, 362.38px);
+  }
+
+  37.5% {
+    transform: translate(679.02px, 422.72px);
+  }
+
+  50% {
+    transform: translate(678.08px, 440.76px);
+  }
+
+  62.5% {
+    transform: translate(679.75px, 408.64px);
+  }
+
+  75% {
+    transform: translate(683.29px, 340.75px);
+  }
+
+  87.5% {
+    transform: translate(686.79px, 273.56px);
+  }
+
+  100% {
+    transform: translate(687.96px, 251.24px);
+  }
+
+}
+
+.node-8-12 {
+  animation-name: node-8-12-wave;
+}
+
+@keyframes node-8-12-wave {
+
+  0% {
+    transform: translate(723.59px, 245.11px);
+  }
+
+  12.5% {
+    transform: translate(719.75px, 297.7px);
+  }
+
+  25% {
+    transform: translate(713.94px, 377.27px);
+  }
+
+  37.5% {
+    transform: translate(709.66px, 435.93px);
+  }
+
+  50% {
+    transform: translate(708.96px, 445.56px);
+  }
+
+  62.5% {
+    transform: translate(712.13px, 402.14px);
+  }
+
+  75% {
+    transform: translate(717.75px, 325.14px);
+  }
+
+  87.5% {
+    transform: translate(722.69px, 257.33px);
+  }
+
+  100% {
+    transform: translate(723.59px, 245.11px);
+  }
+
+}
+
+.node-8-13 {
+  animation-name: node-8-13-wave;
+}
+
+@keyframes node-8-13-wave {
+
+  0% {
+    transform: translate(758.3px, 251.48px);
+  }
+
+  12.5% {
+    transform: translate(752.46px, 313.76px);
+  }
+
+  25% {
+    transform: translate(745.07px, 392.45px);
+  }
+
+  37.5% {
+    transform: translate(740.39px, 442.38px);
+  }
+
+  50% {
+    transform: translate(740.56px, 440.57px);
+  }
+
+  62.5% {
+    transform: translate(745.51px, 387.79px);
+  }
+
+  75% {
+    transform: translate(752.94px, 308.61px);
+  }
+
+  87.5% {
+    transform: translate(758.51px, 249.18px);
+  }
+
+  100% {
+    transform: translate(758.3px, 251.48px);
+  }
+
+}
+
+.node-8-14 {
+  animation-name: node-8-14-wave;
+}
+
+@keyframes node-8-14-wave {
+
+  0% {
+    transform: translate(791.43px, 269.36px);
+  }
+
+  12.5% {
+    transform: translate(783.86px, 335.35px);
+  }
+
+  25% {
+    transform: translate(775.85px, 405.19px);
+  }
+
+  37.5% {
+    transform: translate(771.77px, 440.83px);
+  }
+
+  50% {
+    transform: translate(773.44px, 426.19px);
+  }
+
+  62.5% {
+    transform: translate(780.16px, 367.6px);
+  }
+
+  75% {
+    transform: translate(788.58px, 294.22px);
+  }
+
+  87.5% {
+    transform: translate(793.51px, 251.16px);
+  }
+
+  100% {
+    transform: translate(791.43px, 269.36px);
+  }
+
+}
+
+.node-8-15 {
+  animation-name: node-8-15-wave;
+}
+
+@keyframes node-8-15-wave {
+
+  0% {
+    transform: translate(822.67px, 295.66px);
+  }
+
+  12.5% {
+    transform: translate(814.12px, 358.72px);
+  }
+
+  25% {
+    transform: translate(806.73px, 413.28px);
+  }
+
+  37.5% {
+    transform: translate(804.32px, 431.04px);
+  }
+
+  50% {
+    transform: translate(808.0px, 403.93px);
+  }
+
+  62.5% {
+    transform: translate(816.05px, 344.49px);
+  }
+
+  75% {
+    transform: translate(824.14px, 284.8px);
+  }
+
+  87.5% {
+    transform: translate(827.04px, 263.41px);
+  }
+
+  100% {
+    transform: translate(822.67px, 295.66px);
+  }
+
+}
+
+.node-8-16 {
+  animation-name: node-8-16-wave;
+}
+
+@keyframes node-8-16-wave {
+
+  0% {
+    transform: translate(852.18px, 326.03px);
+  }
+
+  12.5% {
+    transform: translate(843.7px, 380.25px);
+  }
+
+  25% {
+    transform: translate(838.21px, 415.38px);
+  }
+
+  37.5% {
+    transform: translate(838.44px, 413.87px);
+  }
+
+  50% {
+    transform: translate(844.29px, 376.44px);
+  }
+
+  62.5% {
+    transform: translate(852.81px, 321.96px);
+  }
+
+  75% {
+    transform: translate(859.01px, 282.33px);
+  }
+
+  87.5% {
+    transform: translate(858.73px, 284.11px);
+  }
+
+  100% {
+    transform: translate(852.18px, 326.03px);
+  }
+
+}
+
+.node-8-17 {
+  animation-name: node-8-17-wave;
+}
+
+@keyframes node-8-17-wave {
+
+  0% {
+    transform: translate(880.51px, 355.87px);
+  }
+
+  12.5% {
+    transform: translate(873.23px, 396.97px);
+  }
+
+  25% {
+    transform: translate(870.73px, 411.07px);
+  }
+
+  37.5% {
+    transform: translate(874.24px, 391.28px);
+  }
+
+  50% {
+    transform: translate(882.02px, 347.38px);
+  }
+
+  62.5% {
+    transform: translate(889.78px, 303.56px);
+  }
+
+  75% {
+    transform: translate(892.65px, 287.39px);
+  }
+
+  87.5% {
+    transform: translate(888.66px, 309.91px);
+  }
+
+  100% {
+    transform: translate(880.51px, 355.87px);
+  }
+
+}
+
+.node-9-0 {
+  animation-name: node-9-0-wave;
+}
+
+@keyframes node-9-0-wave {
+
+  0% {
+    transform: translate(325.97px, 348.21px);
+  }
+
+  12.5% {
+    transform: translate(332.48px, 386.02px);
+  }
+
+  25% {
+    transform: translate(334.42px, 397.29px);
+  }
+
+  37.5% {
+    transform: translate(330.83px, 376.47px);
+  }
+
+  50% {
+    transform: translate(323.52px, 334.01px);
+  }
+
+  62.5% {
+    transform: translate(316.56px, 293.59px);
+  }
+
+  75% {
+    transform: translate(314.34px, 280.75px);
+  }
+
+  87.5% {
+    transform: translate(318.38px, 304.18px);
+  }
+
+  100% {
+    transform: translate(325.97px, 348.21px);
+  }
+
+}
+
+.node-9-1 {
+  animation-name: node-9-1-wave;
+}
+
+@keyframes node-9-1-wave {
+
+  0% {
+    transform: translate(360.89px, 365.84px);
+  }
+
+  12.5% {
+    transform: translate(366.54px, 403.01px);
+  }
+
+  25% {
+    transform: translate(366.76px, 404.46px);
+  }
+
+  37.5% {
+    transform: translate(361.44px, 369.51px);
+  }
+
+  50% {
+    transform: translate(353.26px, 315.65px);
+  }
+
+  62.5% {
+    transform: translate(346.94px, 274.08px);
+  }
+
+  75% {
+    transform: translate(346.68px, 272.37px);
+  }
+
+  87.5% {
+    transform: translate(352.66px, 311.73px);
+  }
+
+  100% {
+    transform: translate(360.89px, 365.84px);
+  }
+
+}
+
+.node-9-2 {
+  animation-name: node-9-2-wave;
+}
+
+@keyframes node-9-2-wave {
+
+  0% {
+    transform: translate(394.7px, 380.52px);
+  }
+
+  12.5% {
+    transform: translate(399.0px, 413.18px);
+  }
+
+  25% {
+    transform: translate(397.9px, 404.82px);
+  }
+
+  37.5% {
+    transform: translate(391.9px, 359.28px);
+  }
+
+  50% {
+    transform: translate(384.06px, 299.72px);
+  }
+
+  62.5% {
+    transform: translate(379.08px, 261.96px);
+  }
+
+  75% {
+    transform: translate(380.4px, 271.94px);
+  }
+
+  87.5% {
+    transform: translate(387.07px, 322.58px);
+  }
+
+  100% {
+    transform: translate(394.7px, 380.52px);
+  }
+
+}
+
+.node-9-3 {
+  animation-name: node-9-3-wave;
+}
+
+@keyframes node-9-3-wave {
+
+  0% {
+    transform: translate(427.29px, 389.56px);
+  }
+
+  12.5% {
+    transform: translate(430.13px, 414.97px);
+  }
+
+  25% {
+    transform: translate(428.29px, 398.54px);
+  }
+
+  37.5% {
+    transform: translate(422.65px, 347.9px);
+  }
+
+  50% {
+    transform: translate(416.15px, 289.6px);
+  }
+
+  62.5% {
+    transform: translate(412.83px, 259.79px);
+  }
+
+  75% {
+    transform: translate(415.0px, 279.3px);
+  }
+
+  87.5% {
+    transform: translate(421.14px, 334.32px);
+  }
+
+  100% {
+    transform: translate(427.29px, 389.56px);
+  }
+
+}
+
+.node-9-4 {
+  animation-name: node-9-4-wave;
+}
+
+@keyframes node-9-4-wave {
+
+  0% {
+    transform: translate(458.83px, 391.06px);
+  }
+
+  12.5% {
+    transform: translate(460.37px, 407.91px);
+  }
+
+  25% {
+    transform: translate(458.44px, 386.81px);
+  }
+
+  37.5% {
+    transform: translate(453.99px, 337.94px);
+  }
+
+  50% {
+    transform: translate(449.42px, 287.89px);
+  }
+
+  62.5% {
+    transform: translate(447.63px, 268.28px);
+  }
+
+  75% {
+    transform: translate(449.86px, 292.7px);
+  }
+
+  87.5% {
+    transform: translate(454.57px, 344.33px);
+  }
+
+  100% {
+    transform: translate(458.83px, 391.06px);
+  }
+
+}
+
+.node-9-5 {
+  animation-name: node-9-5-wave;
+}
+
+@keyframes node-9-5-wave {
+
+  0% {
+    transform: translate(489.71px, 384.1px);
+  }
+
+  12.5% {
+    transform: translate(490.32px, 392.69px);
+  }
+
+  25% {
+    transform: translate(488.83px, 371.74px);
+  }
+
+  37.5% {
+    transform: translate(486.01px, 331.93px);
+  }
+
+  50% {
+    transform: translate(483.44px, 295.74px);
+  }
+
+  62.5% {
+    transform: translate(482.75px, 286.03px);
+  }
+
+  75% {
+    transform: translate(484.4px, 309.32px);
+  }
+
+  87.5% {
+    transform: translate(487.31px, 350.24px);
+  }
+
+  100% {
+    transform: translate(489.71px, 384.1px);
+  }
+
+}
+
+.node-9-6 {
+  animation-name: node-9-6-wave;
+}
+
+@keyframes node-9-6-wave {
+
+  0% {
+    transform: translate(520.45px, 368.85px);
+  }
+
+  12.5% {
+    transform: translate(520.57px, 371.17px);
+  }
+
+  25% {
+    transform: translate(519.8px, 356.09px);
+  }
+
+  37.5% {
+    transform: translate(518.57px, 331.82px);
+  }
+
+  50% {
+    transform: translate(517.59px, 312.44px);
+  }
+
+  62.5% {
+    transform: translate(517.46px, 309.94px);
+  }
+
+  75% {
+    transform: translate(518.27px, 325.91px);
+  }
+
+  87.5% {
+    transform: translate(519.51px, 350.36px);
+  }
+
+  100% {
+    transform: translate(520.45px, 368.85px);
+  }
+
+}
+
+.node-9-7 {
+  animation-name: node-9-7-wave;
+}
+
+@keyframes node-9-7-wave {
+
+  0% {
+    transform: translate(551.59px, 346.69px);
+  }
+
+  12.5% {
+    transform: translate(551.58px, 346.25px);
+  }
+
+  25% {
+    transform: translate(551.48px, 342.82px);
+  }
+
+  37.5% {
+    transform: translate(551.34px, 338.38px);
+  }
+
+  50% {
+    transform: translate(551.26px, 335.55px);
+  }
+
+  62.5% {
+    transform: translate(551.27px, 336.0px);
+  }
+
+  75% {
+    transform: translate(551.38px, 339.46px);
+  }
+
+  87.5% {
+    transform: translate(551.51px, 343.89px);
+  }
+
+  100% {
+    transform: translate(551.59px, 346.69px);
+  }
+
+}
+
+.node-9-8 {
+  animation-name: node-9-8-wave;
+}
+
+@keyframes node-9-8-wave {
+
+  0% {
+    transform: translate(583.6px, 320.2px);
+  }
+
+  12.5% {
+    transform: translate(583.61px, 321.65px);
+  }
+
+  25% {
+    transform: translate(583.74px, 334.54px);
+  }
+
+  37.5% {
+    transform: translate(583.91px, 351.05px);
+  }
+
+  50% {
+    transform: translate(584.02px, 361.54px);
+  }
+
+  62.5% {
+    transform: translate(584.0px, 360.17px);
+  }
+
+  75% {
+    transform: translate(583.88px, 347.69px);
+  }
+
+  87.5% {
+    transform: translate(583.71px, 331.11px);
+  }
+
+  100% {
+    transform: translate(583.6px, 320.2px);
+  }
+
+}
+
+.node-9-9 {
+  animation-name: node-9-9-wave;
+}
+
+@keyframes node-9-9-wave {
+
+  0% {
+    transform: translate(616.68px, 293.02px);
+  }
+
+  12.5% {
+    transform: translate(616.59px, 301.37px);
+  }
+
+  25% {
+    transform: translate(616.27px, 332.94px);
+  }
+
+  37.5% {
+    transform: translate(615.92px, 367.95px);
+  }
+
+  50% {
+    transform: translate(615.73px, 386.53px);
+  }
+
+  62.5% {
+    transform: translate(615.81px, 379.02px);
+  }
+
+  75% {
+    transform: translate(616.11px, 349.26px);
+  }
+
+  87.5% {
+    transform: translate(616.47px, 313.4px);
+  }
+
+  100% {
+    transform: translate(616.68px, 293.02px);
+  }
+
+}
+
+.node-9-10 {
+  animation-name: node-9-10-wave;
+}
+
+@keyframes node-9-10-wave {
+
+  0% {
+    transform: translate(650.75px, 269.41px);
+  }
+
+  12.5% {
+    transform: translate(650.16px, 288.95px);
+  }
+
+  25% {
+    transform: translate(648.66px, 338.32px);
+  }
+
+  37.5% {
+    transform: translate(647.2px, 386.37px);
+  }
+
+  50% {
+    transform: translate(646.57px, 406.96px);
+  }
+
+  62.5% {
+    transform: translate(647.08px, 390.13px);
+  }
+
+  75% {
+    transform: translate(648.49px, 343.95px);
+  }
+
+  87.5% {
+    transform: translate(650.03px, 293.2px);
+  }
+
+  100% {
+    transform: translate(650.75px, 269.41px);
+  }
+
+}
+
+.node-9-11 {
+  animation-name: node-9-11-wave;
+}
+
+@keyframes node-9-11-wave {
+
+  0% {
+    transform: translate(685.39px, 253.56px);
+  }
+
+  12.5% {
+    transform: translate(683.72px, 286.62px);
+  }
+
+  25% {
+    transform: translate(680.53px, 349.57px);
+  }
+
+  37.5% {
+    transform: translate(677.81px, 403.32px);
+  }
+
+  50% {
+    transform: translate(676.96px, 420.07px);
+  }
+
+  62.5% {
+    transform: translate(678.37px, 392.18px);
+  }
+
+  75% {
+    transform: translate(681.39px, 332.63px);
+  }
+
+  87.5% {
+    transform: translate(684.37px, 273.71px);
+  }
+
+  100% {
+    transform: translate(685.39px, 253.56px);
+  }
+
+}
+
+.node-9-12 {
+  animation-name: node-9-12-wave;
+}
+
+@keyframes node-9-12-wave {
+
+  0% {
+    transform: translate(719.91px, 248.58px);
+  }
+
+  12.5% {
+    transform: translate(716.63px, 294.69px);
+  }
+
+  25% {
+    transform: translate(711.69px, 364.45px);
+  }
+
+  37.5% {
+    transform: translate(708.02px, 416.05px);
+  }
+
+  50% {
+    transform: translate(707.45px, 424.09px);
+  }
+
+  62.5% {
+    transform: translate(710.22px, 385.04px);
+  }
+
+  75% {
+    transform: translate(715.04px, 317.13px);
+  }
+
+  87.5% {
+    transform: translate(719.2px, 258.48px);
+  }
+
+  100% {
+    transform: translate(719.91px, 248.58px);
+  }
+
+}
+
+.node-9-13 {
+  animation-name: node-9-13-wave;
+}
+
+@keyframes node-9-13-wave {
+
+  0% {
+    transform: translate(753.52px, 255.66px);
+  }
+
+  12.5% {
+    transform: translate(748.42px, 311.52px);
+  }
+
+  25% {
+    transform: translate(742.16px, 380.17px);
+  }
+
+  37.5% {
+    transform: translate(738.31px, 422.45px);
+  }
+
+  50% {
+    transform: translate(738.68px, 418.36px);
+  }
+
+  62.5% {
+    transform: translate(743.12px, 369.71px);
+  }
+
+  75% {
+    transform: translate(749.46px, 300.1px);
+  }
+
+  87.5% {
+    transform: translate(753.98px, 250.62px);
+  }
+
+  100% {
+    transform: translate(753.52px, 255.66px);
+  }
+
+}
+
+.node-9-14 {
+  animation-name: node-9-14-wave;
+}
+
+@keyframes node-9-14-wave {
+
+  0% {
+    transform: translate(785.62px, 273.71px);
+  }
+
+  12.5% {
+    transform: translate(778.9px, 333.98px);
+  }
+
+  25% {
+    transform: translate(772.22px, 393.95px);
+  }
+
+  37.5% {
+    transform: translate(769.17px, 421.27px);
+  }
+
+  50% {
+    transform: translate(771.17px, 403.32px);
+  }
+
+  62.5% {
+    transform: translate(777.31px, 348.24px);
+  }
+
+  75% {
+    transform: translate(784.41px, 284.6px);
+  }
+
+  87.5% {
+    transform: translate(788.03px, 252.07px);
+  }
+
+  100% {
+    transform: translate(785.62px, 273.71px);
+  }
+
+}
+
+.node-9-15 {
+  animation-name: node-9-15-wave;
+}
+
+@keyframes node-9-15-wave {
+
+  0% {
+    transform: translate(815.95px, 299.66px);
+  }
+
+  12.5% {
+    transform: translate(808.23px, 358.25px);
+  }
+
+  25% {
+    transform: translate(802.27px, 403.5px);
+  }
+
+  37.5% {
+    transform: translate(801.11px, 412.29px);
+  }
+
+  50% {
+    transform: translate(805.29px, 380.57px);
+  }
+
+  62.5% {
+    transform: translate(812.79px, 323.66px);
+  }
+
+  75% {
+    transform: translate(819.4px, 273.51px);
+  }
+
+  87.5% {
+    transform: translate(820.78px, 263.03px);
+  }
+
+  100% {
+    transform: translate(815.95px, 299.66px);
+  }
+
+}
+
+.node-9-16 {
+  animation-name: node-9-16-wave;
+}
+
+@keyframes node-9-16-wave {
+
+  0% {
+    transform: translate(844.67px, 329.26px);
+  }
+
+  12.5% {
+    transform: translate(836.86px, 380.64px);
+  }
+
+  25% {
+    transform: translate(832.8px, 407.35px);
+  }
+
+  37.5% {
+    transform: translate(834.48px, 396.35px);
+  }
+
+  50% {
+    transform: translate(841.09px, 352.85px);
+  }
+
+  62.5% {
+    transform: translate(849.19px, 299.58px);
+  }
+
+  75% {
+    transform: translate(853.84px, 268.95px);
+  }
+
+  87.5% {
+    transform: translate(851.88px, 281.84px);
+  }
+
+  100% {
+    transform: translate(844.67px, 329.26px);
+  }
+
+}
+
+.node-9-17 {
+  animation-name: node-9-17-wave;
+}
+
+@keyframes node-9-17-wave {
+
+  0% {
+    transform: translate(872.34px, 358.07px);
+  }
+
+  12.5% {
+    transform: translate(865.43px, 398.17px);
+  }
+
+  25% {
+    transform: translate(864.25px, 405.01px);
+  }
+
+  37.5% {
+    transform: translate(869.36px, 375.34px);
+  }
+
+  50% {
+    transform: translate(878.23px, 323.85px);
+  }
+
+  62.5% {
+    transform: translate(885.83px, 279.73px);
+  }
+
+  75% {
+    transform: translate(887.21px, 271.72px);
+  }
+
+  87.5% {
+    transform: translate(881.41px, 305.41px);
+  }
+
+  100% {
+    transform: translate(872.34px, 358.07px);
+  }
+
+}
+
+.node-10-0 {
+  animation-name: node-10-0-wave;
+}
+
+@keyframes node-10-0-wave {
+
+  0% {
+    transform: translate(333.94px, 351.56px);
+  }
+
+  12.5% {
+    transform: translate(340.23px, 389.12px);
+  }
+
+  25% {
+    transform: translate(340.89px, 393.01px);
+  }
+
+  37.5% {
+    transform: translate(335.59px, 361.38px);
+  }
+
+  50% {
+    transform: translate(326.99px, 310.08px);
+  }
+
+  62.5% {
+    transform: translate(320.02px, 268.53px);
+  }
+
+  75% {
+    transform: translate(319.26px, 263.98px);
+  }
+
+  87.5% {
+    transform: translate(325.23px, 299.6px);
+  }
+
+  100% {
+    transform: translate(333.94px, 351.56px);
+  }
+
+}
+
+.node-10-1 {
+  animation-name: node-10-1-wave;
+}
+
+@keyframes node-10-1-wave {
+
+  0% {
+    transform: translate(367.64px, 367.79px);
+  }
+
+  12.5% {
+    transform: translate(373.13px, 404.9px);
+  }
+
+  25% {
+    transform: translate(372.39px, 399.87px);
+  }
+
+  37.5% {
+    transform: translate(365.75px, 354.98px);
+  }
+
+  50% {
+    transform: translate(356.52px, 292.63px);
+  }
+
+  62.5% {
+    transform: translate(350.19px, 249.8px);
+  }
+
+  75% {
+    transform: translate(351.09px, 255.86px);
+  }
+
+  87.5% {
+    transform: translate(358.57px, 306.46px);
+  }
+
+  100% {
+    transform: translate(367.64px, 367.79px);
+  }
+
+}
+
+.node-10-2 {
+  animation-name: node-10-2-wave;
+}
+
+@keyframes node-10-2-wave {
+
+  0% {
+    transform: translate(400.33px, 381.14px);
+  }
+
+  12.5% {
+    transform: translate(404.51px, 413.71px);
+  }
+
+  25% {
+    transform: translate(402.69px, 399.55px);
+  }
+
+  37.5% {
+    transform: translate(395.7px, 345.0px);
+  }
+
+  50% {
+    transform: translate(387.07px, 277.7px);
+  }
+
+  62.5% {
+    transform: translate(382.11px, 238.99px);
+  }
+
+  75% {
+    transform: translate(384.32px, 256.24px);
+  }
+
+  87.5% {
+    transform: translate(392.1px, 316.93px);
+  }
+
+  100% {
+    transform: translate(400.33px, 381.14px);
+  }
+
+}
+
+.node-10-3 {
+  animation-name: node-10-3-wave;
+}
+
+@keyframes node-10-3-wave {
+
+  0% {
+    transform: translate(431.92px, 389.11px);
+  }
+
+  12.5% {
+    transform: translate(434.63px, 414.09px);
+  }
+
+  25% {
+    transform: translate(432.26px, 392.25px);
+  }
+
+  37.5% {
+    transform: translate(425.88px, 333.48px);
+  }
+
+  50% {
+    transform: translate(418.84px, 268.55px);
+  }
+
+  62.5% {
+    transform: translate(415.58px, 238.52px);
+  }
+
+  75% {
+    transform: translate(418.44px, 264.88px);
+  }
+
+  87.5% {
+    transform: translate(425.36px, 328.68px);
+  }
+
+  100% {
+    transform: translate(431.92px, 389.11px);
+  }
+
+}
+
+.node-10-4 {
+  animation-name: node-10-4-wave;
+}
+
+@keyframes node-10-4-wave {
+
+  0% {
+    transform: translate(462.54px, 389.88px);
+  }
+
+  12.5% {
+    transform: translate(463.95px, 405.69px);
+  }
+
+  25% {
+    transform: translate(461.6px, 379.2px);
+  }
+
+  37.5% {
+    transform: translate(456.61px, 322.96px);
+  }
+
+  50% {
+    transform: translate(451.7px, 267.64px);
+  }
+
+  62.5% {
+    transform: translate(450.03px, 248.85px);
+  }
+
+  75% {
+    transform: translate(452.78px, 279.9px);
+  }
+
+  87.5% {
+    transform: translate(458.04px, 339.12px);
+  }
+
+  100% {
+    transform: translate(462.54px, 389.88px);
+  }
+
+}
+
+.node-10-5 {
+  animation-name: node-10-5-wave;
+}
+
+@keyframes node-10-5-wave {
+
+  0% {
+    transform: translate(492.59px, 382.63px);
+  }
+
+  12.5% {
+    transform: translate(493.05px, 389.26px);
+  }
+
+  25% {
+    transform: translate(491.21px, 362.57px);
+  }
+
+  37.5% {
+    transform: translate(487.99px, 316.0px);
+  }
+
+  50% {
+    transform: translate(485.23px, 276.01px);
+  }
+
+  62.5% {
+    transform: translate(484.7px, 268.36px);
+  }
+
+  75% {
+    transform: translate(486.77px, 298.31px);
+  }
+
+  87.5% {
+    transform: translate(490.05px, 345.89px);
+  }
+
+  100% {
+    transform: translate(492.59px, 382.63px);
+  }
+
+}
+
+.node-10-6 {
+  animation-name: node-10-6-wave;
+}
+
+@keyframes node-10-6-wave {
+
+  0% {
+    transform: translate(522.54px, 367.57px);
+  }
+
+  12.5% {
+    transform: translate(522.49px, 366.74px);
+  }
+
+  25% {
+    transform: translate(521.43px, 345.19px);
+  }
+
+  37.5% {
+    transform: translate(519.92px, 314.58px);
+  }
+
+  50% {
+    transform: translate(518.85px, 292.86px);
+  }
+
+  62.5% {
+    transform: translate(518.9px, 293.77px);
+  }
+
+  75% {
+    transform: translate(520.03px, 316.72px);
+  }
+
+  87.5% {
+    transform: translate(521.53px, 347.25px);
+  }
+
+  100% {
+    transform: translate(522.54px, 367.57px);
+  }
+
+}
+
+.node-10-7 {
+  animation-name: node-10-7-wave;
+}
+
+@keyframes node-10-7-wave {
+
+  0% {
+    transform: translate(552.89px, 346.07px);
+  }
+
+  12.5% {
+    transform: translate(552.74px, 341.08px);
+  }
+
+  25% {
+    transform: translate(552.42px, 330.17px);
+  }
+
+  37.5% {
+    transform: translate(552.1px, 319.66px);
+  }
+
+  50% {
+    transform: translate(551.99px, 315.81px);
+  }
+
+  62.5% {
+    transform: translate(552.14px, 320.96px);
+  }
+
+  75% {
+    transform: translate(552.47px, 331.99px);
+  }
+
+  87.5% {
+    transform: translate(552.78px, 342.35px);
+  }
+
+  100% {
+    transform: translate(552.89px, 346.07px);
+  }
+
+}
+
+.node-10-8 {
+  animation-name: node-10-8-wave;
+}
+
+@keyframes node-10-8-wave {
+
+  0% {
+    transform: translate(584.04px, 320.68px);
+  }
+
+  12.5% {
+    transform: translate(584.0px, 316.05px);
+  }
+
+  25% {
+    transform: translate(584.04px, 320.29px);
+  }
+
+  37.5% {
+    transform: translate(584.14px, 330.81px);
+  }
+
+  50% {
+    transform: translate(584.25px, 341.36px);
+  }
+
+  62.5% {
+    transform: translate(584.29px, 345.84px);
+  }
+
+  75% {
+    transform: translate(584.25px, 341.74px);
+  }
+
+  87.5% {
+    transform: translate(584.15px, 331.35px);
+  }
+
+  100% {
+    transform: translate(584.04px, 320.68px);
+  }
+
+}
+
+.node-10-9 {
+  animation-name: node-10-9-wave;
+}
+
+@keyframes node-10-9-wave {
+
+  0% {
+    transform: translate(616.21px, 294.9px);
+  }
+
+  12.5% {
+    transform: translate(616.2px, 295.69px);
+  }
+
+  25% {
+    transform: translate(615.99px, 317.38px);
+  }
+
+  37.5% {
+    transform: translate(615.7px, 346.36px);
+  }
+
+  50% {
+    transform: translate(615.51px, 365.71px);
+  }
+
+  62.5% {
+    transform: translate(615.52px, 364.98px);
+  }
+
+  75% {
+    transform: translate(615.72px, 344.55px);
+  }
+
+  87.5% {
+    transform: translate(616.01px, 315.51px);
+  }
+
+  100% {
+    transform: translate(616.21px, 294.9px);
+  }
+
+}
+
+.node-10-10 {
+  animation-name: node-10-10-wave;
+}
+
+@keyframes node-10-10-wave {
+
+  0% {
+    transform: translate(649.28px, 272.82px);
+  }
+
+  12.5% {
+    transform: translate(648.96px, 283.51px);
+  }
+
+  25% {
+    transform: translate(647.83px, 321.92px);
+  }
+
+  37.5% {
+    transform: translate(646.59px, 363.72px);
+  }
+
+  50% {
+    transform: translate(645.95px, 385.41px);
+  }
+
+  62.5% {
+    transform: translate(646.23px, 376.0px);
+  }
+
+  75% {
+    transform: translate(647.29px, 340.14px);
+  }
+
+  87.5% {
+    transform: translate(648.56px, 297.06px);
+  }
+
+  100% {
+    transform: translate(649.28px, 272.82px);
+  }
+
+}
+
+.node-10-11 {
+  animation-name: node-10-11-wave;
+}
+
+@keyframes node-10-11-wave {
+
+  0% {
+    transform: translate(682.85px, 258.37px);
+  }
+
+  12.5% {
+    transform: translate(681.7px, 281.69px);
+  }
+
+  25% {
+    transform: translate(679.17px, 332.87px);
+  }
+
+  37.5% {
+    transform: translate(676.85px, 380.01px);
+  }
+
+  50% {
+    transform: translate(675.98px, 397.77px);
+  }
+
+  62.5% {
+    transform: translate(676.97px, 377.62px);
+  }
+
+  75% {
+    transform: translate(679.35px, 329.29px);
+  }
+
+  87.5% {
+    transform: translate(681.83px, 278.99px);
+  }
+
+  100% {
+    transform: translate(682.85px, 258.37px);
+  }
+
+}
+
+.node-10-12 {
+  animation-name: node-10-12-wave;
+}
+
+@keyframes node-10-12-wave {
+
+  0% {
+    transform: translate(716.26px, 254.41px);
+  }
+
+  12.5% {
+    transform: translate(713.77px, 290.45px);
+  }
+
+  25% {
+    transform: translate(709.8px, 348.03px);
+  }
+
+  37.5% {
+    transform: translate(706.73px, 392.5px);
+  }
+
+  50% {
+    transform: translate(706.14px, 401.08px);
+  }
+
+  62.5% {
+    transform: translate(708.3px, 369.76px);
+  }
+
+  75% {
+    transform: translate(712.16px, 313.77px);
+  }
+
+  87.5% {
+    transform: translate(715.56px, 264.58px);
+  }
+
+  100% {
+    transform: translate(716.26px, 254.41px);
+  }
+
+}
+
+.node-10-13 {
+  animation-name: node-10-13-wave;
+}
+
+@keyframes node-10-13-wave {
+
+  0% {
+    transform: translate(748.81px, 261.96px);
+  }
+
+  12.5% {
+    transform: translate(744.72px, 308.05px);
+  }
+
+  25% {
+    transform: translate(739.7px, 364.54px);
+  }
+
+  37.5% {
+    transform: translate(736.64px, 399.11px);
+  }
+
+  50% {
+    transform: translate(737.02px, 394.74px);
+  }
+
+  62.5% {
+    transform: translate(740.69px, 353.47px);
+  }
+
+  75% {
+    transform: translate(745.77px, 296.17px);
+  }
+
+  87.5% {
+    transform: translate(749.27px, 256.77px);
+  }
+
+  100% {
+    transform: translate(748.81px, 261.96px);
+  }
+
+}
+
+.node-10-14 {
+  animation-name: node-10-14-wave;
+}
+
+@keyframes node-10-14-wave {
+
+  0% {
+    transform: translate(779.94px, 279.83px);
+  }
+
+  12.5% {
+    transform: translate(774.36px, 331.29px);
+  }
+
+  25% {
+    transform: translate(769.12px, 379.53px);
+  }
+
+  37.5% {
+    transform: translate(767.06px, 398.57px);
+  }
+
+  50% {
+    transform: translate(769.15px, 379.26px);
+  }
+
+  62.5% {
+    transform: translate(774.4px, 330.88px);
+  }
+
+  75% {
+    transform: translate(779.97px, 279.53px);
+  }
+
+  87.5% {
+    transform: translate(782.37px, 257.41px);
+  }
+
+  100% {
+    transform: translate(779.94px, 279.83px);
+  }
+
+}
+
+.node-10-15 {
+  animation-name: node-10-15-wave;
+}
+
+@keyframes node-10-15-wave {
+
+  0% {
+    transform: translate(809.42px, 305.03px);
+  }
+
+  12.5% {
+    transform: translate(802.85px, 356.27px);
+  }
+
+  25% {
+    transform: translate(798.45px, 390.62px);
+  }
+
+  37.5% {
+    transform: translate(798.45px, 390.64px);
+  }
+
+  50% {
+    transform: translate(802.85px, 356.32px);
+  }
+
+  62.5% {
+    transform: translate(809.42px, 305.08px);
+  }
+
+  75% {
+    transform: translate(814.32px, 266.79px);
+  }
+
+  87.5% {
+    transform: translate(814.33px, 266.77px);
+  }
+
+  100% {
+    transform: translate(809.42px, 305.03px);
+  }
+
+}
+
+.node-10-16 {
+  animation-name: node-10-16-wave;
+}
+
+@keyframes node-10-16-wave {
+
+  0% {
+    transform: translate(837.44px, 333.46px);
+  }
+
+  12.5% {
+    transform: translate(830.66px, 379.28px);
+  }
+
+  25% {
+    transform: translate(828.15px, 396.22px);
+  }
+
+  37.5% {
+    transform: translate(831.13px, 376.1px);
+  }
+
+  50% {
+    transform: translate(838.14px, 328.7px);
+  }
+
+  62.5% {
+    transform: translate(845.37px, 279.81px);
+  }
+
+  75% {
+    transform: translate(848.27px, 260.21px);
+  }
+
+  87.5% {
+    transform: translate(844.84px, 283.39px);
+  }
+
+  100% {
+    transform: translate(837.44px, 333.46px);
+  }
+
+}
+
+.node-10-17 {
+  animation-name: node-10-17-wave;
+}
+
+@keyframes node-10-17-wave {
+
+  0% {
+    transform: translate(864.5px, 360.87px);
+  }
+
+  12.5% {
+    transform: translate(858.39px, 397.31px);
+  }
+
+  25% {
+    transform: translate(858.66px, 395.71px);
+  }
+
+  37.5% {
+    transform: translate(865.18px, 356.82px);
+  }
+
+  50% {
+    transform: translate(874.68px, 300.15px);
+  }
+
+  62.5% {
+    transform: translate(881.59px, 258.91px);
+  }
+
+  75% {
+    transform: translate(881.27px, 260.81px);
+  }
+
+  87.5% {
+    transform: translate(873.95px, 304.5px);
+  }
+
+  100% {
+    transform: translate(864.5px, 360.87px);
+  }
+
+}
+
+.node-11-0 {
+  animation-name: node-11-0-wave;
+}
+
+@keyframes node-11-0-wave {
+
+  0% {
+    transform: translate(341.14px, 352.76px);
+  }
+
+  12.5% {
+    transform: translate(346.9px, 388.07px);
+  }
+
+  25% {
+    transform: translate(346.43px, 385.16px);
+  }
+
+  37.5% {
+    transform: translate(339.94px, 345.4px);
+  }
+
+  50% {
+    transform: translate(330.71px, 288.85px);
+  }
+
+  62.5% {
+    transform: translate(324.18px, 248.83px);
+  }
+
+  75% {
+    transform: translate(324.74px, 252.27px);
+  }
+
+  87.5% {
+    transform: translate(332.0px, 296.75px);
+  }
+
+  100% {
+    transform: translate(341.14px, 352.76px);
+  }
+
+}
+
+.node-11-1 {
+  animation-name: node-11-1-wave;
+}
+
+@keyframes node-11-1-wave {
+
+  0% {
+    transform: translate(373.75px, 367.76px);
+  }
+
+  12.5% {
+    transform: translate(378.78px, 402.68px);
+  }
+
+  25% {
+    transform: translate(377.18px, 391.55px);
+  }
+
+  37.5% {
+    transform: translate(369.66px, 339.35px);
+  }
+
+  50% {
+    transform: translate(360.01px, 272.31px);
+  }
+
+  62.5% {
+    transform: translate(354.08px, 231.12px);
+  }
+
+  75% {
+    transform: translate(356.03px, 244.67px);
+  }
+
+  87.5% {
+    transform: translate(364.45px, 303.13px);
+  }
+
+  100% {
+    transform: translate(373.75px, 367.76px);
+  }
+
+}
+
+.node-11-2 {
+  animation-name: node-11-2-wave;
+}
+
+@keyframes node-11-2-wave {
+
+  0% {
+    transform: translate(405.45px, 380.05px);
+  }
+
+  12.5% {
+    transform: translate(409.22px, 410.21px);
+  }
+
+  25% {
+    transform: translate(406.75px, 390.39px);
+  }
+
+  37.5% {
+    transform: translate(399.12px, 329.33px);
+  }
+
+  50% {
+    transform: translate(390.25px, 258.25px);
+  }
+
+  62.5% {
+    transform: translate(385.69px, 221.72px);
+  }
+
+  75% {
+    transform: translate(388.73px, 246.06px);
+  }
+
+  87.5% {
+    transform: translate(397.15px, 313.47px);
+  }
+
+  100% {
+    transform: translate(405.45px, 380.05px);
+  }
+
+}
+
+.node-11-3 {
+  animation-name: node-11-3-wave;
+}
+
+@keyframes node-11-3-wave {
+
+  0% {
+    transform: translate(436.14px, 387.24px);
+  }
+
+  12.5% {
+    transform: translate(438.47px, 409.31px);
+  }
+
+  25% {
+    transform: translate(435.58px, 381.9px);
+  }
+
+  37.5% {
+    transform: translate(428.76px, 317.34px);
+  }
+
+  50% {
+    transform: translate(421.63px, 249.81px);
+  }
+
+  62.5% {
+    transform: translate(418.78px, 222.86px);
+  }
+
+  75% {
+    transform: translate(422.29px, 256.09px);
+  }
+
+  87.5% {
+    transform: translate(429.63px, 325.52px);
+  }
+
+  100% {
+    transform: translate(436.14px, 387.24px);
+  }
+
+}
+
+.node-11-4 {
+  animation-name: node-11-4-wave;
+}
+
+@keyframes node-11-4-wave {
+
+  0% {
+    transform: translate(465.97px, 387.65px);
+  }
+
+  12.5% {
+    transform: translate(467.01px, 399.7px);
+  }
+
+  25% {
+    transform: translate(464.22px, 367.37px);
+  }
+
+  37.5% {
+    transform: translate(458.91px, 305.91px);
+  }
+
+  50% {
+    transform: translate(454.02px, 249.33px);
+  }
+
+  62.5% {
+    transform: translate(452.76px, 234.79px);
+  }
+
+  75% {
+    transform: translate(456.04px, 272.74px);
+  }
+
+  87.5% {
+    transform: translate(461.57px, 336.68px);
+  }
+
+  100% {
+    transform: translate(465.97px, 387.65px);
+  }
+
+}
+
+.node-11-5 {
+  animation-name: node-11-5-wave;
+}
+
+@keyframes node-11-5-wave {
+
+  0% {
+    transform: translate(495.27px, 380.46px);
+  }
+
+  12.5% {
+    transform: translate(495.39px, 382.25px);
+  }
+
+  25% {
+    transform: translate(493.16px, 349.05px);
+  }
+
+  37.5% {
+    transform: translate(489.71px, 297.64px);
+  }
+
+  50% {
+    transform: translate(487.03px, 257.77px);
+  }
+
+  62.5% {
+    transform: translate(486.89px, 255.69px);
+  }
+
+  75% {
+    transform: translate(489.38px, 292.85px);
+  }
+
+  87.5% {
+    transform: translate(492.86px, 344.56px);
+  }
+
+  100% {
+    transform: translate(495.27px, 380.46px);
+  }
+
+}
+
+.node-11-6 {
+  animation-name: node-11-6-wave;
+}
+
+@keyframes node-11-6-wave {
+
+  0% {
+    transform: translate(524.5px, 365.94px);
+  }
+
+  12.5% {
+    transform: translate(524.16px, 358.92px);
+  }
+
+  25% {
+    transform: translate(522.77px, 329.89px);
+  }
+
+  37.5% {
+    transform: translate(521.08px, 294.65px);
+  }
+
+  50% {
+    transform: translate(520.1px, 274.34px);
+  }
+
+  62.5% {
+    transform: translate(520.47px, 282.14px);
+  }
+
+  75% {
+    transform: translate(521.95px, 312.9px);
+  }
+
+  87.5% {
+    transform: translate(523.61px, 347.37px);
+  }
+
+  100% {
+    transform: translate(524.5px, 365.94px);
+  }
+
+}
+
+.node-11-7 {
+  animation-name: node-11-7-wave;
+}
+
+@keyframes node-11-7-wave {
+
+  0% {
+    transform: translate(554.11px, 345.43px);
+  }
+
+  12.5% {
+    transform: translate(553.74px, 332.74px);
+  }
+
+  25% {
+    transform: translate(553.18px, 313.14px);
+  }
+
+  37.5% {
+    transform: translate(552.74px, 298.04px);
+  }
+
+  50% {
+    transform: translate(552.7px, 296.71px);
+  }
+
+  62.5% {
+    transform: translate(553.09px, 309.97px);
+  }
+
+  75% {
+    transform: translate(553.65px, 329.66px);
+  }
+
+  87.5% {
+    transform: translate(554.07px, 344.18px);
+  }
+
+  100% {
+    transform: translate(554.11px, 345.43px);
+  }
+
+}
+
+.node-11-8 {
+  animation-name: node-11-8-wave;
+}
+
+@keyframes node-11-8-wave {
+
+  0% {
+    transform: translate(584.47px, 321.39px);
+  }
+
+  12.5% {
+    transform: translate(584.34px, 307.53px);
+  }
+
+  25% {
+    transform: translate(584.28px, 301.74px);
+  }
+
+  37.5% {
+    transform: translate(584.34px, 307.59px);
+  }
+
+  50% {
+    transform: translate(584.47px, 321.48px);
+  }
+
+  62.5% {
+    transform: translate(584.6px, 335.11px);
+  }
+
+  75% {
+    transform: translate(584.66px, 340.67px);
+  }
+
+  87.5% {
+    transform: translate(584.6px, 335.05px);
+  }
+
+  100% {
+    transform: translate(584.47px, 321.39px);
+  }
+
+}
+
+.node-11-9 {
+  animation-name: node-11-9-wave;
+}
+
+@keyframes node-11-9-wave {
+
+  0% {
+    transform: translate(615.76px, 297.19px);
+  }
+
+  12.5% {
+    transform: translate(615.86px, 287.31px);
+  }
+
+  25% {
+    transform: translate(615.76px, 297.72px);
+  }
+
+  37.5% {
+    transform: translate(615.52px, 321.8px);
+  }
+
+  50% {
+    transform: translate(615.3px, 344.98px);
+  }
+
+  62.5% {
+    transform: translate(615.21px, 354.18px);
+  }
+
+  75% {
+    transform: translate(615.31px, 344.48px);
+  }
+
+  87.5% {
+    transform: translate(615.53px, 321.08px);
+  }
+
+  100% {
+    transform: translate(615.76px, 297.19px);
+  }
+
+}
+
+.node-11-10 {
+  animation-name: node-11-10-wave;
+}
+
+@keyframes node-11-10-wave {
+
+  0% {
+    transform: translate(647.87px, 276.71px);
+  }
+
+  12.5% {
+    transform: translate(647.9px, 275.57px);
+  }
+
+  25% {
+    transform: translate(647.15px, 301.65px);
+  }
+
+  37.5% {
+    transform: translate(646.1px, 338.22px);
+  }
+
+  50% {
+    transform: translate(645.36px, 363.83px);
+  }
+
+  62.5% {
+    transform: translate(645.33px, 364.84px);
+  }
+
+  75% {
+    transform: translate(646.03px, 340.75px);
+  }
+
+  87.5% {
+    transform: translate(647.08px, 304.3px);
+  }
+
+  100% {
+    transform: translate(647.87px, 276.71px);
+  }
+
+}
+
+.node-11-11 {
+  animation-name: node-11-11-wave;
+}
+
+@keyframes node-11-11-wave {
+
+  0% {
+    transform: translate(680.41px, 263.61px);
+  }
+
+  12.5% {
+    transform: translate(679.9px, 274.4px);
+  }
+
+  25% {
+    transform: translate(678.06px, 312.58px);
+  }
+
+  37.5% {
+    transform: translate(676.07px, 354.02px);
+  }
+
+  50% {
+    transform: translate(675.05px, 375.41px);
+  }
+
+  62.5% {
+    transform: translate(675.5px, 365.89px);
+  }
+
+  75% {
+    transform: translate(677.22px, 330.2px);
+  }
+
+  87.5% {
+    transform: translate(679.27px, 287.49px);
+  }
+
+  100% {
+    transform: translate(680.41px, 263.61px);
+  }
+
+}
+
+.node-11-12 {
+  animation-name: node-11-12-wave;
+}
+
+@keyframes node-11-12-wave {
+
+  0% {
+    transform: translate(712.79px, 260.5px);
+  }
+
+  12.5% {
+    transform: translate(711.22px, 283.91px);
+  }
+
+  25% {
+    transform: translate(708.24px, 328.27px);
+  }
+
+  37.5% {
+    transform: translate(705.66px, 366.52px);
+  }
+
+  50% {
+    transform: translate(704.89px, 378.1px);
+  }
+
+  62.5% {
+    transform: translate(706.28px, 357.3px);
+  }
+
+  75% {
+    transform: translate(709.16px, 314.55px);
+  }
+
+  87.5% {
+    transform: translate(711.9px, 273.7px);
+  }
+
+  100% {
+    transform: translate(712.79px, 260.5px);
+  }
+
+}
+
+.node-11-13 {
+  animation-name: node-11-13-wave;
+}
+
+@keyframes node-11-13-wave {
+
+  0% {
+    transform: translate(744.35px, 268.25px);
+  }
+
+  12.5% {
+    transform: translate(741.41px, 302.27px);
+  }
+
+  25% {
+    transform: translate(737.65px, 345.77px);
+  }
+
+  37.5% {
+    transform: translate(735.24px, 373.58px);
+  }
+
+  50% {
+    transform: translate(735.44px, 371.35px);
+  }
+
+  62.5% {
+    transform: translate(738.13px, 340.16px);
+  }
+
+  75% {
+    transform: translate(741.92px, 296.35px);
+  }
+
+  87.5% {
+    transform: translate(744.57px, 265.7px);
+  }
+
+  100% {
+    transform: translate(744.35px, 268.25px);
+  }
+
+}
+
+.node-11-14 {
+  animation-name: node-11-14-wave;
+}
+
+@keyframes node-11-14-wave {
+
+  0% {
+    transform: translate(774.58px, 285.65px);
+  }
+
+  12.5% {
+    transform: translate(770.31px, 326.16px);
+  }
+
+  25% {
+    transform: translate(766.51px, 362.11px);
+  }
+
+  37.5% {
+    transform: translate(765.26px, 373.94px);
+  }
+
+  50% {
+    transform: translate(767.19px, 355.71px);
+  }
+
+  62.5% {
+    transform: translate(771.31px, 316.68px);
+  }
+
+  75% {
+    transform: translate(775.33px, 278.61px);
+  }
+
+  87.5% {
+    transform: translate(776.73px, 265.29px);
+  }
+
+  100% {
+    transform: translate(774.58px, 285.65px);
+  }
+
+}
+
+.node-11-15 {
+  animation-name: node-11-15-wave;
+}
+
+@keyframes node-11-15-wave {
+
+  0% {
+    transform: translate(803.32px, 309.78px);
+  }
+
+  12.5% {
+    transform: translate(798.09px, 351.67px);
+  }
+
+  25% {
+    transform: translate(795.21px, 374.76px);
+  }
+
+  37.5% {
+    transform: translate(796.14px, 367.28px);
+  }
+
+  50% {
+    transform: translate(800.43px, 332.93px);
+  }
+
+  62.5% {
+    transform: translate(805.78px, 290.03px);
+  }
+
+  75% {
+    transform: translate(808.99px, 264.35px);
+  }
+
+  87.5% {
+    transform: translate(807.92px, 272.85px);
+  }
+
+  100% {
+    transform: translate(803.32px, 309.78px);
+  }
+
+}
+
+.node-11-16 {
+  animation-name: node-11-16-wave;
+}
+
+@keyframes node-11-16-wave {
+
+  0% {
+    transform: translate(830.71px, 336.75px);
+  }
+
+  12.5% {
+    transform: translate(825.2px, 375.05px);
+  }
+
+  25% {
+    transform: translate(824.19px, 382.03px);
+  }
+
+  37.5% {
+    transform: translate(828.18px, 354.34px);
+  }
+
+  50% {
+    transform: translate(835.16px, 305.83px);
+  }
+
+  62.5% {
+    transform: translate(841.18px, 264.02px);
+  }
+
+  75% {
+    transform: translate(842.35px, 255.93px);
+  }
+
+  87.5% {
+    transform: translate(837.85px, 287.14px);
+  }
+
+  100% {
+    transform: translate(830.71px, 336.75px);
+  }
+
+}
+
+.node-11-17 {
+  animation-name: node-11-17-wave;
+}
+
+@keyframes node-11-17-wave {
+
+  0% {
+    transform: translate(857.27px, 362.5px);
+  }
+
+  12.5% {
+    transform: translate(852.25px, 393.29px);
+  }
+
+  25% {
+    transform: translate(853.89px, 383.19px);
+  }
+
+  37.5% {
+    transform: translate(861.45px, 336.89px);
+  }
+
+  50% {
+    transform: translate(871.03px, 278.18px);
+  }
+
+  62.5% {
+    transform: translate(876.84px, 242.58px);
+  }
+
+  75% {
+    transform: translate(874.88px, 254.59px);
+  }
+
+  87.5% {
+    transform: translate(866.54px, 305.69px);
+  }
+
+  100% {
+    transform: translate(857.27px, 362.5px);
+  }
+
+}
+
+
+.node-7-0 .node-core,
+.node-6-1 .node-core,
+.node-5-2 .node-core,
+.node-4-3 .node-core,
+.node-3-4 .node-core,
+.node-3-5 .node-core,
+.node-2-6 .node-core,
+.node-2-7 .node-core,
+.node-1-8 .node-core,
+.node-1-9 .node-core {
+  animation: energy-pulse 3.2s ease-in-out infinite;
+}
+
+.node-7-0 .node-halo,
+.node-6-1 .node-halo,
+.node-5-2 .node-halo,
+.node-4-3 .node-halo,
+.node-3-4 .node-halo,
+.node-3-5 .node-halo,
+.node-2-6 .node-halo,
+.node-2-7 .node-halo,
+.node-1-8 .node-halo,
+.node-1-9 .node-halo {
+  animation: energy-halo 3.2s ease-in-out infinite;
+}
+
+.node-7-0 .node-core,
+.node-7-0 .node-halo { animation-delay: 0s; }
+
+.node-6-1 .node-core,
+.node-6-1 .node-halo { animation-delay: 0.12s; }
+
+.node-5-2 .node-core,
+.node-5-2 .node-halo { animation-delay: 0.24s; }
+
+.node-4-3 .node-core,
+.node-4-3 .node-halo { animation-delay: 0.36s; }
+
+.node-3-4 .node-core,
+.node-3-4 .node-halo { animation-delay: 0.48s; }
+
+.node-3-5 .node-core,
+.node-3-5 .node-halo { animation-delay: 0.6s; }
+
+.node-2-6 .node-core,
+.node-2-6 .node-halo { animation-delay: 0.72s; }
+
+.node-2-7 .node-core,
+.node-2-7 .node-halo { animation-delay: 0.84s; }
+
+.node-1-8 .node-core,
+.node-1-8 .node-halo { animation-delay: 0.96s; }
+
+.node-1-9 .node-core,
+.node-1-9 .node-halo { animation-delay: 1.08s; }
+
+
+@keyframes energy-pulse {
+  0%, 48%, 100% {
+    r: 1.8px;
+    fill-opacity: 0.8;
+  }
+  58% {
+    r: 2.8px;
+    fill-opacity: 0.95;
+  }
+  68% {
+    r: 5.2px;
+    fill-opacity: 1;
+  }
+  80% {
+    r: 3.8px;
+    fill-opacity: 1;
+  }
+  92% {
+    r: 2.4px;
+    fill-opacity: 0.88;
+  }
+}
+
+@keyframes energy-halo {
+  0%, 48%, 100% {
+    fill-opacity: 0.1;
+  }
+  58% {
+    fill-opacity: 0.13;
+  }
+  68% {
+    fill-opacity: 0.17;
+  }
+  80% {
+    fill-opacity: 0.14;
+  }
+  92% {
+    fill-opacity: 0.11;
+  }
+}
+
+@media (max-width: 640px) {
+  .wave-grid {
+    width: 100vw;
+  }
+}
