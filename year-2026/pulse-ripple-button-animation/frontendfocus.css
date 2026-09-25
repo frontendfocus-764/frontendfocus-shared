@@ -1,0 +1,95 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-icons-on: #ffffff;
+  --button-color: #ce17a0;
+  --border-color: #8ee8d8;
+  --background-start: #b8f4ea;
+  --background-mid: #00bdb6;
+  --background-end: #0c4f56;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    120deg,
+    var(--background-start),
+    var(--background-mid),
+    var(--background-end)
+  );
+}
+
+.presentation-container {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(18, 18, 18, 0.64);
+}
+
+.btn {
+  position: relative;
+  z-index: 1;
+  width: 72px;
+  aspect-ratio: 1;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  background: var(--button-color);
+  cursor: pointer;
+}
+
+.btn:active {
+  border-width: 2px;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  border-width: 2px;
+}
+
+/* Ripple animation while pressing the button */
+.pulse:active::before,
+.pulse:active::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  animation: pulseOut 1.48s ease-out infinite;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pulse:active::after {
+  animation-delay: 0.48s;
+}
+
+@keyframes pulseOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.d2l-text-label-xs {
+  margin-top: 20px;
+  color: #ffffff;
+  font: 600 16px Arial, sans-serif;
+}
