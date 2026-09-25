@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&family=Space+Grotesk:wght@400&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #050505;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  /* Smooth transition for the JS parallax effect */
+  transition: transform 0.1s ease-out; 
+}
+
+.hero-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.liquid-text {
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10vw;
+  color: transparent;
+  /* Creates the hollow outline */
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.15);
+  text-transform: uppercase;
+  margin: 0;
+  white-space: nowrap;
+  letter-spacing: -2px;
+  cursor: pointer;
+}
+
+/* The colored liquid layer */
+.liquid-text::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-text-stroke: 0px transparent;
+  background: linear-gradient(90deg, #ff00cc, #3333ff, #00f2fe);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  /* The animated polygon creating the wave */
+  animation: wave 3s ease-in-out infinite;
+}
+
+/* On hover, the wave smoothly fills the entire text block */
+.liquid-text:hover::before {
+  animation: none;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  transition: clip-path 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes wave {
+  0%, 100% {
+    clip-path: polygon(0% 55%, 15% 54%, 32% 60%, 54% 70%, 70% 71%, 84% 69%, 100% 62%, 100% 100%, 0% 100%);
+  }
+  50% {
+    clip-path: polygon(0% 70%, 16% 75%, 34% 76%, 51% 72%, 67% 60%, 84% 55%, 100% 56%, 100% 100%, 0% 100%);
+  }
+}
+
+.subtitle {
+  font-family: 'Space Grotesk', sans-serif;
+  color: #888;
+  font-size: 1.2rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-top: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.5s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
