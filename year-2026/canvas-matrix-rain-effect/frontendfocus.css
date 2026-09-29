@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'White Rabbit Local';
+  font-style: normal;
+  font-display: swap; 
+  src: url('white-rabbit.woff2') format('woff2');
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #060522; 
+  overflow: hidden; 
+  font-family: 'White Rabbit Local', monospace;
+}
+
+#matrixCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* --- The Restart Button --- */
+#restartBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 16px;
+  background: rgba(5, 5, 34, 0.8);
+  color: #00bba9; 
+  border: 1px solid #00bba9;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease-in-out;
+}
+
+#restartBtn:hover {
+  background: rgba(0, 187, 169, 0.2);
+  box-shadow: 0 0 10px rgba(0, 187, 169, 0.4);
+}
