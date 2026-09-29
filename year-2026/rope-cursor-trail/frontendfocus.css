@@ -1,0 +1,36 @@
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background: #0d0d0f;
+  color: #f3f3f5;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  cursor: none;
+}
+
+.rope {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.rope polyline {
+  fill: none;
+  stroke: #7c5cff;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.rope .head {
+  fill: #7c5cff;
+}
