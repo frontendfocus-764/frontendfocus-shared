@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <title>ThreeJS Sphere code authentication</title>
+</head>
+<body>   
+     <div class="card">
+        <div class="graphic-container">
+            <canvas id="three-canvas"></canvas>
+        </div>
+
+        <div class="text-container">
+            <h2>Enter the code</h2>
+            <p>We sent you a code to your email, please enter (2, 0, 2, 6) to verify your address.</p>
+        </div>
+
+        <div class="otp-container" id="otp-container">
+            <div class="otp-input-box">
+                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric">
+                <div class="spinner"></div>
+            </div>
+            <div class="otp-input-box">
+                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric">
+                <div class="spinner"></div>
+            </div>
+            <div class="otp-input-box">
+                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric">
+                <div class="spinner"></div>
+            </div>
+            <div class="otp-input-box">
+                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric">
+                <div class="spinner"></div>
+            </div>
+
+            <svg class="svg-border-overlay" id="svg-overlay" viewBox="0 0 252 68">
+                <path id="morph-path" class="morph-path" d="
+                    M 12,1 H 42 A 11,11 0 0 1 53,12 V 56 A 11,11 0 0 1 42,67 H 12 A 11,11 0 0 1 1,56 V 12 A 11,11 0 0 1 12,1 Z
+                    M 78,1 H 108 A 11,11 0 0 1 119,12 V 56 A 11,11 0 0 1 108,67 H 78 A 11,11 0 0 1 67,56 V 12 A 11,11 0 0 1 78,1 Z
+                    M 144,1 H 174 A 11,11 0 0 1 185,12 V 56 A 11,11 0 0 1 174,67 H 144 A 11,11 0 0 1 133,56 V 12 A 11,11 0 0 1 144,1 Z
+                    M 210,1 H 240 A 11,11 0 0 1 251,12 V 56 A 11,11 0 0 1 240,67 H 210 A 11,11 0 0 1 199,56 V 12 A 11,11 0 0 1 210,1 Z
+                " />
+
+                <line class="dissolve-line" id="line-1" x1="53" y1="12" x2="53" y2="56" />
+                <line class="dissolve-line" id="line-2" x1="67" y1="12" x2="67" y2="56" />
+                <line class="dissolve-line" id="line-3" x1="119" y1="12" x2="119" y2="56" />
+                <line class="dissolve-line" id="line-4" x1="133" y1="12" x2="133" y2="56" />
+                <line class="dissolve-line" id="line-5" x1="185" y1="12" x2="185" y2="56" />
+                <line class="dissolve-line" id="line-6" x1="199" y1="12" x2="199" y2="56" />
+            </svg>
+
+            <svg class="checkmark-svg" id="checkmark-svg" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" class="checkmark-path"></polyline>
+            </svg>
+        </div>
+
+        <div class="footer">
+            Need Help? <a href="#">Contact us</a>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="frontendfocus.js"></script>
+</body>
+</html>
