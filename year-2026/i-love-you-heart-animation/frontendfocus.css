@@ -1,0 +1,115 @@
+:root {
+  --blackColor: #000;
+  --mainColor: #ea80b0;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--blackColor);
+  font-family: Arial, Helvetica, sans-serif;
+}
+@scope (.ui) {
+  :scope {
+    .love {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -225px 0 0 -225px;
+      --i: 1;
+    }
+    .love-word {
+      color: var(--mainColor);
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      white-space: nowrap;
+      text-shadow: 0 0 10px #fff;
+      transform: translateY(-100%) rotate(-30deg);
+    }
+    .love-horizontal {
+      animation: horizontal 10s infinite alternate ease-in-out;
+      animation-delay: calc(var(--i) * -300ms);
+    }
+    .love-vertical {
+      animation: vertical 20s infinite linear;
+      animation-delay: calc(var(--i) * -300ms);
+    }
+  }
+  @keyframes horizontal {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(450px);
+    }
+  }
+  @keyframes vertical {
+    0% {
+      transform: translateY(180px);
+    }
+    10% {
+      transform: translateY(45px);
+    }
+    15% {
+      transform: translateY(4.5px);
+    }
+
+    18% {
+      transform: translateY(0px);
+    }
+    18% {
+      transform: translateY(0px);
+    }
+    20% {
+      transform: translateY(4.5px);
+    }
+    22% {
+      transform: translateY(34.61538px);
+    }
+    24% {
+      transform: translateY(64.28571px);
+    }
+    25% {
+      transform: translateY(112.5px);
+    }
+    26% {
+      transform: translateY(64.28571px);
+    }
+    28% {
+      transform: translateY(34.61538px);
+    }
+    30% {
+      transform: translateY(4.5px);
+    }
+    32% {
+      transform: translateY(0);
+    }
+    35% {
+      transform: translateY(4.5px);
+    }
+    40% {
+      transform: translateY(45px);
+    }
+    50% {
+      transform: translateY(180px);
+    }
+    71% {
+      transform: translateY(428.57143px);
+    }
+    72.5% {
+      transform: translateY(441.17647px);
+    }
+    75% {
+      transform: translateY(450px);
+    }
+    77.5% {
+      transform: translateY(441.17647px);
+    }
+    79% {
+      transform: translateY(428.57143px);
+    }
+    100% {
+      transform: translateY(180px);
+    }
+  }
+}
