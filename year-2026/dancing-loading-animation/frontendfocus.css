@@ -1,0 +1,118 @@
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  --page: #EDEDED;
+  --ring-track: rgba(0, 0, 0, 0.12);
+  --accent: #FFC21A;
+  --void: #0A0A0A;
+  --muted: #6E6E6E;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #141414;
+    --ring-track: rgba(255, 255, 255, 0.12);
+    --muted: #9A9A9A;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #141414;
+  --ring-track: rgba(255, 255, 255, 0.12);
+  --muted: #9A9A9A;
+}
+*, *::before, *::after { box-sizing: inherit; }
+html { height: 100%; scroll-padding-top: env(safe-area-inset-top, 0px); }
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--page);
+  display: grid;
+  place-items: center;
+}
+
+.stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.orb {
+  position: relative;
+  width: min(260px, 70vw);
+  aspect-ratio: 1;
+}
+
+.orb .hit {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+.ring circle { fill: none; stroke-width: 3; }
+.ring .track { stroke: var(--ring-track); }
+.ring .arc {
+  stroke: var(--accent);
+  stroke-linecap: round;
+  stroke-dasharray: 90 400;
+  animation: sweep 1.6s cubic-bezier(.6,.1,.3,.9) infinite;
+  transform-origin: 50% 50%;
+}
+@keyframes sweep {
+  0%   { stroke-dasharray: 20 400; transform: rotate(0deg); }
+  50%  { stroke-dasharray: 160 400; }
+  100% { stroke-dasharray: 20 400; transform: rotate(360deg); }
+}
+
+.window {
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 40%, #262626 0%, var(--void) 70%);
+  box-shadow: inset 0 0 40px rgba(0,0,0,.8), inset 0 0 0 1px rgba(255,255,255,.2);
+}
+.window canvas { display: block; width: 100%; height: 100%; }
+.window::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 38% 70% at 50% 0%, rgba(255,255,255,.09), transparent 70%);
+  pointer-events: none;
+}
+.window::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(to bottom, rgba(0,0,0,0) 0 2px, rgba(0,0,0,.28) 2px 3px);
+  pointer-events: none;
+}
+
+.credit {
+  font: 500 0.8rem/1 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: color .2s ease, border-color .2s ease;
+}
+.credit:hover,
+.credit:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ring .arc { animation-duration: 4s; }
+}
