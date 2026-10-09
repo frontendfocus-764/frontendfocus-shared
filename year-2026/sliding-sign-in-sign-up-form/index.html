@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" />
+    <title>Animated Login & Signup Form | Sliding Panel with HTML CSS JS</title>
+</head>
+<body>
+    <div class="container" id="container">
+      <!-- sign-up holder -->
+      <div class="form-container sign-up-container">
+        <form>
+          <h3 class="title">create Account</h3>
+          <div class="social-container">
+            <a href="#" class="social">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="#" class="social">
+              <i class="fa-brands fa-google-plus"></i>
+            </a>
+            <a href="#" class="social">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          </div>
+          <span>or use your email for registration</span>
+          <input type="text" placeholder="Name" />
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <button>sign up</button>
+        </form>
+      </div>
+      <!-- sign In container -->
+      <div class="form-container sign-in-container">
+        <form>
+          <h3 class="title">sign in</h3>
+          <div class="social-container">
+            <a href="#" class="social">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="#" class="social">
+              <i class="fa-brands fa-google-plus"></i>
+            </a>
+            <a href="#" class="social">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          </div>
+          <span>or use your account</span>
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <a href="#">forgot your password</a>
+          <button>sign in</button>
+        </form>
+      </div>
+      <!-- Overlay-container -->
+      <div class="overlay-container">
+        <div class="overlay">
+          <!-- OverLay Left -->
+          <div class="overlay-panel overlay-left">
+            <h3>welcome back</h3>
+            <p>
+              to keep connected with us please login with your personal info
+            </p>
+            <button class="ghost" id="signIn">sign in</button>
+          </div>
+
+          <div class="overlay-panel overlay-right">
+            <h3>hello, friend!</h3>
+            <p>enter your personal details and start journey with us</p>
+            <button class="ghost" id="signUp">sign up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="frontendfocus.js"></script>
+</body>
+</html>
