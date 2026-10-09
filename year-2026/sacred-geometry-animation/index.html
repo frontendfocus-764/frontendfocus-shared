@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <title>Sacred Geometry Animation</title>
+</head>
+<body>
+    <main class="page">
+        <section class="sacred-pulse" aria-label="Sacred Geometry Pulse animation">
+            <div class="sacred-pulse__scene">
+                <svg class="sacred-pulse__svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet" role="img"
+                    aria-label="An animated sacred-geometry network breathing and conducting pulses of cyan energy from a luminous core out to eight glowing nodes.">
+                    <defs>
+                        <radialGradient id="sp-core" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#ffffff" />
+                            <stop offset="30%" stop-color="#dfffff" />
+                            <stop offset="66%" stop-color="#29fff0" />
+                            <stop offset="100%" stop-color="#29fff0" stop-opacity="0" />
+                        </radialGradient>
+
+                        <radialGradient id="sp-bloom" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#dfffff" stop-opacity="0.65" />
+                            <stop offset="40%" stop-color="#8ffff8" stop-opacity="0.22" />
+                            <stop offset="72%" stop-color="#29fff0" stop-opacity="0.08" />
+                            <stop offset="100%" stop-color="#29fff0" stop-opacity="0" />
+                        </radialGradient>
+
+                        <radialGradient id="sp-halo" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#29fff0" stop-opacity="0" />
+                            <stop offset="82%" stop-color="#29fff0" stop-opacity="0" />
+                            <stop offset="92%" stop-color="#6ffff6" stop-opacity="0.18" />
+                            <stop offset="100%" stop-color="#6ffff6" stop-opacity="0" />
+                        </radialGradient>
+
+                        <radialGradient id="sp-node-outer" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#ffffff" />
+                            <stop offset="32%" stop-color="#ffffff" />
+                            <stop offset="52%" stop-color="#dfffff" stop-opacity="0.92" />
+                            <stop offset="74%" stop-color="#6ffff6" stop-opacity="0.75" />
+                            <stop offset="100%" stop-color="#13e7dc" stop-opacity="0" />
+                        </radialGradient>
+
+                        <radialGradient id="sp-node-core" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#ffffff" />
+                            <stop offset="34%" stop-color="#eafffd" />
+                            <stop offset="58%" stop-color="#8ffff8" stop-opacity="0.7" />
+                            <stop offset="100%" stop-color="#24fff2" stop-opacity="0" />
+                        </radialGradient>
+
+                        <radialGradient id="sp-node-cyan" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#ffffff" />
+                            <stop offset="30%" stop-color="#dfffff" stop-opacity="0.95" />
+                            <stop offset="56%" stop-color="#6ffff6" stop-opacity="0.38" />
+                            <stop offset="100%" stop-color="#0edbd3" stop-opacity="0" />
+                        </radialGradient>
+
+                        <radialGradient id="sp-arm-fade" gradientUnits="userSpaceOnUse" cx="500" cy="500" r="384">
+                            <stop offset="0%" stop-color="#d6fffd" stop-opacity="1" />
+                            <stop offset="30%" stop-color="#9ffff9" stop-opacity="0.55" />
+                            <stop offset="55%" stop-color="#6ffff6" stop-opacity="0.22" />
+                            <stop offset="78%" stop-color="#3af0e6" stop-opacity="0.04" />
+                            <stop offset="90%" stop-color="#13e7dc" stop-opacity="0" />
+                            <stop offset="100%" stop-color="#13e7dc" stop-opacity="0" />
+                        </radialGradient>
+
+                        <filter id="sp-node-glow" x="-12%" y="-12%" width="124%" height="124%">
+                            <feGaussianBlur stdDeviation="6" result="b" />
+                            <feMerge>
+                                <feMergeNode in="b" />
+                                <feMergeNode in="b" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+
+                        <filter id="sp-node-glow-sm" x="-15%" y="-15%" width="130%" height="130%">
+                            <feGaussianBlur stdDeviation="3.2" result="b" />
+                            <feMerge>
+                                <feMergeNode in="b" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+
+                        <filter id="sp-glow" x="-70%" y="-70%" width="240%" height="240%">
+                            <feGaussianBlur stdDeviation="7" result="b" />
+                            <feMerge>
+                                <feMergeNode in="b" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+
+                        <filter id="sp-glow-soft" x="-90%" y="-90%" width="280%" height="280%">
+                            <feGaussianBlur stdDeviation="14" result="b" />
+                            <feMerge>
+                                <feMergeNode in="b" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+
+                        <filter id="sp-curve-glow" x="-40%" y="-40%" width="180%" height="180%">
+                            <feGaussianBlur stdDeviation="4" result="b" />
+                            <feMerge>
+                                <feMergeNode in="b" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+
+                        <filter id="sp-curve-glow-mid" x="-30%" y="-30%" width="160%" height="160%">
+                            <feGaussianBlur stdDeviation="2" result="b" />
+                            <feMerge>
+                                <feMergeNode in="b" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                    </defs>
+
+                    <g class="spin spin--guides">
+                        <g class="geometry-guides" fill="none" stroke="currentColor">
+                            <circle cx="500" cy="500" r="465" stroke-width="1" stroke-opacity="0.5"
+                                stroke-dasharray="2 10" />
+                            <circle cx="500" cy="500" r="430" stroke-width="1.4" stroke-opacity="0.7" />
+                            <circle cx="500" cy="500" r="380" stroke-width="1" stroke-opacity="0.55" />
+                            <circle cx="500" cy="500" r="300" stroke-width="1" stroke-opacity="0.4"
+                                stroke-dasharray="1 9" />
+                            <circle cx="500" cy="500" r="200" stroke-width="1" stroke-opacity="0.35" />
+                            <circle cx="500" cy="500" r="486" fill="url(#sp-halo)" stroke="none" />
+                        </g>
+                    </g>
+
+                    <g class="energy-curves" fill="none" stroke-linejoin="round" stroke-linecap="round">
+
+                        <g class="spin spin--outer">
+                            <g class="energy-curves__zone energy-curves__outer" stroke="#13e7dc" stroke-width="1.1">
+
+                                <path d="M188.2,320 C299,603.3 511,725.7 811.8,680 C701,396.7 489,274.3 188.2,320 Z" />
+                                <path d="M500,140 C310,377.6 310,622.4 500,860 C690,622.4 690,377.6 500,140 Z" />
+                                <path d="M811.8,320 C511,274.3 299,396.7 188.2,680 C489,725.7 701,603.3 811.8,320 Z" />
+                            </g>
+                        </g>
+
+                        <g class="spin spin--inner">
+                            <g class="energy-curves__zone energy-curves__inner" stroke="#8ffff8" stroke-width="1.4">
+
+                                <path class="energy-curves__rosette"
+                                    d="M388,500 C461.9,568 538.1,568 612,500 C538.1,432 461.9,432 388,500 Z" />
+                                <path class="energy-curves__rosette"
+                                    d="M444,403 C422.1,501 460.2,567 556,597 C577.9,499 539.8,433 444,403 Z" />
+                                <path class="energy-curves__rosette"
+                                    d="M556,403 C460.2,433 422.1,499 444,597 C539.8,567 577.9,501 556,403 Z" />
+                            </g>
+                        </g>
+
+                        <g class="spin spin--inner">
+                            <g class="energy-curves__flow" stroke="#dfffff" stroke-width="2">
+                                <path pathLength="1000" d="M516,500 Q568,540 620,500 Q568,460 516,500 Z" />
+                                <path pathLength="1000" d="M484,500 Q432,460 380,500 Q432,540 484,500 Z" />
+                                <path pathLength="1000"
+                                    d="M306,419.6 C388.1,583.5 520,638.2 694,580.4 C611.9,416.5 480,361.8 306,419.6 Z" />
+                                <path pathLength="1000"
+                                    d="M580.4,306 C416.5,388.1 361.8,520 419.6,694 C583.5,611.9 638.2,480 580.4,306 Z" />
+                            </g>
+                        </g>
+                    </g>
+
+                    <g class="spin spin--lines">
+                        <g class="geometry-lines" fill="none" stroke="currentColor" stroke-linecap="round">
+
+                            <g stroke-opacity="0.12" stroke-width="1">
+                                <path d="M500,500 L500,120" />
+                                <path d="M500,500 L769,231" />
+                                <path d="M500,500 L880,500" />
+                                <path d="M500,500 L769,769" />
+                                <path d="M500,500 L500,880" />
+                                <path d="M500,500 L231,769" />
+                                <path d="M500,500 L120,500" />
+                                <path d="M500,500 L231,231" />
+                            </g>
+
+                            <path stroke-opacity="0.3" stroke-width="1.1"
+                                d="M500,365 L595,405 L635,500 L595,595 L500,635 L405,595 L365,500 L405,405 Z" />
+
+                            <path stroke-opacity="0.26" stroke-width="1.1"
+                                d="M500,250 L677,323 L750,500 L677,677 L500,750 L323,677 L250,500 L323,323 Z" />
+
+                            <g stroke-opacity="0.24" stroke-width="1">
+                                <path d="M500,365 L500,250" />
+                                <path d="M595,405 L677,323" />
+                                <path d="M635,500 L750,500" />
+                                <path d="M595,595 L677,677" />
+                                <path d="M500,635 L500,750" />
+                                <path d="M405,595 L323,677" />
+                                <path d="M365,500 L250,500" />
+                                <path d="M405,405 L323,323" />
+                            </g>
+
+                            <g stroke-opacity="0.18" stroke-width="1">
+                                <path d="M617,433 L717,375" />
+                                <path d="M617,567 L717,625" />
+                                <path d="M383,567 L283,625" />
+                                <path d="M383,433 L283,375" />
+                                <path d="M568,383 L625,284" />
+                                <path d="M568,617 L625,716" />
+                                <path d="M432,617 L375,716" />
+                                <path d="M432,383 L375,284" />
+                            </g>
+                        </g>
+                    </g>
+
+                    <g class="spin spin--outer">
+                        <g class="geometry-outer" fill="none" stroke="currentColor" stroke-linejoin="round">
+
+                            <path stroke-opacity="0.4" stroke-width="1.3"
+                                d="M500,120 L769,769 L120,500 L769,231 L500,880 L231,231 L880,500 L231,769 Z" />
+
+                            <path stroke-opacity="0.3" stroke-width="1.1" d="M500,120 L880,500 L500,880 L120,500 Z" />
+                            <path stroke-opacity="0.3" stroke-width="1.1" d="M769,231 L769,769 L231,769 L231,231 Z" />
+                        </g>
+                    </g>
+
+                    <g class="spin spin--middle">
+                        <g class="geometry-middle" fill="none" stroke="currentColor" stroke-linejoin="round">
+                            <path stroke-opacity="0.5" stroke-width="1.5"
+                                d="M500,250 Q645.4,248.7 717,375 Q790.8,500 717,625 Q645.4,751.3 500,750 Q354.6,751.3 283,625 Q209.2,500 283,375 Q354.6,248.7 500,250 Z" />
+                            <path stroke-opacity="0.5" stroke-width="1.5"
+                                d="M625,284 Q751.3,355.3 750,500 Q751.3,644.7 625,716 Q500,789.4 375,716 Q248.7,644.7 250,500 Q248.7,355.3 375,284 Q500,210.6 625,284 Z" />
+
+                            <g class="middle-web" stroke-opacity="0.32" stroke-width="1">
+                                <path d="M500,250 L717,625 L283,625 Z" />
+                                <path d="M717,375 L500,750 L283,375 Z" />
+                                <path d="M625,284 L625,716 L250,500 Z" />
+                                <path d="M750,500 L375,716 L375,284 Z" />
+                            </g>
+                        </g>
+                    </g>
+
+                    <g class="spin spin--inner">
+                        <g class="geometry-inner" fill="none" stroke="currentColor" stroke-linejoin="round">
+                            <path stroke-opacity="0.6" stroke-width="1.5"
+                                d="M500,365 Q578.4,364.7 617,433 Q656.8,500 617,567 Q578.4,635.3 500,635 Q421.6,635.3 383,567 Q343.2,500 383,433 Q421.6,364.7 500,365 Z" />
+                            <path stroke-opacity="0.6" stroke-width="1.5"
+                                d="M568,383 Q636,421.6 635,500 Q636,578.4 568,617 Q500,656.8 432,617 Q364,578.4 365,500 Q364,421.6 432,383 Q500,343.2 568,383 Z" />
+
+                            <g class="inner-web" stroke-opacity="0.34" stroke-width="1">
+                                <path d="M500,365 L617,567 L383,567 Z" />
+                                <path d="M617,433 L500,635 L383,433 Z" />
+                                <path d="M568,383 L568,617 L365,500 Z" />
+                                <path d="M635,500 L432,617 L432,383 Z" />
+
+                                <path d="M500,500 L500,365" />
+                                <path d="M500,500 L617,433" />
+                                <path d="M500,500 L617,567" />
+                                <path d="M500,500 L500,635" />
+                                <path d="M500,500 L383,567" />
+                                <path d="M500,500 L383,433" />
+                                <path d="M500,500 L568,383" />
+                                <path d="M500,500 L635,500" />
+                                <path d="M500,500 L568,617" />
+                                <path d="M500,500 L432,617" />
+                                <path d="M500,500 L365,500" />
+                                <path d="M500,500 L432,383" />
+                            </g>
+                        </g>
+                    </g>
+
+                    <g class="geometry-accent" fill="none" stroke="currentColor" stroke-linejoin="round"
+                        stroke-linecap="round">
+
+                        <g class="spin spin--outer">
+
+                            <path stroke-width="1.5"
+                                d="M500,120 L769,769 L120,500 L769,231 L500,880 L231,231 L880,500 L231,769 Z" />
+                        </g>
+
+                        <g class="spin spin--middle">
+                            <path stroke-width="1.8"
+                                d="M500,250 Q645.4,248.7 717,375 Q790.8,500 717,625 Q645.4,751.3 500,750 Q354.6,751.3 283,625 Q209.2,500 283,375 Q354.6,248.7 500,250 Z" />
+                            <path stroke-width="1.8"
+                                d="M625,284 Q751.3,355.3 750,500 Q751.3,644.7 625,716 Q500,789.4 375,716 Q248.7,644.7 250,500 Q248.7,355.3 375,284 Q500,210.6 625,284 Z" />
+                        </g>
+
+                        <g class="spin spin--lines">
+                            <path stroke-width="1.6"
+                                d="M500,250 L677,323 L750,500 L677,677 L500,750 L323,677 L250,500 L323,323 Z" />
+                            <path stroke-width="1.6"
+                                d="M500,365 L595,405 L635,500 L595,595 L500,635 L405,595 L365,500 L405,405 Z" />
+                        </g>
+
+                        <g class="spin spin--inner">
+                            <path stroke-width="1.7"
+                                d="M500,365 Q578.4,364.7 617,433 Q656.8,500 617,567 Q578.4,635.3 500,635 Q421.6,635.3 383,567 Q343.2,500 383,433 Q421.6,364.7 500,365 Z" />
+                            <path stroke-width="1.7"
+                                d="M568,383 Q636,421.6 635,500 Q636,578.4 568,617 Q500,656.8 432,617 Q364,578.4 365,500 Q364,421.6 432,383 Q500,343.2 568,383 Z" />
+                            <path stroke-width="1.3" d="M500,365 L617,567 L383,567 Z" />
+                            <path stroke-width="1.3" d="M617,433 L500,635 L383,433 Z" />
+                        </g>
+                    </g>
+
+                    <g class="radial-arms spin spin--lines" fill="none" stroke="url(#sp-arm-fade)" stroke-width="1.8"
+                        stroke-linecap="butt">
+                        <path d="M500,500 L500,120" />
+                        <path d="M500,500 L769,231" />
+                        <path d="M500,500 L880,500" />
+                        <path d="M500,500 L769,769" />
+                        <path d="M500,500 L500,880" />
+                        <path d="M500,500 L231,769" />
+                        <path d="M500,500 L120,500" />
+                        <path d="M500,500 L231,231" />
+                    </g>
+
+                    <g class="energy-paths" fill="none" stroke="#dfffff" stroke-width="3" stroke-linecap="round">
+                        <path pathLength="1000" d="M500,500 L500,365 L500,250 L500,120" />
+                        <path pathLength="1000" d="M500,500 L595,405 L677,323 L769,231" />
+                        <path pathLength="1000" d="M500,500 L635,500 L750,500 L880,500" />
+                        <path pathLength="1000" d="M500,500 L595,595 L677,677 L769,769" />
+                        <path pathLength="1000" d="M500,500 L500,635 L500,750 L500,880" />
+                        <path pathLength="1000" d="M500,500 L405,595 L323,677 L231,769" />
+                        <path pathLength="1000" d="M500,500 L365,500 L250,500 L120,500" />
+                        <path pathLength="1000" d="M500,500 L405,405 L323,323 L231,231" />
+                    </g>
+
+                    <g class="energy-paths energy-paths--reverse" fill="none" stroke="#8ffff8" stroke-width="2.2"
+                        stroke-linecap="round">
+                        <path pathLength="1000" d="M500,120 L500,250 L500,365 L500,500" />
+                        <path pathLength="1000" d="M880,500 L750,500 L635,500 L500,500" />
+                        <path pathLength="1000" d="M500,880 L500,750 L500,635 L500,500" />
+                        <path pathLength="1000" d="M120,500 L250,500 L365,500 L500,500" />
+                    </g>
+
+                    <g class="energy-perimeter" fill="none" stroke="#6ffff6" stroke-linecap="round"
+                        stroke-linejoin="round">
+
+                        <path class="perimeter-run perimeter-run--mid" pathLength="1000" stroke-width="2.4"
+                            d="M500,250 L677,323 L750,500 L677,677 L500,750 L323,677 L250,500 L323,323 Z" />
+
+                        <path class="perimeter-run perimeter-run--outer" pathLength="1000" stroke-width="2.8"
+                            d="M500,120 L769,231 L880,500 L769,769 L500,880 L231,769 L120,500 L231,231 Z" />
+                    </g>
+
+                    <g class="energy-rings" fill="none" stroke="#6ffff6">
+                        <circle class="energy-ring energy-ring--1" cx="500" cy="500" r="250" stroke-width="2" />
+                        <circle class="energy-ring energy-ring--2" cx="500" cy="500" r="250" stroke-width="1.6" />
+                        <circle class="energy-ring energy-ring--3" cx="500" cy="500" r="250" stroke-width="2.4" />
+                    </g>
+
+                    <g class="spin spin--middle">
+                        <g class="geometry-nodes nodes-secondary" fill="url(#sp-node-cyan)">
+                            <circle cx="717" cy="375" r="4" opacity="0.5" />
+                            <circle cx="717" cy="625" r="4" opacity="0.5" />
+                            <circle cx="283" cy="625" r="4" opacity="0.5" />
+                            <circle cx="283" cy="375" r="4" opacity="0.5" />
+                            <circle cx="625" cy="284" r="4" opacity="0.5" />
+                            <circle cx="625" cy="716" r="4" opacity="0.5" />
+                            <circle cx="375" cy="716" r="4" opacity="0.5" />
+                            <circle cx="375" cy="284" r="4" opacity="0.5" />
+                            <circle cx="617" cy="433" r="3.2" opacity="0.42" />
+                            <circle cx="617" cy="567" r="3.2" opacity="0.42" />
+                            <circle cx="383" cy="567" r="3.2" opacity="0.42" />
+                            <circle cx="383" cy="433" r="3.2" opacity="0.42" />
+                            <circle cx="568" cy="383" r="3.2" opacity="0.42" />
+                            <circle cx="568" cy="617" r="3.2" opacity="0.42" />
+                            <circle cx="432" cy="617" r="3.2" opacity="0.42" />
+                            <circle cx="432" cy="383" r="3.2" opacity="0.42" />
+                        </g>
+                    </g>
+
+                    <g class="spin spin--middle">
+                        <g class="geometry-nodes nodes-mid" fill="url(#sp-node-cyan)">
+                            <circle cx="500" cy="250" r="6" />
+                            <circle cx="677" cy="323" r="6" />
+                            <circle cx="750" cy="500" r="6" />
+                            <circle cx="677" cy="677" r="6" />
+                            <circle cx="500" cy="750" r="6" />
+                            <circle cx="323" cy="677" r="6" />
+                            <circle cx="250" cy="500" r="6" />
+                            <circle cx="323" cy="323" r="6" />
+                        </g>
+                    </g>
+
+                    <g class="spin spin--inner">
+                        <g class="geometry-nodes nodes-inner" fill="url(#sp-node-core)">
+                            <circle cx="500" cy="365" r="7" />
+                            <circle cx="595" cy="405" r="7" />
+                            <circle cx="635" cy="500" r="7" />
+                            <circle cx="595" cy="595" r="7" />
+                            <circle cx="500" cy="635" r="7" />
+                            <circle cx="405" cy="595" r="7" />
+                            <circle cx="365" cy="500" r="7" />
+                            <circle cx="405" cy="405" r="7" />
+                        </g>
+                    </g>
+
+                    <g class="spin spin--outer">
+                        <g class="geometry-nodes geometry-nodes--outer" fill="url(#sp-node-outer)">
+                            <circle cx="500" cy="120" r="10" />
+                            <circle cx="769" cy="231" r="10" />
+                            <circle cx="880" cy="500" r="10" />
+                            <circle cx="769" cy="769" r="10" />
+                            <circle cx="500" cy="880" r="10" />
+                            <circle cx="231" cy="769" r="10" />
+                            <circle cx="120" cy="500" r="10" />
+                            <circle cx="231" cy="231" r="10" />
+                        </g>
+                    </g>
+
+                    <g class="core">
+                        <circle class="core-bloom" cx="500" cy="500" r="120" fill="url(#sp-bloom)" />
+                        <circle class="core-ring core-ring--a" cx="500" cy="500" r="64" fill="none" stroke="#29fff0"
+                            stroke-width="1" stroke-opacity="0.4" />
+                        <circle class="core-ring core-ring--b" cx="500" cy="500" r="46" fill="none" stroke="#8ffff8"
+                            stroke-width="1" stroke-opacity="0.5" />
+                        <circle class="core-ring core-ring--c" cx="500" cy="500" r="30" fill="none" stroke="#dfffff"
+                            stroke-width="1.2" stroke-opacity="0.6" />
+                        <circle class="core-glow" cx="500" cy="500" r="26" fill="url(#sp-core)" />
+                        <circle class="core-main" cx="500" cy="500" r="12" fill="#dfffff" />
+                        <circle class="core-spark" cx="500" cy="500" r="6" fill="#ffffff" />
+                    </g>
+
+                    <g class="particles" fill="#6ffff6">
+                        <circle cx="182" cy="300" r="2.4" />
+                        <circle cx="300" cy="158" r="1.6" />
+                        <circle cx="622" cy="140" r="2" />
+                        <circle cx="832" cy="278" r="1.5" />
+                        <circle cx="910" cy="620" r="2.2" />
+                        <circle cx="760" cy="862" r="1.7" />
+                        <circle cx="470" cy="940" r="2" />
+                        <circle cx="176" cy="762" r="1.6" />
+                        <circle cx="92" cy="430" r="2.3" />
+                        <circle cx="250" cy="540" r="1.4" />
+                        <circle cx="704" cy="700" r="1.8" />
+                        <circle cx="560" cy="214" r="1.5" />
+                        <circle cx="430" cy="784" r="2.1" />
+                        <circle cx="820" cy="452" r="1.5" />
+                    </g>
+                </svg>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
