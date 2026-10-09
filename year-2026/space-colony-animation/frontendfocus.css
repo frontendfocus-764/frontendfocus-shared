@@ -1,0 +1,680 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background: #050410;
+}
+
+.moonscape {
+  position: relative;
+    isolation: isolate;
+  width: min(100vw, 160vh, 1600px);
+  aspect-ratio: 1600 / 1000;
+  overflow: hidden;
+  background: linear-gradient(
+      to bottom,
+      #060514,
+      #150d2c 30%,
+      #3d1b52 50%,
+      #9e4573 60%,
+      #5dcbd1 66%
+    );
+}
+
+.moonscape > * {
+  position: absolute;
+}
+
+.nebula {
+  inset: 0;
+  background: radial-gradient(calc(260 * 0.0625vw) calc(120 * 0.0625vw) at calc(300 * 0.0625vw) calc(230 * 0.0625vw), rgba(183, 48, 149, 0.42), transparent),
+      radial-gradient(calc(200 * 0.0625vw) calc(90 * 0.0625vw) at calc(470 * 0.0625vw) calc(170 * 0.0625vw), rgba(0, 163, 187, 0.34), transparent),
+      radial-gradient(calc(320 * 0.0625vw) calc(140 * 0.0625vw) at calc(180 * 0.0625vw) calc(330 * 0.0625vw), rgba(103, 49, 168, 0.35), transparent),
+      radial-gradient(calc(180 * 0.0625vw) calc(70 * 0.0625vw) at calc(620 * 0.0625vw) calc(300 * 0.0625vw), rgba(183, 48, 149, 0.42), transparent),
+      radial-gradient(calc(140 * 0.0625vw) calc(60 * 0.0625vw) at calc(560 * 0.0625vw) calc(90 * 0.0625vw), rgba(103, 49, 168, 0.35), transparent);
+  mix-blend-mode: screen;
+}
+
+.stars {
+  inset: 0;
+}
+
+.stars[data-stars="far"] {
+  background: radial-gradient(circle calc(1.5 * 0.0625vw) at calc(347 * 0.0625vw) calc(438 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.0 * 0.0625vw) at calc(982 * 0.0625vw) calc(534 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.2 * 0.0625vw) at calc(16 * 0.0625vw) calc(24 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.5 * 0.0625vw) at calc(151 * 0.0625vw) calc(158 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.5 * 0.0625vw) at calc(485 * 0.0625vw) calc(248 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.4 * 0.0625vw) at calc(904 * 0.0625vw) calc(426 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.3 * 0.0625vw) at calc(79 * 0.0625vw) calc(346 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.4 * 0.0625vw) at calc(1431 * 0.0625vw) calc(128 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.0 * 0.0625vw) at calc(764 * 0.0625vw) calc(33 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.5 * 0.0625vw) at calc(191 * 0.0625vw) calc(137 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.0 * 0.0625vw) at calc(50 * 0.0625vw) calc(474 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.2 * 0.0625vw) at calc(1501 * 0.0625vw) calc(361 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.4 * 0.0625vw) at calc(319 * 0.0625vw) calc(201 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.1 * 0.0625vw) at calc(162 * 0.0625vw) calc(212 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.0 * 0.0625vw) at calc(1357 * 0.0625vw) calc(82 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.6 * 0.0625vw) at calc(421 * 0.0625vw) calc(359 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.7 * 0.0625vw) at calc(607 * 0.0625vw) calc(383 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.2 * 0.0625vw) at calc(661 * 0.0625vw) calc(506 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.0 * 0.0625vw) at calc(64 * 0.0625vw) calc(105 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(0.9 * 0.0625vw) at calc(1476 * 0.0625vw) calc(517 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.1 * 0.0625vw) at calc(153 * 0.0625vw) calc(544 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.4 * 0.0625vw) at calc(380 * 0.0625vw) calc(184 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.5 * 0.0625vw) at calc(690 * 0.0625vw) calc(364 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.0 * 0.0625vw) at calc(637 * 0.0625vw) calc(261 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.4 * 0.0625vw) at calc(337 * 0.0625vw) calc(47 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.7 * 0.0625vw) at calc(843 * 0.0625vw) calc(177 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.6 * 0.0625vw) at calc(1219 * 0.0625vw) calc(24 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.6 * 0.0625vw) at calc(779 * 0.0625vw) calc(263 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.3 * 0.0625vw) at calc(513 * 0.0625vw) calc(176 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(0.9 * 0.0625vw) at calc(1528 * 0.0625vw) calc(504 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.6 * 0.0625vw) at calc(599 * 0.0625vw) calc(63 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.1 * 0.0625vw) at calc(81 * 0.0625vw) calc(439 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.6 * 0.0625vw) at calc(817 * 0.0625vw) calc(81 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(0.9 * 0.0625vw) at calc(319 * 0.0625vw) calc(500 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.6 * 0.0625vw) at calc(295 * 0.0625vw) calc(548 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.7 * 0.0625vw) at calc(991 * 0.0625vw) calc(38 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.6 * 0.0625vw) at calc(759 * 0.0625vw) calc(167 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.3 * 0.0625vw) at calc(640 * 0.0625vw) calc(152 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.5 * 0.0625vw) at calc(575 * 0.0625vw) calc(152 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.4 * 0.0625vw) at calc(30 * 0.0625vw) calc(401 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.1 * 0.0625vw) at calc(1475 * 0.0625vw) calc(34 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.5 * 0.0625vw) at calc(536 * 0.0625vw) calc(425 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.0 * 0.0625vw) at calc(293 * 0.0625vw) calc(146 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.4 * 0.0625vw) at calc(392 * 0.0625vw) calc(35 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.6 * 0.0625vw) at calc(298 * 0.0625vw) calc(83 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.3 * 0.0625vw) at calc(269 * 0.0625vw) calc(321 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.3 * 0.0625vw) at calc(674 * 0.0625vw) calc(415 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.0 * 0.0625vw) at calc(459 * 0.0625vw) calc(180 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.5 * 0.0625vw) at calc(783 * 0.0625vw) calc(216 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.5 * 0.0625vw) at calc(1536 * 0.0625vw) calc(68 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.2 * 0.0625vw) at calc(960 * 0.0625vw) calc(75 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.1 * 0.0625vw) at calc(1467 * 0.0625vw) calc(248 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.5 * 0.0625vw) at calc(1436 * 0.0625vw) calc(331 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.5 * 0.0625vw) at calc(329 * 0.0625vw) calc(326 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.5 * 0.0625vw) at calc(614 * 0.0625vw) calc(525 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.3 * 0.0625vw) at calc(1013 * 0.0625vw) calc(110 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.0 * 0.0625vw) at calc(1562 * 0.0625vw) calc(204 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.2 * 0.0625vw) at calc(677 * 0.0625vw) calc(216 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.4 * 0.0625vw) at calc(230 * 0.0625vw) calc(87 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.4 * 0.0625vw) at calc(1044 * 0.0625vw) calc(30 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.3 * 0.0625vw) at calc(1455 * 0.0625vw) calc(463 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(0.9 * 0.0625vw) at calc(471 * 0.0625vw) calc(35 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.1 * 0.0625vw) at calc(898 * 0.0625vw) calc(53 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.2 * 0.0625vw) at calc(827 * 0.0625vw) calc(404 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(0.9 * 0.0625vw) at calc(476 * 0.0625vw) calc(97 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.2 * 0.0625vw) at calc(363 * 0.0625vw) calc(513 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.6 * 0.0625vw) at calc(512 * 0.0625vw) calc(502 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.4 * 0.0625vw) at calc(800 * 0.0625vw) calc(323 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.5 * 0.0625vw) at calc(231 * 0.0625vw) calc(180 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.7 * 0.0625vw) at calc(544 * 0.0625vw) calc(93 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.1 * 0.0625vw) at calc(1405 * 0.0625vw) calc(529 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.4 * 0.0625vw) at calc(904 * 0.0625vw) calc(481 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.5 * 0.0625vw) at calc(825 * 0.0625vw) calc(461 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.1 * 0.0625vw) at calc(203 * 0.0625vw) calc(326 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.3 * 0.0625vw) at calc(286 * 0.0625vw) calc(452 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.2 * 0.0625vw) at calc(394 * 0.0625vw) calc(437 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.6 * 0.0625vw) at calc(174 * 0.0625vw) calc(456 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.4 * 0.0625vw) at calc(1028 * 0.0625vw) calc(549 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.1 * 0.0625vw) at calc(324 * 0.0625vw) calc(371 * 0.0625vw), #e7effc 90%, transparent),
+        radial-gradient(circle calc(1.6 * 0.0625vw) at calc(1320 * 0.0625vw) calc(19 * 0.0625vw), #e7effc 90%, transparent);
+  animation: twinkle 6s ease-in-out infinite alternate;
+}
+
+.stars[data-stars="near"] {
+  background: radial-gradient(circle calc(2.1 * 0.0625vw) at calc(155 * 0.0625vw) calc(352 * 0.0625vw), #b6e6ff 90%, transparent),
+        radial-gradient(circle calc(2.7 * 0.0625vw) at calc(1058 * 0.0625vw) calc(60 * 0.0625vw), #b6e6ff 90%, transparent),
+        radial-gradient(circle calc(2.3 * 0.0625vw) at calc(398 * 0.0625vw) calc(194 * 0.0625vw), #b6e6ff 90%, transparent),
+        radial-gradient(circle calc(2.0 * 0.0625vw) at calc(130 * 0.0625vw) calc(92 * 0.0625vw), #b6e6ff 90%, transparent),
+        radial-gradient(circle calc(2.7 * 0.0625vw) at calc(1404 * 0.0625vw) calc(414 * 0.0625vw), #b6e6ff 90%, transparent),
+        radial-gradient(circle calc(2.1 * 0.0625vw) at calc(333 * 0.0625vw) calc(26 * 0.0625vw), #b6e6ff 90%, transparent),
+        radial-gradient(circle calc(2.3 * 0.0625vw) at calc(744 * 0.0625vw) calc(285 * 0.0625vw), #b6e6ff 90%, transparent),
+        radial-gradient(circle calc(2.2 * 0.0625vw) at calc(417 * 0.0625vw) calc(363 * 0.0625vw), #b6e6ff 90%, transparent),
+        radial-gradient(circle calc(2.8 * 0.0625vw) at calc(170 * 0.0625vw) calc(176 * 0.0625vw), #b6e6ff 90%, transparent),
+        radial-gradient(circle calc(2.0 * 0.0625vw) at calc(447 * 0.0625vw) calc(267 * 0.0625vw), #b6e6ff 90%, transparent),
+        radial-gradient(circle calc(2.5 * 0.0625vw) at calc(1463 * 0.0625vw) calc(198 * 0.0625vw), #b6e6ff 90%, transparent),
+        radial-gradient(circle calc(2.9 * 0.0625vw) at calc(341 * 0.0625vw) calc(452 * 0.0625vw), #b6e6ff 90%, transparent),
+        radial-gradient(circle calc(2.3 * 0.0625vw) at calc(48 * 0.0625vw) calc(474 * 0.0625vw), #b6e6ff 90%, transparent),
+        radial-gradient(circle calc(2.4 * 0.0625vw) at calc(238 * 0.0625vw) calc(168 * 0.0625vw), #b6e6ff 90%, transparent),
+        radial-gradient(circle calc(2.9 * 0.0625vw) at calc(761 * 0.0625vw) calc(15 * 0.0625vw), #b6e6ff 90%, transparent),
+        radial-gradient(circle calc(2.3 * 0.0625vw) at calc(365 * 0.0625vw) calc(324 * 0.0625vw), #b6e6ff 90%, transparent),
+        radial-gradient(circle calc(2.4 * 0.0625vw) at calc(61 * 0.0625vw) calc(396 * 0.0625vw), #b6e6ff 90%, transparent),
+        radial-gradient(circle calc(2.2 * 0.0625vw) at calc(1542 * 0.0625vw) calc(92 * 0.0625vw), #b6e6ff 90%, transparent);
+  animation: twinkle 3.5s ease-in-out -1.5s infinite alternate;
+}
+
+:is(.colony,
+.rocket-part) {
+  left: calc(initial * 0.0625vw);
+  top: calc(initial * 0.0625vw);
+  width: calc(initial * 0.0625vw);
+  height: calc(initial * 0.0625vw);
+}
+
+.ring {
+  left: calc(760 * 0.0625vw);
+  top: calc(215 * 0.0625vw);
+  width: calc(840 * 0.0625vw);
+  height: calc(170 * 0.0625vw);
+  transform: rotate(-14deg);
+  background: radial-gradient(
+      closest-side,
+      transparent 60%,
+      rgba(231, 204, 174, 0.8) 61% 70%,
+      transparent 70.5% 72%,
+      rgba(216, 164, 140, 0.6) 72.5% 86%,
+      rgba(193, 230, 237, 0.35) 86.5% 96%,
+      transparent 97%
+    );
+}
+
+.ring[data-ring="back"] {
+  clip-path: inset(0 0 50% 0);
+}
+
+.ring[data-ring="front"] {
+  clip-path: inset(50% 0 0 0);
+}
+
+.planet {
+  left: calc(950 * 0.0625vw);
+  top: calc(70 * 0.0625vw);
+  width: calc(460 * 0.0625vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transform: rotate(-14deg);
+  background: radial-gradient(circle at 16% 80%, transparent 26%, rgba(9, 6, 24, 0.506) 50%, rgba(9, 6, 24, 0.92) 70%),
+      radial-gradient(9% 5% at 64% 63%, #8a4066 60%, #c8635d 90%, transparent),
+      linear-gradient(
+        to bottom,
+        #e4bb95 10%,
+        #d9906f 16% 21%,
+        #e4bb95 25%,
+        #c8635d 31% 35%,
+        #d9906f 40%,
+        #8a4066 45% 48%,
+        #c8635d 53%,
+        #e4bb95 58% 61%,
+        #d9906f 67%,
+        #c8635d 73% 76%,
+        #e4bb95 81%,
+        #d9906f 89%,
+        #c8635d
+      );
+  box-shadow: inset calc(10 * 0.0625vw) calc(-8 * 0.0625vw) calc(18 * 0.0625vw) calc(-8 * 0.0625vw) rgba(157, 239, 243, 0.8);
+}
+
+.moon {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  left: calc((initial - initial) * 0.0625vw);
+  top: calc((initial - initial) * 0.0625vw);
+  width: calc(initial * 2 * 0.0625vw);
+  background: radial-gradient(circle at 22% 80%, transparent 35%, rgba(9, 6, 24, 0.92) 72%),
+      radial-gradient(circle at 60% 35%, #83849b 12%, transparent 13%),
+      radial-gradient(circle at 35% 55%, #83849b 9%, transparent 10%),
+      radial-gradient(circle at 68% 70%, #83849b 7%, transparent 8%),
+      #adafc4;
+}
+
+.moon[data-moon="near"] {
+}
+
+.moon[data-moon="far"] {
+}
+
+.dawn {
+  inset: 0;
+  background: radial-gradient(circle calc(16 * 0.0625vw) at calc(440 * 0.0625vw) calc(626 * 0.0625vw), #edffff 90%, transparent),
+      radial-gradient(calc(110 * 0.0625vw) calc(46 * 0.0625vw) at calc(440 * 0.0625vw) calc(626 * 0.0625vw), #aafdfc, transparent),
+      radial-gradient(calc(560 * 0.0625vw) calc(130 * 0.0625vw) at calc(440 * 0.0625vw) calc(630 * 0.0625vw), rgba(170, 253, 252, 0.55), transparent);
+}
+
+.ground {
+  inset: 0;
+}
+
+.ground[data-ground="mesa"] {
+  clip-path: polygon(0% 100%, 0% 62.8%, 2.5% 62.2%, 4.38% 60%, 9.38% 59.8%, 10.75% 62%, 16.25% 62.6%, 18.12% 60.6%, 20.62% 60.4%, 22% 62.4%, 32.5% 63%, 35% 61.2%, 40% 60.8%, 41.75% 62.8%, 50% 63.2%, 52.5% 61%, 56.25% 60.6%, 58.13% 62.4%, 66.25% 62.8%, 68.12% 60.2%, 73.75% 59.8%, 75.62% 61.8%, 83.12% 62.4%, 85% 60.4%, 88.75% 60%, 90.62% 62%, 100% 62.6%, 100% 100%);
+  background: linear-gradient(to right, #956991, #4d3d6d 45%);
+}
+
+.ground[data-ground="glow"] {
+  background: radial-gradient(calc(140 * 0.0625vw) calc(220 * 0.0625vw) at calc(1490 * 0.0625vw) calc(560 * 0.0625vw), rgba(68, 214, 214, 0.35), transparent),
+        radial-gradient(calc(100 * 0.0625vw) calc(150 * 0.0625vw) at calc(126 * 0.0625vw) calc(600 * 0.0625vw), rgba(68, 214, 214, 0.35), transparent);
+}
+
+.ground[data-ground="east-lit"] {
+  clip-path: polygon(87% 69%, 87% 69%, 88.38% 47%, 88.12% 69%, 89.12% 69%, 90.38% 36%, 90.75% 69%, 92.38% 69%, 93.56% 49%, 93.38% 69%, 94.06% 69%, 96% 42%, 95.5% 69%, 97% 69%, 98% 54%, 97.88% 69%, 98.75% 69%);
+  background: linear-gradient(to bottom, #60dbd4, #3098a4);
+}
+
+.ground[data-ground="east-dark"] {
+  clip-path: polygon(87% 69%, 88.12% 69%, 88.38% 47%, 89.25% 69%, 90.75% 69%, 90.38% 36%, 92.38% 69%, 93.38% 69%, 93.56% 49%, 94.38% 69%, 95.5% 69%, 96% 42%, 96.94% 69%, 97.88% 69%, 98% 54%, 98.75% 69%, 98.75% 69%);
+  background: #005575;
+}
+
+.ground[data-ground="west-lit"] {
+  clip-path: polygon(3.44% 69%, 3.44% 69%, 4.19% 55%, 4.38% 69%, 5.12% 69%, 6.75% 47%, 6.5% 69%, 8.19% 69%, 8.81% 52%, 9.12% 69%, 10.25% 69%, 11.5% 58%, 11.38% 69%, 12.5% 69%);
+  background: linear-gradient(to bottom, #60dbd4, #3098a4);
+}
+
+.ground[data-ground="west-dark"] {
+  clip-path: polygon(3.44% 69%, 4.38% 69%, 4.19% 55%, 5.31% 69%, 6.5% 69%, 6.75% 47%, 7.88% 69%, 9.12% 69%, 8.81% 52%, 10.06% 69%, 11.38% 69%, 11.5% 58%, 12.5% 69%, 12.5% 69%);
+  background: #005575;
+}
+
+.ground[data-ground="plain"] {
+  clip-path: polygon(0% 100%, 0% 69%, 7.5% 68%, 16.25% 67.6%, 26.25% 68.4%, 37.5% 67.6%, 50% 68.2%, 62.5% 67.6%, 75% 68.4%, 87.5% 67.8%, 100% 68.4%, 100% 100%);
+  background: linear-gradient(to bottom, #89497c 68%, #2d2046 76%);
+}
+
+.ground[data-ground="ridge-rim"] {
+  clip-path: polygon(0% 100%, 0% 85.5%, 8.75% 83.1%, 18.75% 82.5%, 26.25% 84.5%, 35% 86.7%, 47.5% 87.5%, 61.25% 86.7%, 71.25% 84.5%, 81.25% 82.1%, 90% 81.3%, 100% 82.5%, 100% 100%);
+  background: #6d4177;
+}
+
+.ground[data-ground="ridge"] {
+  clip-path: polygon(0% 100%, 0% 86%, 8.75% 83.6%, 18.75% 83%, 26.25% 85%, 35% 87.2%, 47.5% 88%, 61.25% 87.2%, 71.25% 85%, 81.25% 82.6%, 90% 81.8%, 100% 83%, 100% 100%);
+  background: #0d0a1d;
+}
+
+.colony[data-part="dome"] {
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  background: radial-gradient(30% 22% at 30% 24%, rgba(234, 253, 254, 0.4), transparent),
+        repeating-linear-gradient(to right, transparent 0 calc(33 * 0.0625vw), rgba(199, 237, 239, 0.55) 0 calc(35 * 0.0625vw)),
+        repeating-radial-gradient(ellipse at 50% 100%, transparent 0 calc(34 * 0.0625vw), rgba(199, 237, 239, 0.55) 0 calc(36 * 0.0625vw)),
+        radial-gradient(circle calc(18 * 0.0625vw) at 30% 88%, #005031 95%, transparent),
+        radial-gradient(circle calc(24 * 0.0625vw) at 46% 84%, #005031 95%, transparent),
+        radial-gradient(circle calc(14 * 0.0625vw) at 60% 90%, #005031 95%, transparent),
+        radial-gradient(circle calc(20 * 0.0625vw) at 74% 86%, #005031 95%, transparent),
+        radial-gradient(ellipse at 50% 100%, #7ce695, #007d62 55%, #003c44);
+}
+
+.colony[data-part="dome-ring"] {
+  border-radius: calc(8 * 0.0625vw);
+  background: linear-gradient(to bottom, #c7c9db, #777792);
+}
+
+.colony[data-part="hab-west"] {
+  border-radius: calc(23 * 0.0625vw);
+  background: repeating-linear-gradient(to right, #6cf6fd 0 calc(12 * 0.0625vw), transparent 0 calc(18 * 0.0625vw)) 50% 42% / 74% 22% no-repeat,
+        linear-gradient(to bottom, #c7c9db, #777792);
+}
+
+.colony[data-part="hab-east"] {
+  border-radius: calc(18 * 0.0625vw);
+  background: repeating-linear-gradient(to right, #6cf6fd 0 calc(12 * 0.0625vw), transparent 0 calc(18 * 0.0625vw)) 50% 40% / 70% 24% no-repeat,
+        linear-gradient(to bottom, #c7c9db, #777792);
+}
+
+.colony[data-part="mast"] {
+  background: #3b3b4d;
+}
+
+.colony[data-part="dish"] {
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #c7c9db, #777792);
+  animation: scan 3s ease-in-out infinite alternate;
+}
+
+.colony[data-part="pad"] {
+  border-radius: calc(4 * 0.0625vw);
+  background: linear-gradient(to bottom, #777792, #3b3b4d);
+}
+
+.colony[data-part="tower"] {
+  background: repeating-linear-gradient(45deg, #3b3b4d 0 calc(2 * 0.0625vw), transparent 0 calc(14 * 0.0625vw)),
+        repeating-linear-gradient(-45deg, #3b3b4d 0 calc(2 * 0.0625vw), transparent 0 calc(14 * 0.0625vw));
+  border-inline: calc(4 * 0.0625vw) solid #3b3b4d;
+}
+
+.colony[data-part="arm"] {
+  background: #3b3b4d;
+}
+
+.rocket {
+  inset: 0;
+  opacity: 0;
+  animation: launch 16s infinite;
+}
+
+.rocket > * {
+  position: absolute;
+}
+
+.beacons {
+  inset: 0;
+  background: radial-gradient(circle calc(4 * 0.0625vw) at calc(1161 * 0.0625vw) calc(516 * 0.0625vw), #fc4447 90%, transparent),
+      radial-gradient(circle calc(14 * 0.0625vw) at calc(1161 * 0.0625vw) calc(516 * 0.0625vw), rgba(252, 68, 71, 0.4), transparent),
+      radial-gradient(circle calc(4 * 0.0625vw) at calc(760 * 0.0625vw) calc(606 * 0.0625vw), #fc4447 90%, transparent),
+      radial-gradient(circle calc(14 * 0.0625vw) at calc(760 * 0.0625vw) calc(606 * 0.0625vw), rgba(252, 68, 71, 0.4), transparent),
+      radial-gradient(circle calc(4 * 0.0625vw) at calc(540 * 0.0625vw) calc(712 * 0.0625vw), #fc4447 90%, transparent),
+      radial-gradient(circle calc(14 * 0.0625vw) at calc(540 * 0.0625vw) calc(712 * 0.0625vw), rgba(252, 68, 71, 0.4), transparent);
+  animation: blink 1.6s steps(1, end) infinite;
+}
+
+.rocket-part[data-part="body"] {
+  border-radius: calc(16 * 0.0625vw) calc(16 * 0.0625vw) calc(4 * 0.0625vw) calc(4 * 0.0625vw);
+  background: radial-gradient(circle calc(6 * 0.0625vw) at 50% 22%, #6cf6fd 80%, #3b3b4d 0 calc(8 * 0.0625vw), transparent 0),
+        linear-gradient(to bottom, transparent 58%, #00b5ce 0 66%, transparent 0),
+        linear-gradient(to right, #c7c9db 45%, #777792);
+}
+
+.rocket-part[data-part="nose"] {
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  background: linear-gradient(to right, #c7c9db 45%, #777792);
+}
+
+.rocket-part[data-part="fins"] {
+  clip-path: polygon(25% 0, 25% 70%, 0 100%, 0 70%, 25% 0, 75% 0, 100% 70%, 100% 100%, 75% 70%);
+  background: #00b5ce;
+}
+
+.rocket-part[data-part="bell"] {
+  clip-path: polygon(15% 0, 85% 0, 100% 100%, 0 100%);
+  background: #3b3b4d;
+}
+
+.monorail[data-rail="pylons"] {
+  left: 0;
+  right: 0;
+  inset-block: calc(812 * 0.0625vw) calc(100 * 0.0625vw);
+  background: repeating-linear-gradient(to right, transparent 0 calc(214 * 0.0625vw), #3b3b4d 0 calc(230 * 0.0625vw));
+}
+
+.monorail[data-rail="track"] {
+  left: 0;
+  right: 0;
+  top: calc(804 * 0.0625vw);
+  height: calc(12 * 0.0625vw);
+  background: radial-gradient(circle calc(2 * 0.0625vw), #6cf6fd 90%, transparent) calc(10 * 0.0625vw) 70% / calc(40 * 0.0625vw) 100% repeat-x,
+        linear-gradient(to bottom, #c7c9db 0 25%, #777792 0 60%, #3b3b4d 0);
+}
+
+.train {
+  left: calc(-360 * 0.0625vw);
+  top: calc(776 * 0.0625vw);
+  width: calc(330 * 0.0625vw);
+  height: calc(28 * 0.0625vw);
+  border-radius: calc(12 * 0.0625vw) calc(70 * 0.0625vw) calc(6 * 0.0625vw) calc(12 * 0.0625vw) / calc(12 * 0.0625vw) calc(26 * 0.0625vw) calc(6 * 0.0625vw) calc(12 * 0.0625vw);
+  background: linear-gradient(to bottom, transparent 70%, #00b5ce 0 82%, transparent 0),
+      repeating-linear-gradient(to right, #6cf6fd 0 calc(22 * 0.0625vw), transparent 0 calc(28 * 0.0625vw)) calc(20 * 0.0625vw) 30% / calc(250 * 0.0625vw) 28% no-repeat,
+      linear-gradient(to bottom, #c7c9db, #777792);
+  animation: glide 18s linear infinite;
+}
+
+.shard {
+  inset: 0;
+}
+
+.shard[data-shard="glow"] {
+  background: radial-gradient(calc(220 * 0.0625vw) calc(200 * 0.0625vw) at calc(120 * 0.0625vw) calc(900 * 0.0625vw), rgba(235, 99, 197, 0.5), transparent),
+        radial-gradient(calc(160 * 0.0625vw) calc(120 * 0.0625vw) at calc(1480 * 0.0625vw) calc(940 * 0.0625vw), rgba(235, 99, 197, 0.5), transparent);
+}
+
+.shard[data-shard="west-lit"] {
+  clip-path: polygon(0.62% 101%, 0.62% 101%, 1.12% 84%, 2.5% 101%, 3.5% 101%, 5.5% 75%, 6% 101%, 7.62% 101%, 10.12% 81%, 9.38% 101%, 10.06% 101%, 13.88% 87%, 12.25% 101%, 14.25% 101%, 16.75% 92%, 15.62% 101%, 17% 101%);
+  background: linear-gradient(to bottom, #ff97dc, #bc62ae);
+}
+
+.shard[data-shard="west-dark"] {
+  clip-path: polygon(0.62% 101%, 2.5% 101%, 1.12% 84%, 4.38% 101%, 6% 101%, 5.5% 75%, 8.5% 101%, 9.38% 101%, 10.12% 81%, 11.12% 101%, 12.25% 101%, 13.88% 87%, 14.44% 101%, 15.62% 101%, 16.75% 92%, 17% 101%, 17% 101%);
+  background: #6b2176;
+}
+
+.shard[data-shard="east-lit"] {
+  clip-path: polygon(87.5% 101%, 87.5% 101%, 87.88% 90%, 88.75% 101%, 89.56% 101%, 91.62% 84%, 91.38% 101%, 92.88% 101%, 95.12% 89%, 94.12% 101%, 95.56% 101%, 97.25% 93%, 96.62% 101%, 97.69% 101%);
+  background: linear-gradient(to bottom, #ff97dc, #bc62ae);
+}
+
+.shard[data-shard="east-dark"] {
+  clip-path: polygon(87.5% 101%, 88.75% 101%, 87.88% 90%, 90% 101%, 91.38% 101%, 91.62% 84%, 93.19% 101%, 94.12% 101%, 95.12% 89%, 95.38% 101%, 96.62% 101%, 97.25% 93%, 97.69% 101%, 97.69% 101%);
+  background: #6b2176;
+}
+
+.plume {
+  left: calc(1186 * 0.0625vw);
+  top: calc(748 * 0.0625vw);
+  width: calc(24 * 0.0625vw);
+  height: calc(110 * 0.0625vw);
+  transform-origin: 50% 0;
+  background: radial-gradient(50% 100% at 50% 0, #fff9d3 20%, #ffae23 50%, transparent);
+  transform: scale(1 0);
+  animation: ignite 16s ease-out infinite;
+}
+
+.plume::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(40% 70% at 50% 0, #fff9d3, transparent);
+  animation: flicker 0.12s steps(2, end) infinite alternate;
+}
+
+.exhaust {
+  inset: 0;
+  transform-origin: calc(1198 * 0.0625vw) calc(760 * 0.0625vw);
+  background: radial-gradient(circle calc(40 * 0.0625vw) at calc(1150 * 0.0625vw) calc(752 * 0.0625vw), rgba(192, 186, 207, 0.85) 60%, transparent),
+      radial-gradient(circle calc(52 * 0.0625vw) at calc(1200 * 0.0625vw) calc(744 * 0.0625vw), rgba(192, 186, 207, 0.85) 60%, transparent),
+      radial-gradient(circle calc(36 * 0.0625vw) at calc(1252 * 0.0625vw) calc(754 * 0.0625vw), rgba(192, 186, 207, 0.85) 60%, transparent);
+  opacity: 0;
+  animation: billow 16s ease-out infinite;
+}
+
+.satellite {
+  left: calc(160 * 0.0625vw);
+  top: calc(70 * 0.0625vw);
+  width: calc(44 * 0.0625vw);
+  height: calc(12 * 0.0625vw);
+  background: linear-gradient(#c7c9db 0 0) 50% 50% / 24% 100% no-repeat,
+      linear-gradient(#00b5ce 0 0) 0 50% / 34% 60% no-repeat,
+      linear-gradient(#00b5ce 0 0) 100% 50% / 34% 60% no-repeat;
+  animation: orbit 50s linear infinite;
+}
+
+.meteor {
+  left: calc(980 * 0.0625vw);
+  top: calc(40 * 0.0625vw);
+  width: calc(160 * 0.0625vw);
+  height: calc(3 * 0.0625vw);
+  border-radius: calc(2 * 0.0625vw);
+  transform: rotate(152deg);
+  transform-origin: 0 50%;
+  background: linear-gradient(to left, transparent, #edffff);
+  opacity: 0;
+  animation: streak 9s ease-in infinite;
+}
+
+.spores {
+  inset: 0;
+  animation: float 9s ease-in-out infinite;
+}
+
+.spores[data-spores="a"] {
+  background: radial-gradient(circle calc(2.2 * 0.0625vw) at calc(150 * 0.0625vw) calc(949 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(2.9 * 0.0625vw) at calc(291 * 0.0625vw) calc(767 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(1.7 * 0.0625vw) at calc(147 * 0.0625vw) calc(926 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(2.2 * 0.0625vw) at calc(100 * 0.0625vw) calc(788 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(2.5 * 0.0625vw) at calc(146 * 0.0625vw) calc(857 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(1.6 * 0.0625vw) at calc(313 * 0.0625vw) calc(823 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(2.0 * 0.0625vw) at calc(130 * 0.0625vw) calc(864 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(2.8 * 0.0625vw) at calc(219 * 0.0625vw) calc(800 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(2.6 * 0.0625vw) at calc(56 * 0.0625vw) calc(795 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(1.8 * 0.0625vw) at calc(1493 * 0.0625vw) calc(792 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(2.8 * 0.0625vw) at calc(1381 * 0.0625vw) calc(813 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(2.1 * 0.0625vw) at calc(1422 * 0.0625vw) calc(802 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(3.0 * 0.0625vw) at calc(1430 * 0.0625vw) calc(898 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(1.9 * 0.0625vw) at calc(1540 * 0.0625vw) calc(812 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(3.1 * 0.0625vw) at calc(1556 * 0.0625vw) calc(810 * 0.0625vw), #ffbef0 70%, transparent);
+}
+
+.spores[data-spores="b"] {
+  animation-delay: calc(9s / -2);
+  background: radial-gradient(circle calc(1.6 * 0.0625vw) at calc(216 * 0.0625vw) calc(836 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(3.1 * 0.0625vw) at calc(232 * 0.0625vw) calc(802 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(2.1 * 0.0625vw) at calc(155 * 0.0625vw) calc(776 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(2.6 * 0.0625vw) at calc(320 * 0.0625vw) calc(760 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(2.1 * 0.0625vw) at calc(193 * 0.0625vw) calc(776 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(2.7 * 0.0625vw) at calc(176 * 0.0625vw) calc(883 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(2.4 * 0.0625vw) at calc(114 * 0.0625vw) calc(883 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(2.0 * 0.0625vw) at calc(110 * 0.0625vw) calc(774 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(2.2 * 0.0625vw) at calc(31 * 0.0625vw) calc(951 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(2.5 * 0.0625vw) at calc(1483 * 0.0625vw) calc(764 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(2.2 * 0.0625vw) at calc(1487 * 0.0625vw) calc(853 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(1.7 * 0.0625vw) at calc(1382 * 0.0625vw) calc(875 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(3.1 * 0.0625vw) at calc(1426 * 0.0625vw) calc(919 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(2.8 * 0.0625vw) at calc(1430 * 0.0625vw) calc(790 * 0.0625vw), #ffbef0 70%, transparent),
+      radial-gradient(circle calc(2.4 * 0.0625vw) at calc(1498 * 0.0625vw) calc(848 * 0.0625vw), #ffbef0 70%, transparent);
+}
+
+@keyframes twinkle {
+  to {
+    opacity: 0.4;
+  }
+}
+
+@keyframes launch {
+  6% {
+    opacity: 1;
+  }
+  34% {
+    transform: translate(0 0);
+    animation-timing-function: cubic-bezier(0.55, 0, 0.9, 0.5);
+  }
+  90%,
+    to {
+    transform: translate(0 calc(-1000 * 0.0625vw));
+    opacity: 1;
+  }
+}
+
+@keyframes ignite {
+  26% {
+    transform: scale(1 0);
+  }
+  34% {
+    transform: scale(1.2 0.15);
+  }
+  55% {
+    transform: scale(1.3 1);
+  }
+  to {
+    transform: scale(1.4 1.6);
+  }
+}
+
+@keyframes flicker {
+  to {
+    opacity: 0.4;
+  }
+}
+
+@keyframes billow {
+  28% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  70%,
+    to {
+    opacity: 0;
+    transform: scale(1.8 1.3);
+  }
+}
+
+@keyframes glide {
+  60%,
+    to {
+    transform: translate(calc(2000 * 0.0625vw) 0);
+  }
+}
+
+@keyframes orbit {
+  to {
+    transform: translate(calc(1300 * 0.0625vw) calc(120 * 0.0625vw));
+  }
+}
+
+@keyframes streak {
+  0%,
+    88% {
+    opacity: 0;
+    transform: translate(0 0);
+  }
+  90% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translate(calc(-300 * 0.0625vw) calc(160 * 0.0625vw));
+  }
+}
+
+@keyframes float {
+  0% {
+    opacity: 0;
+    transform: translate(0 0);
+  }
+  30% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translate(calc(14 * 0.0625vw) calc(-120 * 0.0625vw));
+  }
+}
+
+@keyframes scan {
+  to {
+    transform: scale(-1 1);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.15;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .beacons,
+  .rocket,
+  .plume,
+  .plume::after,
+  .exhaust,
+  .train,
+  .satellite,
+  .meteor,
+  .spores,
+  .spores[data-spores],
+  .stars[data-stars],
+  .colony[data-part] {
+    animation: none;
+  }
+
+  .rocket,
+.spores {
+    opacity: 1;
+  }
+
+  .train {
+    transform: translate(calc(1240 * 0.0625vw) 0);
+  }
+
+}
