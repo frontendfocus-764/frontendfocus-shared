@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <title>WebGL 3d Ripple Grid Animation</title>
+</head>
+<body>
+   <main style="margin-top: 60px;">
+        <section class="experiment" aria-label="Interactive ripple grid experiment">
+            <div class="stage">
+                <canvas id="scene" aria-label="A field of square columns. Click a column to send a circular ripple across the grid. Drag to rotate the view."></canvas>
+                <div class="stage-footer">
+                    <span>Click a column to send a circular ripple. Drag to rotate. Scroll to zoom.</span>
+                    <div class="views" aria-label="Camera views">
+                        <button type="button" data-view="perspective" aria-pressed="true">Perspective</button>
+                        <button type="button" data-view="top" aria-pressed="false">Above</button>
+                    </div>
+                </div>
+                <p id="error" role="alert" hidden></p>
+            </div>
+
+            <div class="controls">
+                <div class="transport">
+                    <button id="play" type="button" class="primary">Pause</button>
+                    <button id="center" type="button">Center pulse</button>
+                </div>
+                <div class="control speed">
+                    <label for="speed">Speed <output id="speed-value" for="speed">2.4</output></label>
+                    <input id="speed" type="range" min="1.5" max="4.5" step="0.1" value="2.4">
+                </div>
+                <div class="control strength">
+                    <label for="strength">Strength <output id="strength-value" for="strength">0.9</output></label>
+                    <input id="strength" type="range" min="0.4" max="1.5" step="0.1" value="0.9">
+                </div>
+                <div class="control damping">
+                    <label for="damping">Damping <output id="damping-value" for="damping">1.2</output></label>
+                    <input id="damping" type="range" min="0.7" max="2.2" step="0.1" value="1.2">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="frontendfocus.js"></script>
+</body>
+</html>
