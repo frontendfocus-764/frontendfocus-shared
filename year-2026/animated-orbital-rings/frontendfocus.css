@@ -1,0 +1,323 @@
+@layer reset, base, sphere, ui, responsive, accessibility;
+	@property --angle {
+	syntax: "<angle>";
+	inherits: true;
+	initial-value: 0deg;
+}
+@property --growth {
+	syntax: "<number>";
+	inherits: false;
+	initial-value: 1;
+}
+@property --life-opacity {
+	syntax: "<number>";
+	inherits: false;
+	initial-value: 1;
+}
+@layer reset {
+	*, *::before, *::after {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+}
+}
+@layer base {
+	:root {
+	--surface: oklch(15.91% 0.0000 0.00);
+	--text: oklch(94.77% 0.0066 106.53);
+	--muted: oklch(56.77% 0.0075 106.64);
+	--dim: oklch(50.55% 0.0062 106.62);
+	--control: oklch(61.52% 0.0074 106.61);
+	--link: oklch(73.39% 0.0086 98.93);
+	--social: oklch(68.09% 0.0101 106.66);
+	--focus: oklch(74.21% 0.1087 213.76);
+	--check: oklch(94.01% 0.0107 112.37);
+	--white: oklch(97.72% 0.0132 102.01);
+	--pink: oklch(65.49% 0.2239 7.73);
+	--cyan: oklch(65.86% 0.1116 220.25);
+	--violet: oklch(64.96% 0.1463 284.27);
+	--yellow: oklch(87.76% 0.1499 93.44);
+	font-family: "Avenir Next", system-ui, sans-serif;
+	color-scheme: dark;
+	color: var(--text);
+	background: var(--surface);
+	-webkit-font-smoothing: antialiased;
+}
+body {
+	min-height: 100svh;
+	overflow-x: clip;
+	background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2264%22%20height%3D%2264%22%20viewBox%3D%220%200%2064%2064%22%3E%20%3Cg%20fill%3D%22none%22%20stroke%3D%22%23363631%22%20stroke-width%3D%220.6%22%3E%20%3Cpath%20d%3D%22M64%200H0V64%22%20stroke-opacity%3D%220.32%22%20%2F%3E%20%3Cpath%20d%3D%22M30%2032h4M32%2030v4%22%20stroke-opacity%3D%220.26%22%20%2F%3E%20%3C%2Fg%3E%20%3C%2Fsvg%3E");
+	background-size: 64px 64px;
+	background-position: center;
+	padding: 28px clamp(20px, 5vw, 64px) 22px;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+}
+header {
+	width: 100%;
+	max-width: 1200px;
+	margin-inline: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+}
+h1 {
+	font-size: 17px;
+	font-weight: 500;
+	letter-spacing: -.03em;
+	margin: 0;
+}
+h1 span {
+	color: var(--dim);
+	font-weight: 400;
+}
+.header-meta {
+	margin: 0;
+	color: var(--muted);
+	font-size: 11px;
+	letter-spacing: .04em;
+}
+#app {
+	display: grid;
+	place-items: center;
+	min-height: 0;
+	padding-block: 34px;
+}
+.experiment {
+	display: grid;
+	justify-items: center;
+	gap: 32px;
+}
+}
+@layer sphere {
+	.scene {
+	--diameter: min(76vw, 68svh, 760px);
+	--radius: calc(var(--diameter) / 2);
+	position: relative;
+	width: calc(var(--diameter) + 16px);
+	height: calc(var(--diameter) + 16px);
+	padding: 8px;
+	overflow: clip;
+}
+.scene::before {
+	content: "";
+	position: absolute;
+	inset: 8px;
+	border-radius: 50%;
+	background: var(--surface);
+	pointer-events: none;
+}
+.circle-drops {
+	--angle: 24deg;
+	--time-scale: 1;
+	--animation-duration: calc(36s * var(--time-scale));
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transform: rotateZ(-14deg);
+	transform-style: preserve-3d;
+	animation: rotating var(--animation-duration) linear infinite;
+}
+.rotate-item {
+	--phase: calc(var(--angle) + var(--longitude));
+	--orbit-radius: calc(var(--radius) * cos(var(--latitude)));
+	--x: calc(var(--orbit-radius) * cos(var(--phase)));
+	--z: calc(var(--orbit-radius) * sin(var(--phase)));
+	--line-w: calc(2 * var(--orbit-radius) * abs(cos(var(--phase))));
+	position: absolute;
+	left: 50%;
+	top: calc(50% + var(--radius) * sin(var(--latitude)));
+	width: 0;
+	height: 0;
+	transform-style: preserve-3d;
+}
+.rotate-item > span {
+	position: absolute;
+	width: var(--line-w);
+	height: 1px;
+	left: calc(var(--line-w) / -2);
+	top: -.5px;
+	background: oklch(100% 0 0);
+	opacity: 0;
+	transition: opacity 180ms ease;
+}
+.rotate-item::before, .rotate-item::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: calc(var(--size) * var(--diameter));
+	height: calc(var(--size) * var(--diameter));
+	border: var(--stroke) solid var(--color);
+	border-radius: 50%;
+	transform:
+      translate(-50%, -50%)
+      translate3d(var(--ring-x), 0, var(--ring-z))
+      rotateY(calc(90deg - var(--ring-phase)))
+      rotateX(calc(-1 * var(--latitude)))
+      scale(var(--growth));
+	opacity: calc((.60 + .40 * sin(var(--ring-phase))) * var(--life-opacity));
+	animation: ring-life calc(var(--duration) * var(--time-scale)) ease-out calc(var(--delay) * var(--time-scale)) infinite;
+}
+.rotate-item::before {
+	--duration: var(--duration-a);
+	--delay: var(--delay-a);
+	--size: var(--size-a);
+	--color: var(--color-a);
+	--stroke: var(--stroke-a, 1.5px);
+	--ring-x: var(--x);
+	--ring-z: var(--z);
+	--ring-phase: var(--phase);
+}
+.rotate-item::after {
+	--duration: var(--duration-b);
+	--delay: var(--delay-b);
+	--size: var(--size-b);
+	--color: var(--color-b);
+	--stroke: var(--stroke-b, 1.5px);
+	--ring-x: calc(-1 * var(--x));
+	--ring-z: calc(-1 * var(--z));
+	--ring-phase: calc(var(--phase) + 180deg);
+}
+@keyframes rotating {
+	from {
+	--angle: 24deg;
+}
+to {
+	--angle: 384deg;
+}
+}
+@keyframes ring-life {
+	0% {
+	--growth: 0;
+	--life-opacity: 0;
+}
+6% {
+	--life-opacity: 1;
+}
+60%, 78% {
+	--growth: 1;
+	--life-opacity: 1;
+}
+86%, 100% {
+	--growth: 1;
+	--life-opacity: 0;
+}
+}
+}
+@layer ui {
+	.controls {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 10px 24px;
+	color: var(--control);
+	font-size: 12px;
+}
+.controls label {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	cursor: pointer;
+	padding: 8px 0;
+}
+.controls input {
+	width: 13px;
+	height: 13px;
+	margin: 0;
+	accent-color: var(--check);
+}
+.controls input:focus-visible {
+	outline: 2px solid var(--focus);
+	outline-offset: 4px;
+}
+.experiment:has(#pause:checked) .circle-drops,
+  .experiment:has(#pause:checked) .rotate-item::before,
+  .experiment:has(#pause:checked) .rotate-item::after {
+	animation-play-state: paused;
+}
+.experiment:has(#show-lines:checked) .rotate-item > span {
+	opacity: .085;
+}
+.experiment:has(#slow:checked) .circle-drops {
+	--time-scale: 2;
+}
+.social-links {
+	display: flex;
+	gap: 10px;
+	flex-shrink: 0;
+}
+.social-links a {
+	display: grid;
+	place-items: center;
+	width: 44px;
+	height: 44px;
+	border: 1px solid oklch(100% 0 0 / 9.4%);
+	border-radius: 50%;
+	background: oklch(100% 0 0 / 1.6%);
+	color: var(--social);
+	text-decoration: none;
+}
+.social-links svg {
+	display: block;
+	width: 20px;
+	height: 20px;
+}
+.social-links a:hover {
+	color: var(--text);
+	background: oklch(100% 0 0 / 4.7%);
+	border-color: oklch(100% 0 0 / 22%);
+}
+.social-links a:focus-visible {
+	outline: 2px solid var(--focus);
+	outline-offset: 5px;
+}
+}
+@layer responsive {
+	@media (max-width: 520px) {
+	body {
+	padding: 22px 20px 20px;
+}
+header {
+	align-items: flex-start;
+}
+h1 {
+	font-size: 15px;
+}
+h1 span {
+	display: block;
+	margin-top: 5px;
+	font-size: 12px;
+}
+.header-meta {
+	font-size: 10px;
+	padding-top: 3px;
+}
+.scene {
+	--diameter: min(84vw, 62svh);
+}
+#app {
+	padding-block: 38px;
+}
+.controls {
+	gap: 8px 18px;
+	font-size: 11px;
+}
+}
+}
+@layer accessibility {
+	@media (prefers-reduced-motion: reduce) {
+	.circle-drops {
+	animation: none;
+}
+.rotate-item::before, .rotate-item::after {
+	animation: none;
+}
+.rotate-item > span {
+	transition: none;
+}
+}
+}
