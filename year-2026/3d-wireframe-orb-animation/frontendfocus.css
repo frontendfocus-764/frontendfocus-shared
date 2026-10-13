@@ -1,0 +1,21 @@
+:root{
+  --back-lo:#7b7b7b;
+  --back-mid:#b3b3b3;
+  --back-hi:#dadada;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;width: 100%}
+body{background:linear-gradient(to top right,var(--back-lo),var(--back-mid) 45%,var(--back-hi));overflow:hidden}
+.stage{position:fixed;left:50%;top:50%;translate:-50% -50%;isolation:isolate}
+.stage canvas{position:absolute;inset:0;width:100%;height:100%}
+.bg{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
+#bgbokeh{filter:blur(2.6px)}
+#bgsmoke{filter:blur(7px)}
+#smoke{filter:blur(8px)}
+#far{filter:blur(3px)}
+#mid{filter:blur(1.5px)}
+#rimblur{filter:blur(2.4px)}
+#beadblur{filter:blur(2.4px)}
+#bloom{filter:blur(10px);mix-blend-mode:screen}
+#glow{mix-blend-mode:screen}
