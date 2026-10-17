@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap");
+
+/*=============================
+Bubble
+=============================*/
+.bubble {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--size);
+  height: var(--size);
+  margin: calc(var(--size) / -2) 0 0 calc(var(--size) / -2);
+  border-radius: 50%;
+  cursor: pointer;
+  will-change: transform;
+  /* the clear film: almost invisible in the middle, brighter at the rim */
+  background: radial-gradient(
+      circle at 73% 77%,
+      rgba(255, 255, 255, 0.55) 0 1.6%,
+      rgba(255, 255, 255, 0) 3.6%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      transparent 55%,
+      rgba(255, 255, 255, 0.06) 68%,
+      rgba(255, 255, 255, 0.22) 100%
+    );
+  box-shadow: inset 0 0 calc(var(--size) * 0.08) rgba(255, 255, 255, 0.25),
+    inset calc(var(--size) * 0.06) calc(var(--size) * -0.08)
+      calc(var(--size) * 0.18) rgba(120, 210, 255, 0.18),
+    inset calc(var(--size) * -0.06) calc(var(--size) * 0.06)
+      calc(var(--size) * 0.16) rgba(255, 140, 220, 0.16);
+}
+/* rainbow interference, only near the rim, slowly swirling */
+.bubble::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from var(--turn, 0deg),
+    #ff8fd8,
+    #ffd879,
+    #8dffd0,
+    #79cfff,
+    #b98cff,
+    #ff8fd8
+  );
+  -webkit-mask: radial-gradient(circle, transparent 60%, #000 74%, #000 100%);
+  mask: radial-gradient(circle, transparent 60%, #000 74%, #000 100%);
+  opacity: 0.55;
+  mix-blend-mode: screen;
+  animation: swirl var(--swirl, 9s) linear infinite;
+}
+/* window reflection (big) and a small glint */
+.bubble::after {
+  content: "";
+  position: absolute;
+  top: 12%;
+  left: 18%;
+  width: 34%;
+  height: 22%;
+  border-radius: 50%;
+  border-top: calc(var(--size) * 0.035) solid rgba(255, 255, 255, 0.75);
+  transform: rotate(-32deg);
+  filter: blur(0.4px);
+}
+@property --turn {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes swirl {
+  to {
+    --turn: 360deg;
+  }
+}
+
+/* popping: the film flashes and vanishes */
+.bubble.is-popping {
+  pointer-events: none;
+  animation: pop 0.14s ease-out forwards;
+}
+@keyframes pop {
+  to {
+    opacity: 0;
+    scale: 1.12;
+  }
+}
+
+/* pieces that fly out when a bubble pops */
+.drop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--d);
+  height: var(--d);
+  margin: calc(var(--d) / -2) 0 0 calc(var(--d) / -2);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 35%,
+    #fff,
+    rgba(190, 230, 255, 0.7) 60%,
+    rgba(190, 230, 255, 0)
+  );
+  pointer-events: none;
+}
+.ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bubble::before {
+    animation: none;
+  }
+}
+
+/*=============================
+Page layout (not needed for the bubbles)
+=============================*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: "Jost", sans-serif;
+  color: #f3efe6;
+  background: #2b2a27;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.sky {
+  position: fixed;
+  inset: 0;
+}
+.count {
+  position: fixed;
+  right: 24px;
+  bottom: 20px;
+  z-index: 1;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: rgba(243, 239, 230, 0.65);
+  pointer-events: none;
+}
+.count b {
+  font-weight: 500;
+  color: #e8dc6a;
+}
+.count a {
+  color: inherit;
+  pointer-events: auto;
+}
+@media (max-width: 600px) {
+  .count {
+    right: 16px;
+    bottom: 14px;
+  }
+}
