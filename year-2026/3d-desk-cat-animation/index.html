@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <title>Interactive 3D Desk Cat | HTML, CSS & JavaScript</title>
+</head>
+<body>
+    <div class="stage">
+    <div class="card" id="card">
+        <div class="status-badge"><span class="dot"></span> <span id="status-text">Curious</span></div>
+        
+        <div class="cat-wrapper">
+        <div class="cat" id="cat">
+            <!-- Ears -->
+            <div class="ear ear-left"></div>
+            <div class="ear ear-right"></div>
+            
+            <!-- Head -->
+            <div class="head">
+            <!-- Eyes -->
+            <div class="eye eye-left">
+                <div class="pupil"></div>
+                <div class="sparkle"></div>
+            </div>
+            <div class="eye eye-right">
+                <div class="pupil"></div>
+                <div class="sparkle"></div>
+            </div>
+            
+            <!-- Nose & Mouth -->
+            <div class="snout">
+                <div class="nose"></div>
+                <div class="mouth"></div>
+            </div>
+            
+            <!-- Whiskers -->
+            <div class="whiskers left">
+                <span></span><span></span>
+            </div>
+            <div class="whiskers right">
+                <span></span><span></span>
+            </div>
+            </div>
+            
+            <!-- Paws -->
+            <div class="paws">
+            <div class="paw paw-left"></div>
+            <div class="paw paw-right"></div>
+            </div>
+        </div>
+        </div>
+
+        <div class="info">
+        <h3>Hover to look • Click & hold to pet</h3>
+        <div class="purr-bar">
+            <div class="purr-fill" id="purrFill"></div>
+        </div>
+        </div>
+    </div>
+    </div>
+    <script src="frontendfocus.js"></script>
+</body>
+</html>

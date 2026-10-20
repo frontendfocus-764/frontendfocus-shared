@@ -1,0 +1,295 @@
+:root {
+  --bg: #0f172a;
+  --card-bg: rgba(30, 41, 59, 0.7);
+  --accent: #f43f5e;
+  --cat-color: #f8fafc;
+  --cat-inner: #fecdd3;
+  --eye-color: #10b981;
+  
+  /* Dynamic interaction values updated via JS */
+  --rx: 0deg;
+  --ry: 0deg;
+  --mx: 0px;
+  --my: 0px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  overflow: hidden;
+  color: #e2e8f0;
+}
+
+.stage {
+  perspective: 1000px;
+}
+
+.card {
+  width: 320px;
+  padding: 2rem 1.5rem 1.5rem;
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rx)) rotateY(var(--ry));
+  transition: transform 0.1s ease-out;
+  position: relative;
+}
+
+.status-badge {
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.cat-wrapper {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+
+.cat {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  background: var(--cat-color);
+  border-radius: 50%;
+  box-shadow: inset -8px -8px 0 rgba(0,0,0,0.05), 0 15px 25px rgba(0,0,0,0.2);
+  transform-style: preserve-3d;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Ears */
+.ear {
+  position: absolute;
+  top: -10px;
+  width: 45px;
+  height: 55px;
+  background: var(--cat-color);
+  border-radius: 80% 20% 0 0;
+}
+
+.ear::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  width: 25px;
+  height: 35px;
+  background: var(--cat-inner);
+  border-radius: 80% 20% 0 0;
+}
+
+.ear-left {
+  left: 10px;
+  transform: rotate(-20deg) rotateY(calc(var(--mx) * -0.2));
+}
+
+.ear-right {
+  right: 10px;
+  transform: rotate(20deg) scaleX(-1) rotateY(calc(var(--mx) * -0.2));
+}
+
+/* Head / Face Elements */
+.head {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translate3d(var(--mx), var(--my), 20px);
+  transition: transform 0.05s ease-out;
+}
+
+.eye {
+  position: absolute;
+  top: 48px;
+  width: 28px;
+  height: 34px;
+  background: #000;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eye-left { left: 28px; }
+.eye-right { right: 28px; }
+
+.pupil {
+  width: 16px;
+  height: 24px;
+  background: var(--eye-color);
+  border-radius: 50%;
+  transform: translate(calc(var(--mx) * 0.3), calc(var(--my) * 0.3));
+  transition: transform 0.05s ease-out;
+}
+
+.sparkle {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.snout {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nose {
+  width: 12px;
+  height: 8px;
+  background: var(--cat-inner);
+  border-radius: 40% 40% 60% 60%;
+}
+
+.mouth {
+  width: 20px;
+  height: 8px;
+  border-bottom: 2px solid #cbd5e1;
+  border-radius: 0 0 50% 50%;
+}
+
+.whiskers {
+  position: absolute;
+  top: 82px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.whiskers span {
+  width: 30px;
+  height: 2px;
+  background: #cbd5e1;
+  border-radius: 2px;
+}
+
+.whiskers.left { left: -15px; transform: rotate(5deg); }
+.whiskers.right { right: -15px; transform: rotate(-5deg) scaleX(-1); }
+
+/* Paws */
+.paws {
+  position: absolute;
+  bottom: -5px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.paw {
+  width: 32px;
+  height: 20px;
+  background: var(--cat-color);
+  border-radius: 12px 12px 6px 6px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Info & Purr Meter */
+.info {
+  margin-top: 1.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+.info h3 {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+
+.purr-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.purr-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #f43f5e, #fb7185);
+  border-radius: 4px;
+  transition: width 0.2s ease-out;
+}
+
+/* Petting State Animations */
+.cat.purring {
+  animation: squish 0.3s ease infinite alternate;
+}
+
+.cat.purring .eye {
+  height: 6px;
+  margin-top: 14px;
+  border-radius: 0;
+  background: transparent;
+  border-bottom: 3px solid #000;
+}
+
+.cat.purring .pupil, 
+.cat.purring .sparkle {
+  display: none;
+}
+
+@keyframes squish {
+  from { transform: scale(1, 0.95) translateY(4px); }
+  to { transform: scale(1.05, 0.92) translateY(8px); }
+}
+
+/* Floating Heart Particle */
+.heart-particle {
+  position: absolute;
+  pointer-events: none;
+  color: var(--accent);
+  font-size: 1.2rem;
+  animation: floatUp 1s ease-out forwards;
+  z-index: 100;
+}
+
+@keyframes floatUp {
+  0% { transform: translate(-50%, -50%) scale(0.5) rotate(0deg); opacity: 1; }
+  100% { transform: translate(-50%, -120px) scale(1.4) rotate(20deg); opacity: 0; }
+}
