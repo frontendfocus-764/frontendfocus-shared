@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <title>Spherical Image Gallery</title>
+</head>
+<body>
+    <main>
+      <div class="experiment">
+        <form class="scene" role="group" aria-label="Orbiting image gallery. Select a photo to open a large preview and pause the orbit.">
+          <input class="preview-dismiss" type="radio" name="photo-preview" id="preview-closed" aria-label="Close preview" checked />
+          <div class="sphere">
+            <span class="orbiter" style="--latitude: -53.669deg; --longitude: 17.058deg; --size: 0.1422; --roll: -3deg">
+              <input class="preview-toggle" type="radio" name="photo-preview" id="preview-photo-10" aria-label="Preview Across the lake" />
+              <label class="preview-backdrop" for="preview-closed" aria-label="Close preview"></label>
+              <label class="image-preview" for="preview-photo-10">
+                <span class="preview-card">
+                  <img src="./img/img-1.webp" width="1200" height="800" alt="Evergreen forest overlooking a blue lake and distant mountains" draggable="false" />
+                  <span class="preview-caption"><span class="preview-title">Across the lake</span><span class="preview-credit">Photo by Paul Jarvis</span><span class="preview-count">01 / 24</span></span>
+                </span>
+              </label>
+              <button class="preview-close" type="reset" aria-label="'=[]lose preview"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+              <label class="preview-nav preview-prev" for="preview-photo-1040" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></label>
+              <label class="preview-nav preview-next" for="preview-photo-11" aria-label="Next photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></label>
+            </span>
+            <span class="orbiter" style="--latitude: -46.475deg; --longitude: 156.474deg; --size: 0.1453; --roll: 12deg">
+              <input class="preview-toggle" type="radio" name="photo-preview" id="preview-photo-11" aria-label="Preview River valley" />
+              <label class="preview-backdrop" for="preview-closed" aria-label="Close preview"></label>
+              <label class="image-preview" for="preview-photo-11">
+                <span class="preview-card">
+                  <img src="./img/img-2.webp" width="1200" height="800" alt="A winding river between misty wooded hills" draggable="false" />
+                  <span class="preview-caption"><span class="preview-title">River valley</span><span class="preview-credit">Photo by Paul Jarvis</span><span class="preview-count">02 / 24</span></span>
+                </span>
+              </label>
+              <button class="preview-close" type="reset" aria-label="Close preview"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+              <label class="preview-nav preview-prev" for="preview-photo-10" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></label>
+              <label class="preview-nav preview-next" for="preview-photo-12" aria-label="Next photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></label>
+            </span>
+            <span class="orbiter" style="--latitude: -41.229deg; --longitude: 290.965deg; --size: 0.1305; --roll: 12deg">
+              <input class="preview-toggle" type="radio" name="photo-preview" id="preview-photo-12" aria-label="Preview Quiet shore" />
+              <label class="preview-backdrop" for="preview-closed" aria-label="Close preview"></label>
+              <label class="image-preview" for="preview-photo-12">
+                <span class="preview-card">
+                  <img src="./img/img-3.webp" width="1200" height="800" alt="Dark rocks on a sandy beach beside calm water" draggable="false" />
+                  <span class="preview-caption"><span class="preview-title">Quiet shore</span><span class="preview-credit">Photo by Paul Jarvis</span><span class="preview-count">03 / 24</span></span>
+                </span>
+              </label>
+              <button class="preview-close" type="reset" aria-label="Close preview"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+              <label class="preview-nav preview-prev" for="preview-photo-11" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></label>
+              <label class="preview-nav preview-next" for="preview-photo-13" aria-label="Next photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></label>
+            </span>
+            <span class="orbiter" style="--latitude: -35.601deg; --longitude: 65.869deg; --size: 0.1392; --roll: 9deg">
+              <input class="preview-toggle" type="radio" name="photo-preview" id="preview-photo-13" aria-label="Preview Forest coast" />
+              <label class="preview-backdrop" for="preview-closed" aria-label="Close preview"></label>
+              <label class="image-preview" for="preview-photo-13">
+                <span class="preview-card">
+                  <img src="./img/img-4.webp" width="1200" height="800" alt="Pine trees along a pebbled coastline" draggable="false" />
+                  <span class="preview-caption"><span class="preview-title">Forest coast</span><span class="preview-credit">Photo by Paul Jarvis</span><span class="preview-count">04 / 24</span></span>
+                </span>
+              </label>
+              <button class="preview-close" type="reset" aria-label="Close preview"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+              <label class="preview-nav preview-prev" for="preview-photo-12" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></label>
+              <label class="preview-nav preview-next" for="preview-photo-14" aria-label="Next photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></label>
+            </span>
+            <span class="orbiter" style="--latitude: -31.603deg; --longitude: 211.610deg; --size: 0.1203; --roll: -15deg">
+              <input class="preview-toggle" type="radio" name="photo-preview" id="preview-photo-14" aria-label="Preview Rocky shoreline" />
+              <label class="preview-backdrop" for="preview-closed" aria-label="Close preview"></label>
+              <label class="image-preview" for="preview-photo-14">
+                <span class="preview-card">
+                  <img src="./img/img-5.webp" width="1200" height="800" alt="Weathered rocks beside a pale blue sea" draggable="false" />
+                  <span class="preview-caption"><span class="preview-title">Rocky shoreline</span><span class="preview-credit">Photo by Paul Jarvis</span><span class="preview-count">05 / 24</span></span>
+                </span>
+              </label>
+              <button class="preview-close" type="reset" aria-label="Close preview"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+              <label class="preview-nav preview-prev" for="preview-photo-13" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></label>
+              <label class="preview-nav preview-next" for="preview-photo-15" aria-label="Next photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></label>
+            </span>
+            <span class="orbiter" style="--latitude: -27.226deg; --longitude: 344.010deg; --size: 0.1159; --roll: -11deg">
+              <input class="preview-toggle" type="radio" name="photo-preview" id="preview-photo-15" aria-label="Preview Hidden waterfall" />
+              <label class="preview-backdrop" for="preview-closed" aria-label="Close preview"></label>
+              <label class="image-preview" for="preview-photo-15">
+                <span class="preview-card">
+                  <img src="./img/img-6.webp" width="1200" height="800" alt="A waterfall flowing into a rocky forest stream" draggable="false" />
+                  <span class="preview-caption"><span class="preview-title">Hidden waterfall</span><span class="preview-credit">Photo by Paul Jarvis</span><span class="preview-count">06 / 24</span></span>
+                </span>
+              </label>
+              <button class="preview-close" type="reset" aria-label="Close preview"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+              <label class="preview-nav preview-prev" for="preview-photo-14" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></label>
+              <label class="preview-nav preview-next" for="preview-photo-16" aria-label="Next photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></label>
+            </span>
+            <span class="orbiter" style="--latitude: -23.349deg; --longitude: 120.396deg; --size: 0.1152; --roll: 2deg">
+              <input class="preview-toggle" type="radio" name="photo-preview" id="preview-photo-16" aria-label="Preview Open water" />
+              <label class="preview-backdrop" for="preview-closed" aria-label="Close preview"></label>
+              <label class="image-preview" for="preview-photo-16">
+                <span class="preview-card">
+                  <img src="./img/img-7.webp" width="1200" height="800" alt="Blue coastal water beyond rocks and driftwood" draggable="false" />
+                  <span class="preview-caption"><span class="preview-title">Open water</span><span class="preview-credit">Photo by Paul Jarvis</span><span class="preview-count">07 / 24</span></span>
+                </span>
+              </label>
+              <button class="preview-close" type="reset" aria-label="Close preview"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+              <label class="preview-nav preview-prev" for="preview-photo-15" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></label>
+              <label class="preview-nav preview-next" for="preview-photo-17" aria-label="Next photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></label>
+            </span>
+            <span class="orbiter" style="--latitude: -18.268deg; --longitude: 255.132deg; --size: 0.1165; --roll: 3deg">
+              <input class="preview-toggle" type="radio" name="photo-preview" id="preview-photo-17" aria-label="Preview Into the woods" />
+              <label class="preview-backdrop" for="preview-closed" aria-label="Close preview"></label>
+              <label class="image-preview" for="preview-photo-17">
+                <span class="preview-card">
+                  <img src="./img/img-8.webp" width="1200" height="800" alt="A narrow path through a sunny green meadow" draggable="false" />
+                  <span class="preview-caption"><span class="preview-title">Into the woods</span><span class="preview-credit">Photo by Paul Jarvis</span><span class="preview-count">08 / 24</span></span>
+                </span>
+              </label>
+              <button class="preview-close" type="reset" aria-label="Close preview"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+              <label class="preview-nav preview-prev" for="preview-photo-16" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></label>
+              <label class="preview-nav preview-next" for="preview-photo-18" aria-label="Next photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></label>
+            </span>
+            <span class="orbiter" style="--latitude: -15.114deg; --longitude: 43.145deg; --size: 0.1341; --roll: 6deg">
+              <input class="preview-toggle" type="radio" name="photo-preview" id="preview-photo-18" aria-label="Preview Meadow light" />
+              <label class="preview-backdrop" for="preview-closed" aria-label="Close preview"></label>
+              <label class="image-preview" for="preview-photo-18">
+                <span class="preview-card">
+                  <img src="./img/img-9.webp" width="1200" height="800" alt="Tall grasses in a summer meadow" draggable="false" />
+                  <span class="preview-caption"><span class="preview-title">Meadow light</span><span class="preview-credit">Photo by Paul Jarvis</span><span class="preview-count">09 / 24</span></span>
+                </span>
+              </label>
+              <button class="preview-close" type="reset" aria-label="Close preview"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+              <label class="preview-nav preview-prev" for="preview-photo-17" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></label>
+              <label class="preview-nav preview-next" for="preview-photo-19" aria-label="Next photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></label>
+            </span>
+            <span class="orbiter" style="--latitude: -9.599deg; --longitude: 180.365deg; --size: 0.1177; --roll: -13deg">
+              <input class="preview-toggle" type="radio" name="photo-preview" id="preview-photo-19" aria-label="Preview Moss and branches" />
+              <label class="preview-backdrop" for="preview-closed" aria-label="Close preview"></label>
+              <label class="image-preview" for="preview-photo-19">
+                <span class="preview-card">
+                  <img src="./img/img-10.webp" width="1200" height="800" alt="A moss-covered tree trunk reaching toward the sky" draggable="false" />
+                  <span class="preview-caption"><span class="preview-title">Moss and branches</span><span class="preview-credit">Photo by Paul Jarvis</span><span class="preview-count">10 / 24</span></span>
+                </span>
+              </label>
+              <button class="preview-close" type="reset" aria-label="Close preview"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+              <label class="preview-nav preview-prev" for="preview-photo-18" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></label>
+              <label class="preview-nav preview-next" for="preview-photo-28" aria-label="Next photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></label>
+            </span>
+            <span class="orbiter" style="--latitude: -6.596deg; --longitude: 315.992deg; --size: 0.1358; --roll: -7deg">
+              <input class="preview-toggle" type="radio" name="photo-preview" id="preview-photo-28" aria-label="Preview Summer gorge" />
+              <label class="preview-backdrop" for="preview-closed" aria-label="Close preview"></label>
+              <label class="image-preview" for="preview-photo-28">
+                <span class="preview-card">
+                  <img src="./img/img-11.webp" width="1200" height="800" alt="Green trees around a rocky river gorge" draggable="false" />
+                  <span class="preview-caption"><span class="preview-title">Summer gorge</span><span class="preview-credit">Photo by Jerry Adney</span><span class="preview-count">11 / 24</span></span>
+                </span>
+              </label>
+              <button class="preview-close" type="reset" aria-label="Close preview"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+              <label class="preview-nav preview-prev" for="preview-photo-19" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></label>
+              <label class="preview-nav preview-next" for="preview-photo-29" aria-label="Next photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></label>
+            </span>
+            <span class="orbiter" style="--latitude: -2.604deg; --longitude: 89.946deg; --size: 0.1117; --roll: 5deg">
+              <input class="preview-toggle" type="radio" name="photo-preview" id="preview-photo-29" aria-label="Preview Alpine peaks" />
+              <label class="preview-backdrop" for="preview-closed" aria-label="Close preview"></label>
+              <label class="image-preview" for="preview-photo-29">
+                <span class="preview-card">
+                  <img src="./img/img-12.webp" width="1200" height="800" alt="Snow-covered peaks above an alpine valley" draggable="false" />
+                  <span class="preview-caption"><span class="preview-title">Alpine peaks</span><span class="preview-credit">Photo by Go Wild</span><span class="preview-count">12 / 24</span></span>
+                </span>
+              </label>
+              <button class="preview-close" type="reset" aria-label="Close preview"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+              <label class="preview-nav preview-prev" for="preview-photo-28" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></label>
+              <label class="preview-nav preview-next" for="preview-photo-54" aria-label="Next photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></label>
+            </span>
+            <span class="orbiter" style="--latitude: 3.196deg; --longitude: 229.894deg; --size: 0.1247; --roll: 0deg">
+              <input class="preview-toggle" type="radio" name="photo-preview" id="preview-photo-54" aria-label="Preview Island in the clouds" />
+              <label class="preview-backdrop" for="preview-closed" aria-label="Close preview"></label>
+              <label class="image-preview" for="preview-photo-54">
+                <span class="preview-card">
+                  <img src="./img/img-13.webp" width="1200" height="800" alt="A rocky island beneath a bright cloud-filled sky" draggable="false" />
+                  <span class="preview-caption"><span class="preview-title">Island in the clouds</span><span class="preview-credit">Photo by Nicholas Swanson</span><span class="preview-count">13 / 24</span></span>
+                </span>
+              </label>
+              <button class="preview-close" type="reset" aria-label="Close preview"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+              <label class="preview-nav preview-prev" for="preview-photo-29" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></label>
+              <label class="preview-nav preview-next" for="preview-photo-57" aria-label="Next photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></label>
+            </span>
+            <span class="orbiter" style="--latitude: 6.319deg; --longitude: 8.176deg; --size: 0.1170; --roll: 14deg">
+              <input class="preview-toggle" type="radio" name="photo-preview" id="preview-photo-57" aria-label="Preview City morning" />
+              <label class="preview-backdrop" for="preview-closed" aria-label="Close preview"></label>
+              <label class="image-preview" for="preview-photo-57">
+                <span class="preview-card">
+                  <img src="./img/img-14.webp" width="1200" height="800" alt="An empty cobbled street between tall city buildings" draggable="false" />
+                  <span class="preview-caption"><span class="preview-title">City morning</span><span class="preview-credit">Photo by Nicholas Swanson</span><span class="preview-count">14 / 24</span></span>
+                </span>
+              </label>
+              <button class="preview-close" type="reset" aria-label="Close preview"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+              <label class="preview-nav preview-prev" for="preview-photo-54" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></label>
+              <label class="preview-nav preview-next" for="preview-photo-67" aria-label="Next photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></label>
+            </span>
+            <span class="orbiter" style="--latitude: 9.485deg; --longitude: 144.771deg; --size: 0.1159; --roll: -12deg">
+              <input class="preview-toggle" type="radio" name="photo-preview" id="preview-photo-67" aria-label="Preview Winter in monochrome" />
+              <label class="preview-backdrop" for="preview-closed" aria-label="Close preview"></label>
+              <label class="image-preview" for="preview-photo-67">
+                <span class="preview-card">
+                  <img src="./img/img-15.webp" width="1200" height="800" alt="A black-and-white landscape of snowy forested hills" draggable="false" />
+                  <span class="preview-caption"><span class="preview-title">Winter in monochrome</span><span class="preview-credit">Photo by Rula Sibai</span><span class="preview-count">15 / 24</span></span>
+                </span>
+              </label>
+              <button class="preview-close" type="reset" aria-label="Close preview"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+              <label class="preview-nav preview-prev" for="preview-photo-57" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></label>
+              <label class="preview-nav preview-next" for="preview-photo-1015" aria-label="Next photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></label>
+            </span>
+            <span class="orbiter" style="--latitude: 15.287deg; --longitude: 274.967deg; --size: 0.1345; --roll: -8deg">
+              <input class="preview-toggle" type="radio" name="photo-preview" id="preview-photo-1015" aria-label="Preview Above the fjord" />
+              <label class="preview-backdrop" for="preview-closed" aria-label="Close preview"></label>
+              <label class="image-preview" for="preview-photo-1015">
+                <span class="preview-card">
+                  <img src="./img/img-16.webp" width="1200" height="800" alt="A deep blue fjord between steep mountains" draggable="false" />
+                  <span class="preview-caption"><span class="preview-title">Above the fjord</span><span class="preview-credit">Photo by Alexey Topolyanskiy</span><span class="preview-count">16 / 24</span></span>
+                </span>
+              </label>
+              <button class="preview-close" type="reset" aria-label="Close preview"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+              <label class="preview-nav preview-prev" for="preview-photo-67" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></label>
+              <label class="preview-nav preview-next" for="preview-photo-1016" aria-label="Next photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></label>
+            </span>
+            <span class="orbiter" style="--latitude: 17.277deg; --longitude: 54.878deg; --size: 0.1165; --roll: 13deg">
+              <input class="preview-toggle" type="radio" name="photo-preview" id="preview-photo-1016" aria-label="Preview Desert sunset" />
+              <label class="preview-backdrop" for="preview-closed" aria-label="Close preview"></label>
+              <label class="image-preview" for="preview-photo-1016">
+                <span class="preview-card">
+                  <img src="./img/img-17.webp" width="1200" height="800" alt="Warm sunset light on red desert rock formations" draggable="false" />
+                  <span class="preview-caption"><span class="preview-title">Desert sunset</span><span class="preview-credit">Photo by Philippe Wuyts</span><span class="preview-count">17 / 24</span></span>
+                </span>
+              </label>
+              <button class="preview-close" type="reset" aria-label="Close preview"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+              <label class="preview-nav preview-prev" for="preview-photo-1015" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></label>
+              <label class="preview-nav preview-next" for="preview-photo-1018" aria-label="Next photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></label>
+            </span>
+            <span class="orbiter" style="--latitude: 22.638deg; --longitude: 192.699deg; --size: 0.1455; --roll: -3deg">
+              <input class="preview-toggle" type="radio" name="photo-preview" id="preview-photo-1018" aria-label="Preview Highland mist" />
+              <label class="preview-backdrop" for="preview-closed" aria-label="Close preview"></label>
+              <label class="image-preview" for="preview-photo-1018">
+                <span class="preview-card">
+                  <img src="./img/img-18.webp" width="1200" height="800" alt="Green highland cliffs in low clouds" draggable="false" />
+                  <span class="preview-caption"><span class="preview-title">Highland mist</span><span class="preview-credit">Photo by Andrew Ridley</span><span class="preview-count">18 / 24</span></span>
+                </span>
+              </label>
+              <button class="preview-close" type="reset" aria-label="Close preview"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+              <label class="preview-nav preview-prev" for="preview-photo-1016" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></label>
+              <label class="preview-nav preview-next" for="preview-photo-1020" aria-label="Next photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></label>
+            </span>
+            <span class="orbiter" style="--latitude: 26.549deg; --longitude: 334.689deg; --size: 0.1106; --roll: 2deg">
+              <input class="preview-toggle" type="radio" name="photo-preview" id="preview-photo-1020" aria-label="Preview Wild country" />
+              <label class="preview-backdrop" for="preview-closed" aria-label="Close preview"></label>
+              <label class="image-preview" for="preview-photo-1020">
+                <span class="preview-card">
+                  <img src="./img/img-19.webp" width="1200" height="800" alt="A brown bear walking across rocky ground" draggable="false" />
+                  <span class="preview-caption"><span class="preview-title">Wild country</span><span class="preview-credit">Photo by Adam Willoughby-Knox</span><span class="preview-count">19 / 24</span></span>
+                </span>
+              </label>
+              <button class="preview-close" type="reset" aria-label="Close preview"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+              <label class="preview-nav preview-prev" for="preview-photo-1018" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></label>
+              <label class="preview-nav preview-next" for="preview-photo-1021" aria-label="Next photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></label>
+            </span>
+            <span class="orbiter" style="--latitude: 32.562deg; --longitude: 110.723deg; --size: 0.1119; --roll: 10deg">
+              <input class="preview-toggle" type="radio" name="photo-preview" id="preview-photo-1021" aria-label="Preview Forest in the fog" />
+              <label class="preview-backdrop" for="preview-closed" aria-label="Close preview"></label>
+              <label class="image-preview" for="preview-photo-1021">
+                <span class="preview-card">
+                  <img src="./img/img-20.webp" width="1200" height="800" alt="Fog drifting through a dark forest" draggable="false" />
+                  <span class="preview-caption"><span class="preview-title">Forest in the fog</span><span class="preview-credit">Photo by Frances Gunn</span><span class="preview-count">20 / 24</span></span>
+                </span>
+              </label>
+              <button class="preview-close" type="reset" aria-label="Close preview"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+              <label class="preview-nav preview-prev" for="preview-photo-1020" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></label>
+              <label class="preview-nav preview-next" for="preview-photo-1022" aria-label="Next photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></label>
+            </span>
+            <span class="orbiter" style="--latitude: 35.586deg; --longitude: 243.747deg; --size: 0.1238; --roll: -16deg">
+              <input class="preview-toggle" type="radio" name="photo-preview" id="preview-photo-1022" aria-label="Preview Northern lights" />
+              <label class="preview-backdrop" for="preview-closed" aria-label="Close preview"></label>
+              <label class="image-preview" for="preview-photo-1022">
+                <span class="preview-card">
+                  <img src="./img/img-21.webp" width="1200" height="800" alt="Green aurora above a silhouetted tree" draggable="false" />
+                  <span class="preview-caption"><span class="preview-title">Northern lights</span><span class="preview-credit">Photo by Vashishtha Jogi</span><span class="preview-count">21 / 24</span></span>
+                </span>
+              </label>
+              <button class="preview-close" type="reset" aria-label="Close preview"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+              <label class="preview-nav preview-prev" for="preview-photo-1021" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></label>
+              <label class="preview-nav preview-next" for="preview-photo-1024" aria-label="Next photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></label>
+            </span>
+            <span class="orbiter" style="--latitude: 42.720deg; --longitude: 26.351deg; --size: 0.1168; --roll: 2deg">
+              <input class="preview-toggle" type="radio" name="photo-preview" id="preview-photo-1024" aria-label="Preview Taking flight" />
+              <label class="preview-backdrop" for="preview-closed" aria-label="Close preview"></label>
+              <label class="image-preview" for="preview-photo-1024">
+                <span class="preview-card">
+                  <img src="./img/img-22.webp" width="1200" height="800" alt="A large bird spreading its wings" draggable="false" />
+                  <span class="preview-caption"><span class="preview-title">Taking flight</span><span class="preview-credit">Photo by Niko Virtanen</span><span class="preview-count">22 / 24</span></span>
+                </span>
+              </label>
+              <button class="preview-close" type="reset" aria-label="Close preview"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+              <label class="preview-nav preview-prev" for="preview-photo-1022" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></label>
+              <label class="preview-nav preview-next" for="preview-photo-1036" aria-label="Next photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></label>
+            </span>
+            <span class="orbiter" style="--latitude: 46.579deg; --longitude: 163.033deg; --size: 0.1287; --roll: -7deg">
+              <input class="preview-toggle" type="radio" name="photo-preview" id="preview-photo-1036" aria-label="Preview Snow camp" />
+              <label class="preview-backdrop" for="preview-closed" aria-label="Close preview"></label>
+              <label class="image-preview" for="preview-photo-1036">
+                <span class="preview-card">
+                  <img src="./img/img-23.webp" width="1200" height="800" alt="Yellow tents surrounded by snowy mountains" draggable="false" />
+                  <span class="preview-caption"><span class="preview-title">Snow camp</span><span class="preview-credit">Photo by Wolfgang Lutz</span><span class="preview-count">23 / 24</span></span>
+                </span>
+              </label>
+              <button class="preview-close" type="reset" aria-label="Close preview"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+              <label class="preview-nav preview-prev" for="preview-photo-1024" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></label>
+              <label class="preview-nav preview-next" for="preview-photo-1040" aria-label="Next photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></label>
+            </span>
+            <span class="orbiter" style="--latitude: 52.851deg; --longitude: 296.369deg; --size: 0.1242; --roll: 15deg">
+              <input class="preview-toggle" type="radio" name="photo-preview" id="preview-photo-1040" aria-label="Preview Castle in the hills" />
+              <label class="preview-backdrop" for="preview-closed" aria-label="Close preview"></label>
+              <label class="image-preview" for="preview-photo-1040">
+                <span class="preview-card">
+                  <img src="./img/img-24.webp" width="1200" height="800" alt="A castle surrounded by wooded hills" draggable="false" />
+                  <span class="preview-caption"><span class="preview-title">Castle in the hills</span><span class="preview-credit">Photo by Rachel Davis</span><span class="preview-count">24 / 24</span></span>
+                </span>
+              </label>
+              <button class="preview-close" type="reset" aria-label="Close preview"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+              <label class="preview-nav preview-prev" for="preview-photo-1036" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></label>
+              <label class="preview-nav preview-next" for="preview-photo-10" aria-label="Next photo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></label>
+            </span>
+          </div>
+          <div class="planet" aria-hidden="true"></div>
+        </form>
+        <div class="controls" role="group" aria-label="Animation controls">
+          <label><input type="checkbox" id="pause" /> Pause</label>
+          <label><input type="checkbox" id="slow" /> Slow motion</label>
+        </div>
+      </div>
+    </main>
+</body>
+</html>
