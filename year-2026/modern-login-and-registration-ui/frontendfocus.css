@@ -1,0 +1,131 @@
+/* Variables */
+:root {
+  /*  */
+  --main-color: #0f0c29;
+  --sec-color: #302b63;
+  --third-color: #24243e;
+  --fourth-color: #e0dede;
+  --white-color: #fff;
+  --button-color: #573b8a;
+  --hover-color: #6d44b8;
+}
+/* Quick Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    var(--main-color),
+    var(--sec-color),
+    var(--third-color)
+  );
+}
+main {
+  width: 350px;
+  height: 500px;
+  background-color: var(--sec-color);
+  box-shadow: 0px 0px 50px 2px black;
+  border-radius: 10px;
+  overflow: hidden;
+  > input {
+    display: none;
+  }
+}
+@scope (.sign-up) {
+  /* sign-up */
+  :scope {
+    width: 100%;
+    height: 100%;
+  }
+  /* 
+*  sign-up-form holder forms,*/
+  .sign-up-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* Style Label */
+  }
+}
+
+/* Global Style */
+button {
+  width: 60%;
+  padding: 7px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white-color);
+  background: var(--button-color);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.2s linear background;
+  &:hover {
+    background: var(--hover-color);
+  }
+}
+label {
+  font-size: 35px;
+  color: var(--white-color);
+  font-weight: bold;
+  margin: 35px 0px;
+  cursor: pointer;
+  transition: 0.8s ease-in-out;
+}
+/* Main{input} */
+input {
+  width: 70%;
+  height: 40px;
+  padding: 10px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background: var(--fourth-color);
+}
+/* End Global Style */
+
+@scope (.login) {
+  :scope {
+    background-color: #eee;
+    width: 100%;
+    height: 450px;
+    border-radius: 60% /10%;
+    transform: translateY(-95px);
+    transition: 0.8s ease-in-out;
+  }
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    label {
+      font-size: 35px;
+      color: var(--button-color);
+      font-weight: bold;
+      margin: 15px 0px 50px 0px;
+      cursor: pointer;
+      transform: scale(0.6);
+      transition: 0.8s ease-in-out;
+    }
+  }
+}
+#chk:checked ~ .login {
+  transform: translateY(-415px);
+}
+#chk:checked ~ .login label {
+  transform: scale(1);
+}
+#chk:checked ~ .sign-up label {
+  transform: scale(0.6);
+}
