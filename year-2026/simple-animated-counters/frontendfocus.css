@@ -1,0 +1,101 @@
+/* Reset */
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Variables */
+:root {
+  --hue: 223;
+
+  /* Colors */
+  --gray50: hsl(var(--hue), 10%, 95%);
+  --gray950: hsl(var(--hue), 10%, 5%);
+  --primary500: hsl(var(--hue), 90%, 50%);
+  --secondary500: hsl(193, 90%, 50%);
+
+  /* Styles */
+  --bg: light-dark(var(--gray50), var(--gray950));
+  --fg: light-dark(var(--gray950), var(--gray50));
+  --easing: cubic-bezier(0.65, 0, 0.35, 1);
+  --trans-dur: 0.3s;
+
+  color-scheme: light dark;
+  font-size: clamp(0.875rem, 0.7rem + 0.875vw, 1.75rem);
+}
+
+/* Body */
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  display: grid;
+  font: 1em / 1.5 Manrope, monospace;
+  place-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  transition:
+    background-color var(--trans-dur),
+    color var(--trans-dur);
+}
+
+/* Main */
+main {
+  padding: 1.5em 0;
+}
+
+/* Counter */
+.counter {
+  --digit-height: 1.5em;
+  --offset: 0;
+  --roll-dur: 2s;
+
+  font-size: 3em;
+  font-weight: 300;
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  gap: 1ch;
+  justify-content: center;
+}
+
+/* Counter digits */
+.counter__digit {
+  background: linear-gradient(
+    var(--primary500),
+    var(--secondary500)
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  height: var(--digit-height);
+  line-height: var(--digit-height);
+  text-align: center;
+}
+
+/* Digit window */
+.counter__slot {
+  overflow: hidden;
+  height: var(--digit-height);
+}
+
+/* Rolling digits */
+.counter__slot-digits {
+  transform: translate3d(
+    0,
+    calc(var(--offset) * var(--digit-height) * -1),
+    0
+  );
+
+  transition: transform var(--roll-dur) var(--easing);
+  will-change: transform;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .counter__slot-digits {
+    transition-duration: 1ms;
+  }
+}
