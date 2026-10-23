@@ -1,0 +1,192 @@
+@property --lift { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --row-phase { syntax: "<number>"; inherits: true; initial-value: 0; }
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  overflow-x: clip;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2264%22%20height%3D%2264%22%20viewBox%3D%220%200%2064%2064%22%3E%20%3Cg%20fill%3D%22none%22%20stroke%3D%22%23363631%22%20stroke-width%3D%220.6%22%3E%20%3Cpath%20d%3D%22M64%200H0V64%22%20stroke-opacity%3D%220.32%22%20%2F%3E%20%3Cpath%20d%3D%22M30%2032h4M32%2030v4%22%20stroke-opacity%3D%220.26%22%20%2F%3E%20%3C%2Fg%3E%20%3C%2Fsvg%3E");
+  background-size: 64px 64px;
+  background-position: center;
+  padding: 28px clamp(20px, 5vw, 64px) 22px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  font-family: "Avenir Next", system-ui, sans-serif;
+  color-scheme: dark;
+  color: var(--text);
+  background: var(--surface);
+  -webkit-font-smoothing: antialiased;
+}
+
+:root {
+  --surface: oklch(15.91% 0.0000 0.00);
+  --text: oklch(94% .006 105);
+  --muted: oklch(56% .008 105);
+  --white: oklch(97.72% 0.0132 102.01);
+  --cyan: oklch(65.86% 0.1116 220.25);
+}
+
+a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--text);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 5px;
+}
+
+main {
+  display: grid;
+  place-items: center;
+  padding-block: 32px;
+}
+
+.experiment {
+  display: grid;
+  justify-items: center;
+  gap: 32px;
+}
+
+.scene {
+  --diameter: min(82vw, 70svh, 800px);
+  --radius: calc(var(--diameter) * .42);
+  --time-scale: 1;
+  --row-step: .14s;
+  --wave-duration: calc(21 * var(--row-step));
+  position: relative;
+  width: var(--diameter);
+  height: var(--diameter);
+  overflow: clip;
+}
+
+.sphere {
+  position: absolute;
+  inset: 0;
+  transform: rotateZ(-10deg);
+  transform-style: preserve-3d;
+}
+
+.hex-row {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  animation: lift-row calc(var(--wave-duration) * var(--time-scale)) linear calc((var(--row) * var(--row-step) - var(--wave-duration)) * var(--time-scale)) infinite;
+}
+
+.tile {
+  --phase-offset: calc(.035 * sin(var(--longitude) * 2 + var(--row) * 23deg) + .01 * sin(var(--longitude) * 5 - var(--row) * 11deg));
+  --tile-phase: mod(calc(var(--row-phase) - var(--phase-offset)), 1);
+  --pulse: clamp(0, var(--tile-phase) / .4, 1);
+  --lift: calc(.5 - .5 * cos(360deg * var(--pulse)));
+  --highlight: calc(var(--lift) * var(--lift) * var(--lift) * var(--lift));
+  --x: calc(var(--radius) * cos(var(--latitude)) * sin(var(--longitude)));
+  --y: calc(var(--radius) * sin(var(--latitude)));
+  --z: calc(var(--radius) * cos(var(--latitude)) * cos(var(--longitude)));
+  --depth: calc(cos(var(--latitude)) * cos(var(--longitude)));
+  --rest-color: oklch(calc(10% + 12% * var(--depth)) 0 1);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  transform:
+    translate3d(var(--x), var(--y), var(--z))
+    rotateY(var(--longitude))
+    rotateX(calc(-1 * var(--latitude)));
+}
+
+.tile::before {
+  content: "";
+  position: absolute;
+  width: calc(var(--diameter) * var(--size) / .96 * 1.015 + 1px);
+  aspect-ratio: .8660254038;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  background: color-mix(in oklab, var(--rest-color), oklch(90% .105 220) calc(100% * var(--highlight)));
+  opacity: 1;
+  backface-visibility: hidden;
+  transform: translate(-50%, -50%) translateZ(calc(var(--diameter) * .05 * var(--lift)));
+}
+
+@keyframes lift-row {
+  from { --row-phase: 0; }
+  to { --row-phase: 1; }
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 24px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.controls label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.controls input {
+  width: 13px;
+  height: 13px;
+  margin: 0;
+  accent-color: var(--cyan);
+}
+
+.controls input:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 4px;
+}
+
+.experiment:has(#pause:checked) .hex-row {
+  animation-play-state: paused;
+}
+
+.experiment:has(#slow:checked) .scene {
+  --time-scale: 2;
+}
+
+@media (max-width: 520px) {
+  body {
+    padding: 22px 20px 20px;
+  }
+  h1 {
+    font-size: 15px;
+  }
+  h1 span {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+  }
+  .meta {
+    font-size: 10px;
+    padding-top: 3px;
+    text-align: right;
+  }
+  .scene {
+    --diameter: min(88vw, calc(100vw - 40px), 62svh);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hex-row {
+    animation: none;
+    --row-phase: 0;
+  }
+  .tile {
+    --lift: 0;
+  }
+}

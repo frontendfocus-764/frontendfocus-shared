@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <title>Pure CSS 3D Sphere Wave Animation</title>
+</head>
+<body>
+    <main>
+      <div class="experiment">
+        <div class="scene" role="img">
+          <div class="sphere" aria-hidden="true">
+            <div class="hex-row" style="--row: 0">
+              <span class="tile" style="--latitude: -73.698777deg; --longitude: -77.142857deg; --size: 0.025396"></span>
+              <span class="tile" style="--latitude: -73.698777deg; --longitude: -64.285714deg; --size: 0.025396"></span>
+              <span class="tile" style="--latitude: -73.698777deg; --longitude: -51.428571deg; --size: 0.025396"></span>
+              <span class="tile" style="--latitude: -73.698777deg; --longitude: -38.571429deg; --size: 0.025396"></span>
+              <span class="tile" style="--latitude: -73.698777deg; --longitude: -25.714286deg; --size: 0.025396"></span>
+              <span class="tile" style="--latitude: -73.698777deg; --longitude: -12.857143deg; --size: 0.025396"></span>
+              <span class="tile" style="--latitude: -73.698777deg; --longitude: 0.000000deg; --size: 0.025396"></span>
+              <span class="tile" style="--latitude: -73.698777deg; --longitude: 12.857143deg; --size: 0.025396"></span>
+              <span class="tile" style="--latitude: -73.698777deg; --longitude: 25.714286deg; --size: 0.025396"></span>
+              <span class="tile" style="--latitude: -73.698777deg; --longitude: 38.571429deg; --size: 0.025396"></span>
+              <span class="tile" style="--latitude: -73.698777deg; --longitude: 51.428571deg; --size: 0.025396"></span>
+              <span class="tile" style="--latitude: -73.698777deg; --longitude: 64.285714deg; --size: 0.025396"></span>
+              <span class="tile" style="--latitude: -73.698777deg; --longitude: 77.142857deg; --size: 0.025396"></span>
+            </div>
+            <div class="hex-row" style="--row: 1">
+              <span class="tile" style="--latitude: -70.264923deg; --longitude: -83.571429deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: -70.264923deg; --longitude: -70.714286deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: -70.264923deg; --longitude: -57.857143deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: -70.264923deg; --longitude: -45.000000deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: -70.264923deg; --longitude: -32.142857deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: -70.264923deg; --longitude: -19.285714deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: -70.264923deg; --longitude: -6.428571deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: -70.264923deg; --longitude: 6.428571deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: -70.264923deg; --longitude: 19.285714deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: -70.264923deg; --longitude: 32.142857deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: -70.264923deg; --longitude: 45.000000deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: -70.264923deg; --longitude: 57.857143deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: -70.264923deg; --longitude: 70.714286deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: -70.264923deg; --longitude: 83.571429deg; --size: 0.030552"></span>
+            </div>
+            <div class="hex-row" style="--row: 2">
+              <span class="tile" style="--latitude: -66.142642deg; --longitude: -77.142857deg; --size: 0.036595"></span>
+              <span class="tile" style="--latitude: -66.142642deg; --longitude: -64.285714deg; --size: 0.036595"></span>
+              <span class="tile" style="--latitude: -66.142642deg; --longitude: -51.428571deg; --size: 0.036595"></span>
+              <span class="tile" style="--latitude: -66.142642deg; --longitude: -38.571429deg; --size: 0.036595"></span>
+              <span class="tile" style="--latitude: -66.142642deg; --longitude: -25.714286deg; --size: 0.036595"></span>
+              <span class="tile" style="--latitude: -66.142642deg; --longitude: -12.857143deg; --size: 0.036595"></span>
+              <span class="tile" style="--latitude: -66.142642deg; --longitude: 0.000000deg; --size: 0.036595"></span>
+              <span class="tile" style="--latitude: -66.142642deg; --longitude: 12.857143deg; --size: 0.036595"></span>
+              <span class="tile" style="--latitude: -66.142642deg; --longitude: 25.714286deg; --size: 0.036595"></span>
+              <span class="tile" style="--latitude: -66.142642deg; --longitude: 38.571429deg; --size: 0.036595"></span>
+              <span class="tile" style="--latitude: -66.142642deg; --longitude: 51.428571deg; --size: 0.036595"></span>
+              <span class="tile" style="--latitude: -66.142642deg; --longitude: 64.285714deg; --size: 0.036595"></span>
+              <span class="tile" style="--latitude: -66.142642deg; --longitude: 77.142857deg; --size: 0.036595"></span>
+            </div>
+            <div class="hex-row" style="--row: 3">
+              <span class="tile" style="--latitude: -61.219919deg; --longitude: -83.571429deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: -61.219919deg; --longitude: -70.714286deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: -61.219919deg; --longitude: -57.857143deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: -61.219919deg; --longitude: -45.000000deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: -61.219919deg; --longitude: -32.142857deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: -61.219919deg; --longitude: -19.285714deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: -61.219919deg; --longitude: -6.428571deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: -61.219919deg; --longitude: 6.428571deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: -61.219919deg; --longitude: 19.285714deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: -61.219919deg; --longitude: 32.142857deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: -61.219919deg; --longitude: 45.000000deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: -61.219919deg; --longitude: 57.857143deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: -61.219919deg; --longitude: 70.714286deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: -61.219919deg; --longitude: 83.571429deg; --size: 0.043560"></span>
+            </div>
+            <div class="hex-row" style="--row: 4">
+              <span class="tile" style="--latitude: -55.385245deg; --longitude: -77.142857deg; --size: 0.051396"></span>
+              <span class="tile" style="--latitude: -55.385245deg; --longitude: -64.285714deg; --size: 0.051396"></span>
+              <span class="tile" style="--latitude: -55.385245deg; --longitude: -51.428571deg; --size: 0.051396"></span>
+              <span class="tile" style="--latitude: -55.385245deg; --longitude: -38.571429deg; --size: 0.051396"></span>
+              <span class="tile" style="--latitude: -55.385245deg; --longitude: -25.714286deg; --size: 0.051396"></span>
+              <span class="tile" style="--latitude: -55.385245deg; --longitude: -12.857143deg; --size: 0.051396"></span>
+              <span class="tile" style="--latitude: -55.385245deg; --longitude: 0.000000deg; --size: 0.051396"></span>
+              <span class="tile" style="--latitude: -55.385245deg; --longitude: 12.857143deg; --size: 0.051396"></span>
+              <span class="tile" style="--latitude: -55.385245deg; --longitude: 25.714286deg; --size: 0.051396"></span>
+              <span class="tile" style="--latitude: -55.385245deg; --longitude: 38.571429deg; --size: 0.051396"></span>
+              <span class="tile" style="--latitude: -55.385245deg; --longitude: 51.428571deg; --size: 0.051396"></span>
+              <span class="tile" style="--latitude: -55.385245deg; --longitude: 64.285714deg; --size: 0.051396"></span>
+              <span class="tile" style="--latitude: -55.385245deg; --longitude: 77.142857deg; --size: 0.051396"></span>
+            </div>
+            <div class="hex-row" style="--row: 5">
+              <span class="tile" style="--latitude: -48.541965deg; --longitude: -83.571429deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: -48.541965deg; --longitude: -70.714286deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: -48.541965deg; --longitude: -57.857143deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: -48.541965deg; --longitude: -45.000000deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: -48.541965deg; --longitude: -32.142857deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: -48.541965deg; --longitude: -19.285714deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: -48.541965deg; --longitude: -6.428571deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: -48.541965deg; --longitude: 6.428571deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: -48.541965deg; --longitude: 19.285714deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: -48.541965deg; --longitude: 32.142857deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: -48.541965deg; --longitude: 45.000000deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: -48.541965deg; --longitude: 57.857143deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: -48.541965deg; --longitude: 70.714286deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: -48.541965deg; --longitude: 83.571429deg; --size: 0.059903"></span>
+            </div>
+            <div class="hex-row" style="--row: 6">
+              <span class="tile" style="--latitude: -40.630535deg; --longitude: -77.142857deg; --size: 0.068666"></span>
+              <span class="tile" style="--latitude: -40.630535deg; --longitude: -64.285714deg; --size: 0.068666"></span>
+              <span class="tile" style="--latitude: -40.630535deg; --longitude: -51.428571deg; --size: 0.068666"></span>
+              <span class="tile" style="--latitude: -40.630535deg; --longitude: -38.571429deg; --size: 0.068666"></span>
+              <span class="tile" style="--latitude: -40.630535deg; --longitude: -25.714286deg; --size: 0.068666"></span>
+              <span class="tile" style="--latitude: -40.630535deg; --longitude: -12.857143deg; --size: 0.068666"></span>
+              <span class="tile" style="--latitude: -40.630535deg; --longitude: 0.000000deg; --size: 0.068666"></span>
+              <span class="tile" style="--latitude: -40.630535deg; --longitude: 12.857143deg; --size: 0.068666"></span>
+              <span class="tile" style="--latitude: -40.630535deg; --longitude: 25.714286deg; --size: 0.068666"></span>
+              <span class="tile" style="--latitude: -40.630535deg; --longitude: 38.571429deg; --size: 0.068666"></span>
+              <span class="tile" style="--latitude: -40.630535deg; --longitude: 51.428571deg; --size: 0.068666"></span>
+              <span class="tile" style="--latitude: -40.630535deg; --longitude: 64.285714deg; --size: 0.068666"></span>
+              <span class="tile" style="--latitude: -40.630535deg; --longitude: 77.142857deg; --size: 0.068666"></span>
+            </div>
+            <div class="hex-row" style="--row: 7">
+              <span class="tile" style="--latitude: -31.657978deg; --longitude: -83.571429deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: -31.657978deg; --longitude: -70.714286deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: -31.657978deg; --longitude: -57.857143deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: -31.657978deg; --longitude: -45.000000deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: -31.657978deg; --longitude: -32.142857deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: -31.657978deg; --longitude: -19.285714deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: -31.657978deg; --longitude: -6.428571deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: -31.657978deg; --longitude: 6.428571deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: -31.657978deg; --longitude: 19.285714deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: -31.657978deg; --longitude: 32.142857deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: -31.657978deg; --longitude: 45.000000deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: -31.657978deg; --longitude: 57.857143deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: -31.657978deg; --longitude: 70.714286deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: -31.657978deg; --longitude: 83.571429deg; --size: 0.077014"></span>
+            </div>
+            <div class="hex-row" style="--row: 8">
+              <span class="tile" style="--latitude: -21.728828deg; --longitude: -77.142857deg; --size: 0.084049"></span>
+              <span class="tile" style="--latitude: -21.728828deg; --longitude: -64.285714deg; --size: 0.084049"></span>
+              <span class="tile" style="--latitude: -21.728828deg; --longitude: -51.428571deg; --size: 0.084049"></span>
+              <span class="tile" style="--latitude: -21.728828deg; --longitude: -38.571429deg; --size: 0.084049"></span>
+              <span class="tile" style="--latitude: -21.728828deg; --longitude: -25.714286deg; --size: 0.084049"></span>
+              <span class="tile" style="--latitude: -21.728828deg; --longitude: -12.857143deg; --size: 0.084049"></span>
+              <span class="tile" style="--latitude: -21.728828deg; --longitude: 0.000000deg; --size: 0.084049"></span>
+              <span class="tile" style="--latitude: -21.728828deg; --longitude: 12.857143deg; --size: 0.084049"></span>
+              <span class="tile" style="--latitude: -21.728828deg; --longitude: 25.714286deg; --size: 0.084049"></span>
+              <span class="tile" style="--latitude: -21.728828deg; --longitude: 38.571429deg; --size: 0.084049"></span>
+              <span class="tile" style="--latitude: -21.728828deg; --longitude: 51.428571deg; --size: 0.084049"></span>
+              <span class="tile" style="--latitude: -21.728828deg; --longitude: 64.285714deg; --size: 0.084049"></span>
+              <span class="tile" style="--latitude: -21.728828deg; --longitude: 77.142857deg; --size: 0.084049"></span>
+            </div>
+            <div class="hex-row" style="--row: 9">
+              <span class="tile" style="--latitude: -11.065181deg; --longitude: -83.571429deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: -11.065181deg; --longitude: -70.714286deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: -11.065181deg; --longitude: -57.857143deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: -11.065181deg; --longitude: -45.000000deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: -11.065181deg; --longitude: -32.142857deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: -11.065181deg; --longitude: -19.285714deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: -11.065181deg; --longitude: -6.428571deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: -11.065181deg; --longitude: 6.428571deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: -11.065181deg; --longitude: 19.285714deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: -11.065181deg; --longitude: 32.142857deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: -11.065181deg; --longitude: 45.000000deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: -11.065181deg; --longitude: 57.857143deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: -11.065181deg; --longitude: 70.714286deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: -11.065181deg; --longitude: 83.571429deg; --size: 0.088796"></span>
+            </div>
+            <div class="hex-row" style="--row: 10">
+              <span class="tile" style="--latitude: 0.000000deg; --longitude: -77.142857deg; --size: 0.090478"></span>
+              <span class="tile" style="--latitude: 0.000000deg; --longitude: -64.285714deg; --size: 0.090478"></span>
+              <span class="tile" style="--latitude: 0.000000deg; --longitude: -51.428571deg; --size: 0.090478"></span>
+              <span class="tile" style="--latitude: 0.000000deg; --longitude: -38.571429deg; --size: 0.090478"></span>
+              <span class="tile" style="--latitude: 0.000000deg; --longitude: -25.714286deg; --size: 0.090478"></span>
+              <span class="tile" style="--latitude: 0.000000deg; --longitude: -12.857143deg; --size: 0.090478"></span>
+              <span class="tile" style="--latitude: 0.000000deg; --longitude: 0.000000deg; --size: 0.090478"></span>
+              <span class="tile" style="--latitude: 0.000000deg; --longitude: 12.857143deg; --size: 0.090478"></span>
+              <span class="tile" style="--latitude: 0.000000deg; --longitude: 25.714286deg; --size: 0.090478"></span>
+              <span class="tile" style="--latitude: 0.000000deg; --longitude: 38.571429deg; --size: 0.090478"></span>
+              <span class="tile" style="--latitude: 0.000000deg; --longitude: 51.428571deg; --size: 0.090478"></span>
+              <span class="tile" style="--latitude: 0.000000deg; --longitude: 64.285714deg; --size: 0.090478"></span>
+              <span class="tile" style="--latitude: 0.000000deg; --longitude: 77.142857deg; --size: 0.090478"></span>
+            </div>
+            <div class="hex-row" style="--row: 11">
+              <span class="tile" style="--latitude: 11.065181deg; --longitude: -83.571429deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: 11.065181deg; --longitude: -70.714286deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: 11.065181deg; --longitude: -57.857143deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: 11.065181deg; --longitude: -45.000000deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: 11.065181deg; --longitude: -32.142857deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: 11.065181deg; --longitude: -19.285714deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: 11.065181deg; --longitude: -6.428571deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: 11.065181deg; --longitude: 6.428571deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: 11.065181deg; --longitude: 19.285714deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: 11.065181deg; --longitude: 32.142857deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: 11.065181deg; --longitude: 45.000000deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: 11.065181deg; --longitude: 57.857143deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: 11.065181deg; --longitude: 70.714286deg; --size: 0.088796"></span>
+              <span class="tile" style="--latitude: 11.065181deg; --longitude: 83.571429deg; --size: 0.088796"></span>
+            </div>
+            <div class="hex-row" style="--row: 12">
+              <span class="tile" style="--latitude: 21.728828deg; --longitude: -77.142857deg; --size: 0.084049"></span>
+              <span class="tile" style="--latitude: 21.728828deg; --longitude: -64.285714deg; --size: 0.084049"></span>
+              <span class="tile" style="--latitude: 21.728828deg; --longitude: -51.428571deg; --size: 0.084049"></span>
+              <span class="tile" style="--latitude: 21.728828deg; --longitude: -38.571429deg; --size: 0.084049"></span>
+              <span class="tile" style="--latitude: 21.728828deg; --longitude: -25.714286deg; --size: 0.084049"></span>
+              <span class="tile" style="--latitude: 21.728828deg; --longitude: -12.857143deg; --size: 0.084049"></span>
+              <span class="tile" style="--latitude: 21.728828deg; --longitude: 0.000000deg; --size: 0.084049"></span>
+              <span class="tile" style="--latitude: 21.728828deg; --longitude: 12.857143deg; --size: 0.084049"></span>
+              <span class="tile" style="--latitude: 21.728828deg; --longitude: 25.714286deg; --size: 0.084049"></span>
+              <span class="tile" style="--latitude: 21.728828deg; --longitude: 38.571429deg; --size: 0.084049"></span>
+              <span class="tile" style="--latitude: 21.728828deg; --longitude: 51.428571deg; --size: 0.084049"></span>
+              <span class="tile" style="--latitude: 21.728828deg; --longitude: 64.285714deg; --size: 0.084049"></span>
+              <span class="tile" style="--latitude: 21.728828deg; --longitude: 77.142857deg; --size: 0.084049"></span>
+            </div>
+            <div class="hex-row" style="--row: 13">
+              <span class="tile" style="--latitude: 31.657978deg; --longitude: -83.571429deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: 31.657978deg; --longitude: -70.714286deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: 31.657978deg; --longitude: -57.857143deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: 31.657978deg; --longitude: -45.000000deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: 31.657978deg; --longitude: -32.142857deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: 31.657978deg; --longitude: -19.285714deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: 31.657978deg; --longitude: -6.428571deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: 31.657978deg; --longitude: 6.428571deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: 31.657978deg; --longitude: 19.285714deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: 31.657978deg; --longitude: 32.142857deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: 31.657978deg; --longitude: 45.000000deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: 31.657978deg; --longitude: 57.857143deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: 31.657978deg; --longitude: 70.714286deg; --size: 0.077014"></span>
+              <span class="tile" style="--latitude: 31.657978deg; --longitude: 83.571429deg; --size: 0.077014"></span>
+            </div>
+            <div class="hex-row" style="--row: 14">
+              <span class="tile" style="--latitude: 40.630535deg; --longitude: -77.142857deg; --size: 0.068666"></span>
+              <span class="tile" style="--latitude: 40.630535deg; --longitude: -64.285714deg; --size: 0.068666"></span>
+              <span class="tile" style="--latitude: 40.630535deg; --longitude: -51.428571deg; --size: 0.068666"></span>
+              <span class="tile" style="--latitude: 40.630535deg; --longitude: -38.571429deg; --size: 0.068666"></span>
+              <span class="tile" style="--latitude: 40.630535deg; --longitude: -25.714286deg; --size: 0.068666"></span>
+              <span class="tile" style="--latitude: 40.630535deg; --longitude: -12.857143deg; --size: 0.068666"></span>
+              <span class="tile" style="--latitude: 40.630535deg; --longitude: 0.000000deg; --size: 0.068666"></span>
+              <span class="tile" style="--latitude: 40.630535deg; --longitude: 12.857143deg; --size: 0.068666"></span>
+              <span class="tile" style="--latitude: 40.630535deg; --longitude: 25.714286deg; --size: 0.068666"></span>
+              <span class="tile" style="--latitude: 40.630535deg; --longitude: 38.571429deg; --size: 0.068666"></span>
+              <span class="tile" style="--latitude: 40.630535deg; --longitude: 51.428571deg; --size: 0.068666"></span>
+              <span class="tile" style="--latitude: 40.630535deg; --longitude: 64.285714deg; --size: 0.068666"></span>
+              <span class="tile" style="--latitude: 40.630535deg; --longitude: 77.142857deg; --size: 0.068666"></span>
+            </div>
+            <div class="hex-row" style="--row: 15">
+              <span class="tile" style="--latitude: 48.541965deg; --longitude: -83.571429deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: 48.541965deg; --longitude: -70.714286deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: 48.541965deg; --longitude: -57.857143deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: 48.541965deg; --longitude: -45.000000deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: 48.541965deg; --longitude: -32.142857deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: 48.541965deg; --longitude: -19.285714deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: 48.541965deg; --longitude: -6.428571deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: 48.541965deg; --longitude: 6.428571deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: 48.541965deg; --longitude: 19.285714deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: 48.541965deg; --longitude: 32.142857deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: 48.541965deg; --longitude: 45.000000deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: 48.541965deg; --longitude: 57.857143deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: 48.541965deg; --longitude: 70.714286deg; --size: 0.059903"></span>
+              <span class="tile" style="--latitude: 48.541965deg; --longitude: 83.571429deg; --size: 0.059903"></span>
+            </div>
+            <div class="hex-row" style="--row: 16">
+              <span class="tile" style="--latitude: 55.385245deg; --longitude: -77.142857deg; --size: 0.051396"></span>
+              <span class="tile" style="--latitude: 55.385245deg; --longitude: -64.285714deg; --size: 0.051396"></span>
+              <span class="tile" style="--latitude: 55.385245deg; --longitude: -51.428571deg; --size: 0.051396"></span>
+              <span class="tile" style="--latitude: 55.385245deg; --longitude: -38.571429deg; --size: 0.051396"></span>
+              <span class="tile" style="--latitude: 55.385245deg; --longitude: -25.714286deg; --size: 0.051396"></span>
+              <span class="tile" style="--latitude: 55.385245deg; --longitude: -12.857143deg; --size: 0.051396"></span>
+              <span class="tile" style="--latitude: 55.385245deg; --longitude: 0.000000deg; --size: 0.051396"></span>
+              <span class="tile" style="--latitude: 55.385245deg; --longitude: 12.857143deg; --size: 0.051396"></span>
+              <span class="tile" style="--latitude: 55.385245deg; --longitude: 25.714286deg; --size: 0.051396"></span>
+              <span class="tile" style="--latitude: 55.385245deg; --longitude: 38.571429deg; --size: 0.051396"></span>
+              <span class="tile" style="--latitude: 55.385245deg; --longitude: 51.428571deg; --size: 0.051396"></span>
+              <span class="tile" style="--latitude: 55.385245deg; --longitude: 64.285714deg; --size: 0.051396"></span>
+              <span class="tile" style="--latitude: 55.385245deg; --longitude: 77.142857deg; --size: 0.051396"></span>
+            </div>
+            <div class="hex-row" style="--row: 17">
+              <span class="tile" style="--latitude: 61.219919deg; --longitude: -83.571429deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: 61.219919deg; --longitude: -70.714286deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: 61.219919deg; --longitude: -57.857143deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: 61.219919deg; --longitude: -45.000000deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: 61.219919deg; --longitude: -32.142857deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: 61.219919deg; --longitude: -19.285714deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: 61.219919deg; --longitude: -6.428571deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: 61.219919deg; --longitude: 6.428571deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: 61.219919deg; --longitude: 19.285714deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: 61.219919deg; --longitude: 32.142857deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: 61.219919deg; --longitude: 45.000000deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: 61.219919deg; --longitude: 57.857143deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: 61.219919deg; --longitude: 70.714286deg; --size: 0.043560"></span>
+              <span class="tile" style="--latitude: 61.219919deg; --longitude: 83.571429deg; --size: 0.043560"></span>
+            </div>
+            <div class="hex-row" style="--row: 18">
+              <span class="tile" style="--latitude: 66.142642deg; --longitude: -77.142857deg; --size: 0.036595"></span>
+              <span class="tile" style="--latitude: 66.142642deg; --longitude: -64.285714deg; --size: 0.036595"></span>
+              <span class="tile" style="--latitude: 66.142642deg; --longitude: -51.428571deg; --size: 0.036595"></span>
+              <span class="tile" style="--latitude: 66.142642deg; --longitude: -38.571429deg; --size: 0.036595"></span>
+              <span class="tile" style="--latitude: 66.142642deg; --longitude: -25.714286deg; --size: 0.036595"></span>
+              <span class="tile" style="--latitude: 66.142642deg; --longitude: -12.857143deg; --size: 0.036595"></span>
+              <span class="tile" style="--latitude: 66.142642deg; --longitude: 0.000000deg; --size: 0.036595"></span>
+              <span class="tile" style="--latitude: 66.142642deg; --longitude: 12.857143deg; --size: 0.036595"></span>
+              <span class="tile" style="--latitude: 66.142642deg; --longitude: 25.714286deg; --size: 0.036595"></span>
+              <span class="tile" style="--latitude: 66.142642deg; --longitude: 38.571429deg; --size: 0.036595"></span>
+              <span class="tile" style="--latitude: 66.142642deg; --longitude: 51.428571deg; --size: 0.036595"></span>
+              <span class="tile" style="--latitude: 66.142642deg; --longitude: 64.285714deg; --size: 0.036595"></span>
+              <span class="tile" style="--latitude: 66.142642deg; --longitude: 77.142857deg; --size: 0.036595"></span>
+            </div>
+            <div class="hex-row" style="--row: 19">
+              <span class="tile" style="--latitude: 70.264923deg; --longitude: -83.571429deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: 70.264923deg; --longitude: -70.714286deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: 70.264923deg; --longitude: -57.857143deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: 70.264923deg; --longitude: -45.000000deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: 70.264923deg; --longitude: -32.142857deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: 70.264923deg; --longitude: -19.285714deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: 70.264923deg; --longitude: -6.428571deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: 70.264923deg; --longitude: 6.428571deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: 70.264923deg; --longitude: 19.285714deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: 70.264923deg; --longitude: 32.142857deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: 70.264923deg; --longitude: 45.000000deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: 70.264923deg; --longitude: 57.857143deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: 70.264923deg; --longitude: 70.714286deg; --size: 0.030552"></span>
+              <span class="tile" style="--latitude: 70.264923deg; --longitude: 83.571429deg; --size: 0.030552"></span>
+            </div>
+            <div class="hex-row" style="--row: 20">
+              <span class="tile" style="--latitude: 73.698777deg; --longitude: -77.142857deg; --size: 0.025396"></span>
+              <span class="tile" style="--latitude: 73.698777deg; --longitude: -64.285714deg; --size: 0.025396"></span>
+              <span class="tile" style="--latitude: 73.698777deg; --longitude: -51.428571deg; --size: 0.025396"></span>
+              <span class="tile" style="--latitude: 73.698777deg; --longitude: -38.571429deg; --size: 0.025396"></span>
+              <span class="tile" style="--latitude: 73.698777deg; --longitude: -25.714286deg; --size: 0.025396"></span>
+              <span class="tile" style="--latitude: 73.698777deg; --longitude: -12.857143deg; --size: 0.025396"></span>
+              <span class="tile" style="--latitude: 73.698777deg; --longitude: 0.000000deg; --size: 0.025396"></span>
+              <span class="tile" style="--latitude: 73.698777deg; --longitude: 12.857143deg; --size: 0.025396"></span>
+              <span class="tile" style="--latitude: 73.698777deg; --longitude: 25.714286deg; --size: 0.025396"></span>
+              <span class="tile" style="--latitude: 73.698777deg; --longitude: 38.571429deg; --size: 0.025396"></span>
+              <span class="tile" style="--latitude: 73.698777deg; --longitude: 51.428571deg; --size: 0.025396"></span>
+              <span class="tile" style="--latitude: 73.698777deg; --longitude: 64.285714deg; --size: 0.025396"></span>
+              <span class="tile" style="--latitude: 73.698777deg; --longitude: 77.142857deg; --size: 0.025396"></span>
+            </div>
+          </div>
+        </div>
+        <div class="controls" role="group" aria-label="Animation controls">
+          <label><input type="checkbox" id="pause" /> Pause</label>
+          <label><input type="checkbox" id="slow" /> Slow motion</label>
+        </div>
+      </div>
+    </main>
+</body>
+</html>
