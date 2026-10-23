@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+html {
+  font-family: "New Tegomin", serif;
+  user-select: none;
+}
+body {
+  background-color: #bc6f03;
+  background-image: linear-gradient(315deg, #bc6f03 0%, #874000 74%);
+  min-height: 100vh;
+}
+img {
+  width: 14rem;
+  animation: fluf 2s linear backwards;
+}
+.outer--glass {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+.wrap--glass {
+  position: relative;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2rem 3rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 24px 24px 48px rgba(174, 210, 236, 0.4),
+    inset 12px 12px 24px #e7f2f9, inset -24px -24px 48px #b8d8ee;
+  border-radius: 10px;
+}
+.outer--glass::before,
+.outer--glass::after {
+  content: "";
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  background-color: #ff4e00;
+  background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
+  top: 10%;
+  left: 20%;
+  z-index: -1;
+  filter: blur(40px);
+  border-radius: 50%;
+}
+.outer--glass::after {
+  top: 60%;
+  left: 50%;
+  background-color: #000000;
+  background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
+}
+.wrap--glass h1 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  animation: fade 2s linear backwards;
+}
+.wrap--glass h2 {
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  margin: 5px 0px;
+  animation: fade 2s linear backwards;
+}
+.wrap--glass h3 {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 5px 6px;
+  margin: 20px 0px;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  line-height: 2;
+  animation: jump 2s linear;
+}
+.wrap--glass h3 span {
+  backdrop-filter: blur(10px);
+  padding: 10px 10px;
+  background-color: #69140e;
+  background-image: linear-gradient(315deg, #69140e 0%, #d58936 74%);
+}
+.wrap--glass p {
+  font-size: 1.4rem;
+  margin: 20px 0px;
+  letter-spacing: 2px;
+  animation: fade 2s linear backwards;
+}
+button {
+  width: 7rem;
+  height: 3rem;
+  border-radius: 5px;
+  background-color: #69140e;
+  background-image: linear-gradient(315deg, #69140e 0%, #d58936 74%);
+  outline: none;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  border: none;
+  animation: fade 2s linear backwards;
+  transition: 1s ease;
+}
+button:hover {
+  transform: scale(1.2);
+}
+@keyframes fluf {
+  0% {
+    transform: translateX(1000px) rotate(360deg);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+}
+@keyframes jump {
+  0% {
+    transform: translateX(-60rem);
+  }
+  50% {
+    transform: translateY(-1rem);
+  }
+  100% {
+    transform: translateY(0rem);
+  }
+}
