@@ -1,0 +1,233 @@
+* { box-sizing: border-box; }
+
+:root {
+  /* 60% — cool slate base */
+  --bg-deep:      #1a1f28;
+  --bg-mid:       #2a303c;
+  --metal-top:    #f2f4f8;
+  --metal-mid:    #d9dee7;
+  --metal-bot:    #9aa4b5;
+
+  /* 30% — muted teal track (ON state) */
+  --teal-deep:    #1f5c63;
+  --teal-mid:     #2e8a8f;
+  --teal-bright:  #59bcc0;
+
+  /* 10% — warm amber hero ball */
+  --amber-hi:     #fff6e0;
+  --amber-lit:    #ffd98a;
+  --amber-mid:    #f0a93f;
+  --amber-deep:   #cf7a12;
+  --amber-shadow: #9a5405;
+
+  --text-dim:     rgba(255,255,255,.20);
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 50% 0%, var(--bg-mid) 0%, var(--bg-deep) 55%, #0e1116 100%);
+  display: grid;
+  place-items: center;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* subtle film grain */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .035;
+  z-index: 20;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- brushed-metal switch plate ---------- */
+.toggle {
+  position: relative;
+  z-index: 2;
+  padding: 9px;
+  border-radius: 999px;
+  cursor: pointer;
+  background:
+    repeating-linear-gradient(90deg,
+      rgba(255,255,255,.05) 0 1px,
+      rgba(0,0,0,.025) 1px 2px),
+    linear-gradient(180deg,
+      var(--metal-top) 0%,
+      var(--metal-mid) 42%,
+      var(--metal-bot) 72%,
+      #7e8798 100%);
+  box-shadow:
+    0 24px 38px rgba(0,0,0,.60),
+    0 7px 14px rgba(0,0,0,.45),
+    inset 0 2px 1px rgba(255,255,255,.95),
+    inset 0 -3px 4px rgba(0,0,0,.22),
+    inset 0 0 0 1px rgba(0,0,0,.08);
+  transition: filter .18s ease, box-shadow .35s ease;
+}
+
+.toggle:hover {
+  filter: brightness(1.04);
+}
+
+.toggle:active {
+  box-shadow:
+    0 10px 18px rgba(0,0,0,.55),
+    0 3px 7px rgba(0,0,0,.4),
+    inset 0 3px 6px rgba(0,0,0,.25),
+    inset 0 -2px 2px rgba(255,255,255,.35);
+}
+
+/* ON state — teal glow bleeds onto the plate */
+.toggle.on {
+  box-shadow:
+    0 24px 38px rgba(0,0,0,.60),
+    0 7px 14px rgba(0,0,0,.45),
+    0 0 46px rgba(89,188,192,.45),
+    inset 0 2px 1px rgba(255,255,255,.95),
+    inset 0 -3px 4px rgba(0,0,0,.22),
+    inset 0 0 0 1px rgba(0,0,0,.08);
+}
+
+/* ---------- deep recessed track ---------- */
+.track {
+  position: relative;
+  width: 168px;
+  height: 76px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #4f5865 0%, #737d8c 55%, #98a2b2 100%);
+  box-shadow:
+    inset 0 9px 16px rgba(0,0,0,.68),
+    inset 0 -5px 10px rgba(255,255,255,.22),
+    inset 0 0 0 1px rgba(0,0,0,.22);
+}
+
+/* teal "ON" layer */
+.track::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg,
+    var(--teal-deep) 0%,
+    var(--teal-mid) 55%,
+    var(--teal-bright) 100%);
+  box-shadow:
+    inset 0 9px 16px rgba(0,0,0,.55),
+    inset 0 -5px 10px rgba(200,255,250,.28),
+    inset 0 0 0 1px rgba(0,0,0,.22),
+    inset 0 0 24px rgba(89,230,225,.35);
+  opacity: 0;
+  transition: opacity .45s ease;
+}
+
+.toggle.on .track::after { opacity: 1; }
+
+/* ---------- glossy amber ball ---------- */
+.knob {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 62px;
+  height: 62px;
+  pointer-events: none;
+  z-index: 5;
+  will-change: transform;
+}
+
+.knob-body {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  transform-origin: 50% 100%;
+  background:
+    /* top-left specular bloom */
+    radial-gradient(circle at 32% 24%,
+      var(--amber-hi) 0%,
+      rgba(255,225,168,.85) 8%,
+      rgba(255,220,150,0) 28%),
+    /* main amber body */
+    radial-gradient(circle at 34% 26%,
+      var(--amber-lit) 0%,
+      var(--amber-mid) 38%,
+      var(--amber-deep) 72%,
+      var(--amber-shadow) 100%);
+  box-shadow:
+    inset -4px -6px 12px rgba(120,60,0,.55),
+    inset  4px  6px 12px rgba(255,235,190,.55),
+    0 10px 18px rgba(0,0,0,.55),
+    0 3px 7px rgba(0,0,0,.40);
+}
+
+/* crisp specular highlight */
+.knob-body::before {
+  content: "";
+  position: absolute;
+  left: 17%;
+  top: 10%;
+  width: 42%;
+  height: 30%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 45%,
+    rgba(255,255,255,.97) 0%,
+    rgba(255,255,255,.55) 38%,
+    rgba(255,255,255,0) 72%);
+  filter: blur(.5px);
+  pointer-events: none;
+}
+
+/* bottom bounce-light rim */
+.knob-body::after {
+  content: "";
+  position: absolute;
+  left: 9%;
+  right: 9%;
+  bottom: 5%;
+  height: 22%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 50%,
+    rgba(255,225,170,.45),
+    rgba(255,225,170,0) 70%);
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+/* squash & settle when the ball lands back in the track */
+@keyframes land {
+  0%   { transform: scale(1, 1); }
+  35%  { transform: scale(1.16, .86); }
+  68%  { transform: scale(.95, 1.05); }
+  100% { transform: scale(1, 1); }
+}
+
+.knob-body.land {
+  animation: land .42s cubic-bezier(.34, 1.3, .64, 1);
+}
+
+/* ---------- soft floor shadow under the ball ---------- */
+.ball-shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  will-change: transform, opacity;
+  background: radial-gradient(ellipse at 50% 50%,
+    rgba(0,0,0,.70) 0%,
+    rgba(0,0,0,.35) 42%,
+    rgba(0,0,0,0) 72%);
+}
