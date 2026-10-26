@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <title>Hero Cards with Scroll Merge</title>
+</head>
+<body>
+     <div class="hero-container" style="perspective: 1200px">
+
+        <div id="hero-card-1" class="hero-card" style="transform: translateX(-280px) translateY(0px) rotateZ(-12deg) scale(1); z-index: 1; opacity: 1;">
+            <img alt="Alpine valley with granite peak" class="card-image" src="./img/img-1.webp">
+            <div class="card-gradient"></div>
+            <div class="card-info">
+                <div>
+                    <p class="card-title">Dolomite Ridge</p>
+                    <p class="card-subtitle">36 photos</p>
+                </div>
+                <div class="card-badge">
+                    <i data-lucide="mountain" class="badge-icon"></i>
+                    Alps
+                </div>
+            </div>
+        </div>
+
+        <div id="hero-card-2" class="hero-card" style="transform: translateX(0px) translateY(0px) rotateZ(0deg) scale(1.05); z-index: 3; opacity: 1; box-shadow: rgba(0, 0, 0, 0.5) 0px 25px 50px -12px;">
+            <img alt="Minimal portrait in orange light" class="card-image" src="./img/img-2.webp">
+            <div class="card-gradient"></div>
+            <div class="card-info">
+                <div>
+                    <p class="card-title">Amber Portraits</p>
+                    <p class="card-subtitle">22 photos</p>
+                </div>
+                <div class="card-badge">
+                    <i data-lucide="users" class="badge-icon"></i>
+                    People
+                </div>
+            </div>
+        </div>
+
+        <div id="hero-card-3" class="hero-card" style="transform: translateX(280px) translateY(0px) rotateZ(12deg) scale(1); z-index: 2; opacity: 1;">
+            <img alt="Snowy village at dusk in the mountains" class="card-image" src="./img/img-3.webp">
+            <div class="card-gradient"></div>
+            <div class="card-info">
+                <div>
+                    <p class="card-title">Zermatt Nights</p>
+                    <p class="card-subtitle">41 photos</p>
+                </div>
+                <div class="card-badge">
+                    <i data-lucide="camera" class="badge-icon"></i>
+                    Cityscape
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="frontendfocus.js"></script>
+</body>
+</html>
