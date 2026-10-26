@@ -1,0 +1,222 @@
+:root {
+  --bg: #090d18;
+  --card: rgba(20, 28, 48, 0.88);
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #a78bfa;
+  --cyan: #67e8f9;
+  --tooltip-bg: #252f48;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 64px 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at 50% 0%, #25204b 0%, transparent 55%),
+    var(--bg);
+}
+
+.tooltip-showcase {
+  text-align: center;
+}
+
+.tooltip-card {
+  margin: 18px 0;
+  padding: 28px 24px 32px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 22px;
+  background: var(--card);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+  transition: border-color 250ms ease, transform 250ms ease;
+}
+
+.tooltip-card:hover {
+  border-color: rgba(167, 139, 250, 0.35);
+  transform: translateY(-2px);
+}
+
+.tooltip-card h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0;
+  font-size: 22px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.number {
+  color: var(--accent);
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.card-description {
+  margin: 9px 0 26px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.tooltip-card ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 0;
+  padding: 18px 0 10px;
+  list-style: none;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 94px;
+  padding: 13px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  background: #1c2640;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 750;
+  letter-spacing: 1px;
+  cursor: default;
+  transition:
+    color 200ms ease,
+    background 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.tooltip:hover {
+  color: #fff;
+  background: #302650;
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.18);
+}
+
+/* Tooltip bubble */
+.tooltip::before {
+  content: attr(data-title);
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  bottom: calc(100% + 12px);
+  width: max-content;
+  max-width: min(240px, 70vw);
+  padding: 10px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9px;
+  background: var(--tooltip-bg);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.4;
+  text-align: center;
+  white-space: normal;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 8px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+/* Tooltip arrow */
+.tooltip::after {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  bottom: calc(100% + 6px);
+  border: 6px solid transparent;
+  border-top-color: var(--tooltip-bg);
+  border-bottom: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 5px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+/* Fade */
+.tooltip.fade:hover::before,
+.tooltip.fade:hover::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* Expand */
+.tooltip.expand::before {
+  transform: translate(-50%, 8px) scale(0.65);
+  transform-origin: bottom center;
+}
+
+.tooltip.expand:hover::before {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+}
+
+.tooltip.expand:hover::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  transition-delay: 70ms;
+}
+
+/* Swing */
+.tooltip.swing::before {
+  transform: translate(-50%, 8px) rotate(-12deg);
+  transform-origin: bottom center;
+}
+
+.tooltip.swing:hover::before {
+  opacity: 1;
+  transform: translate(-50%, 0) rotate(0);
+}
+
+.tooltip.swing:hover::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  transition-delay: 70ms;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 36px 16px;
+  }
+
+  .tooltip-card {
+    padding: 24px 14px;
+  }
+
+  .tooltip-card ul {
+    gap: 12px;
+  }
+
+  .tooltip {
+    min-width: 78px;
+    padding: 12px 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
