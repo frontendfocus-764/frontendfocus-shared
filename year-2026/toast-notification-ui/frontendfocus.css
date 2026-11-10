@@ -1,0 +1,159 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Fira Code", monospace;
+  background: #0d0f12;
+}
+
+.buttons-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+button {
+  padding: 11px 18px;
+  min-width: 100px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.error-btn {
+  background-color: #ff3b3b;
+  color: white;
+}
+
+.warning-btn {
+  background-color: #ffcc00;
+  color: #333;
+}
+
+.success-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.notification-stack-wrapper {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 270px;
+}
+
+.notification {
+  text-wrap: nowrap;
+  background-color: #0d1015;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 15px;
+  border-left: none;
+  border: 1px solid #13161c;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(-20px);
+  width: 250px;
+  margin-bottom: 10px;
+  max-height: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  margin-bottom: -41px;
+}
+
+.notification.show {
+  transform: translateY(0);
+  opacity: 0.8;
+  max-height: 50px;
+}
+
+.notification.fade-out {
+  transform: translateY(0) !important;
+  opacity: 0 !important;
+  max-height: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.notification-stack-wrapper:hover {
+  align-items: center;
+}
+
+.notification-stack-wrapper:hover .notification {
+  width: 100% !important;
+  opacity: 1 !important;
+  margin-bottom: 10px;
+}
+
+.notification.show:nth-last-child(1) {
+  width: 100%;
+  opacity: 1;
+}
+
+.notification.show:nth-last-child(2) {
+  width: 95%;
+  opacity: 0.9;
+}
+
+.notification.show:nth-last-child(3) {
+  width: 90%;
+  opacity: 0.8;
+}
+
+.notification.show:nth-last-child(4) {
+  width: 85%;
+  opacity: 0.7;
+}
+
+.notification.show:nth-last-child(5) {
+  width: 80%;
+  opacity: 0.6;
+}
+
+.notification-delete {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1em;
+  padding: 0 0.1em;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.notification-delete:hover {
+  opacity: 1;
+}
+
+.notification.error {
+  -webkit-box-shadow: inset 45px 0px 0px -41px rgba(255, 59, 59, 1);
+  -moz-box-shadow: inset 45px 0px 0px -41px rgba(255, 59, 59, 1);
+  box-shadow: inset 45px 0px 0px -41px rgba(255, 59, 59, 1);
+}
+
+.notification.warning {
+  -webkit-box-shadow: inset 45px 0px 0px -41px rgba(255, 204, 0, 1);
+  -moz-box-shadow: inset 45px 0px 0px -41px rgba(255, 204, 0, 1);
+  box-shadow: inset 45px 0px 0px -41px rgba(255, 204, 0, 1);
+}
+
+.notification.success {
+  -webkit-box-shadow: inset 45px 0px 0px -41px rgba(76, 175, 80, 1);
+  -moz-box-shadow: inset 45px 0px 0px -41px rgba(76, 175, 80, 1);
+  box-shadow: inset 45px 0px 0px -41px rgba(76, 175, 80, 1);
+}
