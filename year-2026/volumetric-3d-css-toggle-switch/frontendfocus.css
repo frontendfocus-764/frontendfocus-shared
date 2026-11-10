@@ -1,0 +1,224 @@
+:root {
+  --dur: 1000ms;
+  --primary: #70badf;
+  --primary-light: #77c6ed;
+  --primary-dark: #1b729e;
+  --bg: #cccccc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: var(--bg);
+  font-family: system-ui, sans-serif;
+}
+
+.wrapper {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  perspective: 500px;
+  transform-style: preserve-3d;
+  background: radial-gradient(
+    circle at 50% 50%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+}
+
+.flexDiv {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 100px;
+  pointer-events: none;
+  transform-style: preserve-3d;
+}
+
+.flexDiv div {
+  position: relative;
+  width: 10%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    var(--primary) 0%,
+    var(--primary-light) 90%,
+    var(--primary-light) 100%
+  );
+  transform-style: preserve-3d;
+  transition:
+    transform var(--dur) ease-in-out,
+    filter var(--dur) ease-in-out;
+}
+
+.flexDiv div:nth-of-type(1) {
+  clip-path: circle(70% at 255% 50%);
+}
+
+.flexDiv div:nth-of-type(2) {
+  clip-path: circle(70% at 155% 50%);
+}
+
+.flexDiv div:nth-of-type(9) {
+  clip-path: circle(70% at -55% 50%);
+}
+
+.flexDiv div:nth-of-type(10) {
+  clip-path: circle(70% at -155% 50%);
+}
+
+.toggleMe {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  opacity: 0;
+  z-index: 10;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.toggleMe:checked ~ .flexDiv div {
+  transform: rotateX(180deg);
+  filter: grayscale(100%) brightness(135%);
+}
+
+.toggleMe:checked ~ .flexDiv div::after {
+  transform: rotateX(0deg) translateZ(calc(var(--dur) * 2));
+}
+
+.circle,
+.circleOther {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 2;
+  pointer-events: none;
+  animation-duration: var(--dur);
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+.circle {
+  background: radial-gradient(
+    circle at 30% 30%,
+    var(--primary-light) 0%,
+    var(--primary-light) 30%,
+    var(--primary-dark) 100%
+  );
+  animation-name: circleAnim;
+  transform: translateZ(30px) translateX(-45px);
+}
+
+.circleOther {
+  background: radial-gradient(
+    circle at 30% 30%,
+    #fff 0%,
+    #fff 30%,
+    #bbb 100%
+  );
+  animation-name: circleAnimOther;
+  transform: translateZ(-30px) translateX(-45px);
+}
+
+.toggleMe:checked ~ .circle {
+  animation-name: circleReturn;
+}
+
+.toggleMe:checked ~ .circleOther {
+  animation-name: circleReturnOther;
+}
+
+@keyframes circleAnim {
+  0% {
+    transform: translateZ(30px) translateX(-45px);
+  }
+  50% {
+    transform: translateZ(0) translateX(0) translateY(35px);
+  }
+  100% {
+    transform: translateZ(-30px) translateX(45px);
+  }
+}
+
+@keyframes circleAnimOther {
+  0% {
+    transform: translateZ(-30px) translateX(-45px);
+  }
+  50% {
+    transform: translateZ(0) translateX(0) translateY(-35px);
+  }
+  100% {
+    transform: translateZ(30px) translateX(45px);
+  }
+}
+
+@keyframes circleReturn {
+  0% {
+    transform: translateZ(-30px) translateX(45px);
+  }
+  50% {
+    transform: translateZ(0) translateX(0) translateY(35px);
+  }
+  100% {
+    transform: translateZ(30px) translateX(-45px);
+  }
+}
+
+@keyframes circleReturnOther {
+  0% {
+    transform: translateZ(30px) translateX(45px);
+  }
+  50% {
+    transform: translateZ(0) translateX(0) translateY(-35px);
+  }
+  100% {
+    transform: translateZ(-30px) translateX(-45px);
+  }
+}
+
+.toggleMe:focus-visible {
+  outline: 2px solid var(--primary-dark);
+  outline-offset: 8px;
+  border-radius: 50px;
+}
+
+@media (max-width: 600px) {
+  .flexDiv {
+    width: 180px;
+    height: 90px;
+  }
+
+  .toggleMe {
+    width: 180px;
+    height: 90px;
+  }
+
+  .circle,
+  .circleOther {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flexDiv div {
+    transition-duration: 0.01ms;
+  }
+
+  .circle,
+  .circleOther {
+    animation-duration: 0.01ms;
+  }
+}
