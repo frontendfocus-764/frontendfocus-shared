@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.spotlight {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  background: #e9eae9;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  font-family: "DM Sans", sans-serif;
+  overflow: hidden;
+}
+
+.card {
+  --card-width: 250px;
+  --card-height: 400px;
+  --card-depth: 200px;
+
+  width: var(--card-width);
+  height: var(--card-height);
+  perspective: 2000px;
+}
+
+.cube {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  transform: translateZ(calc(var(--card-depth) / -2));
+}
+
+.face {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.face-front,
+.face-back {
+  width: var(--card-width);
+  height: var(--card-height);
+  background: #ffffff;
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  padding: 1.5rem;
+}
+
+.face-right,
+.face-left {
+  width: var(--card-depth);
+  height: var(--card-height);
+  left: calc((var(--card-width) - var(--card-depth)) / 2);
+}
+
+.face-top,
+.face-bottom {
+  width: var(--card-width);
+  height: var(--card-depth);
+  top: calc((var(--card-height) - var(--card-depth)) / 2);
+}
+
+.face-front {
+  transform: translateZ(calc(var(--card-depth) / 2));
+}
+
+.face-back {
+  transform: rotateX(180deg) translateZ(calc(var(--card-depth) / 2));
+}
+
+.face-right {
+  background: #bcbcbc;
+  transform: rotateY(90deg) translateZ(calc(var(--card-width) / 2));
+}
+
+.face-left {
+  background: #bcbcbc;
+  transform: rotateY(-90deg) translateZ(calc(var(--card-width) / 2));
+}
+
+.face-top {
+  background: #999999;
+  transform: rotateX(90deg) translateZ(calc(var(--card-height) / 2));
+}
+
+.face-bottom {
+  background: #999999;
+  transform: rotateX(-90deg) translateZ(calc(var(--card-height) / 2));
+}
+
+.card-thumb {
+  justify-self: end;
+  align-self: start;
+  width: 55%;
+  aspect-ratio: 120 / 150;
+  object-fit: cover;
+  display: block;
+}
+
+.card-title {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: -1px;
+  margin-bottom: 0.5rem;
+}
+
+.card-meta {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 8px;
+}
+
+.card-desc {
+  font-size: 0.9rem;
+}
+
+.card-arrow {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+
+@media (max-width: 786px) {
+  .spotlight {
+    height: 100%;
+    flex-direction: column;
+    justify-items: center;
+    padding: 20svh 0;
+  }
+}
