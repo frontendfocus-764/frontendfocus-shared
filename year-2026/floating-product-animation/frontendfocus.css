@@ -1,0 +1,192 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: relative;
+    padding: 0 10%;
+    height: 100vh;
+    background: linear-gradient(90deg, rgba(167,162,244,1) 0%, rgba(112,112,143,1) 35%, rgba(166,149,13,1) 100%, rgba(0,212,255,1) 100%);
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    transition: 1s;
+    overflow: hidden;
+}
+
+header {
+    padding: 20px 0;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+}
+
+header > ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 40px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+header .cta {
+    color: white;
+    padding: 10px 30px;
+    font-size: 22px;
+    border-radius: 16px;
+    border: white solid 2px;
+}
+
+.logo img {
+    width: 80px;
+}
+
+section {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 80px;
+    width: 50%;
+    position: relative;
+    z-index: 5;
+}
+
+.info {
+    transition: 0.5s;
+}
+
+section h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+section p {
+    font-size: 18px;
+    line-height: 1.6;
+    width: 30vw;
+}
+
+section > .flavors {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+}
+
+section > .flavors .flavor {
+    transition: .3s;
+    padding-bottom: 20px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+section > .flavors .active {
+    border-bottom: 3px solid white;
+}
+
+section > .flavors .flavor img {
+    width: 150px;
+}
+
+.juices-wheel {
+    transition: 1s;
+    position: absolute;
+    width: min(50vw, 50vh);
+    height: min(50vw, 50vh);
+    bottom: 0;
+    right: 0;
+    transform-origin: center center;
+    transform: translate(50%, 50%) rotate(-45deg);
+}
+
+.juices-wheel .flavor {
+    position: absolute;
+    width: 90%;
+}
+
+.juices-wheel .flavor img {
+    width: 100%;
+}
+
+.juices-wheel .flavor:first-child {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+
+.juices-wheel .flavor:nth-child(2) {
+    top: 50%;
+    right: 0;
+    transform: translate(130%, -50%) rotate(90deg);
+}
+
+.juices-wheel .flavor:nth-child(3) {
+    bottom: 0;
+    left: 50%;
+    transform:  translate(-50%, 100%) rotate(180deg);
+}
+
+.juices-wheel .flavor:last-child {
+    top: 50%;
+    left: 0;
+    transform:  translate(-130%, -50%) rotate(-90deg);
+}
+
+.flavors-wheel {
+    transition: 1s;
+    position: absolute;
+    width: min(100vw, 100vh);
+    height: min(100vw, 100vh);
+    top: 0%;
+    left: 0%;
+    transform-origin: center center;
+    transform: translate(-150%, -150%) rotate(-45deg);
+}
+
+.flavors-wheel .flavor {
+    position: absolute;
+    width: 150%;
+}
+
+.flavors-wheel .flavor img {
+    width: 100%;
+    opacity: 0.5;
+}
+
+.flavors-wheel .flavor:first-child {
+    bottom: 0;
+    right: 0;
+    transform: translateY(200%);
+}
+
+.flavors-wheel .flavor:nth-child(2) {
+    bottom: 50%;
+    left: 0;
+    transform: translate(-150%, 50%);
+}
+
+.flavors-wheel .flavor:nth-child(3) {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -300%) rotate(100deg);
+}
+
+.flavors-wheel .flavor:last-child {
+    top: 50%;
+    right: 0;
+    transform: translate(150%, -50%);
+}
