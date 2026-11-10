@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontendfocus.css">
+    <title>Interactive 3D Avatar | Blink, Talk, Wave & Customize</title>
+</head>
+<body>
+    <header class="kicker">
+        <h1>Clotile</h1>
+        <span>Boudreaux's Girl · A Wuppet</span>
+    </header>
+
+    <main class="stage">
+        <div id="bubble" aria-live="polite"></div>
+        <div id="stage-clotile"></div>
+    </main>
+
+    <nav class="triggers" aria-label="Puppet triggers">
+        <div class="row">
+            <button data-act="blink">Blink</button>
+            <button data-act="look">Look</button>
+            <button data-act="talk">Talk</button>
+            <button data-act="giggle">Giggle</button>
+            <button data-act="wave">Wave</button>
+            <button data-act="point">Throw Me Something</button>
+            <button data-act="shimmy">Shimmy</button>
+            <button data-act="strut">Second Line</button>
+            <button data-act="bounce">Bounce</button>
+            <button data-act="twirl">Bead Twirl</button>
+            <button data-act="sign">Sign</button>
+            <button data-act="stop" class="ghost">Stop</button>
+        </div>
+        <div class="row">
+            <button data-act="color" class="cycle">Hair: Brown</button>
+            <button data-act="outfit" class="cycle">Outfit: Sundress</button>
+            <button data-act="eyes" class="cycle">Eyes: Brown</button>
+            <span class="sep"></span>
+            <button data-act="feathers" class="toggle">Feathers</button>
+            <button data-act="beads" class="toggle">Beads</button>
+        </div>
+    </nav>
+
+    <script src="https://wuppet-clotile.pages.dev/v1/clotile.js"></script>
+    <script src="frontendfocus.js"></script>
+</body>
+</html>

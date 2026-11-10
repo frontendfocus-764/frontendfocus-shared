@@ -1,0 +1,194 @@
+:root {
+  --bg-1: #3a2150;
+  --bg-2: #120a1a;
+  --bar-h: 112px;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  color: #fbf7ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(
+    ellipse at 50% 35%,
+    var(--bg-1) 0%,
+    var(--bg-2) 75%
+  );
+  overflow: hidden;
+}
+
+.kicker {
+  position: fixed;
+  top: 14px;
+  left: 18px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.kicker h1 {
+  margin: 0;
+  font-size: clamp(18px, 2.4vw, 26px);
+  background: linear-gradient(90deg, #ffe08a, #fff6d6 45%, #d7a6ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.kicker span {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #c9b4dc;
+}
+
+.stage {
+  position: fixed;
+  inset: 0 0 var(--bar-h) 0;
+}
+
+#stage-clotile {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 100%;
+  height: calc(100% - 12px);
+}
+
+#stage-clotile .part {
+  cursor: pointer;
+}
+
+#bubble {
+  position: absolute;
+  left: 50%;
+  top: 2%;
+  transform: translate(-50%, 8px) scale(0.9);
+  max-width: min(80vw, 420px);
+  padding: 12px 18px;
+  border-radius: 22px;
+  background: #fff8e6;
+  color: #3a1857;
+  border: 3px solid #5e1784;
+  font:
+    800 clamp(15px, 2.2vw, 20px)/1.25 Georgia,
+    serif;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+#bubble.show {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+}
+
+.triggers {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--bar-h);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 12px;
+  background: linear-gradient(
+    180deg,
+    rgba(18, 10, 26, 0),
+    rgba(18, 10, 26, 0.9) 30%
+  );
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.row::-webkit-scrollbar {
+  display: none;
+}
+
+.sep {
+  width: 1px;
+  height: 26px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0 4px;
+  flex: 0 0 auto;
+}
+
+.triggers button {
+  flex: 0 0 auto;
+  font: 600 13px/1 inherit;
+  font-family: inherit;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 999px;
+  border: 1px solid rgba(245, 196, 67, 0.55);
+  background: linear-gradient(180deg, #5b2c80, #3a1857);
+  cursor: pointer;
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
+}
+
+.triggers button:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+.triggers button.on {
+  background: linear-gradient(180deg, #f5c443, #c98d1c);
+  color: #2a1240;
+  border-color: #fff2bf;
+}
+
+.triggers button.toggle {
+  background: linear-gradient(180deg, #1f6b45, #0f4128);
+  border-color: rgba(120, 230, 170, 0.5);
+}
+
+.triggers button.cycle {
+  background: linear-gradient(180deg, #8a2f5a, #5a1838);
+  border-color: rgba(255, 170, 200, 0.5);
+}
+
+.triggers button.toggle.on {
+  background: linear-gradient(180deg, #2fb46a, #17804a);
+  color: #fff;
+  border-color: #c8ffe0;
+}
+
+.triggers button.ghost {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 760px) {
+  .row {
+    justify-content: flex-start;
+  }
+  .kicker span {
+    display: none;
+  }
+}
