@@ -1,0 +1,272 @@
+
+:root {
+  --hue: 223;
+  --gray50: hsl(var(--hue) 10% 95%);
+  --gray950: hsl(var(--hue) 10% 5%);
+  --primary500: hsl(var(--hue) 90% 50%);
+  --trans-dur: 0.3s;
+
+  --ease-in: cubic-bezier(0.32, 0, 0.67, 0);
+  --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  color-scheme: light dark;
+  font-size: clamp(0.875rem, 0.75rem + 0.625vw, 1.75rem);
+}
+
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: light-dark(var(--gray50), var(--gray950));
+  color: light-dark(var(--gray950), var(--gray50));
+  font: 1em / 1.5 sans-serif;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  transition:
+    background-color var(--trans-dur),
+    color var(--trans-dur);
+}
+
+.melon {
+  --anim-dur: 5s;
+  display: block;
+  width: 10em;
+  height: auto;
+}
+
+.melon__core,
+.melon__motion,
+.melon__seed,
+.melon__seeds,
+.melon__skin {
+  animation-duration: var(--anim-dur);
+  animation-timing-function: var(--ease-in-out);
+  animation-iteration-count: infinite;
+}
+
+.melon__core {
+  animation-name: melon-core, melon-core-spin;
+}
+
+.melon__motion {
+  animation-name: melon-motion, melon-motion-spin;
+  animation-timing-function: var(--ease-in-out), linear;
+}
+
+.melon__seed {
+  animation-name: melon-seed;
+}
+
+.melon__seeds {
+  animation-name: melon-seeds;
+  fill: light-dark(hsl(0, 0%, 10%), hsl(30, 100%, 80%));
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: fill var(--trans-dur);
+}
+
+.melon__seeds > g:nth-child(2) .melon__seed {
+  animation-delay: calc(var(--anim-dur) * 0.01);
+}
+
+.melon__seeds > g:nth-child(3) .melon__seed {
+  animation-delay: calc(var(--anim-dur) * 0.02);
+}
+
+.melon__seeds > g:nth-child(4) .melon__seed {
+  animation-delay: calc(var(--anim-dur) * 0.03);
+}
+
+.melon__seeds > g:nth-child(5) .melon__seed {
+  animation-delay: calc(var(--anim-dur) * 0.04);
+}
+
+.melon__seeds > g:nth-child(6) .melon__seed {
+  animation-delay: calc(var(--anim-dur) * 0.05);
+}
+
+.melon__core,
+.melon__motion,
+.melon__seed,
+.melon__seeds,
+.melon__skin {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes melon-core {
+  0% {
+    animation-timing-function: var(--ease-in);
+    stroke-dashoffset: 1;
+    stroke-width: 0;
+  }
+
+  25%,
+  75% {
+    animation-timing-function: var(--ease-out);
+    stroke-dashoffset: 0;
+    stroke-width: 26px;
+  }
+
+  100% {
+    stroke-dashoffset: -1;
+    stroke-width: 0;
+  }
+}
+
+@keyframes melon-core-spin {
+  0% {
+    animation-timing-function: var(--ease-in);
+    transform: rotate(0);
+  }
+
+  25%,
+  75% {
+    transform: rotate(1turn);
+    animation-timing-function: var(--ease-out);
+  }
+
+  100% {
+    transform: rotate(2turn);
+  }
+}
+
+@keyframes melon-motion {
+  0%,
+  24% {
+    stroke-dashoffset: 0.3;
+  }
+
+  28% {
+    stroke-dashoffset: 0;
+  }
+
+  32%,
+  74% {
+    stroke-dashoffset: 0.3;
+  }
+
+  78% {
+    stroke-dashoffset: 0;
+  }
+
+  82%,
+  100% {
+    stroke-dashoffset: 0.3;
+  }
+}
+
+@keyframes melon-motion-spin {
+  0%,
+  28% {
+    transform: rotate(0);
+  }
+
+  32%,
+  50% {
+    animation-timing-function: step-start;
+    transform: rotate(0.3turn);
+  }
+
+  78% {
+    transform: rotate(0);
+  }
+
+  82%,
+  100% {
+    animation-timing-function: step-start;
+    transform: rotate(0.3turn);
+  }
+}
+
+@keyframes melon-seed {
+  0% {
+    transform: translate(0, 0) scale(0);
+  }
+
+  3% {
+    transform: translate(0, 20px) scale(1, 1.5);
+  }
+
+  6%,
+  90% {
+    transform: translate(0, 16px) scale(1);
+  }
+
+  94%,
+  100% {
+    transform: translate(0, 0) scale(0);
+  }
+}
+
+@keyframes melon-seeds {
+  0% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(1.5turn);
+  }
+
+  100% {
+    transform: rotate(3turn);
+  }
+}
+
+@keyframes melon-skin-offset {
+  0% {
+    stroke-dashoffset: 1;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -1;
+  }
+}
+
+@keyframes melon-skin-width {
+  0% {
+    animation-timing-function: var(--ease-in);
+    stroke-width: 0;
+  }
+
+  25%,
+  75% {
+    animation-timing-function: var(--ease-out);
+    stroke-width: 5px;
+  }
+
+  100% {
+    stroke-width: 0;
+  }
+}
+
+@keyframes melon-skin-spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(1turn);
+  }
+
+  100% {
+    transform: rotate(2turn);
+  }
+}
+
+.melon__skin {
+  animation-name:
+    melon-skin-offset,
+    melon-skin-width,
+    melon-skin-spin;
+}
