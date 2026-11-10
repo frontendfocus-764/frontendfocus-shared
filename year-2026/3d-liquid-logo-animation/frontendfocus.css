@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* A thicker, highly rounded "squircle" lightning bolt matching the image */
+  --mask-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cpath fill='%23000' d='M 235 30 C 260 10 295 25 290 65 L 275 140 L 315 155 C 350 170 355 210 330 235 L 185 380 C 155 410 110 390 120 340 L 145 245 L 100 225 C 65 205 60 165 85 140 Z'/%3E%3C/svg%3E");
+  --base-cutout: 320px;
+  --logo-size: 130px;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+  background-color: #9b6ae8;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  /* Brighter, softer central glow */
+  background: radial-gradient(
+    circle at 50% 50%,
+    #d4c1fc 0%,
+    #b58ef6 25%,
+    #9b5aee 65%
+  );
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.depth-layer {
+  position: absolute;
+  width: 260%;
+  height: 260%;
+  top: -80%;
+  left: -80%;
+  will-change: transform;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+.depth-mask {
+  width: 100%;
+  height: 100%;
+  --size: calc(var(--base-cutout) * var(--scale));
+
+  /* WebKit */
+  -webkit-mask-image: linear-gradient(#fff, #fff), var(--mask-svg);
+  -webkit-mask-position: center, center;
+  -webkit-mask-size: 100% 100%, var(--size) var(--size);
+  -webkit-mask-repeat: no-repeat, no-repeat;
+  -webkit-mask-composite: xor;
+
+  /* Standard */
+  mask-image: linear-gradient(#fff, #fff), var(--mask-svg);
+  mask-position: center, center;
+  mask-size: 100% 100%, var(--size) var(--size);
+  mask-repeat: no-repeat, no-repeat;
+  mask-composite: subtract;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  width: var(--logo-size);
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+  display: block;
+  /* Adding a slight drop shadow to the 3D logo itself */
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+}
+
+/* 
+  Stacking & Soft Ambient Shadows
+  Adjusted colors to match the softer purples in the image 
+*/
+.depth-layer:nth-child(1) {
+  z-index: 5;
+  filter: drop-shadow(0 20px 30px rgba(60, 20, 120, 0.4));
+}
+
+.depth-layer:nth-child(2) {
+  z-index: 4;
+  filter: drop-shadow(0 16px 25px rgba(60, 20, 120, 0.35));
+}
+
+.depth-layer:nth-child(3) {
+  z-index: 3;
+  filter: drop-shadow(0 12px 20px rgba(60, 20, 120, 0.3));
+}
+
+.depth-layer:nth-child(4) {
+  z-index: 2;
+  filter: drop-shadow(0 8px 15px rgba(60, 20, 120, 0.25));
+}
+
+.depth-layer:nth-child(5) {
+  z-index: 1;
+  filter: drop-shadow(0 4px 10px rgba(255, 255, 255, 0.1));
+}
+
+.depth-layer:nth-child(6) {
+  z-index: 10;
+  filter: drop-shadow(0 20px 35px rgba(20, 0, 50, 0.5));
+}
+
+/* 
+  Cutout Scales & Exact Palette
+  Lighter colors inside, darker purples on the outside to create depth 
+*/
+.depth-layer:nth-child(1) .depth-mask { /* Outermost - largest */
+  --scale: 5.5;
+  background: #9e68ea;
+}
+.depth-layer:nth-child(2) .depth-mask {
+  --scale: 4.2;
+  background: #955ee4;
+}
+.depth-layer:nth-child(3) .depth-mask {
+  --scale: 3.1;
+  background: #8d54de;
+}
+.depth-layer:nth-child(4) .depth-mask {
+  --scale: 2.1;
+  background: #854ad8;
+}
+.depth-layer:nth-child(5) .depth-mask { 
+  /* Innermost - smallest */
+  --scale: 1.25;
+  background: #a470f0; 
+}
+
+@media (max-width: 1000px) {
+  :root {
+    --base-cutout: 220px;
+    --logo-size: 100px;
+  }
+  .depth-layer {
+    width: 300%;
+    height: 300%;
+    top: -100%;
+    left: -100%;
+  }
+}
