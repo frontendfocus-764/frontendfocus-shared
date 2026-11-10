@@ -1,0 +1,130 @@
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #0c1e18;
+}
+
+#enrichr-root {
+  min-height: 100vh;
+}
+
+#enrichr-root > * {
+  min-height: 100vh;
+}
+
+.ef-tw {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 18rem;
+  overflow: hidden;
+  background: #0c1e18;
+  isolation: isolate;
+}
+
+.ef-tw__c {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.ef-tw__defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.ef-tw__pieces {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.ef-tw__pc {
+  position: absolute;
+  display: block;
+  filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.35));
+  will-change: transform;
+}
+
+.ef-tw__pc--a {
+  width: min(22%, 6.5rem);
+  aspect-ratio: 1;
+  left: 9%;
+  top: 14%;
+  color: var(--ef-pa, #e6ff55);
+  animation: ef-tw-f1 9s ease-in-out infinite;
+}
+
+.ef-tw__pc--b {
+  width: min(34%, 9rem);
+  aspect-ratio: 503 / 322;
+  right: 8%;
+  bottom: 16%;
+  color: var(--ef-pb, #fbf8f1);
+  opacity: 0.92;
+  animation: ef-tw-f2 11s ease-in-out infinite;
+}
+
+.ef-tw__pc--c {
+  width: min(15%, 4.4rem);
+  aspect-ratio: 322 / 503;
+  right: 22%;
+  top: 9%;
+  color: var(--ef-pc, #2f7d5b);
+  animation: ef-tw-f3 13s ease-in-out infinite;
+}
+
+.ef-tw.no-pieces .ef-tw__pieces {
+  display: none;
+}
+
+@keyframes ef-tw-f1 {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-12deg);
+  }
+  50% {
+    transform: translate3d(8px, -14px, 0) rotate(-4deg);
+  }
+}
+
+@keyframes ef-tw-f2 {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(8deg);
+  }
+  50% {
+    transform: translate3d(-12px, 10px, 0) rotate(15deg);
+  }
+}
+
+@keyframes ef-tw-f3 {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(18deg);
+  }
+  50% {
+    transform: translate3d(6px, 12px, 0) rotate(8deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ef-tw__pc {
+    animation: none;
+  }
+  .ef-tw__pc--a {
+    transform: rotate(-10deg);
+  }
+  .ef-tw__pc--b {
+    transform: rotate(8deg);
+  }
+  .ef-tw__pc--c {
+    transform: rotate(16deg);
+  }
+}
