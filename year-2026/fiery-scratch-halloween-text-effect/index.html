@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="frontendfocus.css">
+  <title>Fiery Scratch Halloween Text Effect</title>
+</head>
+<body>
+  <!-- Background Sparks/Canvas Container -->
+  <canvas id="emberCanvas"></canvas>
+
+  <main class="container">
+    <!-- Main Glowing Header -->
+    <h1 class="halloween-title" data-text="HALLOWEEN">
+      <span>H</span><span>A</span><span>L</span><span>L</span><span>O</span><span>W</span><span>E</span><span>E</span><span>N</span>
+    </h1>
+
+    <!-- Interactive Subtitle / Input -->
+    <div class="input-wrapper">
+      <input type="text" id="textInput" maxlength="15" placeholder="TYPE YOUR TEXT..." value="SPOOKY NIGHT">
+    </div>
+
+    <!-- Live Preview Display -->
+    <div id="liveText" class="halloween-subtitle" data-text="SPOOKY NIGHT">SPOOKY NIGHT</div>
+  </main>
+
+  <!-- SVG Filters for Spooky Distortions & Flame Ripple -->
+  <svg width="0" height="0" style="position:absolute;">
+    <filter id="fire-distortion">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02 0.08" numOctaves="2" result="noise" id="turbulence">
+        <animate attributeName="baseFrequency" dur="6s" values="0.02 0.08;0.04 0.15;0.02 0.08"
+          repeatCount="indefinite" />
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
+
+  <script src="frontendfocus.js"></script>
+</body>
+</html>
