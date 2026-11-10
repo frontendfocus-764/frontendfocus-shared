@@ -1,0 +1,784 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  background: #5dbdf5;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  animation: bg 10s infinite alternate linear;
+}
+
+.scenary,
+.ground {
+  width: 100%;
+}
+
+.scenary,
+.forest {
+  height: 450px;
+  position: relative;
+}
+
+.nuvem {
+  width: 37px;
+  height: 12px;
+  background: #fff;
+  border-radius: 100%;
+  transform: scale(3);
+}
+
+.nuvem:before {
+  content: "";
+  width: 14px;
+  top: -6px;
+  border-radius: 100%;
+  height: 23px;
+  background: #fff;
+  position: absolute;
+  left: 12px;
+}
+
+.nuvem-1 {
+  position: absolute;
+  right: 60px;
+  top: 66px;
+}
+
+.nuvem-2 {
+  position: absolute;
+  left: 100px;
+  top: 60px;
+}
+
+.nuvem-3 {
+  position: absolute;
+  left: 160px;
+  top: 160px;
+}
+
+.nuvem-4 {
+  position: absolute;
+  left: 50%;
+  top: 140px;
+}
+
+.nuvem-5 {
+  position: absolute;
+  right: 220px;
+  top: 50px;
+}
+
+.nuvem-6 {
+  position: absolute;
+  left: 260px;
+  top: 100px;
+}
+
+.small-1 {
+  z-index: 2;
+  position: absolute;
+  left: 50px;
+  bottom: 0;
+}
+
+.small-2 {
+  z-index: 2;
+  position: absolute;
+  left: 174px;
+  bottom: 0;
+}
+
+.small-3 {
+  position: absolute;
+  left: 273px;
+  bottom: 0;
+}
+
+.small-4 {
+  position: absolute;
+  left: 343px;
+  bottom: 0;
+}
+
+.small-5 {
+  position: absolute;
+  left: 423px;
+  bottom: 0;
+}
+
+.small-6 {
+  position: absolute;
+  left: 498px;
+  bottom: 0;
+}
+
+.small-7 {
+  position: absolute;
+  left: 578px;
+  bottom: 0;
+}
+
+.small-8 {
+  position: absolute;
+  left: 658px;
+  bottom: 0;
+}
+
+.small-9 {
+  position: absolute;
+  left: 738px;
+  bottom: 0;
+}
+
+.small-10 {
+  position: absolute;
+  left: 818px;
+  bottom: 0;
+}
+
+.small-11 {
+  position: absolute;
+  left: 898px;
+  bottom: 0;
+}
+
+.small-12 {
+  position: absolute;
+  left: 978px;
+  bottom: 0;
+}
+
+.big-1 {
+  position: absolute;
+  left: 100px;
+  bottom: 0;
+}
+
+.big-2 {
+  position: absolute;
+  left: 210px;
+  bottom: 0;
+}
+
+.big-3 {
+  position: absolute;
+  left: 370px;
+  bottom: 0;
+}
+
+.big-4 {
+  position: absolute;
+  left: 530px;
+  bottom: 0;
+}
+
+.big-5 {
+  position: absolute;
+  left: 680px;
+  bottom: 0;
+}
+
+.big-6 {
+  position: absolute;
+  left: 780px;
+  bottom: 0;
+}
+
+.big-7 {
+  position: absolute;
+  left: 900px;
+  bottom: 0;
+}
+
+.big-8 {
+  position: absolute;
+  left: 1000px;
+  bottom: 0;
+}
+
+.big-9 {
+  position: absolute;
+  left: 1070px;
+  bottom: 0;
+}
+
+.big-10 {
+  position: absolute;
+  left: 1120px;
+  bottom: 0;
+}
+
+.grass {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 30px;
+  background-color: #008000;
+  width: 100%;
+}
+
+.big-arbor {
+  height: 100px;
+  width: 40px;
+  z-index: 1;
+  background: #613d10;
+}
+
+.big-arbor:after {
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 19px;
+  width: 16px;
+  box-shadow: inset 0 0 7px rgba(0, 0, 0, 0), 0 0 7px 3px rgba(0, 0, 0, 0.1);
+  height: 47px;
+  border-radius: 100%;
+}
+
+.big-arbor:before {
+  content: "";
+  background-color: #008000;
+  border-radius: 100%;
+  z-index: 2222;
+  height: 89px;
+  width: 113px;
+  position: absolute;
+  left: -33px;
+  top: -92px;
+}
+
+.big-arbor span,
+.big-arbor div:before,
+.big-arbor div:after {
+  background-color: #008000;
+  border-radius: 100%;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.52);
+}
+
+.big-arbor span {
+  width: 80px;
+  height: 70px;
+}
+
+.big-arbor span:nth-child(1) {
+  position: absolute;
+  left: 13px;
+  top: -54px;
+}
+
+.big-arbor span:nth-child(2) {
+  position: absolute;
+  left: 26px;
+  top: -94px;
+}
+
+.big-arbor span:nth-child(3) {
+  position: absolute;
+  left: -40px;
+  top: -54px;
+}
+
+.big-arbor span:nth-child(4) {
+  position: absolute;
+  left: -53px;
+  top: -94px;
+}
+
+.big-arbor span:nth-child(5) {
+  position: absolute;
+  left: -18px;
+  top: -123px;
+}
+
+.small-arbor {
+  z-index: 2;
+  height: 70px;
+  width: 20px;
+  background: #6f4511;
+}
+
+.small-arbor:after,
+.small-arbor:before,
+.small-arbor div:before,
+.small-arbor div:after {
+  content: "";
+}
+
+.small-arbor:after {
+  position: absolute;
+  left: 3px;
+  top: 19px;
+  width: 15px;
+  box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.27);
+  height: 20px;
+  border-radius: 100%;
+}
+
+.small-arbor:before,
+.small-arbor div p {
+  background-color: #008000;
+  border-radius: 100%;
+  position: absolute;
+  z-index: 2222;
+}
+
+.small-arbor:before {
+  height: 39px;
+  width: 43px;
+  top: -40px;
+  left: -13px;
+}
+
+.small-arbor span,
+.small-arbor div:before,
+.small-arbor div:after {
+  background-color: #008000;
+  border-radius: 100%;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.52);
+}
+
+.small-arbor span {
+  width: 30px;
+  height: 30px;
+}
+
+.small-arbor span:nth-child(1) {
+  position: absolute;
+  left: 3px;
+  top: -24px;
+}
+
+.small-arbor span:nth-child(2) {
+  position: absolute;
+  left: 10px;
+  top: -40px;
+}
+
+.small-arbor span:nth-child(3) {
+  position: absolute;
+  left: -16px;
+  top: -24px;
+}
+
+.small-arbor span:nth-child(4) {
+  position: absolute;
+  left: -23px;
+  top: -40px;
+}
+
+.small-arbor span:nth-child(5) {
+  position: absolute;
+  left: -6px;
+  top: -51px;
+}
+
+.small-arbor div {
+  width: 12px;
+  height: 42px;
+  background-color: #6f4511;
+  transform: rotateZ(50deg);
+  position: absolute;
+  top: 1px;
+  left: 21px;
+}
+
+.small-arbor div p {
+  width: 16px;
+  height: 20px;
+  top: -13px;
+  left: -2px;
+  background-color: #007b00;
+}
+
+.small-arbor div:before,
+.small-arbor div:after {
+  height: 30px;
+  width: 17px;
+}
+
+.small-arbor div:before {
+  position: absolute;
+  left: -3px;
+  top: -19px;
+}
+
+.small-arbor div:after {
+  transform: rotateZ(-90deg);
+  position: absolute;
+  left: -3px;
+  top: -18px;
+}
+
+.forest-big,
+.asphalt,
+.forest-small,
+.forest,
+.mountains {
+  width: 1202px;
+}
+
+.left-grass-1 {
+  position: absolute;
+  left: 20px;
+  bottom: 11px;
+}
+
+.left-grass-2 {
+  position: absolute;
+  left: 219px;
+  bottom: 12px;
+}
+
+.left-grass-3 {
+  position: absolute;
+  left: 359px;
+  bottom: 11px;
+}
+
+.left-grass-4 {
+  position: absolute;
+  left: 610px;
+  bottom: 21px;
+  z-index: 3;
+}
+
+.left-grass-5 {
+  position: absolute;
+  left: 770px;
+  bottom: 14px;
+}
+
+.right-grass-1 {
+  position: absolute;
+  left: 89px;
+  bottom: 4px;
+}
+
+.right-grass-2 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.right-grass-3 {
+  position: absolute;
+  left: 499px;
+  bottom: 11px;
+  z-index: 9 !important;
+}
+
+.right-grass-4 {
+  position: absolute;
+  right: 150px;
+  bottom: 0;
+}
+
+.forest-big {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  animation: move 6s infinite linear;
+}
+
+.forest-big:nth-child(3) {
+  position: absolute;
+  right: -1200px;
+  bottom: 0;
+}
+
+.forest-small {
+  z-index: 2;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  animation: move 5s infinite linear;
+}
+
+.forest-small:nth-child(2) {
+  position: absolute;
+  right: -1200px;
+  bottom: 0;
+}
+
+.mountains {
+  background: #dcea66;
+  height: 100%;
+  z-index: 5;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  animation: move 6s linear;
+}
+
+.mountains.mountains-2 {
+  position: absolute;
+  right: -1200px;
+  bottom: 0;
+}
+
+.mountains .grass {
+  background: #00c32a;
+}
+
+.mountains .left-grass {
+  position: absolute;
+  z-index: 2;
+  height: 93px;
+  background: #00c32a;
+  width: 58px;
+  transform: rotate(24deg);
+}
+
+.mountains .left-grass:before {
+  width: 0;
+  height: 0;
+  content: "";
+  border-bottom: solid 58px transparent;
+  border-left: solid 0px transparent;
+  border-right: solid 125px #dcea66;
+  border-top: solid 38px transparent;
+  position: absolute;
+  left: -48px;
+  top: -36px;
+  transform: rotate(-223deg);
+}
+
+.mountains .left-grass:after {
+  width: 0;
+  height: 0;
+  border: solid 50px transparent;
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: -59px;
+  transform: rotate(-21deg);
+  border-bottom: solid 88px #00d76b;
+  border-left-width: 41px;
+  border-right-width: 72px;
+}
+
+.mountains .right-grass {
+  position: absolute;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border: solid 33px transparent;
+  border-left-width: 53px;
+  border-right-width: 80px;
+  border-bottom: solid 65px #00d76b;
+}
+
+.mountains .right-grass:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border: solid 40px transparent;
+  border-left: solid 85px #00c32a;
+  position: absolute;
+  left: -90px;
+  top: -17px;
+  transform: rotate(-50deg);
+  border-bottom-width: 0px;
+  border-top-width: 42px;
+}
+
+.ground {
+  background: #ccc;
+  height: 150px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.ground .asphalt {
+  border-bottom: dashed 18px #666;
+  height: 75px;
+  position: absolute;
+  right: 0;
+  bottom: 55px;
+  animation: move 3s infinite linear;
+}
+
+.ground .asphalt:nth-child(2) {
+  position: absolute;
+  right: -1200px;
+  bottom: 55px;
+}
+
+.car {
+  width: 147px;
+  height: 69px;
+  background-color: #9c0000;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  animation: moveLeft 6s infinite ease-in-out;
+  position: absolute;
+  left: -160px;
+  top: 40px;
+  z-index: 3;
+}
+
+.car.car-2 {
+  animation: moveRight 4s infinite ease-out;
+  transform: rotateY(180deg);
+  left: initial;
+  position: absolute;
+  right: -160px;
+  top: -40px;
+  z-index: 2;
+  background: #00f;
+}
+
+.car.car-2 .circle {
+  background-color: #fff;
+}
+
+.car.car-2:before,
+.car.car-2:after {
+  background: #0000ce;
+}
+
+.car.car-2 .mirror:before,
+.car.car-2 .mirror {
+  background: rgba(255, 255, 255, 0.39) !important;
+}
+
+.car .mirror {
+  position: absolute;
+  width: 24px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.19);
+  z-index: 2;
+  transform: skew(26deg);
+  left: 88px;
+  top: -38px;
+}
+
+.car .mirror:before {
+  content: "";
+  width: 18px;
+  height: 30px;
+  background-color: #963737;
+  transform: skew(-20deg);
+  position: absolute;
+  left: -10px;
+  top: 0;
+}
+
+.car .farol {
+  width: 13px;
+  height: 20px;
+  position: absolute;
+  right: 0;
+  top: 20px;
+  background-color: #967937;
+}
+
+.car:before,
+.car:after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 50px;
+  background-color: #7d0909;
+  top: -50px;
+}
+
+.car:before {
+  transform: skew(26deg);
+  left: 60px;
+}
+
+.car:after {
+  transform: skew(-26deg);
+  left: 29px;
+}
+
+.circle {
+  border-radius: 100%;
+  width: 50px;
+  position: absolute;
+  left: 10px;
+  bottom: -29px;
+  height: 50px;
+  background-color: #7d0909;
+  box-shadow: inset 0 0 0 10px #000;
+}
+
+.circle.circle-2 {
+  position: absolute;
+  right: 8px;
+  bottom: -29px;
+  left: initial;
+  top: initial;
+}
+
+.enter-bounce {
+  animation: enterBounce 4s infinite alternate cubic-bezier(0.45, 1.52, 0.82, 0.96);
+}
+
+.enter-bounce-right {
+  animation: enterBounceRight 8s infinite alternate linear;
+}
+
+.enter-bounce-top {
+  animation: enterBounceTop 4s 1 cubic-bezier(0.45, 1.52, 0.82, 0.96);
+}
+
+.enter-bounce-bottom {
+  animation: enterBounceBottom 4s 1 cubic-bezier(0.45, 1.52, 0.82, 0.96);
+}
+
+@keyframes move {
+  100% {
+    transform: translateX(-1200px);
+  }
+}
+
+@keyframes moveRight {
+  100% {
+    right: 1600px;
+  }
+}
+
+@keyframes moveLeft {
+  100% {
+    transform: translateX(1600px);
+  }
+}
+
+@keyframes enterBounce {
+  0% {
+    transform: translateX(-200px);
+  }
+}
+
+@keyframes enterBounceRight {
+  50% {
+    transform: translateX(200px);
+  }
+}
+
+@keyframes enterBounceTop {
+  0% {
+    transform: translateY(300px);
+  }
+}
+
+@keyframes enterBounceBottom {
+  0% {
+    transform: translateY(-300px);
+  }
+}
+
+@keyframes bg {
+  100% {
+    background: #214458;
+  }
+}
