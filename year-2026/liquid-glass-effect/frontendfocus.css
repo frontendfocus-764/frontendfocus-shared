@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope");
+
+:root {
+  font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+}
+
+@keyframes bg-move {
+  from { background-position-y: bottom; }
+  to { background-position-y: 70%; }
+}
+
+body {
+  background: rgb(2, 6, 23);
+  height: 100svh;
+  display: grid;
+  place-items: center;
+  place-content: center;
+  color: white;
+  font-family: "Manrope", sans-serif;
+  background-image: url("bg.jpg");
+  background-size: cover;
+  background-position: bottom;
+  animation: bg-move 20s ease-in-out infinite alternate;
+  overflow: hidden;
+  grid-template-areas: "stack";
+  > * {
+    grid-area: stack;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-decoration: none;
+  font-weight: normal;
+  outline: none;
+  text-align: center;
+  font-size: 1.7em;
+  line-height: 6em;
+  min-width: 1em;
+}
+
+nav {
+  width: 100%;
+  position: relative;
+  font-size: 1.5rem;
+  padding: 0.5em;
+  resize: horizontal;
+  overflow: hidden;
+  &.glass::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: url(#pack-upper);
+  }
+  &.glass::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    backdrop-filter: url(#glass);
+    backdrop-filter: url(#liquid-glass);
+    backdrop-filter: url(#liquid-glass-new);
+    backdrop-filter: url(#liquid-glass-new) url(#fresnel) drop-shadow(0 0 10px #0003);
+  }
+  &::-webkit-resizer {
+    background: #fff;
+    border-radius: 99em;
+    box-shadow: 0 0 20px 1px #fff;
+    outline: 20px solid transparent;
+    pointer-events: all;
+  }
+}
+
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  filter: url(#round);
+  filter: url(#pack-lower);
+  filter: url(#round) url(#pack-lower);
+  mix-blend-mode: plus-lighter;
+}
+
+.icon {
+  pointer-events: all;
+  width: 3em;
+  aspect-ratio: 1;
+  transition: 1s;
+  border-radius: 0em;
+  border-radius: 1em;
+  border-radius: 1.5em;
+  background: #fff;
+  padding: 0.85em;
+  margin: -0.2em;
+  cursor: pointer;
+  overflow: visible;
+  transition: scale 1s linear(0, 0.038 1.6%, 0.154 3.4%, 1.026 12.6%, 1.166 15.2%, 1.234 18%, 1.221 21.6%, 1.005 31.2%, 0.944 37%, 1.013 56%, 1);
+  will-change: transform;
+  nav:has(&:active) &:hover {
+    transition-timing-function: ease-out;
+    transition-duration: 130ms;
+    scale: 0.75;
+  }
+}
+
+body > svg {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
