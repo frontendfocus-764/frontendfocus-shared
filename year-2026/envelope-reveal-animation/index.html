@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="frontendfocus.css">
+  <title>Envelope Reveal Animation</title>
+</head>
+<body>
+  <div class="page">
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    <main class="card">
+      <div class="eyebrow"><span class="tiny-heart">♡</span> A LITTLE NOTE FOR YOU</div>
+      <div class="scene" aria-label="A little bear holding a letter">
+        <div class="spark s1">✦</div>
+        <div class="spark s2">✧</div>
+        <div class="spark s3">♡</div>
+        <div class="bear">
+          <div class="ear left"></div>
+          <div class="ear right"></div>
+          <div class="head">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="blush left"></div>
+            <div class="blush right"></div>
+            <div class="muzzle"><i></i><b></b></div>
+          </div>
+          <div class="body"><span>♡</span></div>
+          <div class="arm left"></div>
+          <div class="arm right"></div>
+          <div class="letter-prop">
+            <div class="letter-mark">♡</div>
+          </div>
+        </div>
+        <div class="ground-shadow"></div>
+      </div>
+
+      <h1 id="headline">Hey, you.</h1>
+      <p class="intro" id="intro">I made a tiny thing because I owe you a proper apology.</p>
+      <button class="open-button" id="openButton">Open your little note <span>↗</span></button>
+
+      <section class="letter" id="letter" aria-hidden="true">
+        <div class="letter-top"><span>JUST BETWEEN US</span><span>♡</span></div>
+        <h2>I'm sorry.</h2>
+        <p>I know I didn't react well today. You came to me and apologized, but I was still caught up in my own
+          frustration.</p>
+        <p>I did accept your apology. I just didn't show it, and I can see how that made you feel like I didn't believe
+          you. That wasn't fair to you.</p>
+        <p class="strong">I'm sorry for making a small misunderstanding feel bigger than it needed to be.</p>
+        <p>I value our friendship, and I should have listened and responded better instead of letting my mood do all the
+          talking.</p>
+        <div class="signoff">No pressure to reply right away.<br><span>Just wanted you to know. ♡</span></div>
+        <button class="truce-button" id="truceButton">Would you accept this apology? ♡</button>
+        <div class="response" id="response" aria-live="polite"></div>
+      </section>
+      <div class="footer">a little honesty, wrapped in a little webpage <span>✿</span></div>
+    </main>
+  </div>
+
+  <script src="frontendfocus.js"></script>
+</body>
+</html>
