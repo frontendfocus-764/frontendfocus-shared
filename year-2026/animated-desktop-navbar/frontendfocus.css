@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css?family=Sen&display=swap");
+
+body {
+  background: #ffc38a;
+  font-family: "Sen";
+}
+
+.menu {
+  padding: 2px;
+  width: 100%;
+  max-width: 100%;
+  height: 60px;
+}
+
+.menu .container {
+  padding: 10px;
+}
+
+ul li {
+  max-width: 150px;
+  width: 100%;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  column-gap: 5px;
+  list-style: none;
+  margin: auto;
+}
+
+ul li a {
+  text-decoration: none;
+  color: white;
+  background-color: #fa8207;
+  display: block;
+  padding: 10px;
+  text-align: center;
+}
+
+ul li:hover ul.dropdown {
+  display: block;
+  animation-name: mainnav;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+}
+
+ul li ul.dropdown {
+  display: none;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Mainnav animation */
+
+@keyframes mainnav {
+  0% {
+    height: 0px;
+    background-color: #fa8207;
+  }
+  100% {
+    height: 100px;
+    background-color: transparent;
+  }
+}
+
+ul li ul.dropdown li {
+  margin: 5px 0;
+}
+
+.menu ul li ul li:first-child {
+  animation-name: navanime;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+}
+
+.menu ul li ul li:nth-child(2) {
+  animation-name: navanime;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-delay: 0.1s;
+  animation-timing-function: linear;
+}
+
+.menu ul li ul li:nth-child(3) {
+  animation-name: navanime;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-delay: 0.2s;
+  animation-timing-function: linear;
+}
+
+.menu ul li ul li:nth-child(4) {
+  animation-name: navanime;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-delay: 0.3s;
+  animation-timing-function: linear;
+}
+
+.menu ul li ul li:nth-child(5) {
+  animation-name: navanime;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-delay: 0.4s;
+  animation-timing-function: linear;
+}
+
+.menu {
+  position: relative;
+  background: rgb(174 90 9);
+  background-blend-mode: overlay;
+  border-radius: 22px 0 22px 0;
+}
+
+.menu .container > ul:after {
+  height: 39px;
+  max-width: 10%;
+  width: 100%;
+  min-width: 0;
+  background: #fdd635;
+  content: "";
+  position: relative;
+  display: block;
+  border-radius: 0 0 80% / 0 0 99% 0;
+}
+
+.menu .container > ul:before {
+  height: 39px;
+  max-width: 10%;
+  width: 100%;
+  min-width: 0;
+  background: #fdd635;
+  content: "";
+  position: relative;
+  display: block;
+  border-radius: 80% 0 0 0/ 100% 0 0 0;
+}
+
+/* Navanim animation */
+
+@keyframes navanime {
+  0% {
+    transform: rotateY(180deg);
+  }
+}
+
+ul li a {
+  transition: all 0.2s linear;
+  position: relative;
+  z-index: 1;
+}
+
+ul li > a:after {
+  content: "";
+  background-color: #ffba07;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0%;
+  height: 0%;
+  transition: all 0.3s linear;
+  z-index: -1;
+}
+
+ul li:hover > a:after {
+  color: #fffb00;
+  content: "";
+  background-color: #ffba07;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
