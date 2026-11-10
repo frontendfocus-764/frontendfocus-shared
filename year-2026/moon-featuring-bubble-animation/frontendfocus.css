@@ -1,0 +1,111 @@
+:root {
+  --primary-clr: #ff5f6d;
+  --secondary-clr: #ffc371;
+  --oceanblue: linear-gradient(to right, #2e3192, #1bffff);
+
+  --frost: linear-gradient(to right top, #000428, #004e92);
+
+  --aurgenic: linear-gradient(to right top, #aa076b, #61045f);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: -apple-system, system-ui, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 1.8rem;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: var(--aurgenic);
+  background-size: cover;
+  background-position: center;
+}
+
+.content {
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: rotate(var(--angle)) translate(0px, 0);
+  }
+  45%,
+  55% {
+    transform: rotate(var(--angle)) translate(225px, 0);
+  }
+}
+
+@keyframes turn {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+svg {
+  fill: #ffff;
+  width: 40rem;
+  height: 40rem;
+  opacity: 0;
+  animation: fadeIn 2s ease 3s forwards;
+}
+
+circle {
+  transform: rotate(var(--angle)) translate(112.5px, 0);
+  transform-origin: 50rem 50rem;
+  opacity: 0.4;
+  animation: breathe 10s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
+  animation-delay: 3s;
+}
+
+circle:nth-child(1) {
+  --angle: 60deg;
+}
+circle:nth-child(2) {
+  --angle: 120deg;
+}
+circle:nth-child(3) {
+  --angle: 180deg;
+}
+circle:nth-child(4) {
+  --angle: 240deg;
+}
+circle:nth-child(5) {
+  --angle: 300deg;
+}
+circle:nth-child(6) {
+  --angle: 360deg;
+}
+
+.bubbles {
+  transform-origin: 50rem 50rem;
+  animation: turn 100s linear infinite;
+}
