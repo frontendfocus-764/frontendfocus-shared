@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@500;600;700;800&display=swap");
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #f8f7ff;
+  font-family: Syne, sans-serif;
+  background:
+    radial-gradient(circle at 8% 4%, #293979, transparent 29rem),
+    radial-gradient(circle at 92% 96%, #542055, transparent 30rem),
+    #0b0b15;
+}
+
+.gallery {
+  width: min(1100px, calc(100% - 2rem));
+  margin: auto;
+  padding: clamp(3rem, 8vw, 6rem) 0;
+}
+
+.number,
+.type,
+.reveal-text {
+  font-family: "DM Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+}
+
+/* Scene = card platform + separate upright Pokémon */
+.scene {
+  --accent: #f6d44e;
+  --glow: rgba(246, 212, 78, 0.42);
+
+  position: relative;
+  aspect-ratio: 0.68;
+  min-width: 0;
+  cursor: pointer;
+  perspective: 1000px;
+  outline: none;
+}
+
+.scene.water {
+  --accent: #76cfff;
+  --glow: rgba(118, 207, 255, 0.42);
+}
+
+.scene.grass {
+  --accent: #8ddd88;
+  --glow: rgba(141, 221, 136, 0.42);
+}
+
+.scene.fire {
+  --accent: #ff9a70;
+  --glow: rgba(255, 122, 83, 0.42);
+}
+
+/* The original 2D card */
+.card {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 1.4rem;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.16), transparent 38%),
+    #191926;
+  box-shadow: 0 1.3rem 2.8rem rgba(0,0,0,0.35);
+  transform-origin: center bottom;
+  transition: transform 700ms cubic-bezier(.2,.72,.2,1);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 18% 0 12%;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--glow), transparent 67%);
+  filter: blur(12px);
+}
+
+.number {
+  position: absolute;
+  z-index: 2;
+  top: 1rem;
+  left: 1rem;
+  color: var(--accent);
+}
+
+.card-art {
+  position: absolute;
+  z-index: 1;
+  top: 15%;
+  left: 5%;
+  width: 90%;
+  height: 58%;
+  object-fit: contain;
+  filter: drop-shadow(0 1rem 1rem rgba(0,0,0,0.45));
+  transition: opacity 350ms ease;
+}
+
+.card-info {
+  position: absolute;
+  z-index: 2;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.name {
+  margin: 0;
+  font-size: clamp(1.1rem, 2.5vw, 1.65rem);
+  letter-spacing: -0.06em;
+}
+
+.type {
+  margin: 0.25rem 0 0;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+/* The upright HOME PNG: outside the card, so it never rotates flat */
+.model {
+  position: absolute;
+  z-index: 3;
+  top: 3%;
+  left: -8%;
+  width: 116%;
+  height: 80%;
+  object-fit: contain;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(2rem) scale(0.8);
+  transform-origin: center bottom;
+  filter: drop-shadow(0 1.5rem 0.9rem rgba(0,0,0,0.52));
+  transition:
+    opacity 220ms ease 110ms,
+    transform 650ms cubic-bezier(.16,.85,.25,1) 50ms;
+}
+
+.reveal-text {
+  position: absolute;
+  z-index: 4;
+  right: 0;
+  bottom: 1.1rem;
+  left: 0;
+  color: white;
+  opacity: 0;
+  text-align: center;
+  text-transform: uppercase;
+  transition: opacity 200ms ease 250ms;
+}
+
+/* Card lies down. Model rises upright. */
+.scene:hover .card,
+.scene.active .card {
+  transform: rotateX(69deg) translateY(3.25rem) scale(0.91);
+}
+
+.scene:hover .card-art,
+.scene.active .card-art {
+  opacity: 0.12;
+}
+
+.scene:hover .model,
+.scene.active .model {
+  opacity: 1;
+  transform: translateY(-0.5rem) scale(1);
+}
+
+.scene:hover .reveal-text,
+.scene.active .reveal-text {
+  opacity: 1;
+}
+
+.scene:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 6px;
+  border-radius: 1.4rem;
+}
+
+@media (max-width: 720px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card, .card-art, .model, .reveal-text {
+    transition: none;
+  }
+}
