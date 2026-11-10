@@ -1,0 +1,202 @@
+@property --flow {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+}
+
+/* =========================================
+   RESET
+========================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+/* =========================================
+   BASE
+========================================= */
+
+:root {
+    --surface: oklch(15.91% 0.0000 0.00);
+    --text: oklch(94% .006 105);
+    --muted: oklch(56% .008 105);
+    --red: oklch(64.14% 0.2390 26.80);
+    --yellow: oklch(84.21% 0.1549 82.12);
+    --blue: oklch(54.86% 0.1523 249.25);
+    --cyan: oklch(78.70% 0.0893 225.26);
+    --mint: oklch(73.46% 0.1349 170.57);
+    --pink: oklch(71.89% 0.1954 354.71);
+
+    font-family: "Avenir Next", system-ui, sans-serif;
+    color-scheme: dark;
+    color: var(--text);
+    background: var(--surface);
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    min-height: 100svh;
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2264%22%20height%3D%2264%22%20viewBox%3D%220%200%2064%2064%22%3E%20%3Cg%20fill%3D%22none%22%20stroke%3D%22%23363631%22%20stroke-width%3D%220.6%22%3E%20%3Cpath%20d%3D%22M64%200H0V64%22%20stroke-opacity%3D%220.32%22%20%2F%3E%20%3Cpath%20d%3D%22M30%2032h4M32%2030v4%22%20stroke-opacity%3D%220.26%22%20%2F%3E%20%3C%2Fg%3E%20%3C%2Fsvg%3E");
+    background-size: 64px 64px;
+    background-position: center;
+    padding: 28px clamp(20px, 5vw, 64px) 22px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.meta {
+    margin: 0;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+main {
+    display: grid;
+    place-items: center;
+    padding-block: 32px;
+}
+
+.experiment {
+    display: grid;
+    justify-items: center;
+    gap: 32px;
+}
+
+/* =========================================
+   DOT FIELD
+========================================= */
+
+.dot-field {
+    --diameter: min(82vw, 70svh, 800px);
+    --time-scale: 1;
+    --flow-duration: 6s;
+    --drift: .002;
+
+    position: relative;
+    width: var(--diameter);
+    height: var(--diameter);
+    animation: flow calc(var(--flow-duration) * var(--time-scale)) linear infinite;
+}
+
+.dot-field::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: var(--surface);
+    pointer-events: none;
+}
+
+.dot {
+    --progress: mod(var(--flow) + var(--offset), 1);
+    --phase: calc(var(--progress) * 360deg + var(--wobble));
+    --x: calc(var(--column) + var(--drift) * sin(var(--phase)));
+    --y: calc(.5 - var(--progress));
+    --edge: max(0, 1 - 4 * (var(--x) * var(--x) + var(--y) * var(--y)));
+    --scale: sin(calc(var(--edge) * 90deg));
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    transform: translate(
+        calc(var(--diameter) * var(--x)),
+        calc(var(--diameter) * var(--y))
+    );
+}
+
+.dot::before {
+    content: "";
+    position: absolute;
+    width: calc(var(--size) * var(--diameter));
+    height: calc(var(--size) * var(--diameter));
+    border-radius: 50%;
+    background: var(--color);
+    opacity: min(1, var(--edge) * 12);
+    transform: translate(-50%, -50%) scale(var(--scale));
+}
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes flow {
+    to {
+        --flow: 1;
+    }
+}
+
+/* =========================================
+   CONTROLS
+========================================= */
+
+.controls {
+    display: flex;
+    gap: 24px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.controls label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+.controls input {
+    width: 13px;
+    height: 13px;
+    margin: 0;
+    accent-color: var(--cyan);
+}
+
+.controls input:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 4px;
+}
+
+.experiment:has(#pause:checked) .dot-field {
+    animation-play-state: paused;
+}
+
+.experiment:has(#slow:checked) .dot-field {
+    --time-scale: 2;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 520px) {
+    body {
+        padding: 22px 20px 20px;
+    }
+
+    .meta {
+        font-size: 10px;
+        padding-top: 3px;
+    }
+
+    .dot-field {
+        --diameter: min(88vw, calc(100vw - 40px), 62svh);
+    }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .dot-field {
+        animation: none;
+    }
+}
