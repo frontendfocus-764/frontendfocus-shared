@@ -1,0 +1,36 @@
+html, body {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    position: relative;
+    overflow: hidden;
+    background: #C6FFDD;
+    background: linear-gradient(120deg, #f7797d, #FBD786, #C6FFDD);
+    height: 100vh;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+	 cursor: grab;
+}
+
+.lil-gui {
+    --width: 450px;
+    --name-width: 60%;
+    max-width: 90%;
+    --widget-height: 20px;
+    font-size: 15px;
+    --input-font-size: 15px;
+    --padding: 10px;
+    --spacing: 10px;
+    --slider-knob-width: 5px;
+    --background-color: rgba(5, 0, 15, .8);
+    --widget-color: rgba(255, 255, 255, .3);
+    --focus-color: rgba(255, 255, 255, .4);
+    --hover-color: rgba(255, 255, 255, .5);
+    --font-family: monospace;
+}
